@@ -8,15 +8,15 @@ book:
 
   page-footer:
     left: |
-      Happy Git and GitHub for the useR was written by Jenny Bryan, the STAT 545 TAs, Jim Hester.
+      <strong>“Happy Git and GitHub for the useR”</strong> was written by Jenny Bryan, the STAT 545 TAs, Jim Hester.
     right: |
       This book was built using <a href="https://quarto.org/">Quarto</a>.
 #  cover-image: img/watch-me-diff-watch-me-rebase-smaller.png
 #  favicon: projectlogo.png
   author:
     - name: Jenny Bryan
-    - name: Jim Hester
     - name: STAT 545 TAs
+    - name: Jim Hester
   search: true
   # sidebar:
   #   pinned: true
@@ -108,7 +108,7 @@ format:
   html:
     theme:
       - cosmo
-    #  - hopr.scss
+      - hgitwithr.scss
     code-link: true
     bibliography: [book.bib, packages.bib]
     biblio-style: apalike
