@@ -93,7 +93,7 @@ book:
         - notes-intro.qmd
         - notes-classroom-overview.qmd
         - notes-ideas.qmd
-        - notes-bookdown-cheat-sheet.qmd
+        # - notes-bookdown-cheat-sheet.qmd
   appendices:
     - shell.qmd
     - comic-relief.qmd
