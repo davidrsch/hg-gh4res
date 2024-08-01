@@ -8,7 +8,7 @@ If you experience some new problem and, especially, find the corresponding solut
 
 When you install Git, try to control or record where it is being installed! Make a mental or physical note of these things.
 
-You may be able to find Git after the fact with these commands in the shell (Appendix sec-shell):
+You may be able to find Git after the fact with these commands in the shell (@sec-shell):
 
 -   `which git` (Mac, Linux, or anything running a bash shell)
 
@@ -121,7 +121,7 @@ Do you have a space in your directory or file names? [A space in a file name is 
 
 Is your Git repo / RStudio Project inside a folder that ... eventually rolls up to Google Drive, DropBox, Microsoft OneDrive, or a network drive? If yes, I recommend you move the repo / Project into a plain old directory that lives directly on your computer and that is not managed by, e.g., Google Drive.
 
-If you cannot deal with the two root causes identified above, then it is possible that a more powerful Git client (chapter sec-git-client) will be able to cope with these situations. But I make no promises. You should also try Git operations from the command line.
+If you cannot deal with the two root causes identified above, then it is possible that a more powerful Git client (@sec-git-client) will be able to cope with these situations. But I make no promises. You should also try Git operations from the command line.
 
 ## I hear you have some Git repo inside your Git repo
 

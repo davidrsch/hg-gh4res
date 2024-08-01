@@ -1,6 +1,6 @@
 # Existing project, GitHub last {#sec-existing-github-last}
 
-This an explicit workflow for connecting an existing local R project to GitHub, when for some reason you cannot or don't want to do a "GitHub first" workflow (see chapters sec-new-github-first) and sec-existing-github-first).
+This an explicit workflow for connecting an existing local R project to GitHub, when for some reason you cannot or don't want to do a "GitHub first" workflow (see @sec-new-github-first) and @sec-existing-github-first).
 
 When does this come up? Example: it's an existing project that is already a Git repo with a history you care about. Then you have to do this properly.
 
@@ -53,7 +53,7 @@ We'll show a few methods for creating a new GitHub repo and connecting it to you
 
 ### Create and connect a GitHub repo with usethis
 
-To use usethis for this task, you must have configured a personal access token (PAT). This will already by configured for anyone using HTTPS as their protocol, because they are already using the PAT to authenticate for other Git operations. But if you are an SSH person, you will need to configure a PAT, which is explained in chapter @sec-https-pat. It is fine to have both a PAT and SSH keys.
+To use usethis for this task, you must have configured a personal access token (PAT). This will already by configured for anyone using HTTPS as their protocol, because they are already using the PAT to authenticate for other Git operations. But if you are an SSH person, you will need to configure a PAT, which is explained in @sec-https-pat. It is fine to have both a PAT and SSH keys.
 
 In your project, in the R Console, call:
 

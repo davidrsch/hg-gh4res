@@ -88,7 +88,7 @@ How does this happen?
 
 usethis describes this setup as "theirs".
 
-What if you do want to make a pull request? This means you should have done *fork-and-clone* instead of *clone*. If you've made no changes or they're easy to save somewhere temporarily, just start over with a fork-and-clone workflow (fully explained in \@ref(fork-and-clone)) and re-introduce your changes. It is also possible to preserve your work in a local branch, fork the source repo, re-configure your remotes, re-sync up with the source repo, and get back on track. But this is much easier to goof up. And remember to fork and clone (not just clone) in the future!
+What if you do want to make a pull request? This means you should have done *fork-and-clone* instead of *clone*. If you've made no changes or they're easy to save somewhere temporarily, just start over with a fork-and-clone workflow (fully explained in @sec-fork-and-clone) and re-introduce your changes. It is also possible to preserve your work in a local branch, fork the source repo, re-configure your remotes, re-sync up with the source repo, and get back on track. But this is much easier to goof up. And remember to fork and clone (not just clone) in the future!
 
 ## Fork (of theirs) {#sec-fork-them}
 

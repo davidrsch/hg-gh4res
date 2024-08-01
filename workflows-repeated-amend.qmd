@@ -4,9 +4,9 @@ One of the principal joys of version control is the freedom to experiment withou
 
 ## Rock climbing analogy
 
->Using a Git commit is like using anchors and other protection when climbing. If you're crossing a dangerous rock face you want to make sure you've used protection to catch you if you fall. Commits play a similar role: if you make a mistake, you can't fall past the previous commit. Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high! Like rock climbing protection, you want to be judicious in your use of commits. Committing too frequently will slow your progress; use more commits when you're in uncertain or dangerous territory. Commits are also helpful to others, because they show your journey, not just the destination.
+> Using a Git commit is like using anchors and other protection when climbing. If you're crossing a dangerous rock face you want to make sure you've used protection to catch you if you fall. Commits play a similar role: if you make a mistake, you can't fall past the previous commit. Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high! Like rock climbing protection, you want to be judicious in your use of commits. Committing too frequently will slow your progress; use more commits when you're in uncertain or dangerous territory. Commits are also helpful to others, because they show your journey, not just the destination.
 >
-><a href="http://r-pkgs.had.co.nz/git.html#git-commit">R Packages, Hadley Wickham</a> (@r-pkgs-book)
+> <a href="http://r-pkgs.had.co.nz/git.html#git-commit">R Packages, Hadley Wickham</a> (@r-pkgs-book)
 
 Let's talk about this:
 
@@ -53,7 +53,7 @@ Imagine we start at commit C, with previous commit B and, before that, A:
 
 Make a small step towards your goal. Re-check that your project "works".
 
-Stage those changes with and make a commit with the message "WIP", meaning "work in progress". Do this in RStudio or in the shell (Appendix \@ref(shell)):
+Stage those changes with and make a commit with the message "WIP", meaning "work in progress". Do this in RStudio or in the shell (@sec-shell):
 
 ``` console
 git add path/to/the/changed/file

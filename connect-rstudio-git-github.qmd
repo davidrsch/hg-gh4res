@@ -10,11 +10,11 @@ If you succeed here, your set up is DONE.
 
 We assume the following:
 
--   You've registered a free GitHub account (chapter sec-github-acct).
--   You've installed/updated R and RStudio (chapter sec-install-r-rstudio).
--   You've installed Git (chapter sec-install-git).
--   You've introduced yourself to Git (chapter sec-hello-git).
--   You've confirmed that you can push to / pull from GitHub from the command line (chapter sec-push-pull-github).
+-   You've registered a free GitHub account (@sec-github-acct).
+-   You've installed/updated R and RStudio (@sec-install-r-rstudio).
+-   You've installed Git (@sec-install-git).
+-   You've introduced yourself to Git (@sec-hello-git).
+-   You've confirmed that you can push to / pull from GitHub from the command line (@sec-push-pull-github).
 
 You will also need a test repository on GitHub. If you don't have a suitable test repository on GitHub, follow the instructions in the next section.
 
@@ -78,7 +78,7 @@ From RStudio:
 
 Click the green "Push" button to send your local changes to GitHub.
 
-You should not experience a credential challenge, since one of the pre-requisites was successfully pushing to GitHub from the command line (chapter sec-push-pull-github). RStudio's Git pane just exposes a specific subset of command line Git and therefore once your credentials work in the shell, they should work in RStudio. If you do experience a credential challenge, that suggests you should have a look at the troubleshooting suggestions for your chosen protocol, either [HTTPS](#pat-troubleshooting) or [SSH](#ssh-troubleshooting).
+You should not experience a credential challenge, since one of the pre-requisites was successfully pushing to GitHub from the command line (@sec-push-pull-github). RStudio's Git pane just exposes a specific subset of command line Git and therefore once your credentials work in the shell, they should work in RStudio. If you do experience a credential challenge, that suggests you should have a look at the troubleshooting suggestions for your chosen protocol, either [HTTPS](#pat-troubleshooting) or [SSH](#ssh-troubleshooting).
 
 ## Confirm the local change propagated to the GitHub remote
 

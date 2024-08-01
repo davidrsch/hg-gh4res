@@ -12,7 +12,7 @@ has_bash <- Sys.which('bash') != '' && .Platform$OS.type != 'windows'
 
 ## Git already installed?
 
-Go to the shell (Appendix @sec-shell). Enter `which git` to request the path to your Git executable:
+Go to the shell (@sec-shell). Enter `which git` to request the path to your Git executable:
 
 ```{bash collapse = TRUE, eval = has_bash}
 which git
@@ -39,7 +39,7 @@ We like this because Git for Windows leaves the Git executable in a conventional
   *  **NOTE:** When asked about "Adjusting your PATH environment", make sure to select "Git from the command line and also from 3rd-party software". Otherwise, we believe it is good to accept the defaults.
   * Note that RStudio for Windows prefers for Git to be installed below `C:/Program Files` and this appears to be the default. This implies, for example, that the Git executable on my Windows system is found at `C:/Program Files/Git/bin/git.exe`. Unless you have specific reasons to otherwise, follow this convention.
 
-This also leaves you with a Git client, though not a very good one. So check out Git clients we recommend (chapter \@ref(git-client)).
+This also leaves you with a Git client, though not a very good one. So check out Git clients we recommend (@sec-git-client)).
 
 FYI, this appears to be equivalent to what you would download from here: <https://git-scm.com/download/>.
 
@@ -47,7 +47,7 @@ FYI, this appears to be equivalent to what you would download from here: <https:
 
 This obviously requires that you already have [Chocolatey](https://chocolatey.org) installed or that you are up for installing it. It is not hard and the [instructions are here](https://chocolatey.org/install). This may be worthwhile if it seems likely you will be installing more open source software in the future.
 
-After you install Chocolatey, in a shell (Appendix \@ref(shell)), do:
+After you install Chocolatey, in a shell (@sec-shell)), do:
 
 ``` bash
 choco install git.install

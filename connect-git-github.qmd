@@ -2,9 +2,9 @@
 
 Objective: make sure that you can pull from and push to GitHub from your computer.
 
-I do not explain all the shell (Appendix sec-shell) and Git commands in detail. This is a black box diagnostic / configuration exercise. In later chapters and in live workshops, we revisit these operations with much more narrative and discussion of alternative workflows.
+I do not explain all the shell (@sec-shell) and Git commands in detail. This is a black box diagnostic / configuration exercise. In later chapters and in live workshops, we revisit these operations with much more narrative and discussion of alternative workflows.
 
-I assume you've decided whether to use HTTPS (see chapter sec-https-pat) or SSH (see chapter sec-ssh-keys) and you've prepared your credential.
+I assume you've decided whether to use HTTPS (see @sec-https-pat) or SSH (see @sec-ssh-keys) and you've prepared your credential.
 
 ## Make a repo on GitHub
 
@@ -28,13 +28,13 @@ cat(res, sep = '\n')
 
 ## Clone the repo to your local computer {#sec-git-clone-command-line}
 
-We have a few ways to do this. Here we use command line Git. In (section sec-new-github-first), we show other methods that you might prefer in daily life: using usethis or the RStudio IDE.
+We have a few ways to do this. Here we use command line Git. In (@sec-new-github-first), we show other methods that you might prefer in daily life: using usethis or the RStudio IDE.
 
-Go to the shell (Appendix sec-shell).
+Go to the shell (@sec-shell).
 
 Take charge of -- or at least notice! -- what directory you're in. `pwd` displays the working directory. `cd` is the command to change directory. Personally, I would do this sort of thing in `~/tmp`.
 
-Clone `myrepo` from GitHub to your computer. Use the URL we just copied from GitHub. This URL should have **your GitHub username** and the name of **your practice repo**. If your shell (Appendix sec-shell) cooperates, you should be able to paste the whole `https://....` bit that we copied above. But some shells are not (immediately) clipboard aware. In that sad case, you must type it. **Accurately.**
+Clone `myrepo` from GitHub to your computer. Use the URL we just copied from GitHub. This URL should have **your GitHub username** and the name of **your practice repo**. If your shell (@sec-shell) cooperates, you should be able to paste the whole `https://....` bit that we copied above. But some shells are not (immediately) clipboard aware. In that sad case, you must type it. **Accurately.**
 
 ``` console
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
@@ -150,7 +150,7 @@ remote: Please see https://github.blog/2020-12-15-token-authentication-requireme
 fatal: Authentication failed for 'https://github.com/jennybc/myrepo.git/'
 ```
 
-This means you have provided your GitHub *web password*, instead of your *personal access token* (PAT). Go back to (chapter sec-https-pat) to get a PAT. Try `git push` again and hopefully you'll get another prompt, allowing you to correct things and provide your PAT.
+This means you have provided your GitHub *web password*, instead of your *personal access token* (PAT). Go back to (@sec-https-pat) to get a PAT. Try `git push` again and hopefully you'll get another prompt, allowing you to correct things and provide your PAT.
 
 If you ever feel you need to overwrite a bad credential with a new one, the easiest way to do this is to call `gitcreds::gitcreds_set()` from R.
 
@@ -183,7 +183,7 @@ You should see the new "A line I wrote on my local computer" in the README.
 
 If you click on "commits," you should see one with the message "A commit from my local computer."
 
-If you have made it this far, you and your test repo are ready to graduate to using Git and GitHub with RStudio (chapter sec-rstudio-git-github).
+If you have made it this far, you and your test repo are ready to graduate to using Git and GitHub with RStudio (@sec-rstudio-git-github).
 
 ## Clean up
 

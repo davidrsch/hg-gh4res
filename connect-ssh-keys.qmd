@@ -22,7 +22,7 @@ High level overview of what must happen:
 
 Advice:
 
--   If you are new to programming and the shell, you'll probably find HTTPS easier at first (chapter @sec-https-pat). You can always switch to SSH later. You can use one method from computer A and the other from computer B.
+-   If you are new to programming and the shell, you'll probably find HTTPS easier at first (@sec-https-pat). You can always switch to SSH later. You can use one method from computer A and the other from computer B.
 -   You should swap out your SSH keys periodically. Something like once a year.
 -   It's best practice to protect your private key with a passphrase. This can make setup and usage harder, so if you're not up for that (yet), either don't use a passphrase or seriously consider using HTTPS instead.
 -   Don't do weird gymnastics in order to have only one key pair, re-used over multiple computers. You should probably have one key per computer (I do this). Some people even have one key per computer, per service (I do not do this).
@@ -44,7 +44,7 @@ However, these days both GitHub and GitLab are encouraging users to generate SSH
 
 ### From the shell
 
-Go to the shell (appendix sec-shell).
+Go to the shell (@sec-shell).
 
 List existing keys:
 
