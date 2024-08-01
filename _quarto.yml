@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Happy Git and GitHub for the useR"
-  reader-mode: true
+  #reader-mode: true
 
   page-footer:
     left: |
@@ -18,15 +18,17 @@ book:
     - name: Jim Hester
     - name: STAT 545 TAs
   search: true
-  sidebar:
-    pinned: true
-    tools:
-      - icon: github
-        menu:
-          - text: Original
-            url: https://github.com/jennybc/happy-git-with-r
-          - text: Traducción
-            url: https://github.com/davidrsch/hgitwithres
+  # sidebar:
+  #   pinned: true
+  #   tools:
+  #     - icon: github
+  #       menu:
+  #         - text: Original
+  #           url: https://github.com/jennybc/happy-git-with-r
+  #         - text: Traducción
+  #           url: https://github.com/davidrsch/hgitwithres
+  repo-url: https://github.com/jennybc/happy-git-with-r
+  repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - overview.qmd
