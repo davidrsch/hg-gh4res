@@ -18,17 +18,17 @@ book:
     - name: STAT 545 TAs
     - name: Jim Hester
   search: true
-  # sidebar:
-  #   pinned: true
-  #   tools:
-  #     - icon: github
-  #       menu:
-  #         - text: Original
-  #           url: https://github.com/jennybc/happy-git-with-r
-  #         - text: Traducción
-  #           url: https://github.com/davidrsch/hgitwithres
-  repo-url: https://github.com/jennybc/happy-git-with-r
-  repo-actions: [edit, issue]
+  sidebar:
+    pinned: true
+    tools:
+      - icon: github
+        menu:
+          - text: Original
+            url: https://github.com/jennybc/happy-git-with-r
+          - text: Traducción
+            url: https://github.com/davidrsch/hgitwithres
+  # repo-url: https://github.com/jennybc/happy-git-with-r
+  # repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - overview.qmd
@@ -115,6 +115,6 @@ format:
     link-citations: yes
     #author-meta: "Garrett Grolemund"
     callout-appearance: simple
-    #include-after-body: [ddrsch_script.html]
+    include-after-body: [ddrsch_script.html]
 
 editor: visual

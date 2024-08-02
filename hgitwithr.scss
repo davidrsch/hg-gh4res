@@ -20,9 +20,14 @@
   padding-top: 0px;
 }
 
-.sidebar-navigation .sidebar-item {
+.sidebar-navigation .sidebar-item{
   font-size: .9rem;
   margin-bottom: 0.5rem;
+}
+
+#TOC .toc-actions p{
+  font-size: .9rem;
+  margin-bottom: 0;
 }
 
 .sidebar-item-text .menu-text,
