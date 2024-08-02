@@ -252,7 +252,7 @@
     "href": "install-git.html",
     "title": "6  Install Git",
     "section": "",
-    "text": "6.1 Git already installed?\nGo to the shell (Appendix A). Enter which git to request the path to your Git executable:\nwhich git\n## /usr/bin/git\nand git --version to see its version:\ngit --version\n## git version 2.46.0\nIf you are successful, that’s great! You have Git already. No need to install! Move on.\nIf, instead, you see something more like git: command not found, keep reading.\nmacOS users might get an immediate offer to install command line developer tools. Yes, you should accept! Click “Install” and read more below.",
+    "text": "6.1 Git already installed?\nGo to the shell (Appendix A). Enter which git to request the path to your Git executable:\nwhich git\n## /usr/bin/git\nand git --version to see its version:\ngit --version\n## git version 2.45.2\nIf you are successful, that’s great! You have Git already. No need to install! Move on.\nIf, instead, you see something more like git: command not found, keep reading.\nmacOS users might get an immediate offer to install command line developer tools. Yes, you should accept! Click “Install” and read more below.",
     "crumbs": [
       "Installation",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Install Git</span>"
