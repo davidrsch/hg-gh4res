@@ -26,8 +26,6 @@ book:
             url: https://github.com/jennybc/happy-git-with-r
           - text: Traducción
             url: https://github.com/davidrsch/hgitwithres
-  # repo-url: https://github.com/jennybc/happy-git-with-r
-  # repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - overview.qmd
