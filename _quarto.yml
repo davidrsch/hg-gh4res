@@ -4,15 +4,14 @@ project:
 
 book:
   title: "Happy Git and GitHub for the useR"
-  #reader-mode: true
+  reader-mode: true
 
   page-footer:
     left: |
       <strong>“Happy Git and GitHub for the useR”</strong> was written by Jenny Bryan, the STAT 545 TAs, Jim Hester.
     right: |
       This book was built using <a href="https://quarto.org/">Quarto</a>.
-#  cover-image: img/watch-me-diff-watch-me-rebase-smaller.png
-#  favicon: projectlogo.png
+  favicon: projectlogo.png
   author:
     - name: Jenny Bryan
     - name: STAT 545 TAs
@@ -113,7 +112,7 @@ format:
     bibliography: [book.bib, packages.bib]
     biblio-style: apalike
     link-citations: yes
-    #author-meta: "Garrett Grolemund"
+    author-meta: "Jenny Bryan, the STAT 545 TAs and Jim Hester"
     callout-appearance: simple
     include-after-body: [ddrsch_script.html]
 
