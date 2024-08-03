@@ -82,8 +82,8 @@ Además de una interfaz de usuario bien diseñada, GitHub ofrece dos caracterís
 
 ## ¿Qué tiene de especial usar R con Git y GitHub?
 
--   La comunidad activa de desarrollo de paquetes R en GitHub. Lea acerca de las búsquedas y los recursos de GitHub específicos de R [aquí](sec-search).
--   Los flujos de trabajo específicos hacen que sea gratificante compartir código fuente, informes renderizados y proyectos completos. Leer más sobre [R Markdown](sec-rmd-test-drive), [R scripts](sec-r-test-drive), y [R-heavy projects](sec-repo-browsability).
+-   La comunidad activa de desarrollo de paquetes R en GitHub. Lea acerca de las búsquedas y los recursos de GitHub específicos de R [aquí](#sec-search).
+-   Los flujos de trabajo específicos hacen que sea gratificante compartir código fuente, informes renderizados y proyectos completos. Leer más sobre [R Markdown](#sec-rmd-test-drive), [R scripts](#sec-r-test-drive), y [R-heavy projects](#sec-repo-browsability).
 -   Funciones relacionadas con Git y GitHub de [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/). Este aspecto se cubre a lo largo del libro.
 
 ## Audiencia y requisitos previos

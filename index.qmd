@@ -1,26 +1,26 @@
 # Empecemos con Git {.unnumbered}
 
-![Still from <a href="https://www.youtube.com/watch?v=uBWrpVrazzA">Heaven King video</a></p>](img/watch-me-diff-watch-me-rebase-smaller.png){width=669 height=400 fig-alt="Cover image"}
+![Still from <a href="https://www.youtube.com/watch?v=uBWrpVrazzA">Heaven King video</a>](img/watch-me-diff-watch-me-rebase-smaller.png){width="669" height="400" fig-alt="Cover image"}
 
 Este libro le proporciona instrucciones sobre cómo:
 
-  * Instalar Git y hacerlo funcionar sin problemas con GitHub, en el shell y en [RStudio IDE](https://www.rstudio.com/products/rstudio/).
-  * Desarrollear algunos flujos de trabajo clave que cubran sus tareas más comunes.
-  * Integrar Git y GitHub en su trabajo diario con R y [R Markdown](https://rmarkdown.rstudio.com).
+-   Instalar Git y hacerlo funcionar sin problemas con GitHub, en el shell y en [RStudio IDE](https://www.rstudio.com/products/rstudio/).
+-   Desarrollear algunos flujos de trabajo clave que cubran sus tareas más comunes.
+-   Integrar Git y GitHub en su trabajo diario con R y [R Markdown](https://rmarkdown.rstudio.com).
 
 El lector objetivo es alguien que usa R para análisis de datos o que trabaja en paquetes de R, aunque parte del contenido puede ser útil para quienes trabajan en áreas adyacentes.
 
-Las primeras dos partes, [Instalación](sec-install-intro) y [Conectar Git, GitHub, RStudio](sec-connect-intro), proporciona un inicio rápido para verificar su configuración.
+Las primeras dos partes, [Instalación](#sec-install-intro) y [Conectar Git, GitHub, RStudio](#sec-connect-intro), proporciona un inicio rápido para verificar su configuración.
 
-En [Primeras victorias en GitHub](sec-usage-intro), acumulamos algunos éxitos iniciales con los flujos de trabajo básicos que son necesarios para llevar su trabajo a GitHub. También mostramos la sinergia especial entre R/R Markdown/RStudio y GitHub, lo que proporciona una poderosa demostración de por qué toda esta configuración vale la pena.
+En [Primeras victorias en GitHub](#sec-usage-intro), acumulamos algunos éxitos iniciales con los flujos de trabajo básicos que son necesarios para llevar su trabajo a GitHub. También mostramos la sinergia especial entre R/R Markdown/RStudio y GitHub, lo que proporciona una poderosa demostración de por qué toda esta configuración vale la pena.
 
-El uso de Git/GitHub en ciencia de datos tiene una vibra ligeramente diferente a la del desarrollo de software puro, debido a diferencias en el contexto y el objetivo del usuario. Happy Git tiene como objetivo complementar los recursos generales de Git existentes destacando los patrones de uso más gratificantes para la ciencia de datos. Esta perspectiva sobre el panorama de Git se presenta en [Conceptos básicos de Git](sec-git-intro) y [Flujos de trabajo diarios](sec-workflows-intro). 
+El uso de Git/GitHub en ciencia de datos tiene una vibra ligeramente diferente a la del desarrollo de software puro, debido a diferencias en el contexto y el objetivo del usuario. Happy Git tiene como objetivo complementar los recursos generales de Git existentes destacando los patrones de uso más gratificantes para la ciencia de datos. Esta perspectiva sobre el panorama de Git se presenta en [Conceptos básicos de Git](#sec-git-intro) y [Flujos de trabajo diarios](#sec-workflows-intro).
 
-## Licencia 
+## Licencia
 
-[![](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc/4.0/){fig-alt="Creative Commons License" style="border-width:0"}
+[![](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc/4.0/)
 
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Happy Git and GitHub for the useR</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/happy-git-with-r" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan</a> esta licenciado bajo <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+[Happy Git and GitHub for the useR]{xmlns:dct="http://purl.org/dc/terms/" property="dct:title"} de <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/happy-git-with-r" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan</a> esta licenciado bajo <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 ```{r include = FALSE}
 # automatically create a bib database for R packages
@@ -34,4 +34,3 @@ knitr::write_bib(c(
 Esta traducción de "Git & GitHub con R" es un proyecto personal de [David Díaz Rodríguez](https://github.com/davidrsch) con el objetivo de facilitar el estudio del control de versiones en proyectos de Ciencia de Datos, tanto al propio traductor como a todas aquellas personas de habla hispana que deseen aprender sobre este tema.
 
 Si detecta algún error relacionado con el contenido de la traducción, siéntase libre de abrir un issue o un pull request en este [repositorio](https://github.com/davidrsch/hg-gh4res).
-
