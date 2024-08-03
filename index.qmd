@@ -33,4 +33,6 @@ knitr::write_bib(c(
 
 Esta traducción de "Git & GitHub con R" es un proyecto personal de [David Díaz Rodríguez](https://github.com/davidrsch) con el objetivo de facilitar el estudio del control de versiones en proyectos de Ciencia de Datos, tanto al propio traductor como a todas aquellas personas de habla hispana que deseen aprender sobre este tema.
 
+Señalar que esta es una traducción textual del libro por lo que cuando se hacen referencias en primera persona se trata de los autores y no el traductor.
+
 Si detecta algún error relacionado con el contenido de la traducción, siéntase libre de abrir un issue o un pull request en este [repositorio](https://github.com/davidrsch/hg-gh4res).
