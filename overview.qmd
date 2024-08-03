@@ -1,99 +1,99 @@
-# Why Git? Why GitHub? {#sec-big-picture}
+# ¿Por qué Git? ¿Por qué GitHub? {#sec-big-picture}
 
-Why would a data analyst use hosted version control?
+¿Por qué un analista de datos utilizaría el control de versiones alojado?
 
-*This intro has grown into a stand-alone article that is arguably a better introduction at this point. Until I merge it back in, consider reading the article instead: "Excuse me, do you have a moment to talk about version control?" <https://dx.doi.org/10.7287%2Fpeerj.preprints.3159v2>.*
+*Esta introducción se ha convertido en un artículo independiente que posiblemente sea una mejor introducción en este momento. Hasta que lo vuelva a fusionar, considere leer el artículo: "Disculpe, ¿tiene un momento para hablar sobre el control de versiones?" <https://dx.doi.org/10.7287%2Fpeerj.preprints.3159v2>.*
 
-## Why Git?
+## ¿Por qué Git?
 
-[Git](http://git-scm.com) is a __version control system__. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files -- called a __repository__ -- in a sane, highly structured way. If you have no idea what I'm talking about, think of it as the "Track Changes" features from Microsoft Word on steroids.
+[Git](http://git-scm.com) es **siste de control de versión**. Su propósito original era ayudar a grupos de desarrolladores a trabajar en colaboración en grandes proyectos de software. Git gestiona la evolución de un conjunto de archivos, llamado **repositorio**, de una manera sensata y altamente estructurada. Si no tiene idea de lo que estoy hablando, considérelo como las funciones de "Seguimiento de cambios" de Microsoft Word con esteroides.
 
-Git has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code.
+Git ha sido reutilizado por la comunidad científica de datos. Además de usarlo para el código fuente, lo usamos para administrar la variada colección de archivos que componen los proyectos típicos de análisis de datos, que a menudo consisten en datos, cifras, informes y, sí, código fuente.
 
-A solo data analyst, working on a single computer, will benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of your files, if that's all you're worried about.
+Un analista de datos en solitario que trabaje en una sola computadora se beneficiará de la adopción del control de versiones. Pero no lo suficiente como para justificar el dolor de la instalación y la agitación del flujo de trabajo. Hay formas mucho más sencillas de obtener copias de seguridad versionadas de sus archivos, si eso es lo único que le preocupa.
 
-In my opinion, **for new users**, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people. Who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread or neglect.
+En mi opinión, **para los nuevos usuarios**, las ventajas de Git sólo superan las desventajas cuando se tienen en cuenta los gastos generales de comunicación y colaboración con otras personas. ¿Quién de nosotros no necesita hacer eso? Su vida es mucho más fácil si esto está integrado en su flujo de trabajo, en lugar de ser un proceso separado que teme o descuida.
 
-## Why GitHub?
+## ¿Por qué GitHub?
 
-This is where hosting services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org), and [GitLab](https://about.gitlab.com) come in. They provide a home for your Git-based projects on the internet.  If you have no idea what I'm talking about, think of it as DropBox but much, much better. The remote host acts as a distribution channel or clearinghouse for your Git-managed project. It allows other people to see your stuff, sync up with you, and perhaps even make changes. These hosting providers improve upon traditional Unix Git servers with well-designed web-based interfaces.
+Aquí es donde los servicios de hosting como [GitHub](https://github.com), [Bitbucket](https://bitbucket.org), y [GitLab](https://about.gitlab.com) intervienen. Proporcionan un hogar para sus proyectos basados en Git en Internet. Si no tienes idea de lo que estoy hablando, considéralo DropBox, pero es mucho, mucho mejor. El host remoto actúa como canal de distribución o centro de compensación para su proyecto administrado por Git. Permite que otras personas vean tus cosas, se sincronicen contigo y tal vez incluso realicen cambios. Estos proveedores de alojamiento mejoran los servidores Unix Git tradicionales con interfaces basadas en web bien diseñadas.
 
-Even for private solo projects, it's a good idea to push your work to a remote location for peace of mind. Why? Because it's fairly easy to screw up your local Git repository, especially when you're new at this. The good news is that often only the Git infrastructure is borked up. Your files are just fine! Which makes your Git pickle all the more frustrating. There are official Git solutions to these problems, but they might require expertise and patience you can't access at 3 a.m. If you've recently pushed your work to GitHub, it's easy to grab a fresh copy, patch things up with the changes that only exist locally, and get on with your life.
+Incluso para proyectos privados en solitario, es una buena idea trasladar su trabajo a una ubicación remota para su tranquilidad. ¿Por qué? Porque es bastante fácil arruinar tu repositorio Git local, especialmente cuando eres nuevo en esto. La buena noticia es que a menudo sólo se daña la infraestructura de Git. ¡Tus archivos están bien! Lo que hace que tu Git se vuelva aún más frustrante. Existen soluciones oficiales de Git para estos problemas, pero pueden requerir experiencia y paciencia a las que no puedes acceder a las 3 a.m. Si recientemente subiste tu trabajo a GitHub, es fácil obtener una copia nueva, arreglar las cosas con los cambios que solo existe localmente y continúa con tu vida.
 
-We target [GitHub](https://github.com) -- not [Bitbucket](https://bitbucket.org) or [GitLab](https://about.gitlab.com) -- for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms.
+En este libro se expone la integración con [GitHub](https://github.com), no con [Bitbucket](https://bitbucket.org) o [GitLab](https://about.gitlab.com), por el bien de especificidad. Sin embargo, todos los principios generales e incluso algunas mecánicas se trasladarán a estas plataformas de alojamiento alternativas.
 
-Don't get too caught up on public versus private at this point. There are many ways to get private repositories from the major providers for low or no cost. Just get started and figure out if and how Git/GitHub is going to work for you! If you outgrow this arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service or self-host one of these platforms.
+No se deje atrapar demasiado por lo público versus lo privado en este momento. Hay muchas formas de obtener repositorios privados de los principales proveedores a bajo costo o sin costo alguno. ¡Simplemente comience y descubra si Git/GitHub funcionará para usted y cómo! Si supera este acuerdo, puede invertir alguna combinación de conocimiento técnico y dinero en el problema. Puede pagar por un nivel superior de servicio o alojar usted mismo una de estas plataformas.
 
-## Is it going to hurt?
+## ¿Va a doler?
 
-Yes.
+Sí.
 
-You have to install Git, get local Git talking to GitHub, and make sure RStudio can talk to local Git (and, therefore, GitHub). This is one-time or once-per-computer pain.
+Debe instalar Git, hacer que Git local se comunique con GitHub y asegurarse de que RStudio pueda comunicarse con Git local (y, por lo tanto, con GitHub). Este es un dolor que ocurre una sola vez o una vez por computadora.
 
-For new or existing projects, you will:
+Para proyectos nuevos o existentes, usted:
 
-  * Dedicate a directory (a.k.a "folder") to it.
-  * Make it an RStudio Project.
-  * Make it a Git repository.
-  * Go about your usual business. But instead of only *saving* individual files, periodically you make a **commit**, which takes a multi-file snapshot of the entire project.
-    - Have you ever versioned a file [by adding your initials or the date](http://www.phdcomics.com/comics/archive.php?comicid=1531)? That is effectively a **commit**, albeit only for a single file: it is a version that is significant to you and that you might want to inspect or revert to later.
-  * Push commits to GitHub periodically.
-    - This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. It signals you're ready to make your work visible to others and invite comment or edits.
-  
-This is a change to your normal, daily workflow. It feels weird at first but quickly becomes second nature. FWIW, [STAT 545](http://stat545.com) students are required to submit all coursework via GitHub. This is a major topic in class and office hours for the first two weeks. Then we practically never discuss it again.
+-   Dedícale un directorio (también conocido como "carpeta").
+-   Conviértalo en un proyecto RStudio.
+-   Conviértalo en un repositorio Git.
+-   Continúe con sus asuntos habituales. Pero en lugar de solo *guardar* archivos individuales, periódicamente realiza una **confirmación**(**commit**), que toma una instantánea de varios archivos de todo el proyecto.
+    -   ¿Alguna vez ha versionado un archivo [agregando sus iniciales o la fecha](http://www.phdcomics.com/comics/archive.php?comicid=1531)? Eso es efectivamente un **commit**, aunque solo para un único archivo: es una versión que es importante para usted y que quizás desee inspeccionar o volver a consultar más adelante.
+-   Envíe (push) comits a GitHub periódicamente.
+    -   Esto es como compartir un documento con colegas en DropBox o enviarlo como archivo adjunto de correo electrónico. Indica que estás listo para hacer que tu trabajo sea visible para otros e invitar a comentar o editar.
 
-More bad news. The [STAT 545](http://stat545.com) pain is short-lived because students primarily work in their own repositories. Do you use GitHub to work with other people or to coordinate your own work from multiple computers? If so, after you recover from the initial setup, Git will crush you again with **merge conflicts**. And this is not one-time pain, this could be a dull ache for a long time. The best remedy is prevention, but also understanding how to back out of tricky situations and tackle them on your own terms.
+Este es un cambio en su flujo de trabajo diario normal. Al principio se siente extraño, pero rápidamente se convierte en algo natural. FWIW, [STAT 545](http://stat545.com) los estudiantes deben enviar todos los trabajos del curso a través de GitHub. Este es un tema importante en las horas de clase y de oficina durante las primeras dos semanas. Luego prácticamente nunca volvemos a hablar de ello.
 
-The rest of this site is dedicated to walking you through the necessary setup and creating your first few Git projects. We conclude with prompts that guide you through some of the more advanced usage that makes all of this initial pain worthwhile.
+Más malas noticias. El dolor de [STAT 545](http://stat545.com) dura poco porque los estudiantes trabajan principalmente en sus propios repositorios. ¿Utilizas GitHub para trabajar con otras personas o para coordinar tu propio trabajo desde varias computadoras? Si es así, después de que te recuperes de la configuración inicial, Git te aplastará nuevamente con **conflictos de fusión**. Y este no es un dolor que ocurre una sola vez, sino que puede ser un dolor sordo que dure mucho tiempo. El mejor remedio es la prevención, pero también comprender cómo salir de situaciones difíciles y abordarlas en sus propios términos.
 
-## What is the payoff?
+El resto de este sitio está dedicado a guiarlo a través de la configuración necesaria y a crear sus primeros proyectos Git. Concluimos con indicaciones que lo guiarán a través de algunos de los usos más avanzados que hacen que todo este dolor inicial valga la pena.
 
-**Exposure**: If someone needs to see your work or if you want them to try out your code, they can easily get it from GitHub. If they use Git, they can clone or fork your repository. If they don't use Git, they can still browse your project on GitHub like a normal website and even grab everything by downloading a zip archive.
+## ¿Cuál es la recompensa?
 
-**Be a keener!** If you care deeply about someone else's project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.
+**Exposición**: si alguien necesita ver tu trabajo o si quieres que pruebe tu código, puede obtenerlo fácilmente desde GitHub. Si usan Git, pueden clonar o bifurcar su repositorio. Si no usan Git, aún pueden explorar su proyecto en GitHub como un sitio web normal e incluso obtener todo descargando un archivo zip.
 
-**Collaboration**: If you need to collaborate on data analysis or code development, then everyone should use Git. Use GitHub as your clearinghouse: individuals work independently, then send work back to GitHub for reconciliation and transmission to the rest of the team. The advantage of Git/GitHub is highlighted by comparing these two ways of collaborating on a document:
+**¡Sea más entusiasta!** Si le importa mucho el proyecto de otra persona, como un paquete R que usa mucho, puede realizar un seguimiento de su desarrollo en GitHub. Puede ver el repositorio para recibir notificaciones sobre actividades importantes. Puedes bifurcarlo para conservar tu propia copia. Puede modificar su bifurcación para agregar características o corregir errores y enviarlos de regreso al propietario como una propuesta de cambio.
 
-  * **Edit, save, attach.** In this workflow, everyone has one (or more!) copies of the document and they circulate via email attachment. Which one is "master"? Is it even possible to say? How do different versions relate to each other? How should versions be reconciled? If you want to see the current best version, how do you get it? All of this usually gets sorted out by social contract and a fairly manual process.
-  * **Google Doc.** In this workflow, there is only one copy of the document and it lives in the cloud. Anyone can access the most recent version on demand. Anyone can edit or comment or propose a change and this is immediately available to everyone else. Anyone can see who's been editing the document and, if disaster strikes, can revert to a previous version. A great deal of ambiguity and annoying reconciliation work has been designed away.
+**Colaboración**: si necesita colaborar en el análisis de datos o el desarrollo de código, todos deberían usar Git. Utilice GitHub como su centro de compensación: las personas trabajan de forma independiente y luego envían el trabajo a GitHub para su conciliación y transmisión al resto del equipo. La ventaja de Git/GitHub se destaca al comparar estas dos formas de colaborar en un documento:
 
-Managing a project via Git/GitHub is much more like the Google Doc scenario and enjoys many of the same advantages. It is definitely more complicated than collaborating on a Google Doc, but this puts you in the right mindset.
+-   **Editar, guardar, adjuntar.** En este flujo de trabajo, todos tienen una (¡o más!) copias del documento y circulan como archivo adjunto por correo electrónico. ¿Cuál es "maestro"? ¿Es siquiera posible decirlo? ¿Cómo se relacionan las diferentes versiones entre sí? ¿Cómo deben conciliarse las versiones? Si quieres ver la mejor versión actual, ¿cómo la consigues? Todo esto normalmente se soluciona mediante un contrato social y un proceso bastante manual.
+-   **Google Doc.** En este flujo de trabajo, solo hay una copia del documento y se encuentra en la nube. Cualquiera puede acceder a la versión más reciente bajo demanda. Cualquiera puede editar, comentar o proponer un cambio y esto estará inmediatamente disponible para todos los demás. Cualquiera puede ver quién ha estado editando el documento y, si ocurre un desastre, puede volver a una versión anterior. Se ha eliminado una gran cantidad de ambigüedades y molestos trabajos de reconciliación.
 
-## Who can do what?
+Gestionar un proyecto a través de Git/GitHub se parece mucho más al escenario de Google Doc y disfruta de muchas de las mismas ventajas. Definitivamente es más complicado que colaborar en un documento de Google, pero esto te pone en la mentalidad correcta.
 
-A public repository is readable by the world. The owner can grant higher levels of permission to others, such as the ability to push commits.
+## ¿Quién puede hacer qué?
 
-A private repository is invisible to the world. The owner can grant read, write (push), or admin access to others.
+Un repositorio público es legible por todo el mundo. El propietario puede otorgar niveles más altos de permiso a otros, como la capacidad de push commits.
 
-There is also a formal notion of an organization, which can be useful for managing repository permissions for entire teams of people.
+Un repositorio privado es invisible para el mundo. El propietario puede otorgar acceso de lectura, escritura (push) o administrador a otras personas.
 
-## Special features of GitHub
+También existe una noción formal de organización, que puede resultar útil para gestionar permisos de repositorio para equipos completos de personas.
 
-*this is perhaps too detailed ... full stop? or does it belong elsewhere?*
+## Características especiales de GitHub
 
-In addition to a well-designed user interface, GitHub offers two especially important features:
+*esto quizás sea demasiado detallado... ¿punto final? ¿o pertenece a otra parte?*
 
-  * **Issues.** Remember how we're high-jacking software development tools? Well, this is the bug tracker. It's a list of things ... bugs, feature requests, to dos, whatever.
-    - Issues are tightly integrated with email and therefore allow you to copy/embed important conversations in the associated repo.
-    - Issues can be assigned to people (e.g., to dos) and tagged ("bug" or "progress-report").
-    - Issues are tightly integrated with commits and therefore allow you to record *that the changes in this commit solve that problem which was discussed in that issue*.
-    - As a new user of GitHub, one of the most productive things you can do is to use GitHub issues to provide a clear bug report or feature request for a package you use.
- * **Pull requests.** Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: "Here are some changes I would like to make." It might be linked to a specific issue: "Related to #14." or "Fixes #56". GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.
+Además de una interfaz de usuario bien diseñada, GitHub ofrece dos características especialmente importantes:
 
-## What's special about using R with Git and GitHub?
+-   **Problemas(Issues).** ¿Recuerda que estamos secuestrando herramientas de desarrollo de software? Bueno, este es el rastreador de errores. Es una lista de cosas... errores, solicitudes de funciones, tareas pendientes, lo que sea.
+    -   Los problemas están estrechamente integrados con el correo electrónico y, por lo tanto, le permiten copiar/incrustar conversaciones importantes en el repositorio asociado.
+    -   Los problemas se pueden asignar a personas (por ejemplo, para hacer) y etiquetarlos ("error" o "informe de progreso").
+    -   Los problemas están estrechamente integrados con las confirmaciones y, por lo tanto, le permiten registrar *que los cambios en esta confirmación resuelven el problema que se discutió en esa edición*.
+    -   Como nuevo usuario de GitHub, una de las cosas más productivas que puede hacer es utilizar los problemas de GitHub para proporcionar un informe de error claro o una solicitud de función para un paquete que utiliza.
+-   **Solicitudes de extracción (Pull request).** Git permite que un proyecto tenga múltiples ramas de desarrollo independientes, con la idea de que algunas eventualmente deberían fusionarse nuevamente en la rama de desarrollo principal. Estos son términos técnicos de Git, pero es de esperar que también tengan sentido por sí solos. Una solicitud de extracción es una propuesta formal que dice: "Aquí hay algunos cambios que me gustaría realizar". Podría estar vinculado a un problema específico: "Relacionado con el n.º 14". o "Soluciona n.º 56". GitHub facilita y preserva la discusión de la propuesta, de manera integral y línea por línea.
 
-  * The active R package development community on GitHub. Read about R-specific GitHub resources and searching [here](sec-search).
-  * Specific workflows make it rewarding to share source code, rendered reports, and entire projects. Read more about [R Markdown](sec-rmd-test-drive), [R scripts](sec-r-test-drive), and [R-heavy projects](sec-repo-browsability).
-  * Git- and GitHub-related features of the [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/). This is covered throughout.
+## ¿Qué tiene de especial usar R con Git y GitHub?
 
-## Audience and pre-reqs
+-   La comunidad activa de desarrollo de paquetes R en GitHub. Lea acerca de las búsquedas y los recursos de GitHub específicos de R [aquí](sec-search).
+-   Los flujos de trabajo específicos hacen que sea gratificante compartir código fuente, informes renderizados y proyectos completos. Leer más sobre [R Markdown](sec-rmd-test-drive), [R scripts](sec-r-test-drive), y [R-heavy projects](sec-repo-browsability).
+-   Funciones relacionadas con Git y GitHub de [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/). Este aspecto se cubre a lo largo del libro.
 
-The target audience for this site is someone who analyzes data, probably with R, though some of the content may be useful to analysts using other languages. R package development with Git(Hub) is absolutely in scope, but it is not an explicit focus or requirement.
+## Audiencia y requisitos previos
 
-The site is aimed at intermediate to advanced R users, who are comfortable writing R scripts and managing R projects. You should have a good grasp of files and directories and be generally knowledgeable about where things live on your computer.
+El público objetivo de este sitio es alguien que analiza datos, probablemente con R, aunque parte del contenido puede ser útil para analistas que utilizan otros lenguajes. El desarrollo de paquetes R con Git(Hub) está absolutamente dentro del alcance, pero no es un enfoque o requisito explícito.
 
-Although we will show alternatives for most Git operations, we will inevitably spend some time in the shell and we assume some prior experience. For example, you should know how to open up a shell, navigate to a certain directory, and list the files there. You should be comfortable using shell commands to view/move/rename files and to work with your command history.
+El sitio está dirigido a usuarios de R de nivel intermedio a avanzado, que se sienten cómodos escribiendo scripts de R y gestionando proyectos de R. Debe tener un buen conocimiento de los archivos y directorios y, en general, tener conocimientos sobre dónde se encuentran las cosas en su computadora.
 
-## What this is NOT
+Aunque mostraremos alternativas para la mayoría de las operaciones de Git, inevitablemente pasaremos algún tiempo en el shell y asumimos cierta experiencia previa. Por ejemplo, debe saber cómo abrir un shell, navegar a un directorio determinado y enumerar los archivos allí. Debería sentirse cómodo usando comandos de shell para ver/mover/renombrar archivos y trabajar con su historial de comandos.
 
-We aim to teach novices about Git on a strict "need to know" basis. Git was built to manage development of the Linux kernel, which is probably very different from what you do. Most people need a small subset of Git's functionality and that will be our focus. If you want a full-blown exposition of Git as a directed acyclic graph or a treatise on the Git-Flow branching strategy, you will be sad.
+## Lo que esto NO es
+
+Nuestro objetivo es enseñar a los principiantes sobre Git basándose estrictamente en la "necesidad de saberlo". Git fue creado para gestionar el desarrollo del kernel de Linux, que probablemente sea muy diferente de lo que hace usted. La mayoría de la gente necesita un pequeño subconjunto de la funcionalidad de Git y ese será nuestro enfoque. Si desea una exposición completa de Git como un gráfico acíclico dirigido o un tratado sobre la estrategia de ramificación Git-Flow, no lo encontrará en este libro.
