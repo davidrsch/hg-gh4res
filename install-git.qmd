@@ -1,64 +1,63 @@
-# Install Git {#sec-install-git}
+# Instalar Git {#sec-install-git}
 
-You need Git, so you can use it at the command line and so RStudio can call it.
+Necesitas Git, para poder usarlo en la línea de comando y para que RStudio pueda llamarlo.
 
-If there's any chance it's installed already, verify that, rejoice, and skip this step. (But consider *updating* an existing installation.)
+Si existe alguna posibilidad de que ya esté instalado, verifíquelo, regocíjese y omita este paso. (Pero considere *actualizar* una instalación existente).
 
-Otherwise, find installation instructions below for your operating system.
+De lo contrario, encuentre las instrucciones de instalación a continuación para su sistema operativo.
 
 ```{r setup, include = FALSE}
 has_bash <- Sys.which('bash') != '' && .Platform$OS.type != 'windows'
 ```
 
-## Git already installed?
+## ¿Ya tiene Git instalado?
 
-Go to the shell (@sec-shell). Enter `which git` to request the path to your Git executable:
+Vaya al shell (@sec-shell). Ingrese `which git` para solicitar la ruta a su ejecutable de Git:
 
 ```{bash collapse = TRUE, eval = has_bash}
 which git
 ```
 
-and `git --version` to see its version:
- 
+y `git --version` para ver su versión:
+
 ```{bash collapse = TRUE, eval = has_bash}
 git --version
 ```
 
-If you are successful, that's great! You have Git already. No need to install! Move on.
+Si tienes éxito, ¡genial! Ya tienes Git. ¡No es necesario instalarlo! Siga adelante.
 
-If, instead, you see something more like `git: command not found`, keep reading.
+Si, en cambio, ves algo más parecido a `git: command not found`, sigue leyendo.
 
-macOS users might get an immediate offer to install command line developer tools. Yes, you should accept! Click "Install" and read more below.
+Los usuarios de macOS pueden recibir una oferta inmediata para instalar herramientas de desarrollo de línea de comandos. ¡Sí, deberías aceptar! Haga clic en "Instalar" y lea más a continuación.
 
-## Windows  {#sec-install-git-windows}
+## Windows {#sec-install-git-windows}
 
-**Option 1** (*highly recommended*): Install [Git for Windows](https://git-for-windows.github.io/), also known as `msysgit` or "Git Bash", to get Git in addition to some other useful tools, such as the Bash shell. Yes, all those names are totally confusing, but you might encounter them elsewhere and I want you to be well-informed.
+**Opción 1** (*muy recomendable*): Instalar [Git para Windows](https://git-for-windows.github.io/), también conocido como `msysgit` o "Git Bash", para obtener Git además de otras herramientas útiles, como el shell Bash. Sí, todos esos nombres son totalmente confusos, pero es posible que los encuentres en otros lugares y quiero que estés bien informado.
 
-We like this because Git for Windows leaves the Git executable in a conventional location, which will help you and other programs, e.g. RStudio, find it and use it. This also supports a transition to more expert use, because the "Git Bash" shell will be useful as you venture outside of R/RStudio.
+Nos gusta esto porque Git para Windows deja el ejecutable de Git en una ubicación convencional, lo que le ayudará a usted y a otros programas, por ejemplo. RStudio, encontrarlo y usarlo. Esto también admite una transición a un uso más experto, porque el shell "Git Bash" será útil cuando se aventure fuera de R/RStudio.
 
-  *  **NOTE:** When asked about "Adjusting your PATH environment", make sure to select "Git from the command line and also from 3rd-party software". Otherwise, we believe it is good to accept the defaults.
-  * Note that RStudio for Windows prefers for Git to be installed below `C:/Program Files` and this appears to be the default. This implies, for example, that the Git executable on my Windows system is found at `C:/Program Files/Git/bin/git.exe`. Unless you have specific reasons to otherwise, follow this convention.
+-   **NOTA:** Cuando se le pregunte acerca de "Ajustar su entorno PATH", asegúrese de seleccionar "Git desde la línea de comandos y también desde software de terceros". De lo contrario, creemos que es bueno aceptar los valores predeterminados.
+-   Tenga en cuenta que RStudio para Windows prefiere que Git se instale debajo de `C:/Program Files` y este parece ser el valor predeterminado. Esto implica, por ejemplo, que el ejecutable de Git en mi sistema Windows se encuentra en `C:/Program Files/Git/bin/git.exe`. A menos que tenga motivos específicos para lo contrario, siga esta convención.
 
-This also leaves you with a Git client, though not a very good one. So check out Git clients we recommend (@sec-git-client)).
+Esto también te deja con un cliente Git, aunque no muy bueno. Así que consulte los clientes de Git que recomendamos (@sec-git-client).
 
-FYI, this appears to be equivalent to what you would download from here: <https://git-scm.com/download/>.
+Para su información, esto parece ser equivalente a lo que descargaría desde aquí: <https://git-scm.com/download/>.
 
-**Option 2** (*recommended*): Install [Git for Windows](https://git-for-windows.github.io/) via the [Chocolatey](https://chocolatey.org) package manager. If this means anything to you, Chocolatey is like [`apt-get`](https://en.wikipedia.org/wiki/APT_(Debian)) or [Homebrew](https://brew.sh), but for Windows instead of Debian/Ubuntu Linux or macOS. As far as I can tell, using Chocolatey to install Git for Windows gives the same result as installing it yourself (option 1).
+**Opción 2** (*recomendado*): Instalar [Git para Windows](https://git-for-windows.github.io/) a través del administrador de paquetes [Chocolatey](https://chocolatey.org). Si esto significa algo para ti, Chocolatey es como [`apt-get`](https://en.wikipedia.org/wiki/APT_(Debian)) o [Homebrew](https://brew.sh), pero para Windows en lugar de Debian/Ubuntu Linux o macOS. Hasta donde puedo decir, usar Chocolatey para instalar Git para Windows da el mismo resultado que instalarlo usted mismo (opción 1).
 
-This obviously requires that you already have [Chocolatey](https://chocolatey.org) installed or that you are up for installing it. It is not hard and the [instructions are here](https://chocolatey.org/install). This may be worthwhile if it seems likely you will be installing more open source software in the future.
+Obviamente, esto requiere que ya tengas [Chocolatey](https://chocolatey.org) instalado o que estés listo para instalarlo. No es difícil y las [instrucciones están aquí](https://chocolatey.org/install). Esto puede valer la pena si parece probable que instale más software de código abierto en el futuro.
 
-After you install Chocolatey, in a shell (@sec-shell)), do:
+Después de instalar Chocolatey, en un shell (@sec-shell), haga:
 
 ``` bash
 choco install git.install
 ```
 
-This installs the most current [Git (Install) X.Y.Z](https://chocolatey.org/packages/git.install) Chocolatey package. At the time of writing, that is "Git (Install) 2.33.1", but that version number will increment over time.
+Esto instala el paquete Chocolatey [Git (Install) X.Y.Z](https://chocolatey.org/packages/git.install) más actual. Al momento de escribir este artículo, es "Git (Install) 2.33.1", pero ese número de versión aumentará con el tiempo.
 
-### Updating Git for Windows
+### Actualización de Git para Windows
 
-If you already have Git for Windows, but it's not the latest version, it's a good idea to update.
-You can [update like so from the command line](https://github.com/git-for-windows/git/wiki/FAQ#how-do-i-update-git-for-windows-upon-new-releases):
+Si ya tienes Git para Windows, pero no es la última versión, es una buena idea actualizarla. Puedes [actualizar así desde la línea de comando](https://github.com/git-for-windows/git/wiki/FAQ#how-do-i-update-git-for-windows-upon-new-releases):
 
 ``` bash
 git update-git-for-windows
@@ -66,56 +65,55 @@ git update-git-for-windows
 
 ## macOS
 
-**Option 1** (*highly recommended*): Install the Xcode command line tools (**not all of Xcode**), which includes Git.
+**Opción 1** (*muy recomendable*): Instale las herramientas de línea de comandos de Xcode (**no todas las de Xcode**), que incluyen Git.
 
-Go to the shell and enter one of these commands to elicit an offer to install developer command line tools:
+Vaya al shell e ingrese uno de estos comandos para obtener una oferta para instalar herramientas de línea de comandos para desarrolladores:
 
 ``` bash
 git --version
 git config
 ```
 
-Accept the offer! Click on "Install".
+¡Acepto la oferta! Haga clic en "Instalar".
 
-Here's another way to request this installation, more directly:
+Aquí tienes otra forma de solicitar esta instalación, más directamente:
 
 ``` bash
 xcode-select --install
 ```
 
-We just happen to find this Git-based trigger apropos.
+Resulta que encontramos apropiado este activador basado en Git.
 
-Note also that, after upgrading macOS, you might need to re-do the above and/or re-agree to the Xcode license agreement. We have seen this cause the RStudio Git pane to disappear on a system where it was previously working. Use commands like those above to tickle Xcode into prompting you for what it needs, then restart RStudio.
+Tenga en cuenta también que, después de actualizar macOS, es posible que deba volver a hacer lo anterior y/o volver a aceptar el acuerdo de licencia de Xcode. Hemos visto que esto hace que el panel RStudio Git desaparezca en un sistema donde estaba funcionando anteriormente. Utilice comandos como los anteriores para hacerle cosquillas a Xcode para que le solicite lo que necesita y luego reinicie RStudio.
 
-**Option 2** (*recommended*): Install Git from here: <http://git-scm.com/downloads>.
+**Opción 2** (*recomendado*): Instale Git desde aquí: <http://git-scm.com/downloads>.
 
-  * This arguably sets you up the best for the future. It will certainly get you the latest version of Git of all approaches described here.
-  * The GitHub home for the macOS installer is here: <https://github.com/timcharper/git_osx_installer>.
-    - At that link, you can find more info if something goes wrong or you are working on an old version of macOS.
+-   Podría decirse que esto le prepara lo mejor para el futuro. Sin duda, obtendrá la última versión de Git de todos los enfoques descritos aquí.
+-   El inicio de GitHub para el instalador de macOS está aquí: <https://github.com/timcharper/git_osx_installer>.
+    -   En ese enlace, puedes encontrar más información si algo sale mal o si estás trabajando en una versión anterior de macOS.
 
-**Option 3** (*recommended*): If you anticipate getting heavily into scientific computing, you're going to be installing and updating lots of software. You should check out [Homebrew](http://brew.sh), "the missing package manager for OS X". Among many other things, it can install Git for you. Once you have Homebrew installed, do this in the shell:
+**Opción 3** (*recomendada*): si prevé dedicarse mucho a la informática científica, instalará y actualizará una gran cantidad de software. Deberías consultar [Homebrew](http://brew.sh), "el administrador de paquetes que falta para OS X". Entre muchas otras cosas, puede instalar Git por ti. Una vez que haya instalado Homebrew, haga esto en el shell:
 
-```
+```         
 brew install git
 ```
 
-
 ## Linux
 
-Install Git via your distro's package manager.
+Instale Git a través del administrador de paquetes de su distribución.
 
-Ubuntu or Debian Linux:
+Ubuntu o Debian Linux:
 
-```sh
+``` sh
 sudo apt-get install git
 ```
 
-Fedora or RedHat Linux:
+Fedora o RedHat Linux:
 
-```sh
+``` sh
 sudo yum install git
 ```
 
-A comprehensive list for various Linux and Unix package managers:
+Una lista completa de varios administradores de paquetes de Linux y Unix:
 
 <https://git-scm.com/download/linux>
