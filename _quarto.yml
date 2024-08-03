@@ -3,14 +3,14 @@ project:
   output-dir: docs
 
 book:
-  title: "Happy Git and GitHub for the useR"
+  title: "Git y GitHub con R"
   reader-mode: true
 
   page-footer:
     left: |
-      <strong>“Happy Git and GitHub for the useR”</strong> was written by Jenny Bryan, the STAT 545 TAs, Jim Hester.
+      <strong>“Git y GitHub con ”</strong> fue escrito por Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester.
     right: |
-      This book was built using <a href="https://quarto.org/">Quarto</a>.
+      Este libro se hizo usando <a href="https://quarto.org/">Quarto</a>.
   favicon: logo.png
   author:
     - name: Jenny Bryan
@@ -31,7 +31,7 @@ book:
     - overview.qmd
     - contributors.qmd
     - workshops.qmd
-    - part: "Installation"
+    - part: "Instalación"
       chapters:
         - install-intro.qmd
         - install-github-acct.qmd
@@ -39,7 +39,7 @@ book:
         - install-git.qmd
         - install-introduce-self-git.qmd
         - install-git-client.qmd
-    - part: "Connect Git, GitHub, RStudio"
+    - part: "Conectar Git, GitHub, RStudio"
       chapters:
         - connect-intro.qmd
         - connect-https-pat.qmd
@@ -48,7 +48,7 @@ book:
         - connect-rstudio-git-github.qmd
         - connect-can-rstudio-use-git.qmd
         - connect-troubleshooting.qmd
-    - part: "Early GitHub Wins"
+    - part: "Primeras victorias en GitHub"
       chapters:
         - usage-intro.qmd
         - usage-new-project-github-first.qmd
@@ -56,7 +56,7 @@ book:
         - usage-existing-project-github-last.qmd
         - usage-rmd-and-github.qmd
         - usage-r-script-and-github.qmd
-    - part: "Git fundamentals"
+    - part: "Fundamentos de Git"
       chapters:
         - git-intro.qmd
         - git-basics.qmd
@@ -64,12 +64,12 @@ book:
         - git-branches.qmd
         - git-remotes.qmd
         - git-refs.qmd
-    - part: "Remote setups"
+    - part: "Configuraciones remotas"
       chapters:
         - remote-setups-intro.qmd
         - remote-setups-common.qmd
         - remote-setups-equivocal.qmd
-    - part: "Daily Workflows"
+    - part: "Flujos de trabajo diarios"
       chapters:
         - workflows-intro.qmd
         - workflows-repeated-amend.qmd
@@ -80,14 +80,14 @@ book:
         - workflows-upstream-changes-into-fork.qmd
         - workflows-explore-extend-pull-request.qmd
         - workflows-make-github-repo-browsable.qmd
-    - part: "Activity prompts"
+    - part: "Indicaciones de actividad"
       chapters:
         - prompt-clone.qmd
         - prompt-fork-pr-bingo.qmd
         - prompt-burn-it-all-down.qmd
         - prompt-practice-resets.qmd
         - prompt-search-github.qmd
-    - part: "Notes"
+    - part: "Notas"
       chapters:
         - notes-intro.qmd
         - notes-classroom-overview.qmd
@@ -110,7 +110,7 @@ format:
     bibliography: [book.bib, packages.bib]
     biblio-style: apalike
     link-citations: yes
-    author-meta: "Jenny Bryan, the STAT 545 TAs and Jim Hester"
+    author-meta: "Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester"
     callout-appearance: simple
     include-after-body: [ddrsch_script.html]
 
