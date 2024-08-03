@@ -1,43 +1,43 @@
-# Register a GitHub account {#sec-github-acct}
+# Crear una cuenta de GitHub {#sec-github-acct}
 
-Register an account with GitHub. It's free!
+Crear una cuenta con GitHub. ¡Es gratis!
 
-  * <https://github.com>
+-   <https://github.com>
 
-## Username advice
+## Consejos de nombre de usuario
 
-You will be able to upgrade to a paid level of service, apply discounts, join organizations, etc. in the future, so don't fret about any of that now. **Except your username. You might want to give that some thought.**
+Podrás actualizar a un nivel de servicio pago, aplicar descuentos, unirte a organizaciones, etc. en el futuro, así que no te preocupes por nada de eso ahora. **Excepto tu nombre de usuario. Tal vez quieras pensarlo un poco.**
 
-A few tips, which sadly tend to contradict each other:
+Algunos consejos que lamentablemente tienden a contradecirse:
 
-  * Incorporate your actual name! People like to know who they're dealing with. Also makes your username easier for people to guess or remember.
-  * Reuse your username from other contexts, e.g., Twitter or Slack. But, of course, someone with no GitHub activity will probably be squatting on that.
-  * Pick a username you will be comfortable revealing to your future boss.
-  * Shorter is better than longer.
-  * Be as unique as possible in as few characters as possible. In some settings GitHub auto-completes or suggests usernames.
-  * Make it timeless. Don't highlight your current university, employer, or place of residence, e.g. JennyFromTheBlock.
-  * Avoid words laden with special meaning in programming. In my first inept efforts to script around the GitHub API, I assigned lots of issues to [the guy with username `NA`](https://github.com/na) because my vector of GitHub usernames contained missing values. A variant of [Little Bobby Tables](https://xkcd.com/327/).
-  * Avoid the use of upper vs. lower case to separate words. We highly recommend all lowercase. GitHub treats usernames in a case insensitive way, but using all lowercase is kinder to people doing downstream regular expression work with usernames, in various languages. A better strategy for word separation is to use a hyphen `-`.
+-   ¡Incorpora tu nombre real! A la gente le gusta saber con quién están tratando. También hace que su nombre de usuario sea más fácil de adivinar o recordar.
+-   Reutiliza tu nombre de usuario de otros contextos, por ejemplo, Twitter o Slack. Pero, por supuesto, alguien sin actividad en GitHub probablemente estará ocupado con eso.
+-   Elija un nombre de usuario que le resulte cómodo revelarle a su futuro jefe.
+-   Más corto es mejor que más largo.
+-   Ser lo más único posible en la menor cantidad de caracteres posible. En algunas configuraciones, GitHub completa automáticamente o sugiere nombres de usuario.
+-   Hazlo atemporal. No resalte su universidad, empleador o lugar de residencia actual, p.ejemplo JennySeLaCuadra.
+-   Evite palabras cargadas de significado especial en programación. En mis primeros esfuerzos ineptos para crear scripts en torno a la API de GitHub, le asigné muchos problemas a [el tipo con el nombre de usuario `NA`](https://github.com/na) porque mi vector de nombres de usuarios de GitHub contenía valores faltantes. Una variante de [Little Bobby Tables](https://xkcd.com/327/).
+-   Evite el uso de mayúsculas y minúsculas para separar palabras. Recomendamos encarecidamente todo en minúsculas. GitHub trata los nombres de usuario sin distinguir entre mayúsculas y minúsculas, pero usar todas las minúsculas es más amable con las personas que realizan trabajos de expresión regular posteriores con nombres de usuarios, en varios idiomas. Una mejor estrategia para la separación de palabras es utilizar un guión `-`.
 
-You can change your username later, but better to get this right the first time.
+Puedes cambiar tu nombre de usuario más tarde, pero es mejor hacerlo bien la primera vez.
 
-  * <https://help.github.com/articles/changing-your-github-username/>
-  * <https://help.github.com/articles/what-happens-when-i-change-my-username/>
+-   <https://help.github.com/articles/changing-your-github-username/>
+-   <https://help.github.com/articles/what-happens-when-i-change-my-username/>
 
-## Free private repos
+## Repositorios privados gratuitos
 
-GitHub offers free unlimited private repositories for all users. These free private repositories support up to three external collaborators, making them a perfect place for your personal projects, for job applications, and testing things out before making your project open source.
+GitHub ofrece repositorios privados ilimitados y gratuitos para todos los usuarios. Estos repositorios privados gratuitos admiten hasta tres colaboradores externos, lo que los convierte en un lugar perfecto para sus proyectos personales, para solicitudes de empleo y para probar cosas antes de convertir su proyecto en código abierto.
 
-Go ahead and register your free account NOW and then pursue any special offer that applies to you:
+Continúe y registre su cuenta gratuita AHORA y luego busque cualquier oferta especial que se aplique a usted:
 
-  * Students, faculty, and educational/research staff: [GitHub Education](https://education.github.com).
-    - GitHub "Organizations" can be extremely useful for courses or research/lab groups, where you need some coordination across a set of repos and users.
-  * Official nonprofit organizations and charities: [GitHub for Good](https://github.com/nonprofit)
-  
-## Pay for private repos
+-   Estudiantes, profesores y personal educativo/investigador: [GitHub Education](https://education.github.com).
+    -   GitHub "Organizations" puede ser extremadamente útil para cursos o grupos de investigación/laboratorio, donde se necesita cierta coordinación entre un conjunto de repositorios y usuarios.
+-   Organizaciones oficiales sin fines de lucro y organizaciones benéficas: [GitHub for Good](https://github.com/nonprofit)
 
-Anyone can pay to have private repos with support for unlimited collaborators. A personal plan with private repos supporting unlimited collaborators is $7 / month at the time of writing, and includes several [advanced features](https://help.github.com/articles/github-s-products/#github-pro). See the current plans and pricing here:
+## Pagar por repositorios privados
 
-  * <https://github.com/pricing>
+Cualquiera puede pagar para tener repositorios privados con soporte para colaboradores ilimitados. Un plan personal con repositorios privados que admite colaboradores ilimitados cuesta $ 7 por mes al momento de escribir este artículo e incluye varias [funciones avanzadas] (https://help.github.com/articles/github-s-products/#github-pro ). Vea los planes y precios actuales aquí:
 
-Go ahead and register your free account NOW. You can decide later if you'd like to upgrade to a paid plan.
+-   <https://github.com/pricing>
+
+Continúe y registre su cuenta gratuita AHORA. Podrás decidir más adelante si deseas actualizar a un plan pago.
