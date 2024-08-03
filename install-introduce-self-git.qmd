@@ -1,6 +1,6 @@
-# Introduce yourself to Git {#sec-hello-git}
+# Preséntate a Git {#sec-hello-git}
 
-In the shell (Appendix @sec-shell):
+En el shell (@sec-shell):
 
 ``` bash
 git config --global user.name "Jane Doe"
@@ -8,53 +8,53 @@ git config --global user.email "jane@example.com"
 git config --global --list
 ```
 
-substituting your name and **the email associated with your GitHub account**.
+sustituyendo su nombre y **el correo electrónico asociado con su cuenta de GitHub**.
 
-The [usethis package](https://usethis.r-lib.org) offers an alternative approach. You can set your Git user name and email from within R:
+El [paquete usethis](https://usethis.r-lib.org) ofrece un enfoque alternativo. Puede configurar su nombre de usuario de Git y su correo electrónico desde R:
 
 ```{r, eval = FALSE}
-## install if needed (do this exactly once):
+## instálelo si es necesario (haga esto exactamente una vez):
 ## install.packages("usethis")
 
 library(usethis)
 use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
 ```
 
-## More about `git config`
+## Más sobre `git config`
 
-An easy way to get into a shell from RStudio is *Tools \> Terminal* or *Tools \> Shell*. More about the shell in the Appendix @sec-shell.
+Una manera fácil de acceder a un shell desde RStudio es *Tools \> Terminal* or *Tools \> Shell*. Más sobre el shell en el @sec-shell.
 
-Special Windows gotchas: If you are struggling on Windows, consider there are different types of shell and you might be in the wrong one. You want to be in a "Git Bash" shell, as opposed to Power Shell or the legacy `cmd.exe` command prompt. Read more in [the Appendix](#sec-windows-shell-hell). This might also be a reason to do this configuration via the usethis package in R.
+Problemas especiales de Windows: si tiene problemas con Windows, considere que existen diferentes tipos de shell y es posible que esté en el equivocado. Desea estar en un shell "Git Bash", a diferencia de Power Shell o el símbolo del sistema heredado `cmd.exe`. Lea más en [el Apéndice](#sec-windows-shell-hell). Esta también podría ser una razón para realizar esta configuración a través del paquete usethis en R.
 
-What user name should you give to Git? This does not have to be your GitHub user name, although it can be. Another good option is your actual first name and last name. If you commit from different machines, sometimes people work that info into the user name. Your commits will be labelled with this user name, so make it informative to potential collaborators and future you.
+¿Qué nombre de usuario deberías darle a Git? No es necesario que sea su nombre de usuario de GitHub, aunque puede serlo. Otra buena opción es su nombre y apellido reales. Si realiza commits desde diferentes máquinas, a veces las personas introducen esa información en el nombre de usuario. Sus commits estarán etiquetadas con este nombre de usuario, así que hágalo informativo para los colaboradores potenciales y para usted en el futuro.
 
-What email should you give to Git? This **must** be the email associated with your GitHub account.
+¿Qué correo electrónico deberías darle a Git? Este **debe** ser el correo electrónico asociado con su cuenta de GitHub.
 
-The first two commands used in the shell beginning with `git config --global` return nothing in the terminal. You can check that Git understood what you typed by looking at the output of the third from `git config --global --list`.
+Los primeros dos comandos utilizados en el shell que comienzan con `git config --global` no devuelve nada en la terminal. Puedes comprobar que Git entendió lo que escribiste mirando el resultado del tercero de `git config --global --list`.
 
-### Configure the Git editor {#sec-git-editor}
+### Configurar el editor Git {#sec-git-editor}
 
-Another Git option that many people eventually configure is the editor. At some point, you will fail to give Git what it wants in terms of a commit message and it will kick you into an editor. This can be distressing, if it's not your editor of choice and you don't even know how to save and quit. You can enforce your will with something along these lines:
+Otra opción de Git que mucha gente acaba configurando es el editor. En algún momento, no podrás darle a Git lo que quiere en términos de un mensaje de commit y te enviará a un editor. Esto puede ser angustioso si no es su editor preferido y ni siquiera sabe cómo guardar y salir. Puedes hacer cumplir tu voluntad con algo como esto:
 
 ``` bash
 git config --global core.editor "emacs"
 ```
 
-Substitute your preferred editor for `"emacs"` here. Software Carpentry's Git lesson has a comprehensive listing of the exact `git config` command needed for [many combinations of OS and editor](https://swcarpentry.github.io/git-novice/02-setup.html).
+Sustituya aquí su editor preferido por `"emacs"`. La lección de Git de Software Carpentry tiene una lista completa del comando exacto `git config` necesario para [muchas combinaciones de sistema operativo y editor](https://swcarpentry.github.io/git-novice/02-setup.html).
 
-### Configure the default name for an initial branch
+### Configurar el nombre predeterminado para una rama inicial
 
-You may also want to configure the default name for the initial branch in a new repo. Historically, this has been `master`, as that was baked into Git itself. It's increasingly common to use `main` instead, but you have to opt-in to this.
+Es posible que también desee configurar el nombre predeterminado para la rama inicial en un nuevo repositorio. Históricamente, esto ha sido `master`, ya que estaba integrado en el propio Git. Es cada vez más común usar `main` en su lugar, pero debes aceptarlo.
 
-In 2020, the `init.defaultBranch` setting was introduced so that this became user-configurable. Shortly thereafter, major Git hosts like GitHub and GitLab made `main` the default initial branch name for repos created on their platforms and also provided considerable support for renaming existing default branches.
+En 2020, se introdujo la configuración `init.defaultBranch` para que el usuario pueda configurarla. Poco después, los principales hosts de Git como GitHub y GitLab hicieron de `main` el nombre de rama inicial predeterminado para los repositorios creados en sus plataformas y también brindaron un soporte considerable para cambiar el nombre de las ramas predeterminadas existentes.
 
-You can set your default initial branch name to `main` like so, in the shell:
+Puede configurar su nombre de rama inicial predeterminado en `main` así, en el shell:
 
 ``` bash
 git config --global init.defaultBranch main
 ```
 
-or from R (the default for `name` is `"main"`):
+o desde R (el valor predeterminado para `name` es `"main"`):
 
 ```{r eval = FALSE}
 usethis::git_default_branch_configure()
