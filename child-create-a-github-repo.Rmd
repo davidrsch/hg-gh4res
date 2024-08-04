@@ -1,20 +1,20 @@
-Go to <https://github.com> and make sure you are logged in.
+Vaya a <https://github.com> y asegúrese de haber iniciado sesión.
 
-Near "Repositories", click the big green "New" button. Or, if you are on your own profile page, click on "Repositories", then click the big green "New" button.
+Cerca de "Repositorios", haga clic en el gran botón verde "Nuevo". O, si está en su propia página de perfil, haga clic en "Repositorios" y luego haga clic en el gran botón verde "Nuevo".
 
-How to fill this in:
+Cómo completar esto:
 
--   Repository template: No template.
--   Repository name: \<\<<repository_name_text>\>\>
--   Description: \<\<<description_text>\>\>
--   Public.
+-   Plantilla de repositorio: sin plantilla.
+-   Nombre del repositorio: \<\<<repository_name_text>\>\>
+-   Descripción: \<\<<description_text>\>\>
+-   Público.
 -   \<\<<initialize_text>\>\>
 
-Click the big green button that says "Create repository".
+Haga clic en el gran botón verde que dice "Crear repositorio".
 
-Now click the big green button that says "\<\> Code".
+Ahora haga clic en el gran botón verde que dice "\<\> Code".
 
-Copy a clone URL to your clipboard. If you're taking our default advice, copy the HTTPS URL. But if you're opting for SSH, then make sure to copy the SSH URL.
+Copie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.
 
 ```{r}
 #| echo = FALSE, fig.align = "center", out.width = "60%",
