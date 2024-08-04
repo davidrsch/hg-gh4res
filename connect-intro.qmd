@@ -1,13 +1,13 @@
-# Can you hear me now? {#sec-connect-intro .unnumbered}
+# ¿Puedes escucharme ahora? {#sec-connect-intro .unnumbered}
 
-The next few chapters walk through some basic operations to confirm you have installed the necessary software and that the necessary connections are being made, between tools on your computer and between your computer and GitHub.
+Los siguientes capítulos repasan algunas operaciones básicas para confirmar que ha instalado el software necesario y que se están realizando las conexiones necesarias, entre las herramientas de su computadora y entre su computadora y GitHub.
 
-This has a lot of overlap with some basic workflows we revisit later, but the second time around (or in a live workshop), we'll spend more time explaining what's happening and why.
+Esto se superpone mucho con algunos flujos de trabajo básicos que revisaremos más adelante, pero la segunda vez (o en un taller en vivo), dedicaremos más tiempo a explicar qué está sucediendo y por qué.
 
-Unfortunately, we have to front-load a rather fiddly task, which is to decide whether to communicate with GitHub via HTTPS or SSH and setup some credentials accordingly. In \[Personal access token for HTTPS\] we discuss how to choose between HTTPS and SSH and then walk through obtaining a personal access token, which is used with HTTPS. Or, alternatively, we will help you \[Set up keys for SSH\].
+Desafortunadamente, tenemos que adelantar una tarea bastante complicada, que es decidir si comunicarnos con GitHub a través de HTTPS o SSH y configurar algunas credenciales en consecuencia. En [Token de acceso personal para HTTPS](#sec-https-pat) analizamos cómo elegir entre HTTPS y SSH y luego explicamos cómo obtener un token de acceso personal, que se usa con HTTPS. O, alternativamente, te ayudaremos a [Configurar claves para SSH](#sec-ssh-keys).
 
-Once we have our credentials sorted out, in \[Connect to GitHub\], we use Git in the shell to make sure you can clone a repo from GitHub and establish two-way communications, i.e. pull and push.
+Una vez que tenemos nuestras credenciales ordenadas, en [Conectar a GitHub](#sec-push-pull-github), usamos Git en el shell para asegurarnos de que pueda clonar un repositorio desde GitHub y establecer comunicaciones bidireccionales, es decir, extraer y enviar.
 
-In \[Connect RStudio to Git and GitHub\] we confirm that RStudio can work with your Git installation to perform local operations and communicate with GitHub.
+En [Conectar RStudio a Git y GitHub](#sec-rstudio-git-github) confirmamos que RStudio puede trabajar con su instalación de Git para realizar operaciones locales y comunicarse con GitHub.
 
-Hopefully you won't need it, but this part concludes with two troubleshooting chapters: \[Detect Git from RStudio\] and \[RStudio, Git, GitHub Hell\].
+Esperemos que no lo necesites, pero esta parte concluye con dos capítulos de solución de problemas: [Detectar Git desde RStudio](#sec-rstudio-see-git) y [RStudio, Git, GitHub Hell](#sec-troubleshooting).
