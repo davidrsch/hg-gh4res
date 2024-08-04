@@ -4,20 +4,20 @@
 knitr::include_graphics("img/new-project-github-first.jpeg")
 ```
 
-I present two ways to do this:
+Les presento dos formas de hacer esto:
 
 -   `usethis::create_from_github()`
--   Via the RStudio IDE
+-   A través del IDE de RStudio
 
-*(Recall that we showed how to do this with command line Git in @sec-push-pull-github.)*
+*(Recuerde que mostramos cómo hacer esto con la línea de comando Git en @sec-push-pull-github.)*
 
-When you are cloning your own GitHub repository, the two methods are equivalent. In other scenarios, especially fork-and-clone (@secfork-and-clone), I think `usethis::create_from_github()` is superior, because it does additional, recommended setup.
+Cuando clonas tu propio repositorio de GitHub, los dos métodos son equivalentes. En otros escenarios, especialmente fork-and-clone (@secfork-and-clone), creo que `usethis::create_from_github()` es superior, porque realiza una configuración adicional recomendada.
 
-Pick **one** of these methods below.
+Elija **uno** de estos métodos a continuación.
 
 ### `usethis::create_from_github()`
 
-You can execute this command in any R session. If you use RStudio, then do this in the R console of any RStudio instance.
+Puede ejecutar este comando en cualquier sesión de R. Si usa RStudio, hágalo en la consola R de cualquier instancia de RStudio.
 
 ```{r eval = FALSE}
 usethis::create_from_github(
@@ -26,35 +26,35 @@ usethis::create_from_github(
 )
 ```
 
-The first argument is `repo_spec` and it accepts the GitHub repo specification in various forms. In particular, you can use the URL we just copied from GitHub.
+El primer argumento es `repo_spec` y acepta la especificación del repositorio de GitHub en varias formas. En particular, puedes usar la URL que acabamos de copiar de GitHub.
 
-The `destdir` argument specifies the parent directory where you want the new folder (and local Git repo) to live. If you don't specify `destdir`, usethis defaults to some very conspicuous place, like your desktop. If you like to keep Git repos in a certain folder on your computer, you can personalize this default by setting the `usethis.destdir` option in your `.Rprofile`.
+El argumento `destdir` especifica el directorio principal donde desea que resida la nueva carpeta (y el repositorio local de Git). Si no especifica `destdir`, use este valor predeterminado en algún lugar muy visible, como su escritorio. Si desea mantener los repositorios de Git en una determinada carpeta de su computadora, puede personalizar este valor predeterminado configurando la opción `usethis.destdir` en su `.Rprofile`.
 
-We're accepting the default behaviour of two other arguments, `rstudio` and `open`, because that's what most people will want. For example, for an RStudio user, `create_from_github()` does this:
+Aceptamos el comportamiento predeterminado de otros dos argumentos, `rstudio` y `open`, porque eso es lo que la mayoría de la gente querrá. Por ejemplo, para un usuario de RStudio, `create_from_github()` hace esto:
 
--   Creates a new local directory in `destdir`, which is all of these things:
-    -   a directory or folder on your computer
-    -   a Git repository, linked to a remote GitHub repository
-    -   an RStudio Project
--   Opens a new RStudio instance in the new Project
--   **In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.**
+-   Crea un nuevo directorio local en `destdir`, que contiene todas estas cosas:
+    -   un directorio o carpeta en su computadora
+    -   un repositorio Git, vinculado a un repositorio GitHub remoto
+    -   un proyecto RStudio
+-   Abre una nueva instancia de RStudio en el nuevo Proyecto.
+-   **En ausencia de otras restricciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.**
 
 ### RStudio IDE
 
-In RStudio, start a new Project:
+En RStudio, inicie un nuevo proyecto:
 
--   *File \> New Project \> Version Control \> Git*. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this `https://github.com/jennybc/myrepo.git`.
--   Be intentional about where you create this Project.
--   I suggest you "Open in new session".
--   Click "Create Project" to create a new directory, which will be all of these things:
-    -   a directory or "folder" on your computer
-    -   a Git repository, linked to a remote GitHub repository
-    -   an RStudio Project
--   **In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.**
+-   *File \> New Project \> Version Control \> Git*. En la "URL del repositorio", pegue la URL de su nuevo repositorio de GitHub. será algo como esto `https://github.com/jennybc/myrepo.git`.
+-   Sea intencional acerca de dónde crea este proyecto.
+-   Te sugiero "Abrir en nueva sesión".
+-   Haga clic en "Crear proyecto" para crear un nuevo directorio, que contendrá todas estas cosas:
+    -   un directorio o "carpeta" en su computadora
+    -   un repositorio Git, vinculado a un repositorio GitHub remoto
+    -   un proyecto RStudio
+-   **En ausencia de otras limitaciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.**
 
-This should download the `README.md` file that we created on GitHub in the previous step. Look in RStudio's file browser pane for the `README.md` file.
+Esto debería descargar el archivo `README.md` que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo `README.md`.
 
-Behind the scenes, RStudio has done this for you:
+Detrás de escena, RStudio ha hecho esto por usted:
 
 ``` console
 git clone https://github.com/jennybc/myrepo.git
