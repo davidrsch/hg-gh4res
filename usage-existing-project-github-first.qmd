@@ -1,23 +1,23 @@
-# Existing project, GitHub first {#sec-existing-github-first}
+# Proyecto existente, GitHub primero {#sec-existing-github-first}
 
-This is a novice-friendly workflow for bringing an existing R project into the RStudio and Git/GitHub universe.
+Este es un flujo de trabajo amigable para principiantes para incorporar un proyecto R existente al universo RStudio y Git/GitHub.
 
-We do this in a slightly goofy way, in order to avoid using Git at the command line. You won't want to work this way forever, but it's perfectly fine as you're getting started! At first, the main goal is to accumulate some experience and momentum. There is nothing goofy about the GitHub repo that this creates, it is completely standard. Transition to a more elegant process when you're ready.
+Hacemos esto de una manera un poco tonta, para evitar usar Git en la línea de comando. No querrás trabajar de esta manera para siempre, ¡pero está perfectamente bien cuando comiences! Al principio, el objetivo principal es acumular algo de experiencia e impulso. No hay nada ridículo en el repositorio de GitHub que esto crea, es completamente estándar. Haga la transición a un proceso más elegante cuando esté listo.
 
-We assume you've got your existing R project isolated in a directory on your computer. If that's not already true, make it so. Create a directory and marshal all the existing data and R scripts there. It doesn't really matter where you do this, but note where the project currently lives.
+Asumimos que tiene su proyecto R existente aislado en un directorio de su computadora. Si eso aún no es cierto, hazlo así. Cree un directorio y reúna allí todos los datos y scripts R existentes. Realmente no importa dónde hagas esto, pero ten en cuenta dónde se encuentra actualmente el proyecto.
 
-## Make a repo on GitHub
+## Haga un repositorio en GitHub
 
 ```{r echo = FALSE, results = "asis"}
 dat <- list(
   repository_name_text = glue::glue("
-    `myrepo` or a similarly short name for this existing project. Approach \\
-    this similar to a variable name, in code: descriptive but brief, no \\
-    whitespace. Letters, digits, `-`, `.`, or `_` are allowed."),
+    `myrepo` o un nombre corto similar para este proyecto existente. Acercarse \\
+    esto similar a un nombre de variable, en código: descriptivo pero breve, sin\\
+    espacios en blanco. Se permiten letras, dígitos, `-`, `.` o `_`."),
   description_text = glue::glue("
-    \"Analysis of the stuff\" or any short description of the project. Write \\
-    this for humans."),
-  initialize_text = "Initialize this repository with: Add a README file."
+    \"Análisis del material\" o cualquier breve descripción del proyecto. Escribe \\
+    esto para humanos."),
+  initialize_text = "Inicialice este repositorio con: Agregue un archivo README."
 )
 insert <- glue::glue_data(
   dat,
@@ -28,7 +28,7 @@ res <- knitr::knit_child(text = insert, quiet = TRUE)
 cat(res, sep = '\n')
 ```
 
-## New RStudio Project via git clone {#sec-git-clone-usethis-rstudio}
+## Nuevo proyecto RStudio a través de git clone {#sec-git-clone-usethis-rstudio}
 
 ```{r echo = FALSE, results = "asis"}
 insert <- readr::read_file("child-clone-a-github-repo.Rmd")
@@ -36,30 +36,30 @@ res <- knitr::knit_child(text = insert, quiet = TRUE)
 cat(res, sep = '\n')
 ```
 
-## Bring your existing project over
+## Traiga su proyecto existente
 
-Using your favorite method of moving or copying files, copy the files that constitute your existing project into the directory for this new project.
+Utilizando su método favorito para mover o copiar archivos, copie los archivos que constituyen su proyecto existente en el directorio de este nuevo proyecto.
 
-In RStudio, consult the Git pane and the file browser.
+En RStudio, consulte el panel de Git y el explorador de archivos.
 
--   Are you seeing all the files? They should be here if your move/copy was successful.
--   Are they showing up in the Git pane with questions marks? They should be appearing as new untracked files.
+-   ¿Estás viendo todos los archivos? Deberían estar aquí si su movimiento/copia fue exitoso.
+-   ¿Aparecen en el panel de Git con signos de interrogación? Deberían aparecer como archivos nuevos sin seguimiento.
 
-## Stage and commit
+## Verificar y confirmar
 
-Commit your files to this repo. How?
+Confirme sus archivos en este repositorio. ¿Cómo?
 
--   Click the "Git" tab in upper right pane
--   Check the "Staged" box for all files that you want to commit.
-    -   Default: stage it.
-    -   When to reconsider: this will all go to GitHub. Consider if that is appropriate for each file. **You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub**. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in `.gitignore`.
--   If you're not already in the Git pop-up, click "Commit"
--   Type a message in "Commit message", such as "Init project XYZ".
--   Click "Commit"
+-   Haga clic en la pestaña "Git" en el panel superior derecho
+-   Marque la casilla "Staged" para todos los archivos que desee confirmar.
+    -   Predeterminado: verificado.
+    -   Cuándo reconsiderarlo: todo esto irá a GitHub. Considere si eso es apropiado para cada archivo. **Puedes conservar absolutamente un archivo localmente, sin enviarlo al repositorio de Git y enviarlo a GitHub**. Simplemente déjelo ahí en su panel de Git, sin que esté preparado. No se hará ningún daño. Si se trata de una situación a largo plazo, incluya el archivo en `.gitignore`.
+-   Si aún no estás en la ventana emergente de Git, haz clic en "Commit".
+-   Escriba un mensaje en "Commit message", como "Iniciar proyecto XYZ".
+-   Haga clic en "Commit"
 
-## Push your local changes to GitHub
+## Envía tus cambios locales a GitHub
 
-Click the green "Push" button to send your local changes to GitHub. RStudio will display something like:
+Haga clic en el botón verde "Push" para enviar sus cambios locales a GitHub. RStudio mostrará algo como:
 
 ``` console
 >>> /usr/bin/git push origin HEAD:refs/heads/main
@@ -67,17 +67,17 @@ To https://github.com/jennybc/myrepo.git
    3a2171f..6d58539  HEAD -> main
 ```
 
-## Confirm the local change propagated to the GitHub remote
+## Confirmar el cambio local propagado al control remoto de GitHub
 
-Go back to the browser. I assume we're still viewing your new GitHub repo.
+Vuelve al navegador. Supongo que todavía estamos viendo su nuevo repositorio de GitHub.
 
-Refresh.
+Actualice.
 
-You should see all the project files you committed there.
+Deberías ver todos los archivos del proyecto que confirmaste allí.
 
-If you click on "commits," you should see one with the message you used, e.g. "Init project XYZ".
+Si hace clic en "commit", debería ver uno con el mensaje que utilizó, p. "Iniciar proyecto XYZ".
 
-## The end
+## El fin
 
 ```{r echo = FALSE, results = "asis"}
 cat(readLines("child-the-end-of-repo-setup.Rmd"), sep = '\n')
