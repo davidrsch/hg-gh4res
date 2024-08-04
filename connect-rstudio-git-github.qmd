@@ -1,42 +1,42 @@
-# Connect RStudio to Git and GitHub {#sec-rstudio-git-github}
+# Conectar RStudio a Git y GitHub {#sec-rstudio-git-github}
 
-Here we verify that RStudio can issue Git commands on your behalf. Assuming that you've gotten local Git to talk to GitHub, this means you'll also be able to pull from and push to GitHub from RStudio.
+Aquí verificamos que RStudio puede emitir comandos Git en su nombre. Suponiendo que haya conseguido que Git local se comunique con GitHub, esto significa que también podrá extraer y enviar a GitHub desde RStudio.
 
-In later chapters and in live workshops, we revisit these operations with much more explanation.
+En capítulos posteriores y en talleres en vivo, revisamos estas operaciones con mucha más explicación.
 
-If you succeed here, your set up is DONE.
+Si tiene éxito aquí, su configuración estará HECHA.
 
-## Prerequisites
+## Requisitos previos
 
-We assume the following:
+Suponemos lo siguiente:
 
--   You've registered a free GitHub account (@sec-github-acct).
--   You've installed/updated R and RStudio (@sec-install-r-rstudio).
--   You've installed Git (@sec-install-git).
--   You've introduced yourself to Git (@sec-hello-git).
--   You've confirmed that you can push to / pull from GitHub from the command line (@sec-push-pull-github).
+-   Has registrado una cuenta gratuita de GitHub (@sec-github-acct).
+-   Has instalado/actualizado R y RStudio (@sec-install-r-rstudio).
+-   Has instalado Git (@sec-install-git).
+-   Te has presentado a Git (@sec-hello-git).
+-   Has confirmado que puedes enviar/extraer desde GitHub desde la línea de comando (@sec-push-pull-github).
 
-You will also need a test repository on GitHub. If you don't have a suitable test repository on GitHub, follow the instructions in the next section.
+También necesitarás un repositorio de prueba en GitHub. Si no tiene un repositorio de prueba adecuado en GitHub, siga las instrucciones de la siguiente sección.
 
-If you just completed the previous chapter, \[Connect to GitHub\], that repo will be perfect! However, I encourage you to delete the *local* repository, so you can experience how we use RStudio to clone it and get a local copy. This is a actually a workflow we refer to elsewhere (see @sec-burn) as "burn it all down". It's a deeply pragmatic coping strategy if your local Git repo is goofed up, but the version on GitHub is pretty current.
+Si acaba de completar el capítulo anterior, [Conectarse a GitHub](#sec-push-pull-github), ¡ese repositorio será perfecto! Sin embargo, le recomiendo que elimine el repositorio *local*, para que pueda experimentar cómo usamos RStudio para clonarlo y obtener una copia local. En realidad, este es un flujo de trabajo al que nos referimos en otros lugares (ver @sec-burn) como "quemarlo todo". Es una estrategia profundamente pragmática para afrontar la situación si su repositorio Git local está estropeado, pero la versión en GitHub es bastante actual.
 
-Delete the folder corresponding to the **local repo** any way you like. It's just a regular directory on your computer. Here's how to do that in the shell, if current working directory is `myrepo`:
+Elimina la carpeta correspondiente al **repositorio local** como quieras. Es solo un directorio normal en su computadora. Aquí se explica cómo hacerlo en el shell, si el directorio de trabajo actual es `myrepo`:
 
 ``` console
 cd ..
 rm -rf myrepo/
 ```
 
-## Make a repo on GitHub
+## Hacer un repositorio en GitHub
 
 ```{r echo = FALSE, results = "asis"}
 dat <- list(
   repository_name_text = glue::glue("
-    `myrepo` or whatever you wish (we'll delete this soon)."),
+    `myrepo` o lo que quieras (lo eliminaremos pronto)."),
   description_text = glue::glue("
-    \"Repository for testing my Git/GitHub setup\" or similar. It's nice to \\
-    have something here, so you'll see it appear in the README."),
-  initialize_text = "Initialize this repository with: Add a README file."
+    \"Repositorio para probar mi configuración de Git/GitHub\" o similar. Es bueno \\
+    Tengo algo aquí, así que lo verás aparecer en el archivo README."),
+  initialize_text = "Inicialice este repositorio con: Agregue un archivo README."
 )
 insert <- glue::glue_data(
   dat,
@@ -47,64 +47,64 @@ res <- knitr::knit_child(text = insert, quiet = TRUE)
 cat(res, sep = '\n')
 ```
 
-## Clone the test GitHub repository to your computer via RStudio
+## Clona el repositorio de prueba de GitHub en tu computadora a través de RStudio
 
-In RStudio, start a new Project:
+En RStudio, inicie un nuevo proyecto:
 
--   *File \> New Project \> Version Control \> Git*. In "Repository URL", paste the URL of your new GitHub repository. It will be something like this `https://github.com/jennybc/myrepo.git`.
-    -   Do you NOT see an option to get the Project from Version Control? Restart RStudio and try again. Still no luck? Go to @sec-rstudio-see-git for tips on how to help RStudio find Git.
--   Accept the default project directory name, e.g. `myrepo`, which coincides with the GitHub repo name.
--   Take charge of -- or at least notice! -- where the Project will be saved locally. A common rookie mistake is to have no idea where you are saving files or what your working directory is. Pay attention. Be intentional. Personally, I would do this in `~/tmp`.
--   I suggest you check "Open in new session", as that's what you'll usually do in real life.
--   Click "Create Project".
+-   *File \> New Project \> Version Control \> Git*. En "URL del repositorio", pegue la URL de su nuevo repositorio de GitHub. será algo como esto `https://github.com/jennybc/myrepo.git`.
+    -   ¿NO ve una opción para obtener el proyecto desde el control de versiones? Reinicie RStudio y vuelva a intentarlo. ¿Aún no has tenido suerte? Vaya a @sec-rstudio-see-git para obtener consejos sobre cómo ayudar a RStudio a encontrar Git.
+-   Acepte el nombre del directorio del proyecto predeterminado, p. `myrepo`, que coincide con el nombre del repositorio de GitHub.
+-   ¡Hazte cargo de... o al menos notalo! - donde el proyecto se guardará localmente. Un error común de los novatos es no tener idea de dónde está guardando los archivos o cuál es su directorio de trabajo. Prestar atención. Sea intencional. Personalmente, haría esto en `~/tmp`.
+-   Te sugiero que marques "Abrir en una nueva sesión", ya que eso es lo que normalmente harás en la vida real.
+-   Haga clic en "Crear proyecto".
 
-You should find yourself in a new local RStudio Project that represents your test repo on GitHub. This should download the `README.md` file from GitHub. Look in RStudio's file browser pane for the `README.md` file.
+Debería encontrarse en un nuevo proyecto RStudio local que representa su repositorio de prueba en GitHub. Esto debería descargar el archivo `README.md` de GitHub. Busque en el panel del explorador de archivos de RStudio el archivo `README.md`.
 
-## Make local changes, save, commit
+## Realizar cambios locales, guardar, confirmar
 
-From RStudio, modify the `README.md` file, e.g., by adding the line "This is a line from RStudio". Save your changes.
+Desde RStudio, modifique el archivo `README.md`, por ejemplo, agregando la línea "Esta es una línea de RStudio". Guarde sus cambios.
 
-Commit these changes to your local repo. How?
+Confirme estos cambios en su repositorio local. ¿Cómo?
 
-From RStudio:
+De RStudio:
 
--   Click the "Git" tab in upper right pane.
--   Check "Staged" box for `README.md`.
--   If you're not already in the Git pop-up, click "Commit".
--   Type a message in "Commit message", such as "Commit from RStudio".
--   Click "Commit".
+-   Haga clic en la pestaña "Git" en el panel superior derecho.
+-   Marque la casilla "Staged" para `README.md`.
+-   Si aún no estás en la ventana emergente de Git, haz clic en "Commit".
+-   Escriba un mensaje en "Commit message", como por ejemplo "Commit from RStudio".
+-   Haga click en "Commit".
 
-## Push your local changes online to GitHub
+## Envíe sus cambios locales en línea a GitHub
 
-Click the green "Push" button to send your local changes to GitHub.
+Haga clic en el botón verde "Push" para enviar sus cambios locales a GitHub.
 
-You should not experience a credential challenge, since one of the pre-requisites was successfully pushing to GitHub from the command line (@sec-push-pull-github). RStudio's Git pane just exposes a specific subset of command line Git and therefore once your credentials work in the shell, they should work in RStudio. If you do experience a credential challenge, that suggests you should have a look at the troubleshooting suggestions for your chosen protocol, either [HTTPS](#pat-troubleshooting) or [SSH](#ssh-troubleshooting).
+No debería experimentar un desafío de credenciales, ya que uno de los requisitos previos fue ingresar exitosamente a GitHub desde la línea de comando (@sec-push-pull-github). El panel Git de RStudio simplemente expone un subconjunto específico de la línea de comando Git y, por lo tanto, una vez que sus credenciales funcionen en el shell, deberían funcionar en RStudio. Si experimenta un desafío de credenciales, eso sugiere que debería echar un vistazo a las sugerencias de solución de problemas para el protocolo elegido, ya sea [HTTPS](#sec-pat-troubleshooting) o [SSH](#sec-ssh-troubleshooting).
 
-## Confirm the local change propagated to the GitHub remote
+## Confirmar el cambio local propagado al control remoto de GitHub
 
-Go back to the browser. I assume we're still viewing your new GitHub repo.
+Vuelve al navegador. Supongo que todavía estamos viendo su nuevo repositorio de GitHub.
 
-Refresh.
+Actualizar.
 
-You should see the new "This is a line from RStudio" in the README.
+Deberías ver el nuevo "Esta es una línea de RStudio" en el archivo README.
 
-If you click on "commits", you should see one with the message "Commit from RStudio".
+Si hace clic en "confirmar", debería ver uno con el mensaje "Confirmar desde RStudio".
 
-If you have made it this far, you are DONE with set up. Congratulations!
+Si ha llegado hasta aquí, habrá TERMINADO la configuración. ¡Felicidades!
 
-## Clean up
+## Limpiar
 
-Quit the RStudio instance that's open to your test Project / Git repo.
+Salga de la instancia de RStudio que está abierta en su proyecto de prueba/repositorio Git.
 
-Delete the local repo any way you like. It's just a regular directory on your computer.
+Elimina el repositorio local como quieras. Es solo un directorio normal en su computadora.
 
-Here's how to do that in the shell, if current working directory is `myrepo`:
+Aquí se explica cómo hacerlo en el shell, si el directorio de trabajo actual es `myrepo`:
 
 ``` console
 cd ..
 rm -rf myrepo/
 ```
 
-In the browser, go to your repo's landing page on GitHub. Click on "Settings".
+En el navegador, vaya a la página de inicio de su repositorio en GitHub. Haga clic en "Configuración".
 
-Scroll down, click on "delete repository," and do as it asks.
+Desplázate hacia abajo, haz clic en "eliminar repositorio" y haz lo que te pide.
