@@ -1,12 +1,12 @@
-# Get started with GitHub {#sec-usage-intro .unnumbered}
+# Comience con GitHub {#sec-usage-intro .unnumbered}
 
-Now that we've verified your Git/GitHub/RStudio setup, we can demo the workflows you'll use to get your work onto GitHub:
+Ahora que hemos verificado su configuración de Git/GitHub/RStudio, podemos hacer una demostración de los flujos de trabajo que usará para llevar su trabajo a GitHub:
 
--   \[New project, GitHub first\] is the easiest way to get a working project.
--   \[Existing project, GitHub first\] is a deeply pragmatic way to get pre-existing work onto GitHub.
--   \[Existing project, GitHub last\] is the more proper way to connect existing local work to a remote on GitHub, especially if there's already a Git history.
+-   [Nuevo proyecto, GitHub primero](#sec-new-github-first) es la forma más fácil de conseguir un proyecto funcional.
+-   [Proyecto existente, GitHub primero](#sec-existing-github-first) es una forma profundamente pragmática de llevar trabajos preexistentes a GitHub.
+-   [Proyecto existente, GitHub último](#sec-existing-github-last) es la forma más adecuada de conectar el trabajo local existente a un control remoto en GitHub, especialmente si ya existe un historial de Git.
 
-This part concludes with two R-specific workflows that show off how well [R Markdown (the format)](https://rmarkdown.rstudio.com) and [rmarkdown (the package)](https://cran.r-project.org/package=rmarkdown) work with GitHub:
+Esta parte concluye con dos flujos de trabajo específicos de R que muestran qué tan bien [R Markdown (el formato)](https://rmarkdown.rstudio.com) y [rmarkdown (el paquete)](https://cran.r- project.org/package=rmarkdown) trabajan con GitHub:
 
--   \[Test drive R Markdown\]
--   \[Render an R script\]
+-   [Prueba R Markdown](#sec-rmd-test-drive)
+-   [Renderizar un script R](#sec-r-test-drive)
