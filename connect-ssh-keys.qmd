@@ -1,101 +1,101 @@
-# Set up keys for SSH {#sec-ssh-keys}
+# Configurar claves para SSH {#sec-ssh-keys}
 
-When we interact with a remote Git server, such as GitHub, we have to include credentials in the request. This proves we are a specific GitHub user, who's allowed to do whatever we're asking to do.
+Cuando interactuamos con un servidor Git remoto, como GitHub, debemos incluir credenciales en la solicitud. Esto demuestra que somos un usuario específico de GitHub, al que se le permite hacer cualquier cosa que le pidamos.
 
-Git can communicate with a remote server using one of two protocols, HTTPS or SSH, and the different protocols use different credentials.
+Git puede comunicarse con un servidor remoto utilizando uno de dos protocolos, HTTPS o SSH, y los diferentes protocolos utilizan diferentes credenciales.
 
-Here we describe the credential setup for the SSH protocol. If you're not sure whether to use HTTPS or SSH, please read [HTTPS versus SSH](#https-vs-ssh). From now on, we assume you've made an intentional choice to set up SSH keys.
+Aquí describimos la configuración de credenciales para el protocolo SSH. Si no está seguro de utilizar HTTPS o SSH, lea [HTTPS versus SSH](#sec-https-vs-ssh). De ahora en adelante, asumimos que ha elegido intencionalmente configurar claves SSH.
 
-## SSH keys
+## Claves SSH
 
-SSH keys provide a more secure way of logging into a server than using a password alone. While a password can eventually be cracked with a brute force attack, SSH keys are nearly impossible to decipher by brute force alone. Generating a key pair provides you with two long strings of characters: a public and a private key. You can place the public key on any server (like GitHub!), and then unlock it by connecting to it with a client that already has the private key (your computer!). When the two match up, the system unlocks without the need for a password. You can increase security even more by protecting the private key with a passphrase.
+Las claves SSH proporcionan una forma más segura de iniciar sesión en un servidor que usar únicamente una contraseña. Si bien una contraseña puede eventualmente descifrarse con un ataque de fuerza bruta, las claves SSH son casi imposibles de descifrar solo con fuerza bruta. La generación de un par de claves le proporciona dos largas cadenas de caracteres: una clave pública y una privada. Puede colocar la clave pública en cualquier servidor (¡como GitHub!) y luego desbloquearla conectándose con un cliente que ya tenga la clave privada (¡su computadora!). Cuando los dos coinciden, el sistema se desbloquea sin necesidad de contraseña. Puede aumentar aún más la seguridad protegiendo la clave privada con una frase de contraseña.
 
-Adapted from instructions provided by [GitHub](https://help.github.com/categories/ssh/) and [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
+Adaptado de las instrucciones proporcionadas por [GitHub](https://help.github.com/categories/ssh/) y [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
 
-## SSH outline and advice
+## SSH esquema y consejo
 
-High level overview of what must happen:
+Descripción general de alto nivel de lo que debe suceder:
 
--   Create a public-private SSH key pair. Literally, 2 special files, in a special place. Optionally, encrypt the private key with a passphrase (best practice).
--   Add the private key to your ssh-agent. If you protected it with a passphrase, you may have additional configuration.
--   Add your public key to your GitHub profile.
+-   Cree un par de claves SSH pública-privada. Literalmente, 2 archivos especiales, en un lugar especial. Opcionalmente, cifre la clave privada con una frase de contraseña (práctica recomendada).
+-   Agregue la clave privada a su agente ssh. Si lo protegiste con una frase de contraseña, es posible que tengas una configuración adicional.
+-   Agrega tu clave pública a tu perfil de GitHub.
 
-Advice:
+Consejo:
 
--   If you are new to programming and the shell, you'll probably find HTTPS easier at first (@sec-https-pat). You can always switch to SSH later. You can use one method from computer A and the other from computer B.
--   You should swap out your SSH keys periodically. Something like once a year.
--   It's best practice to protect your private key with a passphrase. This can make setup and usage harder, so if you're not up for that (yet), either don't use a passphrase or seriously consider using HTTPS instead.
--   Don't do weird gymnastics in order to have only one key pair, re-used over multiple computers. You should probably have one key per computer (I do this). Some people even have one key per computer, per service (I do not do this).
--   It is normal to associate multiple public keys with your GitHub account. For example, one public key for each computer you connect with.
+-   Si es nuevo en la programación y el shell, probablemente le resulte más fácil HTTPS al principio (@sec-https-pat). Siempre puedes cambiar a SSH más tarde. Puede utilizar un método desde la computadora A y el otro desde la computadora B.
+-   Debes cambiar tus claves SSH periódicamente. Algo así como una vez al año.
+-   Es una buena práctica proteger su clave privada con una frase de contraseña. Esto puede dificultar la configuración y el uso, por lo que si no estás preparado para ello (todavía), no uses una frase de contraseña o considera seriamente usar HTTPS en su lugar.
+-   No hagas ejercicios extraños para tener un solo par de claves, reutilizadas en varias computadoras. Probablemente deberías tener una clave por computadora (yo hago esto). Algunas personas incluso tienen una clave por computadora, por servicio (yo no hago esto).
+-   Es normal asociar varias claves públicas con tu cuenta de GitHub. Por ejemplo, una clave pública para cada computadora a la que se conecte.
 
-## Do you already have keys?
+## ¿Ya tienes claves?
 
-You can check this from RStudio or from the shell.
+Puede comprobar esto desde RStudio o desde el shell.
 
-Global advice: if you do have existing keys, but have no clue where they came from or why you created them, you should seriously consider creating a new SSH key pair. It's up to you to figure out whether/how to delete the old ones. But don't let that keep you from creating new keys and moving forward.
+Consejo global: si tiene claves existentes, pero no tiene idea de dónde provienen o por qué las creó, debería considerar seriamente la posibilidad de crear un nuevo par de claves SSH. Depende de usted decidir si eliminar las antiguas y cómo hacerlo. Pero no permita que eso le impida crear nuevas claves y seguir adelante.
 
-### From RStudio
+### Desde RStudio
 
-Go to *Tools \> Global Options...\> Git/SVN*. If you see something like `~/.ssh/id_rsa` in the SSH RSA Key box, you definitely have existing keys.
+Vaya a *Tools \> Global Options...\> Git/SVN*. Si ve algo como `~/.ssh/id_rsa` en el cuadro Clave SSH RSA, definitivamente tiene claves existentes.
 
-Caveat: RStudio only looks for a key pair named `id_rsa` and `id_rsa.pub`. This makes sense, because historically that has been the most common.
+Advertencia: RStudio solo busca un par de claves llamado `id_rsa` e `id_rsa.pub`. Esto tiene sentido, porque históricamente ha sido lo más común.
 
-However, these days both GitHub and GitLab are encouraging users to generate SSH keys with the Ed25519 algorithm, which results in a key pair named `id_ed25519` and `id_ed25519.pub`. At the time of writing, RStudio will not display such a key pair, which can be confusing. Therefore, it's probably a good idea to also check for existing keys in the shell.
+Sin embargo, hoy en día tanto GitHub como GitLab alientan a los usuarios a generar claves SSH con el algoritmo Ed25519, lo que da como resultado un par de claves llamado `id_ed25519` e `id_ed25519.pub`. En el momento de escribir este artículo, RStudio no mostrará dicho par de claves, lo que puede resultar confuso. Por lo tanto, probablemente sea una buena idea comprobar también las claves existentes en el shell.
 
-### From the shell
+### Desde el shell
 
-Go to the shell (@sec-shell).
+Vaya al shell (@sec-shell).
 
-List existing keys:
+Liste las claves existentes:
 
 ``` console
 ls -al ~/.ssh/
 ```
 
-If you are told `~/.ssh/` doesn't exist, you don't have SSH keys!
+Si le dicen que `~/.ssh/` no existe, ¡no tiene claves SSH!
 
-If you see a pair of files like `id_rsa.pub` and `id_rsa` or `id_ed25519` and `id_ed25519.pub`, you have a key pair already. The typical pattern is `id_FOO.pub` (the public key) and `id_FOO` (the private key), where `FOO` reflects the key type. If you're happy to stick with your existing keys, skip to the sections about adding a key to the ssh-agent and GitHub.
+Si ve un par de archivos como `id_rsa.pub` e `id_rsa` o `id_ed25519` y `id_ed25519.pub`, ya tiene un par de claves. El patrón típico es `id_FOO.pub` (la clave pública) e `id_FOO` (la clave privada), donde `FOO` refleja el tipo de clave. Si está satisfecho con seguir con sus claves existentes, salte a las secciones sobre cómo agregar una clave al ssh-agent y GitHub.
 
-## Create an SSH key pair
+## Crear un par de claves SSH
 
-### Option 1: Set up from RStudio
+### Opción 1: configurar desde RStudio
 
-Go to *Tools \> Global Options...\> Git/SVN \> Create RSA Key...*.
+Vaya a *Tools \> Global Options...\> Git/SVN \> Create RSA Key...*.
 
-RStudio prompts you for a passphrase. It is optional, but also a best practice. Configuring your system for smooth operation with a passphrase-protected key introduces more moving parts. If you're completely new at all this, skip the passphrase (or use HTTPS!) and implement it next time, when you are more comfortable with system configuration. I did not use a passphrase at first, but I do now, and record it in a password manager.
+RStudio le solicita una frase de contraseña. Es opcional, pero también una buena práctica. Configurar su sistema para un funcionamiento fluido con una clave protegida con contraseña introduce más partes móviles. Si es completamente nuevo en esto, omita la frase de contraseña (¡o use HTTPS!) e impleméntela la próxima vez, cuando se sienta más cómodo con la configuración del sistema. Al principio no usaba una frase de contraseña, pero ahora la uso y la registro en un administrador de contraseñas.
 
-Click "Create" and RStudio will generate an SSH key pair, stored in the files `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub`.
+Haga clic en "Crear" y RStudio generará un par de claves SSH, almacenadas en los archivos `~/.ssh/id_rsa` y `~/.ssh/id_rsa.pub`.
 
-Note that RStudio currently only generates RSA keys, whereas the standard recommendation by GitHub and GitLab is to use Ed25519 keys. If you want to comply with that advice, generate your keys in the shell for now.
+Tenga en cuenta que actualmente RStudio solo genera claves RSA, mientras que la recomendación estándar de GitHub y GitLab es utilizar claves Ed25519. Si desea seguir ese consejo, genere sus claves en el shell por ahora.
 
-### Option 2: Set up from the shell
+### Opción 2: configurar desde el shell
 
-Create the key pair like so, but substitute a comment that means something to you, especially if you'll have multiple SSH keys in your life. Consider the email associated with your GitHub account or the name of your computer or some combination, e.g. `your_email@example.com` or `macbook-pro` or `jane-2020-macbook-pro`.
+Cree el par de claves así, pero sustitúyalo por un comentario que signifique algo para usted, especialmente si tendrá varias claves SSH en su vida. Considere el correo electrónico asociado con su cuenta de GitHub o el nombre de su computadora o alguna combinación, p.e. `your_email@example.com` or `macbook-pro` or `jane-2020-macbook-pro`.
 
 ``` console
 ssh-keygen -t ed25519 -C "DESCRIPTIVE-COMMENT"
 ```
 
-If it appears that your system is too old to support the Ed25519 algorithm, do this instead:
+Si parece que su sistema es demasiado antiguo para admitir el algoritmo Ed25519, haga lo siguiente:
 
 ``` console
 ssh-keygen -t rsa -b 4096 -C "DESCRIPTIVE-COMMENT"
 ```
 
-Accept the proposal to save the key in the default location. Just press Enter here:
+Acepte la propuesta de guardar la clave en la ubicación predeterminada. Simplemente presione Enter aquí:
 
 ``` console
 Enter file in which to save the key (/Users/jenny/.ssh/id_ed25519):
 ```
 
-You have the option to protect the key with a passphrase. It is optional, but also a best practice. Configuring your system for smooth operation with a passphrase-protected key introduces more moving parts. If you're completely new at all this, skip the passphrase and implement it next time, when you are more comfortable with system configuration. I did not use a passphrase at first, but I do now, and record it in a password manager.
+Tiene la opción de proteger la clave con una frase de contraseña. Es opcional, pero también una buena práctica. Configurar su sistema para un funcionamiento fluido con una clave protegida con contraseña introduce más partes móviles. Si es completamente nuevo en esto, omita la frase de contraseña e impleméntela la próxima vez, cuando se sienta más cómodo con la configuración del sistema. Al principio no usaba una frase de contraseña, pero ahora la uso y la registro en un administrador de contraseñas.
 
 ``` console
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again: 
 ```
 
-The process should complete now and should have looked like this:
+El proceso debería completarse ahora y debería haberse visto así:
 
 ``` console
 ~ % ssh-keygen -t ed25519 -C "jenny-2020-mbp"        
@@ -121,29 +121,29 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-### Add key to ssh-agent
+### Agregar clave al agente ssh
 
-Tell your ssh-agent about the key and, especially, set it up to manage the passphrase, if you chose to set one.
+Informe a su agente ssh sobre la clave y, especialmente, configúrelo para administrar la frase de contraseña, si decide establecer una.
 
-Things get a little OS-specific around here. When in doubt, consult [GitHub's instructions for SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh), which is kept current for Mac, Windows, and Linux. It also accounts for more unusual situations than I can.
+Las cosas se vuelven un poco específicas del sistema operativo por aquí. En caso de duda, consulte [las instrucciones de GitHub para SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh), que se mantiene actualizado para Mac, Windows y Linux. También explica situaciones más inusuales que las que puedo.
 
 #### Mac OS
 
-Make sure ssh-agent is enabled. Here's what success look like (the `pid` will vary):
+Asegúrese de que ssh-agent esté habilitado. Así es como se ve el éxito (el `pid` variará):
 
 ``` console
 ~ % eval "$(ssh-agent -s)"
 Agent pid 15360
 ```
 
-Sometimes this fails like so:
+A veces esto falla así:
 
 ``` console
 ~ % eval "$(ssh-agent -s)"
 mkdtemp: private socket dir: No such file or directory
 ```
 
-A similar failure might be reported as "Permission denied". You should try again, but as the superuser. Don't forget to use `exit` to go back to your normal user account, when you are done!
+Un error similar podría informarse como "Permiso denegado". Deberías intentarlo de nuevo, pero como superusuario. ¡No olvide utilizar `exit` para volver a su cuenta de usuario normal cuando haya terminado!
 
 ``` console
 ~ % sudo su
@@ -154,7 +154,7 @@ sh-3.2# exit
 exit
 ```
 
-Add your key to the ssh agent. If you set a passphrase, you'll be challenged for it here. Give it. The `-K` option stores your passphrase in the keychain.
+Agregue su clave al agente ssh. Si establece una frase de contraseña, se le cuestionará aquí. Darle. La opción `-K` almacena su frase de contraseña en el Keychain.
 
 ``` console
 ~ % ssh-add -K ~/.ssh/id_ed25519
@@ -162,7 +162,7 @@ Enter passphrase for /Users/jenny/.ssh/id_ed25519:
 Identity added: /Users/jenny/.ssh/id_ed25519 (jenny-2020-mbp)
 ```
 
-If you're on macOS Sierra 10.12.2 and higher, you need to do one more thing. Create a file `~/.ssh/config` with these contents:
+Si tienes macOS Sierra 10.12.2 y superior, debes hacer una cosa más. Cree un archivo `~/.ssh/config` con este contenido:
 
 ``` bash
 Host *
@@ -171,18 +171,18 @@ Host *
   IdentityFile ~/.ssh/id_ed25519
 ```
 
-You can omit the line about `UseKeychain` if you didn't use a passphrase. But if you did, this should store your passphrase *persistently* in the keychain. Otherwise, you will have to enter it every time you log in. Useful StackOverflow thread: [How can I permanently add my SSH private key to Keychain so it is automatically available to ssh?](https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically).
+Puedes omitir la línea sobre `UseKeychain` si no usaste una frase de contraseña. Pero si lo hizo, esto debería almacenar su contraseña *persistentemente* en el llavero. De lo contrario, tendrás que ingresarlo cada vez que inicies sesión. Hilo útil de StackOverflow: [¿Cómo puedo agregar permanentemente mi clave privada SSH a Keychain para que esté disponible automáticamente para ssh?](https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically).
 
 #### Windows
 
-In a Git Bash shell, make sure ssh-agent is running:
+En un shell de Git Bash, asegúrese de que ssh-agent se esté ejecutando:
 
 ``` console
 $ eval $(ssh-agent -s)
 Agent pid 59566
 ```
 
-Add your key, substituting the correct name for your key.
+Agregue su clave, sustituyendo el nombre correcto por su clave.
 
 ``` console
 $ ssh-add ~/.ssh/id_ed25519
@@ -190,85 +190,85 @@ $ ssh-add ~/.ssh/id_ed25519
 
 #### Linux
 
-In a shell, make sure ssh-agent is running:
+En un shell, asegúrese de que ssh-agent se esté ejecutando:
 
 ``` console
 $ eval "$(ssh-agent -s)"
 Agent pid 59566
 ```
 
-Add your key, substituting the correct name for your key.
+Agregue su clave, sustituyendo el nombre correcto por su clave.
 
 ``` console
 ssh-add ~/.ssh/id_ed25519
 ```
 
-## Provide public key to GitHub
+## Proporcionar clave pública a GitHub
 
-Now we store a copy of your public key on GitHub.
+Ahora almacenamos una copia de su clave pública en GitHub.
 
-### RStudio to clipboard
+### RStudio al portapapeles
 
-Go to *Tools \> Global Options...\> Git/SVN*. If your key pair is named like `id_rsa.pub` and `id_rsa`, RStudio will see it and offer to "View public key". Do that and accept the offer to copy to your clipboard.
+Vaya a *Tools \> Global Options...\> Git/SVN*. Si su par de claves tiene el nombre `id_rsa.pub` e `id_rsa`, RStudio lo verá y le ofrecerá "Ver clave pública". Haga eso y acepte la oferta de copiar a su portapapeles.
 
-If your key pair is named differently, such as `id_ed25519.pub` and `id_ed25519`, you'll have to copy the public key another way.
+Si su par de claves tiene un nombre diferente, como `id_ed25519.pub` e `id_ed25519`, tendrá que copiar la clave pública de otra manera.
 
-### Shell to clipboard
+### Shell al portapapeles
 
-Copy the public key onto your clipboard. For example, open `~/.ssh/id_ed25519.pub` in an editor and copy the contents to your clipboard. Or do one of the following at the command line:
+Copie la clave pública en su portapapeles. Por ejemplo, abra `~/.ssh/id_ed25519.pub` en un editor y copie el contenido en su portapapeles. O realice una de las siguientes acciones en la línea de comando:
 
 -   Mac OS: `pbcopy < ~/.ssh/id_ed25519.pub`
 -   Windows: `clip < ~/.ssh/id_ed25519.pub`
 -   Linux: `xclip -sel clip < ~/.ssh/id_ed25519.pub`
 
-Linux: if needed, install `xclip` via `apt-get` or `yum`. For example, `sudo apt-get install xclip`.
+Linux: si es necesario, instale `xclip` mediante `apt-get` o `yum`. Por ejemplo, `sudo apt-get install xclip`.
 
-### On GitHub
+### En GitHub
 
-Now we register the public key with GitHub. Click on your profile pic in upper right corner and go to *Settings \> SSH and GPG keys*. Click "New SSH key". Paste your public key in the "Key" box. Give it an informative title, presumably repeating the descriptive comment you used above, during key creation. Click "Add SSH key".
+Ahora registramos la clave pública con GitHub. Haga clic en su foto de perfil en la esquina superior derecha y vaya a *Configuración \> Claves SSH y GPG*. Haga clic en "Nueva clave SSH". Pegue su clave pública en el cuadro "Clave". Asígnele un título informativo, probablemente repitiendo el comentario descriptivo que utilizó anteriormente durante la creación de la clave. Haga clic en "Agregar clave SSH".
 
-In theory, we're done! You can use [`ssh -T git@github.com`](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection) to test your connection to GitHub. If you're not sure what to make of the output, see the link for details. Of course, the best test is to work through the realistic usage examples elsewhere in this guide.
+¡En teoría, hemos terminado! Puedes usar [`ssh -T git@github.com`](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection) para probar su conexión a GitHub. Si no está seguro de qué hacer con el resultado, consulte el enlace para obtener más detalles. Por supuesto, la mejor prueba es analizar los ejemplos de uso realistas que aparecen en otras partes de esta guía.
 
-## Troubleshooting {#sec-ssh-troubleshooting}
+## Solución de problemas {#sec-ssh-troubleshooting}
 
-### HTTPS URL when you meant to use SSH
+### URL HTTPS cuando pretendías usar SSH
 
-If you think you have SSH set up correctly and yet you are still challenged for credentials, consider this: for the repo in question, have you possibly set up GitHub, probably called `origin`, as an HTTPS remote, instead of SSH?
+Si cree que tiene SSH configurado correctamente y aún así se le solicitan credenciales, considere esto: para el repositorio en cuestión, ¿es posible que haya configurado GitHub, probablemente llamado `origin`, como un control remoto HTTPS, en lugar de SSH?
 
-How to see the remote URL(s) associated with the current repo in the shell:
+Cómo ver las URL remotas asociadas con el repositorio actual en el shell:
 
 ``` console
 git remote -v
 ```
 
-An SSH remote will look like this:
+Un control remoto SSH se verá así:
 
 ``` console
 git@github.com:USERNAME/REPOSITORY.git
 ```
 
-whereas an HTTPS remote will look like this:
+mientras que un control remoto HTTPS se verá así:
 
 ``` console
 https://github.com/USERNAME/REPOSITORY.git
 ```
 
-You can fix this with `git remote set-url`, which is demonstrated in [URL determines the protocol](#url-determines-protocol).
+Puedes solucionar este problema con `git remoto set-url`, que se demuestra en [La URL determina el protocolo](#sec-url-determines-protocol).
 
-### git2r -- or some other tool -- can't find SSH keys on Windows
+### git2r, o alguna otra herramienta, no puede encontrar claves SSH en Windows
 
-Have you seen this error message?
+¿Has visto este mensaje de error?
 
 ``` console
 Error in .local(object, ...) : 
   Error in 'git2r_push': error authenticating: failed connecting agent
 ```
 
-We've seen it when working with Git/GitHub from R via the [git2r](https://cran.r-project.org/web/packages/git2r/index.html) package.
+Lo hemos visto cuando trabajamos con Git/GitHub desde R a través del paquete [git2r](https://cran.r-project.org/web/packages/git2r/index.html).
 
-The root cause is confusion about the location of `.ssh/` on Windows. R's idea of your home directory on Windows often differs from the default location of config files for Git and ssh, such as `.ssh/`. On \*nix systems, these generally coincide and there's no problem.
+La causa principal es la confusión sobre la ubicación de `.ssh/` en Windows. La idea que tiene R de su directorio de inicio en Windows a menudo difiere de la ubicación predeterminada de los archivos de configuración para Git y ssh, como `.ssh/`. En sistemas \*nix, generalmente coinciden y no hay problema.
 
-Two important directories on Windows are the user's HOME and USERPROFILE. R usually associates `~` with HOME, but Git and ssh often consult USERPROFILE for their config files. On my Windows 10 VM, I see:
+Dos directorios importantes en Windows son el HOME del usuario y el USERPROFILE. R generalmente asocia `~` con HOME, pero Git y ssh a menudo consultan USERPROFILE para sus archivos de configuración. En mi máquina virtual con Windows 10, veo:
 
 ```{r eval = FALSE}
 normalizePath("~")
@@ -292,9 +292,9 @@ list.files(
 #> [1] ".gitconfig" ".ssh"
 ```
 
-Two workarounds:
+Dos soluciones:
 
--   Tell git2r explicitly where to find your public and private key and pass the resulting `cred` object to your git2r calls.
+-   Dígale a git2r explícitamente dónde encontrar su clave pública y privada y pase el objeto `cred` resultante a sus llamadas de git2r.
 
     ```{r eval = FALSE}
     cred <- git2r::cred_ssh_key(
@@ -303,26 +303,26 @@ Two workarounds:
     )
     ```
 
--   [Create a symbolic link](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/) so that `.ssh/` in R's home directory points to your actual `.ssh/` directory. Example contributed by Ian Lyttle on Windows 7 using Command Prompt:
+-   [Crear un enlace simbólico](https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/) para que `.ssh/` en el directorio de inicio de R apunte a su directorio real `.ssh/`. Ejemplo aportado por Ian Lyttle en Windows 7 usando el símbolo del sistema:
 
     ``` console
     MKLINK /D "C:\Users\username\Documents\.ssh" "C:\Users\username\.ssh"
     ```
 
-Finally, if git2r seems unable to get your SSH passphrase from ssh-agent, install the getPass package:
+Finalmente, si git2r parece incapaz de obtener su contraseña SSH de ssh-agent, instale el paquete getPass:
 
 ```{r eval = FALSE}
 install.packages("getPass")
 ```
 
-and git2r should launch a popup where you can enter your passphrase. Thanks to Ian Lyttle for this tip.
+y git2r debería abrir una ventana emergente donde puede ingresar su frase de contraseña. Gracias a Ian Lyttle por este consejo.
 
-This link provides a great explanation of the uncertainty about where `.ssh/` and user's `.gitconfig` are located on Windows: [git on Windows - location of configuration files](https://www.onwebsecurity.com/configuration/git-on-windows-location-of-global-configuration-file.html). Bottom line: place your config and keys where your main tool expects them to be and create symbolic links to help other tools find this stuff.
+Este enlace proporciona una excelente explicación de la incertidumbre sobre dónde se encuentran `.ssh/` y `.gitconfig` del usuario en Windows: [git en Windows - ubicación de los archivos de configuración](https://www.onwebsecurity.com/configuration/ git-on-windows-ubicación-del-archivo-de-configuración-global.html). En pocas palabras: coloque su configuración y claves donde su herramienta principal espera que estén y cree enlaces simbólicos para ayudar a otras herramientas a encontrar estas cosas.
 
-### Other
+### Otro
 
-Other things to double-check:
+Otras cosas para verificar dos veces:
 
--   Did you add the SSH to your ssh-agent?
--   Did you configure Mac OS Sierra or High Sierra to persistently store your passphrase in the keychain?
--   Did you add the public key to GitHub?
+-   ¿Agregaste SSH a tu agente ssh?
+-   ¿Configuraste Mac OS Sierra o High Sierra para almacenar persistentemente tu frase de contraseña en el llavero?
+-   ¿Agregaste la clave pública a GitHub?
