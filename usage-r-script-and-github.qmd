@@ -1,50 +1,50 @@
-# Render an R script {#sec-r-test-drive}
+# Renderizar un script R {#sec-r-test-drive}
 
-An under-appreciated fact is that much of what you can do with R Markdown, you can also do with an R script.
+Un hecho subestimado es que mucho de lo que puedes hacer con R Markdown, también puedes hacerlo con un script R.
 
-If you're in analysis mode and want a report as a side effect, write an R script. If you're writing a report with a lot of R code in it, write `.Rmd`. In either case, render to markdown and/or HTML to communicate with other human beings.
+Si está en modo de análisis y desea un informe como efecto secundario, escriba un script R. Si está escribiendo un informe con mucho código R, escriba `.Rmd`. En cualquier caso, renderice en Markdown y/o HTML para comunicarse con otros seres humanos.
 
--   In R markdown, prose is top-level and code is tucked into chunks.
--   In R scripts, code is top-level and prose is tucked into comments. You will use `#'` to request that certain comments appear as top-level prose in the rendered output.
+-   En R Markdown, la prosa es de nivel superior y el código está dividido en fragmentos.
+-   En los scripts R, el código es de nivel superior y la prosa se incluye en los comentarios. Utilizará `#'` para solicitar que ciertos comentarios aparezcan como prosa de nivel superior en la salida renderizada.
 
-You will continue to specify things like the output format via YAML at the top of the file. This will need to be commented with `#'`.
+Continuará especificando cosas como el formato de salida a través de YAML en la parte superior del archivo. Esto deberá comentarse con `#'`.
 
-## Morph R Markdown into a renderable R script
+## Transforme RMarkdown en un script R renderizable
 
-Get yourself a working R Markdown file, such as the one you made in your [Rmd test drive](sec-rmd-test-drive). Or use the boilerplate `.Rmd` document RStudio makes with *File \> New File \> R Markdown ...*.
+Consiga un archivo RMarkdown que funcione, como el que creó en su [prueba de Rmd](#sec-rmd-test-drive). O utilice el documento estándar `.Rmd` que RStudio crea con *File \> New File \> R Markdown ...*.
 
-Save the file as `foo.R`, as opposed to `foo.Rmd`. Yes, for a brief moment, you will have R Markdown saved as an R script, but that won't be true for long.
+Guarde el archivo como `foo.R`, en lugar de `foo.Rmd`. Sí, por un breve momento, tendrás R Markdown guardado como un script R, pero eso no será así por mucho tiempo.
 
-Transform the R markdown to R:
+Transforme RMarkdown a R:
 
--   Anything that's not R code? Like the YAML and the prose? Protect it with roxygen-style comments: start each line with `#'`.
+-   ¿Algo que no sea código R? ¿Te gusta el YAML y la prosa? Protégelo con comentarios estilo roxygen: comienza cada línea con `#'`.
 
--   Anything that is R code? Let it exist "as is" as top-level code. That means you'll need to change the syntax of R chunk headers like so:
+-   ¿Algo que sea código R? Déjelo existir "tal cual" como código de nivel superior. Eso significa que necesitarás cambiar la sintaxis de los encabezados de fragmentos de R de esta manera:
 
-    Before: ```` ```{r setup, include = FALSE} ````\
-    After: `#+ r setup, include = FALSE`
+    Antes: ```` ```{r setup, include = FALSE} ````\
+    Después: `#+ r setup, include = FALSE`
 
-    Replace the leading backticks and opening curly brace with `#+`.\
-    Delete the trailing curly brace.\
-    Delete the 3 backticks that end each chunk.
+    Reemplace las comillas invertidas iniciales y la llave de apertura con `#+`.\
+    Eliminar la llave final.\
+    Elimina las 3 comillas invertidas que finalizan cada fragmento.
 
-Render the R script through one of these methods:
+Renderice el script R a través de uno de estos métodos:
 
--   Click on the "notebook" icon in RStudio to "Compile Report".
--   In RStudio, do *File \> Knit Document*.
--   In R, do `rmarkdown::render("foo.R")`.
+-   Haga clic en el icono "notebook" en RStudio para "Compile Report".
+-   En RStudio, haga *File \> Knit Document*.
+-   En R, ejecute `rmarkdown::render("foo.R")`.
 
-You'll get a markdown and/or HTML report, just as with R Markdown.
+Obtendrá un informe de markdown y/o HTML, al igual que con R Markdown.
 
-If you're having trouble making all the necessary changes and you're frustrated, see below for an example you can copy and paste.
+Si tiene problemas para realizar todos los cambios necesarios y se siente frustrado, vea a continuación un ejemplo que puede copiar y pegar.
 
-All the workflow tips from the [Rmd test drive](sec-rmd-test-drive) apply here: when you script an analysis, render it to markdown, commit the `.R`, the `.md`, any associated figures, and push to GitHub. Collaborators can see your code, but also browse around the results without having to download and execute the code. This makes the current state of your analysis accessible to someone who does not even run R or who wants to take a quick look at things from a cell phone or while on vacation.
+Todos los consejos de flujo de trabajo de la [prueba de Rmd](·sec-rmd-test-drive) se aplican aquí: cuando escriba un script de un análisis, preséntelo en markdown, confirme el `.R`, el `.md`, cualquier figura asociada y envíelo a GitHub. Los colaboradores pueden ver su código, pero también explorar los resultados sin tener que descargar y ejecutar el código. Esto hace que el estado actual de su análisis sea accesible para alguien que ni siquiera ejecuta R o que quiere echar un vistazo rápido a las cosas desde un teléfono celular o mientras está de vacaciones.
 
-## Write a render-ready R script
+## Escribir un script R listo para renderizar
 
-Instead of morphing an R Markdown file, let's create a render-ready R script directly.
+En lugar de transformar un archivo RMarkdown, creemos directamente un script R listo para renderizar.
 
-Create a new R script and copy/paste this code into it.
+Cree un nuevo script R y copie/pegue este código en él.
 
 ```{r create-temp-dir, include = FALSE}
 va_home <- fs::dir_create(fs::file_temp(pattern = "va-example-"))
@@ -52,17 +52,16 @@ va_home <- fs::dir_create(fs::file_temp(pattern = "va-example-"))
 
 ```{r define-demo-code, include = FALSE}
 demo_code <- c(
-  "#' Here's some prose in a very special comment. Let's summarize the built-in",
-  "#' dataset `VADeaths`.",
-  "# here is a regular code comment, that will remain as such",
+  "#' Aquí hay algo de prosa en un comentario muy especial. Resumamos el conjunto de datos integrado `VADeaths`.",
+  "# Aquí hay un comentario de código normal, que permanecerá como tal.",
   "summary(VADeaths)",
   "",
-  "#' Here's some more prose. I can use usual markdown syntax to make things",
-  "#' **bold** or *italics*. Let's use an example from the `dotchart()` help to",
-  "#' make a Cleveland dot plot from the `VADeaths` data. I even bother to name",
-  "#' this chunk, so the resulting PNG has a decent name.",
+  "#' Aquí hay algo más de prosa. Puedo usar la sintaxis habitual de Markdown para hacer cosas",
+  "#' **negritas** o *italicas*. Usemos un ejemplo de la ayuda `dotchart()` para",
+  "#' hacer un diagrama de puntos de Cleveland a partir de los datos de `VADeaths`. Incluso me molesto en nombrar",
+  "#' este fragmento, entonces el PNG resultante tiene un nombre decente.",
   "#+ dotchart",
-  "dotchart(VADeaths, main = \"Death Rates in Virginia - 1940\")"
+  "dotchart(VADeaths, main = \"Tasas de mortalidad en Virginia - 1940\")"
 )
 writeLines(demo_code, fs::path(va_home, "render-r-script-demo.R"))
 ```
@@ -70,20 +69,20 @@ writeLines(demo_code, fs::path(va_home, "render-r-script-demo.R"))
 ```{r eval = FALSE, code = demo_code}
 ```
 
-Render the R script through one of these methods:
+Renderice el script R mediante uno de estos métodos:
 
--   Click on the "notebook" icon in RStudio to "Compile Report".
--   In RStudio, do *File \> Knit Document*.
--   In R, do `rmarkdown::render("YOURSCRIPT.R")`.
+-   Haga clic en el icono "notebook" en RStudio para "Compile Report".
+-   En RStudio, haz *File \> Knit Document*.
+-   En R, haz `rmarkdown::render("YOURSCRIPT.R")`.
 
-Revel in your attractive looking report with almost zero effort! Seriously, all you had to do was think about when to use special comments `#'` in order to promote that to nicely rendered text.
+¡Disfruta de tu atractivo informe casi sin esfuerzo! En serio, todo lo que tenías que hacer era pensar en cuándo usar los comentarios especiales `#'` para promocionarlo a un texto bien renderizado.
 
-Drawing on the workflow tips in [Rmd test drive](sec-rmd-test-drive), let's add some YAML frontmatter, properly commented with `#'`, and request `github_document` as the output format. Here's the whole script again:
+Basándonos en los consejos de flujo de trabajo en [Prueba de Rmd](#sec-rmd-test-drive), agreguemos algo de contenido de YAML, comentado adecuadamente con `#'`, y solicitemos `github_document` como formato de salida. Aquí está el guión completo nuevamente:
 
 ```{r augment-demo-code, include = FALSE}
 demo_code <- c(
   "#' ---",
-  "#' title: \"R scripts can be rendered!\"",
+  "#' title: \"¡Se pueden renderizar scripts R!\"",
   "#' output: github_document",
   "#' ---",
   "#'",
@@ -95,7 +94,7 @@ writeLines(demo_code, fs::path(va_home, "render-r-script-demo.R"))
 ```{r eval = FALSE, code = demo_code}
 ```
 
-Behind the scenes here we have used `rmarkdown::render()` to render this script and you can go [visit it on GitHub](https://github.com/jennybc/happy-git-with-r/blob/master/render-r-script-demo.md).
+Aquí detrás de escena hemos usado `rmarkdown::render()` para representar este script y puedes ir [y verlo en GitHub](https://github.com/jennybc/happy-git-with-r/blob/master/render-r-script-demo.md).
 
 ```{r render-demo-code}
 #| include = FALSE, error = TRUE,
