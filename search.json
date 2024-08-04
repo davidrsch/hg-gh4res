@@ -832,265 +832,265 @@
   {
     "objectID": "usage-intro.html",
     "href": "usage-intro.html",
-    "title": "Get started with GitHub",
+    "title": "Comience con GitHub",
     "section": "",
-    "text": "Now that we’ve verified your Git/GitHub/RStudio setup, we can demo the workflows you’ll use to get your work onto GitHub:\n\n[New project, GitHub first] is the easiest way to get a working project.\n[Existing project, GitHub first] is a deeply pragmatic way to get pre-existing work onto GitHub.\n[Existing project, GitHub last] is the more proper way to connect existing local work to a remote on GitHub, especially if there’s already a Git history.\n\nThis part concludes with two R-specific workflows that show off how well R Markdown (the format) and rmarkdown (the package) work with GitHub:\n\n[Test drive R Markdown]\n[Render an R script]",
+    "text": "Ahora que hemos verificado su configuración de Git/GitHub/RStudio, podemos hacer una demostración de los flujos de trabajo que usará para llevar su trabajo a GitHub:\n\nNuevo proyecto, GitHub primero es la forma más fácil de conseguir un proyecto funcional.\nProyecto existente, GitHub primero es una forma profundamente pragmática de llevar trabajos preexistentes a GitHub.\nProyecto existente, GitHub último es la forma más adecuada de conectar el trabajo local existente a un control remoto en GitHub, especialmente si ya existe un historial de Git.\n\nEsta parte concluye con dos flujos de trabajo específicos de R que muestran qué tan bien R Markdown (el formato) y rmarkdown (el paquete) trabajan con GitHub:\n\nPrueba R Markdown\nRenderizar un script R",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "Get started with GitHub"
+      "Comience con GitHub"
     ]
   },
   {
     "objectID": "usage-new-project-github-first.html",
     "href": "usage-new-project-github-first.html",
-    "title": "15  New project, GitHub first",
+    "title": "15  Nuevo proyecto, GitHub primero",
     "section": "",
-    "text": "15.1 Make a repo on GitHub\nVaya a https://github.com y asegúrese de haber iniciado sesión.\nCerca de “Repositorios”, haga clic en el gran botón verde “Nuevo”. O, si está en su propia página de perfil, haga clic en “Repositorios” y luego haga clic en el gran botón verde “Nuevo”.\nCómo completar esto:\nHaga clic en el gran botón verde que dice “Crear repositorio”.\nAhora haga clic en el gran botón verde que dice “&lt;&gt; Code”.\nCopie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.",
+    "text": "15.1 Hacer un repositorio en GitHub\nVaya a https://github.com y asegúrese de haber iniciado sesión.\nCerca de “Repositorios”, haga clic en el gran botón verde “Nuevo”. O, si está en su propia página de perfil, haga clic en “Repositorios” y luego haga clic en el gran botón verde “Nuevo”.\nCómo completar esto:\nHaga clic en el gran botón verde que dice “Crear repositorio”.\nAhora haga clic en el gran botón verde que dice “&lt;&gt; Code”.\nCopie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-new-project-github-first.html#make-a-repo-on-github",
-    "href": "usage-new-project-github-first.html#make-a-repo-on-github",
-    "title": "15  New project, GitHub first",
+    "objectID": "usage-new-project-github-first.html#hacer-un-repositorio-en-github",
+    "href": "usage-new-project-github-first.html#hacer-un-repositorio-en-github",
+    "title": "15  Nuevo proyecto, GitHub primero",
     "section": "",
-    "text": "Plantilla de repositorio: sin plantilla.\nNombre del repositorio: &lt;&lt;&gt;&gt;\n\nDescripción: &lt;&lt;&gt;&gt;\n\nPúblico.\n&lt;&lt;&gt;&gt;\n\n\n\n\n\n\n\n15.1.1 GitLab\nLog in at https://gitlab.com. Click on the “+” button in the top-right corner, and then on “New project”.\n\nProject name: myrepo (or whatever you wish)\n\nPublic\nYES Initialize repository with a README\n\nClick the big green button “Create project.”\nCopy the HTTPS or SSH clone URL to your clipboard via the blue “Clone” button.\n\n15.1.2 Bitbucket\nLog in at https://bitbucket.org. On the left-side pane, click on the “+” button, and then on “Repository” under “Create”.\n\nRepository name: myrepo (or whatever you wish)\nAccess level: Uncheck to make the repository public.\nInclude a README?: Select either “Yes, with a tutorial (for beginners)” or “Yes, with a template”\nVersion control system: Git\n\nClick the big blue button “Create repository.”\nCopy the HTTPS or SSH clone URL that appears when you click on the blue “Clone” button. Make sure you remove the git clone ... that shows up at the beginning.",
+    "text": "Plantilla de repositorio: sin plantilla.\nNombre del repositorio: &lt;&lt;&gt;&gt;\n\nDescripción: &lt;&lt;&gt;&gt;\n\nPúblico.\n&lt;&lt;&gt;&gt;\n\n\n\n\n\n\n\n15.1.1 GitLab\nInicie sesión en https://gitlab.com. Haga clic en el botón “+” en la esquina superior derecha y luego en “Nuevo proyecto”.\n\nNombre del proyecto: myrepo (o lo que desees)\n\nPúblico\nSÍ Inicializar el repositorio con un README\n\nHaga clic en el gran botón verde “Crear proyecto”.\nCopie la URL de clonación HTTPS o SSH a su portapapeles mediante el botón azul “Clonar”.\n\n15.1.2 Bitbucket\nInicie sesión en https://bitbucket.org. En el panel del lado izquierdo, haga clic en el botón “+” y luego en “Repositorio” en “Crear”.\n\nNombre del repositorio: myrepo (o el que desees)\nNivel de acceso: desmarque para hacer público el repositorio.\n¿Incluir un archivo README?: seleccione “Sí, con un tutorial (para principiantes)” o “Sí, con una plantilla”.\nSistema de control de versiones: Git\n\nClick the big blue button “Create repository.”\nCopie la URL de clonación HTTPS o SSH que aparece al hacer clic en el botón azul “Clonar”. Asegúrate de eliminar el git clone... que aparece al principio.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
     "objectID": "usage-new-project-github-first.html#sec-new-rstudio-project-via-git",
     "href": "usage-new-project-github-first.html#sec-new-rstudio-project-via-git",
-    "title": "15  New project, GitHub first",
-    "section": "\n15.2 New RStudio Project via git clone",
-    "text": "15.2 New RStudio Project via git clone\n\n\n\n\n\n\n\n\nI present two ways to do this:\n\nusethis::create_from_github()\nVia the RStudio IDE\n\n(Recall that we showed how to do this with command line Git in Chapter 11.)\nWhen you are cloning your own GitHub repository, the two methods are equivalent. In other scenarios, especially fork-and-clone ((secfork-and-clone?)), I think usethis::create_from_github() is superior, because it does additional, recommended setup.\nPick one of these methods below.\n\n15.2.1 usethis::create_from_github()\n\nYou can execute this command in any R session. If you use RStudio, then do this in the R console of any RStudio instance.\n\nusethis::create_from_github(\n  \"https://github.com/YOU/YOUR_REPO.git\",\n  destdir = \"~/path/to/where/you/want/the/local/repo/\"\n)\n\nThe first argument is repo_spec and it accepts the GitHub repo specification in various forms. In particular, you can use the URL we just copied from GitHub.\nThe destdir argument specifies the parent directory where you want the new folder (and local Git repo) to live. If you don’t specify destdir, usethis defaults to some very conspicuous place, like your desktop. If you like to keep Git repos in a certain folder on your computer, you can personalize this default by setting the usethis.destdir option in your .Rprofile.\nWe’re accepting the default behaviour of two other arguments, rstudio and open, because that’s what most people will want. For example, for an RStudio user, create_from_github() does this:\n\nCreates a new local directory in destdir, which is all of these things:\n\na directory or folder on your computer\na Git repository, linked to a remote GitHub repository\nan RStudio Project\n\n\nOpens a new RStudio instance in the new Project\nIn the absence of other constraints, I suggest that all of your R projects have exactly this set-up.\n\n15.2.2 RStudio IDE\nIn RStudio, start a new Project:\n\n\nFile &gt; New Project &gt; Version Control &gt; Git. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this https://github.com/jennybc/myrepo.git.\nBe intentional about where you create this Project.\nI suggest you “Open in new session”.\nClick “Create Project” to create a new directory, which will be all of these things:\n\na directory or “folder” on your computer\na Git repository, linked to a remote GitHub repository\nan RStudio Project\n\n\nIn the absence of other constraints, I suggest that all of your R projects have exactly this set-up.\n\nThis should download the README.md file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the README.md file.\nBehind the scenes, RStudio has done this for you:\ngit clone https://github.com/jennybc/myrepo.git\n\n15.2.3 Have a look around\nRegardless of whether you used usethis or RStudio, you should now be working in the new Git repo. The implicit git clone should download the README.md file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the README.md file.\nThere’s a big advantage to the “GitHub first, then RStudio” workflow: the remote GitHub repo is configured as the origin remote for your local repo and your local main branch is now tracking the main on GitHub. This is a technical but important point about Git. The practical implication is that you are now set up to push and pull. No need to fanny around setting up Git remotes and tracking branches on the command line.\nWe’re about to confirm we are setup for pulling and pushing.\n\n\n\n\nPull and push.\n\n\n\n\n15.2.4 Optional: peek under the hood\nCompletely optional activity: use command line Git to see what we’re talking about above, i.e. the remote and tracking branch setup.\ngit remote -v or git remote --verbose shows the remotes you have setup. Here’s how that looks for someone using HTTPS with GitHub and calling it origin:\n~/tmp/myrepo % git remote -v\norigin  https://github.com/jennybc/myrepo.git (fetch)\norigin  https://github.com/jennybc/myrepo.git (push)\ngit branch -vv prints info about the current branch (-vv for “very verbose”, I guess). In particular, we can see that local main is tracking the main branch on origin, a.k.a. origin/main.\n~/tmp/myrepo % git branch -vv\n* main 2899c91 [origin/main] A commit from my local computer\nFinally, git remote show origin gives yet another view on useful remote and branch information:\n~/tmp/myrepo % git remote show origin    \n* remote origin\n  Fetch URL: https://github.com/jennybc/myrepo.git\n  Push  URL: https://github.com/jennybc/myrepo.git\n  HEAD branch: main\n  Remote branch:\n    main tracked\n  Local branch configured for 'git pull':\n    main merges with remote main\n  Local ref configured for 'git push':\n    main pushes to main (up to date)\ngit clone, which RStudio did for us, sets all of this up automatically. This is why “GitHub first, then RStudio” is the preferred way to start projects early in your Git/GitHub life.",
+    "title": "15  Nuevo proyecto, GitHub primero",
+    "section": "\n15.2 Nuevo proyecto RStudio a través de git clone",
+    "text": "15.2 Nuevo proyecto RStudio a través de git clone\n\n\n\n\n\n\n\n\nLes presento dos formas de hacer esto:\n\nusethis::create_from_github()\nA través del IDE de RStudio\n\n(Recuerde que mostramos cómo hacer esto con la línea de comando Git en Chapter 11.)\nCuando clonas tu propio repositorio de GitHub, los dos métodos son equivalentes. En otros escenarios, especialmente fork-and-clone ((secfork-and-clone?)), creo que usethis::create_from_github() es superior, porque realiza una configuración adicional recomendada.\nElija uno de estos métodos a continuación.\n\n15.2.1 usethis::create_from_github()\n\nPuede ejecutar este comando en cualquier sesión de R. Si usa RStudio, hágalo en la consola R de cualquier instancia de RStudio.\n\nusethis::create_from_github(\n  \"https://github.com/YOU/YOUR_REPO.git\",\n  destdir = \"~/path/to/where/you/want/the/local/repo/\"\n)\n\nEl primer argumento es repo_spec y acepta la especificación del repositorio de GitHub en varias formas. En particular, puedes usar la URL que acabamos de copiar de GitHub.\nEl argumento destdir especifica el directorio principal donde desea que resida la nueva carpeta (y el repositorio local de Git). Si no especifica destdir, use este valor predeterminado en algún lugar muy visible, como su escritorio. Si desea mantener los repositorios de Git en una determinada carpeta de su computadora, puede personalizar este valor predeterminado configurando la opción usethis.destdir en su .Rprofile.\nAceptamos el comportamiento predeterminado de otros dos argumentos, rstudio y open, porque eso es lo que la mayoría de la gente querrá. Por ejemplo, para un usuario de RStudio, create_from_github() hace esto:\n\nCrea un nuevo directorio local en destdir, que contiene todas estas cosas:\n\nun directorio o carpeta en su computadora\nun repositorio Git, vinculado a un repositorio GitHub remoto\nun proyecto RStudio\n\n\nAbre una nueva instancia de RStudio en el nuevo Proyecto.\nEn ausencia de otras restricciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.\n\n15.2.2 RStudio IDE\nEn RStudio, inicie un nuevo proyecto:\n\n\nFile &gt; New Project &gt; Version Control &gt; Git. En la “URL del repositorio”, pegue la URL de su nuevo repositorio de GitHub. será algo como esto https://github.com/jennybc/myrepo.git.\nSea intencional acerca de dónde crea este proyecto.\nTe sugiero “Abrir en nueva sesión”.\nHaga clic en “Crear proyecto” para crear un nuevo directorio, que contendrá todas estas cosas:\n\nun directorio o “carpeta” en su computadora\nun repositorio Git, vinculado a un repositorio GitHub remoto\nun proyecto RStudio\n\n\nEn ausencia de otras limitaciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.\n\nEsto debería descargar el archivo README.md que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo README.md.\nDetrás de escena, RStudio ha hecho esto por usted:\ngit clone https://github.com/jennybc/myrepo.git\n\n15.2.3 Mira alrededor\nIndependientemente de si usó usethis o RStudio, ahora debería estar trabajando en el nuevo repositorio de Git. El git clone implícito debería descargar el archivo README.md que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo README.md.\nHay una gran ventaja en el flujo de trabajo “GitHub primero, luego RStudio”: el repositorio remoto de GitHub está configurado como el remoto origin para su repositorio local y su rama main local ahora está rastreando el main en GitHub. Este es un punto técnico pero importante sobre Git. La implicación práctica es que ahora está preparado para empujar y tirar. No es necesario perder el tiempo configurando controles remotos de Git y rastreando ramas en la línea de comando.\nEstamos a punto de confirmar que estamos preparados para realizar push and pulls.\n\n\nPull y push.\n\n\n15.2.4 Opcional: echar un vistazo debajo del capó\nActividad completamente opcional: use la línea de comando Git para ver de qué estamos hablando arriba, es decir, la configuración de la rama remota y de seguimiento.\ngit remote -v o git remote --verbose muestra los controles remotos que ha configurado. Así es como se ve alguien que usa HTTPS con GitHub y lo llama origin:\n~/tmp/myrepo % git remote -v\norigin  https://github.com/jennybc/myrepo.git (fetch)\norigin  https://github.com/jennybc/myrepo.git (push)\ngit branch -vv imprime información sobre la rama actual (-vv para “muy detallado”, supongo). En particular, podemos ver que el main local está rastreando la rama main en origin, también conocido como origin/main.\n~/tmp/myrepo % git branch -vv\n* main 2899c91 [origin/main] A commit from my local computer\nFinalmente, git remote show origin ofrece otra visión de información útil sobre ramas y remotos:\n~/tmp/myrepo % git remote show origin    \n* remote origin\n  Fetch URL: https://github.com/jennybc/myrepo.git\n  Push  URL: https://github.com/jennybc/myrepo.git\n  HEAD branch: main\n  Remote branch:\n    main tracked\n  Local branch configured for 'git pull':\n    main merges with remote main\n  Local ref configured for 'git push':\n    main pushes to main (up to date)\ngit clone, que RStudio hizo por nosotros, configura todo esto automáticamente. Es por eso que “Primero GitHub, luego RStudio” es la forma preferida de iniciar proyectos temprano en su vida de Git/GitHub.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-new-project-github-first.html#make-local-changes-save-commit",
-    "href": "usage-new-project-github-first.html#make-local-changes-save-commit",
-    "title": "15  New project, GitHub first",
-    "section": "\n15.3 Make local changes, save, commit",
-    "text": "15.3 Make local changes, save, commit\nDo this every time you finish a valuable chunk of work, probably many times a day.\nFrom RStudio, modify the README.md file, e.g., by adding the line “This is a line from RStudio”. Save your changes.\nCommit these changes to your local repo. How?\n\nClick the “Git” tab in upper right pane\nCheck “Staged” box for any files whose existence or modifications you want to commit.\n\nTo see more detail on what’s changed in file since the last commit, click on “Diff” for a Git pop-up\n\n\nIf you’re not already in the Git pop-up, click “Commit”\nType a message in “Commit message”, such as “Commit from RStudio”.\nClick “Commit”",
+    "objectID": "usage-new-project-github-first.html#realizar-cambios-locales-guardar-confirmar",
+    "href": "usage-new-project-github-first.html#realizar-cambios-locales-guardar-confirmar",
+    "title": "15  Nuevo proyecto, GitHub primero",
+    "section": "\n15.3 Realizar cambios locales, guardar, confirmar",
+    "text": "15.3 Realizar cambios locales, guardar, confirmar\nHaga esto cada vez que termine una parte valiosa del trabajo, probablemente muchas veces al día.\nDesde RStudio, modifique el archivo README.md, por ejemplo, agregando la línea “Esta es una línea de RStudio”. Guarde sus cambios.\nConfirme estos cambios en su repositorio local. ¿Cómo?\n\nHaga clic en la pestaña “Git” en el panel superior derecho\nMarque la casilla “Staged” para cualquier archivo cuya existencia o modificaciones desee confirmar.\n\nPara ver más detalles sobre los cambios en el archivo desde la última confirmación, haga clic en “Diff” para ver una ventana emergente de Git.\n\n\nSi aún no estás en la ventana emergente de Git, haz clic en “Commit”.\nEscriba un mensaje en “Commit message”, como “Commit from RStudio”.\nHaga clic en “Commit”",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-new-project-github-first.html#push-your-local-changes-to-github",
-    "href": "usage-new-project-github-first.html#push-your-local-changes-to-github",
-    "title": "15  New project, GitHub first",
-    "section": "\n15.4 Push your local changes to GitHub",
-    "text": "15.4 Push your local changes to GitHub\nDo this a few times a day, but possibly less often than you commit.\nYou have new work in your local Git repository, but the changes are not online yet.\nThis will seem counterintuitive, but first let’s stop and pull from GitHub.\nWhy? Establish this habit for the future! If you make changes to the repo in the browser or from another machine or (one day) a collaborator has pushed, you will be happier if you pull those changes in before you attempt to push.\nClick the blue “Pull” button in the “Git” tab in RStudio. I doubt anything will happen, i.e. you’ll get the message “Already up-to-date.” This is just to establish a habit.\nClick the green “Push” button to send your local changes to GitHub. RStudio will report something along these lines:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/jennybc/myrepo.git\n   2899c91..b34cade  HEAD -&gt; main",
+    "objectID": "usage-new-project-github-first.html#envía-tus-cambios-locales-a-github",
+    "href": "usage-new-project-github-first.html#envía-tus-cambios-locales-a-github",
+    "title": "15  Nuevo proyecto, GitHub primero",
+    "section": "\n15.4 Envía tus cambios locales a GitHub",
+    "text": "15.4 Envía tus cambios locales a GitHub\nHaga esto varias veces al día, pero posiblemente con menos frecuencia de lo que se compromete.\nTiene un nuevo trabajo en su repositorio Git local, pero los cambios aún no están en línea.\nEsto parecerá contradictorio, pero primero detengámonos y salgamos de GitHub.\n¿Por qué? ¡Establece este hábito para el futuro! Si realiza cambios en el repositorio en el navegador o desde otra máquina o (un día) un colaborador lo ha enviado, estará más feliz si realiza esos cambios antes de intentar enviar.\nHaga clic en el botón azul “Pull” en la pestaña “Git” en RStudio. Dudo que suceda algo, es decir, recibirás el mensaje “Already up-to-date”. Esto es sólo para establecer un hábito.\nHaga clic en el botón verde “Push” para enviar sus cambios locales a GitHub. RStudio informará algo como esto:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/jennybc/myrepo.git\n   2899c91..b34cade  HEAD -&gt; main",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-new-project-github-first.html#confirm-the-local-change-propagated-to-the-github-remote",
-    "href": "usage-new-project-github-first.html#confirm-the-local-change-propagated-to-the-github-remote",
-    "title": "15  New project, GitHub first",
-    "section": "\n15.5 Confirm the local change propagated to the GitHub remote",
-    "text": "15.5 Confirm the local change propagated to the GitHub remote\nGo back to the browser. I assume we’re still viewing your new GitHub repo.\nRefresh.\nYou should see the new “This is a line from RStudio” in the README.\nIf you click on “commits,” you should see one with the message “Commit from RStudio”.",
+    "objectID": "usage-new-project-github-first.html#confirmar-el-cambio-local-propagado-al-control-remoto-de-github",
+    "href": "usage-new-project-github-first.html#confirmar-el-cambio-local-propagado-al-control-remoto-de-github",
+    "title": "15  Nuevo proyecto, GitHub primero",
+    "section": "\n15.5 Confirmar el cambio local propagado al control remoto de GitHub",
+    "text": "15.5 Confirmar el cambio local propagado al control remoto de GitHub\nVuelve al navegador. Supongo que todavía estamos viendo su nuevo repositorio de GitHub.\nActualizar.\nDeberías ver el nuevo “Esta es una línea de RStudio” en el archivo README.\nSi hace clic en “commit”, debería ver uno con el mensaje “Commit from RStudio”.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-new-project-github-first.html#make-a-change-on-github",
-    "href": "usage-new-project-github-first.html#make-a-change-on-github",
-    "title": "15  New project, GitHub first",
-    "section": "\n15.6 Make a change on GitHub",
-    "text": "15.6 Make a change on GitHub\nClick on README.md in the file listing on GitHub.\nIn the upper right corner, click on the pencil for “Edit this file”.\nAdd a line to this file, such as “Line added from GitHub.”\nEdit the commit message in “Commit changes” or accept the default.\nClick the big green button “Commit changes.”\n\n15.6.1 GitLab\nClick on README.md in the file listing on GitLab.\nIn the upper right corner, click on “Edit”.\nAdd a line to this file, such as “Line added from GitLab.”\nEdit the commit message in “Commit changes” or accept the default.\nClick the big green button “Commit changes.”\n\n15.6.2 Bitbucket\nClick on README.md in the file listing on Bitbucket.\nIn the upper right corner, click on “Edit”.\nAdd a line to this file, such as “Line added from Bitbucket.”\nClick on the blue “Commit” button. A pop-up will show up. Edit the commit message or accept the default.\nClick the blue “Commit” button.",
+    "objectID": "usage-new-project-github-first.html#haz-un-cambio-en-github",
+    "href": "usage-new-project-github-first.html#haz-un-cambio-en-github",
+    "title": "15  Nuevo proyecto, GitHub primero",
+    "section": "\n15.6 Haz un cambio en GitHub",
+    "text": "15.6 Haz un cambio en GitHub\nHaga clic en README.md en la lista de archivos en GitHub.\nEn la esquina superior derecha, haga clic en el lápiz para “Editar este archivo”.\nAgregue una línea a este archivo, como “Línea agregada desde GitHub”.\nEdite el mensaje de commit en “Confirmar cambios” o acepte el valor predeterminado.\nHaga clic en el gran botón verde “Confirmar cambios”.\n\n15.6.1 GitLab\nHaga clic en README.md en la lista de archivos en GitLab.\nEn la esquina superior derecha, haga clic en “Editar”.\nAgregue una línea a este archivo, como “Línea agregada desde GitLab”.\nEdite el mensaje de confirmación en “Confirmar cambios” o acepte el valor predeterminado.\nHaga clic en el gran botón verde “Confirmar cambios”.\n\n15.6.2 Bitbucket\nHaga clic en README.md en la lista de archivos de Bitbucket.\nEn la esquina superior derecha, haga clic en “Editar”.\nAgregue una línea a este archivo, como “Línea agregada desde Bitbucket”.\nHaga clic en el botón azul “Confirmar”. Aparecerá una ventana emergente. Edite el mensaje de confirmación o acepte el valor predeterminado.\nHaga clic en el botón azul “Confirmar”.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-new-project-github-first.html#pull-from-github",
-    "href": "usage-new-project-github-first.html#pull-from-github",
-    "title": "15  New project, GitHub first",
-    "section": "\n15.7 Pull from GitHub",
-    "text": "15.7 Pull from GitHub\nBack in RStudio locally …\nInspect your README.md. It should NOT have the line “Line added from GitHub”. It should be as you left it. Verify that.\nClick the blue Pull button.\nLook at README.md again. You should now see the new line there.",
+    "objectID": "usage-new-project-github-first.html#extraer-de-github",
+    "href": "usage-new-project-github-first.html#extraer-de-github",
+    "title": "15  Nuevo proyecto, GitHub primero",
+    "section": "\n15.7 Extraer de GitHub",
+    "text": "15.7 Extraer de GitHub\nDe vuelta en RStudio localmente…\nInspeccione su README.md. NO debería tener la línea “Línea agregada desde GitHub”. Debe quedar como lo dejaste. Comprueba eso.\nHaga clic en el botón azul Pull.\nMire README.md nuevamente. Ahora deberías ver la nueva línea allí.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-new-project-github-first.html#the-end",
-    "href": "usage-new-project-github-first.html#the-end",
-    "title": "15  New project, GitHub first",
-    "section": "\n15.8 The end",
-    "text": "15.8 The end\nNow just “lather, rinse, repeat”. Do work somewhere: locally or on GitHub. Commit it. Push it or pull it, depending on where you did the work, but get local and remote “synced up”. Repeat.\nNote that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.",
+    "objectID": "usage-new-project-github-first.html#el-fin",
+    "href": "usage-new-project-github-first.html#el-fin",
+    "title": "15  Nuevo proyecto, GitHub primero",
+    "section": "\n15.8 El fin",
+    "text": "15.8 El fin\nAhora simplemente “haga espuma, enjuague, repita”. Trabaje en algún lugar: localmente o en GitHub. Confirme los cambios. Envielos o importelos, dependiendo de dónde haya realizado el trabajo, pero “sincronice” local y remoto. Repetir.\nTenga en cuenta que, en general (y especialmente en el futuro, cuando colabore con otros desarrolladores), normalmente necesitará importar cambios desde el control remoto (GitHub) antes de enviar los cambios locales que ha realizado. Por esta razón, es una buena idea intentar adquirir el hábito de importar antes de intentar enviar.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>New project, GitHub first</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Nuevo proyecto, GitHub primero</span>"
     ]
   },
   {
     "objectID": "usage-existing-project-github-first.html",
     "href": "usage-existing-project-github-first.html",
-    "title": "16  Existing project, GitHub first",
+    "title": "16  Proyecto existente, GitHub primero",
     "section": "",
-    "text": "16.1 Make a repo on GitHub\nVaya a https://github.com y asegúrese de haber iniciado sesión.\nCerca de “Repositorios”, haga clic en el gran botón verde “Nuevo”. O, si está en su propia página de perfil, haga clic en “Repositorios” y luego haga clic en el gran botón verde “Nuevo”.\nCómo completar esto:\nHaga clic en el gran botón verde que dice “Crear repositorio”.\nAhora haga clic en el gran botón verde que dice “&lt;&gt; Code”.\nCopie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.",
+    "text": "16.1 Haga un repositorio en GitHub\nVaya a https://github.com y asegúrese de haber iniciado sesión.\nCerca de “Repositorios”, haga clic en el gran botón verde “Nuevo”. O, si está en su propia página de perfil, haga clic en “Repositorios” y luego haga clic en el gran botón verde “Nuevo”.\nCómo completar esto:\nHaga clic en el gran botón verde que dice “Crear repositorio”.\nAhora haga clic en el gran botón verde que dice “&lt;&gt; Code”.\nCopie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-first.html#make-a-repo-on-github",
-    "href": "usage-existing-project-github-first.html#make-a-repo-on-github",
-    "title": "16  Existing project, GitHub first",
+    "objectID": "usage-existing-project-github-first.html#haga-un-repositorio-en-github",
+    "href": "usage-existing-project-github-first.html#haga-un-repositorio-en-github",
+    "title": "16  Proyecto existente, GitHub primero",
     "section": "",
     "text": "Plantilla de repositorio: sin plantilla.\nNombre del repositorio: &lt;&lt;&gt;&gt;\n\nDescripción: &lt;&lt;&gt;&gt;\n\nPúblico.\n&lt;&lt;&gt;&gt;",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
     "objectID": "usage-existing-project-github-first.html#sec-git-clone-usethis-rstudio",
     "href": "usage-existing-project-github-first.html#sec-git-clone-usethis-rstudio",
-    "title": "16  Existing project, GitHub first",
-    "section": "\n16.2 New RStudio Project via git clone",
-    "text": "16.2 New RStudio Project via git clone\n\n\n\n\n\n\n\n\nI present two ways to do this:\n\nusethis::create_from_github()\nVia the RStudio IDE\n\n(Recall that we showed how to do this with command line Git in Chapter 11.)\nWhen you are cloning your own GitHub repository, the two methods are equivalent. In other scenarios, especially fork-and-clone ((secfork-and-clone?)), I think usethis::create_from_github() is superior, because it does additional, recommended setup.\nPick one of these methods below.\n\n16.2.1 usethis::create_from_github()\n\nYou can execute this command in any R session. If you use RStudio, then do this in the R console of any RStudio instance.\n\nusethis::create_from_github(\n  \"https://github.com/YOU/YOUR_REPO.git\",\n  destdir = \"~/path/to/where/you/want/the/local/repo/\"\n)\n\nThe first argument is repo_spec and it accepts the GitHub repo specification in various forms. In particular, you can use the URL we just copied from GitHub.\nThe destdir argument specifies the parent directory where you want the new folder (and local Git repo) to live. If you don’t specify destdir, usethis defaults to some very conspicuous place, like your desktop. If you like to keep Git repos in a certain folder on your computer, you can personalize this default by setting the usethis.destdir option in your .Rprofile.\nWe’re accepting the default behaviour of two other arguments, rstudio and open, because that’s what most people will want. For example, for an RStudio user, create_from_github() does this:\n\nCreates a new local directory in destdir, which is all of these things:\n\na directory or folder on your computer\na Git repository, linked to a remote GitHub repository\nan RStudio Project\n\n\nOpens a new RStudio instance in the new Project\nIn the absence of other constraints, I suggest that all of your R projects have exactly this set-up.\n\n16.2.2 RStudio IDE\nIn RStudio, start a new Project:\n\n\nFile &gt; New Project &gt; Version Control &gt; Git. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this https://github.com/jennybc/myrepo.git.\nBe intentional about where you create this Project.\nI suggest you “Open in new session”.\nClick “Create Project” to create a new directory, which will be all of these things:\n\na directory or “folder” on your computer\na Git repository, linked to a remote GitHub repository\nan RStudio Project\n\n\nIn the absence of other constraints, I suggest that all of your R projects have exactly this set-up.\n\nThis should download the README.md file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the README.md file.\nBehind the scenes, RStudio has done this for you:\ngit clone https://github.com/jennybc/myrepo.git",
+    "title": "16  Proyecto existente, GitHub primero",
+    "section": "\n16.2 Nuevo proyecto RStudio a través de git clone",
+    "text": "16.2 Nuevo proyecto RStudio a través de git clone\n\n\n\n\n\n\n\n\nLes presento dos formas de hacer esto:\n\nusethis::create_from_github()\nA través del IDE de RStudio\n\n(Recuerde que mostramos cómo hacer esto con la línea de comando Git en Chapter 11.)\nCuando clonas tu propio repositorio de GitHub, los dos métodos son equivalentes. En otros escenarios, especialmente fork-and-clone ((secfork-and-clone?)), creo que usethis::create_from_github() es superior, porque realiza una configuración adicional recomendada.\nElija uno de estos métodos a continuación.\n\n16.2.1 usethis::create_from_github()\n\nPuede ejecutar este comando en cualquier sesión de R. Si usa RStudio, hágalo en la consola R de cualquier instancia de RStudio.\n\nusethis::create_from_github(\n  \"https://github.com/YOU/YOUR_REPO.git\",\n  destdir = \"~/path/to/where/you/want/the/local/repo/\"\n)\n\nEl primer argumento es repo_spec y acepta la especificación del repositorio de GitHub en varias formas. En particular, puedes usar la URL que acabamos de copiar de GitHub.\nEl argumento destdir especifica el directorio principal donde desea que resida la nueva carpeta (y el repositorio local de Git). Si no especifica destdir, use este valor predeterminado en algún lugar muy visible, como su escritorio. Si desea mantener los repositorios de Git en una determinada carpeta de su computadora, puede personalizar este valor predeterminado configurando la opción usethis.destdir en su .Rprofile.\nAceptamos el comportamiento predeterminado de otros dos argumentos, rstudio y open, porque eso es lo que la mayoría de la gente querrá. Por ejemplo, para un usuario de RStudio, create_from_github() hace esto:\n\nCrea un nuevo directorio local en destdir, que contiene todas estas cosas:\n\nun directorio o carpeta en su computadora\nun repositorio Git, vinculado a un repositorio GitHub remoto\nun proyecto RStudio\n\n\nAbre una nueva instancia de RStudio en el nuevo Proyecto.\nEn ausencia de otras restricciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.\n\n16.2.2 RStudio IDE\nEn RStudio, inicie un nuevo proyecto:\n\n\nFile &gt; New Project &gt; Version Control &gt; Git. En la “URL del repositorio”, pegue la URL de su nuevo repositorio de GitHub. será algo como esto https://github.com/jennybc/myrepo.git.\nSea intencional acerca de dónde crea este proyecto.\nTe sugiero “Abrir en nueva sesión”.\nHaga clic en “Crear proyecto” para crear un nuevo directorio, que contendrá todas estas cosas:\n\nun directorio o “carpeta” en su computadora\nun repositorio Git, vinculado a un repositorio GitHub remoto\nun proyecto RStudio\n\n\nEn ausencia de otras limitaciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.\n\nEsto debería descargar el archivo README.md que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo README.md.\nDetrás de escena, RStudio ha hecho esto por usted:\ngit clone https://github.com/jennybc/myrepo.git",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-first.html#bring-your-existing-project-over",
-    "href": "usage-existing-project-github-first.html#bring-your-existing-project-over",
-    "title": "16  Existing project, GitHub first",
-    "section": "\n16.3 Bring your existing project over",
-    "text": "16.3 Bring your existing project over\nUsing your favorite method of moving or copying files, copy the files that constitute your existing project into the directory for this new project.\nIn RStudio, consult the Git pane and the file browser.\n\nAre you seeing all the files? They should be here if your move/copy was successful.\nAre they showing up in the Git pane with questions marks? They should be appearing as new untracked files.",
+    "objectID": "usage-existing-project-github-first.html#traiga-su-proyecto-existente",
+    "href": "usage-existing-project-github-first.html#traiga-su-proyecto-existente",
+    "title": "16  Proyecto existente, GitHub primero",
+    "section": "\n16.3 Traiga su proyecto existente",
+    "text": "16.3 Traiga su proyecto existente\nUtilizando su método favorito para mover o copiar archivos, copie los archivos que constituyen su proyecto existente en el directorio de este nuevo proyecto.\nEn RStudio, consulte el panel de Git y el explorador de archivos.\n\n¿Estás viendo todos los archivos? Deberían estar aquí si su movimiento/copia fue exitoso.\n¿Aparecen en el panel de Git con signos de interrogación? Deberían aparecer como archivos nuevos sin seguimiento.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-first.html#stage-and-commit",
-    "href": "usage-existing-project-github-first.html#stage-and-commit",
-    "title": "16  Existing project, GitHub first",
-    "section": "\n16.4 Stage and commit",
-    "text": "16.4 Stage and commit\nCommit your files to this repo. How?\n\nClick the “Git” tab in upper right pane\nCheck the “Staged” box for all files that you want to commit.\n\nDefault: stage it.\nWhen to reconsider: this will all go to GitHub. Consider if that is appropriate for each file. You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.\n\n\nIf you’re not already in the Git pop-up, click “Commit”\nType a message in “Commit message”, such as “Init project XYZ”.\nClick “Commit”",
+    "objectID": "usage-existing-project-github-first.html#verificar-y-confirmar",
+    "href": "usage-existing-project-github-first.html#verificar-y-confirmar",
+    "title": "16  Proyecto existente, GitHub primero",
+    "section": "\n16.4 Verificar y confirmar",
+    "text": "16.4 Verificar y confirmar\nConfirme sus archivos en este repositorio. ¿Cómo?\n\nHaga clic en la pestaña “Git” en el panel superior derecho\nMarque la casilla “Staged” para todos los archivos que desee confirmar.\n\nPredeterminado: verificado.\nCuándo reconsiderarlo: todo esto irá a GitHub. Considere si eso es apropiado para cada archivo. Puedes conservar absolutamente un archivo localmente, sin enviarlo al repositorio de Git y enviarlo a GitHub. Simplemente déjelo ahí en su panel de Git, sin que esté preparado. No se hará ningún daño. Si se trata de una situación a largo plazo, incluya el archivo en .gitignore.\n\n\nSi aún no estás en la ventana emergente de Git, haz clic en “Commit”.\nEscriba un mensaje en “Commit message”, como “Iniciar proyecto XYZ”.\nHaga clic en “Commit”",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-first.html#push-your-local-changes-to-github",
-    "href": "usage-existing-project-github-first.html#push-your-local-changes-to-github",
-    "title": "16  Existing project, GitHub first",
-    "section": "\n16.5 Push your local changes to GitHub",
-    "text": "16.5 Push your local changes to GitHub\nClick the green “Push” button to send your local changes to GitHub. RStudio will display something like:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/jennybc/myrepo.git\n   3a2171f..6d58539  HEAD -&gt; main",
+    "objectID": "usage-existing-project-github-first.html#envía-tus-cambios-locales-a-github",
+    "href": "usage-existing-project-github-first.html#envía-tus-cambios-locales-a-github",
+    "title": "16  Proyecto existente, GitHub primero",
+    "section": "\n16.5 Envía tus cambios locales a GitHub",
+    "text": "16.5 Envía tus cambios locales a GitHub\nHaga clic en el botón verde “Push” para enviar sus cambios locales a GitHub. RStudio mostrará algo como:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/jennybc/myrepo.git\n   3a2171f..6d58539  HEAD -&gt; main",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-first.html#confirm-the-local-change-propagated-to-the-github-remote",
-    "href": "usage-existing-project-github-first.html#confirm-the-local-change-propagated-to-the-github-remote",
-    "title": "16  Existing project, GitHub first",
-    "section": "\n16.6 Confirm the local change propagated to the GitHub remote",
-    "text": "16.6 Confirm the local change propagated to the GitHub remote\nGo back to the browser. I assume we’re still viewing your new GitHub repo.\nRefresh.\nYou should see all the project files you committed there.\nIf you click on “commits,” you should see one with the message you used, e.g. “Init project XYZ”.",
+    "objectID": "usage-existing-project-github-first.html#confirmar-el-cambio-local-propagado-al-control-remoto-de-github",
+    "href": "usage-existing-project-github-first.html#confirmar-el-cambio-local-propagado-al-control-remoto-de-github",
+    "title": "16  Proyecto existente, GitHub primero",
+    "section": "\n16.6 Confirmar el cambio local propagado al control remoto de GitHub",
+    "text": "16.6 Confirmar el cambio local propagado al control remoto de GitHub\nVuelve al navegador. Supongo que todavía estamos viendo su nuevo repositorio de GitHub.\nActualice.\nDeberías ver todos los archivos del proyecto que confirmaste allí.\nSi hace clic en “commit”, debería ver uno con el mensaje que utilizó, p. “Iniciar proyecto XYZ”.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-first.html#the-end",
-    "href": "usage-existing-project-github-first.html#the-end",
-    "title": "16  Existing project, GitHub first",
-    "section": "\n16.7 The end",
-    "text": "16.7 The end\nNow just “lather, rinse, repeat”. Do work somewhere: locally or on GitHub. Commit it. Push it or pull it, depending on where you did the work, but get local and remote “synced up”. Repeat.\nNote that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.",
+    "objectID": "usage-existing-project-github-first.html#el-fin",
+    "href": "usage-existing-project-github-first.html#el-fin",
+    "title": "16  Proyecto existente, GitHub primero",
+    "section": "\n16.7 El fin",
+    "text": "16.7 El fin\nAhora simplemente “haga espuma, enjuague, repita”. Trabaje en algún lugar: localmente o en GitHub. Confirme los cambios. Envielos o importelos, dependiendo de dónde haya realizado el trabajo, pero “sincronice” local y remoto. Repetir.\nTenga en cuenta que, en general (y especialmente en el futuro, cuando colabore con otros desarrolladores), normalmente necesitará importar cambios desde el control remoto (GitHub) antes de enviar los cambios locales que ha realizado. Por esta razón, es una buena idea intentar adquirir el hábito de importar antes de intentar enviar.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Existing project, GitHub first</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Proyecto existente, GitHub primero</span>"
     ]
   },
   {
     "objectID": "usage-existing-project-github-last.html",
     "href": "usage-existing-project-github-last.html",
-    "title": "17  Existing project, GitHub last",
+    "title": "17  Proyecto existente, GitHub último",
     "section": "",
-    "text": "17.1 Prepare the local project\nWe assume you’ve got your existing R project isolated in a directory on your computer. If that’s not already true, make it so. Create a directory and marshal all the existing data and R scripts there. It doesn’t really matter where you do this, but note where the project currently lives.\nI encourage you to make this project into an RStudio project, although it is not absolutely required. If you opt-out of this, the instructions using command line Git or usethis will still work for you, outside of RStudio.",
+    "text": "17.1 Preparar el proyecto local.\nAsumimos que tiene su proyecto R existente aislado en un directorio de su computadora. Si eso aún no es cierto, hazlo así. Cree un directorio y reúna allí todos los datos y scripts R existentes. Realmente no importa dónde hagas esto, pero ten en cuenta dónde se encuentra actualmente el proyecto.\nLe animo a que convierta este proyecto en un proyecto de RStudio, aunque no es absolutamente necesario. Si opta por no participar en esto, las instrucciones que usan la línea de comando Git o usethis seguirán funcionando para usted, fuera de RStudio.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Existing project, GitHub last</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Proyecto existente, GitHub último</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-last.html#prepare-the-local-project",
-    "href": "usage-existing-project-github-last.html#prepare-the-local-project",
-    "title": "17  Existing project, GitHub last",
+    "objectID": "usage-existing-project-github-last.html#preparar-el-proyecto-local.",
+    "href": "usage-existing-project-github-last.html#preparar-el-proyecto-local.",
+    "title": "17  Proyecto existente, GitHub último",
     "section": "",
-    "text": "17.1.1 Make or verify an RStudio Project\nIf the project is not already an RStudio Project, make it so:\n\nWithin RStudio you can do: File &gt; New Project &gt; Existing Directory and, if you wish, “Open in new session”.\nAlternatively, from R, call usethis::create_project(\"path/to/your/project\"), substituting the path to your existing project directory.\n\nIf your project is already an RStudio Project, launch it.\n\n17.1.2 Make or verify a Git repo\nYou should be in RStudio now, in your project.\nIs it already a Git repository? The presence of the Git pane should tip you off. If yes, you’re done.\nIf not, you have several options:\n\nIn the R Console, call usethis::use_git().\nIn RStudio, go to Tools &gt; Project Options … &gt; Git/SVN. Under “Version control system”, select “Git”. Confirm New Git Repository? Yes!\nIn the shell, with working directory set to the project’s directory, do git init.\n\nIf you used usethis or RStudio to initialize the Git repo, the Project should re-launch in RStudio. Do that yourself if you did git init. RStudio should now have a Git pane.",
+    "text": "17.1.1 Realizar o verificar un Proyecto RStudio\nSi el proyecto aún no es un proyecto RStudio, hágalo así:\n\nDentro de RStudio puedes hacer: File &gt; New Project &gt; Existing Directory y, si lo deseas, “Abrir en nueva sesión”.\nAlternativamente, desde R, llame usethis::create_project(\"path/to/your/project\"), sustituyendo la ruta al directorio de su proyecto existente.\n\nSi su proyecto ya es un proyecto RStudio, ejecútelo.\n\n17.1.2 Crear o verificar un repositorio de Git\nDeberías estar en RStudio ahora, en tu proyecto.\n¿Ya es un repositorio de Git? La presencia del panel Git debería alertarte. Si es así, ya está.\nSi no, tienes varias opciones:\n\nEn la consola R, llame usethis::use_git().\nEn RStudio, vaya a Tools &gt; Project Options … &gt; Git/SVN. En “Sistema de control de versiones”, seleccione “Git”. ¿Confirmar el nuevo repositorio de Git? ¡Sí!\nEn el shell, con el directorio de trabajo configurado en el directorio del proyecto, haga git init.\n\nSi usó usethis o RStudio para inicializar el repositorio de Git, el proyecto debería reiniciarse en RStudio. Hágalo usted mismo si hizo git init. RStudio ahora debería tener un panel Git.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Existing project, GitHub last</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Proyecto existente, GitHub último</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-last.html#stage-and-commit",
-    "href": "usage-existing-project-github-last.html#stage-and-commit",
-    "title": "17  Existing project, GitHub last",
-    "section": "\n17.2 Stage and commit",
-    "text": "17.2 Stage and commit\nIf your local project was already a Git repo and was up-to-date, move on. Otherwise, you probably need to stage and commit.\n\nClick the “Git” tab in upper right pane\nCheck “Staged” box for all files you want to commit.\n\nDefault: stage everything\nWhen to do otherwise: this will all go to GitHub. So consider if that is appropriate for each file. You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.\n\n\nIf you’re not already in the Git pop-up, click “Commit”\nType a message in “Commit message”.\nClick “Commit”",
+    "objectID": "usage-existing-project-github-last.html#escenificar-y-comprometerse",
+    "href": "usage-existing-project-github-last.html#escenificar-y-comprometerse",
+    "title": "17  Proyecto existente, GitHub último",
+    "section": "\n17.2 Escenificar y comprometerse",
+    "text": "17.2 Escenificar y comprometerse\nSi su proyecto local ya era un repositorio de Git y estaba actualizado, continúe. De lo contrario, probablemente necesites preparar y comprometerte.\n\nHaga clic en la pestaña “Git” en el panel superior derecho\nMarque la casilla “Staged” para todos los archivos que desee confirmar.\n\nPredeterminado: organizar todo\nCuándo hacer lo contrario: todo esto irá a GitHub. Así que considere si eso es apropiado para cada archivo. Puedes conservar absolutamente un archivo localmente, sin enviarlo al repositorio de Git y enviarlo a GitHub. Simplemente déjelo reposar en su panel Git, sin que esté preparado. No se hará ningún daño. Si se trata de una situación a largo plazo, incluya el archivo en .gitignore.\n\n\nSi aún no estás en la ventana emergente de Git, haz clic en “Commit”\nEscribe un mensaje en “Commit message”.\nHaga click en “Commit”",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Existing project, GitHub last</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Proyecto existente, GitHub último</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-last.html#create-and-connect-a-github-repo",
-    "href": "usage-existing-project-github-last.html#create-and-connect-a-github-repo",
-    "title": "17  Existing project, GitHub last",
-    "section": "\n17.3 Create and connect a GitHub repo",
-    "text": "17.3 Create and connect a GitHub repo\nWe’ll show a few methods for creating a new GitHub repo and connecting it to your local repo. Pick one.\n\n17.3.1 Create and connect a GitHub repo with usethis\nTo use usethis for this task, you must have configured a personal access token (PAT). This will already by configured for anyone using HTTPS as their protocol, because they are already using the PAT to authenticate for other Git operations. But if you are an SSH person, you will need to configure a PAT, which is explained in Chapter 9. It is fine to have both a PAT and SSH keys.\nIn your project, in the R Console, call:\n\nusethis::use_github()\n#&gt; ✓ Creating GitHub repository 'jennybc/myrepo'\n#&gt; ✓ Setting remote 'origin' to 'https://github.com/jennybc/myrepo.git'\n#&gt; ✓ Pushing 'main' branch to GitHub and setting 'origin/main' as upstream branch\n#&gt; ✓ Opening URL 'https://github.com/jennybc/myrepo'\n\n\n\n\n\n\n\n\n\nusethis::use_github() does the following:\n\nCreates a new repo on GitHub.\nConfigures that new repo as the origin remote for the local repo.\nSets up your local default branch (e.g. main) to track same on origin and does an initial push.\nOpens the new repo in your browser.\n\n17.3.2 Create and connect a GitHub repo without usethis\nFirst, you need to create a new repo on GitHub.\nVaya a https://github.com y asegúrese de haber iniciado sesión.\nCerca de “Repositorios”, haga clic en el gran botón verde “Nuevo”. O, si está en su propia página de perfil, haga clic en “Repositorios” y luego haga clic en el gran botón verde “Nuevo”.\nCómo completar esto:\n\nPlantilla de repositorio: sin plantilla.\nNombre del repositorio: &lt;&lt;&gt;&gt;\n\nDescripción: &lt;&lt;&gt;&gt;\n\nPúblico.\n&lt;&lt;&gt;&gt;\n\n\nHaga clic en el gran botón verde que dice “Crear repositorio”.\nAhora haga clic en el gran botón verde que dice “&lt;&gt; Code”.\nCopie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.\n\n\n\n\n\n\n\n\n\n17.3.2.1 Connect local repo to GitHub repo with RStudio\nClick on the “two purple boxes and a white square” in the Git pane. Click “Add remote”. Paste the GitHub repo’s URL here and pick a remote name, almost certainly origin. Now “Add”.\nWe should be back in the “New Branch” dialog (if not, click on the “two purple boxes and a white square” in the Git pane again). I assume you’re on the main branch and want it to track main on GitHub (or whatever default branch you are using). Enter main as the branch name and make sure “Sync branch with remote” is checked. Click “Create” (yes, even though the branch already exists). In the next dialog, choose “overwrite”.\n\n17.3.2.2 Connect local repo to GitHub repo with the command line\nIn a shell, do this, substituting your URL:\ngit remote add origin https://github.com/jennybc/myrepo.git\nPush and cement the tracking relationship between your local main branch and main on GitHub (or whatever your default branch is named):\ngit push --set-upstream origin main",
+    "objectID": "usage-existing-project-github-last.html#crear-y-conectar-un-repositorio-de-github",
+    "href": "usage-existing-project-github-last.html#crear-y-conectar-un-repositorio-de-github",
+    "title": "17  Proyecto existente, GitHub último",
+    "section": "\n17.3 Crear y conectar un repositorio de GitHub",
+    "text": "17.3 Crear y conectar un repositorio de GitHub\nMostraremos algunos métodos para crear un nuevo repositorio de GitHub y conectarlo a su repositorio local. Elegir uno.\n\n17.3.1 Cree y conecte un repositorio de GitHub con usethis\nPara utilizar usethis para esta tarea, debe haber configurado un token de acceso personal (PAT). Esto ya estará configurado para cualquiera que use HTTPS como protocolo, porque ya están usando PAT para autenticarse para otras operaciones de Git. Pero si eres una persona SSH, necesitarás configurar un PAT, lo cual se explica en Chapter 9. Está bien tener claves PAT y SSH.\nEn su proyecto, en la Consola R, llame a:\n\nusethis::use_github()\n#&gt; ✓ Creating GitHub repository 'jennybc/myrepo'\n#&gt; ✓ Setting remote 'origin' to 'https://github.com/jennybc/myrepo.git'\n#&gt; ✓ Pushing 'main' branch to GitHub and setting 'origin/main' as upstream branch\n#&gt; ✓ Opening URL 'https://github.com/jennybc/myrepo'\n\n\n\n\n\nusethis::use_github() hace lo siguiente:\n\nCrea un nuevo repositorio en GitHub.\nConfigura ese nuevo repositorio como el remoto origin para el repositorio local.\nConfigura tu rama local predeterminada (por ejemplo, main) para rastrear la misma en origin y realiza un envío inicial.\nAbre el nuevo repositorio en tu navegador.\n\n17.3.2 Cree y conecte un repositorio de GitHub sin usar esto\nPrimero, necesitas crear un nuevo repositorio en GitHub.\nVaya a https://github.com y asegúrese de haber iniciado sesión.\nCerca de “Repositorios”, haga clic en el gran botón verde “Nuevo”. O, si está en su propia página de perfil, haga clic en “Repositorios” y luego haga clic en el gran botón verde “Nuevo”.\nCómo completar esto:\n\nPlantilla de repositorio: sin plantilla.\nNombre del repositorio: &lt;&lt;&gt;&gt;\n\nDescripción: &lt;&lt;&gt;&gt;\n\nPúblico.\n&lt;&lt;&gt;&gt;\n\n\nHaga clic en el gran botón verde que dice “Crear repositorio”.\nAhora haga clic en el gran botón verde que dice “&lt;&gt; Code”.\nCopie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.\n\n\n\n\n\n\n\n\n\n17.3.2.1 Conecte el repositorio local al repositorio de GitHub con RStudio\nHaga clic en “dos cuadros morados y un cuadrado blanco” en el panel de Git. Haga clic en “Add remote”. Pegue aquí la URL del repositorio de GitHub y elija un nombre remoto, casi con seguridad origin. Ahora “Add”.\nDeberíamos volver al cuadro de diálogo “New branch” (si no, haga clic nuevamente en “dos cuadros morados y un cuadrado blanco” en el panel de Git). Supongo que estás en la rama main y quieres que rastree main en GitHub (o cualquier rama predeterminada que estés usando). Ingrese main como nombre de la rama y asegúrese de que “Sync branch with remote” esté marcado. Haga clic en “Create” (sí, aunque la rama ya existe). En el siguiente cuadro de diálogo, elija “overwrite”.\n\n17.3.2.2 Conecte el repositorio local al repositorio de GitHub con la línea de comando\nEn un shell, haz esto, sustituyendo tu URL:\ngit remote add origin https://github.com/jennybc/myrepo.git\nEnvie y consolide la relación de seguimiento entre su rama main local y main en GitHub (o como se llame su rama predeterminada):\ngit push --set-upstream origin main",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Existing project, GitHub last</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Proyecto existente, GitHub último</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-last.html#confirm-the-local-files-propagated-to-the-github-remote",
-    "href": "usage-existing-project-github-last.html#confirm-the-local-files-propagated-to-the-github-remote",
-    "title": "17  Existing project, GitHub last",
-    "section": "\n17.4 Confirm the local files propagated to the GitHub remote",
-    "text": "17.4 Confirm the local files propagated to the GitHub remote\nGo back to the browser. I assume we’re still viewing your new GitHub repo.\nRefresh.\nYou should see all the project files you committed there.\nIf this project already had a Git history, it should be reflected on GitHub.",
+    "objectID": "usage-existing-project-github-last.html#confirme-los-archivos-locales-propagados-al-control-remoto-de-github",
+    "href": "usage-existing-project-github-last.html#confirme-los-archivos-locales-propagados-al-control-remoto-de-github",
+    "title": "17  Proyecto existente, GitHub último",
+    "section": "\n17.4 Confirme los archivos locales propagados al control remoto de GitHub",
+    "text": "17.4 Confirme los archivos locales propagados al control remoto de GitHub\nVuelve al navegador. Supongo que todavía estamos viendo su nuevo repositorio de GitHub.\nActualizar.\nDeberías ver todos los archivos del proyecto que confirmaste allí.\nSi este proyecto ya tenía un historial de Git, debería reflejarse en GitHub.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Existing project, GitHub last</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Proyecto existente, GitHub último</span>"
     ]
   },
   {
-    "objectID": "usage-existing-project-github-last.html#the-end",
-    "href": "usage-existing-project-github-last.html#the-end",
-    "title": "17  Existing project, GitHub last",
-    "section": "\n17.5 The end",
-    "text": "17.5 The end\nNow just “lather, rinse, repeat”. Do work somewhere: locally or on GitHub. Commit it. Push it or pull it, depending on where you did the work, but get local and remote “synced up”. Repeat.\nNote that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.",
+    "objectID": "usage-existing-project-github-last.html#el-fin",
+    "href": "usage-existing-project-github-last.html#el-fin",
+    "title": "17  Proyecto existente, GitHub último",
+    "section": "\n17.5 El fin",
+    "text": "17.5 El fin\nAhora simplemente “haga espuma, enjuague, repita”. Trabaje en algún lugar: localmente o en GitHub. Confirme los cambios. Envielos o importelos, dependiendo de dónde haya realizado el trabajo, pero “sincronice” local y remoto. Repetir.\nTenga en cuenta que, en general (y especialmente en el futuro, cuando colabore con otros desarrolladores), normalmente necesitará importar cambios desde el control remoto (GitHub) antes de enviar los cambios locales que ha realizado. Por esta razón, es una buena idea intentar adquirir el hábito de importar antes de intentar enviar.",
     "crumbs": [
       "Primeras victorias en GitHub",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Existing project, GitHub last</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Proyecto existente, GitHub último</span>"
     ]
   },
   {

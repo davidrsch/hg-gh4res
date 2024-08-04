@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.5.56">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
-<title>15&nbsp; New project, GitHub first – Git y GitHub con R</title>
+<title>15&nbsp; Nuevo proyecto, GitHub primero – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-new-project-github-first.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">New project, GitHub first</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-new-project-github-first.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Nuevo proyecto, GitHub primero</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -285,25 +285,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Get started with GitHub</span></a>
+ <span class="menu-text">Comience con GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-new-project-github-first.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">New project, GitHub first</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Nuevo proyecto, GitHub primero</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-existing-project-github-first.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Existing project, GitHub first</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Proyecto existente, GitHub primero</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-existing-project-github-last.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Existing project, GitHub last</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Proyecto existente, GitHub último</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -575,38 +575,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#make-a-repo-on-github" id="toc-make-a-repo-on-github" class="nav-link active" data-scroll-target="#make-a-repo-on-github"><span class="header-section-number">15.1</span> Make a repo on GitHub</a>
+<a href="#hacer-un-repositorio-en-github" id="toc-hacer-un-repositorio-en-github" class="nav-link active" data-scroll-target="#hacer-un-repositorio-en-github"><span class="header-section-number">15.1</span> Hacer un repositorio en GitHub</a>
   <ul class="collapse">
 <li><a href="#gitlab" id="toc-gitlab" class="nav-link" data-scroll-target="#gitlab"><span class="header-section-number">15.1.1</span> GitLab</a></li>
   <li><a href="#bitbucket" id="toc-bitbucket" class="nav-link" data-scroll-target="#bitbucket"><span class="header-section-number">15.1.2</span> Bitbucket</a></li>
   </ul>
 </li>
   <li>
-<a href="#sec-new-rstudio-project-via-git" id="toc-sec-new-rstudio-project-via-git" class="nav-link" data-scroll-target="#sec-new-rstudio-project-via-git"><span class="header-section-number">15.2</span> New RStudio Project via git clone</a>
+<a href="#sec-new-rstudio-project-via-git" id="toc-sec-new-rstudio-project-via-git" class="nav-link" data-scroll-target="#sec-new-rstudio-project-via-git"><span class="header-section-number">15.2</span> Nuevo proyecto RStudio a través de git clone</a>
   <ul class="collapse">
 <li><a href="#usethiscreate_from_github" id="toc-usethiscreate_from_github" class="nav-link" data-scroll-target="#usethiscreate_from_github"><span class="header-section-number">15.2.1</span> <code>usethis::create_from_github()</code></a></li>
   <li><a href="#rstudio-ide" id="toc-rstudio-ide" class="nav-link" data-scroll-target="#rstudio-ide"><span class="header-section-number">15.2.2</span> RStudio IDE</a></li>
-  <li><a href="#have-a-look-around" id="toc-have-a-look-around" class="nav-link" data-scroll-target="#have-a-look-around"><span class="header-section-number">15.2.3</span> Have a look around</a></li>
-  <li><a href="#optional-peek-under-the-hood" id="toc-optional-peek-under-the-hood" class="nav-link" data-scroll-target="#optional-peek-under-the-hood"><span class="header-section-number">15.2.4</span> Optional: peek under the hood</a></li>
+  <li><a href="#mira-alrededor" id="toc-mira-alrededor" class="nav-link" data-scroll-target="#mira-alrededor"><span class="header-section-number">15.2.3</span> Mira alrededor</a></li>
+  <li><a href="#opcional-echar-un-vistazo-debajo-del-cap%C3%B3" id="toc-opcional-echar-un-vistazo-debajo-del-capó" class="nav-link" data-scroll-target="#opcional-echar-un-vistazo-debajo-del-cap%C3%B3"><span class="header-section-number">15.2.4</span> Opcional: echar un vistazo debajo del capó</a></li>
   </ul>
 </li>
-  <li><a href="#make-local-changes-save-commit" id="toc-make-local-changes-save-commit" class="nav-link" data-scroll-target="#make-local-changes-save-commit"><span class="header-section-number">15.3</span> Make local changes, save, commit</a></li>
-  <li><a href="#push-your-local-changes-to-github" id="toc-push-your-local-changes-to-github" class="nav-link" data-scroll-target="#push-your-local-changes-to-github"><span class="header-section-number">15.4</span> Push your local changes to GitHub</a></li>
-  <li><a href="#confirm-the-local-change-propagated-to-the-github-remote" id="toc-confirm-the-local-change-propagated-to-the-github-remote" class="nav-link" data-scroll-target="#confirm-the-local-change-propagated-to-the-github-remote"><span class="header-section-number">15.5</span> Confirm the local change propagated to the GitHub remote</a></li>
+  <li><a href="#realizar-cambios-locales-guardar-confirmar" id="toc-realizar-cambios-locales-guardar-confirmar" class="nav-link" data-scroll-target="#realizar-cambios-locales-guardar-confirmar"><span class="header-section-number">15.3</span> Realizar cambios locales, guardar, confirmar</a></li>
+  <li><a href="#env%C3%ADa-tus-cambios-locales-a-github" id="toc-envía-tus-cambios-locales-a-github" class="nav-link" data-scroll-target="#env%C3%ADa-tus-cambios-locales-a-github"><span class="header-section-number">15.4</span> Envía tus cambios locales a GitHub</a></li>
+  <li><a href="#confirmar-el-cambio-local-propagado-al-control-remoto-de-github" id="toc-confirmar-el-cambio-local-propagado-al-control-remoto-de-github" class="nav-link" data-scroll-target="#confirmar-el-cambio-local-propagado-al-control-remoto-de-github"><span class="header-section-number">15.5</span> Confirmar el cambio local propagado al control remoto de GitHub</a></li>
   <li>
-<a href="#make-a-change-on-github" id="toc-make-a-change-on-github" class="nav-link" data-scroll-target="#make-a-change-on-github"><span class="header-section-number">15.6</span> Make a change on GitHub</a>
+<a href="#haz-un-cambio-en-github" id="toc-haz-un-cambio-en-github" class="nav-link" data-scroll-target="#haz-un-cambio-en-github"><span class="header-section-number">15.6</span> Haz un cambio en GitHub</a>
   <ul class="collapse">
 <li><a href="#gitlab-1" id="toc-gitlab-1" class="nav-link" data-scroll-target="#gitlab-1"><span class="header-section-number">15.6.1</span> GitLab</a></li>
   <li><a href="#bitbucket-1" id="toc-bitbucket-1" class="nav-link" data-scroll-target="#bitbucket-1"><span class="header-section-number">15.6.2</span> Bitbucket</a></li>
   </ul>
 </li>
-  <li><a href="#pull-from-github" id="toc-pull-from-github" class="nav-link" data-scroll-target="#pull-from-github"><span class="header-section-number">15.7</span> Pull from GitHub</a></li>
-  <li><a href="#the-end" id="toc-the-end" class="nav-link" data-scroll-target="#the-end"><span class="header-section-number">15.8</span> The end</a></li>
+  <li><a href="#extraer-de-github" id="toc-extraer-de-github" class="nav-link" data-scroll-target="#extraer-de-github"><span class="header-section-number">15.7</span> Extraer de GitHub</a></li>
+  <li><a href="#el-fin" id="toc-el-fin" class="nav-link" data-scroll-target="#el-fin"><span class="header-section-number">15.8</span> El fin</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-new-project-github-first.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">New project, GitHub first</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-new-github-first" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">New project, GitHub first</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-new-project-github-first.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Nuevo proyecto, GitHub primero</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-new-github-first" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Nuevo proyecto, GitHub primero</span></span></h1>
 </div>
 
 
@@ -620,11 +620,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>We create a new Project, with the preferred “GitHub first, then RStudio” sequence. Why do we prefer this? Because this method of copying the Project from GitHub to your computer also sets up the local Git repository for immediate pulling and pushing. Under the hood, we are doing <code>git clone</code>.</p>
-<p>You’ve actually done this before during set up (<a href="connect-rstudio-git-github.html" class="quarto-xref"><span>Chapter 12</span></a>). We’re doing it again, <em>with feeling</em>.</p>
-<p>The workflow is pretty similar for other repository managers like GitLab or Bitbucket. We will specify below when you may need to do something differently.</p>
-<section id="make-a-repo-on-github" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="make-a-repo-on-github">
-<span class="header-section-number">15.1</span> Make a repo on GitHub</h2>
+</header><p>Creamos un nuevo Proyecto, con la secuencia preferida “Primero GitHub, luego RStudio”. ¿Por qué preferimos esto? Porque este método de copiar el proyecto desde GitHub a su computadora también configura el repositorio local de Git para su extracción y envío inmediato. Debajo del capó, estamos haciendo “git clone”.</p>
+<p>De hecho, ya hiciste esto antes durante la configuración (<a href="connect-rstudio-git-github.html" class="quarto-xref"><span>Chapter 12</span></a>). Lo volvemos a hacer, <em>con sentimiento</em>.</p>
+<p>El flujo de trabajo es bastante similar para otros administradores de repositorios como GitLab o Bitbucket. A continuación especificaremos cuándo es posible que necesite hacer algo diferente.</p>
+<section id="hacer-un-repositorio-en-github" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="hacer-un-repositorio-en-github">
+<span class="header-section-number">15.1</span> Hacer un repositorio en GitHub</h2>
 <p>Vaya a <a href="https://github.com" class="uri">https://github.com</a> y asegúrese de haber iniciado sesión.</p>
 <p>Cerca de “Repositorios”, haga clic en el gran botón verde “Nuevo”. O, si está en su propia página de perfil, haga clic en “Repositorios” y luego haga clic en el gran botón verde “Nuevo”.</p>
 <p>Cómo completar esto:</p>
@@ -651,28 +651,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="gitlab" class="level3" data-number="15.1.1"><h3 data-number="15.1.1" class="anchored" data-anchor-id="gitlab">
 <span class="header-section-number">15.1.1</span> GitLab</h3>
-<p>Log in at <a href="https://gitlab.com" class="uri">https://gitlab.com</a>. Click on the “+” button in the top-right corner, and then on “New project”.</p>
+<p>Inicie sesión en <a href="https://gitlab.com" class="uri">https://gitlab.com</a>. Haga clic en el botón “+” en la esquina superior derecha y luego en “Nuevo proyecto”.</p>
 <ul>
-<li>Project name: <code>myrepo</code> (or whatever you wish)<br>
+<li>Nombre del proyecto: <code>myrepo</code> (o lo que desees)<br>
 </li>
-<li>Public</li>
-<li>YES Initialize repository with a README</li>
+<li>Público</li>
+<li>SÍ Inicializar el repositorio con un README</li>
 </ul>
-<p>Click the big green button “Create project.”</p>
-<p>Copy the HTTPS or SSH clone URL to your clipboard via the blue “Clone” button.</p>
+<p>Haga clic en el gran botón verde “Crear proyecto”.</p>
+<p>Copie la URL de clonación HTTPS o SSH a su portapapeles mediante el botón azul “Clonar”.</p>
 </section><section id="bitbucket" class="level3" data-number="15.1.2"><h3 data-number="15.1.2" class="anchored" data-anchor-id="bitbucket">
 <span class="header-section-number">15.1.2</span> Bitbucket</h3>
-<p>Log in at <a href="https://bitbucket.org" class="uri">https://bitbucket.org</a>. On the left-side pane, click on the “+” button, and then on “Repository” under “Create”.</p>
+<p>Inicie sesión en <a href="https://bitbucket.org" class="uri">https://bitbucket.org</a>. En el panel del lado izquierdo, haga clic en el botón “+” y luego en “Repositorio” en “Crear”.</p>
 <ul>
-<li>Repository name: <code>myrepo</code> (or whatever you wish)</li>
-<li>Access level: Uncheck to make the repository public.</li>
-<li>Include a README?: Select either “Yes, with a tutorial (for beginners)” or “Yes, with a template”</li>
-<li>Version control system: Git</li>
+<li>Nombre del repositorio: <code>myrepo</code> (o el que desees)</li>
+<li>Nivel de acceso: desmarque para hacer público el repositorio.</li>
+<li>¿Incluir un archivo README?: seleccione “Sí, con un tutorial (para principiantes)” o “Sí, con una plantilla”.</li>
+<li>Sistema de control de versiones: Git</li>
 </ul>
 <p>Click the big blue button “Create repository.”</p>
-<p>Copy the HTTPS or SSH clone URL that appears when you click on the blue “Clone” button. Make sure you remove the <code>git clone ...</code> that shows up at the beginning.</p>
+<p>Copie la URL de clonación HTTPS o SSH que aparece al hacer clic en el botón azul “Clonar”. Asegúrate de eliminar el <code>git clone...</code> que aparece al principio.</p>
 </section></section><section id="sec-new-rstudio-project-via-git" class="level2" data-number="15.2"><h2 data-number="15.2" class="anchored" data-anchor-id="sec-new-rstudio-project-via-git">
-<span class="header-section-number">15.2</span> New RStudio Project via git clone</h2>
+<span class="header-section-number">15.2</span> Nuevo proyecto RStudio a través de git clone</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -681,81 +681,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>I present two ways to do this:</p>
+<p>Les presento dos formas de hacer esto:</p>
 <ul>
 <li><code>usethis::create_from_github()</code></li>
-<li>Via the RStudio IDE</li>
+<li>A través del IDE de RStudio</li>
 </ul>
-<p><em>(Recall that we showed how to do this with command line Git in <a href="connect-git-github.html" class="quarto-xref"><span>Chapter 11</span></a>.)</em></p>
-<p>When you are cloning your own GitHub repository, the two methods are equivalent. In other scenarios, especially fork-and-clone (<span class="citation" data-cites="secfork-and-clone">(<a href="references.html#ref-secfork-and-clone" role="doc-biblioref"><strong>secfork-and-clone?</strong></a>)</span>), I think <code>usethis::create_from_github()</code> is superior, because it does additional, recommended setup.</p>
-<p>Pick <strong>one</strong> of these methods below.</p>
+<p><em>(Recuerde que mostramos cómo hacer esto con la línea de comando Git en <a href="connect-git-github.html" class="quarto-xref"><span>Chapter 11</span></a>.)</em></p>
+<p>Cuando clonas tu propio repositorio de GitHub, los dos métodos son equivalentes. En otros escenarios, especialmente fork-and-clone (<span class="citation" data-cites="secfork-and-clone">(<a href="references.html#ref-secfork-and-clone" role="doc-biblioref"><strong>secfork-and-clone?</strong></a>)</span>), creo que <code>usethis::create_from_github()</code> es superior, porque realiza una configuración adicional recomendada.</p>
+<p>Elija <strong>uno</strong> de estos métodos a continuación.</p>
 <section id="usethiscreate_from_github" class="level3" data-number="15.2.1"><h3 data-number="15.2.1" class="anchored" data-anchor-id="usethiscreate_from_github">
 <span class="header-section-number">15.2.1</span> <code>usethis::create_from_github()</code>
 </h3>
-<p>You can execute this command in any R session. If you use RStudio, then do this in the R console of any RStudio instance.</p>
+<p>Puede ejecutar este comando en cualquier sesión de R. Si usa RStudio, hágalo en la consola R de cualquier instancia de RStudio.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">create_from_github</span><span class="op">(</span></span>
 <span>  <span class="st">"https://github.com/YOU/YOUR_REPO.git"</span>,</span>
 <span>  destdir <span class="op">=</span> <span class="st">"~/path/to/where/you/want/the/local/repo/"</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The first argument is <code>repo_spec</code> and it accepts the GitHub repo specification in various forms. In particular, you can use the URL we just copied from GitHub.</p>
-<p>The <code>destdir</code> argument specifies the parent directory where you want the new folder (and local Git repo) to live. If you don’t specify <code>destdir</code>, usethis defaults to some very conspicuous place, like your desktop. If you like to keep Git repos in a certain folder on your computer, you can personalize this default by setting the <code>usethis.destdir</code> option in your <code>.Rprofile</code>.</p>
-<p>We’re accepting the default behaviour of two other arguments, <code>rstudio</code> and <code>open</code>, because that’s what most people will want. For example, for an RStudio user, <code>create_from_github()</code> does this:</p>
+<p>El primer argumento es <code>repo_spec</code> y acepta la especificación del repositorio de GitHub en varias formas. En particular, puedes usar la URL que acabamos de copiar de GitHub.</p>
+<p>El argumento <code>destdir</code> especifica el directorio principal donde desea que resida la nueva carpeta (y el repositorio local de Git). Si no especifica <code>destdir</code>, use este valor predeterminado en algún lugar muy visible, como su escritorio. Si desea mantener los repositorios de Git en una determinada carpeta de su computadora, puede personalizar este valor predeterminado configurando la opción <code>usethis.destdir</code> en su <code>.Rprofile</code>.</p>
+<p>Aceptamos el comportamiento predeterminado de otros dos argumentos, <code>rstudio</code> y <code>open</code>, porque eso es lo que la mayoría de la gente querrá. Por ejemplo, para un usuario de RStudio, <code>create_from_github()</code> hace esto:</p>
 <ul>
-<li>Creates a new local directory in <code>destdir</code>, which is all of these things:
+<li>Crea un nuevo directorio local en <code>destdir</code>, que contiene todas estas cosas:
 <ul>
-<li>a directory or folder on your computer</li>
-<li>a Git repository, linked to a remote GitHub repository</li>
-<li>an RStudio Project</li>
+<li>un directorio o carpeta en su computadora</li>
+<li>un repositorio Git, vinculado a un repositorio GitHub remoto</li>
+<li>un proyecto RStudio</li>
 </ul>
 </li>
-<li>Opens a new RStudio instance in the new Project</li>
-<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
+<li>Abre una nueva instancia de RStudio en el nuevo Proyecto.</li>
+<li><strong>En ausencia de otras restricciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.</strong></li>
 </ul></section><section id="rstudio-ide" class="level3" data-number="15.2.2"><h3 data-number="15.2.2" class="anchored" data-anchor-id="rstudio-ide">
 <span class="header-section-number">15.2.2</span> RStudio IDE</h3>
-<p>In RStudio, start a new Project:</p>
+<p>En RStudio, inicie un nuevo proyecto:</p>
 <ul>
 <li>
-<em>File &gt; New Project &gt; Version Control &gt; Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/jennybc/myrepo.git</code>.</li>
-<li>Be intentional about where you create this Project.</li>
-<li>I suggest you “Open in new session”.</li>
-<li>Click “Create Project” to create a new directory, which will be all of these things:
+<em>File &gt; New Project &gt; Version Control &gt; Git</em>. En la “URL del repositorio”, pegue la URL de su nuevo repositorio de GitHub. será algo como esto <code>https://github.com/jennybc/myrepo.git</code>.</li>
+<li>Sea intencional acerca de dónde crea este proyecto.</li>
+<li>Te sugiero “Abrir en nueva sesión”.</li>
+<li>Haga clic en “Crear proyecto” para crear un nuevo directorio, que contendrá todas estas cosas:
 <ul>
-<li>a directory or “folder” on your computer</li>
-<li>a Git repository, linked to a remote GitHub repository</li>
-<li>an RStudio Project</li>
+<li>un directorio o “carpeta” en su computadora</li>
+<li>un repositorio Git, vinculado a un repositorio GitHub remoto</li>
+<li>un proyecto RStudio</li>
 </ul>
 </li>
-<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
+<li><strong>En ausencia de otras limitaciones, sugiero que todos sus proyectos de R tengan exactamente esta configuración.</strong></li>
 </ul>
-<p>This should download the <code>README.md</code> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <code>README.md</code> file.</p>
-<p>Behind the scenes, RStudio has done this for you:</p>
+<p>Esto debería descargar el archivo <code>README.md</code> que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo <code>README.md</code>.</p>
+<p>Detrás de escena, RStudio ha hecho esto por usted:</p>
 <pre class="console"><code>git clone https://github.com/jennybc/myrepo.git</code></pre>
-</section><section id="have-a-look-around" class="level3" data-number="15.2.3"><h3 data-number="15.2.3" class="anchored" data-anchor-id="have-a-look-around">
-<span class="header-section-number">15.2.3</span> Have a look around</h3>
-<p>Regardless of whether you used usethis or RStudio, you should now be working in the new Git repo. The implicit <code>git clone</code> should download the <code>README.md</code> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <code>README.md</code> file.</p>
-<p>There’s a big advantage to the “GitHub first, then RStudio” workflow: the remote GitHub repo is configured as the <code>origin</code> remote for your local repo and your local <code>main</code> branch is now tracking the <code>main</code> on GitHub. This is a technical but important point about Git. The practical implication is that you are now set up to push and pull. No need to fanny around setting up Git remotes and tracking branches on the command line.</p>
-<p>We’re about to confirm we are setup for pulling and pushing.</p>
-<div class="cell">
-<div class="cell-output-display">
+</section><section id="mira-alrededor" class="level3" data-number="15.2.3"><h3 data-number="15.2.3" class="anchored" data-anchor-id="mira-alrededor">
+<span class="header-section-number">15.2.3</span> Mira alrededor</h3>
+<p>Independientemente de si usó usethis o RStudio, ahora debería estar trabajando en el nuevo repositorio de Git. El <code>git clone</code> implícito debería descargar el archivo <code>README.md</code> que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo <code>README.md</code>.</p>
+<p>Hay una gran ventaja en el flujo de trabajo “GitHub primero, luego RStudio”: el repositorio remoto de GitHub está configurado como el remoto <code>origin</code> para su repositorio local y su rama <code>main</code> local ahora está rastreando el <code>main</code> en GitHub. Este es un punto técnico pero importante sobre Git. La implicación práctica es que ahora está preparado para empujar y tirar. No es necesario perder el tiempo configurando controles remotos de Git y rastreando ramas en la línea de comando.</p>
+<p>Estamos a punto de confirmar que estamos preparados para realizar push and pulls.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/github-pull-push.jpeg" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Pull and push.</figcaption></figure>
+<figcaption>Pull y push.</figcaption></figure>
 </div>
-</div>
-</div>
-</section><section id="optional-peek-under-the-hood" class="level3" data-number="15.2.4"><h3 data-number="15.2.4" class="anchored" data-anchor-id="optional-peek-under-the-hood">
-<span class="header-section-number">15.2.4</span> Optional: peek under the hood</h3>
-<p>Completely optional activity: use command line Git to see what we’re talking about above, i.e.&nbsp;the remote and tracking branch setup.</p>
-<p><code>git remote -v</code> or <code>git remote --verbose</code> shows the remotes you have setup. Here’s how that looks for someone using HTTPS with GitHub and calling it <code>origin</code>:</p>
+</section><section id="opcional-echar-un-vistazo-debajo-del-capó" class="level3" data-number="15.2.4"><h3 data-number="15.2.4" class="anchored" data-anchor-id="opcional-echar-un-vistazo-debajo-del-capó">
+<span class="header-section-number">15.2.4</span> Opcional: echar un vistazo debajo del capó</h3>
+<p>Actividad completamente opcional: use la línea de comando Git para ver de qué estamos hablando arriba, es decir, la configuración de la rama remota y de seguimiento.</p>
+<p><code>git remote -v</code> o <code>git remote --verbose</code> muestra los controles remotos que ha configurado. Así es como se ve alguien que usa HTTPS con GitHub y lo llama <code>origin</code>:</p>
 <pre class="console"><code>~/tmp/myrepo % git remote -v
 origin  https://github.com/jennybc/myrepo.git (fetch)
 origin  https://github.com/jennybc/myrepo.git (push)</code></pre>
-<p><code>git branch -vv</code> prints info about the current branch (<code>-vv</code> for “very verbose”, I guess). In particular, we can see that local <code>main</code> is tracking the <code>main</code> branch on <code>origin</code>, a.k.a. <code>origin/main</code>.</p>
+<p><code>git branch -vv</code> imprime información sobre la rama actual (<code>-vv</code> para “muy detallado”, supongo). En particular, podemos ver que el <code>main</code> local está rastreando la rama <code>main</code> en <code>origin</code>, también conocido como <code>origin/main</code>.</p>
 <pre class="console"><code>~/tmp/myrepo % git branch -vv
 * main 2899c91 [origin/main] A commit from my local computer</code></pre>
-<p>Finally, <code>git remote show origin</code> gives yet another view on useful remote and branch information:</p>
+<p>Finalmente, <code>git remote show origin</code> ofrece otra visión de información útil sobre ramas y remotos:</p>
 <pre class="console"><code>~/tmp/myrepo % git remote show origin    
 * remote origin
   Fetch URL: https://github.com/jennybc/myrepo.git
@@ -767,70 +763,70 @@ origin  https://github.com/jennybc/myrepo.git (push)</code></pre>
     main merges with remote main
   Local ref configured for 'git push':
     main pushes to main (up to date)</code></pre>
-<p><code>git clone</code>, which RStudio did for us, sets all of this up automatically. This is why “GitHub first, then RStudio” is the preferred way to start projects early in your Git/GitHub life.</p>
-</section></section><section id="make-local-changes-save-commit" class="level2" data-number="15.3"><h2 data-number="15.3" class="anchored" data-anchor-id="make-local-changes-save-commit">
-<span class="header-section-number">15.3</span> Make local changes, save, commit</h2>
-<p><strong>Do this every time you finish a valuable chunk of work, probably many times a day.</strong></p>
-<p>From RStudio, modify the <code>README.md</code> file, e.g., by adding the line “This is a line from RStudio”. Save your changes.</p>
-<p>Commit these changes to your local repo. How?</p>
+<p><code>git clone</code>, que RStudio hizo por nosotros, configura todo esto automáticamente. Es por eso que “Primero GitHub, luego RStudio” es la forma preferida de iniciar proyectos temprano en su vida de Git/GitHub.</p>
+</section></section><section id="realizar-cambios-locales-guardar-confirmar" class="level2" data-number="15.3"><h2 data-number="15.3" class="anchored" data-anchor-id="realizar-cambios-locales-guardar-confirmar">
+<span class="header-section-number">15.3</span> Realizar cambios locales, guardar, confirmar</h2>
+<p><strong>Haga esto cada vez que termine una parte valiosa del trabajo, probablemente muchas veces al día.</strong></p>
+<p>Desde RStudio, modifique el archivo <code>README.md</code>, por ejemplo, agregando la línea “Esta es una línea de RStudio”. Guarde sus cambios.</p>
+<p>Confirme estos cambios en su repositorio local. ¿Cómo?</p>
 <ul>
-<li>Click the “Git” tab in upper right pane</li>
-<li>Check “Staged” box for any files whose existence or modifications you want to commit.
+<li>Haga clic en la pestaña “Git” en el panel superior derecho</li>
+<li>Marque la casilla “Staged” para cualquier archivo cuya existencia o modificaciones desee confirmar.
 <ul>
-<li>To see more detail on what’s changed in file since the last commit, click on “Diff” for a Git pop-up</li>
+<li>Para ver más detalles sobre los cambios en el archivo desde la última confirmación, haga clic en “Diff” para ver una ventana emergente de Git.</li>
 </ul>
 </li>
-<li>If you’re not already in the Git pop-up, click “Commit”</li>
-<li>Type a message in “Commit message”, such as “Commit from RStudio”.</li>
-<li>Click “Commit”</li>
-</ul></section><section id="push-your-local-changes-to-github" class="level2" data-number="15.4"><h2 data-number="15.4" class="anchored" data-anchor-id="push-your-local-changes-to-github">
-<span class="header-section-number">15.4</span> Push your local changes to GitHub</h2>
-<p><strong>Do this a few times a day, but possibly less often than you commit.</strong></p>
-<p>You have new work in your local Git repository, but the changes are not online yet.</p>
-<p>This will seem counterintuitive, but first let’s stop and pull from GitHub.</p>
-<p>Why? Establish this habit for the future! If you make changes to the repo in the browser or from another machine or (one day) a collaborator has pushed, you will be happier if you pull those changes in before you attempt to push.</p>
-<p>Click the blue “Pull” button in the “Git” tab in RStudio. I doubt anything will happen, i.e.&nbsp;you’ll get the message “Already up-to-date.” This is just to establish a habit.</p>
-<p>Click the green “Push” button to send your local changes to GitHub. RStudio will report something along these lines:</p>
+<li>Si aún no estás en la ventana emergente de Git, haz clic en “Commit”.</li>
+<li>Escriba un mensaje en “Commit message”, como “Commit from RStudio”.</li>
+<li>Haga clic en “Commit”</li>
+</ul></section><section id="envía-tus-cambios-locales-a-github" class="level2" data-number="15.4"><h2 data-number="15.4" class="anchored" data-anchor-id="envía-tus-cambios-locales-a-github">
+<span class="header-section-number">15.4</span> Envía tus cambios locales a GitHub</h2>
+<p><strong>Haga esto varias veces al día, pero posiblemente con menos frecuencia de lo que se compromete.</strong></p>
+<p>Tiene un nuevo trabajo en su repositorio Git local, pero los cambios aún no están en línea.</p>
+<p>Esto parecerá contradictorio, pero primero detengámonos y salgamos de GitHub.</p>
+<p>¿Por qué? ¡Establece este hábito para el futuro! Si realiza cambios en el repositorio en el navegador o desde otra máquina o (un día) un colaborador lo ha enviado, estará más feliz si realiza esos cambios antes de intentar enviar.</p>
+<p>Haga clic en el botón azul “Pull” en la pestaña “Git” en RStudio. Dudo que suceda algo, es decir, recibirás el mensaje “Already up-to-date”. Esto es sólo para establecer un hábito.</p>
+<p>Haga clic en el botón verde “Push” para enviar sus cambios locales a GitHub. RStudio informará algo como esto:</p>
 <pre class="console"><code>&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main
 To https://github.com/jennybc/myrepo.git
    2899c91..b34cade  HEAD -&gt; main</code></pre>
-</section><section id="confirm-the-local-change-propagated-to-the-github-remote" class="level2" data-number="15.5"><h2 data-number="15.5" class="anchored" data-anchor-id="confirm-the-local-change-propagated-to-the-github-remote">
-<span class="header-section-number">15.5</span> Confirm the local change propagated to the GitHub remote</h2>
-<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
-<p>Refresh.</p>
-<p>You should see the new “This is a line from RStudio” in the README.</p>
-<p>If you click on “commits,” you should see one with the message “Commit from RStudio”.</p>
-</section><section id="make-a-change-on-github" class="level2" data-number="15.6"><h2 data-number="15.6" class="anchored" data-anchor-id="make-a-change-on-github">
-<span class="header-section-number">15.6</span> Make a change on GitHub</h2>
-<p>Click on README.md in the file listing on GitHub.</p>
-<p>In the upper right corner, click on the pencil for “Edit this file”.</p>
-<p>Add a line to this file, such as “Line added from GitHub.”</p>
-<p>Edit the commit message in “Commit changes” or accept the default.</p>
-<p>Click the big green button “Commit changes.”</p>
+</section><section id="confirmar-el-cambio-local-propagado-al-control-remoto-de-github" class="level2" data-number="15.5"><h2 data-number="15.5" class="anchored" data-anchor-id="confirmar-el-cambio-local-propagado-al-control-remoto-de-github">
+<span class="header-section-number">15.5</span> Confirmar el cambio local propagado al control remoto de GitHub</h2>
+<p>Vuelve al navegador. Supongo que todavía estamos viendo su nuevo repositorio de GitHub.</p>
+<p>Actualizar.</p>
+<p>Deberías ver el nuevo “Esta es una línea de RStudio” en el archivo README.</p>
+<p>Si hace clic en “commit”, debería ver uno con el mensaje “Commit from RStudio”.</p>
+</section><section id="haz-un-cambio-en-github" class="level2" data-number="15.6"><h2 data-number="15.6" class="anchored" data-anchor-id="haz-un-cambio-en-github">
+<span class="header-section-number">15.6</span> Haz un cambio en GitHub</h2>
+<p>Haga clic en README.md en la lista de archivos en GitHub.</p>
+<p>En la esquina superior derecha, haga clic en el lápiz para “Editar este archivo”.</p>
+<p>Agregue una línea a este archivo, como “Línea agregada desde GitHub”.</p>
+<p>Edite el mensaje de commit en “Confirmar cambios” o acepte el valor predeterminado.</p>
+<p>Haga clic en el gran botón verde “Confirmar cambios”.</p>
 <section id="gitlab-1" class="level3" data-number="15.6.1"><h3 data-number="15.6.1" class="anchored" data-anchor-id="gitlab-1">
 <span class="header-section-number">15.6.1</span> GitLab</h3>
-<p>Click on README.md in the file listing on GitLab.</p>
-<p>In the upper right corner, click on “Edit”.</p>
-<p>Add a line to this file, such as “Line added from GitLab.”</p>
-<p>Edit the commit message in “Commit changes” or accept the default.</p>
-<p>Click the big green button “Commit changes.”</p>
+<p>Haga clic en README.md en la lista de archivos en GitLab.</p>
+<p>En la esquina superior derecha, haga clic en “Editar”.</p>
+<p>Agregue una línea a este archivo, como “Línea agregada desde GitLab”.</p>
+<p>Edite el mensaje de confirmación en “Confirmar cambios” o acepte el valor predeterminado.</p>
+<p>Haga clic en el gran botón verde “Confirmar cambios”.</p>
 </section><section id="bitbucket-1" class="level3" data-number="15.6.2"><h3 data-number="15.6.2" class="anchored" data-anchor-id="bitbucket-1">
 <span class="header-section-number">15.6.2</span> Bitbucket</h3>
-<p>Click on README.md in the file listing on Bitbucket.</p>
-<p>In the upper right corner, click on “Edit”.</p>
-<p>Add a line to this file, such as “Line added from Bitbucket.”</p>
-<p>Click on the blue “Commit” button. A pop-up will show up. Edit the commit message or accept the default.</p>
-<p>Click the blue “Commit” button.</p>
-</section></section><section id="pull-from-github" class="level2" data-number="15.7"><h2 data-number="15.7" class="anchored" data-anchor-id="pull-from-github">
-<span class="header-section-number">15.7</span> Pull from GitHub</h2>
-<p>Back in RStudio locally …</p>
-<p>Inspect your README.md. It should NOT have the line “Line added from GitHub”. It should be as you left it. Verify that.</p>
-<p>Click the blue Pull button.</p>
-<p>Look at README.md again. You should now see the new line there.</p>
-</section><section id="the-end" class="level2" data-number="15.8"><h2 data-number="15.8" class="anchored" data-anchor-id="the-end">
-<span class="header-section-number">15.8</span> The end</h2>
-<p>Now just “lather, rinse, repeat”. Do work somewhere: locally or on GitHub. Commit it. Push it or pull it, depending on where you did the work, but get local and remote “synced up”. Repeat.</p>
-<p>Note that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+<p>Haga clic en README.md en la lista de archivos de Bitbucket.</p>
+<p>En la esquina superior derecha, haga clic en “Editar”.</p>
+<p>Agregue una línea a este archivo, como “Línea agregada desde Bitbucket”.</p>
+<p>Haga clic en el botón azul “Confirmar”. Aparecerá una ventana emergente. Edite el mensaje de confirmación o acepte el valor predeterminado.</p>
+<p>Haga clic en el botón azul “Confirmar”.</p>
+</section></section><section id="extraer-de-github" class="level2" data-number="15.7"><h2 data-number="15.7" class="anchored" data-anchor-id="extraer-de-github">
+<span class="header-section-number">15.7</span> Extraer de GitHub</h2>
+<p>De vuelta en RStudio localmente…</p>
+<p>Inspeccione su README.md. NO debería tener la línea “Línea agregada desde GitHub”. Debe quedar como lo dejaste. Comprueba eso.</p>
+<p>Haga clic en el botón azul Pull.</p>
+<p>Mire README.md nuevamente. Ahora deberías ver la nueva línea allí.</p>
+</section><section id="el-fin" class="level2" data-number="15.8"><h2 data-number="15.8" class="anchored" data-anchor-id="el-fin">
+<span class="header-section-number">15.8</span> El fin</h2>
+<p>Ahora simplemente “haga espuma, enjuague, repita”. Trabaje en algún lugar: localmente o en GitHub. Confirme los cambios. Envielos o importelos, dependiendo de dónde haya realizado el trabajo, pero “sincronice” local y remoto. Repetir.</p>
+<p>Tenga en cuenta que, en general (y especialmente en el futuro, cuando colabore con otros desarrolladores), normalmente necesitará importar cambios desde el control remoto (GitHub) antes de enviar los cambios locales que ha realizado. Por esta razón, es una buena idea intentar adquirir el hábito de importar antes de intentar enviar.</p>
 
 
 </section></main><!-- /main --><script>
@@ -1320,13 +1316,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./usage-intro.html" class="pagination-link" aria-label="Get started with GitHub">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Get started with GitHub</span>
+      <a href="./usage-intro.html" class="pagination-link" aria-label="Comience con GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Comience con GitHub</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./usage-existing-project-github-first.html" class="pagination-link" aria-label="Existing project, GitHub first">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Existing project, GitHub first</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./usage-existing-project-github-first.html" class="pagination-link" aria-label="Proyecto existente, GitHub primero">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Proyecto existente, GitHub primero</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
