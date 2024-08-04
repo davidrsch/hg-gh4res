@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.5.56">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
-<title>19&nbsp; Render an R script – Git y GitHub con R</title>
+<title>19&nbsp; Renderizar un script R – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-r-script-and-github.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Render an R script</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-r-script-and-github.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Renderizar un script R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -309,13 +309,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-rmd-and-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Test drive R Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Prueba de R Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-r-script-and-github.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Render an R script</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Renderizar un script R</span></span></a>
   </div>
 </li>
       </ul>
@@ -574,13 +574,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#morph-r-markdown-into-a-renderable-r-script" id="toc-morph-r-markdown-into-a-renderable-r-script" class="nav-link active" data-scroll-target="#morph-r-markdown-into-a-renderable-r-script"><span class="header-section-number">19.1</span> Morph R Markdown into a renderable R script</a></li>
-  <li><a href="#write-a-render-ready-r-script" id="toc-write-a-render-ready-r-script" class="nav-link" data-scroll-target="#write-a-render-ready-r-script"><span class="header-section-number">19.2</span> Write a render-ready R script</a></li>
+<li><a href="#transforme-rmarkdown-en-un-script-r-renderizable" id="toc-transforme-rmarkdown-en-un-script-r-renderizable" class="nav-link active" data-scroll-target="#transforme-rmarkdown-en-un-script-r-renderizable"><span class="header-section-number">19.1</span> Transforme RMarkdown en un script R renderizable</a></li>
+  <li><a href="#escribir-un-script-r-listo-para-renderizar" id="toc-escribir-un-script-r-listo-para-renderizar" class="nav-link" data-scroll-target="#escribir-un-script-r-listo-para-renderizar"><span class="header-section-number">19.2</span> Escribir un script R listo para renderizar</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-r-script-and-github.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Render an R script</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-r-test-drive" class="quarto-section-identifier"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Render an R script</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage-intro.html">Primeras victorias en GitHub</a></li><li class="breadcrumb-item"><a href="./usage-r-script-and-github.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Renderizar un script R</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-r-test-drive" class="quarto-section-identifier"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Renderizar un script R</span></span></h1>
 </div>
 
 
@@ -594,82 +594,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>An under-appreciated fact is that much of what you can do with R Markdown, you can also do with an R script.</p>
-<p>If you’re in analysis mode and want a report as a side effect, write an R script. If you’re writing a report with a lot of R code in it, write <code>.Rmd</code>. In either case, render to markdown and/or HTML to communicate with other human beings.</p>
+</header><p>Un hecho subestimado es que mucho de lo que puedes hacer con R Markdown, también puedes hacerlo con un script R.</p>
+<p>Si está en modo de análisis y desea un informe como efecto secundario, escriba un script R. Si está escribiendo un informe con mucho código R, escriba <code>.Rmd</code>. En cualquier caso, renderice en Markdown y/o HTML para comunicarse con otros seres humanos.</p>
 <ul>
-<li>In R markdown, prose is top-level and code is tucked into chunks.</li>
-<li>In R scripts, code is top-level and prose is tucked into comments. You will use <code>#'</code> to request that certain comments appear as top-level prose in the rendered output.</li>
+<li>En R Markdown, la prosa es de nivel superior y el código está dividido en fragmentos.</li>
+<li>En los scripts R, el código es de nivel superior y la prosa se incluye en los comentarios. Utilizará <code>#'</code> para solicitar que ciertos comentarios aparezcan como prosa de nivel superior en la salida renderizada.</li>
 </ul>
-<p>You will continue to specify things like the output format via YAML at the top of the file. This will need to be commented with <code>#'</code>.</p>
-<section id="morph-r-markdown-into-a-renderable-r-script" class="level2" data-number="19.1"><h2 data-number="19.1" class="anchored" data-anchor-id="morph-r-markdown-into-a-renderable-r-script">
-<span class="header-section-number">19.1</span> Morph R Markdown into a renderable R script</h2>
-<p>Get yourself a working R Markdown file, such as the one you made in your <a href="sec-rmd-test-drive">Rmd test drive</a>. Or use the boilerplate <code>.Rmd</code> document RStudio makes with <em>File &gt; New File &gt; R Markdown …</em>.</p>
-<p>Save the file as <code>foo.R</code>, as opposed to <code>foo.Rmd</code>. Yes, for a brief moment, you will have R Markdown saved as an R script, but that won’t be true for long.</p>
-<p>Transform the R markdown to R:</p>
+<p>Continuará especificando cosas como el formato de salida a través de YAML en la parte superior del archivo. Esto deberá comentarse con <code>#'</code>.</p>
+<section id="transforme-rmarkdown-en-un-script-r-renderizable" class="level2" data-number="19.1"><h2 data-number="19.1" class="anchored" data-anchor-id="transforme-rmarkdown-en-un-script-r-renderizable">
+<span class="header-section-number">19.1</span> Transforme RMarkdown en un script R renderizable</h2>
+<p>Consiga un archivo RMarkdown que funcione, como el que creó en su <a href="usage-rmd-and-github.html">prueba de Rmd</a>. O utilice el documento estándar <code>.Rmd</code> que RStudio crea con <em>File &gt; New File &gt; R Markdown …</em>.</p>
+<p>Guarde el archivo como <code>foo.R</code>, en lugar de <code>foo.Rmd</code>. Sí, por un breve momento, tendrás R Markdown guardado como un script R, pero eso no será así por mucho tiempo.</p>
+<p>Transforme RMarkdown a R:</p>
 <ul>
-<li><p>Anything that’s not R code? Like the YAML and the prose? Protect it with roxygen-style comments: start each line with <code>#'</code>.</p></li>
+<li><p>¿Algo que no sea código R? ¿Te gusta el YAML y la prosa? Protégelo con comentarios estilo roxygen: comienza cada línea con <code>#'</code>.</p></li>
 <li>
-<p>Anything that is R code? Let it exist “as is” as top-level code. That means you’ll need to change the syntax of R chunk headers like so:</p>
-<p>Before: <code>```{r setup, include = FALSE}</code><br>
-After: <code>#+ r setup, include = FALSE</code></p>
-<p>Replace the leading backticks and opening curly brace with <code>#+</code>.<br>
-Delete the trailing curly brace.<br>
-Delete the 3 backticks that end each chunk.</p>
+<p>¿Algo que sea código R? Déjelo existir “tal cual” como código de nivel superior. Eso significa que necesitarás cambiar la sintaxis de los encabezados de fragmentos de R de esta manera:</p>
+<p>Antes: <code>```{r setup, include = FALSE}</code><br>
+Después: <code>#+ r setup, include = FALSE</code></p>
+<p>Reemplace las comillas invertidas iniciales y la llave de apertura con <code>#+</code>.<br>
+Eliminar la llave final.<br>
+Elimina las 3 comillas invertidas que finalizan cada fragmento.</p>
 </li>
 </ul>
-<p>Render the R script through one of these methods:</p>
+<p>Renderice el script R a través de uno de estos métodos:</p>
 <ul>
-<li>Click on the “notebook” icon in RStudio to “Compile Report”.</li>
-<li>In RStudio, do <em>File &gt; Knit Document</em>.</li>
-<li>In R, do <code>rmarkdown::render("foo.R")</code>.</li>
+<li>Haga clic en el icono “notebook” en RStudio para “Compile Report”.</li>
+<li>En RStudio, haga <em>File &gt; Knit Document</em>.</li>
+<li>En R, ejecute <code>rmarkdown::render("foo.R")</code>.</li>
 </ul>
-<p>You’ll get a markdown and/or HTML report, just as with R Markdown.</p>
-<p>If you’re having trouble making all the necessary changes and you’re frustrated, see below for an example you can copy and paste.</p>
-<p>All the workflow tips from the <a href="sec-rmd-test-drive">Rmd test drive</a> apply here: when you script an analysis, render it to markdown, commit the <code>.R</code>, the <code>.md</code>, any associated figures, and push to GitHub. Collaborators can see your code, but also browse around the results without having to download and execute the code. This makes the current state of your analysis accessible to someone who does not even run R or who wants to take a quick look at things from a cell phone or while on vacation.</p>
-</section><section id="write-a-render-ready-r-script" class="level2" data-number="19.2"><h2 data-number="19.2" class="anchored" data-anchor-id="write-a-render-ready-r-script">
-<span class="header-section-number">19.2</span> Write a render-ready R script</h2>
-<p>Instead of morphing an R Markdown file, let’s create a render-ready R script directly.</p>
-<p>Create a new R script and copy/paste this code into it.</p>
+<p>Obtendrá un informe de markdown y/o HTML, al igual que con R Markdown.</p>
+<p>Si tiene problemas para realizar todos los cambios necesarios y se siente frustrado, vea a continuación un ejemplo que puede copiar y pegar.</p>
+<p>Todos los consejos de flujo de trabajo de la <a href="·sec-rmd-test-drive">prueba de Rmd</a> se aplican aquí: cuando escriba un script de un análisis, preséntelo en markdown, confirme el <code>.R</code>, el <code>.md</code>, cualquier figura asociada y envíelo a GitHub. Los colaboradores pueden ver su código, pero también explorar los resultados sin tener que descargar y ejecutar el código. Esto hace que el estado actual de su análisis sea accesible para alguien que ni siquiera ejecuta R o que quiere echar un vistazo rápido a las cosas desde un teléfono celular o mientras está de vacaciones.</p>
+</section><section id="escribir-un-script-r-listo-para-renderizar" class="level2" data-number="19.2"><h2 data-number="19.2" class="anchored" data-anchor-id="escribir-un-script-r-listo-para-renderizar">
+<span class="header-section-number">19.2</span> Escribir un script R listo para renderizar</h2>
+<p>En lugar de transformar un archivo RMarkdown, creemos directamente un script R listo para renderizar.</p>
+<p>Cree un nuevo script R y copie/pegue este código en él.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#' Here's some prose in a very special comment. Let's summarize the built-in</span></span>
-<span><span class="co">#' dataset `VADeaths`.</span></span>
-<span><span class="co"># here is a regular code comment, that will remain as such</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#' Aquí hay algo de prosa en un comentario muy especial. Resumamos el conjunto de datos integrado `VADeaths`.</span></span>
+<span><span class="co"># Aquí hay un comentario de código normal, que permanecerá como tal.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">VADeaths</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co">#' Here's some more prose. I can use usual markdown syntax to make things</span></span>
-<span><span class="co">#' **bold** or *italics*. Let's use an example from the `dotchart()` help to</span></span>
-<span><span class="co">#' make a Cleveland dot plot from the `VADeaths` data. I even bother to name</span></span>
-<span><span class="co">#' this chunk, so the resulting PNG has a decent name.</span></span>
+<span><span class="co">#' Aquí hay algo más de prosa. Puedo usar la sintaxis habitual de Markdown para hacer cosas</span></span>
+<span><span class="co">#' **negritas** o *italicas*. Usemos un ejemplo de la ayuda `dotchart()` para</span></span>
+<span><span class="co">#' hacer un diagrama de puntos de Cleveland a partir de los datos de `VADeaths`. Incluso me molesto en nombrar</span></span>
+<span><span class="co">#' este fragmento, entonces el PNG resultante tiene un nombre decente.</span></span>
 <span><span class="co">#+ dotchart</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/dotchart.html">dotchart</a></span><span class="op">(</span><span class="va">VADeaths</span>, main <span class="op">=</span> <span class="st">"Death Rates in Virginia - 1940"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/dotchart.html">dotchart</a></span><span class="op">(</span><span class="va">VADeaths</span>, main <span class="op">=</span> <span class="st">"Tasas de mortalidad en Virginia - 1940"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Render the R script through one of these methods:</p>
+<p>Renderice el script R mediante uno de estos métodos:</p>
 <ul>
-<li>Click on the “notebook” icon in RStudio to “Compile Report”.</li>
-<li>In RStudio, do <em>File &gt; Knit Document</em>.</li>
-<li>In R, do <code>rmarkdown::render("YOURSCRIPT.R")</code>.</li>
+<li>Haga clic en el icono “notebook” en RStudio para “Compile Report”.</li>
+<li>En RStudio, haz <em>File &gt; Knit Document</em>.</li>
+<li>En R, haz <code>rmarkdown::render("YOURSCRIPT.R")</code>.</li>
 </ul>
-<p>Revel in your attractive looking report with almost zero effort! Seriously, all you had to do was think about when to use special comments <code>#'</code> in order to promote that to nicely rendered text.</p>
-<p>Drawing on the workflow tips in <a href="sec-rmd-test-drive">Rmd test drive</a>, let’s add some YAML frontmatter, properly commented with <code>#'</code>, and request <code>github_document</code> as the output format. Here’s the whole script again:</p>
+<p>¡Disfruta de tu atractivo informe casi sin esfuerzo! En serio, todo lo que tenías que hacer era pensar en cuándo usar los comentarios especiales <code>#'</code> para promocionarlo a un texto bien renderizado.</p>
+<p>Basándonos en los consejos de flujo de trabajo en <a href="usage-rmd-and-github.html">Prueba de Rmd</a>, agreguemos algo de contenido de YAML, comentado adecuadamente con <code>#'</code>, y solicitemos <code>github_document</code> como formato de salida. Aquí está el guión completo nuevamente:</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#' ---</span></span>
-<span><span class="co">#' title: "R scripts can be rendered!"</span></span>
+<span><span class="co">#' title: "¡Se pueden renderizar scripts R!"</span></span>
 <span><span class="co">#' output: github_document</span></span>
 <span><span class="co">#' ---</span></span>
 <span><span class="co">#'</span></span>
-<span><span class="co">#' Here's some prose in a very special comment. Let's summarize the built-in</span></span>
-<span><span class="co">#' dataset `VADeaths`.</span></span>
-<span><span class="co"># here is a regular code comment, that will remain as such</span></span>
+<span><span class="co">#' Aquí hay algo de prosa en un comentario muy especial. Resumamos el conjunto de datos integrado `VADeaths`.</span></span>
+<span><span class="co"># Aquí hay un comentario de código normal, que permanecerá como tal.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">VADeaths</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co">#' Here's some more prose. I can use usual markdown syntax to make things</span></span>
-<span><span class="co">#' **bold** or *italics*. Let's use an example from the `dotchart()` help to</span></span>
-<span><span class="co">#' make a Cleveland dot plot from the `VADeaths` data. I even bother to name</span></span>
-<span><span class="co">#' this chunk, so the resulting PNG has a decent name.</span></span>
+<span><span class="co">#' Aquí hay algo más de prosa. Puedo usar la sintaxis habitual de Markdown para hacer cosas</span></span>
+<span><span class="co">#' **negritas** o *italicas*. Usemos un ejemplo de la ayuda `dotchart()` para</span></span>
+<span><span class="co">#' hacer un diagrama de puntos de Cleveland a partir de los datos de `VADeaths`. Incluso me molesto en nombrar</span></span>
+<span><span class="co">#' este fragmento, entonces el PNG resultante tiene un nombre decente.</span></span>
 <span><span class="co">#+ dotchart</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/dotchart.html">dotchart</a></span><span class="op">(</span><span class="va">VADeaths</span>, main <span class="op">=</span> <span class="st">"Death Rates in Virginia - 1940"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/dotchart.html">dotchart</a></span><span class="op">(</span><span class="va">VADeaths</span>, main <span class="op">=</span> <span class="st">"Tasas de mortalidad en Virginia - 1940"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Behind the scenes here we have used <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html">rmarkdown::render()</a></code> to render this script and you can go <a href="https://github.com/jennybc/happy-git-with-r/blob/master/render-r-script-demo.md">visit it on GitHub</a>.</p>
+<p>Aquí detrás de escena hemos usado <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html">rmarkdown::render()</a></code> para representar este script y puedes ir <a href="https://github.com/jennybc/happy-git-with-r/blob/master/render-r-script-demo.md">y verlo en GitHub</a>.</p>
 
 
 </section></main><!-- /main --><script>
@@ -1159,8 +1157,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./usage-rmd-and-github.html" class="pagination-link" aria-label="Test drive R Markdown">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Test drive R Markdown</span></span>
+      <a href="./usage-rmd-and-github.html" class="pagination-link" aria-label="Prueba de R Markdown">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Prueba de R Markdown</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
