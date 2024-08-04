@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
-<title>13&nbsp; Detect Git from RStudio – Git y GitHub con R</title>
+
+<title>13&nbsp; Detectar Git desde RStudio – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,6 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -71,7 +75,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -98,31 +103,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect-intro.html">Conectar Git, GitHub, RStudio</a></li><li class="breadcrumb-item"><a href="./connect-can-rstudio-use-git.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detect Git from RStudio</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect-intro.html">Conectar Git, GitHub, RStudio</a></li><li class="breadcrumb-item"><a href="./connect-can-rstudio-use-git.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detectar Git desde RStudio</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Git y GitHub con R</a> 
         <div class="sidebar-tools-main">
     <div class="dropdown">
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
+          <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/jennybc/happy-git-with-r">
             Original
             </a>
@@ -133,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             </a>
           </li>
       </ul>
-</div>
+    </div>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -149,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Empecemos con Git</span></a>
@@ -181,45 +195,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Half the battle</span></a>
+ <span class="menu-text">La mitad de la batalla</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-github-acct.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Register a GitHub account</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Crear una cuenta de GitHub</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-r-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install or upgrade R and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Instalar o actualizar R y RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Install Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Instalar Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-introduce-self-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduce yourself to Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preséntate a Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-git-client.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install a Git client</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar un cliente Git</span></span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -228,41 +242,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Can you hear me now?</span></a>
+ <span class="menu-text">¿Puedes escucharme ahora?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-https-pat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Personal access token for HTTPS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Token de acceso personal para HTTPS</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-ssh-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Set up keys for SSH</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Configurar claves para SSH</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-git-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Connect to GitHub</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conéctate a GitHub</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-rstudio-git-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Connect RStudio to Git and GitHub</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conectar RStudio a Git y GitHub</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-can-rstudio-use-git.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detect Git from RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detectar Git desde RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -272,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -281,8 +295,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get started with GitHub</span></a>
@@ -319,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -328,8 +342,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Git basics</span></a>
@@ -366,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -375,8 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git remote setups</span></a>
@@ -395,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -404,8 +418,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful Git patterns for real life</span></a>
@@ -460,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
@@ -469,8 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prompt-clone.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Clone a repo</span></span></a>
@@ -501,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
@@ -510,8 +524,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notes-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
@@ -530,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
@@ -539,8 +553,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./shell.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The shell</span></span></a>
@@ -565,23 +579,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#do-you-have-a-problem" id="toc-do-you-have-a-problem" class="nav-link active" data-scroll-target="#do-you-have-a-problem"><span class="header-section-number">13.1</span> Do you have a problem?</a></li>
-  <li><a href="#find-git-yourself" id="toc-find-git-yourself" class="nav-link" data-scroll-target="#find-git-yourself"><span class="header-section-number">13.2</span> Find Git yourself</a></li>
-  <li><a href="#tell-rstudio-where-to-find-git" id="toc-tell-rstudio-where-to-find-git" class="nav-link" data-scroll-target="#tell-rstudio-where-to-find-git"><span class="header-section-number">13.3</span> Tell RStudio where to find Git</a></li>
-  </ul></nav>
+  <li><a href="#tiene-usted-un-problema" id="toc-tiene-usted-un-problema" class="nav-link active" data-scroll-target="#tiene-usted-un-problema"><span class="header-section-number">13.1</span> ¿Tiene usted un problema?</a></li>
+  <li><a href="#encuentra-git-tú-mismo" id="toc-encuentra-git-tú-mismo" class="nav-link" data-scroll-target="#encuentra-git-tú-mismo"><span class="header-section-number">13.2</span> Encuentra Git tú mismo</a></li>
+  <li><a href="#dile-a-rstudio-dónde-encontrar-git" id="toc-dile-a-rstudio-dónde-encontrar-git" class="nav-link" data-scroll-target="#dile-a-rstudio-dónde-encontrar-git"><span class="header-section-number">13.3</span> Dile a RStudio dónde encontrar Git</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect-intro.html">Conectar Git, GitHub, RStudio</a></li><li class="breadcrumb-item"><a href="./connect-can-rstudio-use-git.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detect Git from RStudio</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-rstudio-see-git" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detect Git from RStudio</span></span></h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connect-intro.html">Conectar Git, GitHub, RStudio</a></li><li class="breadcrumb-item"><a href="./connect-can-rstudio-use-git.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detectar Git desde RStudio</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-rstudio-see-git" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detectar Git desde RStudio</span></span></h1>
 </div>
 
 
@@ -595,58 +615,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>If you want RStudio to help with your Git and GitHub work, it must be able to find the Git executable.</p>
-<p>This usually “just works”, so this page is aimed at people who have reason to suspect they have a problem.</p>
-<p>This is something you set up once-per-computer.</p>
-<section id="do-you-have-a-problem" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="do-you-have-a-problem">
-<span class="header-section-number">13.1</span> Do you have a problem?</h2>
-<p>Let’s check if RStudio can find the Git executable.</p>
+</header>
+
+
+<p>Si desea que RStudio le ayude con su trabajo de Git y GitHub, debe poder encontrar el ejecutable de Git.</p>
+<p>Por lo general, esto “simplemente funciona”, por lo que esta página está dirigida a personas que tienen motivos para sospechar que tienen un problema.</p>
+<p>Esto es algo que se configura una vez por computadora.</p>
+<section id="tiene-usted-un-problema" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="tiene-usted-un-problema"><span class="header-section-number">13.1</span> ¿Tiene usted un problema?</h2>
+<p>Comprobemos si RStudio puede encontrar el ejecutable de Git.</p>
 <ul>
-<li>
-<em>File &gt; New Project…</em> Do you see an option to create from Version Control? If yes, good.</li>
-<li>Select <em>New Directory</em> &gt; <em>Empty Project</em>. Do you see a checkbox “Create a git repository”? If yes, good, CHECK IT.</li>
+<li><em>File &gt; New Project…</em> ¿Ves una opción para crear desde Control de versiones? Si es así, bien.</li>
+<li>Seleccione <em>New Directory</em> &gt; <em>Empty Project</em>. ¿Ves una casilla de verificación “Create a git repository”? Si es así, bien, SELECCIÓNELO.</li>
 </ul>
-<p>Keep reading if things don’t go so well or you want to know more.</p>
-</section><section id="find-git-yourself" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="find-git-yourself">
-<span class="header-section-number">13.2</span> Find Git yourself</h2>
-<p>RStudio can only act as a GUI front-end for Git if Git has been successfully installed (<a href="install-git.html" class="quarto-xref"><span>Chapter 6</span></a>) <strong>AND RStudio can find it</strong>.</p>
-<p>A basic test for successful installation of Git is to simply enter <code>git</code> in the shell (<a href="shell.html" class="quarto-xref"><span>Appendix A</span></a>). If you get a complaint about Git not being found, it means installation was unsuccessful or that it is not being found, i.e.&nbsp;it is not on your <code>PATH</code>.</p>
-<p>If you are not sure where the Git executable lives, try this in a shell:</p>
+<p>Sigue leyendo si las cosas no van tan bien o quieres saber más.</p>
+</section>
+<section id="encuentra-git-tú-mismo" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="encuentra-git-tú-mismo"><span class="header-section-number">13.2</span> Encuentra Git tú mismo</h2>
+<p>RStudio solo puede actuar como interfaz gráfica de usuario para Git si Git se ha instalado correctamente (<a href="install-git.html" class="quarto-xref"><span>Chapter 6</span></a>) <strong>Y RStudio puede encontrarlo</strong>.</p>
+<p>Una prueba básica para una instalación exitosa de Git es simplemente ingresar <code>git</code> en el shell (<a href="shell.html" class="quarto-xref"><span>Appendix A</span></a>). Si recibe una queja acerca de que no se encuentra Git, significa que la instalación no tuvo éxito o que no se encuentra, es decir, no está en su <code>PATH</code>.</p>
+<p>Si no está seguro de dónde se encuentra el ejecutable de Git, intente esto en un shell:</p>
 <ul>
-<li><p><code>which git</code> (Mac, Linux, Git Bash shell on Windows)</p></li>
-<li><p><code>where git</code> (Windows command prompt, i.e.&nbsp;<code>cmd.exe</code>)</p></li>
-</ul></section><section id="tell-rstudio-where-to-find-git" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="tell-rstudio-where-to-find-git">
-<span class="header-section-number">13.3</span> Tell RStudio where to find Git</h2>
-<p>If Git appears to be installed and findable, launch RStudio. Quit and re-launch RStudio if there’s <strong>any doubt in your mind</strong> about whether you opened RStudio before or after installing Git. Don’t make me stop this car and restart RStudio for you in office hours. DO IT.</p>
-<p>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to your Git executable.</p>
-<p>On macOS and Linux, the path usually looks something like this:</p>
+<li><p><code>which git</code> (Mac, Linux, Git Bash shell en Windows)</p></li>
+<li><p><code>where git</code> (Símbolo del sistema de Windows, es decir <code>cmd.exe</code>)</p></li>
+</ul>
+</section>
+<section id="dile-a-rstudio-dónde-encontrar-git" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="dile-a-rstudio-dónde-encontrar-git"><span class="header-section-number">13.3</span> Dile a RStudio dónde encontrar Git</h2>
+<p>Si parece que Git está instalado y se puede encontrar, inicie RStudio. Salga y reinicie RStudio si tiene <strong>alguna duda</strong> sobre si abrió RStudio antes o después de instalar Git. No me obligues a detener este auto y reiniciar RStudio en horario de oficina. HAZLO.</p>
+<p>Desde RStudio, vaya a <em>Tools &gt; Global Options &gt; Git/SVN</em> y asegúrese de que el cuadro <em>Git executable</em> apunte a su ejecutable Git.</p>
+<p>En macOS y Linux, la ruta suele verse así:</p>
 <pre class="console"><code>/usr/bin/git</code></pre>
-<p>If you need to set this on macOS, it can sometimes be hard to navigate to the necessary directory, once you’ve clicked “Browse” and are working with a Finder-type window. The keyboard shortcut “command + shift + g” will summon “Go To Folder”, where you will be able to type or paste any path you want.</p>
-<p>On Windows, this path should look something like this:</p>
+<p>Si necesita configurar esto en macOS, a veces puede resultar difícil navegar hasta el directorio necesario una vez que haya hecho clic en “Examinar” y esté trabajando con una ventana tipo Finder. El método abreviado de teclado “comando + mayúsculas + g” invocará “Ir a la carpeta”, donde podrá escribir o pegar cualquier ruta que desee.</p>
+<p>En Windows, esta ruta debería verse así:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:/Program</span> Files/Git/bin/git.exe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and here is a screenshot on Windows:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+<p>y aquí hay una captura de pantalla en Windows:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="img/windows-rstudio-git-executable-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="RStudio screenshot showing path to the Git executable"></p>
+<figure class="figure">
+<p><img src="img/windows-rstudio-git-executable-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="RStudio screenshot showing path to the Git executable"></p>
 </figure>
 </div>
-</div>
-</div>
-<p><strong>WARNING</strong>: On Windows, do <strong>NOT</strong> use <code>C:/Program Files/Git/cmd/git.exe</code>. <code>bin</code> in the path is GOOD YES! <code>cmd</code> in the path is BAD NO!</p>
-<p><strong>WARNING</strong>: On Windows, do <strong>NOT</strong> set this to <code>git-bash.exe</code>. Something that ends in <code>git.exe</code> is GOOD YES! <code>git-bash.exe</code> is BAD NO!</p>
-<p><strong>Restart RStudio if you make any changes here.</strong> Don’t make me stop this car again and restart RStudio for you in office hours. DO IT.</p>
-<p>Re-do the steps at the top of the page to see if RStudio and Git are communicating now.</p>
-<p>No joy?</p>
+<p><strong>ADVERTENCIA</strong>: En Windows, <strong>NO</strong> use <code>C:/Program Files/Git/cmd/git.exe</code>. <code>bin</code> en el camino es BUENO ¡SÍ! <code>cmd</code> en la ruta es MALO ¡NO!</p>
+<p><strong>ADVERTENCIA</strong>: En Windows, <strong>NO</strong> configure esto en <code>git-bash.exe</code>. Algo que termina en <code>git.exe</code> es BUENO ¡SÍ! <code>git-bash.exe</code> es MALO, ¡NO!</p>
+<p><strong>Reinicie RStudio si realiza algún cambio aquí.</strong> No me obligue a detener este auto nuevamente y reinicie RStudio por usted en horario de oficina. HAZLO.</p>
+<p>Vuelva a realizar los pasos en la parte superior de la página para ver si RStudio y Git se están comunicando ahora.</p>
 <ul>
-<li><p>I’ve seen this help: With your Project open, go to <code>Tools &gt; Project Options...</code>. If available, click on “Git/SVN” and select “Git” in the Version control system dropdown menu. Answer “yes” to the “Confirm New Git Repository” pop up. Answer “yes” to the “Confirm Restart RStudio” pop up.</p></li>
-<li><p>If you installed Git via GitHub for Windows, it is possible the Git executable is really well hidden. Get help or use one of <a href="#install-git">our recommended methods of installing Git</a>.</p></li>
-<li><p>Your <code>PATH</code> is probably not set up correctly and/or you should re-install Git and control/notice where it’s going. Read more in <a href="connect-troubleshooting.html" class="quarto-xref"><span>Chapter 14</span></a>.</p></li>
-<li><p>Get our help.</p></li>
+<li><p>He visto esta ayuda: con su proyecto abierto, vaya a <code>Tools &gt; Project Options...</code>. Si está disponible, haga clic en “Git/SVN” y seleccione “Git” en el menú desplegable del sistema de control de versiones. Responda “sí” a la ventana emergente “Confirmar nuevo repositorio Git”. Responda “sí” a la ventana emergente “Confirmar reinicio de RStudio”.</p></li>
+<li><p>Si instaló Git a través de GitHub para Windows, es posible que el ejecutable de Git esté muy bien oculto. Obtenga ayuda o utilice uno de <a href="install-git.html">nuestros métodos recomendados para instalar Git</a>.</p></li>
+<li><p>Su <code>PATH</code> probablemente no esté configurada correctamente y/o debería reinstalar Git y controlar/observar hacia dónde se dirige. Lea más en <a href="connect-troubleshooting.html" class="quarto-xref"><span>Chapter 14</span></a>.</p></li>
+<li><p>Consigue nuestra ayuda.</p></li>
 </ul>
 
 
-</section></main><!-- /main --><script>
+</section>
+
+</main> <!-- /main -->
+
+<script>
 
   // Chapter name
   const currentChapterFile = window.location.pathname.split('/').pop().replace('.html', '');
@@ -713,7 +738,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   act_link_T.innerHTML += edit_issue_T;
 
 
-</script><script id="quarto-html-after-body" type="application/javascript">
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1132,9 +1158,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./connect-rstudio-git-github.html" class="pagination-link" aria-label="Connect RStudio to Git and GitHub">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Connect RStudio to Git and GitHub</span></span>
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./connect-rstudio-git-github.html" class="pagination-link" aria-label="Conectar RStudio a Git y GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conectar RStudio a Git y GitHub</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1144,7 +1172,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p><strong>“Git y GitHub con”</strong> fue escrito por Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester.</p>
 </div>   
@@ -1156,6 +1185,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

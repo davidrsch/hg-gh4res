@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
-<title>8&nbsp; Install a Git client – Git y GitHub con R</title>
+
+<title>8&nbsp; Instalar un cliente Git – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +22,7 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -37,7 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -64,31 +69,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install-intro.html">Instalación</a></li><li class="breadcrumb-item"><a href="./install-git-client.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install a Git client</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install-intro.html">Instalación</a></li><li class="breadcrumb-item"><a href="./install-git-client.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar un cliente Git</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Git y GitHub con R</a> 
         <div class="sidebar-tools-main">
     <div class="dropdown">
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
+          <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/jennybc/happy-git-with-r">
             Original
             </a>
@@ -99,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
             </a>
           </li>
       </ul>
-</div>
+    </div>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -115,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Empecemos con Git</span></a>
@@ -147,45 +161,45 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Half the battle</span></a>
+ <span class="menu-text">La mitad de la batalla</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-github-acct.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Register a GitHub account</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Crear una cuenta de GitHub</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-r-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Install or upgrade R and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Instalar o actualizar R y RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Install Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Instalar Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-introduce-self-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduce yourself to Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preséntate a Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-git-client.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install a Git client</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar un cliente Git</span></span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -194,41 +208,41 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Can you hear me now?</span></a>
+ <span class="menu-text">¿Puedes escucharme ahora?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-https-pat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Personal access token for HTTPS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Token de acceso personal para HTTPS</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-ssh-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Set up keys for SSH</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Configurar claves para SSH</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-git-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Connect to GitHub</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conéctate a GitHub</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-rstudio-git-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Connect RStudio to Git and GitHub</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conectar RStudio a Git y GitHub</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./connect-can-rstudio-use-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detect Git from RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Detectar Git desde RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -238,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -247,8 +261,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./usage-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Get started with GitHub</span></a>
@@ -285,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -294,8 +308,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Git basics</span></a>
@@ -332,7 +346,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -341,8 +355,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git remote setups</span></a>
@@ -361,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -370,8 +384,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful Git patterns for real life</span></a>
@@ -426,7 +440,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
@@ -435,8 +449,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prompt-clone.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Clone a repo</span></span></a>
@@ -467,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
@@ -476,8 +490,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notes-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
@@ -496,7 +510,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
@@ -505,8 +519,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./shell.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The shell</span></span></a>
@@ -531,24 +545,30 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#what-is-a-git-client-why-would-you-want-one" id="toc-what-is-a-git-client-why-would-you-want-one" class="nav-link active" data-scroll-target="#what-is-a-git-client-why-would-you-want-one"><span class="header-section-number">8.1</span> What is a Git client? Why would you want one?</a></li>
-  <li><a href="#a-picture-is-worth-a-thousand-words" id="toc-a-picture-is-worth-a-thousand-words" class="nav-link" data-scroll-target="#a-picture-is-worth-a-thousand-words"><span class="header-section-number">8.2</span> A picture is worth a thousand words</a></li>
-  <li><a href="#no-one-is-giving-out-git-nerd-merit-badges" id="toc-no-one-is-giving-out-git-nerd-merit-badges" class="nav-link" data-scroll-target="#no-one-is-giving-out-git-nerd-merit-badges"><span class="header-section-number">8.3</span> No one is giving out Git Nerd merit badges</a></li>
-  <li><a href="#recommended-git-clients" id="toc-recommended-git-clients" class="nav-link" data-scroll-target="#recommended-git-clients"><span class="header-section-number">8.4</span> Recommended Git clients</a></li>
-  </ul></nav>
+  <li><a href="#qué-es-un-cliente-git-por-qué-querrías-uno" id="toc-qué-es-un-cliente-git-por-qué-querrías-uno" class="nav-link active" data-scroll-target="#qué-es-un-cliente-git-por-qué-querrías-uno"><span class="header-section-number">8.1</span> ¿Qué es un cliente Git? ¿Por qué querrías uno?</a></li>
+  <li><a href="#una-imagen-vale-mas-que-mil-palabras" id="toc-una-imagen-vale-mas-que-mil-palabras" class="nav-link" data-scroll-target="#una-imagen-vale-mas-que-mil-palabras"><span class="header-section-number">8.2</span> Una imagen vale mas que mil palabras</a></li>
+  <li><a href="#nadie-está-entregando-insignias-de-mérito-de-git-nerd" id="toc-nadie-está-entregando-insignias-de-mérito-de-git-nerd" class="nav-link" data-scroll-target="#nadie-está-entregando-insignias-de-mérito-de-git-nerd"><span class="header-section-number">8.3</span> Nadie está entregando insignias de mérito de Git Nerd</a></li>
+  <li><a href="#clientes-git-recomendados" id="toc-clientes-git-recomendados" class="nav-link" data-scroll-target="#clientes-git-recomendados"><span class="header-section-number">8.4</span> Clientes Git recomendados</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install-intro.html">Instalación</a></li><li class="breadcrumb-item"><a href="./install-git-client.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install a Git client</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-git-client" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Install a Git client</span></span></h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install-intro.html">Instalación</a></li><li class="breadcrumb-item"><a href="./install-git-client.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar un cliente Git</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-git-client" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar un cliente Git</span></span></h1>
 </div>
 
 
@@ -562,28 +582,29 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><p>This is optional but <strong>highly recommended</strong>.</p>
-<p>Learning to use version control can be rough at first. I found the use of a GUI – as opposed to the command line – extremely helpful when I was getting started. I call this sort of helper application a Git client. It’s really a Git(Hub) client because it also helps you interact with GitHub or other remotes.</p>
-<p>A Git client is not required for live workshops and will not be explicitly taught, though you might see us using one of these clients.</p>
-<section id="what-is-a-git-client-why-would-you-want-one" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="what-is-a-git-client-why-would-you-want-one">
-<span class="header-section-number">8.1</span> What is a Git client? Why would you want one?</h2>
-<p>“Git” is really just a collection of individual commands you execute in the shell (Appendix <a href="shell.html" class="quarto-xref"><span>Appendix A</span></a>). This interface is not appealing for everyone. Some may prefer to do Git operations via a client with a graphical interface.</p>
-<p>Git and your Git client are not the same thing, just like R and RStudio are not the same thing. A Git client and an <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a>, such as RStudio, are not necessary to use Git or R, respectively. But they make the experience more pleasant because they reduce the amount of “command line bullshittery”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and provide a richer visual representation of the current state.</p>
-<p>RStudio offers a very basic Git client via its Git pane. I use this often for simple operations, but you probably want another, more powerful one as well.</p>
-<p>Fair warning: for some tasks, you must use the command line. But the more powerful your Git client is, the less often this happens. The visual overview given by your Git client can also be invaluable for understanding the current state of things, even when preparing calls to command line Git.</p>
-<p>Fantastic news: because all of the clients are just forming and executing Git commands on your behalf, you don’t have to pick one. You can literally do one operation from the command line, do another from RStudio, and another from GitKraken, one after the other, and it just works. <em>Very rarely, both clients will scan the repo at the same time and you’ll get an error message about <code>.git/index.lock</code>. Try the operation again at least once before doing any further troubleshooting.</em></p>
-</section><section id="a-picture-is-worth-a-thousand-words" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="a-picture-is-worth-a-thousand-words">
-<span class="header-section-number">8.2</span> A picture is worth a thousand words</h2>
-<p>Here’s a screenshot of GitKraken (see below) open to the repository for the R package <a href="https://pkgdown.r-lib.org">pkgdown</a>. You get a nice graphical overview of the recent commit history, branches, and diffs, as well as a GUI that facilitates the most common Git operations.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+</header>
+
+
+<p>Esto es opcional pero <strong>muy recomendable</strong>.</p>
+<p>Aprender a utilizar el control de versiones puede resultar complicado al principio. El uso de una GUI, a diferencia de la línea de comandos, me resultó extremadamente útil cuando comencé. A este tipo de aplicación auxiliar la llamo cliente Git. Es realmente un cliente Git(Hub) porque también te ayuda a interactuar con GitHub u otros controles remotos.</p>
+<p>No se requiere un cliente Git para los talleres en vivo y no se enseñará explícitamente, aunque es posible que nos vea usando uno de estos clientes.</p>
+<section id="qué-es-un-cliente-git-por-qué-querrías-uno" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="qué-es-un-cliente-git-por-qué-querrías-uno"><span class="header-section-number">8.1</span> ¿Qué es un cliente Git? ¿Por qué querrías uno?</h2>
+<p>“Git” es en realidad solo una colección de comandos individuales que se ejecutan en el shell (<a href="shell.html" class="quarto-xref"><span>Appendix A</span></a>). Esta interfaz no es atractiva para todos. Es posible que algunos prefieran realizar operaciones de Git a través de un cliente con una interfaz gráfica.</p>
+<p>Git y su cliente Git no son lo mismo, al igual que R y RStudio no son lo mismo. Un cliente Git y un <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">entorno de desarrollo integrado</a>, como RStudio, no son necesarios para usar Git o R, respectivamente. Pero hacen que la experiencia sea más placentera porque reducen la cantidad de “tonterías en la línea de comandos”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> y brindan una representación visual más rica del estado actual.</p>
+<p>RStudio ofrece un cliente Git muy básico a través de su panel Git. Lo uso a menudo para operaciones simples, pero probablemente también quieras otro más potente.</p>
+<p>Advertencia justa: para algunas tareas, debes usar la línea de comando. Pero cuanto más poderoso sea su cliente Git, menos frecuente será que esto suceda. La descripción visual proporcionada por su cliente Git también puede ser invaluable para comprender el estado actual de las cosas, incluso al preparar llamadas a la línea de comandos de Git.</p>
+<p>Fantásticas noticias: debido a que todos los clientes simplemente están formando y ejecutando comandos de Git en su nombre, no es necesario que elija uno. Literalmente puedes hacer una operación desde la línea de comando, hacer otra desde RStudio y otra desde GitKraken, una tras otra, y simplemente funciona. <em>Muy raramente, ambos clientes escanearán el repositorio al mismo tiempo y recibirás un mensaje de error sobre <code>.git/index.lock</code>. Intente la operación nuevamente al menos una vez antes de seguir solucionando el problema.</em></p>
+</section>
+<section id="una-imagen-vale-mas-que-mil-palabras" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="una-imagen-vale-mas-que-mil-palabras"><span class="header-section-number">8.2</span> Una imagen vale mas que mil palabras</h2>
+<p>Aquí hay una captura de pantalla de GitKraken (ver más abajo) abierta en el repositorio del paquete R <a href="https://pkgdown.r-lib.org">pkgdown</a>. Obtiene una buena descripción gráfica del historial de commits recientes, ramas y diferencias, así como una GUI que facilita las operaciones de Git más comunes.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="img/gitkraken-pkgdown-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="GitKraken screenshot"></p>
+<figure class="figure">
+<p><img src="img/gitkraken-pkgdown-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="GitKraken screenshot"></p>
 </figure>
 </div>
-</div>
-</div>
-<p>In contrast, here’s a shell session where I’ve used command line Git to access some of the same information.</p>
+<p>En contraste, aquí hay una sesión de shell en la que utilicé la línea de comando Git para acceder a parte de la misma información.</p>
 <pre class="console"><code>jenny@jennys-MacBook-Pro pkgdown % git log --oneline -n 10
 cd888bed (HEAD -&gt; master, upstream/master, upstream/HEAD, r-lib/master, r-lib/HEAD) Remove accidentally committed snapshot
 ca01d386 Add a skip link (#1833)
@@ -595,27 +616,36 @@ a6ae3ca4 use_tidy_description()
 d43260fb Tweak authors order
 41c855df Tweak details styling
 7d3c484c Anchor &amp; news tweaks (#1830)</code></pre>
-<p>Which do you prefer?</p>
-</section><section id="no-one-is-giving-out-git-nerd-merit-badges" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="no-one-is-giving-out-git-nerd-merit-badges">
-<span class="header-section-number">8.3</span> No one is giving out Git Nerd merit badges</h2>
-<p>Work with Git in whatever way makes you most effective. Feel free to revisit your approach over time or to use different approaches for different tasks or in different settings. No one can tell whether you use the command line or a GUI when they look at your Git history or your GitHub repo.</p>
-<p>I sometimes encounter people who feel it’s “better” to use command line Git, but for very ill-defined reasons. These people may feel like they <em>should</em> work in the shell, even if it leads to Git-avoidance, frequent mistakes, or limiting themselves to a small set of ~3 Git commands. This is counterproductive.</p>
-<p>I had two false starts with Git, where I failed to get proficient enough, quickly enough to truly incorporate version control into my daily work. I found a visual Git client invaluable. It made me willing to use Git multiple times per day, for a sustained period of time. This helped me build the mental model necessary for more advanced Git operations like rebasing, cherry-picking, and resetting.</p>
-<p>If your Git life happens on your own computer, there is no reason to deny yourself a GUI if that’s what you like. If you prefer working in the shell or if you frequently log into a remote server, then it makes sense to prioritize building Git skills at the command line. Do whatever works for you, but don’t do anything for the sake of purity or heroism.</p>
-</section><section id="recommended-git-clients" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="recommended-git-clients">
-<span class="header-section-number">8.4</span> Recommended Git clients</h2>
+<p>¿Cual prefieres?</p>
+</section>
+<section id="nadie-está-entregando-insignias-de-mérito-de-git-nerd" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="nadie-está-entregando-insignias-de-mérito-de-git-nerd"><span class="header-section-number">8.3</span> Nadie está entregando insignias de mérito de Git Nerd</h2>
+<p>Trabaja con Git de la forma que te haga más eficaz. Siéntase libre de revisar su enfoque con el tiempo o de utilizar diferentes enfoques para diferentes tareas o en diferentes entornos. Nadie puede saber si usa la línea de comando o una GUI cuando miran su historial de Git o su repositorio de GitHub.</p>
+<p>A veces me encuentro con personas que sienten que es “mejor” usar la línea de comandos de Git, pero por razones muy mal definidas. Estas personas pueden sentir que <em>deberían</em> trabajar en el shell, incluso si eso les lleva a evitar Git, cometer errores frecuentes o limitarse a un pequeño conjunto de ~3 comandos de Git. Esto es contraproducente.</p>
+<p>Tuve dos comienzos en falso con Git, en los que no logré dominar lo suficiente ni lo suficientemente rápido como para incorporar realmente el control de versiones en mi trabajo diario. Encontré un cliente visual de Git invaluable. Me hizo querer usar Git varias veces al día, durante un período de tiempo prolongado. Esto me ayudó a construir el modelo mental necesario para operaciones de Git más avanzadas, como cambiar la base, seleccionar y restablecer.</p>
+<p>Si tu vida con Git ocurre en tu propia computadora, no hay razón para negarte una GUI si eso es lo que te gusta. Si prefiere trabajar en el shell o si inicia sesión con frecuencia en un servidor remoto, entonces tiene sentido priorizar el desarrollo de habilidades de Git en la línea de comandos. Haz lo que funcione para ti, pero no hagas nada por el bien de la pureza o el heroísmo.</p>
+</section>
+<section id="clientes-git-recomendados" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="clientes-git-recomendados"><span class="header-section-number">8.4</span> Clientes Git recomendados</h2>
 <ul>
-<li><p><a href="https://www.gitkraken.com">GitKraken</a> is a free, powerful Git(Hub) client that is my current favorite. It’s especially exciting because it works on Windows, macOS, and Linux. This is great news, especially for long-suffering Linux users who previously had very few options. I used the free for version for years, which works great, but now I happily pay money for the pro version.</p></li>
-<li><p><a href="https://www.sourcetreeapp.com">SourceTree</a> is another free client that I used to highly recommend. It was my first beloved Git client, but I eventually had to give it up, due to long-standing bugs / deficiencies that seemed like they would never be fixed (<a href="http://openradar.appspot.com/radar?id=1387401">macOS bug re: leaking file handles</a>, no ability to control font size). GitKraken feels much more actively developed and has completely supplanted SourceTree for me.</p></li>
-<li><p>GitHub offers a free Git(Hub) client, <a href="https://desktop.github.com/">GitHub Desktop</a>, for Windows and macOS. Although we previously discouraged its use, GitHub’s client has since gotten a thorough makeover that eliminates several of our concerns, so we’re cautiously optimistic. GitHub Desktop is aimed at beginners who want the most useful features of Git front and center. The flipside is that it may not support some of the more advanced workflows exposed by the clients above and, consequently, may not develop your mental model of Git as thoroughly.</p></li>
-<li><p>Browse <a href="http://git-scm.com/downloads/guis">even more Git(Hub) clients</a>.</p></li>
+<li><p><a href="https://www.gitkraken.com">GitKraken</a> es un potente y gratuito cliente Git(Hub) que es mi favorito actualmente. Es especialmente interesante porque funciona en Windows, macOS y Linux. Esta es una gran noticia, especialmente para los sufridos usuarios de Linux que antes tenían muy pocas opciones. Utilicé la versión gratuita durante años, que funciona muy bien, pero ahora pago felizmente por la versión pro.</p></li>
+<li><p><a href="https://www.sourcetreeapp.com">SourceTree</a> es otro cliente gratuito que solía recomendar encarecidamente. Fue mi primer cliente Git querido, pero finalmente tuve que abandonarlo debido a errores/deficiencias de larga data que parecían que nunca se solucionarían (<a href="http://openradar.%20appspot.com/radar?id=1387401">error de macOS con respecto a identificadores de archivos filtrados</a>, sin posibilidad de controlar el tamaño de fuente). GitKraken se siente mucho más desarrollado activamente y para mí ha suplantado por completo a SourceTree.</p></li>
+<li><p>GitHub ofrece un cliente Git(Hub) gratuito, <a href="https://desktop.github.com/">GitHub Desktop</a>, para Windows y macOS. Aunque anteriormente desalentamos su uso, desde entonces el cliente de GitHub ha recibido una renovación completa que elimina varias de nuestras preocupaciones, por lo que somos cautelosamente optimistas. GitHub Desktop está dirigido a principiantes que desean las funciones más útiles de Git al frente y al centro. La otra cara es que es posible que no admita algunos de los flujos de trabajo más avanzados expuestos por los clientes anteriores y, en consecuencia, es posible que no desarrolle su modelo mental de Git tan a fondo.</p></li>
+<li><p>Explorar <a href="http://git-scm.com/downloads/guis">aún más clientes Git(Hub)</a>.</p></li>
 </ul>
 
 
-</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn1"><p>This evocative phrase originally appeared in a blog post by Philip Guo, which has subsequently been removed from the internet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></main><!-- /main --><script>
+<li id="fn1"><p>Esta evocadora frase apareció originalmente en una publicación de blog de Philip Guo, que posteriormente fue eliminada de Internet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+
+<script>
 
   // Chapter name
   const currentChapterFile = window.location.pathname.split('/').pop().replace('.html', '');
@@ -682,7 +712,8 @@ d43260fb Tweak authors order
   act_link_T.innerHTML += edit_issue_T;
 
 
-</script><script id="quarto-html-after-body" type="application/javascript">
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1101,19 +1132,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./install-introduce-self-git.html" class="pagination-link" aria-label="Introduce yourself to Git">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduce yourself to Git</span></span>
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./install-introduce-self-git.html" class="pagination-link" aria-label="Preséntate a Git">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preséntate a Git</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./connect-intro.html" class="pagination-link" aria-label="Can you hear me now?">
-        <span class="nav-page-text">Can you hear me now?</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./connect-intro.html" class="pagination-link" aria-label="¿Puedes escucharme ahora?">
+        <span class="nav-page-text">¿Puedes escucharme ahora?</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p><strong>“Git y GitHub con”</strong> fue escrito por Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester.</p>
 </div>   
@@ -1125,6 +1159,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
