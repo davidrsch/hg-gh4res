@@ -1,74 +1,68 @@
-# Detect Git from RStudio {#sec-rstudio-see-git}
+# Detectar Git desde RStudio {#sec-rstudio-see-git}
 
-If you want RStudio to help with your Git and GitHub work, it must be able to find the Git executable.
+Si desea que RStudio le ayude con su trabajo de Git y GitHub, debe poder encontrar el ejecutable de Git.
 
-This usually "just works", so this page is aimed at people who have reason to suspect they have a problem.
+Por lo general, esto "simplemente funciona", por lo que esta página está dirigida a personas que tienen motivos para sospechar que tienen un problema.
 
-This is something you set up once-per-computer.
+Esto es algo que se configura una vez por computadora.
 
-## Do you have a problem?
+## ¿Tiene usted un problema?
 
-Let's check if RStudio can find the Git executable.
+Comprobemos si RStudio puede encontrar el ejecutable de Git.
 
--   *File \> New Project...* Do you see an option to create from Version Control? If yes, good.
--   Select *New Directory* \> *Empty Project*. Do you see a checkbox "Create a git repository"? If yes, good, CHECK IT.
+-   *File \> New Project...* ¿Ves una opción para crear desde Control de versiones? Si es así, bien.
+-   Seleccione *New Directory* \> *Empty Project*. ¿Ves una casilla de verificación "Create a git repository"? Si es así, bien, SELECCIÓNELO.
 
-Keep reading if things don't go so well or you want to know more.
+Sigue leyendo si las cosas no van tan bien o quieres saber más.
 
-## Find Git yourself
+## Encuentra Git tú mismo
 
-RStudio can only act as a GUI front-end for Git if Git has been successfully installed (@sec-install-git) **AND RStudio can find it**.
+RStudio solo puede actuar como interfaz gráfica de usuario para Git si Git se ha instalado correctamente (@sec-install-git) **Y RStudio puede encontrarlo**.
 
-A basic test for successful installation of Git is to simply enter `git` in the shell (@sec-shell). If you get a complaint about Git not being found, it means installation was unsuccessful or that it is not being found, i.e. it is not on your `PATH`.
+Una prueba básica para una instalación exitosa de Git es simplemente ingresar `git` en el shell (@sec-shell). Si recibe una queja acerca de que no se encuentra Git, significa que la instalación no tuvo éxito o que no se encuentra, es decir, no está en su `PATH`.
 
-If you are not sure where the Git executable lives, try this in a shell:
+Si no está seguro de dónde se encuentra el ejecutable de Git, intente esto en un shell:
 
--   `which git` (Mac, Linux, Git Bash shell on Windows)
+-   `which git` (Mac, Linux, Git Bash shell en Windows)
 
--   `where git` (Windows command prompt, i.e. `cmd.exe`)
+-   `where git` (Símbolo del sistema de Windows, es decir `cmd.exe`)
 
-## Tell RStudio where to find Git
+## Dile a RStudio dónde encontrar Git
 
-If Git appears to be installed and findable, launch RStudio. Quit and re-launch RStudio if there's **any doubt in your mind** about whether you opened RStudio before or after installing Git. Don't make me stop this car and restart RStudio for you in office hours. DO IT.
+Si parece que Git está instalado y se puede encontrar, inicie RStudio. Salga y reinicie RStudio si tiene **alguna duda** sobre si abrió RStudio antes o después de instalar Git. No me obligues a detener este auto y reiniciar RStudio en horario de oficina. HAZLO.
 
-From RStudio, go to *Tools \> Global Options \> Git/SVN* and make sure that the box *Git executable* points to your Git executable.
+Desde RStudio, vaya a *Tools \> Global Options \> Git/SVN* y asegúrese de que el cuadro *Git executable* apunte a su ejecutable Git.
 
-On macOS and Linux, the path usually looks something like this:
+En macOS y Linux, la ruta suele verse así:
 
 ``` console
 /usr/bin/git
 ```
 
-If you need to set this on macOS, it can sometimes be hard to navigate to the necessary directory, once you've clicked "Browse" and are working with a Finder-type window. The keyboard shortcut "command + shift + g" will summon "Go To Folder", where you will be able to type or paste any path you want.
+Si necesita configurar esto en macOS, a veces puede resultar difícil navegar hasta el directorio necesario una vez que haya hecho clic en "Examinar" y esté trabajando con una ventana tipo Finder. El método abreviado de teclado "comando + mayúsculas + g" invocará "Ir a la carpeta", donde podrá escribir o pegar cualquier ruta que desee.
 
-On Windows, this path should look something like this:
+En Windows, esta ruta debería verse así:
 
 ``` bash
 C:/Program Files/Git/bin/git.exe
 ```
 
-and here is a screenshot on Windows:
+y aquí hay una captura de pantalla en Windows:
 
-```{r}
-#| echo = FALSE, fig.align = "center", out.width = "100%",
-#| fig.alt = "RStudio screenshot showing path to the Git executable"
-knitr::include_graphics("img/windows-rstudio-git-executable-screenshot.png")
-```
+![](img/windows-rstudio-git-executable-screenshot.png){fig-alt="RStudio screenshot showing path to the Git executable" fig-align="center" width="100%"}
 
-**WARNING**: On Windows, do **NOT** use `C:/Program Files/Git/cmd/git.exe`. `bin` in the path is GOOD YES! `cmd` in the path is BAD NO!
+**ADVERTENCIA**: En Windows, **NO** use `C:/Program Files/Git/cmd/git.exe`. `bin` en el camino es BUENO ¡SÍ! `cmd` en la ruta es MALO ¡NO!
 
-**WARNING**: On Windows, do **NOT** set this to `git-bash.exe`. Something that ends in `git.exe` is GOOD YES! `git-bash.exe` is BAD NO!
+**ADVERTENCIA**: En Windows, **NO** configure esto en `git-bash.exe`. Algo que termina en `git.exe` es BUENO ¡SÍ! `git-bash.exe` es MALO, ¡NO!
 
-**Restart RStudio if you make any changes here.** Don't make me stop this car again and restart RStudio for you in office hours. DO IT.
+**Reinicie RStudio si realiza algún cambio aquí.** No me obligue a detener este auto nuevamente y reinicie RStudio por usted en horario de oficina. HAZLO.
 
-Re-do the steps at the top of the page to see if RStudio and Git are communicating now.
+Vuelva a realizar los pasos en la parte superior de la página para ver si RStudio y Git se están comunicando ahora.
 
-No joy?
+-   He visto esta ayuda: con su proyecto abierto, vaya a `Tools > Project Options...`. Si está disponible, haga clic en "Git/SVN" y seleccione "Git" en el menú desplegable del sistema de control de versiones. Responda "sí" a la ventana emergente "Confirmar nuevo repositorio Git". Responda "sí" a la ventana emergente "Confirmar reinicio de RStudio".
 
--   I've seen this help: With your Project open, go to `Tools > Project Options...`. If available, click on "Git/SVN" and select "Git" in the Version control system dropdown menu. Answer "yes" to the "Confirm New Git Repository" pop up. Answer "yes" to the "Confirm Restart RStudio" pop up.
+-   Si instaló Git a través de GitHub para Windows, es posible que el ejecutable de Git esté muy bien oculto. Obtenga ayuda o utilice uno de [nuestros métodos recomendados para instalar Git](#sec-install-git).
 
--   If you installed Git via GitHub for Windows, it is possible the Git executable is really well hidden. Get help or use one of [our recommended methods of installing Git](#install-git).
+-   Su `PATH` probablemente no esté configurada correctamente y/o debería reinstalar Git y controlar/observar hacia dónde se dirige. Lea más en @sec-troubleshooting.
 
--   Your `PATH` is probably not set up correctly and/or you should re-install Git and control/notice where it's going. Read more in @sec-troubleshooting.
-
--   Get our help.
+-   Consigue nuestra ayuda.
