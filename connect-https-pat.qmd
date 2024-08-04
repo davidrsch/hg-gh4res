@@ -1,14 +1,14 @@
-# Personal access token for HTTPS {#sec-https-pat}
+# Token de acceso personal para HTTPS {#sec-https-pat}
 
-When we interact with a remote Git server, such as GitHub, we have to include credentials in the request. This proves we are a specific GitHub user, who's allowed to do whatever we're asking to do.
+Cuando interactuamos con un servidor Git remoto, como GitHub, debemos incluir credenciales en la solicitud. Esto demuestra que somos un usuario específico de GitHub, al que se le permite hacer cualquier cosa que le pidamos.
 
-Git can communicate with a remote server using one of two protocols, HTTPS or SSH, and the different protocols use different credentials.
+Git puede comunicarse con un servidor remoto utilizando uno de dos protocolos, HTTPS o SSH, y los diferentes protocolos utilizan diferentes credenciales.
 
-Here we describe the credential setup for the HTTPS protocol, which is what we recommend if you have no burning reason to pick SSH. With HTTPS, we will use a **personal access token (PAT)**. Head over to chapter @sec-ssh-keys if you really want to set up SSH keys.
+Aquí describimos la configuración de credenciales para el protocolo HTTPS, que es lo que recomendamos si no tiene ningún motivo importante para elegir SSH. Con HTTPS, usaremos un **token de acceso personal (PAT)**. Dirígete al capítulo @sec-ssh-keys si realmente quieres configurar claves SSH.
 
-Let it be known that the password that you use to login to GitHub's website is NOT an acceptable credential when talking to GitHub as a Git server. This was possible in the past (and may yet be true for other Git servers), but those days are over at GitHub. You can learn more in their blog post [Token authentication requirements for Git operations](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/).
+Tenga en cuenta que la contraseña que utiliza para iniciar sesión en el sitio web de GitHub NO es una credencial aceptable cuando se habla con GitHub como servidor Git. Esto fue posible en el pasado (y puede que aún sea cierto para otros servidores Git), pero esos días quedaron atrás en GitHub. Puede obtener más información en la publicación de su blog [Requisitos de autenticación de tokens para operaciones de Git](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/).
 
-Here's the error you'll see if you try to do that now:
+Este es el error que verá si intenta hacer eso ahora:
 
 ``` console
 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
@@ -16,31 +16,31 @@ remote: Please see https://github.blog/2020-12-15-token-authentication-requireme
 fatal: Authentication failed for 'https://github.com/OWNER/REPO.git/'
 ```
 
-The recommendation to use a personal access token (PAT) is exactly what we cover in this chapter.
+La recomendación de utilizar un token de acceso personal (PAT) es exactamente lo que cubrimos en este capítulo.
 
 ## TL;DR
 
-This is a very minimal account of getting and storing a PAT. This might be all you need when you're first getting yourself set up. You can always come back later and read other parts of this chapter.
+Esta es una descripción mínima de cómo obtener y almacenar un PAT. Esto podría ser todo lo que necesita cuando se esté configurando por primera vez. Siempre puedes volver más tarde y leer otras partes de este capítulo.
 
-Go to <https://github.com/settings/tokens> and click "Generate token".
+Vaya a <https://github.com/settings/tokens> y haga clic en "Generar token".
 
-Or, from R, do:
+O, desde R, ejecute:
 
 ```{r eval = FALSE}
 usethis::create_github_token()
 ```
 
-Look over the scopes; I highly recommend selecting "repo", "user", and "workflow". Recommended scopes will be pre-selected if you used `create_github_token()`.
+Mire los ámbitos; Recomiendo encarecidamente seleccionar "repo", "user" y "workflow". Los alcances recomendados serán preseleccionados si utilizó `create_github_token()`.
 
-Click "Generate token".
+Haga click en "Generar token".
 
-Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT.
+CCopie el PAT generado a su portapapeles. O deje la ventana del navegador abierta y disponible por un momento, para que pueda volver a copiar el PAT.
 
-Provide this PAT next time a Git operation asks for your password[^connect-https-pat-1].
+Proporcione esta PAT la próxima vez que una operación de Git solicite su contraseña[^connect-https-pat-1].
 
-[^connect-https-pat-1]: Yes, it's confusing that you might be prompted for a password, but you should enter your PAT. GitHub no longer allows passwords in this context, but most basic Git tools still frame the authentication task with this language.
+[^connect-https-pat-1]: Sí, es confuso que se le solicite una contraseña, pero debe ingresar su PAT. GitHub ya no permite contraseñas en este contexto, pero la mayoría de las herramientas básicas de Git aún enmarcan la tarea de autenticación con este lenguaje.
 
-You could even get out ahead of this and store the PAT explicitly right now. In R, call `gitcreds::gitcreds_set()` to get a prompt where you can paste your PAT:
+Incluso podrías adelantarte a esto y almacenar el PAT explícitamente ahora mismo. En R, llame `gitcreds::gitcreds_set()` para recibir un mensaje donde puedes pegar tu PAT:
 
 ```{sh eval = FALSE}
 > gitcreds::gitcreds_set()
@@ -51,59 +51,56 @@ You could even get out ahead of this and store the PAT explicitly right now. In 
 -> Done.
 ```
 
-You should be able to work with GitHub now, i.e. push and pull. If you're still doing your initial setup, now is a great time to move on to [Connect to GitHub](#push-pull-github).
+Debería poder trabajar con GitHub ahora. Si todavía estás realizando la configuración inicial, ahora es un buen momento para pasar a [Conectarse a GitHub](#push-pull-github).
 
-Read on to learn more about:
+Continúe leyendo para obtener más información sobre:
 
--   [How to decide between the HTTPS and SSH protocols](#https-vs-ssh)
--   [PAT scopes, names, and expiration](#get-a-pat)
--   [PAT storage](#store-pat)
--   [Troubleshooting](#pat-troubleshooting)
+-   [Cómo decidir entre los protocolos HTTPS y SSH](#sec-https-vs-ssh)
+-   [Alcances, nombres y caducidad de PAT](#sec-get-a-pat)
+-   [Guarde su PATT](#sec-store-pat)
+-   [Solución de problemas](#sec-pat-troubleshooting)
 
-## HTTPS versus SSH {#sec-https-vs-ssh}
+## HTTPS contra SSH {#sec-https-vs-ssh}
 
-I find HTTPS easier to get working quickly and **strongly recommend** it when you first start working with Git/GitHub. HTTPS is what GitHub recommends, presumably for exactly the same reasons. The "ease of use" argument in favor of HTTPS is especially true for Windows users. I started with HTTPS, preferred SSH for a while, and have returned to HTTPS. The main thing to know is that this is not an all-or-nothing decision and it's a relatively easy decision to revisit later.
+Encuentro que HTTPS es más fácil de hacer funcionar rápidamente y lo **recomiendo encarecidamente** cuando comienzas a trabajar con Git/GitHub. HTTPS es lo que recomienda GitHub, presumiblemente exactamente por las mismas razones. El argumento de la "facilidad de uso" a favor de HTTPS es especialmente cierto para los usuarios de Windows. Comencé con HTTPS, preferí SSH por un tiempo y volví a HTTPS. Lo principal que debe saber es que esta no es una decisión de todo o nada y es una decisión relativamente fácil de revisar más adelante.
 
-Another advantage of HTTPS is that the PAT we'll set up for that can also be used with GitHub's REST API. That might not mean anything to you (yet), but there are many R packages that call GitHub's API on your behalf (devtools+usethis, remotes, pak, gh, etc.). Configuring your PAT kills two birds with one stone: this single credential can be used to authenticate to GitHub as a regular Git server and for its REST API. If you authenticate via SSH for "regular" Git work, you will still have to set up a PAT for work that uses the REST API.
+Otra ventaja de HTTPS es que el PAT que configuraremos también se puede usar con la API REST de GitHub. Puede que eso no signifique nada para usted (todavía), pero hay muchos paquetes R que llaman a la API de GitHub en su nombre (devtools+usethis, remotes, pak, gh, etc.). Configurar su PAT mata dos pájaros de un tiro: esta credencial única se puede usar para autenticarse en GitHub como un servidor Git normal y para su API REST. Si se autentica a través de SSH para el trabajo "normal" de Git, aún tendrá que configurar un PAT para el trabajo que utiliza la API REST.
 
-```{r}
-#| echo = FALSE, fig.align = "center", out.width = "80%",
-#| fig.alt = "Diagram showing different ways of interacting with GitHub as a server and the credential needed for each method"
-knitr::include_graphics("img/pat-kills-both-birds.jpeg")
-```
+![](img/pat-kills-both-birds.jpeg){fig-alt="Diagram showing different ways of interacting with GitHub as a server and the credential needed for each method" fig-align="center" width="80%"}
 
-A properly configured PAT means all of this will "just work":
+Un PAT configurada correctamente significa que todo esto "simplemente funcionará":
 
--   Remote HTTPS operations via command line Git and, therefore, via RStudio
--   Remote HTTPS operations via the gert R package and, therefore, usethis
--   GitHub API operations via the gh R package and, therefore, usethis
+-   Operaciones HTTPS remotas a través de la línea de comandos de Git y, por tanto, a través de RStudio
+-   Operaciones HTTPS remotas a través del paquete gert R y, por lo tanto, usethis
+-   Operaciones de API de GitHub a través del paquete gh R y, por lo tanto, usethis
 
-### URL determines the protocol {#sec-url-determines-protocol}
+### La URL determina el protocolo {#sec-url-determines-protocol}
 
-Even though I'm suggesting that you adopt HTTPS as a lifestyle, it's good to know that you actually have very granular control over the protocol. It is determined by the URL used to access a remote repo. Feel free to skip this section if you are new to Git (we mention some concepts and commands that won't make much sense 'til you've used Git a little).
+Aunque sugiero que adoptes HTTPS como estilo de vida, es bueno saber que en realidad tienes un control muy granular sobre el protocolo. Está determinado por la URL utilizada para acceder a un repositorio remoto. No dudes en saltarte esta sección si eres nuevo en Git (mencionamos algunos conceptos y comandos que no tendrán mucho sentido hasta que hayas usado un poco Git).
 
-HTTPS remote URLs look like `https://github.com/<OWNER>/<REPO>.git`.\
-SSH remote URLs look like `git@github.com:<OWNER>/<REPO>.git`.
+Las URL remotas HTTPS se ven así `https://github.com/<OWNER>/<REPO>.git`.\
+Las URL remotas SSH se ven así `git@github.com:<OWNER>/<REPO>.git`.
 
-```{r}
-#| echo = FALSE, fig.show = "hold",
-#| out.width = "49%", out.height = "49%", 
-#| fig.alt = "Getting an HTTPS or SSH URL from GitHub"
-knitr::include_graphics(c("img/github-https-url.png", "img/github-ssh-url.png"))
-```
+::: {layout-ncol=2 fig-alt="Getting an HTTPS or SSH URL from GitHub"}
 
-When you execute a command such as `git push origin my-cool-feature-branch`, Git looks up the URL you've stored for the `origin` remote and uses the protocol implicit in the URL's format. The protocol is a game time decision.
+![](img/github-https-url.png){}
 
-This implies that:
+![](img/github-ssh-url.png){}
 
--   It's fine to use HTTPS for one remote in a repo and SSH for another.\
--   It's fine to use HTTPS in one repo and SSH in another.\
--   It's fine to interact with a GitHub repo via HTTPS from one computer and via SSH from another.\
--   It's fine to adopt HTTPS for new work, even if some of your pre-existing repos use SSH.
+:::
 
-You just have to be aware that mixed use of HTTPS and SSH means you'll have to configure both sorts of credentials.
+Cuando ejecutas un comando como `git push origin my-cool-feature-branch`, Git busca la URL que has almacenado para el control remoto `origin` y usa el protocolo implícito en el formato de la URL. El protocolo es una decisión en el momento del juego.
 
-Changing a specific remote from HTTPS to SSH (and back again) is a straightforward operation with `git remote set-url REMOTE_NAME DESIRED_URL`:
+Esto implica que:
+
+-   Está bien usar HTTPS para un control remoto en un repositorio y SSH para otro.\
+-   Está bien usar HTTPS en un repositorio y SSH en otro.\
+-   Está bien interactuar con un repositorio de GitHub mediante HTTPS desde una computadora y mediante SSH desde otra.\
+-   Está bien adoptar HTTPS para trabajos nuevos, incluso si algunos de sus repositorios preexistentes usan SSH.
+
+Sólo debes tener en cuenta que el uso mixto de HTTPS y SSH significa que tendrás que configurar ambos tipos de credenciales.
+
+Cambiar un control remoto específico de HTTPS a SSH (y viceversa) es una operación sencilla con `git remote set-url REMOTE_NAME DESIRED_URL`:
 
 ``` console
 ~/rrr/happy-git-with-r % git remote -v
@@ -119,7 +116,7 @@ origin  git@github.com:jennybc/happy-git-with-r.git (push)
 ~/rrr/happy-git-with-r % git remote set-url origin https://github.com/jennybc/happy-git-with-r.git
 ```
 
-We can do the same from R using functions in usethis:
+Podemos hacer lo mismo desde R usando las funciones de usethis:
 
 ```{r eval = FALSE}
 usethis::git_remotes()
@@ -143,62 +140,59 @@ usethis::use_git_remote(
 )
 ```
 
-## Generate a personal access token (PAT) {#sec-get-a-pat}
+## Generar un token de acceso personal (PAT) {#sec-get-a-pat}
 
-On github.com, assuming you're signed in, you can manage your personal access tokens from <https://github.com/settings/tokens>, also reachable via *Settings \> Developer settings \> Personal access tokens*. You could click on "Generate new token" here or, perhaps even better, you could call `usethis::create_github_token()` from R:
+En github.com, suponiendo que haya iniciado sesión, puede administrar sus tokens de acceso personales desde <https://github.com/settings/tokens>, también accesible a través de *Configuración \> Configuración de desarrollador \> Tokens de acceso personal*. Puedes hacer clic en "Generar nuevo token" aquí o, quizás incluso mejor, puedes ejecutar en R el siguiente código `usethis::create_github_token()`:
 
 ```{r eval = FALSE}
 usethis::create_github_token()
 ```
 
-The usethis approach takes you to a pre-filled form where we have pre-selected some recommended scopes, which you can look over and adjust before clicking "Generate token". At the time of writing, the usethis-recommended scopes are "repo", "user", "gist", and "workflow".
+El usethis enfoque lo lleva a un formulario precargado donde hemos preseleccionado algunos alcances recomendados, que puede revisar y ajustar antes de hacer clic en "Generar token". Al momento de escribir este artículo, los alcances recomendados por este uso son "repo", "user", "gist" y "workflow".
 
-```{r}
-#| echo  = FALSE, fig.align='center', out.width="100%",
-#| fig.alt = "Screenshot: Getting a new personal access token on GitHub"
-knitr::include_graphics("img/new-personal-access-token-screenshot.png")
-```
 
-It is a very good idea to describe the token's purpose in the *Note* field, because one day you might have multiple PATs. We recommend naming each token after its use case, such as the computer or project you are using it for, e.g. "personal-macbook-air" or "vm-for-project-xyz". In the future, you will find yourself staring at this list of tokens, because inevitably you'll need to re-generate or delete one of them. Make it easy to figure out which token you've come here to fiddle with.
+![](img/new-personal-access-token-screenshot.png){fig-alt="Screenshot: Getting a new personal access token on GitHub" fig-align='center' width="100%"}
 
-GitHub encourages the use of perishable tokens, with a default *Expiration* period of 30 days. Unless you have a specific reason to fight this, I recommend accepting this default. I assume that GitHub's security folks have good reasons for their recommendation. But, of course, you can adjust the *Expiration* behaviour as you see fit, including "No expiration".
+Es una muy buena idea describir el propósito del token en el campo *Note*, porque algún día podría tener varios PAT. Recomendamos nombrar cada token según su caso de uso, como la computadora o el proyecto para el que lo está usando, por ejemplo. "personal-macbook-air" o "vm-for-project-xyz". En el futuro, te encontrarás mirando esta lista de tokens, porque inevitablemente necesitarás volver a generar o eliminar uno de ellos. Haz que sea fácil descubrir con qué token has venido a jugar.
 
-Once you're happy with the token's *Note*, *Expiration*, and *Scopes*, click "Generate token".
+GitHub fomenta el uso de tokens perecederos, con un período de *Caducidad* predeterminado de 30 días. A menos que tenga una razón específica para luchar contra esto, le recomiendo aceptar este valor predeterminado. Supongo que la gente de seguridad de GitHub tiene buenas razones para su recomendación. Pero, por supuesto, puede ajustar el comportamiento de *Vencimiento* como mejor le parezca, incluido "Sin vencimiento".
 
-You won't be able to see this token again, so don't close or navigate away from this browser window until you store the PAT locally. Copy the PAT to the clipboard, anticipating what we'll do next: trigger a prompt that lets us store the PAT in the Git credential store.
+Una vez que esté satisfecho con la *Note*, *Expiration* y *Scope* del token, haga clic en "Generar token".
 
-Treat this PAT like a password! Do not ever hard-wire your PAT into your code! A PAT should always be retrieved implicitly, for example, from the Git credential store. We're about to help you store the PAT in a safe place, where command line Git, RStudio, and R packages can discover it.
+No podrá volver a ver este token, así que no cierre ni salga de esta ventana del navegador hasta que almacene el PAT localmente. Copie el PAT al portapapeles, anticipando lo que haremos a continuación: activar un mensaje que nos permita almacenar el PAT en el almacén de credenciales de Git.
 
-If you use a password management app, such as 1Password or LastPass (highly recommended!), you might want to also add this PAT (and its *Note*) to the entry for GitHub, where you're already storing your username and password. Storing your PAT in the Git credential store is a semi-persistent convenience, sort of like a browser cache or "remember me" on a website[^connect-https-pat-2] and it's conceivable you will need to re-enter your PAT in the future. You could decide to embrace the impermanence of your PAT and, if it somehow goes missing, you'll just [re-generate the PAT and re-store it](#regenerate-pat). If you accept the default 30-day expiration period, this is a workflow you'll be using often anyway. But if you create long-lasting tokens or want to feel free to play around with the functions for setting or clearing your Git credentials, it can be handy to have your own record of your PAT in a secure place, like 1Password or LastPass.
+¡Trate este PAT como una contraseña! ¡Nunca conectes tu PAT a tu código! Una PAT siempre debe recuperarse implícitamente, por ejemplo, del almacén de credenciales de Git. Estamos a punto de ayudarle a almacenar el PAT en un lugar seguro, donde los paquetes de línea de comandos Git, RStudio y R puedan descubrirlo.
 
-[^connect-https-pat-2]: Haha! We all know how well "remember me" works.
+Si usa una aplicación de administración de contraseñas, como 1Password o LastPass (¡muy recomendable!), es posible que desee agregar también esta PAT (y su *Nota*) a la entrada de GitHub, donde ya está almacenando su nombre de usuario y contraseña. . Almacenar su PAT en el almacén de credenciales de Git es una conveniencia semipersistente, algo así como un caché del navegador o "recordarme" en un sitio web[^connect-https-pat-2] y es posible que necesite volver a ingresar su PAT en el futuro. Podrías decidir aceptar la impermanencia de tu PAT y, si de alguna manera se pierde, simplemente [regenerarás el PAT y lo restaurarás](#sec-regenerate-pat). Si acepta el período de vencimiento predeterminado de 30 días, este es un flujo de trabajo que utilizará con frecuencia de todos modos. Pero si crea tokens duraderos o quiere jugar con las funciones para configurar o borrar sus credenciales de Git, puede resultar útil tener su propio registro de su PAT en un lugar seguro, como 1Password o LastPass.
 
-## Store your PAT {#sec-store-pat}
+[^connect-https-pat-2]: ¡Ja ja! Todos sabemos lo bien que funciona "recuérdame".
 
-At this point, I assume you've generated a PAT and have it available, in one or both of these ways:
+## Guarde su PAT {#sec-store-pat}
 
--   In a secure, long-term system for storing secrets, like 1Password or LastPass
--   For the next few minutes, in a browser window or on the clipboard
+En este punto, asumo que generó una PAT y la tiene disponible, en una o ambas de estas maneras:
 
-There are a couple ways to get your PAT into the Git credential store:
+-   En un sistema seguro y a largo plazo para almacenar secretos, como 1Password o LastPass
+-   Durante los próximos minutos, en una ventana del navegador o en el portapapeles
 
--   Call an R function to explicitly store (or update) your credentials.
--   Do something in command line Git or RStudio that triggers a credential challenge.
+Hay un par de formas de ingresar su PAT en la tienda de credenciales de Git:
 
-### Call an R function to store your credentials
+-   Llame a una función de R para almacenar (o actualizar) explícitamente sus credenciales.
+-   Haga algo en la línea de comando de Git o RStudio que desencadene un desafío de credenciales.
 
-There are two R packages for accessing the Git credential store:
+### Llame a una función R para almacenar sus credenciales
+
+Hay dos paquetes de R para acceder al almacén de credenciales de Git:
 
 -   [gitcreds](https://r-lib.github.io/gitcreds/)
 -   [credentials](https://docs.ropensci.org/credentials/)
 
-It is likely that these packages will eventually combine into one and, even now, they are largely interoperable. You don't need to follow the instructions for both packages -- pick one!
+Es probable que estos paquetes eventualmente se combinen en uno solo e, incluso ahora, son en gran medida interoperables. No es necesario que sigas las instrucciones de ambos paquetes: ¡elige uno!
 
-#### gitcreds package
+#### Paquete gitcreds
 
-If you don't have gitcreds installed, install via `install.packages("gitcreds")`. If you've installed usethis, you will already have gitcreds, because usethis uses gh and gh uses gitcreds.
+Si no tiene gitcreds instalado, instálelo a través de `install.packages("gitcreds")`. Si ha instalado usethis, ya tendrá gitcreds, porque usethis usa gh y gh usa gitcreds.
 
-Call `gitcreds::gitcreds_set()`. If you don't have a PAT stored already, it will prompt you to enter your PAT. Paste!
+Llame a `gitcreds::gitcreds_set()`. Si aún no tiene una PAT almacenada, se le pedirá que la ingrese. ¡Pegar!
 
 ```{sh eval = FALSE}
 > gitcreds::gitcreds_set()
@@ -209,7 +203,7 @@ Call `gitcreds::gitcreds_set()`. If you don't have a PAT stored already, it will
 -> Done.
 ```
 
-If you already have a stored credential, `gitcreds::gitcreds_set()` reveals this and will even let you inspect it. This helps you decide whether to keep the existing credential or replace it. When in doubt, embrace a new, known-to-be-good credential over an old one, of dubious origins.
+Si ya tiene una credencial almacenada, `gitcreds::gitcreds_set()` la revela e incluso le permitirá inspeccionarla. Esto le ayuda a decidir si desea conservar la credencial existente o reemplazarla. En caso de duda, opte por una credencial nueva y de buena reputación en lugar de una antigua de origen dudoso.
 
 ```{sh eval = FALSE}
 > gitcreds::gitcreds_set()
@@ -237,7 +231,7 @@ Selection: 2
 -> Done.
 ```
 
-You can check that you've stored a credential with `gitcreds_get()`:
+Puede comprobar que ha almacenado una credencial con `gitcreds_get()`:
 
 ```{r eval = FALSE}
 gitcreds_get()
@@ -248,7 +242,7 @@ gitcreds_get()
 #>   password: <-- hidden -->
 ```
 
-Other functions that can help you feel confident about your PAT setup include:
+Otras funciones que pueden ayudarle a sentirse seguro acerca de su configuración PAT incluyen:
 
 ```{r eval = FALSE}
 usethis::gh_token_help()
@@ -258,17 +252,17 @@ usethis::git_sitrep()
 gh::gh_whoami()
 ```
 
-#### credentials package
+#### Paquete credentials
 
-If you don't have credentials installed, install via `install.packages("credentials")`. If you've installed usethis, you will already have credentials, because usethis uses gert and gert uses credentials.
+Si no tiene las credenciales instaladas, instálelas a través de `install.packages("credentials")`. Si ha instalado usethis, ya tendrá credenciales, porque usethis usa gert y gert usa credenciales.
 
-Call `set_github_pat()`. If you don't have a PAT stored already, it will prompt you to enter your PAT. Paste!
+Llame a `set_github_pat()`. Si aún no tiene una PAT almacenada, se le pedirá que la ingrese. ¡Pegar!
 
 ```{r eval = FALSE}
 credentials::set_github_pat()
 ```
 
-If successful, your initial (and subsequent) calls will look like this:
+Si tiene éxito, sus llamadas iniciales (y posteriores) se verán así:
 
 ```{r eval = FALSE}
 credentials::set_github_pat()
@@ -276,7 +270,7 @@ credentials::set_github_pat()
 #> Using GITHUB_PAT from Jennifer (Jenny) Bryan (credential helper: osxkeychain)
 ```
 
-Other functions that can help you feel confident about your PAT setup include:
+Otras funciones que pueden ayudarle a sentirse seguro acerca de su configuración PAT incluyen:
 
 ```{r eval = FALSE}
 usethis::gh_token_help()
@@ -286,34 +280,34 @@ usethis::git_sitrep()
 gh::gh_whoami()
 ```
 
-### Store credentials through organic Git use
+### Almacene credenciales mediante el uso orgánico de Git
 
-*Before gitcreds and credentials existed (see above), we had to orchestrate a credential challenge by setting up (and then tearing down) a toy repo. That still occurs naturally in the guided exercise in \[Connect to GitHub\]. But I strongly recommend managing your PAT more directly and explicitly with `gitcreds::gitcreds_set()` and related functions in gitcreds.*
+*Antes de que existieran gitcreds y credenciales (ver arriba), teníamos que orquestar un desafío de credenciales configurando (y luego derribando) un repositorio de juguetes. Esto todavía ocurre naturalmente en el ejercicio guiado en [Conectarse a GitHub](#sec-push-pull-github). Pero recomiendo encarecidamente administrar su PAT de manera más directa y explícita con `gitcreds::gitcreds_set()` y funciones relacionadas en gitcreds.*
 
-## HTTPS PAT problems and solutions {#sec-pat-troubleshooting}
+## Problemas y soluciones de HTTPS PAT {#sec-pat-troubleshooting}
 
-This section is for people who need to know even more about PAT management, because they're in a nonstandard situation or troubleshooting.
+Esta sección es para personas que necesitan saber aún más sobre la administración de PAT porque se encuentran en una situación no estándar o sobre la resolución de problemas.
 
-### Valid PAT gets stored, but later told the PAT is invalid
+### Se almacena el PAT válido, pero luego se le dice que el PAT no es válido
 
-Let's say you generate a fresh PAT and successfully store it as described above. Maybe you even use it successfully. But later, you're told your PAT is invalid! How can this be?
+Supongamos que genera un PAT nuevo y lo almacena correctamente como se describe anteriormente. Quizás incluso lo uses con éxito. ¡Pero luego te dicen que tu PAT no es válido! ¿Cómo puede ser esto?
 
-Here are some likely explanations:
+Aquí hay algunas explicaciones probables:
 
-1.  Your PAT truly is invalid. By default, PATs have an expiration date now. One day you really will wake up and find the PAT has gone bad overnight and you need to re-generate and re-store it.
-2.  You have an invalid PAT stored *somewhere else*, that you've forgotten about, probably in `.Renviron`. This old, invalid PAT is preventing R packages from even discovering your new, valid PAT.
+1.  Su PAT realmente no es válido. De forma predeterminada, los PAT ahora tienen una fecha de vencimiento. Un día realmente te despertarás y descubrirás que el PAT se ha estropeado durante la noche y necesitas volver a generarlo y almacenarlo.
+2.  Tienes un PAT no válido almacenado *en otro lugar*, que has olvidado, probablemente en `.Renviron`. Esta PAT antiguo e inválido impide que los paquetes R incluso descubran su PAT nuevo y válido.
 
-#### PAT has expired {#sec-regenerate-pat}
+#### PAT ha expirado {#sec-regenerate-pat}
 
-You are going to be re-generating and re-storing your PAT on a schedule dictated by its expiration period. By default, once per month.
+Vas a regenerar y restaurar tu PAT según un cronograma dictado por su período de vencimiento. Por defecto, una vez al mes.
 
-When the PAT expires, return to <https://github.com/settings/tokens> and click on its *Note*. (You do label your tokens nicely by use case, right? Right?) At this point, you can optionally adjust scopes and then click "Regenerate token". You can optionally modify its *Expiration* and then click "Regenerate token" (again). As before, copy the PAT to the clipboard, call `gitcreds::gitcreds_set()`, and paste!
+Cuando el PAT caduque, regrese a <https://github.com/settings/tokens> y haga clic en su *Nota*. (Etiquetas muy bien tus tokens por caso de uso, ¿verdad? ¿Verdad?) En este punto, opcionalmente puedes ajustar los alcances y luego hacer clic en "Regenerar token". Opcionalmente, puedes modificar su *Caducidad* y luego hacer clic en "Regenerar token" (nuevamente). Como antes, copie el PAT al portapapeles, llame a `gitcreds::gitcreds_set()` y péguelo.
 
-Hopefully it's becoming clear why each token's *Note* is so important. The actual token may be changing, e.g., once a month, but its use case (and scopes) are much more persistent and stable.
+Con suerte, cada vez está más claro por qué la *Nota* de cada token es tan importante. El token real puede cambiar, por ejemplo, una vez al mes, pero su caso de uso (y alcances) son mucho más persistentes y estables.
 
-#### Old `GITHUB_PAT` in `.Renviron`
+#### `GITHUB_PAT` antiguo en `.Renviron`
 
-These usethis functions will diagnose this problem:
+Estas funciones de usethis diagnosticarán este problema:
 
 ```{r eval = FALSE}
 usethis::gh_token_help()
@@ -321,17 +315,17 @@ usethis::gh_token_help()
 usethis::git_sitrep()
 ```
 
-In the past, it was common to store a PAT as the `GITHUB_PAT` environment variable in `.Renviron`. But now, thanks to gitcreds and credentials, we can store and retrieve a PAT, from R, the same way as command line Git does.
+En el pasado, era común almacenar un PAT como la variable de entorno `GITHUB_PAT` en `.Renviron`. Pero ahora, gracias a gitcreds y credenciales, podemos almacenar y recuperar un PAT, desde R, de la misma manera que lo hace la línea de comandos Git.
 
-If you have any doubt about your previous practices, open `.Renviron`, look for a line setting the `GITHUB_PAT` environment variable, and delete it. `usethis::edit_r_environ()` can be helpful for getting `.Renviron` open for editing. Don't forget to restart R for this change to take effect.
+Si tiene alguna duda sobre sus prácticas anteriores, abra `.Renviron`, busque una línea que configure la variable de entorno `GITHUB_PAT` y elimínela. `usethis::edit_r_environ()` puede ser útil para abrir `.Renviron` para editarlo. No olvide reiniciar R para que este cambio surta efecto.
 
-### PAT doesn't persist on macOS or Windows
+### PAT no persiste en macOS o Windows
 
-The credential helpers used by Git take advantage of official OS-provided credential stores, where possible, such as macOS Keychain and Windows Credential Manager.
+Los asistentes de credenciales utilizados por Git aprovechan los almacenes de credenciales oficiales proporcionados por el sistema operativo, siempre que sea posible, como macOS Keychain y Windows Credential Manager.
 
-If you're trying to follow the advice here and your PAT never persists, consider that you may need to update Git to get its more modern credential helpers. This is absolutely an area of Git that has improved rapidly in recent years and the gitcreds and credentials package work best with recent versions of Git. I have not needed to explicitly activate a credential helper on macOS or Windows with any recent version of Git.
+Si está intentando seguir los consejos aquí y su PAT nunca persiste, considere que es posible que necesite actualizar Git para obtener sus asistentes de credenciales más modernos. Esta es absolutamente un área de Git que ha mejorado rápidamente en los últimos años y el paquete gitcreds y credentials funcionan mejor con las versiones recientes de Git. No he necesitado activar explícitamente un asistente de credenciales en macOS o Windows con ninguna versión reciente de Git.
 
-Here's a command to reveal the current credential helper and what I see these days.
+Aquí hay un comando para revelar el asistente de credenciales actual y lo que veo estos días.
 
 macOS
 
@@ -347,38 +341,38 @@ $ git config --show-origin --get credential.helper
 file:C:/Program Files/Git/mingw64/etc/gitconfig manager
 ```
 
-If you want to know how more about how gitcreds and credentials are managing your PAT, learn about [`git credential <fill|approve|reject>`](https://git-scm.com/docs/git-credential). For keeners, that documentation gives you the gory details on how credentials are stored and retrieved:
+Si desea saber más sobre cómo gitcreds y credenciales administran su PAT, obtenga información sobre [`git credential <fill|approve|reject>`](https://git-scm.com/docs/git-credential). Para los entusiastas, esa documentación les brinda detalles sobre cómo se almacenan y recuperan las credenciales:
 
-> Git has an internal interface for storing and retrieving credentials from system-specific helpers, as well as prompting the user for usernames and passwords. The `git-credential` command exposes this interface to scripts which may want to retrieve, store, or prompt for credentials in the same manner as Git.
+> Git tiene una interfaz interna para almacenar y recuperar credenciales de ayudantes específicos del sistema, además de solicitar al usuario nombres de usuario y contraseñas. El comando `git-credential` expone esta interfaz a scripts que pueden querer recuperar, almacenar o solicitar credenciales de la misma manera que Git.
 
-On Windows, your Git credentials are probably being stored via Credential Manager.
+En Windows, sus credenciales de Git probablemente se almacenen a través del Administrador de credenciales.
 
-On macOS, your Git credentials are probably being stored in the Keychain.
+En macOS, sus credenciales de Git probablemente estén almacenadas en el Keychain.
 
-If you really want to poke around directly to explore or clean out your GitHub credentials, launch Credential Manager (Windows) or Keychain Access (macOS) and search for "github.com".
+Si realmente desea husmear directamente para explorar o limpiar sus credenciales de GitHub, inicie Credential Manager (Windows) o Keychain Access (macOS) y busque "github.com".
 
-### PAT doesn't persist on Linux
+### PAT no persiste en Linux
 
-The credential helpers used by Git take advantage of official OS-provided credential stores on macOS and Windows, but sadly there is no exact equivalent on Linux.
+Los asistentes de credenciales utilizados por Git aprovechan los almacenes de credenciales oficiales proporcionados por el sistema operativo en macOS y Windows, pero lamentablemente no existe un equivalente exacto en Linux.
 
-The easiest thing to do is to configure Git to "cache" your credentials (vs "store"), which is more time-limited. Then set the cache timeout to some suitably long period of time. Here, we set the timeout to ten million seconds or around 16 weeks, enough for a semester.
+Lo más fácil es configurar Git para "almacenar en caché" sus credenciales (frente a "almacenar"), que tiene un tiempo más limitado. Luego establezca el tiempo de espera de la caché en un período de tiempo suficientemente largo. Aquí fijamos el tiempo de espera en diez millones de segundos o alrededor de 16 semanas, suficiente para un semestre.
 
 ``` console
 git config --global credential.helper 'cache --timeout=10000000'
 ```
 
-This still may not make your PAT available to R packages. In this case, you may need to use the older, less secure approach of storing your PAT in `.Renviron`. `usethis::edit_r_environ()` opens that file for editing.
+Es posible que esto aún no haga que su PAT esté disponible para los paquetes R. En este caso, es posible que necesite utilizar el método más antiguo y menos seguro de almacenar su PAT en `.Renviron`. `usethis::edit_r_environ()` abre ese archivo para editarlo.
 
 ```{r, eval = FALSE}
 usethis::edit_r_environ()
 ```
 
-Add a line like this, but substitute your PAT:
+Agrega una línea como esta, pero sustituye tu PAT:
 
 ```{sh, eval = FALSE}
 GITHUB_PAT=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Make sure this file ends in a newline! Lack of a newline can lead to silent failure to load startup files, which can be tricky to debug. Take care that this file is not accidentally pushed to the cloud, e.g. Google Drive or GitHub.
+¡Asegúrese de que este archivo termine en una nueva línea! La falta de una nueva línea puede provocar una falla silenciosa al cargar los archivos de inicio, lo que puede ser complicado de depurar. Tenga cuidado de que este archivo no se envíe accidentalmente a la nube, p. Google Drive o GitHub.
 
-Restart R for changes in `.Renviron` to take effect.
+Reinicie R para que los cambios en `.Renviron` surtan efecto.
