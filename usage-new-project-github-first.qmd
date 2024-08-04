@@ -1,23 +1,23 @@
-# New project, GitHub first {#sec-new-github-first}
+# Nuevo proyecto, GitHub primero {#sec-new-github-first}
 
-We create a new Project, with the preferred "GitHub first, then RStudio" sequence. Why do we prefer this? Because this method of copying the Project from GitHub to your computer also sets up the local Git repository for immediate pulling and pushing. Under the hood, we are doing `git clone`.
+Creamos un nuevo Proyecto, con la secuencia preferida "Primero GitHub, luego RStudio". ¿Por qué preferimos esto? Porque este método de copiar el proyecto desde GitHub a su computadora también configura el repositorio local de Git para su extracción y envío inmediato. Debajo del capó, estamos haciendo "git clone".
 
-You've actually done this before during set up (@sec-rstudio-git-github). We're doing it again, *with feeling*.
+De hecho, ya hiciste esto antes durante la configuración (@sec-rstudio-git-github). Lo volvemos a hacer, *con sentimiento*.
 
-The workflow is pretty similar for other repository managers like GitLab or Bitbucket. We will specify below when you may need to do something differently.
+El flujo de trabajo es bastante similar para otros administradores de repositorios como GitLab o Bitbucket. A continuación especificaremos cuándo es posible que necesite hacer algo diferente.
 
-## Make a repo on GitHub
+## Hacer un repositorio en GitHub
 
 ```{r echo = FALSE, results = "asis"}
 dat <- list(
   repository_name_text = glue::glue("
-    `myrepo` or whatever you wish to name your new project. Approach this \\
-    similar to a variable name, in code: descriptive but brief, no \\
-    whitespace. Letters, digits, `-`, `.`, or `_` are allowed."),
+    `myrepo` o como quieras ponerle el nombre a tu nuevo proyecto. Acércate a esto \\
+    similar a un nombre de variable, en código: descriptivo pero breve, no \\
+    espacio en blanco. Se permiten letras, dígitos, `-`, `.` o `_`."),
   description_text = glue::glue("
-    \"Analysis of the stuff\" or any short description of the project. Write \\
-    this for humans."),
-  initialize_text = "Initialize this repository with: Add a README file."
+    \"Análisis de las cosas\" o cualquier breve descripción del proyecto. Escribe \\
+    esto para humanos."),
+  initialize_text = "Inicialice este repositorio con: Agregue un archivo README."
 )
 insert <- glue::glue_data(
   dat,
@@ -30,30 +30,30 @@ cat(res, sep = '\n')
 
 ### GitLab
 
-Log in at <https://gitlab.com>. Click on the "+" button in the top-right corner, and then on "New project".
+Inicie sesión en <https://gitlab.com>. Haga clic en el botón "+" en la esquina superior derecha y luego en "Nuevo proyecto".
 
--   Project name: `myrepo` (or whatever you wish)\
--   Public
--   YES Initialize repository with a README
+-   Nombre del proyecto: `myrepo` (o lo que desees)\
+-   Público
+-   SÍ Inicializar el repositorio con un README
 
-Click the big green button "Create project."
+Haga clic en el gran botón verde "Crear proyecto".
 
-Copy the HTTPS or SSH clone URL to your clipboard via the blue "Clone" button.
+Copie la URL de clonación HTTPS o SSH a su portapapeles mediante el botón azul "Clonar".
 
 ### Bitbucket
 
-Log in at <https://bitbucket.org>. On the left-side pane, click on the "+" button, and then on "Repository" under "Create".
+Inicie sesión en <https://bitbucket.org>. En el panel del lado izquierdo, haga clic en el botón "+" y luego en "Repositorio" en "Crear".
 
--   Repository name: `myrepo` (or whatever you wish)
--   Access level: Uncheck to make the repository public.
--   Include a README?: Select either "Yes, with a tutorial (for beginners)" or "Yes, with a template"
--   Version control system: Git
+-   Nombre del repositorio: `myrepo` (o el que desees)
+-   Nivel de acceso: desmarque para hacer público el repositorio.
+-   ¿Incluir un archivo README?: seleccione "Sí, con un tutorial (para principiantes)" o "Sí, con una plantilla".
+-   Sistema de control de versiones: Git
 
 Click the big blue button "Create repository."
 
-Copy the HTTPS or SSH clone URL that appears when you click on the blue "Clone" button. Make sure you remove the `git clone ...` that shows up at the beginning.
+Copie la URL de clonación HTTPS o SSH que aparece al hacer clic en el botón azul "Clonar". Asegúrate de eliminar el `git clone...` que aparece al principio.
 
-## New RStudio Project via git clone {#sec-new-rstudio-project-via-git}
+## Nuevo proyecto RStudio a través de git clone {#sec-new-rstudio-project-via-git}
 
 ```{r echo = FALSE, results = "asis"}
 insert <- readr::read_file("child-clone-a-github-repo.Rmd")
@@ -61,23 +61,21 @@ res <- knitr::knit_child(text = insert, quiet = TRUE)
 cat(res, sep = '\n')
 ```
 
-### Have a look around
+### Mira alrededor
 
-Regardless of whether you used usethis or RStudio, you should now be working in the new Git repo. The implicit `git clone` should download the `README.md` file that we created on GitHub in the previous step. Look in RStudio's file browser pane for the `README.md` file.
+Independientemente de si usó usethis o RStudio, ahora debería estar trabajando en el nuevo repositorio de Git. El `git clone` implícito debería descargar el archivo `README.md` que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo `README.md`.
 
-There's a big advantage to the "GitHub first, then RStudio" workflow: the remote GitHub repo is configured as the `origin` remote for your local repo and your local `main` branch is now tracking the `main` on GitHub. This is a technical but important point about Git. The practical implication is that you are now set up to push and pull. No need to fanny around setting up Git remotes and tracking branches on the command line.
+Hay una gran ventaja en el flujo de trabajo "GitHub primero, luego RStudio": el repositorio remoto de GitHub está configurado como el remoto `origin` para su repositorio local y su rama `main` local ahora está rastreando el `main` en GitHub. Este es un punto técnico pero importante sobre Git. La implicación práctica es que ahora está preparado para empujar y tirar. No es necesario perder el tiempo configurando controles remotos de Git y rastreando ramas en la línea de comando.
 
-We're about to confirm we are setup for pulling and pushing.
+Estamos a punto de confirmar que estamos preparados para realizar push and pulls.
 
-```{r github-pull-push, echo = FALSE, out.width = "60%", fig.cap = "Pull and push."}
-knitr::include_graphics("img/github-pull-push.jpeg")
-```
+![Pull y push.](img/github-pull-push.jpeg){width="60%"}
 
-### Optional: peek under the hood
+### Opcional: echar un vistazo debajo del capó
 
-Completely optional activity: use command line Git to see what we're talking about above, i.e. the remote and tracking branch setup.
+Actividad completamente opcional: use la línea de comando Git para ver de qué estamos hablando arriba, es decir, la configuración de la rama remota y de seguimiento.
 
-`git remote -v` or `git remote --verbose` shows the remotes you have setup. Here's how that looks for someone using HTTPS with GitHub and calling it `origin`:
+`git remote -v` o `git remote --verbose` muestra los controles remotos que ha configurado. Así es como se ve alguien que usa HTTPS con GitHub y lo llama `origin`:
 
 ``` console
 ~/tmp/myrepo % git remote -v
@@ -85,14 +83,14 @@ origin  https://github.com/jennybc/myrepo.git (fetch)
 origin  https://github.com/jennybc/myrepo.git (push)
 ```
 
-`git branch -vv` prints info about the current branch (`-vv` for "very verbose", I guess). In particular, we can see that local `main` is tracking the `main` branch on `origin`, a.k.a. `origin/main`.
+`git branch -vv` imprime información sobre la rama actual (`-vv` para "muy detallado", supongo). En particular, podemos ver que el `main` local está rastreando la rama `main` en `origin`, también conocido como `origin/main`.
 
 ``` console
 ~/tmp/myrepo % git branch -vv
 * main 2899c91 [origin/main] A commit from my local computer
 ```
 
-Finally, `git remote show origin` gives yet another view on useful remote and branch information:
+Finalmente, `git remote show origin` ofrece otra visión de información útil sobre ramas y remotos:
 
 ``` console
 ~/tmp/myrepo % git remote show origin    
@@ -108,36 +106,36 @@ Finally, `git remote show origin` gives yet another view on useful remote and br
     main pushes to main (up to date)
 ```
 
-`git clone`, which RStudio did for us, sets all of this up automatically. This is why "GitHub first, then RStudio" is the preferred way to start projects early in your Git/GitHub life.
+`git clone`, que RStudio hizo por nosotros, configura todo esto automáticamente. Es por eso que "Primero GitHub, luego RStudio" es la forma preferida de iniciar proyectos temprano en su vida de Git/GitHub.
 
-## Make local changes, save, commit
+## Realizar cambios locales, guardar, confirmar
 
-**Do this every time you finish a valuable chunk of work, probably many times a day.**
+**Haga esto cada vez que termine una parte valiosa del trabajo, probablemente muchas veces al día.**
 
-From RStudio, modify the `README.md` file, e.g., by adding the line "This is a line from RStudio". Save your changes.
+Desde RStudio, modifique el archivo `README.md`, por ejemplo, agregando la línea "Esta es una línea de RStudio". Guarde sus cambios.
 
-Commit these changes to your local repo. How?
+Confirme estos cambios en su repositorio local. ¿Cómo?
 
--   Click the "Git" tab in upper right pane
--   Check "Staged" box for any files whose existence or modifications you want to commit.
-    -   To see more detail on what's changed in file since the last commit, click on "Diff" for a Git pop-up
--   If you're not already in the Git pop-up, click "Commit"
--   Type a message in "Commit message", such as "Commit from RStudio".
--   Click "Commit"
+-   Haga clic en la pestaña "Git" en el panel superior derecho
+-   Marque la casilla "Staged" para cualquier archivo cuya existencia o modificaciones desee confirmar.
+    -   Para ver más detalles sobre los cambios en el archivo desde la última confirmación, haga clic en "Diff" para ver una ventana emergente de Git.
+-   Si aún no estás en la ventana emergente de Git, haz clic en "Commit".
+-   Escriba un mensaje en "Commit message", como "Commit from RStudio".
+-   Haga clic en "Commit"
 
-## Push your local changes to GitHub
+## Envía tus cambios locales a GitHub
 
-**Do this a few times a day, but possibly less often than you commit.**
+**Haga esto varias veces al día, pero posiblemente con menos frecuencia de lo que se compromete.**
 
-You have new work in your local Git repository, but the changes are not online yet.
+Tiene un nuevo trabajo en su repositorio Git local, pero los cambios aún no están en línea.
 
-This will seem counterintuitive, but first let's stop and pull from GitHub.
+Esto parecerá contradictorio, pero primero detengámonos y salgamos de GitHub.
 
-Why? Establish this habit for the future! If you make changes to the repo in the browser or from another machine or (one day) a collaborator has pushed, you will be happier if you pull those changes in before you attempt to push.
+¿Por qué? ¡Establece este hábito para el futuro! Si realiza cambios en el repositorio en el navegador o desde otra máquina o (un día) un colaborador lo ha enviado, estará más feliz si realiza esos cambios antes de intentar enviar.
 
-Click the blue "Pull" button in the "Git" tab in RStudio. I doubt anything will happen, i.e. you'll get the message "Already up-to-date." This is just to establish a habit.
+Haga clic en el botón azul "Pull" en la pestaña "Git" en RStudio. Dudo que suceda algo, es decir, recibirás el mensaje "Already up-to-date". Esto es sólo para establecer un hábito.
 
-Click the green "Push" button to send your local changes to GitHub. RStudio will report something along these lines:
+Haga clic en el botón verde "Push" para enviar sus cambios locales a GitHub. RStudio informará algo como esto:
 
 ``` console
 >>> /usr/bin/git push origin HEAD:refs/heads/main
@@ -145,63 +143,63 @@ To https://github.com/jennybc/myrepo.git
    2899c91..b34cade  HEAD -> main
 ```
 
-## Confirm the local change propagated to the GitHub remote
+## Confirmar el cambio local propagado al control remoto de GitHub
 
-Go back to the browser. I assume we're still viewing your new GitHub repo.
+Vuelve al navegador. Supongo que todavía estamos viendo su nuevo repositorio de GitHub.
 
-Refresh.
+Actualizar.
 
-You should see the new "This is a line from RStudio" in the README.
+Deberías ver el nuevo "Esta es una línea de RStudio" en el archivo README.
 
-If you click on "commits," you should see one with the message "Commit from RStudio".
+Si hace clic en "commit", debería ver uno con el mensaje "Commit from RStudio".
 
-## Make a change on GitHub
+## Haz un cambio en GitHub
 
-Click on README.md in the file listing on GitHub.
+Haga clic en README.md en la lista de archivos en GitHub.
 
-In the upper right corner, click on the pencil for "Edit this file".
+En la esquina superior derecha, haga clic en el lápiz para "Editar este archivo".
 
-Add a line to this file, such as "Line added from GitHub."
+Agregue una línea a este archivo, como "Línea agregada desde GitHub".
 
-Edit the commit message in "Commit changes" or accept the default.
+Edite el mensaje de commit en "Confirmar cambios" o acepte el valor predeterminado.
 
-Click the big green button "Commit changes."
+Haga clic en el gran botón verde "Confirmar cambios".
 
 ### GitLab
 
-Click on README.md in the file listing on GitLab.
+Haga clic en README.md en la lista de archivos en GitLab.
 
-In the upper right corner, click on "Edit".
+En la esquina superior derecha, haga clic en "Editar".
 
-Add a line to this file, such as "Line added from GitLab."
+Agregue una línea a este archivo, como "Línea agregada desde GitLab".
 
-Edit the commit message in "Commit changes" or accept the default.
+Edite el mensaje de confirmación en "Confirmar cambios" o acepte el valor predeterminado.
 
-Click the big green button "Commit changes."
+Haga clic en el gran botón verde "Confirmar cambios".
 
 ### Bitbucket
 
-Click on README.md in the file listing on Bitbucket.
+Haga clic en README.md en la lista de archivos de Bitbucket.
 
-In the upper right corner, click on "Edit".
+En la esquina superior derecha, haga clic en "Editar".
 
-Add a line to this file, such as "Line added from Bitbucket."
+Agregue una línea a este archivo, como "Línea agregada desde Bitbucket".
 
-Click on the blue "Commit" button. A pop-up will show up. Edit the commit message or accept the default.
+Haga clic en el botón azul "Confirmar". Aparecerá una ventana emergente. Edite el mensaje de confirmación o acepte el valor predeterminado.
 
-Click the blue "Commit" button.
+Haga clic en el botón azul "Confirmar".
 
-## Pull from GitHub
+## Extraer de GitHub
 
-Back in RStudio locally ...
+De vuelta en RStudio localmente...
 
-Inspect your README.md. It should NOT have the line "Line added from GitHub". It should be as you left it. Verify that.
+Inspeccione su README.md. NO debería tener la línea "Línea agregada desde GitHub". Debe quedar como lo dejaste. Comprueba eso.
 
-Click the blue Pull button.
+Haga clic en el botón azul Pull.
 
-Look at README.md again. You should now see the new line there.
+Mire README.md nuevamente. Ahora deberías ver la nueva línea allí.
 
-## The end
+## El fin
 
 ```{r echo = FALSE, results = "asis"}
 cat(readLines("child-the-end-of-repo-setup.Rmd"), sep = '\n')
