@@ -64,7 +64,7 @@ book:
         - git-branches.qmd
         - git-remotes.qmd
         - git-refs.qmd
-    - part: "Configuraciones remotas"
+    - part: "Configuraciones de remotos"
       chapters:
         - remote-setups-intro.qmd
         - remote-setups-common.qmd

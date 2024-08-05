@@ -1,7 +1,7 @@
-# Git remote setups {#sec-remote-scenarios-intro .unnumbered}
+# Configuraciones remotas de Git {#sec-remote-scenarios-intro .unnumbered}
 
-The previous part ended with some basics about [Git remotes](sec-git-remotes), such as how to define or rename one. Recall that a Git remote is another copy of the repo, usually living elsewhere (hence the term "remote"), that you can pull changes from or push changes to. Remotes are the foundation for all collaborative Git work.
+La parte anterior terminó con algunos conceptos básicos sobre [Git remotos](#sec-git-remotes), como cómo definir o cambiar el nombre de uno. Recuerde que un control remoto de Git es otra copia del repositorio, que generalmente se encuentra en otro lugar (de ahí el término "remoto"), desde donde puede extraer cambios o enviarlos. Los controles remotos son la base de todo el trabajo colaborativo de Git.
 
-But knowing the mechanics of how to add or rename a remote does little good if you don't know *why* or *when* to do it. Luckily, we have very strong opinions about how you should set up your remotes, all motivated by getting you prepared for smooth, happy collaborative work.
+Pero conocer la mecánica de cómo agregar o cambiar el nombre de un control remoto no sirve de nada si no sabes *por qué* o *cuándo* hacerlo. Afortunadamente, tenemos opiniones muy firmes sobre cómo debes configurar tus controles remotos, todas motivadas por prepararte para un trabajo colaborativo fluido y feliz.
 
-In this part we describe various remote setups that are common (for better or worse) and what they are good for (or what's wrong with them and how to fix).
+En esta parte describimos varias configuraciones remotas que son comunes (para bien o para mal) y para qué sirven (o qué tienen de malo y cómo solucionarlo).
