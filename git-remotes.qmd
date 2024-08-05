@@ -1,96 +1,96 @@
-# Remotes {#sec-git-remotes}
+# Remotos {#sec-git-remotes}
 
-Remote repositories are versions of your project that are hosted on the Internet or another network. A single project can have 1, 2, or even hundreds of remotes. You pull others' changes from remotes and push your changes to remotes.
+Los repositorios remotos son versiones de su proyecto que están alojadas en Internet o en otra red. Un solo proyecto puede tener 1, 2 o incluso cientos de controles remotos. Usted extrae los cambios de otros desde los controles remotos y envía sus cambios a los controles remotos.
 
 ```{r setup, include = FALSE}
 has_bash <- Sys.which('bash') != '' && .Platform$OS.type != 'windows'
 ```
 
-## Listing what remotes exist
+## Listar qué controles remotos existen
 
-`git remote` lists the names of available remotes, but usually it is more useful to see what URLs each note corresponds to (with `-v`).
+`git remote` enumera los nombres de los controles remotos disponibles, pero generalmente es más útil ver a qué URL corresponde cada nota (con `-v`).
 
 ```{bash eval = has_bash}
 git remote -v
 ```
 
-## Adding a new remote
+## Agregar un nuevo control remoto
 
-`git clone` automatically adds a new remote, so often you do not need to do this manually initially. However, after the initial clone, it is often useful to add additional remotes.
+`git clone` agrega automáticamente un nuevo control remoto, por lo que a menudo no es necesario hacerlo manualmente inicialmente. Sin embargo, después de la clonación inicial, suele ser útil agregar controles remotos adicionales.
 
-Use `git remote add` to add a new remote:
+Utilice `git remote add` para agregar un nuevo control remoto:
 
 ``` console
 git remote add happygit https://github.com/jennybc/happy-git-with-r.git
 ```
 
-Note: when you add a remote you give it a nickname (here `happygit`), which you can use in git commands in place of the entire URL.
+Nota: cuando agregas un control remoto, le asignas un apodo (aquí `happygit`), que puedes usar en los comandos de git en lugar de la URL completa.
 
 ``` console
 git fetch happygit
 ```
 
-Sidebar on nicknames: there is a strong convention to use `origin` as the nickname of your main remote. At this point, it is common for the main remote of a repo to be hosted on GitHub (or GitLab or Bitbucket). It is tempting to use a more descriptive nickname (such as `github`), but you might find that following convention is worth it. It makes your setup easier for others to understand and for you to transfer information that you read in documentation, on Stack Overflow, or in blogs.
+Barra lateral sobre apodos: existe una fuerte convención para usar `origin` como apodo de su control remoto principal. En este punto, es común que el control remoto principal de un repositorio esté alojado en GitHub (o GitLab o Bitbucket). Es tentador utilizar un apodo más descriptivo (como `github`), pero es posible que valga la pena seguir la convención. Hace que su configuración sea más fácil de entender para otros y para que usted transfiera información que lee en la documentación, en Stack Overflow o en blogs.
 
-A common reason to add a second remote is when you have done a "fork and clone" of a repo and your personal copy (your fork) is set up as the `origin` remote. Eventually you will want to pull changes from the original repository. It is common to use `upstream` as the nickname for this remote.
+Una razón común para agregar un segundo control remoto es cuando ha realizado una "bifurcación y clonación" de un repositorio y su copia personal (su bifurcación) está configurada como el control remoto `origin`. Con el tiempo, querrás extraer los cambios del repositorio original. Es común utilizar `upstream` como apodo para este control remoto.
 
 ``` console
 git remote add upstream https://github.com/TRUE_OWNER/REPO.git
 ```
 
-## Fetching data from remotes
+## Obteniendo datos de controles remotos
 
-To get new data from a remote use `git fetch <remote_name>`. This retrieves the data locally, but importantly it does *not* change the state of your local files in any way. To incorporate the data into your repository, you need to merge or rebase your project with the remote project.
+Para obtener nuevos datos desde un uso remoto `git fetch <remote_name>`. Esto recupera los datos localmente, pero lo más importante es que *no* cambia el estado de sus archivos locales de ninguna manera. Para incorporar los datos a su repositorio, necesita fusionar o cambiar la base de su proyecto con el proyecto remoto.
 
 ``` console
-# Fetch the data
+# Obtener los datos
 git fetch happygit
 
-# Now merge it with our local main
+# Fusionar con main local
 git merge happygit/main main
 
-# git pull is a shortcut which does the above in one command
+# git pull es un atajo que hace lo anterior en un solo comando
 git pull happygit main
 ```
 
-For more detail on `git pull` workflows, see @sec-pull-tricky.
+Para obtener más detalles sobre los flujos de trabajo `git pull`, consulte @sec-pull-tricky.
 
-## Pushing to remotes
+## Enviar a controles remotos
 
-Use `git push <remote> <branch>` to push your local changes to the `<branch>` branch on the `<remote>` remote.
+Utilice `git push <remote> <branch>` para enviar sus cambios locales a la rama `<branch>` en el control remoto `<remote>`.
 
 ``` console
-# push my local changes to the origin remote's main branch
+# enviar mis cambios locales a la rama principal del control remoto de origen
 git push origin main
 
-# push my local changes to the happygit remote's test branch
+# enviar mis cambios locales a la rama de prueba del control remoto happygit
 git push happygit test
 ```
 
-## Renaming and changing remotes
+## Cambiar el nombre y cambiar los controles remotos
 
-`git remote rename` can be used to rename a remote:
+`git remote rename` se puede utilizar para cambiar el nombre de un control remoto:
 
 ``` console
 git remote rename happygit hg
 ```
 
-`git remote set-url` can be used to change the URL for a remote. This is sometimes useful if you initially set up a remote using HTTPS, but now want to use SSH instead (or *vice versa*).
+`git remote set-url` se puede utilizar para cambiar la URL de un control remoto. Esto a veces es útil si inicialmente configuró un control remoto usando HTTPS, pero ahora desea usar SSH en su lugar (o *viceversa*).
 
 ``` console
 git remote set-url happygit git@github.com:jennybc/happy-git-with-r.git
 ```
 
-One fairly common workflow is you initially cloned a repository on GitHub locally (without forking it), but now want to create your own fork and push changes to it. As described earlier, it is common to call the source repository `upstream` and to call your fork `origin`. So, in this case, you need to first rename the existing remote (from `origin` to `upstream`). Then add your fork as a new remote, with the name `origin`.
+Un flujo de trabajo bastante común es que inicialmente clonaste un repositorio en GitHub localmente (sin bifurcarlo), pero ahora quieres crear tu propia bifurcación y enviarle cambios. Como se describió anteriormente, es común llamar al repositorio de origen `upstream` y llamar a su bifurcación `origin`. Entonces, en este caso, primero debe cambiar el nombre del control remoto existente (de `origin` a `upstream`). Luego agrega tu tenedor como un nuevo control remoto, con el nombre `origin`.
 
 ``` console
 git remote rename origin upstream
 git remote add origin git@github.com:jimhester/happy-git-with-r.git
 ```
 
-## Upstream tracking branches
+## Upstream seguimiento de ramas
 
-It is possible to set the branch on the remote each of your local remotes corresponds to. `git clone` sets this up automatically, so for your own `main` branch this is not something you will run into. However by default if you create a new branch and try to push to it you will see something like this:
+Es posible configurar la rama en el control remoto al que corresponde cada uno de sus controles remotos locales. `git clone` configura esto automáticamente, por lo que para tu propia rama `main` esto no es algo con lo que te toparás. Sin embargo, de forma predeterminada, si crea una nueva rama e intenta acceder a ella, verá algo como esto:
 
 ``` console
 git checkout -b mybranch
@@ -101,14 +101,14 @@ git push
 #     git push --set-upstream origin foo
 ```
 
-You can do as the error message says and explicitly set the upstream branch with `--set-upstream`. However I would recommend instead changing the default behavior of `push` to automatically set the upstream branch to the branch with the same name on the remote.
+Puede hacer lo que dice el mensaje de error y configurar explícitamente la rama upstream con `--set-upstream`. Sin embargo, recomendaría cambiar el comportamiento predeterminado de `push` para configurar automáticamente la rama upstream en la rama con el mismo nombre en el control remoto.
 
-You can do this by changing the git `push.default` option to `current`.
+Puedes hacer esto cambiando la opción git `push.default` a `current`.
 
 ``` console
 git config --global push.default current
 ```
 
-See also Working with Remotes:
+Consulte también Trabajar con controles remotos:
 
 <https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes>
