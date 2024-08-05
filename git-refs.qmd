@@ -1,38 +1,38 @@
-# Refs {#sec-git-refs}
+# Referencias {#sec-git-refs}
 
-Many extremely useful Git workflows require you to identify a specific point in your repo's history, i.e. a specific commit.
+Muchos flujos de trabajo de Git extremadamente útiles requieren que identifiques un punto específico en el historial de tu repositorio, es decir, una confirmación específica.
 
-We've explained elsewhere that every commit is associated with a so-called SHA, i.e. a SHA-1 checksum of the commit itself. These opaque strings of 40 letters and numbers are not particularly pleasant for humans to work with. The entry-level coping strategy is to work with an abbreviated form of the SHA. It's typical to only use the first 7 characters, as this almost always uniquely identifies a commit.
+Hemos explicado en otra parte que cada confirmación está asociada con el llamado SHA, es decir, una suma de verificación SHA-1 de la confirmación misma. Estas cadenas opacas de 40 letras y números no son especialmente agradables para los humanos. La estrategia de afrontamiento básica es trabajar con una forma abreviada del SHA. Es típico utilizar solo los primeros 7 caracteres, ya que esto casi siempre identifica de forma única una confirmación.
 
 ![](img/refs-only-shas.jpeg){fig-alt="Git history annotated with SHAs." fig-align="center" out-width="60%"}
 
-Luckily, there are even more ways to talk about a specific commit, that are much easier for humans to wrap their head around. These are called Git "refs", short for references and, if you're familiar with the programming concept of a pointer, that's exactly the right mental model.
+Afortunadamente, hay aún más formas de hablar sobre un compromiso específico, que son mucho más fáciles de entender para los humanos. Estos se denominan "refs" de Git, abreviatura de referencias y, si está familiarizado con el concepto de programación de un puntero, ese es exactamente el modelo mental correcto.
 
-## Useful refs
+## Referencias útiles
 
-Here are some of the most useful refs:
+Estas son algunas de las referencias más útiles:
 
--   A branch name. Example: `main`, `wild-experiment`. When you refer to the `main` branch, that resolves to the SHA of the tip of the `main` branch. Think of a branch ref as a sliding ref that evolves as the branch does.
+-   Un nombre de rama. Ejemplo: `main`, `wild-experiment`. Cuando te refieres a la rama `main`, eso se resuelve en el SHA de la punta de la rama `main`. Piense en una referencia de rama como una referencia deslizante que evoluciona a medida que lo hace la rama.
 
 ![](img/refs-only-branches.jpeg){fig-alt="Git history annotated with two branches." fig-align="center" out-width="60%"}
 
--   `HEAD`. This (almost always) resolves to the tip of the branch that is currently checked out.[^git-refs-1] You can think of `HEAD` as a ref that points to the tip of the current branch, which itself is a ref, that points to a specific SHA. There are two layers of indirection. This is also called a *symbolic ref*.
+-   `HEAD`. Esto (casi siempre) se resuelve en la punta de la rama que está actualmente desprotegida.[^git-refs-1] Puedes pensar en `HEAD` como una referencia que apunta a la punta de la rama actual, que a su vez es una ref, que apunta a un SHA específico. Hay dos capas de dirección indirecta. Esto también se llama *referencia simbólica*.
 
-[^git-refs-1]: When does `HEAD` not resolve to the SHA at the tip of some branch? When you are a *detached HEAD* state. Detached HEAD! That sounds bad, but it's not intrinsically good or bad. It IS bad, though, to be in a detached HEAD state if you didn't mean to be and you don't understand the deal. You get into a detached HEAD state when you directly checkout a specific commit, as opposed to checking out or switching to a *branch*. In experienced hands, this can be a legit thing to do. But in the meantime, I recommend that you always visit a specific state in the history by checking out a *branch*, even if that means you need to create a temporary branch like `holder` or `time-travel`. To get out of the detached `HEAD` state, checkout some existing branch, with `git checkout main` or similar. Otherwise, the StackOverflow thread [How do I fix a Git detached head?](https://stackoverflow.com/q/10228760) addresses many vexing detached `HEAD` scenarios.
+[^git-refs-1]: ¿Cuándo `HEAD` no se resuelve en el SHA en la punta de alguna rama? Cuando estás en un estado *detached HEAD*. ¡CABEZA separada! Eso suena mal, pero no es intrínsecamente bueno o malo. Sin embargo, ES malo estar en un estado de CABEZA separada si no era tu intención y no entiendes el trato. Entras en un estado CABEZA separada cuando verificas directamente una confirmación específica, en lugar de verificar o cambiar a una *rama*. En manos experimentadas, esto puede ser algo legítimo. Pero mientras tanto, te recomiendo que siempre visites un estado específico en el historial consultando una *rama*, incluso si eso significa que necesitas crear una rama temporal como `holder` o `time-travel`. Para salir del estado CABEZA separada, consulte alguna rama existente, con `git checkout main` o similar. De lo contrario, el hilo de StackOverflow [¿Cómo puedo arreglar un cabezal separado de Git?](https://stackoverflow.com/q/10228760) aborda muchos escenarios desconcertantes de CABEZA separada.
 
 ![](img/refs-branches-and-HEAD-1.jpeg){fig-alt="Git history annotated with HEAD symbolic ref." fig-align="center" out-width="60%"}
 
--   A tag. Example: `v1.4.2`. Tags differ from branch refs and the `HEAD` ref in that they tend to be much more static. Tags aren't sliding by nature, although it is possible to reposition a tag to point at a new SHA, if you make an explicit effort. The most common use of a tag is to provide a nice label for a specific SHA.
+-   Una etiqueta. Ejemplo: `v1.4.2`. Las etiquetas se diferencian de las referencias de rama y de la referencia `HEAD` en que tienden a ser mucho más estáticas. Las etiquetas no se deslizan por naturaleza, aunque es posible reposicionar una etiqueta para que apunte a un nuevo SHA, si se hace un esfuerzo explícito. El uso más común de una etiqueta es proporcionar una etiqueta agradable para un SHA específico.
 
 ![](img/refs-tag.jpeg){fig-alt="Git history annotated with a tag." fig-align="center" out-width="60%"}
 
-If you'd like to make all of this more concrete, you can use `git rev-parse` in the shell to witness how refs resolve to concrete SHAs. Here's the general pattern:
+Si desea que todo esto sea más concreto, puede usar `git rev-parse` en el shell para observar cómo las referencias se resuelven en SHA concretos. Aquí está el patrón general:
 
 ``` console
 git rev-parse YOUR_REF_GOES_HERE
 ```
 
-Here are some examples executed in the Happy Git repo:
+Aquí hay algunos ejemplos ejecutados en el repositorio Happy Git:
 
 ``` console
 ~/rrr/happy-git-with-r % git rev-parse HEAD
@@ -45,9 +45,9 @@ Here are some examples executed in the Happy Git repo:
 1eeb91d177b7cb5f9a0b29ebee3e6c0c8ff98f88
 ```
 
-Notice that `HEAD` and `main` resolve to the same SHA, since the `main` branch was checked out at the time. `testing-something` is the name of a branch that happened to be lying around.
+Observe que `HEAD` y `main` se resuelven en el mismo SHA, ya que la rama `main` estaba desprotegida en ese momento. `testing-something` es el nombre de una rama que estaba por ahí.
 
-These refs can be used in all sorts of Git operations, such as `git diff`, `git reset`, and `git checkout`:
+Estas referencias se pueden usar en todo tipo de operaciones de Git, como `git diff`, `git reset` y `git checkout`:
 
 ``` console
 git diff main testing-something
@@ -57,15 +57,15 @@ git reset testing-something -- README.md
 git checkout -b my-new-branch main
 ```
 
-## Relative refs
+## Referencias relativos
 
-There are also modifiers that help you specify a commit relative to a ref, e.g. "the commit just before this one".
+También hay modificadores que le ayudan a especificar una confirmación relativa a una referencia, p. "la confirmación justo antes de este".
 
-`HEAD~1` refers to the commit just before `HEAD`. `HEAD^` is another way to say exactly the same thing.
+`HEAD~1` se refiere a la confirmación justo antes de `HEAD`. `HEAD^` es otra forma de decir exactamente lo mismo.
 
 ![](img/refs-relative.jpeg){fig-alt="Git history annotated with relative refs." fig-align="center" out-width="60%"}
 
-Here are some examples executed in the Happy Git repo:
+Aquí hay algunos ejemplos ejecutados en el repositorio Happy Git:
 
 ``` console
 ~/rrr/happy-git-with-r % git rev-parse HEAD~1
@@ -75,18 +75,18 @@ Here are some examples executed in the Happy Git repo:
 5dacec4950a3746310bb30704417a792302b044a
 ```
 
-Notice that `HEAD~1` and `HEAD^` resolve to the same SHA.
+Observe que `HEAD~1` y `HEAD^` se resuelven en el mismo SHA.
 
-Both of these patterns generalize. `HEAD~3` and `HEAD^^^` are valid and equivalent refs.
+Ambos patrones se generalizan. `HEAD~3` y `HEAD^^^` son referencias válidas y equivalentes.
 
-I must admit that I am not a big fan of these relative ref shortcuts and especially not when reaching back more than one commit. I worry that I have some sort of off-by-one error in my understanding and I'll end up targetting the wrong commit.
+Debo admitir que no soy un gran admirador de estos atajos de referencia relativa y especialmente cuando retrocedo más de una confirmación. Me preocupa tener algún tipo de error uno por uno según tengo entendido y terminaré apuntando a la confirmación incorrecta.
 
-Tools like GitKraken and GitHub make it extremely easy to copy specific SHAs to your clipboard. So when I need a ref that's not a simple branch name or tag, I almost always lean on user-friendly tools like GitKraken or GitHub to allow me to state my intent using the actual SHA of interest. I suspect that the relative ref shortcuts are most popular with folks who are exclusively using command line Git and are operating under different constraints. There's actually a rich set of ways to specify a target commit that goes well beyond the `^` and `~` syntax shown here. You can learn more in the [official Git documention about revision parameters](https://git-scm.com/docs/gitrevisions).
+Herramientas como GitKraken y GitHub hacen que sea extremadamente fácil copiar SHA específicos a su portapapeles. Entonces, cuando necesito una referencia que no sea un simple nombre de rama o etiqueta, casi siempre me apoyo en herramientas fáciles de usar como GitKraken o GitHub para permitirme expresar mi intención utilizando el SHA de interés real. Sospecho que los atajos de referencia relativos son más populares entre las personas que usan exclusivamente la línea de comandos Git y operan bajo diferentes restricciones. En realidad, existe un amplio conjunto de formas de especificar una confirmación de destino que va mucho más allá de la sintaxis `^` y `~` que se muestra aquí. Puede obtener más información en la [documentación oficial de Git sobre parámetros de revisión](https://git-scm.com/docs/gitrevisions).
 
-In GitKraken, right or control click on the target commit to access a menu that includes "Copy commit sha", among many other useful commands. If you're using another Git client, there is probably a way to do this and it's worth figuring that out.
+En GitKraken, haga clic con el botón derecho o control en la confirmación de destino para acceder a un menú que incluye "Copiar confirmación sha", entre muchos otros comandos útiles. Si está utilizando otro cliente Git, probablemente haya una manera de hacerlo y vale la pena descubrirla.
 
 ![](img/gitkraken-screenshot-copy-commit-sha.png){fig-alt="GitKraken screenshot showing how to copy a specific SHA." fig-align="center" out-width="60%"}
 
-GitHub also makes it extremely easy to copy a SHA in many contexts. This screenshot shows just one example. Once you start looking for this feature, you'll find it in many places on GitHub.
+GitHub también hace que sea extremadamente fácil copiar un SHA en muchos contextos. Esta captura de pantalla muestra solo un ejemplo. Una vez que empiece a buscar esta función, la encontrará en muchos lugares de GitHub.
 
 ![](img/github-screenshot-copy-the-full-sha.png){fig-alt="GitHub screenshot showing how to copy a specific SHA." fig-align="center" out-width="60%"}
