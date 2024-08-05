@@ -1,150 +1,150 @@
-# Common remote setups {#sec-common-remote-setups}
+# Configuraciones remotas comunes {#sec-common-remote-setups}
 
-We only consider a very constrained set of remotes here:
+Aquí sólo consideramos un conjunto muy limitado de controles remotos:
 
--   The remote is on GitHub, e.g. its URL looks something like `https://github.com/OWNER/REPO.git` or `git@github.com:OWNER/REPO.git`.
--   The remote is named `origin` or `upstream`. These may not be the most evocative names in the world, but they are the most common choices.
+-   El control remoto está en GitHub, p. su URL se parece a `https://github.com/OWNER/REPO.git` o `git@github.com:OWNER/REPO.git`.
+-   El control remoto se denomina "origin" o "upstream". Puede que estos no sean los nombres más evocadores del mundo, pero son las opciones más comunes.
 
-If you use a different host or different remote names, you should still be able to translate these examples to your setting.
+Si utiliza un host diferente o nombres remotos diferentes, aún debería poder traducir estos ejemplos a su configuración.
 
-Along the way, we note how these setups relate to the usethis package, i.e. how usethis can help you get into a favorable setup or how a favorable setup unlocks the full power of usethis. Many of these operations -- including characterizing your GitHub remotes -- require that you have configured a GitHub personal access token. See @sec-get-a-pat for more details on why and how to do that. If you don't use usethis, feel free to ignore these asides.
+A lo largo del camino, observamos cómo estas configuraciones se relacionan con el paquete usethis, es decir, cómo usethis puede ayudarlo a lograr una configuración favorable o cómo una configuración favorable desbloquea todo el poder de usethis. Muchas de estas operaciones, incluida la caracterización de sus controles remotos de GitHub, requieren que haya configurado un token de acceso personal de GitHub. Consulte @sec-get-a-pat para obtener más detalles sobre por qué y cómo hacerlo. Si no utiliza usethis, no dude en ignorar estos aspectos.
 
-## No GitHub
+## Sin GitHub
 
-As a starting point, consider a local Git repo that is not yet connected to GitHub.
+Como punto de partida, considere un repositorio de Git local que aún no esté conectado a GitHub.
 
 ![](img/no-github.jpeg){fig-alt="Setup described as 'no_github'" fig-align="center" width="60%"}
 
-This is not very exciting, but sets the stage for what's to come. We introduce the icon we use for a Git repo, which looks like a stack of coins or a barrel. This one is blue, which indicates you have write permission.
+Esto no es muy emocionante, pero prepara el escenario para lo que está por venir. Introducimos el ícono que usamos para un repositorio de Git, que parece una pila de monedas o un barril. Este es azul, lo que indica que tienes permiso de escritura.
 
-How to achieve:
+Como alcanzar:
 
--   Command line Git: `git init`
--   With usethis, existing project: `usethis::use_git()`
--   With RStudio:
-    -   Existing Project: *Tools \> Version Control \> Project Setup*, select Git as the version control system
-    -   New Project: Make sure "Create a Git repository" is selected
+-   Línea de comando Git: `git init`
+-   Con usethis, proyecto existente: `usethis::use_git()`
+-   Con RStudio:
+    -   Proyecto existente: *Tools \> Version Control \> Project Setup*, seleccione Git como el sistema de control de versión
+    -   Nuevo proyecto: asegúrese de que esté seleccionado "Create a Git repository"
 
-usethis describes this setup as "no_github".
+usethis describe esta configuración como "no_github".
 
-## Ours (more specifically, yours) {#sec-ours-you}
+## La nuestra (más específicamente, la tuya) {#sec-ours-you}
 
-A common next step is to associate a local repo with a copy on GitHub, owned by you.
+Un siguiente paso común es asociar un repositorio local con una copia en GitHub, de su propiedad.
 
 ![](img/ours-you.jpeg){fig-align="center" fig-alt="Setup described as 'ours'" width="60%"}
 
-A remote named `origin` is configured and you have permission to push to (and pull from) `origin`. (That's why `origin` is colored blue and there are solid arrows going both directions.) The `origin` remote on GitHub is what we'll call a **source** repo, meaning it is not a fork (i.e. copy) of anything else on GitHub. In this case, `origin` is also what we'll call your **primary** repo, meaning it is the primary remote you interact with on GitHub (for this project).
+Se configura un control remoto llamado `origin` y usted tiene permiso para enviar (y extraer) `origin`. (Es por eso que `origin` está coloreado en azul y hay flechas sólidas que van en ambas direcciones). El control remoto `origin` en GitHub es lo que llamaremos un repositorio **fuente**, lo que significa que no es una bifurcación (es decir, una copia). de cualquier otra cosa en GitHub. En este caso, `origin` es también lo que llamaremos su repositorio **principal**, lo que significa que es el control remoto principal con el que interactúa en GitHub (para este proyecto).
 
-How to achieve if the local repo exists first:
+Cómo lograr si el repositorio local existe primero:
 
--   Detailed instructions are in [Existing project, GitHub last](sec-existing-github-last).
--   With usethis: `usethis::use_github()`.
--   Command line Git or RStudio: You can't complete this task fully from the command line or from RStudio:
-    -   Create a new GitHub repo in the browser, with the correct name, and capture its HTTPS or SSH URL.
-    -   Configure the repo as the `origin` remote.
+-   Las instrucciones detalladas se encuentran en [Proyecto existente, GitHub último](#sec-existing-github-last).
+-   Con usethis: `usethis::use_github()`.
+-   Línea de comando Git o RStudio: no puede completar esta tarea completamente desde la línea de comando o desde RStudio:
+    -   Cree un nuevo repositorio de GitHub en el navegador, con el nombre correcto, y capture su URL HTTPS o SSH.
+    -   Configurar el repositorio como el remoto `origin`.
     -   Push.
-    -   Even now, the setup may not be ideal, because upstream tracking relationships are probably not setup, which means you may not be able to push and pull easily. You may need to explicitly configure an upstream tracking branch for one or more local branches. Next time you want to create a GitHub repo from a local repo, consider using `usethis::use_github()`, which completes all of this setup in one go.
+    -   Incluso ahora, la configuración puede no ser ideal, porque las relaciones de seguimiento ascendentes probablemente no estén configuradas, lo que significa que es posible que no pueda enviar e importar fácilmente. Es posible que deba configurar explícitamente una rama upstream para una o más ramas locales. La próxima vez que quieras crear un repositorio de GitHub desde un repositorio local, considera usar `usethis::use_github()`, que completa toda esta configuración de una sola vez.
 
-How to achieve if the remote repo exists first:
+Cómo lograr si el repositorio remoto existe primero:
 
--   Detailed instructions are in [New RStudio Project via git clone](sec-git-clone-usethis-rstudio).
--   With usethis: `usethis::create_from_github("OWNER/REPO", fork = FALSE)`
--   Command line: `git clone <URL>`, with the source repo's HTTPS or SSH URL
--   In RStudio: Capture the source repo's HTTPS or SSH URL and do *File \> New Project \> Version Control \> Git*.
+-   Las instrucciones detalladas se encuentran en [Nuevo proyecto RStudio mediante git clone](·sec-git-clone-usethis-rstudio).
+-   Con usethis: `usethis::create_from_github("OWNER/REPO", fork = FALSE)`
+-   Línea de comando: `git clone <URL>`, con la URL HTTPS o SSH del repositorio de origen
+-   En RStudio: capture la URL HTTPS o SSH del repositorio de origen y haga *File \> New Project \> Version Control \> Git*.
 
-usethis describes this setup as "ours".
+usethis describe esta configuración como "ours".
 
-## Ours {#sec-ours-them}
+## Nuestra {#sec-ours-them}
 
-Here is a variation on "ours" that is equivalent in practice.
+Aquí hay una variación sobre "ours" que es equivalente en la práctica.
 
 ![](img/ours-them.jpeg){fig-align="center" fig-alt="Setup described as 'ours'" width="60%"}
 
-A remote named `origin` is configured and you can push to (and pull from) `origin`. As above, `origin` is a **source** repo, meaning it is not a fork (or copy) of anything else on GitHub. The `origin` remote is, however, not owned by you. Instead it's owned by another GitHub user or organisation. `origin` is also your **primary** repo in this setup.
+Se configura un control remoto llamado `origin` y puede enviar (y extraer) `origin`. Como se indicó anteriormente, `origin` es un repositorio **fuente**, lo que significa que no es una bifurcación (o copia) de nada más en GitHub. Sin embargo, el control remoto `origin` no es de su propiedad. En cambio, es propiedad de otro usuario u organización de GitHub. `origin` también es su repositorio **principal** en esta configuración.
 
-How does this happen?
+¿Como sucedió esto?
 
-1.  The source repo is owned by an organisation and your role in this organisation confers enough power to create repos or to push to this repo.
-2.  The owner of the source repo has added you, specifically, as a collaborator to this specific repo.
+1.  El repositorio de origen es propiedad de una organización y su función en esta organización le confiere poder suficiente para crear repositorios o enviarlos a este repositorio.
+2.  El propietario del repositorio de origen lo agregó, específicamente, como colaborador de este repositorio específico.
 
-How to achieve? The procedure is the same as for the previous "ours" setup. But remember to specify `usethis::use_github(organisation = "ORGNAME")` if you want to create a new repo under an organisation, instead of your personal account.
+¿Como lograr esto? El procedimiento es el mismo que para la configuración "ours" anterior. Pero recuerde especificar `usethis::use_github(organization = "ORGNAME")` si desea crear un nuevo repositorio bajo una organización, en lugar de su cuenta personal.
 
-usethis describes this setup as "ours".
+usethis describe esta configuración como "ours".
 
-## Theirs {#sec-theirs}
+## Suyo {#sec-theirs}
 
-This is a setup that many people get themselves into, when it's not actually what they need. It's not broken *per se*, but it's limiting.
+Esta es una configuración en la que muchas personas se meten, cuando en realidad no es lo que necesitan. No está roto *per se*, pero es limitante.
 
 ![](img/theirs.jpeg){fig-align="center" fig-alt="Setup described as 'theirs'" width="60%"}
 
-You cannot push to `origin`, which is both the source repo and your primary repo. (This is indicated by the orange color of `origin` and the greyed out, dashed "push" arrow.) `origin` is read-only for you.
+No puede enviar al `origin`, que es tanto el repositorio de origen como el repositorio principal. (Esto se indica con el color naranja de `origin` y la flecha de "enviar" discontinua y atenuada). `origin` es de solo lectura para usted.
 
-If you are taking a repo for a quick test drive, this configuration is fine. But there is no way to get changes back into the source repo, since you cannot push to it and you haven't created a fork, which is necessary for a pull request.
+Si está realizando un repositorio para una prueba rápida, esta configuración está bien. Pero no hay forma de recuperar los cambios en el repositorio de origen, ya que no puede enviarlos y no ha creado una bifurcación, que es necesaria para una solicitud de fusión.
 
-How does this happen?
+¿Como sucedió esto?
 
--   Cloning the source repo, either via `git clone <URL>` (command line) or through a Git client, e.g. RStudio's *File \> New Project \> Version Control \> Git* workflow.
--   Calling `usethis::create_from_github("OWNER/REPO", fork = FALSE)`.
+-   Clonando el repositorio de origen, ya sea mediante `git clone <URL>` (línea de comando) o mediante un cliente Git, p. Flujo de trabajo *Archivo \> Nuevo proyecto \> Control de versiones \> Git* de RStudio.
+-   Ejecutando `usethis::create_from_github("OWNER/REPO", fork = FALSE)`.
 
-usethis describes this setup as "theirs".
+usethis describe esta configuración como "theirs".
 
-What if you do want to make a pull request? This means you should have done *fork-and-clone* instead of *clone*. If you've made no changes or they're easy to save somewhere temporarily, just start over with a fork-and-clone workflow (fully explained in @sec-fork-and-clone) and re-introduce your changes. It is also possible to preserve your work in a local branch, fork the source repo, re-configure your remotes, re-sync up with the source repo, and get back on track. But this is much easier to goof up. And remember to fork and clone (not just clone) in the future!
+¿Qué sucede si desea realizar una solicitud de fusión? Esto significa que deberías haber hecho *fork-and-clone* en lugar de *clone*. Si no ha realizado cambios o es fácil guardarlos en algún lugar temporalmente, simplemente comience de nuevo con un flujo de trabajo de bifurcación y clonación (explicado completamente en @sec-fork-and-clone) y vuelva a introducir sus cambios. También es posible conservar su trabajo en una rama local, bifurcar el repositorio de origen, reconfigurar sus controles remotos, volver a sincronizar con el repositorio de origen y volver a la normalidad. Pero es mucho más fácil equivocarse. ¡Y recuerda bifurcar y clonar (no sólo clonar) en el futuro!
 
-## Fork (of theirs) {#sec-fork-them}
+## Fork (theirs) {#sec-fork-them}
 
-This is an ideal setup if you want to make a pull request and generally follow the development of a source repo owned by someone else.
+Esta es una configuración ideal si desea realizar una solicitud de fusión y, en general, seguir el desarrollo de un repositorio fuente propiedad de otra persona.
 
 ![](img/fork-them.jpeg){fig-align="center" fig-alt="Setup described as 'fork'" width="60%"}
 
-This shows a successful "fork-and-clone". Your local repo can pull changes from the source repo, which is configured as `upstream`, which you cannot push to (but you can pull from). You have a fork of the source repo (a very special copy, on GitHub) and it is configured as `origin`. `origin` is your primary repo. You can push to and pull from `origin`. You can make a pull request back to the source repo via your fork.
+Esto muestra un "fork-and-clone" exitoso. Su repositorio local puede extraer cambios del repositorio de origen, que está configurado como "upstream", al cual no puede enviar cambios (pero sí puede importarlos). Tienes un fork del repositorio fuente (una copia muy especial, en GitHub) y está configurado como `origin`. `origin` es su repositorio principal. Puede enviar e importar desde el `origin`. Puede realizar una solicitud de fusión al repositorio de origen a través de su bifurcación.
 
-usethis describes this setup as "fork".
+usethis describe esta configuración como "fork".
 
-How to achieve:
+Como alcanzar:
 
--   Detailed instructions are given in [Fork and clone](sec-fork-and-clone).
--   With usethis: `usethis::create_from_github("OWNER/REPO", fork = TRUE)`
--   Command line Git or RStudio: You can't complete this task fully from the command line or RStudio:
-    -   Fork the source repo in the browser, capture the HTTPS or SSH URL of **your fork**, then use `git clone <FORK_URL>` (command line) or RStudio's *File \> New Project \> Version Control \> Git* workflow. But, wait, you're not done! If you stop here, you will have the incomplete setup we refer to as ["fork (salvageable)"](sec-fork_upstream_is_not_origin_parent), below.
-    -   You still need to add the source repo as the `upstream` remote. Capture the HTTPS or SSH URL of the **source repo**. At the command line, do `git   remote add upstream <SOURCE_URL>` or click RStudio's *New Branch* button, which brings up a window where you can add the `upstream` remote.
-    -   Even then, the setup may not be ideal, because your local default branch is probably tracking `origin`, not `upstream`, which is preferable for a fork. `usethis::create_from_github()` completes all of this setup in one go.
-    -   These last two steps are described in [Finish the fork and clone setup](sec-fork-and-clone-finish).
+-   Las instrucciones detalladas se dan en [Fork y clone](#sec-fork-and-clone).
+-   Con usethis: `usethis::create_from_github("OWNER/REPO", fork = TRUE)`
+-   Línea de comando Git o RStudio: no puede completar esta tarea completamente desde la línea de comando o RStudio:
+    -   Bifurca el repositorio fuente en el navegador, captura la URL HTTPS o SSH de **tu bifurcación**, luego usa `git clone <FORK_URL>` (línea de comando) o RStudio. *File \> New Project \> Version Control \> Git* flujo de trabajo. Pero espera, ¡aún no has terminado! Si se detiene aquí, tendrá la configuración incompleta a la que nos referimos como ["fork (salvageable)"](#sec-fork_upstream_is_not_origin_parent).
+    -   Aún necesita agregar el repositorio de origen como control remoto `upstream`. Capture la URL HTTPS o SSH del **repositorio de origen**. En la línea de comando, haga `git remoto add upstream <SOURCE_URL>` o haga clic en el botón *Nueva rama* de RStudio, que abre una ventana donde puede agregar el control remoto `upstream`.
+    -   Incluso entonces, la configuración puede no ser ideal, porque su rama predeterminada local probablemente esté rastreando el `origin`, no el `upstream`, lo cual es preferible para una bifurcación. `usethis::create_from_github()` completa toda esta configuración de una sola vez.
+    -   Estos dos últimos pasos se describen en [Finalizar la configuración de bifurcación y clonación](#sec-fork-and-clone-finish).
 
-## Fork (of ours)
+## Fork (ours)
 
-This is a less common variation on the fork setup.
+Esta es una variación menos común en la configuración de fork.
 
 ![](img/fork-ours.jpeg){fig-align="center" fig-alt="Setup described as 'fork'" width="60%"}
 
-In this case, you have permission to push to the source repo, but you elect to create a personal fork anyway. Certain projects favor this approach and it offers maximum development flexibility for advanced users. However, most users are better served by the simpler "ours" setup in this case.
+En este caso, tiene permiso para enviar al repositorio de origen, pero elige crear una bifurcación personal de todos modos. Ciertos proyectos favorecen este enfoque y ofrece la máxima flexibilidad de desarrollo para usuarios avanzados. Sin embargo, en este caso, a la mayoría de los usuarios les resulta mejor la configuración más sencilla "ours".
 
-How to achieve:
+Como lograrlo:
 
--   In general, it's the same as the regular [fork setup](sec-fork-them) above.
--   With usethis, make sure to explicitly specify `fork = TRUE`, i.e. do `usethis::create_from_github("OWNER/REPO", fork = TRUE)`.
+-   En general, es lo mismo que la [configuración de bifurcación](#sec-fork-them) normal anterior.
+-   Con usethis, asegúrese de especificar explícitamente `fork = TRUE`, es decir, ejecute `usethis::create_from_github("OWNER/REPO", fork = TRUE)`.
 
-usethis describes this setup as "fork".
+usethis describe esta configuración como "fork".
 
 ## Fork (salvageable) {#sec-fork_upstream_is_not_origin_parent}
 
-Here is one last fork setup that's sub-optimal, but it can be salvaged.
+Aquí hay una última configuración de bifurcación que no es óptima, pero se puede salvar.
 
 ![](img/fork_upstream_is_not_origin_parent.jpeg){fig-align="center" fig-alt = "Setup described as 'fork_upstream_is_not_origin_parent'" width="60%"}
 
-This is what happens when you do fork-and-clone and you *only* do fork-and-clone. What's missing is a connection back to the source repo.
+Esto es lo que sucede cuando haces bifurcación y clonación y *solo* haces bifurcación y clonación. Lo que falta es una conexión con el repositorio de origen.
 
-How does this happen?
+¿Como sucedió esto?
 
--   Cloning your own fork, either via `git clone` in the shell or through a Git client, such as RStudio. And then stopping here.
+-   Clonar su propia bifurcación, ya sea mediante `git clone` en el shell o mediante un cliente Git, como RStudio. Y luego parando aquí.
 
-If you only plan to make one pull request, this setup is fine. When the exchange is done, delete your local repo and your fork and move on with your life. You can always re-fork in the future. But if your pull request stays open for a while or if you plan to make repeated contributions, you'll need to pull ongoing developments in the source repo into your local copy.
+Si solo planea realizar una solicitud de extracción, esta configuración está bien. Cuando finalice el intercambio, elimine su repositorio local y su bifurcación y continúe con su vida. Siempre puedes volver a bifurcar en el futuro. Pero si su solicitud de extracción permanece abierta por un tiempo o si planea realizar contribuciones repetidas, deberá incorporar los desarrollos en curso en el repositorio fuente a su copia local.
 
-You can convert this into the ideal [fork setup](sec-fork-them) like so:
+Puedes convertir esto en la [configuración de bifurcación](#sec-fork-them) ideal así:
 
--   Detailed instructions are in [Finish the fork and clone setup](sec-fork-and-clone-finish).
--   Add the source repo as the `upstream` remote.
--   Set `upstream/main` as the upstream tracking branch for local `main` (substitute whatever your default branch is called).
+-   Las instrucciones detalladas se encuentran en [Finalizar la configuración de bifurcación y clonación](#sec-fork-and-clone-finish).
+-   Agregue el repositorio de origen como remoto `upstream`.
+-   Establezca `upstream/main` como la rama de seguimiento ascendente para `main` local (sustituya el nombre de su rama predeterminada).
 
-Next time you do fork-and-clone, consider using `usethis::create_from_github(fork = TRUE)` instead, which completes all of this setup in one go.
+La próxima vez que hagas fork-and-clone, considera usar `usethis::create_from_github(fork = TRUE)` en su lugar, lo que completa toda esta configuración de una sola vez.
 
-usethis describes this setup as "fork_upstream_is_not_origin_parent".
+usethis describe esta configuración como "fork_upstream_is_not_origin_parent".
