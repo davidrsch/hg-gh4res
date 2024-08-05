@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
 
-<title>26&nbsp; Equivocal remote setups – Git y GitHub con R</title>
+<title>26&nbsp; Configuraciones remotas equívocas – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas</a></li><li class="breadcrumb-item"><a href="./remote-setups-equivocal.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Equivocal remote setups</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones de remotos</a></li><li class="breadcrumb-item"><a href="./remote-setups-equivocal.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Configuraciones remotas equívocas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -350,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Configuraciones remotas</span></a>
+ <span class="menu-text">Configuraciones de remotos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -359,19 +359,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Git remote setups</span></a>
+ <span class="menu-text">Configuraciones remotas de Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-common.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-equivocal.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Equivocal remote setups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Configuraciones remotas equívocas</span></span></a>
   </div>
 </li>
       </ul>
@@ -556,18 +556,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#maybe-ours-or-theirs" id="toc-maybe-ours-or-theirs" class="nav-link active" data-scroll-target="#maybe-ours-or-theirs"><span class="header-section-number">26.1</span> Maybe “ours” or “theirs”</a></li>
-  <li><a href="#maybe-fork" id="toc-maybe-fork" class="nav-link" data-scroll-target="#maybe-fork"><span class="header-section-number">26.2</span> Maybe fork</a></li>
-  <li><a href="#how-to-fix" id="toc-how-to-fix" class="nav-link" data-scroll-target="#how-to-fix"><span class="header-section-number">26.3</span> How to fix</a></li>
+  <li><a href="#tal-vez-ours-o-theirs" id="toc-tal-vez-ours-o-theirs" class="nav-link active" data-scroll-target="#tal-vez-ours-o-theirs"><span class="header-section-number">26.1</span> Tal vez “ours” o “theirs”</a></li>
+  <li><a href="#tal-vez-fork" id="toc-tal-vez-fork" class="nav-link" data-scroll-target="#tal-vez-fork"><span class="header-section-number">26.2</span> Tal vez fork</a></li>
+  <li><a href="#como-arreglar" id="toc-como-arreglar" class="nav-link" data-scroll-target="#como-arreglar"><span class="header-section-number">26.3</span> Como arreglar</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas</a></li><li class="breadcrumb-item"><a href="./remote-setups-equivocal.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Equivocal remote setups</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones de remotos</a></li><li class="breadcrumb-item"><a href="./remote-setups-equivocal.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Configuraciones remotas equívocas</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-equivocal" class="quarto-section-identifier"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Equivocal remote setups</span></span></h1>
+<h1 class="title"><span id="sec-equivocal" class="quarto-section-identifier"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Configuraciones remotas equívocas</span></span></h1>
 </div>
 
 
@@ -584,41 +584,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Just like the previous section about the most common setups, we only consider a very constrained set of remotes:</p>
+<p>Al igual que en la sección anterior sobre las configuraciones más comunes, solo consideramos un conjunto muy limitado de controles remotos:</p>
 <ul>
-<li>The remote is on GitHub, e.g.&nbsp;its URL looks something like <code>https://github.com/OWNER/REPO.git</code> or <code>git@github.com:OWNER/REPO.git</code>.</li>
-<li>The remote is named <code>origin</code> or <code>upstream</code>.</li>
+<li>El control remoto está en GitHub, p.&nbsp;su URL se parece a <code>https://github.com/OWNER/REPO.git</code> o <code>git@github.com:OWNER/REPO.git</code>.</li>
+<li>El remoto se llama <code>origin</code> o <code>upstream</code>.</li>
 </ul>
-<p>The setups described here are characterized by <em>incomplete information</em>. This section exists mostly to explain feedback that the usethis package might give about a GitHub remote configuration.</p>
-<p>To identify any of the remote setups described in <a href="remote-setups-common.html" class="quarto-xref"><span>Chapter 25</span></a>, we need information from GitHub:</p>
+<p>Las configuraciones descritas aquí se caracterizan por <em>información incompleta</em>. Esta sección existe principalmente para explicar los comentarios que el uso de este paquete podría brindar sobre una configuración remota de GitHub.</p>
+<p>Para identificar cualquiera de las configuraciones remotas descritas en <a href="remote-setups-common.html" class="quarto-xref"><span>Chapter 25</span></a>, necesitamos información de GitHub:</p>
 <ul>
-<li>Whether you can push to a repo</li>
-<li>Whether a repo is a fork</li>
-<li>For a fork, what is its source repo</li>
+<li>Si puedes enviar a un repositorio</li>
+<li>Si un repositorio es una bifurcación</li>
+<li>Para una bifurcación, ¿cuál es su repositorio fuente?</li>
 </ul>
-<p>Sometimes some of this information is publicly available, but some of it never is, such as repo permissions. This means that programmatic access to this information, i.e.&nbsp;requests to the GitHub API, generally requires authorization by an authenticated GitHub user.</p>
-<p>This means that client packages, like usethis, work best when you have configured a GitHub personal access token (PAT). See <a href="connect-https-pat.html#sec-get-a-pat" class="quarto-xref"><span>Section 9.3</span></a> for more details on why and how to do that.</p>
-<p>If you’ve configured a PAT and are being told your GitHub config is problematic, consider these other explanations: Are you offline? Is GitHub down? Have you lost permission to access the repo? Has your PAT expired? By default, they now expire after 30 days.</p>
-<section id="maybe-ours-or-theirs" class="level2" data-number="26.1">
-<h2 data-number="26.1" class="anchored" data-anchor-id="maybe-ours-or-theirs"><span class="header-section-number">26.1</span> Maybe “ours” or “theirs”</h2>
-<p>When we detect just one GitHub remote, but we can’t verify the info above, usethis describes the setup as “maybe_ours_or_theirs”.</p>
+<p>A veces, parte de esta información está disponible públicamente, pero otra nunca lo está, como los permisos de repositorio. Esto significa que el acceso programático a esta información, es decir, las solicitudes a la API de GitHub, generalmente requiere la autorización de un usuario de GitHub autenticado.</p>
+<p>Esto significa que los paquetes de cliente, como usethis, funcionan mejor cuando has configurado un token de acceso personal (PAT) de GitHub. Consulte <a href="connect-https-pat.html#sec-get-a-pat" class="quarto-xref"><span>Section 9.3</span></a> para obtener más detalles sobre por qué y cómo hacerlo.</p>
+<p>Si configuró un PAT y le dicen que su configuración de GitHub es problemática, considere estas otras explicaciones: ¿Está desconectado? ¿GitHub está caído? ¿Ha perdido el permiso para acceder al repositorio? ¿Ha caducado su PAT? De forma predeterminada, ahora caducan después de 30 días.</p>
+<section id="tal-vez-ours-o-theirs" class="level2" data-number="26.1">
+<h2 data-number="26.1" class="anchored" data-anchor-id="tal-vez-ours-o-theirs"><span class="header-section-number">26.1</span> Tal vez “ours” o “theirs”</h2>
+<p>Cuando detectamos solo un control remoto de GitHub, pero no podemos verificar la información anterior, usethis describe la configuración como “maybe_ours_or_theirs”.</p>
 <p><img src="img/maybe_ours_or_theirs.jpeg" class="img-fluid">{fig-align=“center” fig-alt=“Setup described as ‘maybe_ours_or_theirs’” width = “60%”}</p>
-<p>Once a PAT is available, this setup can be identified as being <a href="sec-ours-you">“ours” (belonging to you)</a>, <a href="sec-ours-them">“ours” (but belonging to someone else)</a>, or <a href="sec-theirs">“theirs”</a>.</p>
+<p>Una vez que un PAT está disponible, esta configuración se puede identificar como <a href="remote-setups-common.html#sec-ours-you">“ours” (que le pertenece a usted)</a>, <a href="remote-setups-common.html#sec-ours-them">“ours” (pero que pertenece a otra persona)</a> , o <a href="remote-setups-common.html#sec-theirs">“theirs”</a>.</p>
 </section>
-<section id="maybe-fork" class="level2" data-number="26.2">
-<h2 data-number="26.2" class="anchored" data-anchor-id="maybe-fork"><span class="header-section-number">26.2</span> Maybe fork</h2>
-<p>When we detect two GitHub remotes, but we can’t verify the info above, usethis describes the setup as “maybe_fork”.</p>
+<section id="tal-vez-fork" class="level2" data-number="26.2">
+<h2 data-number="26.2" class="anchored" data-anchor-id="tal-vez-fork"><span class="header-section-number">26.2</span> Tal vez fork</h2>
+<p>Cuando detectamos dos controles remotos de GitHub, pero no podemos verificar la información anterior, usethis describe la configuración como “maybe_fork”.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/maybe_fork.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'maybe_fork'"></p>
 </figure>
 </div>
-<p>Once a PAT is available, this setup can be identified as being a well-configured <a href="sec-fork-them">fork</a> or a <a href="sec-fork_upstream_is_not_origin_parent">fork with incomplete setup</a> (or possibly something more weird).</p>
+<p>Una vez que un PAT está disponible, esta configuración se puede identificar como una bien configurada <a href="remote-setups-common.html#sec-fork-them">fork</a> o una <a href="remote-setups-common.html#sec-fork_upstream_is_not_origin_parent">bifurcación con configuración incompleta</a> (o posiblemente algo más raro).</p>
 </section>
-<section id="how-to-fix" class="level2" data-number="26.3">
-<h2 data-number="26.3" class="anchored" data-anchor-id="how-to-fix"><span class="header-section-number">26.3</span> How to fix</h2>
-<p>These setups aren’t necessarily broken, but usethis needs more information to operate.</p>
-<p>To “fix” this, set up a GitHub personal access token. See <a href="connect-https-pat.html#sec-get-a-pat" class="quarto-xref"><span>Section 9.3</span></a> for more details on why and how to do that.</p>
+<section id="como-arreglar" class="level2" data-number="26.3">
+<h2 data-number="26.3" class="anchored" data-anchor-id="como-arreglar"><span class="header-section-number">26.3</span> Como arreglar</h2>
+<p>Estas configuraciones no necesariamente están rotas, pero su uso necesita más información para funcionar.</p>
+<p>Para “solucionar” esto, configure un token de acceso personal de GitHub. Consulte <a href="connect-https-pat.html#sec-get-a-pat" class="quarto-xref"><span>Section 9.3</span></a> para obtener más detalles sobre por qué y cómo hacerlo.</p>
 
 
 </section>
@@ -1115,8 +1115,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./remote-setups-common.html" class="pagination-link" aria-label="Common remote setups">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></span>
+      <a href="./remote-setups-common.html" class="pagination-link" aria-label="Configuraciones remotas comunes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

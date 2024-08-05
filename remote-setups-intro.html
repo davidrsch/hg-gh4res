@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
 
-<title>Git remote setups – Git y GitHub con R</title>
+<title>Configuraciones remotas de Git – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas</a></li><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Git remote setups</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones de remotos</a></li><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas de Git</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -350,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Configuraciones remotas</span></a>
+ <span class="menu-text">Configuraciones de remotos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -359,19 +359,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Git remote setups</span></a>
+ <span class="menu-text">Configuraciones remotas de Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-common.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-equivocal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Equivocal remote setups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Configuraciones remotas equívocas</span></span></a>
   </div>
 </li>
       </ul>
@@ -557,9 +557,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas</a></li><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Git remote setups</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones de remotos</a></li><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas de Git</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-remote-scenarios-intro" class="quarto-section-identifier">Git remote setups</span></h1>
+<h1 class="title"><span id="sec-remote-scenarios-intro" class="quarto-section-identifier">Configuraciones remotas de Git</span></h1>
 </div>
 
 
@@ -576,9 +576,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The previous part ended with some basics about <a href="sec-git-remotes">Git remotes</a>, such as how to define or rename one. Recall that a Git remote is another copy of the repo, usually living elsewhere (hence the term “remote”), that you can pull changes from or push changes to. Remotes are the foundation for all collaborative Git work.</p>
-<p>But knowing the mechanics of how to add or rename a remote does little good if you don’t know <em>why</em> or <em>when</em> to do it. Luckily, we have very strong opinions about how you should set up your remotes, all motivated by getting you prepared for smooth, happy collaborative work.</p>
-<p>In this part we describe various remote setups that are common (for better or worse) and what they are good for (or what’s wrong with them and how to fix).</p>
+<p>La parte anterior terminó con algunos conceptos básicos sobre <a href="git-remotes.html">Git remotos</a>, como cómo definir o cambiar el nombre de uno. Recuerde que un control remoto de Git es otra copia del repositorio, que generalmente se encuentra en otro lugar (de ahí el término “remoto”), desde donde puede extraer cambios o enviarlos. Los controles remotos son la base de todo el trabajo colaborativo de Git.</p>
+<p>Pero conocer la mecánica de cómo agregar o cambiar el nombre de un control remoto no sirve de nada si no sabes <em>por qué</em> o <em>cuándo</em> hacerlo. Afortunadamente, tenemos opiniones muy firmes sobre cómo debes configurar tus controles remotos, todas motivadas por prepararte para un trabajo colaborativo fluido y feliz.</p>
+<p>En esta parte describimos varias configuraciones remotas que son comunes (para bien o para mal) y para qué sirven (o qué tienen de malo y cómo solucionarlo).</p>
 
 
 
@@ -1079,8 +1079,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./remote-setups-common.html" class="pagination-link" aria-label="Common remote setups">
-        <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./remote-setups-common.html" class="pagination-link" aria-label="Configuraciones remotas comunes">
+        <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

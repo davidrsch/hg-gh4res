@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
 
-<title>25&nbsp; Common remote setups – Git y GitHub con R</title>
+<title>25&nbsp; Configuraciones remotas comunes – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas</a></li><li class="breadcrumb-item"><a href="./remote-setups-common.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones de remotos</a></li><li class="breadcrumb-item"><a href="./remote-setups-common.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -350,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Configuraciones remotas</span></a>
+ <span class="menu-text">Configuraciones de remotos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -359,19 +359,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Git remote setups</span></a>
+ <span class="menu-text">Configuraciones remotas de Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-common.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./remote-setups-equivocal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Equivocal remote setups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Configuraciones remotas equívocas</span></span></a>
   </div>
 </li>
       </ul>
@@ -556,12 +556,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#no-github" id="toc-no-github" class="nav-link active" data-scroll-target="#no-github"><span class="header-section-number">25.1</span> No GitHub</a></li>
-  <li><a href="#sec-ours-you" id="toc-sec-ours-you" class="nav-link" data-scroll-target="#sec-ours-you"><span class="header-section-number">25.2</span> Ours (more specifically, yours)</a></li>
-  <li><a href="#sec-ours-them" id="toc-sec-ours-them" class="nav-link" data-scroll-target="#sec-ours-them"><span class="header-section-number">25.3</span> Ours</a></li>
-  <li><a href="#sec-theirs" id="toc-sec-theirs" class="nav-link" data-scroll-target="#sec-theirs"><span class="header-section-number">25.4</span> Theirs</a></li>
-  <li><a href="#sec-fork-them" id="toc-sec-fork-them" class="nav-link" data-scroll-target="#sec-fork-them"><span class="header-section-number">25.5</span> Fork (of theirs)</a></li>
-  <li><a href="#fork-of-ours" id="toc-fork-of-ours" class="nav-link" data-scroll-target="#fork-of-ours"><span class="header-section-number">25.6</span> Fork (of ours)</a></li>
+  <li><a href="#sin-github" id="toc-sin-github" class="nav-link active" data-scroll-target="#sin-github"><span class="header-section-number">25.1</span> Sin GitHub</a></li>
+  <li><a href="#sec-ours-you" id="toc-sec-ours-you" class="nav-link" data-scroll-target="#sec-ours-you"><span class="header-section-number">25.2</span> La nuestra (más específicamente, la tuya)</a></li>
+  <li><a href="#sec-ours-them" id="toc-sec-ours-them" class="nav-link" data-scroll-target="#sec-ours-them"><span class="header-section-number">25.3</span> Nuestra</a></li>
+  <li><a href="#sec-theirs" id="toc-sec-theirs" class="nav-link" data-scroll-target="#sec-theirs"><span class="header-section-number">25.4</span> Suyo</a></li>
+  <li><a href="#sec-fork-them" id="toc-sec-fork-them" class="nav-link" data-scroll-target="#sec-fork-them"><span class="header-section-number">25.5</span> Fork (theirs)</a></li>
+  <li><a href="#fork-ours" id="toc-fork-ours" class="nav-link" data-scroll-target="#fork-ours"><span class="header-section-number">25.6</span> Fork (ours)</a></li>
   <li><a href="#sec-fork_upstream_is_not_origin_parent" id="toc-sec-fork_upstream_is_not_origin_parent" class="nav-link" data-scroll-target="#sec-fork_upstream_is_not_origin_parent"><span class="header-section-number">25.7</span> Fork (salvageable)</a></li>
   </ul>
 </nav>
@@ -569,9 +569,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones remotas</a></li><li class="breadcrumb-item"><a href="./remote-setups-common.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-setups-intro.html">Configuraciones de remotos</a></li><li class="breadcrumb-item"><a href="./remote-setups-common.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-common-remote-setups" class="quarto-section-identifier"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Common remote setups</span></span></h1>
+<h1 class="title"><span id="sec-common-remote-setups" class="quarto-section-identifier"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Configuraciones remotas comunes</span></span></h1>
 </div>
 
 
@@ -588,156 +588,156 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>We only consider a very constrained set of remotes here:</p>
+<p>Aquí sólo consideramos un conjunto muy limitado de controles remotos:</p>
 <ul>
-<li>The remote is on GitHub, e.g.&nbsp;its URL looks something like <code>https://github.com/OWNER/REPO.git</code> or <code>git@github.com:OWNER/REPO.git</code>.</li>
-<li>The remote is named <code>origin</code> or <code>upstream</code>. These may not be the most evocative names in the world, but they are the most common choices.</li>
+<li>El control remoto está en GitHub, p.&nbsp;su URL se parece a <code>https://github.com/OWNER/REPO.git</code> o <code>git@github.com:OWNER/REPO.git</code>.</li>
+<li>El control remoto se denomina “origin” o “upstream”. Puede que estos no sean los nombres más evocadores del mundo, pero son las opciones más comunes.</li>
 </ul>
-<p>If you use a different host or different remote names, you should still be able to translate these examples to your setting.</p>
-<p>Along the way, we note how these setups relate to the usethis package, i.e.&nbsp;how usethis can help you get into a favorable setup or how a favorable setup unlocks the full power of usethis. Many of these operations – including characterizing your GitHub remotes – require that you have configured a GitHub personal access token. See <a href="connect-https-pat.html#sec-get-a-pat" class="quarto-xref"><span>Section 9.3</span></a> for more details on why and how to do that. If you don’t use usethis, feel free to ignore these asides.</p>
-<section id="no-github" class="level2" data-number="25.1">
-<h2 data-number="25.1" class="anchored" data-anchor-id="no-github"><span class="header-section-number">25.1</span> No GitHub</h2>
-<p>As a starting point, consider a local Git repo that is not yet connected to GitHub.</p>
+<p>Si utiliza un host diferente o nombres remotos diferentes, aún debería poder traducir estos ejemplos a su configuración.</p>
+<p>A lo largo del camino, observamos cómo estas configuraciones se relacionan con el paquete usethis, es decir, cómo usethis puede ayudarlo a lograr una configuración favorable o cómo una configuración favorable desbloquea todo el poder de usethis. Muchas de estas operaciones, incluida la caracterización de sus controles remotos de GitHub, requieren que haya configurado un token de acceso personal de GitHub. Consulte <a href="connect-https-pat.html#sec-get-a-pat" class="quarto-xref"><span>Section 9.3</span></a> para obtener más detalles sobre por qué y cómo hacerlo. Si no utiliza usethis, no dude en ignorar estos aspectos.</p>
+<section id="sin-github" class="level2" data-number="25.1">
+<h2 data-number="25.1" class="anchored" data-anchor-id="sin-github"><span class="header-section-number">25.1</span> Sin GitHub</h2>
+<p>Como punto de partida, considere un repositorio de Git local que aún no esté conectado a GitHub.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/no-github.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'no_github'"></p>
 </figure>
 </div>
-<p>This is not very exciting, but sets the stage for what’s to come. We introduce the icon we use for a Git repo, which looks like a stack of coins or a barrel. This one is blue, which indicates you have write permission.</p>
-<p>How to achieve:</p>
+<p>Esto no es muy emocionante, pero prepara el escenario para lo que está por venir. Introducimos el ícono que usamos para un repositorio de Git, que parece una pila de monedas o un barril. Este es azul, lo que indica que tienes permiso de escritura.</p>
+<p>Como alcanzar:</p>
 <ul>
-<li>Command line Git: <code>git init</code></li>
-<li>With usethis, existing project: <code>usethis::use_git()</code></li>
-<li>With RStudio:
+<li>Línea de comando Git: <code>git init</code></li>
+<li>Con usethis, proyecto existente: <code>usethis::use_git()</code></li>
+<li>Con RStudio:
 <ul>
-<li>Existing Project: <em>Tools &gt; Version Control &gt; Project Setup</em>, select Git as the version control system</li>
-<li>New Project: Make sure “Create a Git repository” is selected</li>
+<li>Proyecto existente: <em>Tools &gt; Version Control &gt; Project Setup</em>, seleccione Git como el sistema de control de versión</li>
+<li>Nuevo proyecto: asegúrese de que esté seleccionado “Create a Git repository”</li>
 </ul></li>
 </ul>
-<p>usethis describes this setup as “no_github”.</p>
+<p>usethis describe esta configuración como “no_github”.</p>
 </section>
 <section id="sec-ours-you" class="level2" data-number="25.2">
-<h2 data-number="25.2" class="anchored" data-anchor-id="sec-ours-you"><span class="header-section-number">25.2</span> Ours (more specifically, yours)</h2>
-<p>A common next step is to associate a local repo with a copy on GitHub, owned by you.</p>
+<h2 data-number="25.2" class="anchored" data-anchor-id="sec-ours-you"><span class="header-section-number">25.2</span> La nuestra (más específicamente, la tuya)</h2>
+<p>Un siguiente paso común es asociar un repositorio local con una copia en GitHub, de su propiedad.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/ours-you.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'ours'"></p>
 </figure>
 </div>
-<p>A remote named <code>origin</code> is configured and you have permission to push to (and pull from) <code>origin</code>. (That’s why <code>origin</code> is colored blue and there are solid arrows going both directions.) The <code>origin</code> remote on GitHub is what we’ll call a <strong>source</strong> repo, meaning it is not a fork (i.e.&nbsp;copy) of anything else on GitHub. In this case, <code>origin</code> is also what we’ll call your <strong>primary</strong> repo, meaning it is the primary remote you interact with on GitHub (for this project).</p>
-<p>How to achieve if the local repo exists first:</p>
+<p>Se configura un control remoto llamado <code>origin</code> y usted tiene permiso para enviar (y extraer) <code>origin</code>. (Es por eso que <code>origin</code> está coloreado en azul y hay flechas sólidas que van en ambas direcciones). El control remoto <code>origin</code> en GitHub es lo que llamaremos un repositorio <strong>fuente</strong>, lo que significa que no es una bifurcación (es decir, una copia). de cualquier otra cosa en GitHub. En este caso, <code>origin</code> es también lo que llamaremos su repositorio <strong>principal</strong>, lo que significa que es el control remoto principal con el que interactúa en GitHub (para este proyecto).</p>
+<p>Cómo lograr si el repositorio local existe primero:</p>
 <ul>
-<li>Detailed instructions are in <a href="sec-existing-github-last">Existing project, GitHub last</a>.</li>
-<li>With usethis: <code>usethis::use_github()</code>.</li>
-<li>Command line Git or RStudio: You can’t complete this task fully from the command line or from RStudio:
+<li>Las instrucciones detalladas se encuentran en <a href="usage-existing-project-github-last.html">Proyecto existente, GitHub último</a>.</li>
+<li>Con usethis: <code>usethis::use_github()</code>.</li>
+<li>Línea de comando Git o RStudio: no puede completar esta tarea completamente desde la línea de comando o desde RStudio:
 <ul>
-<li>Create a new GitHub repo in the browser, with the correct name, and capture its HTTPS or SSH URL.</li>
-<li>Configure the repo as the <code>origin</code> remote.</li>
+<li>Cree un nuevo repositorio de GitHub en el navegador, con el nombre correcto, y capture su URL HTTPS o SSH.</li>
+<li>Configurar el repositorio como el remoto <code>origin</code>.</li>
 <li>Push.</li>
-<li>Even now, the setup may not be ideal, because upstream tracking relationships are probably not setup, which means you may not be able to push and pull easily. You may need to explicitly configure an upstream tracking branch for one or more local branches. Next time you want to create a GitHub repo from a local repo, consider using <code>usethis::use_github()</code>, which completes all of this setup in one go.</li>
+<li>Incluso ahora, la configuración puede no ser ideal, porque las relaciones de seguimiento ascendentes probablemente no estén configuradas, lo que significa que es posible que no pueda enviar e importar fácilmente. Es posible que deba configurar explícitamente una rama upstream para una o más ramas locales. La próxima vez que quieras crear un repositorio de GitHub desde un repositorio local, considera usar <code>usethis::use_github()</code>, que completa toda esta configuración de una sola vez.</li>
 </ul></li>
 </ul>
-<p>How to achieve if the remote repo exists first:</p>
+<p>Cómo lograr si el repositorio remoto existe primero:</p>
 <ul>
-<li>Detailed instructions are in <a href="sec-git-clone-usethis-rstudio">New RStudio Project via git clone</a>.</li>
-<li>With usethis: <code>usethis::create_from_github("OWNER/REPO", fork = FALSE)</code></li>
-<li>Command line: <code>git clone &lt;URL&gt;</code>, with the source repo’s HTTPS or SSH URL</li>
-<li>In RStudio: Capture the source repo’s HTTPS or SSH URL and do <em>File &gt; New Project &gt; Version Control &gt; Git</em>.</li>
+<li>Las instrucciones detalladas se encuentran en <a href="·sec-git-clone-usethis-rstudio">Nuevo proyecto RStudio mediante git clone</a>.</li>
+<li>Con usethis: <code>usethis::create_from_github("OWNER/REPO", fork = FALSE)</code></li>
+<li>Línea de comando: <code>git clone &lt;URL&gt;</code>, con la URL HTTPS o SSH del repositorio de origen</li>
+<li>En RStudio: capture la URL HTTPS o SSH del repositorio de origen y haga <em>File &gt; New Project &gt; Version Control &gt; Git</em>.</li>
 </ul>
-<p>usethis describes this setup as “ours”.</p>
+<p>usethis describe esta configuración como “ours”.</p>
 </section>
 <section id="sec-ours-them" class="level2" data-number="25.3">
-<h2 data-number="25.3" class="anchored" data-anchor-id="sec-ours-them"><span class="header-section-number">25.3</span> Ours</h2>
-<p>Here is a variation on “ours” that is equivalent in practice.</p>
+<h2 data-number="25.3" class="anchored" data-anchor-id="sec-ours-them"><span class="header-section-number">25.3</span> Nuestra</h2>
+<p>Aquí hay una variación sobre “ours” que es equivalente en la práctica.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/ours-them.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'ours'"></p>
 </figure>
 </div>
-<p>A remote named <code>origin</code> is configured and you can push to (and pull from) <code>origin</code>. As above, <code>origin</code> is a <strong>source</strong> repo, meaning it is not a fork (or copy) of anything else on GitHub. The <code>origin</code> remote is, however, not owned by you. Instead it’s owned by another GitHub user or organisation. <code>origin</code> is also your <strong>primary</strong> repo in this setup.</p>
-<p>How does this happen?</p>
+<p>Se configura un control remoto llamado <code>origin</code> y puede enviar (y extraer) <code>origin</code>. Como se indicó anteriormente, <code>origin</code> es un repositorio <strong>fuente</strong>, lo que significa que no es una bifurcación (o copia) de nada más en GitHub. Sin embargo, el control remoto <code>origin</code> no es de su propiedad. En cambio, es propiedad de otro usuario u organización de GitHub. <code>origin</code> también es su repositorio <strong>principal</strong> en esta configuración.</p>
+<p>¿Como sucedió esto?</p>
 <ol type="1">
-<li>The source repo is owned by an organisation and your role in this organisation confers enough power to create repos or to push to this repo.</li>
-<li>The owner of the source repo has added you, specifically, as a collaborator to this specific repo.</li>
+<li>El repositorio de origen es propiedad de una organización y su función en esta organización le confiere poder suficiente para crear repositorios o enviarlos a este repositorio.</li>
+<li>El propietario del repositorio de origen lo agregó, específicamente, como colaborador de este repositorio específico.</li>
 </ol>
-<p>How to achieve? The procedure is the same as for the previous “ours” setup. But remember to specify <code>usethis::use_github(organisation = "ORGNAME")</code> if you want to create a new repo under an organisation, instead of your personal account.</p>
-<p>usethis describes this setup as “ours”.</p>
+<p>¿Como lograr esto? El procedimiento es el mismo que para la configuración “ours” anterior. Pero recuerde especificar <code>usethis::use_github(organization = "ORGNAME")</code> si desea crear un nuevo repositorio bajo una organización, en lugar de su cuenta personal.</p>
+<p>usethis describe esta configuración como “ours”.</p>
 </section>
 <section id="sec-theirs" class="level2" data-number="25.4">
-<h2 data-number="25.4" class="anchored" data-anchor-id="sec-theirs"><span class="header-section-number">25.4</span> Theirs</h2>
-<p>This is a setup that many people get themselves into, when it’s not actually what they need. It’s not broken <em>per se</em>, but it’s limiting.</p>
+<h2 data-number="25.4" class="anchored" data-anchor-id="sec-theirs"><span class="header-section-number">25.4</span> Suyo</h2>
+<p>Esta es una configuración en la que muchas personas se meten, cuando en realidad no es lo que necesitan. No está roto <em>per se</em>, pero es limitante.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/theirs.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'theirs'"></p>
 </figure>
 </div>
-<p>You cannot push to <code>origin</code>, which is both the source repo and your primary repo. (This is indicated by the orange color of <code>origin</code> and the greyed out, dashed “push” arrow.) <code>origin</code> is read-only for you.</p>
-<p>If you are taking a repo for a quick test drive, this configuration is fine. But there is no way to get changes back into the source repo, since you cannot push to it and you haven’t created a fork, which is necessary for a pull request.</p>
-<p>How does this happen?</p>
+<p>No puede enviar al <code>origin</code>, que es tanto el repositorio de origen como el repositorio principal. (Esto se indica con el color naranja de <code>origin</code> y la flecha de “enviar” discontinua y atenuada). <code>origin</code> es de solo lectura para usted.</p>
+<p>Si está realizando un repositorio para una prueba rápida, esta configuración está bien. Pero no hay forma de recuperar los cambios en el repositorio de origen, ya que no puede enviarlos y no ha creado una bifurcación, que es necesaria para una solicitud de fusión.</p>
+<p>¿Como sucedió esto?</p>
 <ul>
-<li>Cloning the source repo, either via <code>git clone &lt;URL&gt;</code> (command line) or through a Git client, e.g.&nbsp;RStudio’s <em>File &gt; New Project &gt; Version Control &gt; Git</em> workflow.</li>
-<li>Calling <code>usethis::create_from_github("OWNER/REPO", fork = FALSE)</code>.</li>
+<li>Clonando el repositorio de origen, ya sea mediante <code>git clone &lt;URL&gt;</code> (línea de comando) o mediante un cliente Git, p.&nbsp;Flujo de trabajo <em>Archivo &gt; Nuevo proyecto &gt; Control de versiones &gt; Git</em> de RStudio.</li>
+<li>Ejecutando <code>usethis::create_from_github("OWNER/REPO", fork = FALSE)</code>.</li>
 </ul>
-<p>usethis describes this setup as “theirs”.</p>
-<p>What if you do want to make a pull request? This means you should have done <em>fork-and-clone</em> instead of <em>clone</em>. If you’ve made no changes or they’re easy to save somewhere temporarily, just start over with a fork-and-clone workflow (fully explained in <a href="workflows-fork-and-clone.html" class="quarto-xref"><span>Chapter 31</span></a>) and re-introduce your changes. It is also possible to preserve your work in a local branch, fork the source repo, re-configure your remotes, re-sync up with the source repo, and get back on track. But this is much easier to goof up. And remember to fork and clone (not just clone) in the future!</p>
+<p>usethis describe esta configuración como “theirs”.</p>
+<p>¿Qué sucede si desea realizar una solicitud de fusión? Esto significa que deberías haber hecho <em>fork-and-clone</em> en lugar de <em>clone</em>. Si no ha realizado cambios o es fácil guardarlos en algún lugar temporalmente, simplemente comience de nuevo con un flujo de trabajo de bifurcación y clonación (explicado completamente en <a href="workflows-fork-and-clone.html" class="quarto-xref"><span>Chapter 31</span></a>) y vuelva a introducir sus cambios. También es posible conservar su trabajo en una rama local, bifurcar el repositorio de origen, reconfigurar sus controles remotos, volver a sincronizar con el repositorio de origen y volver a la normalidad. Pero es mucho más fácil equivocarse. ¡Y recuerda bifurcar y clonar (no sólo clonar) en el futuro!</p>
 </section>
 <section id="sec-fork-them" class="level2" data-number="25.5">
-<h2 data-number="25.5" class="anchored" data-anchor-id="sec-fork-them"><span class="header-section-number">25.5</span> Fork (of theirs)</h2>
-<p>This is an ideal setup if you want to make a pull request and generally follow the development of a source repo owned by someone else.</p>
+<h2 data-number="25.5" class="anchored" data-anchor-id="sec-fork-them"><span class="header-section-number">25.5</span> Fork (theirs)</h2>
+<p>Esta es una configuración ideal si desea realizar una solicitud de fusión y, en general, seguir el desarrollo de un repositorio fuente propiedad de otra persona.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/fork-them.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'fork'"></p>
 </figure>
 </div>
-<p>This shows a successful “fork-and-clone”. Your local repo can pull changes from the source repo, which is configured as <code>upstream</code>, which you cannot push to (but you can pull from). You have a fork of the source repo (a very special copy, on GitHub) and it is configured as <code>origin</code>. <code>origin</code> is your primary repo. You can push to and pull from <code>origin</code>. You can make a pull request back to the source repo via your fork.</p>
-<p>usethis describes this setup as “fork”.</p>
-<p>How to achieve:</p>
+<p>Esto muestra un “fork-and-clone” exitoso. Su repositorio local puede extraer cambios del repositorio de origen, que está configurado como “upstream”, al cual no puede enviar cambios (pero sí puede importarlos). Tienes un fork del repositorio fuente (una copia muy especial, en GitHub) y está configurado como <code>origin</code>. <code>origin</code> es su repositorio principal. Puede enviar e importar desde el <code>origin</code>. Puede realizar una solicitud de fusión al repositorio de origen a través de su bifurcación.</p>
+<p>usethis describe esta configuración como “fork”.</p>
+<p>Como alcanzar:</p>
 <ul>
-<li>Detailed instructions are given in <a href="sec-fork-and-clone">Fork and clone</a>.</li>
-<li>With usethis: <code>usethis::create_from_github("OWNER/REPO", fork = TRUE)</code></li>
-<li>Command line Git or RStudio: You can’t complete this task fully from the command line or RStudio:
+<li>Las instrucciones detalladas se dan en <a href="workflows-fork-and-clone.html">Fork y clone</a>.</li>
+<li>Con usethis: <code>usethis::create_from_github("OWNER/REPO", fork = TRUE)</code></li>
+<li>Línea de comando Git o RStudio: no puede completar esta tarea completamente desde la línea de comando o RStudio:
 <ul>
-<li>Fork the source repo in the browser, capture the HTTPS or SSH URL of <strong>your fork</strong>, then use <code>git clone &lt;FORK_URL&gt;</code> (command line) or RStudio’s <em>File &gt; New Project &gt; Version Control &gt; Git</em> workflow. But, wait, you’re not done! If you stop here, you will have the incomplete setup we refer to as <a href="sec-fork_upstream_is_not_origin_parent">“fork (salvageable)”</a>, below.</li>
-<li>You still need to add the source repo as the <code>upstream</code> remote. Capture the HTTPS or SSH URL of the <strong>source repo</strong>. At the command line, do <code>git   remote add upstream &lt;SOURCE_URL&gt;</code> or click RStudio’s <em>New Branch</em> button, which brings up a window where you can add the <code>upstream</code> remote.</li>
-<li>Even then, the setup may not be ideal, because your local default branch is probably tracking <code>origin</code>, not <code>upstream</code>, which is preferable for a fork. <code>usethis::create_from_github()</code> completes all of this setup in one go.</li>
-<li>These last two steps are described in <a href="sec-fork-and-clone-finish">Finish the fork and clone setup</a>.</li>
+<li>Bifurca el repositorio fuente en el navegador, captura la URL HTTPS o SSH de <strong>tu bifurcación</strong>, luego usa <code>git clone &lt;FORK_URL&gt;</code> (línea de comando) o RStudio. <em>File &gt; New Project &gt; Version Control &gt; Git</em> flujo de trabajo. Pero espera, ¡aún no has terminado! Si se detiene aquí, tendrá la configuración incompleta a la que nos referimos como <a href="#sec-fork_upstream_is_not_origin_parent">“fork (salvageable)”</a>.</li>
+<li>Aún necesita agregar el repositorio de origen como control remoto <code>upstream</code>. Capture la URL HTTPS o SSH del <strong>repositorio de origen</strong>. En la línea de comando, haga <code>git remoto add upstream &lt;SOURCE_URL&gt;</code> o haga clic en el botón <em>Nueva rama</em> de RStudio, que abre una ventana donde puede agregar el control remoto <code>upstream</code>.</li>
+<li>Incluso entonces, la configuración puede no ser ideal, porque su rama predeterminada local probablemente esté rastreando el <code>origin</code>, no el <code>upstream</code>, lo cual es preferible para una bifurcación. <code>usethis::create_from_github()</code> completa toda esta configuración de una sola vez.</li>
+<li>Estos dos últimos pasos se describen en <a href="workflows-fork-and-clone.html#sec-fork-and-clone-finish">Finalizar la configuración de bifurcación y clonación</a>.</li>
 </ul></li>
 </ul>
 </section>
-<section id="fork-of-ours" class="level2" data-number="25.6">
-<h2 data-number="25.6" class="anchored" data-anchor-id="fork-of-ours"><span class="header-section-number">25.6</span> Fork (of ours)</h2>
-<p>This is a less common variation on the fork setup.</p>
+<section id="fork-ours" class="level2" data-number="25.6">
+<h2 data-number="25.6" class="anchored" data-anchor-id="fork-ours"><span class="header-section-number">25.6</span> Fork (ours)</h2>
+<p>Esta es una variación menos común en la configuración de fork.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/fork-ours.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'fork'"></p>
 </figure>
 </div>
-<p>In this case, you have permission to push to the source repo, but you elect to create a personal fork anyway. Certain projects favor this approach and it offers maximum development flexibility for advanced users. However, most users are better served by the simpler “ours” setup in this case.</p>
-<p>How to achieve:</p>
+<p>En este caso, tiene permiso para enviar al repositorio de origen, pero elige crear una bifurcación personal de todos modos. Ciertos proyectos favorecen este enfoque y ofrece la máxima flexibilidad de desarrollo para usuarios avanzados. Sin embargo, en este caso, a la mayoría de los usuarios les resulta mejor la configuración más sencilla “ours”.</p>
+<p>Como lograrlo:</p>
 <ul>
-<li>In general, it’s the same as the regular <a href="sec-fork-them">fork setup</a> above.</li>
-<li>With usethis, make sure to explicitly specify <code>fork = TRUE</code>, i.e.&nbsp;do <code>usethis::create_from_github("OWNER/REPO", fork = TRUE)</code>.</li>
+<li>En general, es lo mismo que la <a href="#sec-fork-them">configuración de bifurcación</a> normal anterior.</li>
+<li>Con usethis, asegúrese de especificar explícitamente <code>fork = TRUE</code>, es decir, ejecute <code>usethis::create_from_github("OWNER/REPO", fork = TRUE)</code>.</li>
 </ul>
-<p>usethis describes this setup as “fork”.</p>
+<p>usethis describe esta configuración como “fork”.</p>
 </section>
 <section id="sec-fork_upstream_is_not_origin_parent" class="level2" data-number="25.7">
 <h2 data-number="25.7" class="anchored" data-anchor-id="sec-fork_upstream_is_not_origin_parent"><span class="header-section-number">25.7</span> Fork (salvageable)</h2>
-<p>Here is one last fork setup that’s sub-optimal, but it can be salvaged.</p>
+<p>Aquí hay una última configuración de bifurcación que no es óptima, pero se puede salvar.</p>
 <p><img src="img/fork_upstream_is_not_origin_parent.jpeg" class="img-fluid">{fig-align=“center” fig-alt = “Setup described as ‘fork_upstream_is_not_origin_parent’” width=“60%”}</p>
-<p>This is what happens when you do fork-and-clone and you <em>only</em> do fork-and-clone. What’s missing is a connection back to the source repo.</p>
-<p>How does this happen?</p>
+<p>Esto es lo que sucede cuando haces bifurcación y clonación y <em>solo</em> haces bifurcación y clonación. Lo que falta es una conexión con el repositorio de origen.</p>
+<p>¿Como sucedió esto?</p>
 <ul>
-<li>Cloning your own fork, either via <code>git clone</code> in the shell or through a Git client, such as RStudio. And then stopping here.</li>
+<li>Clonar su propia bifurcación, ya sea mediante <code>git clone</code> en el shell o mediante un cliente Git, como RStudio. Y luego parando aquí.</li>
 </ul>
-<p>If you only plan to make one pull request, this setup is fine. When the exchange is done, delete your local repo and your fork and move on with your life. You can always re-fork in the future. But if your pull request stays open for a while or if you plan to make repeated contributions, you’ll need to pull ongoing developments in the source repo into your local copy.</p>
-<p>You can convert this into the ideal <a href="sec-fork-them">fork setup</a> like so:</p>
+<p>Si solo planea realizar una solicitud de extracción, esta configuración está bien. Cuando finalice el intercambio, elimine su repositorio local y su bifurcación y continúe con su vida. Siempre puedes volver a bifurcar en el futuro. Pero si su solicitud de extracción permanece abierta por un tiempo o si planea realizar contribuciones repetidas, deberá incorporar los desarrollos en curso en el repositorio fuente a su copia local.</p>
+<p>Puedes convertir esto en la <a href="#sec-fork-them">configuración de bifurcación</a> ideal así:</p>
 <ul>
-<li>Detailed instructions are in <a href="sec-fork-and-clone-finish">Finish the fork and clone setup</a>.</li>
-<li>Add the source repo as the <code>upstream</code> remote.</li>
-<li>Set <code>upstream/main</code> as the upstream tracking branch for local <code>main</code> (substitute whatever your default branch is called).</li>
+<li>Las instrucciones detalladas se encuentran en <a href="workflows-fork-and-clone.html#sec-fork-and-clone-finish">Finalizar la configuración de bifurcación y clonación</a>.</li>
+<li>Agregue el repositorio de origen como remoto <code>upstream</code>.</li>
+<li>Establezca <code>upstream/main</code> como la rama de seguimiento ascendente para <code>main</code> local (sustituya el nombre de su rama predeterminada).</li>
 </ul>
-<p>Next time you do fork-and-clone, consider using <code>usethis::create_from_github(fork = TRUE)</code> instead, which completes all of this setup in one go.</p>
-<p>usethis describes this setup as “fork_upstream_is_not_origin_parent”.</p>
+<p>La próxima vez que hagas fork-and-clone, considera usar <code>usethis::create_from_github(fork = TRUE)</code> en su lugar, lo que completa toda esta configuración de una sola vez.</p>
+<p>usethis describe esta configuración como “fork_upstream_is_not_origin_parent”.</p>
 
 
 </section>
@@ -1234,13 +1234,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./remote-setups-intro.html" class="pagination-link" aria-label="Git remote setups">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Git remote setups</span>
+      <a href="./remote-setups-intro.html" class="pagination-link" aria-label="Configuraciones remotas de Git">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuraciones remotas de Git</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./remote-setups-equivocal.html" class="pagination-link" aria-label="Equivocal remote setups">
-        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Equivocal remote setups</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./remote-setups-equivocal.html" class="pagination-link" aria-label="Configuraciones remotas equívocas">
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Configuraciones remotas equívocas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

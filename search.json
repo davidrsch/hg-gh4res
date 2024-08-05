@@ -1459,133 +1459,133 @@
   {
     "objectID": "remote-setups-intro.html",
     "href": "remote-setups-intro.html",
-    "title": "Git remote setups",
+    "title": "Configuraciones remotas de Git",
     "section": "",
-    "text": "The previous part ended with some basics about Git remotes, such as how to define or rename one. Recall that a Git remote is another copy of the repo, usually living elsewhere (hence the term “remote”), that you can pull changes from or push changes to. Remotes are the foundation for all collaborative Git work.\nBut knowing the mechanics of how to add or rename a remote does little good if you don’t know why or when to do it. Luckily, we have very strong opinions about how you should set up your remotes, all motivated by getting you prepared for smooth, happy collaborative work.\nIn this part we describe various remote setups that are common (for better or worse) and what they are good for (or what’s wrong with them and how to fix).",
+    "text": "La parte anterior terminó con algunos conceptos básicos sobre Git remotos, como cómo definir o cambiar el nombre de uno. Recuerde que un control remoto de Git es otra copia del repositorio, que generalmente se encuentra en otro lugar (de ahí el término “remoto”), desde donde puede extraer cambios o enviarlos. Los controles remotos son la base de todo el trabajo colaborativo de Git.\nPero conocer la mecánica de cómo agregar o cambiar el nombre de un control remoto no sirve de nada si no sabes por qué o cuándo hacerlo. Afortunadamente, tenemos opiniones muy firmes sobre cómo debes configurar tus controles remotos, todas motivadas por prepararte para un trabajo colaborativo fluido y feliz.\nEn esta parte describimos varias configuraciones remotas que son comunes (para bien o para mal) y para qué sirven (o qué tienen de malo y cómo solucionarlo).",
     "crumbs": [
-      "Configuraciones remotas",
-      "Git remote setups"
+      "Configuraciones de remotos",
+      "Configuraciones remotas de Git"
     ]
   },
   {
     "objectID": "remote-setups-common.html",
     "href": "remote-setups-common.html",
-    "title": "25  Common remote setups",
+    "title": "25  Configuraciones remotas comunes",
     "section": "",
-    "text": "25.1 No GitHub\nAs a starting point, consider a local Git repo that is not yet connected to GitHub.\nThis is not very exciting, but sets the stage for what’s to come. We introduce the icon we use for a Git repo, which looks like a stack of coins or a barrel. This one is blue, which indicates you have write permission.\nHow to achieve:\nusethis describes this setup as “no_github”.",
+    "text": "25.1 Sin GitHub\nComo punto de partida, considere un repositorio de Git local que aún no esté conectado a GitHub.\nEsto no es muy emocionante, pero prepara el escenario para lo que está por venir. Introducimos el ícono que usamos para un repositorio de Git, que parece una pila de monedas o un barril. Este es azul, lo que indica que tienes permiso de escritura.\nComo alcanzar:\nusethis describe esta configuración como “no_github”.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
-    "objectID": "remote-setups-common.html#no-github",
-    "href": "remote-setups-common.html#no-github",
-    "title": "25  Common remote setups",
+    "objectID": "remote-setups-common.html#sin-github",
+    "href": "remote-setups-common.html#sin-github",
+    "title": "25  Configuraciones remotas comunes",
     "section": "",
-    "text": "Command line Git: git init\nWith usethis, existing project: usethis::use_git()\nWith RStudio:\n\nExisting Project: Tools &gt; Version Control &gt; Project Setup, select Git as the version control system\nNew Project: Make sure “Create a Git repository” is selected",
+    "text": "Línea de comando Git: git init\nCon usethis, proyecto existente: usethis::use_git()\nCon RStudio:\n\nProyecto existente: Tools &gt; Version Control &gt; Project Setup, seleccione Git como el sistema de control de versión\nNuevo proyecto: asegúrese de que esté seleccionado “Create a Git repository”",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
     "objectID": "remote-setups-common.html#sec-ours-you",
     "href": "remote-setups-common.html#sec-ours-you",
-    "title": "25  Common remote setups",
-    "section": "25.2 Ours (more specifically, yours)",
-    "text": "25.2 Ours (more specifically, yours)\nA common next step is to associate a local repo with a copy on GitHub, owned by you.\n\n\n\n\n\nA remote named origin is configured and you have permission to push to (and pull from) origin. (That’s why origin is colored blue and there are solid arrows going both directions.) The origin remote on GitHub is what we’ll call a source repo, meaning it is not a fork (i.e. copy) of anything else on GitHub. In this case, origin is also what we’ll call your primary repo, meaning it is the primary remote you interact with on GitHub (for this project).\nHow to achieve if the local repo exists first:\n\nDetailed instructions are in Existing project, GitHub last.\nWith usethis: usethis::use_github().\nCommand line Git or RStudio: You can’t complete this task fully from the command line or from RStudio:\n\nCreate a new GitHub repo in the browser, with the correct name, and capture its HTTPS or SSH URL.\nConfigure the repo as the origin remote.\nPush.\nEven now, the setup may not be ideal, because upstream tracking relationships are probably not setup, which means you may not be able to push and pull easily. You may need to explicitly configure an upstream tracking branch for one or more local branches. Next time you want to create a GitHub repo from a local repo, consider using usethis::use_github(), which completes all of this setup in one go.\n\n\nHow to achieve if the remote repo exists first:\n\nDetailed instructions are in New RStudio Project via git clone.\nWith usethis: usethis::create_from_github(\"OWNER/REPO\", fork = FALSE)\nCommand line: git clone &lt;URL&gt;, with the source repo’s HTTPS or SSH URL\nIn RStudio: Capture the source repo’s HTTPS or SSH URL and do File &gt; New Project &gt; Version Control &gt; Git.\n\nusethis describes this setup as “ours”.",
+    "title": "25  Configuraciones remotas comunes",
+    "section": "25.2 La nuestra (más específicamente, la tuya)",
+    "text": "25.2 La nuestra (más específicamente, la tuya)\nUn siguiente paso común es asociar un repositorio local con una copia en GitHub, de su propiedad.\n\n\n\n\n\nSe configura un control remoto llamado origin y usted tiene permiso para enviar (y extraer) origin. (Es por eso que origin está coloreado en azul y hay flechas sólidas que van en ambas direcciones). El control remoto origin en GitHub es lo que llamaremos un repositorio fuente, lo que significa que no es una bifurcación (es decir, una copia). de cualquier otra cosa en GitHub. En este caso, origin es también lo que llamaremos su repositorio principal, lo que significa que es el control remoto principal con el que interactúa en GitHub (para este proyecto).\nCómo lograr si el repositorio local existe primero:\n\nLas instrucciones detalladas se encuentran en Proyecto existente, GitHub último.\nCon usethis: usethis::use_github().\nLínea de comando Git o RStudio: no puede completar esta tarea completamente desde la línea de comando o desde RStudio:\n\nCree un nuevo repositorio de GitHub en el navegador, con el nombre correcto, y capture su URL HTTPS o SSH.\nConfigurar el repositorio como el remoto origin.\nPush.\nIncluso ahora, la configuración puede no ser ideal, porque las relaciones de seguimiento ascendentes probablemente no estén configuradas, lo que significa que es posible que no pueda enviar e importar fácilmente. Es posible que deba configurar explícitamente una rama upstream para una o más ramas locales. La próxima vez que quieras crear un repositorio de GitHub desde un repositorio local, considera usar usethis::use_github(), que completa toda esta configuración de una sola vez.\n\n\nCómo lograr si el repositorio remoto existe primero:\n\nLas instrucciones detalladas se encuentran en Nuevo proyecto RStudio mediante git clone.\nCon usethis: usethis::create_from_github(\"OWNER/REPO\", fork = FALSE)\nLínea de comando: git clone &lt;URL&gt;, con la URL HTTPS o SSH del repositorio de origen\nEn RStudio: capture la URL HTTPS o SSH del repositorio de origen y haga File &gt; New Project &gt; Version Control &gt; Git.\n\nusethis describe esta configuración como “ours”.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
     "objectID": "remote-setups-common.html#sec-ours-them",
     "href": "remote-setups-common.html#sec-ours-them",
-    "title": "25  Common remote setups",
-    "section": "25.3 Ours",
-    "text": "25.3 Ours\nHere is a variation on “ours” that is equivalent in practice.\n\n\n\n\n\nA remote named origin is configured and you can push to (and pull from) origin. As above, origin is a source repo, meaning it is not a fork (or copy) of anything else on GitHub. The origin remote is, however, not owned by you. Instead it’s owned by another GitHub user or organisation. origin is also your primary repo in this setup.\nHow does this happen?\n\nThe source repo is owned by an organisation and your role in this organisation confers enough power to create repos or to push to this repo.\nThe owner of the source repo has added you, specifically, as a collaborator to this specific repo.\n\nHow to achieve? The procedure is the same as for the previous “ours” setup. But remember to specify usethis::use_github(organisation = \"ORGNAME\") if you want to create a new repo under an organisation, instead of your personal account.\nusethis describes this setup as “ours”.",
+    "title": "25  Configuraciones remotas comunes",
+    "section": "25.3 Nuestra",
+    "text": "25.3 Nuestra\nAquí hay una variación sobre “ours” que es equivalente en la práctica.\n\n\n\n\n\nSe configura un control remoto llamado origin y puede enviar (y extraer) origin. Como se indicó anteriormente, origin es un repositorio fuente, lo que significa que no es una bifurcación (o copia) de nada más en GitHub. Sin embargo, el control remoto origin no es de su propiedad. En cambio, es propiedad de otro usuario u organización de GitHub. origin también es su repositorio principal en esta configuración.\n¿Como sucedió esto?\n\nEl repositorio de origen es propiedad de una organización y su función en esta organización le confiere poder suficiente para crear repositorios o enviarlos a este repositorio.\nEl propietario del repositorio de origen lo agregó, específicamente, como colaborador de este repositorio específico.\n\n¿Como lograr esto? El procedimiento es el mismo que para la configuración “ours” anterior. Pero recuerde especificar usethis::use_github(organization = \"ORGNAME\") si desea crear un nuevo repositorio bajo una organización, en lugar de su cuenta personal.\nusethis describe esta configuración como “ours”.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
     "objectID": "remote-setups-common.html#sec-theirs",
     "href": "remote-setups-common.html#sec-theirs",
-    "title": "25  Common remote setups",
-    "section": "25.4 Theirs",
-    "text": "25.4 Theirs\nThis is a setup that many people get themselves into, when it’s not actually what they need. It’s not broken per se, but it’s limiting.\n\n\n\n\n\nYou cannot push to origin, which is both the source repo and your primary repo. (This is indicated by the orange color of origin and the greyed out, dashed “push” arrow.) origin is read-only for you.\nIf you are taking a repo for a quick test drive, this configuration is fine. But there is no way to get changes back into the source repo, since you cannot push to it and you haven’t created a fork, which is necessary for a pull request.\nHow does this happen?\n\nCloning the source repo, either via git clone &lt;URL&gt; (command line) or through a Git client, e.g. RStudio’s File &gt; New Project &gt; Version Control &gt; Git workflow.\nCalling usethis::create_from_github(\"OWNER/REPO\", fork = FALSE).\n\nusethis describes this setup as “theirs”.\nWhat if you do want to make a pull request? This means you should have done fork-and-clone instead of clone. If you’ve made no changes or they’re easy to save somewhere temporarily, just start over with a fork-and-clone workflow (fully explained in Chapter 31) and re-introduce your changes. It is also possible to preserve your work in a local branch, fork the source repo, re-configure your remotes, re-sync up with the source repo, and get back on track. But this is much easier to goof up. And remember to fork and clone (not just clone) in the future!",
+    "title": "25  Configuraciones remotas comunes",
+    "section": "25.4 Suyo",
+    "text": "25.4 Suyo\nEsta es una configuración en la que muchas personas se meten, cuando en realidad no es lo que necesitan. No está roto per se, pero es limitante.\n\n\n\n\n\nNo puede enviar al origin, que es tanto el repositorio de origen como el repositorio principal. (Esto se indica con el color naranja de origin y la flecha de “enviar” discontinua y atenuada). origin es de solo lectura para usted.\nSi está realizando un repositorio para una prueba rápida, esta configuración está bien. Pero no hay forma de recuperar los cambios en el repositorio de origen, ya que no puede enviarlos y no ha creado una bifurcación, que es necesaria para una solicitud de fusión.\n¿Como sucedió esto?\n\nClonando el repositorio de origen, ya sea mediante git clone &lt;URL&gt; (línea de comando) o mediante un cliente Git, p. Flujo de trabajo Archivo &gt; Nuevo proyecto &gt; Control de versiones &gt; Git de RStudio.\nEjecutando usethis::create_from_github(\"OWNER/REPO\", fork = FALSE).\n\nusethis describe esta configuración como “theirs”.\n¿Qué sucede si desea realizar una solicitud de fusión? Esto significa que deberías haber hecho fork-and-clone en lugar de clone. Si no ha realizado cambios o es fácil guardarlos en algún lugar temporalmente, simplemente comience de nuevo con un flujo de trabajo de bifurcación y clonación (explicado completamente en Chapter 31) y vuelva a introducir sus cambios. También es posible conservar su trabajo en una rama local, bifurcar el repositorio de origen, reconfigurar sus controles remotos, volver a sincronizar con el repositorio de origen y volver a la normalidad. Pero es mucho más fácil equivocarse. ¡Y recuerda bifurcar y clonar (no sólo clonar) en el futuro!",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
     "objectID": "remote-setups-common.html#sec-fork-them",
     "href": "remote-setups-common.html#sec-fork-them",
-    "title": "25  Common remote setups",
-    "section": "25.5 Fork (of theirs)",
-    "text": "25.5 Fork (of theirs)\nThis is an ideal setup if you want to make a pull request and generally follow the development of a source repo owned by someone else.\n\n\n\n\n\nThis shows a successful “fork-and-clone”. Your local repo can pull changes from the source repo, which is configured as upstream, which you cannot push to (but you can pull from). You have a fork of the source repo (a very special copy, on GitHub) and it is configured as origin. origin is your primary repo. You can push to and pull from origin. You can make a pull request back to the source repo via your fork.\nusethis describes this setup as “fork”.\nHow to achieve:\n\nDetailed instructions are given in Fork and clone.\nWith usethis: usethis::create_from_github(\"OWNER/REPO\", fork = TRUE)\nCommand line Git or RStudio: You can’t complete this task fully from the command line or RStudio:\n\nFork the source repo in the browser, capture the HTTPS or SSH URL of your fork, then use git clone &lt;FORK_URL&gt; (command line) or RStudio’s File &gt; New Project &gt; Version Control &gt; Git workflow. But, wait, you’re not done! If you stop here, you will have the incomplete setup we refer to as “fork (salvageable)”, below.\nYou still need to add the source repo as the upstream remote. Capture the HTTPS or SSH URL of the source repo. At the command line, do git   remote add upstream &lt;SOURCE_URL&gt; or click RStudio’s New Branch button, which brings up a window where you can add the upstream remote.\nEven then, the setup may not be ideal, because your local default branch is probably tracking origin, not upstream, which is preferable for a fork. usethis::create_from_github() completes all of this setup in one go.\nThese last two steps are described in Finish the fork and clone setup.",
+    "title": "25  Configuraciones remotas comunes",
+    "section": "25.5 Fork (theirs)",
+    "text": "25.5 Fork (theirs)\nEsta es una configuración ideal si desea realizar una solicitud de fusión y, en general, seguir el desarrollo de un repositorio fuente propiedad de otra persona.\n\n\n\n\n\nEsto muestra un “fork-and-clone” exitoso. Su repositorio local puede extraer cambios del repositorio de origen, que está configurado como “upstream”, al cual no puede enviar cambios (pero sí puede importarlos). Tienes un fork del repositorio fuente (una copia muy especial, en GitHub) y está configurado como origin. origin es su repositorio principal. Puede enviar e importar desde el origin. Puede realizar una solicitud de fusión al repositorio de origen a través de su bifurcación.\nusethis describe esta configuración como “fork”.\nComo alcanzar:\n\nLas instrucciones detalladas se dan en Fork y clone.\nCon usethis: usethis::create_from_github(\"OWNER/REPO\", fork = TRUE)\nLínea de comando Git o RStudio: no puede completar esta tarea completamente desde la línea de comando o RStudio:\n\nBifurca el repositorio fuente en el navegador, captura la URL HTTPS o SSH de tu bifurcación, luego usa git clone &lt;FORK_URL&gt; (línea de comando) o RStudio. File &gt; New Project &gt; Version Control &gt; Git flujo de trabajo. Pero espera, ¡aún no has terminado! Si se detiene aquí, tendrá la configuración incompleta a la que nos referimos como “fork (salvageable)”.\nAún necesita agregar el repositorio de origen como control remoto upstream. Capture la URL HTTPS o SSH del repositorio de origen. En la línea de comando, haga git remoto add upstream &lt;SOURCE_URL&gt; o haga clic en el botón Nueva rama de RStudio, que abre una ventana donde puede agregar el control remoto upstream.\nIncluso entonces, la configuración puede no ser ideal, porque su rama predeterminada local probablemente esté rastreando el origin, no el upstream, lo cual es preferible para una bifurcación. usethis::create_from_github() completa toda esta configuración de una sola vez.\nEstos dos últimos pasos se describen en Finalizar la configuración de bifurcación y clonación.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
-    "objectID": "remote-setups-common.html#fork-of-ours",
-    "href": "remote-setups-common.html#fork-of-ours",
-    "title": "25  Common remote setups",
-    "section": "25.6 Fork (of ours)",
-    "text": "25.6 Fork (of ours)\nThis is a less common variation on the fork setup.\n\n\n\n\n\nIn this case, you have permission to push to the source repo, but you elect to create a personal fork anyway. Certain projects favor this approach and it offers maximum development flexibility for advanced users. However, most users are better served by the simpler “ours” setup in this case.\nHow to achieve:\n\nIn general, it’s the same as the regular fork setup above.\nWith usethis, make sure to explicitly specify fork = TRUE, i.e. do usethis::create_from_github(\"OWNER/REPO\", fork = TRUE).\n\nusethis describes this setup as “fork”.",
+    "objectID": "remote-setups-common.html#fork-ours",
+    "href": "remote-setups-common.html#fork-ours",
+    "title": "25  Configuraciones remotas comunes",
+    "section": "25.6 Fork (ours)",
+    "text": "25.6 Fork (ours)\nEsta es una variación menos común en la configuración de fork.\n\n\n\n\n\nEn este caso, tiene permiso para enviar al repositorio de origen, pero elige crear una bifurcación personal de todos modos. Ciertos proyectos favorecen este enfoque y ofrece la máxima flexibilidad de desarrollo para usuarios avanzados. Sin embargo, en este caso, a la mayoría de los usuarios les resulta mejor la configuración más sencilla “ours”.\nComo lograrlo:\n\nEn general, es lo mismo que la configuración de bifurcación normal anterior.\nCon usethis, asegúrese de especificar explícitamente fork = TRUE, es decir, ejecute usethis::create_from_github(\"OWNER/REPO\", fork = TRUE).\n\nusethis describe esta configuración como “fork”.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
     "objectID": "remote-setups-common.html#sec-fork_upstream_is_not_origin_parent",
     "href": "remote-setups-common.html#sec-fork_upstream_is_not_origin_parent",
-    "title": "25  Common remote setups",
+    "title": "25  Configuraciones remotas comunes",
     "section": "25.7 Fork (salvageable)",
-    "text": "25.7 Fork (salvageable)\nHere is one last fork setup that’s sub-optimal, but it can be salvaged.\n{fig-align=“center” fig-alt = “Setup described as ‘fork_upstream_is_not_origin_parent’” width=“60%”}\nThis is what happens when you do fork-and-clone and you only do fork-and-clone. What’s missing is a connection back to the source repo.\nHow does this happen?\n\nCloning your own fork, either via git clone in the shell or through a Git client, such as RStudio. And then stopping here.\n\nIf you only plan to make one pull request, this setup is fine. When the exchange is done, delete your local repo and your fork and move on with your life. You can always re-fork in the future. But if your pull request stays open for a while or if you plan to make repeated contributions, you’ll need to pull ongoing developments in the source repo into your local copy.\nYou can convert this into the ideal fork setup like so:\n\nDetailed instructions are in Finish the fork and clone setup.\nAdd the source repo as the upstream remote.\nSet upstream/main as the upstream tracking branch for local main (substitute whatever your default branch is called).\n\nNext time you do fork-and-clone, consider using usethis::create_from_github(fork = TRUE) instead, which completes all of this setup in one go.\nusethis describes this setup as “fork_upstream_is_not_origin_parent”.",
+    "text": "25.7 Fork (salvageable)\nAquí hay una última configuración de bifurcación que no es óptima, pero se puede salvar.\n{fig-align=“center” fig-alt = “Setup described as ‘fork_upstream_is_not_origin_parent’” width=“60%”}\nEsto es lo que sucede cuando haces bifurcación y clonación y solo haces bifurcación y clonación. Lo que falta es una conexión con el repositorio de origen.\n¿Como sucedió esto?\n\nClonar su propia bifurcación, ya sea mediante git clone en el shell o mediante un cliente Git, como RStudio. Y luego parando aquí.\n\nSi solo planea realizar una solicitud de extracción, esta configuración está bien. Cuando finalice el intercambio, elimine su repositorio local y su bifurcación y continúe con su vida. Siempre puedes volver a bifurcar en el futuro. Pero si su solicitud de extracción permanece abierta por un tiempo o si planea realizar contribuciones repetidas, deberá incorporar los desarrollos en curso en el repositorio fuente a su copia local.\nPuedes convertir esto en la configuración de bifurcación ideal así:\n\nLas instrucciones detalladas se encuentran en Finalizar la configuración de bifurcación y clonación.\nAgregue el repositorio de origen como remoto upstream.\nEstablezca upstream/main como la rama de seguimiento ascendente para main local (sustituya el nombre de su rama predeterminada).\n\nLa próxima vez que hagas fork-and-clone, considera usar usethis::create_from_github(fork = TRUE) en su lugar, lo que completa toda esta configuración de una sola vez.\nusethis describe esta configuración como “fork_upstream_is_not_origin_parent”.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Common remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Configuraciones remotas comunes</span>"
     ]
   },
   {
     "objectID": "remote-setups-equivocal.html",
     "href": "remote-setups-equivocal.html",
-    "title": "26  Equivocal remote setups",
+    "title": "26  Configuraciones remotas equívocas",
     "section": "",
-    "text": "26.1 Maybe “ours” or “theirs”\nWhen we detect just one GitHub remote, but we can’t verify the info above, usethis describes the setup as “maybe_ours_or_theirs”.\n{fig-align=“center” fig-alt=“Setup described as ‘maybe_ours_or_theirs’” width = “60%”}\nOnce a PAT is available, this setup can be identified as being “ours” (belonging to you), “ours” (but belonging to someone else), or “theirs”.",
+    "text": "26.1 Tal vez “ours” o “theirs”\nCuando detectamos solo un control remoto de GitHub, pero no podemos verificar la información anterior, usethis describe la configuración como “maybe_ours_or_theirs”.\n{fig-align=“center” fig-alt=“Setup described as ‘maybe_ours_or_theirs’” width = “60%”}\nUna vez que un PAT está disponible, esta configuración se puede identificar como “ours” (que le pertenece a usted), “ours” (pero que pertenece a otra persona) , o “theirs”.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Equivocal remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Configuraciones remotas equívocas</span>"
     ]
   },
   {
-    "objectID": "remote-setups-equivocal.html#maybe-fork",
-    "href": "remote-setups-equivocal.html#maybe-fork",
-    "title": "26  Equivocal remote setups",
-    "section": "26.2 Maybe fork",
-    "text": "26.2 Maybe fork\nWhen we detect two GitHub remotes, but we can’t verify the info above, usethis describes the setup as “maybe_fork”.\n\n\n\n\n\nOnce a PAT is available, this setup can be identified as being a well-configured fork or a fork with incomplete setup (or possibly something more weird).",
+    "objectID": "remote-setups-equivocal.html#tal-vez-fork",
+    "href": "remote-setups-equivocal.html#tal-vez-fork",
+    "title": "26  Configuraciones remotas equívocas",
+    "section": "26.2 Tal vez fork",
+    "text": "26.2 Tal vez fork\nCuando detectamos dos controles remotos de GitHub, pero no podemos verificar la información anterior, usethis describe la configuración como “maybe_fork”.\n\n\n\n\n\nUna vez que un PAT está disponible, esta configuración se puede identificar como una bien configurada fork o una bifurcación con configuración incompleta (o posiblemente algo más raro).",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Equivocal remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Configuraciones remotas equívocas</span>"
     ]
   },
   {
-    "objectID": "remote-setups-equivocal.html#how-to-fix",
-    "href": "remote-setups-equivocal.html#how-to-fix",
-    "title": "26  Equivocal remote setups",
-    "section": "26.3 How to fix",
-    "text": "26.3 How to fix\nThese setups aren’t necessarily broken, but usethis needs more information to operate.\nTo “fix” this, set up a GitHub personal access token. See Section 9.3 for more details on why and how to do that.",
+    "objectID": "remote-setups-equivocal.html#como-arreglar",
+    "href": "remote-setups-equivocal.html#como-arreglar",
+    "title": "26  Configuraciones remotas equívocas",
+    "section": "26.3 Como arreglar",
+    "text": "26.3 Como arreglar\nEstas configuraciones no necesariamente están rotas, pero su uso necesita más información para funcionar.\nPara “solucionar” esto, configure un token de acceso personal de GitHub. Consulte Section 9.3 para obtener más detalles sobre por qué y cómo hacerlo.",
     "crumbs": [
-      "Configuraciones remotas",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Equivocal remote setups</span>"
+      "Configuraciones de remotos",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Configuraciones remotas equívocas</span>"
     ]
   },
   {
