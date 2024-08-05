@@ -1,29 +1,29 @@
-# Git commands {#sec-git-commands}
+# Comandos de git {#sec-git-commands}
 
-A collection of some of the Git commands that have been largely going on under the hood. We've emphasized early workflows that are possible in RStudio. But all of this and much more can be done from the command line. This list is here mostly so we can consult it during live workshops if needed.
+Una colección de algunos de los comandos de Git que se han estado ejecutando en gran medida bajo el capó. Hemos enfatizado los primeros flujos de trabajo que son posibles en RStudio. Pero todo esto y mucho más se puede hacer desde la línea de comandos. Esta lista está aquí principalmente para que podamos consultarla durante los talleres en vivo si es necesario.
 
-*Unless you use the [GitHub API](https://developer.github.com/v3/), most of the GitHub bits really have to be done from the browser.*
+*A menos que utilice la [API de GitHub](https://developer.github.com/v3/), la mayoría de los bits de GitHub realmente deben realizarse desde el navegador.*
 
-New local git repo from a repo on GitHub:
+Nuevo repositorio de git local desde un repositorio en GitHub:
 
 ``` console
 git clone https://github.com/jennybc/happy-git-with-r.git
 ```
 
-Check the remote was cloned successfully:
+Verifique que el control remoto se haya clonado exitosamente:
 
 ``` console
 git remote --verbose
 ```
 
-Stage local changes, commit:
+Seleccionar cambios locales, confirmar:
 
 ``` console
 git add foo.txt
-git commit --message "A commit message"
+git commit --message "Un mensaje de confirmación"
 ```
 
-Check on the state of the Git world:
+Compruebe el estado del mundo Git:
 
 ``` console
 git status
@@ -31,13 +31,13 @@ git log
 git log --oneline
 ```
 
-Compare versions:
+Comparar versiones:
 
 ``` console
 git diff
 ```
 
-Add a remote to existing local repo:
+Agregue un control remoto al repositorio local existente:
 
 ``` console
 git remote add origin https://github.com/jennybc/happy-git-with-r
@@ -45,49 +45,49 @@ git remote --verbose
 git remote show origin
 ```
 
-Push local `main` to GitHub `main` and have local `main` track `main` on GitHub:
+Envíe el `main` local a GitHub `main` y haga que el `main` local rastree `main` en GitHub:
 
 ``` console
 git push --set-upstream origin main
-# shorter form
+# forma más corta
 git push -u origin main
-# you only need to set upstream tracking once!
+# ¡solo necesitas configurar el seguimiento ascendente una vez!
 ```
 
-Regular push:
+Envío regular:
 
 ``` console
 git push 
-# the above usually implies (and certainly does in our tutorial)
+# lo anterior generalmente implica (y ciertamente lo hace en nuestro tutorial)
 git push origin main
 # git push [remote-name] [branch-name]
 ```
 
-Pull commits from GitHub:
+Importar confirmaciones desde GitHub:
 
 ``` console
 git pull
 ```
 
-Pull commits and don't let it put you in a merge conflict pickle:
+Importar confirmaciones y no evitar que esto le ponga en un aprieto de conflicto de fusión:
 
 ``` console
 git pull --ff-only
 ```
 
-Fetch commits
+Obtener confirmaciones
 
 ``` console
 git fetch
 ```
 
-Switch to a branch
+Cambiar a una rama
 
 ``` console
 git checkout [branch-name]
 ```
 
-Checking remote and branch tracking
+Comprobación del seguimiento remoto y de ramas
 
 ``` console
 git remote -v
