@@ -1,71 +1,71 @@
-# Branches {#sec-git-branches}
+# Ramas {#sec-git-branches}
 
-Branching means that you take a detour from the main stream of development and
-do work without changing the main stream.
-It allows one or many people to work in parallel without overwriting each other's work.
-It allows a someone working solo to work incrementally on an experimental idea, without jeopardizing the state of the main product.
+Ramificar significa tomar un desvío de la corriente principal de desarrollo y
+trabajar sin cambiar la corriente principal.
+Permite que una o varias personas trabajen en paralelo sin sobrescribir el trabajo de los demás.
+Permite a alguien que trabaja solo trabajar de forma incremental en una idea experimental, sin poner en peligro el estado del producto principal.
 
-Branching in Git is very lightweight, which means creating a branch and
-switching between branches is nearly instantaneous.
-This means Git encourages workflows which create small branches for exploration or new features, often merging them back together quickly.
+La bifurcación en Git es muy liviana, lo que significa crear una rama y
+El cambio entre ramas es casi instantáneo.
+Esto significa que Git fomenta los flujos de trabajo que crean pequeñas ramas para la exploración o nuevas funciones, y a menudo las fusionan rápidamente.
 
-## Create a new branch
+## Crear una nueva rama
 
-You can create a new branch with `git branch`, then checkout the branch with `git checkout`.
-To distinguish it from the main stream of development, presumably on `main`, we'll call this a "feature branch".
+Puede crear una nueva rama con `git branch` y luego verificar la rama con `git checkout`.
+Para distinguirlo de la corriente principal de desarrollo, presumiblemente en "principal", lo llamaremos "rama de características".
 
 ```console
 git branch issue-5
 git checkout issue-5
 ```
 
-You can also use the shortcut `git checkout -b issue-5` to create and checkout the branch all at once.
+También puedes usar el atajo `git checkout -b issues-5` para crear y verificar la rama de una vez.
 
-Once you have switched to a branch, you can commit to it as usual.
+Una vez que haya cambiado a una rama, puede comprometerse con ella como de costumbre.
 
-## Switching branches
+## Cambiar de rama
 
-You use `git checkout` to switch between branches.
+Usas `git checkout` para cambiar entre ramas.
 
-But what do you do if you are working on a branch and need to switch,
-but the work on the current branch is not complete?
-One option is the [Git stash](https://git-scm.com/book/en/v2/ch00/_git_stashing), but generally a better option is to safeguard the current state with a temporary commit.
-Here I use "WIP" as the commit message to indicate work in progress.
+Pero, ¿qué haces si estás trabajando en una rama y necesitas cambiar?
+¿Pero el trabajo en la rama actual no está completo?
+Una opción es [Git stash](https://git-scm.com/book/en/v2/ch00/_git_stashing), pero generalmente una mejor opción es salvaguardar el estado actual con una confirmación temporal.
+Aquí utilizo "WIP" como mensaje de confirmación para indicar el trabajo en progreso.
 
 ```console
 git commit --all -m "WIP"
 git checkout main
 ```
 
-Then when you come back to the branch and continue your work, you
-need to undo the temporary commit by [resetting](sec-reset) your state.
-Specifically, we want a mixed reset.
-This is "working directory safe", i.e. it does not affect the state of any files.
-But it does peel off the temporary WIP commit.
-Below, the reference `HEAD^` says to roll the commit state back to the parent of the current commit (`HEAD`).
+Luego, cuando regreses a la rama y continúes con tu trabajo,
+Necesitas deshacer la confirmación temporal [restableciendo](#sec-reset) tu estado.
+Específicamente, queremos un reinicio mixto.
+Este es un "directorio de trabajo seguro", es decir, no afecta el estado de ningún archivo.
+Pero sí elimina el commit WIP temporal.
+A continuación, la referencia `HEAD^` dice que se debe revertir el estado de confirmación al padre de la confirmación actual (`HEAD`).
 
 ```console
 git checkout issue-5
 git reset HEAD^
 ```
 
-If this is difficult to remember, or to roll the commit state back to a different previous state, the reference can also be given as the SHA of a specific commit, which you can see via `git log`.
-This is where I think a graphical Git client can be invaluable, as you can generally right click on the target commit, then select the desired type of reset (e.g., soft, mixed, or hard).
-This is exactly the type of intermediate-to-advanced Git usage that often feels more approachable in a graphical client.
+Si esto es difícil de recordar, o revertir el estado de confirmación a un estado anterior diferente, la referencia también se puede proporcionar como el SHA de una confirmación específica, que puede ver a través de `git log`.
+Aquí es donde creo que un cliente Git gráfico puede ser invaluable, ya que generalmente puedes hacer clic derecho en la confirmación de destino y luego seleccionar el tipo de reinicio deseado (por ejemplo, suave, mixto o duro).
+Este es exactamente el tipo de uso de Git intermedio a avanzado que a menudo parece más accesible en un cliente gráfico.
 
-## Merging a branch
+## Fusionar una rama
 
-Once you have done your work and committed it to the feature branch, you can switch back to `main` and merge the feature branch.
+Una vez que haya hecho su trabajo y lo haya confirmado en la rama de funciones, puede volver a "principal" y fusionar la rama de funciones.
 
 ```console
 git checkout main
 git merge issue-5
 ```
 
-## Dealing with conflicts
+## Lidiar con los conflictos
 
-Most of the time, the merge will go smoothly.
-However if both the branches you are merging changed the same part of the same file you will get a merge conflict.
+La mayoría de las veces, la fusión se realizará sin problemas.
+Sin embargo, si ambas ramas que está fusionando cambiaron la misma parte del mismo archivo, obtendrá un conflicto de fusión.
 
 ```console
 git merge issue-5
@@ -74,11 +74,11 @@ git merge issue-5
 # Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-The first thing to do is **NOT PANIC**.
-Merge conflicts are not the end of the world and most are relatively small and straightforward to resolve.
+Lo primero que debe hacer es **NO ENTRAR EN PÁNICO**.
+Los conflictos de fusión no son el fin del mundo y la mayoría son relativamente pequeños y fáciles de resolver.
 
-The first step to solving a merge conflict is determining which files are in
-conflict, which you can do with `git status`:
+El primer paso para resolver un conflicto de fusión es determinar qué archivos están en
+conflicto, que puedes hacer con `git status`:
 
 ```shell
 git status
@@ -94,8 +94,8 @@ git status
 # no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-So this shows only `index.html` is unmerged and needs to be resolved.
-We can then open the file to see what lines are in conflict.
+Entonces esto muestra que solo `index.html` no está fusionado y debe resolverse.
+Luego podemos abrir el archivo para ver qué líneas están en conflicto.
 
 ```html
 <<<<<<< HEAD:index.html
@@ -107,13 +107,13 @@ We can then open the file to see what lines are in conflict.
 >>>>>>> issue-5:index.html
 ```
 
-In this conflict, the lines between `<<<<<< HEAD:index.html` and `======` are
-the content from the branch you are currently on.
-The lines between `=======` and `>>>>>>> issue-5:index.html` are from the feature branch we are merging.
+En este conflicto, las líneas entre `<<<<<< HEAD:index.html` y `======` son
+el contenido de la rama en la que se encuentra actualmente.
+Las líneas entre `=======` y `>>>>>>> issues-5:index.html` son de la rama de funciones que estamos fusionando.
 
-To resolve the conflict, edit this section until it reflects the state you want in the merged result.
-Pick one version or the other or create a hybrid.
-Also remove the conflict markers `<<<<<<`, `======` and `>>>>>>`.
+Para resolver el conflicto, edite esta sección hasta que refleje el estado que desea en el resultado combinado.
+Elige una versión u otra o crea un híbrido.
+También elimine los marcadores de conflicto `<<<<<<`, `======` y `>>>>>>`.
 
 ```html
 <div id="footer">
@@ -121,16 +121,16 @@ please contact us at email.support@github.com
 </div>
 ```
 
-Now run `git add index.html` and `git commit` to finalize the merge.
-CONFLICTS RESOLVED.
+Ahora ejecute `git add index.html` y `git commit` para finalizar la fusión.
+CONFLICTOS RESUELTOS.
 
-### Bailing out
+### Rescate
 
-If, during the merge, you get confused about the state of things or make a
-mistake, use `git merge --abort` to abort the merge and go back to the state
-prior to running `git merge`.
-Then you can try to complete the merge again.
+Si, durante la fusión, se confunde sobre el estado de las cosas o hace una
+error, use `git merge --abort` para cancelar la fusión y volver al estado
+antes de ejecutar `git merge`.
+Luego puedes intentar completar la fusión nuevamente.
 
-Git Basic Branching and Merging:
+Bifurcación y fusión de Git Basic:
 
 <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
