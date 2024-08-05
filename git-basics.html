@@ -332,7 +332,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Some Git basics</span></a>
+ <span class="menu-text">Algunos conceptos básicos de Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -344,25 +344,25 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-branches.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-remotes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Refs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Referencias</span></span></a>
   </div>
 </li>
       </ul>
@@ -576,8 +576,8 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#repos-or-repositories" id="toc-repos-or-repositories" class="nav-link active" data-scroll-target="#repos-or-repositories"><span class="header-section-number">20.1</span> Repos or repositories</a></li>
-  <li><a href="#commits-diffs-and-tags" id="toc-commits-diffs-and-tags" class="nav-link" data-scroll-target="#commits-diffs-and-tags"><span class="header-section-number">20.2</span> Commits, diffs, and tags</a></li>
+  <li><a href="#repos-o-repositorios" id="toc-repos-o-repositorios" class="nav-link active" data-scroll-target="#repos-o-repositorios"><span class="header-section-number">20.1</span> Repos o repositorios</a></li>
+  <li><a href="#commits-diffs-y-tags" id="toc-commits-diffs-y-tags" class="nav-link" data-scroll-target="#commits-diffs-y-tags"><span class="header-section-number">20.2</span> Commits, diffs, y tags</a></li>
   </ul>
 </nav>
     </div>
@@ -603,44 +603,44 @@ div.csl-indent {
 </header>
 
 
-<section id="repos-or-repositories" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="repos-or-repositories"><span class="header-section-number">20.1</span> Repos or repositories</h2>
-<p>Git is a version control system whose original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files – called a <strong>repository</strong> or <strong>repo</strong> – in a highly structured way. Historically, these files would have consisted of source code and the instructions for how to build an application from its source.</p>
-<p>Git has been re-purposed by the data science community <span class="citation" data-cites="Ram2013 git-for-humans ten-simple-rules-git">(<a href="references.html#ref-Ram2013" role="doc-biblioref">Ram 2013</a>; <a href="references.html#ref-git-for-humans" role="doc-biblioref">Bartlett 2016</a>; <a href="references.html#ref-ten-simple-rules-git" role="doc-biblioref">Perez-Riverol et al. 2016</a>)</span>. We use it to manage the motley collection of files that make up typical data analytical projects, which consist of data, figures, reports, and, yes, some source code.</p>
-<p>For new or existing projects, we recommend that you:</p>
+<section id="repos-o-repositorios" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="repos-o-repositorios"><span class="header-section-number">20.1</span> Repos o repositorios</h2>
+<p>Git es un sistema de control de versiones cuyo propósito original era ayudar a grupos de desarrolladores a trabajar de forma colaborativa en grandes proyectos de software. Git gestiona la evolución de un conjunto de archivos, llamado <strong>repositorio</strong> o <strong>repo</strong>, de una manera altamente estructurada. Históricamente, estos archivos habrían consistido en código fuente e instrucciones sobre cómo crear una aplicación a partir de su fuente.</p>
+<p>Git ha sido reutilizado por la comunidad científica de datos <span class="citation" data-cites="Ram2013 git-for-humans ten-simple-rules-git">(<a href="references.html#ref-Ram2013" role="doc-biblioref">Ram 2013</a>; <a href="references.html#ref-git-for-humans" role="doc-biblioref">Bartlett 2016</a>; <a href="references.html#ref-ten-simple-rules-git" role="doc-biblioref">Perez-Riverol et al. 2016</a>)</span>. Lo usamos para gestionar la variada colección de archivos que componen los proyectos típicos de análisis de datos, que consisten en datos, cifras, informes y, sí, algo de código fuente.</p>
+<p>Para proyectos nuevos o existentes, le recomendamos que:</p>
 <ul>
-<li>Dedicate a local directory or folder to it.</li>
-<li>Make it an RStudio Project. <em>Optional but recommended; obviously only applies to projects involving R and users of RStudio.</em></li>
-<li>Make it a Git repository.</li>
+<li>Dedicarle un directorio o carpeta local.</li>
+<li>Conviértalo en un proyecto RStudio. <em>Opcional pero recomendado; obviamente solo se aplica a proyectos que involucran R y usuarios de RStudio.</em></li>
+<li>Conviértelo en un repositorio Git.</li>
 </ul>
-<p>This setup happens once per project and can happen at project inception or at any later point. Chances are your existing projects each already live in a dedicated directory. Making such a directory an RStudio Project and Git repository boils down to allowing those applications to leave notes for themselves in hidden files or directories. The project is still a regular directory on your computer, that you can locate, name, move, and generally interact with as you wish. You don’t have to handle it with special gloves!</p>
-<p>The daily workflow is probably not dramatically different from what you do currently. You work in the usual way, writing R scripts or authoring reports in LaTeX or R Markdown. But instead of only <em>saving</em> individual files, periodically you make a <strong>commit</strong>, which takes a snapshot of all the files in the entire project. If you have ever versioned a file <a href="http://www.phdcomics.com/comics/archive.php?comicid=1531">by adding your initials or the date</a>, you have effectively made a commit, albeit only for a single file. It is a version that is significant to you and that you might want to inspect or revert to later. Periodically, you push commits to GitHub. This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. By pushing to GitHub, you make your work and all your accumulated progress accessible to others.</p>
-<p>This is a moderate change to your normal, daily workflow. It feels weird at first, but quickly becomes second nature. In <a href="http://stat545.com">STAT 545</a> students are required to submit all coursework via GitHub, starting in week one. Most have never seen Git before and do not identify as programmers. It is a major topic in class and office hours for the first two weeks. Then we practically never discuss it again.</p>
+<p>Esta configuración ocurre una vez por proyecto y puede ocurrir al inicio del proyecto o en cualquier momento posterior. Es probable que sus proyectos existentes ya se encuentren en un directorio dedicado. Hacer de dicho directorio un proyecto RStudio y un repositorio Git se reduce a permitir que esas aplicaciones dejen notas en archivos o directorios ocultos. El proyecto sigue siendo un directorio normal en su computadora, que puede ubicar, nombrar, mover y, en general, interactuar con él como desee. ¡No es necesario manipularlo con guantes especiales!</p>
+<p>El flujo de trabajo diario probablemente no sea dramáticamente diferente de lo que hace actualmente. Trabaja de la forma habitual, escribiendo scripts R o creando informes en LaTeX o R Markdown. Pero en lugar de <em>guardar</em> únicamente archivos individuales, periódicamente realiza una <strong>confirmación</strong>, que toma una instantánea de todos los archivos de todo el proyecto. Si alguna vez ha versionado un archivo <a href="http://www.phdcomics.com/comics/archive.php?comicid=1531">agregando sus iniciales o la fecha</a>, efectivamente ha realizado una confirmación, aunque solo para una sola archivo. Es una versión que es importante para usted y que quizás desee inspeccionar o volver a consultar más adelante. Periódicamente, envías confirmaciones a GitHub. Esto es como compartir un documento con colegas en DropBox o enviarlo como archivo adjunto de correo electrónico. Al acceder a GitHub, haces que tu trabajo y todo tu progreso acumulado sean accesibles para otros.</p>
+<p>Este es un cambio moderado en su flujo de trabajo diario normal. Al principio se siente extraño, pero rápidamente se convierte en algo natural. En <a href="http://stat545.com">STAT 545</a>, los estudiantes deben enviar todos los trabajos del curso a través de GitHub, a partir de la primera semana. La mayoría nunca ha visto Git antes y no se identifican como programadores. Es un tema importante en las horas de clase y de oficina durante las dos primeras semanas. Entonces prácticamente nunca volvemos a hablar de ello.</p>
 </section>
-<section id="commits-diffs-and-tags" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="commits-diffs-and-tags"><span class="header-section-number">20.2</span> Commits, diffs, and tags</h2>
-<p>We now connect the fundamental concepts of Git to the data science workflow:</p>
+<section id="commits-diffs-y-tags" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="commits-diffs-y-tags"><span class="header-section-number">20.2</span> Commits, diffs, y tags</h2>
+<p>Ahora conectamos los conceptos fundamentales de Git con el flujo de trabajo de la ciencia de datos:</p>
 <ul>
 <li>repository</li>
 <li>commit</li>
 <li>diff</li>
 </ul>
-<p>Recall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Under the hood, that is not exactly how Git implements things. Although mental models don’t have to be accurate in order to be useful, in this case it helps to align the two.</p>
-<div id="fig-commit-diff-sha-tag" class="quarto-float quarto-figure quarto-figure-center anchored" data-out-with="100%">
+<p>Recuerde que un repo o repositorio es solo un directorio de archivos que Git administra de manera integral. Una confirmación(commit) funciona como una instantánea de todos los archivos del repositorio, en un momento específico. En el fondo, no es así exactamente como Git implementa las cosas. Aunque los modelos mentales no tienen que ser precisos para ser útiles, en este caso ayuda alinear ambos.</p>
+<div id="fig-commit-diff-sha-tag" class="quarto-float quarto-figure quarto-figure-center anchored" data-with="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-commit-diff-sha-tag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/commit-diff-sha-tag.png" class="img-fluid figure-img" data-out-with="100%">
+<img src="img/commit-diff-sha-tag.png" class="img-fluid figure-img" data-with="100%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-commit-diff-sha-tag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20.1: Partial commit history for our iris example, highlighting diffs, commit messages, SHAs, and tags
+Figure&nbsp;20.1: Historial de confirmaciones parciales para nuestro ejemplo de iris, destacando diferencias, mensajes de confirmación, SHA y etiquetas
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> is a look at a fictional analysis of the iris data, focusing on the evolution of a script, <code>iris.R</code>. Consider version A of this file and a modified version, version B. Assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a “diff” and Git users contemplate diffs a lot. Diff inspection is how you re-explain to yourself how version A differs from version B. Diff inspection is not limited to adjacent commits. You can inspect the diffs between any two commits.</p>
-<p>In fact, Git’s notion of any specific version of <code>iris.R</code> is as an accumulation of diffs. If you go back far enough, you find the commit where the file was created in the first place. Every later version is stored by Git as that initial version, plus all the intervening diffs in the history that affect the file. We’ll set these internal details aside now, but understanding the importance of these deltas will make Git’s operations less baffling in the long run.</p>
-<p>So, by looking at diffs, it’s easy to see how two snapshots differ, but what about the why?</p>
-<p>Every time you make a commit you must also write a short <strong>commit message</strong>. Ideally, this conveys the motivation for the change. Remember, the diff will show the content. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the <strong>history</strong>, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. <a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> shows the messages associated with the last three commits.</p>
-<p>Every commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random but is a SHA-1 checksum hash of the commit). Though you will be exposed to these, you don’t have to handle them directly very often and, when you do, usually the first 7 characters suffice. The commit messages in <a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> are prefixed by such truncated SHAs. You can also designate certain snapshots as special with a <strong>tag</strong>, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., “v1.0.3”. For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators. <a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> shows a tag, “draft-01”, associated with the last commit.</p>
+<p><a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> es una mirada a un análisis ficticio de los datos del iris, centrándose en la evolución de un guión, <code>iris.R</code>. Considere la versión A de este archivo y una versión modificada, la versión B. Supongamos que la versión A fue parte de una confirmación de Git y la versión B fue parte de la siguiente confirmación. El conjunto de diferencias entre A y B se llama “diff” y los usuarios de Git contemplan mucho las diferencias. La inspección de diferencias es la forma en que usted se vuelve a explicar en qué se diferencia la versión A de la versión B. La inspección de diferencias no se limita a confirmaciones adyacentes. Puede inspeccionar las diferencias entre dos confirmaciones cualesquiera.</p>
+<p>De hecho, la noción de Git de cualquier versión específica de <code>iris.R</code> es una acumulación de diferencias. Si retrocede lo suficiente, encontrará la confirmación donde se creó el archivo en primer lugar. Git almacena cada versión posterior como esa versión inicial, más todas las diferencias intermedias en el historial que afectan el archivo. Dejaremos de lado estos detalles internos ahora, pero comprender la importancia de estos deltas hará que las operaciones de Git sean menos desconcertantes a largo plazo.</p>
+<p>Entonces, al observar las diferencias, es fácil ver en qué se diferencian dos instantáneas, pero ¿qué pasa con el por qué?</p>
+<p>Cada vez que realiza una confirmación, también debe escribir un <strong>mensaje de confirmación</strong> breve. Idealmente, esto transmite la motivación para el cambio. Recuerde, la diferencia mostrará el contenido. Cuando vuelves a visitar un proyecto después de un descanso o necesitas digerir los cambios recientes realizados por un colega, mirar el <strong>historial</strong>, leer los mensajes de confirmación y hojear las diferencias, es una forma extremadamente eficiente de ponerte al día. <a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> muestra los mensajes asociados con las últimas tres confirmaciones.</p>
+<p>Cada confirmación necesita algún tipo de apodo para que puedas identificarla. Git hace esto automáticamente, asignando a cada confirmación lo que se llama un SHA, una cadena aparentemente aleatoria de 40 letras y números (de hecho, no es aleatoria, sino que es un hash de suma de verificación SHA-1 de la confirmación). Aunque estará expuesto a estos, no es necesario que los maneje directamente con mucha frecuencia y, cuando lo hace, normalmente los primeros 7 caracteres son suficientes. Los mensajes de confirmación en <a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> tienen el prefijo SHA truncado. También puedes designar ciertas instantáneas como especiales con una <strong>etiqueta</strong>, que es el nombre que elijas. En un proyecto de software, es típico etiquetar una versión con su versión, por ejemplo, “v1.0.3”. Para un manuscrito o proyecto analítico, puede etiquetar la versión enviada a una revista o transmitida a colaboradores externos. <a href="#fig-commit-diff-sha-tag" class="quarto-xref">Figure&nbsp;<span>20.1</span></a> muestra una etiqueta, “draft-01”, asociada con la última confirmación.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -1148,13 +1148,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./git-intro.html" class="pagination-link" aria-label="Some Git basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Some Git basics</span>
+      <a href="./git-intro.html" class="pagination-link" aria-label="Algunos conceptos básicos de Git">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Algunos conceptos básicos de Git</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./git-commands.html" class="pagination-link" aria-label="Git commands">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./git-commands.html" class="pagination-link" aria-label="Comandos de git">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

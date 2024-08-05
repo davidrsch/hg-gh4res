@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
 
-<title>21&nbsp; Git commands – Git y GitHub con R</title>
+<title>21&nbsp; Comandos de git – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-commands.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-commands.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -312,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Some Git basics</span></a>
+ <span class="menu-text">Algunos conceptos básicos de Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -324,25 +324,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-commands.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-branches.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-remotes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Refs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Referencias</span></span></a>
   </div>
 </li>
       </ul>
@@ -557,9 +557,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-commands.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-commands.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-git-commands" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></span></h1>
+<h1 class="title"><span id="sec-git-commands" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></span></h1>
 </div>
 
 
@@ -576,44 +576,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A collection of some of the Git commands that have been largely going on under the hood. We’ve emphasized early workflows that are possible in RStudio. But all of this and much more can be done from the command line. This list is here mostly so we can consult it during live workshops if needed.</p>
-<p><em>Unless you use the <a href="https://developer.github.com/v3/">GitHub API</a>, most of the GitHub bits really have to be done from the browser.</em></p>
-<p>New local git repo from a repo on GitHub:</p>
+<p>Una colección de algunos de los comandos de Git que se han estado ejecutando en gran medida bajo el capó. Hemos enfatizado los primeros flujos de trabajo que son posibles en RStudio. Pero todo esto y mucho más se puede hacer desde la línea de comandos. Esta lista está aquí principalmente para que podamos consultarla durante los talleres en vivo si es necesario.</p>
+<p><em>A menos que utilice la <a href="https://developer.github.com/v3/">API de GitHub</a>, la mayoría de los bits de GitHub realmente deben realizarse desde el navegador.</em></p>
+<p>Nuevo repositorio de git local desde un repositorio en GitHub:</p>
 <pre class="console"><code>git clone https://github.com/jennybc/happy-git-with-r.git</code></pre>
-<p>Check the remote was cloned successfully:</p>
+<p>Verifique que el control remoto se haya clonado exitosamente:</p>
 <pre class="console"><code>git remote --verbose</code></pre>
-<p>Stage local changes, commit:</p>
+<p>Seleccionar cambios locales, confirmar:</p>
 <pre class="console"><code>git add foo.txt
-git commit --message "A commit message"</code></pre>
-<p>Check on the state of the Git world:</p>
+git commit --message "Un mensaje de confirmación"</code></pre>
+<p>Compruebe el estado del mundo Git:</p>
 <pre class="console"><code>git status
 git log
 git log --oneline</code></pre>
-<p>Compare versions:</p>
+<p>Comparar versiones:</p>
 <pre class="console"><code>git diff</code></pre>
-<p>Add a remote to existing local repo:</p>
+<p>Agregue un control remoto al repositorio local existente:</p>
 <pre class="console"><code>git remote add origin https://github.com/jennybc/happy-git-with-r
 git remote --verbose
 git remote show origin</code></pre>
-<p>Push local <code>main</code> to GitHub <code>main</code> and have local <code>main</code> track <code>main</code> on GitHub:</p>
+<p>Envíe el <code>main</code> local a GitHub <code>main</code> y haga que el <code>main</code> local rastree <code>main</code> en GitHub:</p>
 <pre class="console"><code>git push --set-upstream origin main
-# shorter form
+# forma más corta
 git push -u origin main
-# you only need to set upstream tracking once!</code></pre>
-<p>Regular push:</p>
+# ¡solo necesitas configurar el seguimiento ascendente una vez!</code></pre>
+<p>Envío regular:</p>
 <pre class="console"><code>git push 
-# the above usually implies (and certainly does in our tutorial)
+# lo anterior generalmente implica (y ciertamente lo hace en nuestro tutorial)
 git push origin main
 # git push [remote-name] [branch-name]</code></pre>
-<p>Pull commits from GitHub:</p>
+<p>Importar confirmaciones desde GitHub:</p>
 <pre class="console"><code>git pull</code></pre>
-<p>Pull commits and don’t let it put you in a merge conflict pickle:</p>
+<p>Importar confirmaciones y no evitar que esto le ponga en un aprieto de conflicto de fusión:</p>
 <pre class="console"><code>git pull --ff-only</code></pre>
-<p>Fetch commits</p>
+<p>Obtener confirmaciones</p>
 <pre class="console"><code>git fetch</code></pre>
-<p>Switch to a branch</p>
+<p>Cambiar a una rama</p>
 <pre class="console"><code>git checkout [branch-name]</code></pre>
-<p>Checking remote and branch tracking</p>
+<p>Comprobación del seguimiento remoto y de ramas</p>
 <pre class="console"><code>git remote -v
 git remote show origin
 git branch -vv</code></pre>
@@ -1117,8 +1117,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./git-branches.html" class="pagination-link" aria-label="Branches">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./git-branches.html" class="pagination-link" aria-label="Ramas">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

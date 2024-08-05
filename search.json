@@ -1239,12 +1239,12 @@
   {
     "objectID": "git-intro.html",
     "href": "git-intro.html",
-    "title": "Some Git basics",
+    "title": "Algunos conceptos básicos de Git",
     "section": "",
-    "text": "We’ve told you shockingly little about Git so far! This is by design.\nWe find that actual usage, in the course of your work, is the most effective way to build up a useful mental model for Git. In live workshops, we strive to introduce the most important basic ideas in the context of our guided activities. Self-learners can achieve the same by working through the “batteries included” guides earlier in the previous sections.\nHowever, building on this early success, now is the perfect time to explicitly define some Git vocabulary. We also want to help you link Git concepts to data science tasks and projects.\nThis part collects anything we’ve written about core Git concepts. It is a work in progress and is conceived as a complement to the many excellent external resources for Git, which we have no desire to re-invent.",
+    "text": "¡Hasta ahora te hemos contado sorprendentemente poco sobre Git! Esto es por diseño.\nDescubrimos que el uso real, en el curso de su trabajo, es la forma más efectiva de construir un modelo mental útil para Git. En los talleres en vivo, nos esforzamos por presentar las ideas básicas más importantes en el contexto de nuestras actividades guiadas. Los autodidactas pueden lograr lo mismo si siguen las guías sobre “pilas incluidas” que aparecen anteriormente en las secciones anteriores.\nSin embargo, aprovechando este éxito inicial, ahora es el momento perfecto para definir explícitamente algo de vocabulario de Git. También queremos ayudarlo a vincular los conceptos de Git con tareas y proyectos de ciencia de datos.\nEsta parte recopila todo lo que hemos escrito sobre los conceptos básicos de Git. Es un trabajo en progreso y está concebido como un complemento a los excelentes recursos externos para Git, que no tenemos ningún deseo de reinventar.",
     "crumbs": [
       "Fundamentos de Git",
-      "Some Git basics"
+      "Algunos conceptos básicos de Git"
     ]
   },
   {
@@ -1252,29 +1252,29 @@
     "href": "git-basics.html",
     "title": "20  Repo, commit, diff, tag",
     "section": "",
-    "text": "20.1 Repos or repositories\nGit is a version control system whose original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files – called a repository or repo – in a highly structured way. Historically, these files would have consisted of source code and the instructions for how to build an application from its source.\nGit has been re-purposed by the data science community (Ram 2013; Bartlett 2016; Perez-Riverol et al. 2016). We use it to manage the motley collection of files that make up typical data analytical projects, which consist of data, figures, reports, and, yes, some source code.\nFor new or existing projects, we recommend that you:\nThis setup happens once per project and can happen at project inception or at any later point. Chances are your existing projects each already live in a dedicated directory. Making such a directory an RStudio Project and Git repository boils down to allowing those applications to leave notes for themselves in hidden files or directories. The project is still a regular directory on your computer, that you can locate, name, move, and generally interact with as you wish. You don’t have to handle it with special gloves!\nThe daily workflow is probably not dramatically different from what you do currently. You work in the usual way, writing R scripts or authoring reports in LaTeX or R Markdown. But instead of only saving individual files, periodically you make a commit, which takes a snapshot of all the files in the entire project. If you have ever versioned a file by adding your initials or the date, you have effectively made a commit, albeit only for a single file. It is a version that is significant to you and that you might want to inspect or revert to later. Periodically, you push commits to GitHub. This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. By pushing to GitHub, you make your work and all your accumulated progress accessible to others.\nThis is a moderate change to your normal, daily workflow. It feels weird at first, but quickly becomes second nature. In STAT 545 students are required to submit all coursework via GitHub, starting in week one. Most have never seen Git before and do not identify as programmers. It is a major topic in class and office hours for the first two weeks. Then we practically never discuss it again.",
+    "text": "20.1 Repos o repositorios\nGit es un sistema de control de versiones cuyo propósito original era ayudar a grupos de desarrolladores a trabajar de forma colaborativa en grandes proyectos de software. Git gestiona la evolución de un conjunto de archivos, llamado repositorio o repo, de una manera altamente estructurada. Históricamente, estos archivos habrían consistido en código fuente e instrucciones sobre cómo crear una aplicación a partir de su fuente.\nGit ha sido reutilizado por la comunidad científica de datos (Ram 2013; Bartlett 2016; Perez-Riverol et al. 2016). Lo usamos para gestionar la variada colección de archivos que componen los proyectos típicos de análisis de datos, que consisten en datos, cifras, informes y, sí, algo de código fuente.\nPara proyectos nuevos o existentes, le recomendamos que:\nEsta configuración ocurre una vez por proyecto y puede ocurrir al inicio del proyecto o en cualquier momento posterior. Es probable que sus proyectos existentes ya se encuentren en un directorio dedicado. Hacer de dicho directorio un proyecto RStudio y un repositorio Git se reduce a permitir que esas aplicaciones dejen notas en archivos o directorios ocultos. El proyecto sigue siendo un directorio normal en su computadora, que puede ubicar, nombrar, mover y, en general, interactuar con él como desee. ¡No es necesario manipularlo con guantes especiales!\nEl flujo de trabajo diario probablemente no sea dramáticamente diferente de lo que hace actualmente. Trabaja de la forma habitual, escribiendo scripts R o creando informes en LaTeX o R Markdown. Pero en lugar de guardar únicamente archivos individuales, periódicamente realiza una confirmación, que toma una instantánea de todos los archivos de todo el proyecto. Si alguna vez ha versionado un archivo agregando sus iniciales o la fecha, efectivamente ha realizado una confirmación, aunque solo para una sola archivo. Es una versión que es importante para usted y que quizás desee inspeccionar o volver a consultar más adelante. Periódicamente, envías confirmaciones a GitHub. Esto es como compartir un documento con colegas en DropBox o enviarlo como archivo adjunto de correo electrónico. Al acceder a GitHub, haces que tu trabajo y todo tu progreso acumulado sean accesibles para otros.\nEste es un cambio moderado en su flujo de trabajo diario normal. Al principio se siente extraño, pero rápidamente se convierte en algo natural. En STAT 545, los estudiantes deben enviar todos los trabajos del curso a través de GitHub, a partir de la primera semana. La mayoría nunca ha visto Git antes y no se identifican como programadores. Es un tema importante en las horas de clase y de oficina durante las dos primeras semanas. Entonces prácticamente nunca volvemos a hablar de ello.",
     "crumbs": [
       "Fundamentos de Git",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Repo, commit, diff, tag</span>"
     ]
   },
   {
-    "objectID": "git-basics.html#repos-or-repositories",
-    "href": "git-basics.html#repos-or-repositories",
+    "objectID": "git-basics.html#repos-o-repositorios",
+    "href": "git-basics.html#repos-o-repositorios",
     "title": "20  Repo, commit, diff, tag",
     "section": "",
-    "text": "Dedicate a local directory or folder to it.\nMake it an RStudio Project. Optional but recommended; obviously only applies to projects involving R and users of RStudio.\nMake it a Git repository.",
+    "text": "Dedicarle un directorio o carpeta local.\nConviértalo en un proyecto RStudio. Opcional pero recomendado; obviamente solo se aplica a proyectos que involucran R y usuarios de RStudio.\nConviértelo en un repositorio Git.",
     "crumbs": [
       "Fundamentos de Git",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Repo, commit, diff, tag</span>"
     ]
   },
   {
-    "objectID": "git-basics.html#commits-diffs-and-tags",
-    "href": "git-basics.html#commits-diffs-and-tags",
+    "objectID": "git-basics.html#commits-diffs-y-tags",
+    "href": "git-basics.html#commits-diffs-y-tags",
     "title": "20  Repo, commit, diff, tag",
-    "section": "20.2 Commits, diffs, and tags",
-    "text": "20.2 Commits, diffs, and tags\nWe now connect the fundamental concepts of Git to the data science workflow:\n\nrepository\ncommit\ndiff\n\nRecall that a repository or repo is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo, at a specific moment. Under the hood, that is not exactly how Git implements things. Although mental models don’t have to be accurate in order to be useful, in this case it helps to align the two.\n\n\n\n\n\n\nFigure 20.1: Partial commit history for our iris example, highlighting diffs, commit messages, SHAs, and tags\n\n\n\nFigure 20.1 is a look at a fictional analysis of the iris data, focusing on the evolution of a script, iris.R. Consider version A of this file and a modified version, version B. Assume that version A was part of one Git commit and version B was part of the next commit. The set of differences between A and B is called a “diff” and Git users contemplate diffs a lot. Diff inspection is how you re-explain to yourself how version A differs from version B. Diff inspection is not limited to adjacent commits. You can inspect the diffs between any two commits.\nIn fact, Git’s notion of any specific version of iris.R is as an accumulation of diffs. If you go back far enough, you find the commit where the file was created in the first place. Every later version is stored by Git as that initial version, plus all the intervening diffs in the history that affect the file. We’ll set these internal details aside now, but understanding the importance of these deltas will make Git’s operations less baffling in the long run.\nSo, by looking at diffs, it’s easy to see how two snapshots differ, but what about the why?\nEvery time you make a commit you must also write a short commit message. Ideally, this conveys the motivation for the change. Remember, the diff will show the content. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the history, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed. Figure 20.1 shows the messages associated with the last three commits.\nEvery commit needs some sort of nickname, so you can identify it. Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers (it is not, in fact, random but is a SHA-1 checksum hash of the commit). Though you will be exposed to these, you don’t have to handle them directly very often and, when you do, usually the first 7 characters suffice. The commit messages in Figure 20.1 are prefixed by such truncated SHAs. You can also designate certain snapshots as special with a tag, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., “v1.0.3”. For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators. Figure 20.1 shows a tag, “draft-01”, associated with the last commit.\n\n\n\n\nBartlett, Alice. 2016. “Git for Humans.” Financial Times, London; Talk at UX Brighton. https://speakerdeck.com/alicebartlett/git-for-humans.\n\n\nPerez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016. “Ten Simple Rules for Taking Advantage of Git and GitHub.” PLOS Computational Biology 12 (7): 1–11. https://doi.org/10.1371/journal.pcbi.1004947.\n\n\nRam, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” Source Code for Biology and Medicine 8 (1): 7. https://doi.org/10.1186/1751-0473-8-7.",
+    "section": "20.2 Commits, diffs, y tags",
+    "text": "20.2 Commits, diffs, y tags\nAhora conectamos los conceptos fundamentales de Git con el flujo de trabajo de la ciencia de datos:\n\nrepository\ncommit\ndiff\n\nRecuerde que un repo o repositorio es solo un directorio de archivos que Git administra de manera integral. Una confirmación(commit) funciona como una instantánea de todos los archivos del repositorio, en un momento específico. En el fondo, no es así exactamente como Git implementa las cosas. Aunque los modelos mentales no tienen que ser precisos para ser útiles, en este caso ayuda alinear ambos.\n\n\n\n\n\n\nFigure 20.1: Historial de confirmaciones parciales para nuestro ejemplo de iris, destacando diferencias, mensajes de confirmación, SHA y etiquetas\n\n\n\nFigure 20.1 es una mirada a un análisis ficticio de los datos del iris, centrándose en la evolución de un guión, iris.R. Considere la versión A de este archivo y una versión modificada, la versión B. Supongamos que la versión A fue parte de una confirmación de Git y la versión B fue parte de la siguiente confirmación. El conjunto de diferencias entre A y B se llama “diff” y los usuarios de Git contemplan mucho las diferencias. La inspección de diferencias es la forma en que usted se vuelve a explicar en qué se diferencia la versión A de la versión B. La inspección de diferencias no se limita a confirmaciones adyacentes. Puede inspeccionar las diferencias entre dos confirmaciones cualesquiera.\nDe hecho, la noción de Git de cualquier versión específica de iris.R es una acumulación de diferencias. Si retrocede lo suficiente, encontrará la confirmación donde se creó el archivo en primer lugar. Git almacena cada versión posterior como esa versión inicial, más todas las diferencias intermedias en el historial que afectan el archivo. Dejaremos de lado estos detalles internos ahora, pero comprender la importancia de estos deltas hará que las operaciones de Git sean menos desconcertantes a largo plazo.\nEntonces, al observar las diferencias, es fácil ver en qué se diferencian dos instantáneas, pero ¿qué pasa con el por qué?\nCada vez que realiza una confirmación, también debe escribir un mensaje de confirmación breve. Idealmente, esto transmite la motivación para el cambio. Recuerde, la diferencia mostrará el contenido. Cuando vuelves a visitar un proyecto después de un descanso o necesitas digerir los cambios recientes realizados por un colega, mirar el historial, leer los mensajes de confirmación y hojear las diferencias, es una forma extremadamente eficiente de ponerte al día. Figure 20.1 muestra los mensajes asociados con las últimas tres confirmaciones.\nCada confirmación necesita algún tipo de apodo para que puedas identificarla. Git hace esto automáticamente, asignando a cada confirmación lo que se llama un SHA, una cadena aparentemente aleatoria de 40 letras y números (de hecho, no es aleatoria, sino que es un hash de suma de verificación SHA-1 de la confirmación). Aunque estará expuesto a estos, no es necesario que los maneje directamente con mucha frecuencia y, cuando lo hace, normalmente los primeros 7 caracteres son suficientes. Los mensajes de confirmación en Figure 20.1 tienen el prefijo SHA truncado. También puedes designar ciertas instantáneas como especiales con una etiqueta, que es el nombre que elijas. En un proyecto de software, es típico etiquetar una versión con su versión, por ejemplo, “v1.0.3”. Para un manuscrito o proyecto analítico, puede etiquetar la versión enviada a una revista o transmitida a colaboradores externos. Figure 20.1 muestra una etiqueta, “draft-01”, asociada con la última confirmación.\n\n\n\n\nBartlett, Alice. 2016. “Git for Humans.” Financial Times, London; Talk at UX Brighton. https://speakerdeck.com/alicebartlett/git-for-humans.\n\n\nPerez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016. “Ten Simple Rules for Taking Advantage of Git and GitHub.” PLOS Computational Biology 12 (7): 1–11. https://doi.org/10.1371/journal.pcbi.1004947.\n\n\nRam, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” Source Code for Biology and Medicine 8 (1): 7. https://doi.org/10.1186/1751-0473-8-7.",
     "crumbs": [
       "Fundamentos de Git",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Repo, commit, diff, tag</span>"
@@ -1283,177 +1283,177 @@
   {
     "objectID": "git-commands.html",
     "href": "git-commands.html",
-    "title": "21  Git commands",
+    "title": "21  Comandos de git",
     "section": "",
-    "text": "A collection of some of the Git commands that have been largely going on under the hood. We’ve emphasized early workflows that are possible in RStudio. But all of this and much more can be done from the command line. This list is here mostly so we can consult it during live workshops if needed.\nUnless you use the GitHub API, most of the GitHub bits really have to be done from the browser.\nNew local git repo from a repo on GitHub:\ngit clone https://github.com/jennybc/happy-git-with-r.git\nCheck the remote was cloned successfully:\ngit remote --verbose\nStage local changes, commit:\ngit add foo.txt\ngit commit --message \"A commit message\"\nCheck on the state of the Git world:\ngit status\ngit log\ngit log --oneline\nCompare versions:\ngit diff\nAdd a remote to existing local repo:\ngit remote add origin https://github.com/jennybc/happy-git-with-r\ngit remote --verbose\ngit remote show origin\nPush local main to GitHub main and have local main track main on GitHub:\ngit push --set-upstream origin main\n# shorter form\ngit push -u origin main\n# you only need to set upstream tracking once!\nRegular push:\ngit push \n# the above usually implies (and certainly does in our tutorial)\ngit push origin main\n# git push [remote-name] [branch-name]\nPull commits from GitHub:\ngit pull\nPull commits and don’t let it put you in a merge conflict pickle:\ngit pull --ff-only\nFetch commits\ngit fetch\nSwitch to a branch\ngit checkout [branch-name]\nChecking remote and branch tracking\ngit remote -v\ngit remote show origin\ngit branch -vv",
+    "text": "Una colección de algunos de los comandos de Git que se han estado ejecutando en gran medida bajo el capó. Hemos enfatizado los primeros flujos de trabajo que son posibles en RStudio. Pero todo esto y mucho más se puede hacer desde la línea de comandos. Esta lista está aquí principalmente para que podamos consultarla durante los talleres en vivo si es necesario.\nA menos que utilice la API de GitHub, la mayoría de los bits de GitHub realmente deben realizarse desde el navegador.\nNuevo repositorio de git local desde un repositorio en GitHub:\ngit clone https://github.com/jennybc/happy-git-with-r.git\nVerifique que el control remoto se haya clonado exitosamente:\ngit remote --verbose\nSeleccionar cambios locales, confirmar:\ngit add foo.txt\ngit commit --message \"Un mensaje de confirmación\"\nCompruebe el estado del mundo Git:\ngit status\ngit log\ngit log --oneline\nComparar versiones:\ngit diff\nAgregue un control remoto al repositorio local existente:\ngit remote add origin https://github.com/jennybc/happy-git-with-r\ngit remote --verbose\ngit remote show origin\nEnvíe el main local a GitHub main y haga que el main local rastree main en GitHub:\ngit push --set-upstream origin main\n# forma más corta\ngit push -u origin main\n# ¡solo necesitas configurar el seguimiento ascendente una vez!\nEnvío regular:\ngit push \n# lo anterior generalmente implica (y ciertamente lo hace en nuestro tutorial)\ngit push origin main\n# git push [remote-name] [branch-name]\nImportar confirmaciones desde GitHub:\ngit pull\nImportar confirmaciones y no evitar que esto le ponga en un aprieto de conflicto de fusión:\ngit pull --ff-only\nObtener confirmaciones\ngit fetch\nCambiar a una rama\ngit checkout [branch-name]\nComprobación del seguimiento remoto y de ramas\ngit remote -v\ngit remote show origin\ngit branch -vv",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Git commands</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Comandos de git</span>"
     ]
   },
   {
     "objectID": "git-branches.html",
     "href": "git-branches.html",
-    "title": "22  Branches",
+    "title": "22  Ramas",
     "section": "",
-    "text": "22.1 Create a new branch\nYou can create a new branch with git branch, then checkout the branch with git checkout. To distinguish it from the main stream of development, presumably on main, we’ll call this a “feature branch”.\nYou can also use the shortcut git checkout -b issue-5 to create and checkout the branch all at once.\nOnce you have switched to a branch, you can commit to it as usual.",
+    "text": "22.1 Crear una nueva rama\nPuede crear una nueva rama con git branch y luego verificar la rama con git checkout. Para distinguirlo de la corriente principal de desarrollo, presumiblemente en “principal”, lo llamaremos “rama de características”.\nTambién puedes usar el atajo git checkout -b issues-5 para crear y verificar la rama de una vez.\nUna vez que haya cambiado a una rama, puede comprometerse con ella como de costumbre.",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Branches</span>"
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Ramas</span>"
     ]
   },
   {
-    "objectID": "git-branches.html#create-a-new-branch",
-    "href": "git-branches.html#create-a-new-branch",
-    "title": "22  Branches",
+    "objectID": "git-branches.html#crear-una-nueva-rama",
+    "href": "git-branches.html#crear-una-nueva-rama",
+    "title": "22  Ramas",
     "section": "",
     "text": "git branch issue-5\ngit checkout issue-5",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Branches</span>"
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Ramas</span>"
     ]
   },
   {
-    "objectID": "git-branches.html#switching-branches",
-    "href": "git-branches.html#switching-branches",
-    "title": "22  Branches",
-    "section": "22.2 Switching branches",
-    "text": "22.2 Switching branches\nYou use git checkout to switch between branches.\nBut what do you do if you are working on a branch and need to switch, but the work on the current branch is not complete? One option is the Git stash, but generally a better option is to safeguard the current state with a temporary commit. Here I use “WIP” as the commit message to indicate work in progress.\ngit commit --all -m \"WIP\"\ngit checkout main\nThen when you come back to the branch and continue your work, you need to undo the temporary commit by resetting your state. Specifically, we want a mixed reset. This is “working directory safe”, i.e. it does not affect the state of any files. But it does peel off the temporary WIP commit. Below, the reference HEAD^ says to roll the commit state back to the parent of the current commit (HEAD).\ngit checkout issue-5\ngit reset HEAD^\nIf this is difficult to remember, or to roll the commit state back to a different previous state, the reference can also be given as the SHA of a specific commit, which you can see via git log. This is where I think a graphical Git client can be invaluable, as you can generally right click on the target commit, then select the desired type of reset (e.g., soft, mixed, or hard). This is exactly the type of intermediate-to-advanced Git usage that often feels more approachable in a graphical client.",
+    "objectID": "git-branches.html#cambiar-de-rama",
+    "href": "git-branches.html#cambiar-de-rama",
+    "title": "22  Ramas",
+    "section": "22.2 Cambiar de rama",
+    "text": "22.2 Cambiar de rama\nUsas git checkout para cambiar entre ramas.\nPero, ¿qué haces si estás trabajando en una rama y necesitas cambiar? ¿Pero el trabajo en la rama actual no está completo? Una opción es Git stash, pero generalmente una mejor opción es salvaguardar el estado actual con una confirmación temporal. Aquí utilizo “WIP” como mensaje de confirmación para indicar el trabajo en progreso.\ngit commit --all -m \"WIP\"\ngit checkout main\nLuego, cuando regreses a la rama y continúes con tu trabajo, Necesitas deshacer la confirmación temporal restableciendo tu estado. Específicamente, queremos un reinicio mixto. Este es un “directorio de trabajo seguro”, es decir, no afecta el estado de ningún archivo. Pero sí elimina el commit WIP temporal. A continuación, la referencia HEAD^ dice que se debe revertir el estado de confirmación al padre de la confirmación actual (HEAD).\ngit checkout issue-5\ngit reset HEAD^\nSi esto es difícil de recordar, o revertir el estado de confirmación a un estado anterior diferente, la referencia también se puede proporcionar como el SHA de una confirmación específica, que puede ver a través de git log. Aquí es donde creo que un cliente Git gráfico puede ser invaluable, ya que generalmente puedes hacer clic derecho en la confirmación de destino y luego seleccionar el tipo de reinicio deseado (por ejemplo, suave, mixto o duro). Este es exactamente el tipo de uso de Git intermedio a avanzado que a menudo parece más accesible en un cliente gráfico.",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Branches</span>"
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Ramas</span>"
     ]
   },
   {
-    "objectID": "git-branches.html#merging-a-branch",
-    "href": "git-branches.html#merging-a-branch",
-    "title": "22  Branches",
-    "section": "22.3 Merging a branch",
-    "text": "22.3 Merging a branch\nOnce you have done your work and committed it to the feature branch, you can switch back to main and merge the feature branch.\ngit checkout main\ngit merge issue-5",
+    "objectID": "git-branches.html#fusionar-una-rama",
+    "href": "git-branches.html#fusionar-una-rama",
+    "title": "22  Ramas",
+    "section": "22.3 Fusionar una rama",
+    "text": "22.3 Fusionar una rama\nUna vez que haya hecho su trabajo y lo haya confirmado en la rama de funciones, puede volver a “principal” y fusionar la rama de funciones.\ngit checkout main\ngit merge issue-5",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Branches</span>"
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Ramas</span>"
     ]
   },
   {
-    "objectID": "git-branches.html#dealing-with-conflicts",
-    "href": "git-branches.html#dealing-with-conflicts",
-    "title": "22  Branches",
-    "section": "22.4 Dealing with conflicts",
-    "text": "22.4 Dealing with conflicts\nMost of the time, the merge will go smoothly. However if both the branches you are merging changed the same part of the same file you will get a merge conflict.\ngit merge issue-5\n# Auto-merging index.html\n# CONFLICT (content): Merge conflict in index.html\n# Automatic merge failed; fix conflicts and then commit the result.\nThe first thing to do is NOT PANIC. Merge conflicts are not the end of the world and most are relatively small and straightforward to resolve.\nThe first step to solving a merge conflict is determining which files are in conflict, which you can do with git status:\ngit status\n# On branch main\n# You have unmerged paths.\n#   (fix conflicts and run \"git commit\")\n# \n# Unmerged paths:\n#   (use \"git add &lt;file&gt;...\" to mark resolution)\n# \n#     both modified:      index.html\n# \n# no changes added to commit (use \"git add\" and/or \"git commit -a\")\nSo this shows only index.html is unmerged and needs to be resolved. We can then open the file to see what lines are in conflict.\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html\n&lt;div id=\"footer\"&gt;contact : email.support@github.com&lt;/div&gt;\n=======\n&lt;div id=\"footer\"&gt;\n please contact us at support@github.com\n&lt;/div&gt;\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; issue-5:index.html\nIn this conflict, the lines between &lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html and ====== are the content from the branch you are currently on. The lines between ======= and &gt;&gt;&gt;&gt;&gt;&gt;&gt; issue-5:index.html are from the feature branch we are merging.\nTo resolve the conflict, edit this section until it reflects the state you want in the merged result. Pick one version or the other or create a hybrid. Also remove the conflict markers &lt;&lt;&lt;&lt;&lt;&lt;, ====== and &gt;&gt;&gt;&gt;&gt;&gt;.\n&lt;div id=\"footer\"&gt;\nplease contact us at email.support@github.com\n&lt;/div&gt;\nNow run git add index.html and git commit to finalize the merge. CONFLICTS RESOLVED.\n\n22.4.1 Bailing out\nIf, during the merge, you get confused about the state of things or make a mistake, use git merge --abort to abort the merge and go back to the state prior to running git merge. Then you can try to complete the merge again.\nGit Basic Branching and Merging:\nhttps://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
+    "objectID": "git-branches.html#lidiar-con-los-conflictos",
+    "href": "git-branches.html#lidiar-con-los-conflictos",
+    "title": "22  Ramas",
+    "section": "22.4 Lidiar con los conflictos",
+    "text": "22.4 Lidiar con los conflictos\nLa mayoría de las veces, la fusión se realizará sin problemas. Sin embargo, si ambas ramas que está fusionando cambiaron la misma parte del mismo archivo, obtendrá un conflicto de fusión.\ngit merge issue-5\n# Auto-merging index.html\n# CONFLICT (content): Merge conflict in index.html\n# Automatic merge failed; fix conflicts and then commit the result.\nLo primero que debe hacer es NO ENTRAR EN PÁNICO. Los conflictos de fusión no son el fin del mundo y la mayoría son relativamente pequeños y fáciles de resolver.\nEl primer paso para resolver un conflicto de fusión es determinar qué archivos están en conflicto, que puedes hacer con git status:\ngit status\n# On branch main\n# You have unmerged paths.\n#   (fix conflicts and run \"git commit\")\n# \n# Unmerged paths:\n#   (use \"git add &lt;file&gt;...\" to mark resolution)\n# \n#     both modified:      index.html\n# \n# no changes added to commit (use \"git add\" and/or \"git commit -a\")\nEntonces esto muestra que solo index.html no está fusionado y debe resolverse. Luego podemos abrir el archivo para ver qué líneas están en conflicto.\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html\n&lt;div id=\"footer\"&gt;contact : email.support@github.com&lt;/div&gt;\n=======\n&lt;div id=\"footer\"&gt;\n please contact us at support@github.com\n&lt;/div&gt;\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; issue-5:index.html\nEn este conflicto, las líneas entre &lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html y ====== son el contenido de la rama en la que se encuentra actualmente. Las líneas entre ======= y &gt;&gt;&gt;&gt;&gt;&gt;&gt; issues-5:index.html son de la rama de funciones que estamos fusionando.\nPara resolver el conflicto, edite esta sección hasta que refleje el estado que desea en el resultado combinado. Elige una versión u otra o crea un híbrido. También elimine los marcadores de conflicto &lt;&lt;&lt;&lt;&lt;&lt;, ====== y &gt;&gt;&gt;&gt;&gt;&gt;.\n&lt;div id=\"footer\"&gt;\nplease contact us at email.support@github.com\n&lt;/div&gt;\nAhora ejecute git add index.html y git commit para finalizar la fusión. CONFLICTOS RESUELTOS.\n\n22.4.1 Rescate\nSi, durante la fusión, se confunde sobre el estado de las cosas o hace una error, use git merge --abort para cancelar la fusión y volver al estado antes de ejecutar git merge. Luego puedes intentar completar la fusión nuevamente.\nBifurcación y fusión de Git Basic:\nhttps://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Branches</span>"
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Ramas</span>"
     ]
   },
   {
     "objectID": "git-remotes.html",
     "href": "git-remotes.html",
-    "title": "23  Remotes",
+    "title": "23  Remotos",
     "section": "",
-    "text": "23.1 Listing what remotes exist\ngit remote lists the names of available remotes, but usually it is more useful to see what URLs each note corresponds to (with -v).\ngit remote -v\n\norigin  https://github.com/davidrsch/hg-gh4res (fetch)\norigin  https://github.com/davidrsch/hg-gh4res (push)",
+    "text": "23.1 Listar qué controles remotos existen\ngit remote enumera los nombres de los controles remotos disponibles, pero generalmente es más útil ver a qué URL corresponde cada nota (con -v).\ngit remote -v\n\norigin  https://github.com/davidrsch/hg-gh4res (fetch)\norigin  https://github.com/davidrsch/hg-gh4res (push)",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotes</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotos</span>"
     ]
   },
   {
-    "objectID": "git-remotes.html#adding-a-new-remote",
-    "href": "git-remotes.html#adding-a-new-remote",
-    "title": "23  Remotes",
-    "section": "\n23.2 Adding a new remote",
-    "text": "23.2 Adding a new remote\ngit clone automatically adds a new remote, so often you do not need to do this manually initially. However, after the initial clone, it is often useful to add additional remotes.\nUse git remote add to add a new remote:\ngit remote add happygit https://github.com/jennybc/happy-git-with-r.git\nNote: when you add a remote you give it a nickname (here happygit), which you can use in git commands in place of the entire URL.\ngit fetch happygit\nSidebar on nicknames: there is a strong convention to use origin as the nickname of your main remote. At this point, it is common for the main remote of a repo to be hosted on GitHub (or GitLab or Bitbucket). It is tempting to use a more descriptive nickname (such as github), but you might find that following convention is worth it. It makes your setup easier for others to understand and for you to transfer information that you read in documentation, on Stack Overflow, or in blogs.\nA common reason to add a second remote is when you have done a “fork and clone” of a repo and your personal copy (your fork) is set up as the origin remote. Eventually you will want to pull changes from the original repository. It is common to use upstream as the nickname for this remote.\ngit remote add upstream https://github.com/TRUE_OWNER/REPO.git",
+    "objectID": "git-remotes.html#agregar-un-nuevo-control-remoto",
+    "href": "git-remotes.html#agregar-un-nuevo-control-remoto",
+    "title": "23  Remotos",
+    "section": "\n23.2 Agregar un nuevo control remoto",
+    "text": "23.2 Agregar un nuevo control remoto\ngit clone agrega automáticamente un nuevo control remoto, por lo que a menudo no es necesario hacerlo manualmente inicialmente. Sin embargo, después de la clonación inicial, suele ser útil agregar controles remotos adicionales.\nUtilice git remote add para agregar un nuevo control remoto:\ngit remote add happygit https://github.com/jennybc/happy-git-with-r.git\nNota: cuando agregas un control remoto, le asignas un apodo (aquí happygit), que puedes usar en los comandos de git en lugar de la URL completa.\ngit fetch happygit\nBarra lateral sobre apodos: existe una fuerte convención para usar origin como apodo de su control remoto principal. En este punto, es común que el control remoto principal de un repositorio esté alojado en GitHub (o GitLab o Bitbucket). Es tentador utilizar un apodo más descriptivo (como github), pero es posible que valga la pena seguir la convención. Hace que su configuración sea más fácil de entender para otros y para que usted transfiera información que lee en la documentación, en Stack Overflow o en blogs.\nUna razón común para agregar un segundo control remoto es cuando ha realizado una “bifurcación y clonación” de un repositorio y su copia personal (su bifurcación) está configurada como el control remoto origin. Con el tiempo, querrás extraer los cambios del repositorio original. Es común utilizar upstream como apodo para este control remoto.\ngit remote add upstream https://github.com/TRUE_OWNER/REPO.git",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotes</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotos</span>"
     ]
   },
   {
-    "objectID": "git-remotes.html#fetching-data-from-remotes",
-    "href": "git-remotes.html#fetching-data-from-remotes",
-    "title": "23  Remotes",
-    "section": "\n23.3 Fetching data from remotes",
-    "text": "23.3 Fetching data from remotes\nTo get new data from a remote use git fetch &lt;remote_name&gt;. This retrieves the data locally, but importantly it does not change the state of your local files in any way. To incorporate the data into your repository, you need to merge or rebase your project with the remote project.\n# Fetch the data\ngit fetch happygit\n\n# Now merge it with our local main\ngit merge happygit/main main\n\n# git pull is a shortcut which does the above in one command\ngit pull happygit main\nFor more detail on git pull workflows, see Chapter 29.",
+    "objectID": "git-remotes.html#obteniendo-datos-de-controles-remotos",
+    "href": "git-remotes.html#obteniendo-datos-de-controles-remotos",
+    "title": "23  Remotos",
+    "section": "\n23.3 Obteniendo datos de controles remotos",
+    "text": "23.3 Obteniendo datos de controles remotos\nPara obtener nuevos datos desde un uso remoto git fetch &lt;remote_name&gt;. Esto recupera los datos localmente, pero lo más importante es que no cambia el estado de sus archivos locales de ninguna manera. Para incorporar los datos a su repositorio, necesita fusionar o cambiar la base de su proyecto con el proyecto remoto.\n# Obtener los datos\ngit fetch happygit\n\n# Fusionar con main local\ngit merge happygit/main main\n\n# git pull es un atajo que hace lo anterior en un solo comando\ngit pull happygit main\nPara obtener más detalles sobre los flujos de trabajo git pull, consulte Chapter 29.",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotes</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotos</span>"
     ]
   },
   {
-    "objectID": "git-remotes.html#pushing-to-remotes",
-    "href": "git-remotes.html#pushing-to-remotes",
-    "title": "23  Remotes",
-    "section": "\n23.4 Pushing to remotes",
-    "text": "23.4 Pushing to remotes\nUse git push &lt;remote&gt; &lt;branch&gt; to push your local changes to the &lt;branch&gt; branch on the &lt;remote&gt; remote.\n# push my local changes to the origin remote's main branch\ngit push origin main\n\n# push my local changes to the happygit remote's test branch\ngit push happygit test",
+    "objectID": "git-remotes.html#enviar-a-controles-remotos",
+    "href": "git-remotes.html#enviar-a-controles-remotos",
+    "title": "23  Remotos",
+    "section": "\n23.4 Enviar a controles remotos",
+    "text": "23.4 Enviar a controles remotos\nUtilice git push &lt;remote&gt; &lt;branch&gt; para enviar sus cambios locales a la rama &lt;branch&gt; en el control remoto &lt;remote&gt;.\n# enviar mis cambios locales a la rama principal del control remoto de origen\ngit push origin main\n\n# enviar mis cambios locales a la rama de prueba del control remoto happygit\ngit push happygit test",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotes</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotos</span>"
     ]
   },
   {
-    "objectID": "git-remotes.html#renaming-and-changing-remotes",
-    "href": "git-remotes.html#renaming-and-changing-remotes",
-    "title": "23  Remotes",
-    "section": "\n23.5 Renaming and changing remotes",
-    "text": "23.5 Renaming and changing remotes\ngit remote rename can be used to rename a remote:\ngit remote rename happygit hg\ngit remote set-url can be used to change the URL for a remote. This is sometimes useful if you initially set up a remote using HTTPS, but now want to use SSH instead (or vice versa).\ngit remote set-url happygit git@github.com:jennybc/happy-git-with-r.git\nOne fairly common workflow is you initially cloned a repository on GitHub locally (without forking it), but now want to create your own fork and push changes to it. As described earlier, it is common to call the source repository upstream and to call your fork origin. So, in this case, you need to first rename the existing remote (from origin to upstream). Then add your fork as a new remote, with the name origin.\ngit remote rename origin upstream\ngit remote add origin git@github.com:jimhester/happy-git-with-r.git",
+    "objectID": "git-remotes.html#cambiar-el-nombre-y-cambiar-los-controles-remotos",
+    "href": "git-remotes.html#cambiar-el-nombre-y-cambiar-los-controles-remotos",
+    "title": "23  Remotos",
+    "section": "\n23.5 Cambiar el nombre y cambiar los controles remotos",
+    "text": "23.5 Cambiar el nombre y cambiar los controles remotos\ngit remote rename se puede utilizar para cambiar el nombre de un control remoto:\ngit remote rename happygit hg\ngit remote set-url se puede utilizar para cambiar la URL de un control remoto. Esto a veces es útil si inicialmente configuró un control remoto usando HTTPS, pero ahora desea usar SSH en su lugar (o viceversa).\ngit remote set-url happygit git@github.com:jennybc/happy-git-with-r.git\nUn flujo de trabajo bastante común es que inicialmente clonaste un repositorio en GitHub localmente (sin bifurcarlo), pero ahora quieres crear tu propia bifurcación y enviarle cambios. Como se describió anteriormente, es común llamar al repositorio de origen upstream y llamar a su bifurcación origin. Entonces, en este caso, primero debe cambiar el nombre del control remoto existente (de origin a upstream). Luego agrega tu tenedor como un nuevo control remoto, con el nombre origin.\ngit remote rename origin upstream\ngit remote add origin git@github.com:jimhester/happy-git-with-r.git",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotes</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotos</span>"
     ]
   },
   {
-    "objectID": "git-remotes.html#upstream-tracking-branches",
-    "href": "git-remotes.html#upstream-tracking-branches",
-    "title": "23  Remotes",
-    "section": "\n23.6 Upstream tracking branches",
-    "text": "23.6 Upstream tracking branches\nIt is possible to set the branch on the remote each of your local remotes corresponds to. git clone sets this up automatically, so for your own main branch this is not something you will run into. However by default if you create a new branch and try to push to it you will see something like this:\ngit checkout -b mybranch\ngit push\n# fatal: The current branch foo has no upstream branch.\n# To push the current branch and set the remote as upstream, use\n#\n#     git push --set-upstream origin foo\nYou can do as the error message says and explicitly set the upstream branch with --set-upstream. However I would recommend instead changing the default behavior of push to automatically set the upstream branch to the branch with the same name on the remote.\nYou can do this by changing the git push.default option to current.\ngit config --global push.default current\nSee also Working with Remotes:\nhttps://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes",
+    "objectID": "git-remotes.html#upstream-seguimiento-de-ramas",
+    "href": "git-remotes.html#upstream-seguimiento-de-ramas",
+    "title": "23  Remotos",
+    "section": "\n23.6 Upstream seguimiento de ramas",
+    "text": "23.6 Upstream seguimiento de ramas\nEs posible configurar la rama en el control remoto al que corresponde cada uno de sus controles remotos locales. git clone configura esto automáticamente, por lo que para tu propia rama main esto no es algo con lo que te toparás. Sin embargo, de forma predeterminada, si crea una nueva rama e intenta acceder a ella, verá algo como esto:\ngit checkout -b mybranch\ngit push\n# fatal: The current branch foo has no upstream branch.\n# To push the current branch and set the remote as upstream, use\n#\n#     git push --set-upstream origin foo\nPuede hacer lo que dice el mensaje de error y configurar explícitamente la rama upstream con --set-upstream. Sin embargo, recomendaría cambiar el comportamiento predeterminado de push para configurar automáticamente la rama upstream en la rama con el mismo nombre en el control remoto.\nPuedes hacer esto cambiando la opción git push.default a current.\ngit config --global push.default current\nConsulte también Trabajar con controles remotos:\nhttps://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotes</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Remotos</span>"
     ]
   },
   {
     "objectID": "git-refs.html",
     "href": "git-refs.html",
-    "title": "24  Refs",
+    "title": "24  Referencias",
     "section": "",
-    "text": "24.1 Useful refs\nHere are some of the most useful refs:\nIf you’d like to make all of this more concrete, you can use git rev-parse in the shell to witness how refs resolve to concrete SHAs. Here’s the general pattern:\nHere are some examples executed in the Happy Git repo:\nNotice that HEAD and main resolve to the same SHA, since the main branch was checked out at the time. testing-something is the name of a branch that happened to be lying around.\nThese refs can be used in all sorts of Git operations, such as git diff, git reset, and git checkout:",
+    "text": "24.1 Referencias útiles\nEstas son algunas de las referencias más útiles:\nSi desea que todo esto sea más concreto, puede usar git rev-parse en el shell para observar cómo las referencias se resuelven en SHA concretos. Aquí está el patrón general:\nAquí hay algunos ejemplos ejecutados en el repositorio Happy Git:\nObserve que HEAD y main se resuelven en el mismo SHA, ya que la rama main estaba desprotegida en ese momento. testing-something es el nombre de una rama que estaba por ahí.\nEstas referencias se pueden usar en todo tipo de operaciones de Git, como git diff, git reset y git checkout:",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Refs</span>"
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Referencias</span>"
     ]
   },
   {
-    "objectID": "git-refs.html#useful-refs",
-    "href": "git-refs.html#useful-refs",
-    "title": "24  Refs",
+    "objectID": "git-refs.html#referencias-útiles",
+    "href": "git-refs.html#referencias-útiles",
+    "title": "24  Referencias",
     "section": "",
-    "text": "A branch name. Example: main, wild-experiment. When you refer to the main branch, that resolves to the SHA of the tip of the main branch. Think of a branch ref as a sliding ref that evolves as the branch does.\n\n\n\n\n\n\n\nHEAD. This (almost always) resolves to the tip of the branch that is currently checked out.1 You can think of HEAD as a ref that points to the tip of the current branch, which itself is a ref, that points to a specific SHA. There are two layers of indirection. This is also called a symbolic ref.\n\n\n\n\n\n\n\nA tag. Example: v1.4.2. Tags differ from branch refs and the HEAD ref in that they tend to be much more static. Tags aren’t sliding by nature, although it is possible to reposition a tag to point at a new SHA, if you make an explicit effort. The most common use of a tag is to provide a nice label for a specific SHA.\n\n\n\n\n\n\n\ngit rev-parse YOUR_REF_GOES_HERE\n\n~/rrr/happy-git-with-r % git rev-parse HEAD\n631fee855db49d87f6c2a2cab474e89c11322bf4\n\n~/rrr/happy-git-with-r % git rev-parse main\n631fee855db49d87f6c2a2cab474e89c11322bf4\n\n~/rrr/happy-git-with-r % git rev-parse testing-something                       \n1eeb91d177b7cb5f9a0b29ebee3e6c0c8ff98f88\n\n\ngit diff main testing-something\n\ngit reset testing-something -- README.md\n\ngit checkout -b my-new-branch main",
+    "text": "Un nombre de rama. Ejemplo: main, wild-experiment. Cuando te refieres a la rama main, eso se resuelve en el SHA de la punta de la rama main. Piense en una referencia de rama como una referencia deslizante que evoluciona a medida que lo hace la rama.\n\n\n\n\n\n\n\nHEAD. Esto (casi siempre) se resuelve en la punta de la rama que está actualmente desprotegida.1 Puedes pensar en HEAD como una referencia que apunta a la punta de la rama actual, que a su vez es una ref, que apunta a un SHA específico. Hay dos capas de dirección indirecta. Esto también se llama referencia simbólica.\n\n\n\n\n\n\n\nUna etiqueta. Ejemplo: v1.4.2. Las etiquetas se diferencian de las referencias de rama y de la referencia HEAD en que tienden a ser mucho más estáticas. Las etiquetas no se deslizan por naturaleza, aunque es posible reposicionar una etiqueta para que apunte a un nuevo SHA, si se hace un esfuerzo explícito. El uso más común de una etiqueta es proporcionar una etiqueta agradable para un SHA específico.\n\n\n\n\n\n\n\ngit rev-parse YOUR_REF_GOES_HERE\n\n~/rrr/happy-git-with-r % git rev-parse HEAD\n631fee855db49d87f6c2a2cab474e89c11322bf4\n\n~/rrr/happy-git-with-r % git rev-parse main\n631fee855db49d87f6c2a2cab474e89c11322bf4\n\n~/rrr/happy-git-with-r % git rev-parse testing-something                       \n1eeb91d177b7cb5f9a0b29ebee3e6c0c8ff98f88\n\n\ngit diff main testing-something\n\ngit reset testing-something -- README.md\n\ngit checkout -b my-new-branch main",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Refs</span>"
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Referencias</span>"
     ]
   },
   {
-    "objectID": "git-refs.html#relative-refs",
-    "href": "git-refs.html#relative-refs",
-    "title": "24  Refs",
-    "section": "24.2 Relative refs",
-    "text": "24.2 Relative refs\nThere are also modifiers that help you specify a commit relative to a ref, e.g. “the commit just before this one”.\nHEAD~1 refers to the commit just before HEAD. HEAD^ is another way to say exactly the same thing.\n\n\n\n\n\nHere are some examples executed in the Happy Git repo:\n~/rrr/happy-git-with-r % git rev-parse HEAD~1\n5dacec4950a3746310bb30704417a792302b044a\n\n~/rrr/happy-git-with-r % git rev-parse HEAD^\n5dacec4950a3746310bb30704417a792302b044a\nNotice that HEAD~1 and HEAD^ resolve to the same SHA.\nBoth of these patterns generalize. HEAD~3 and HEAD^^^ are valid and equivalent refs.\nI must admit that I am not a big fan of these relative ref shortcuts and especially not when reaching back more than one commit. I worry that I have some sort of off-by-one error in my understanding and I’ll end up targetting the wrong commit.\nTools like GitKraken and GitHub make it extremely easy to copy specific SHAs to your clipboard. So when I need a ref that’s not a simple branch name or tag, I almost always lean on user-friendly tools like GitKraken or GitHub to allow me to state my intent using the actual SHA of interest. I suspect that the relative ref shortcuts are most popular with folks who are exclusively using command line Git and are operating under different constraints. There’s actually a rich set of ways to specify a target commit that goes well beyond the ^ and ~ syntax shown here. You can learn more in the official Git documention about revision parameters.\nIn GitKraken, right or control click on the target commit to access a menu that includes “Copy commit sha”, among many other useful commands. If you’re using another Git client, there is probably a way to do this and it’s worth figuring that out.\n\n\n\n\n\nGitHub also makes it extremely easy to copy a SHA in many contexts. This screenshot shows just one example. Once you start looking for this feature, you’ll find it in many places on GitHub.",
+    "objectID": "git-refs.html#referencias-relativos",
+    "href": "git-refs.html#referencias-relativos",
+    "title": "24  Referencias",
+    "section": "24.2 Referencias relativos",
+    "text": "24.2 Referencias relativos\nTambién hay modificadores que le ayudan a especificar una confirmación relativa a una referencia, p. “la confirmación justo antes de este”.\nHEAD~1 se refiere a la confirmación justo antes de HEAD. HEAD^ es otra forma de decir exactamente lo mismo.\n\n\n\n\n\nAquí hay algunos ejemplos ejecutados en el repositorio Happy Git:\n~/rrr/happy-git-with-r % git rev-parse HEAD~1\n5dacec4950a3746310bb30704417a792302b044a\n\n~/rrr/happy-git-with-r % git rev-parse HEAD^\n5dacec4950a3746310bb30704417a792302b044a\nObserve que HEAD~1 y HEAD^ se resuelven en el mismo SHA.\nAmbos patrones se generalizan. HEAD~3 y HEAD^^^ son referencias válidas y equivalentes.\nDebo admitir que no soy un gran admirador de estos atajos de referencia relativa y especialmente cuando retrocedo más de una confirmación. Me preocupa tener algún tipo de error uno por uno según tengo entendido y terminaré apuntando a la confirmación incorrecta.\nHerramientas como GitKraken y GitHub hacen que sea extremadamente fácil copiar SHA específicos a su portapapeles. Entonces, cuando necesito una referencia que no sea un simple nombre de rama o etiqueta, casi siempre me apoyo en herramientas fáciles de usar como GitKraken o GitHub para permitirme expresar mi intención utilizando el SHA de interés real. Sospecho que los atajos de referencia relativos son más populares entre las personas que usan exclusivamente la línea de comandos Git y operan bajo diferentes restricciones. En realidad, existe un amplio conjunto de formas de especificar una confirmación de destino que va mucho más allá de la sintaxis ^ y ~ que se muestra aquí. Puede obtener más información en la documentación oficial de Git sobre parámetros de revisión.\nEn GitKraken, haga clic con el botón derecho o control en la confirmación de destino para acceder a un menú que incluye “Copiar confirmación sha”, entre muchos otros comandos útiles. Si está utilizando otro cliente Git, probablemente haya una manera de hacerlo y vale la pena descubrirla.\n\n\n\n\n\nGitHub también hace que sea extremadamente fácil copiar un SHA en muchos contextos. Esta captura de pantalla muestra solo un ejemplo. Una vez que empiece a buscar esta función, la encontrará en muchos lugares de GitHub.",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Refs</span>"
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Referencias</span>"
     ]
   },
   {
     "objectID": "git-refs.html#footnotes",
     "href": "git-refs.html#footnotes",
-    "title": "24  Refs",
+    "title": "24  Referencias",
     "section": "",
-    "text": "When does HEAD not resolve to the SHA at the tip of some branch? When you are a detached HEAD state. Detached HEAD! That sounds bad, but it’s not intrinsically good or bad. It IS bad, though, to be in a detached HEAD state if you didn’t mean to be and you don’t understand the deal. You get into a detached HEAD state when you directly checkout a specific commit, as opposed to checking out or switching to a branch. In experienced hands, this can be a legit thing to do. But in the meantime, I recommend that you always visit a specific state in the history by checking out a branch, even if that means you need to create a temporary branch like holder or time-travel. To get out of the detached HEAD state, checkout some existing branch, with git checkout main or similar. Otherwise, the StackOverflow thread How do I fix a Git detached head? addresses many vexing detached HEAD scenarios.↩︎",
+    "text": "¿Cuándo HEAD no se resuelve en el SHA en la punta de alguna rama? Cuando estás en un estado detached HEAD. ¡CABEZA separada! Eso suena mal, pero no es intrínsecamente bueno o malo. Sin embargo, ES malo estar en un estado de CABEZA separada si no era tu intención y no entiendes el trato. Entras en un estado CABEZA separada cuando verificas directamente una confirmación específica, en lugar de verificar o cambiar a una rama. En manos experimentadas, esto puede ser algo legítimo. Pero mientras tanto, te recomiendo que siempre visites un estado específico en el historial consultando una rama, incluso si eso significa que necesitas crear una rama temporal como holder o time-travel. Para salir del estado CABEZA separada, consulte alguna rama existente, con git checkout main o similar. De lo contrario, el hilo de StackOverflow ¿Cómo puedo arreglar un cabezal separado de Git? aborda muchos escenarios desconcertantes de CABEZA separada.↩︎",
     "crumbs": [
       "Fundamentos de Git",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Refs</span>"
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Referencias</span>"
     ]
   },
   {

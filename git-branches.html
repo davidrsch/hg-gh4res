@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
 
-<title>22&nbsp; Branches – Git y GitHub con R</title>
+<title>22&nbsp; Ramas – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-branches.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-branches.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -346,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Some Git basics</span></a>
+ <span class="menu-text">Algunos conceptos básicos de Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -358,25 +358,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-branches.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-remotes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Refs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Referencias</span></span></a>
   </div>
 </li>
       </ul>
@@ -590,12 +590,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#create-a-new-branch" id="toc-create-a-new-branch" class="nav-link active" data-scroll-target="#create-a-new-branch"><span class="header-section-number">22.1</span> Create a new branch</a></li>
-  <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">22.2</span> Switching branches</a></li>
-  <li><a href="#merging-a-branch" id="toc-merging-a-branch" class="nav-link" data-scroll-target="#merging-a-branch"><span class="header-section-number">22.3</span> Merging a branch</a></li>
-  <li><a href="#dealing-with-conflicts" id="toc-dealing-with-conflicts" class="nav-link" data-scroll-target="#dealing-with-conflicts"><span class="header-section-number">22.4</span> Dealing with conflicts</a>
+  <li><a href="#crear-una-nueva-rama" id="toc-crear-una-nueva-rama" class="nav-link active" data-scroll-target="#crear-una-nueva-rama"><span class="header-section-number">22.1</span> Crear una nueva rama</a></li>
+  <li><a href="#cambiar-de-rama" id="toc-cambiar-de-rama" class="nav-link" data-scroll-target="#cambiar-de-rama"><span class="header-section-number">22.2</span> Cambiar de rama</a></li>
+  <li><a href="#fusionar-una-rama" id="toc-fusionar-una-rama" class="nav-link" data-scroll-target="#fusionar-una-rama"><span class="header-section-number">22.3</span> Fusionar una rama</a></li>
+  <li><a href="#lidiar-con-los-conflictos" id="toc-lidiar-con-los-conflictos" class="nav-link" data-scroll-target="#lidiar-con-los-conflictos"><span class="header-section-number">22.4</span> Lidiar con los conflictos</a>
   <ul class="collapse">
-  <li><a href="#bailing-out" id="toc-bailing-out" class="nav-link" data-scroll-target="#bailing-out"><span class="header-section-number">22.4.1</span> Bailing out</a></li>
+  <li><a href="#rescate" id="toc-rescate" class="nav-link" data-scroll-target="#rescate"><span class="header-section-number">22.4.1</span> Rescate</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -603,9 +603,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-branches.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-branches.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-git-branches" class="quarto-section-identifier"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></span></h1>
+<h1 class="title"><span id="sec-git-branches" class="quarto-section-identifier"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></span></h1>
 </div>
 
 
@@ -622,42 +622,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Branching means that you take a detour from the main stream of development and do work without changing the main stream. It allows one or many people to work in parallel without overwriting each other’s work. It allows a someone working solo to work incrementally on an experimental idea, without jeopardizing the state of the main product.</p>
-<p>Branching in Git is very lightweight, which means creating a branch and switching between branches is nearly instantaneous. This means Git encourages workflows which create small branches for exploration or new features, often merging them back together quickly.</p>
-<section id="create-a-new-branch" class="level2" data-number="22.1">
-<h2 data-number="22.1" class="anchored" data-anchor-id="create-a-new-branch"><span class="header-section-number">22.1</span> Create a new branch</h2>
-<p>You can create a new branch with <code>git branch</code>, then checkout the branch with <code>git checkout</code>. To distinguish it from the main stream of development, presumably on <code>main</code>, we’ll call this a “feature branch”.</p>
+<p>Ramificar significa tomar un desvío de la corriente principal de desarrollo y trabajar sin cambiar la corriente principal. Permite que una o varias personas trabajen en paralelo sin sobrescribir el trabajo de los demás. Permite a alguien que trabaja solo trabajar de forma incremental en una idea experimental, sin poner en peligro el estado del producto principal.</p>
+<p>La bifurcación en Git es muy liviana, lo que significa crear una rama y El cambio entre ramas es casi instantáneo. Esto significa que Git fomenta los flujos de trabajo que crean pequeñas ramas para la exploración o nuevas funciones, y a menudo las fusionan rápidamente.</p>
+<section id="crear-una-nueva-rama" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="crear-una-nueva-rama"><span class="header-section-number">22.1</span> Crear una nueva rama</h2>
+<p>Puede crear una nueva rama con <code>git branch</code> y luego verificar la rama con <code>git checkout</code>. Para distinguirlo de la corriente principal de desarrollo, presumiblemente en “principal”, lo llamaremos “rama de características”.</p>
 <pre class="console"><code>git branch issue-5
 git checkout issue-5</code></pre>
-<p>You can also use the shortcut <code>git checkout -b issue-5</code> to create and checkout the branch all at once.</p>
-<p>Once you have switched to a branch, you can commit to it as usual.</p>
+<p>También puedes usar el atajo <code>git checkout -b issues-5</code> para crear y verificar la rama de una vez.</p>
+<p>Una vez que haya cambiado a una rama, puede comprometerse con ella como de costumbre.</p>
 </section>
-<section id="switching-branches" class="level2" data-number="22.2">
-<h2 data-number="22.2" class="anchored" data-anchor-id="switching-branches"><span class="header-section-number">22.2</span> Switching branches</h2>
-<p>You use <code>git checkout</code> to switch between branches.</p>
-<p>But what do you do if you are working on a branch and need to switch, but the work on the current branch is not complete? One option is the <a href="https://git-scm.com/book/en/v2/ch00/_git_stashing">Git stash</a>, but generally a better option is to safeguard the current state with a temporary commit. Here I use “WIP” as the commit message to indicate work in progress.</p>
+<section id="cambiar-de-rama" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="cambiar-de-rama"><span class="header-section-number">22.2</span> Cambiar de rama</h2>
+<p>Usas <code>git checkout</code> para cambiar entre ramas.</p>
+<p>Pero, ¿qué haces si estás trabajando en una rama y necesitas cambiar? ¿Pero el trabajo en la rama actual no está completo? Una opción es <a href="https://git-scm.com/book/en/v2/ch00/_git_stashing">Git stash</a>, pero generalmente una mejor opción es salvaguardar el estado actual con una confirmación temporal. Aquí utilizo “WIP” como mensaje de confirmación para indicar el trabajo en progreso.</p>
 <pre class="console"><code>git commit --all -m "WIP"
 git checkout main</code></pre>
-<p>Then when you come back to the branch and continue your work, you need to undo the temporary commit by <a href="sec-reset">resetting</a> your state. Specifically, we want a mixed reset. This is “working directory safe”, i.e.&nbsp;it does not affect the state of any files. But it does peel off the temporary WIP commit. Below, the reference <code>HEAD^</code> says to roll the commit state back to the parent of the current commit (<code>HEAD</code>).</p>
+<p>Luego, cuando regreses a la rama y continúes con tu trabajo, Necesitas deshacer la confirmación temporal <a href="prompt-practice-resets.html">restableciendo</a> tu estado. Específicamente, queremos un reinicio mixto. Este es un “directorio de trabajo seguro”, es decir, no afecta el estado de ningún archivo. Pero sí elimina el commit WIP temporal. A continuación, la referencia <code>HEAD^</code> dice que se debe revertir el estado de confirmación al padre de la confirmación actual (<code>HEAD</code>).</p>
 <pre class="console"><code>git checkout issue-5
 git reset HEAD^</code></pre>
-<p>If this is difficult to remember, or to roll the commit state back to a different previous state, the reference can also be given as the SHA of a specific commit, which you can see via <code>git log</code>. This is where I think a graphical Git client can be invaluable, as you can generally right click on the target commit, then select the desired type of reset (e.g., soft, mixed, or hard). This is exactly the type of intermediate-to-advanced Git usage that often feels more approachable in a graphical client.</p>
+<p>Si esto es difícil de recordar, o revertir el estado de confirmación a un estado anterior diferente, la referencia también se puede proporcionar como el SHA de una confirmación específica, que puede ver a través de <code>git log</code>. Aquí es donde creo que un cliente Git gráfico puede ser invaluable, ya que generalmente puedes hacer clic derecho en la confirmación de destino y luego seleccionar el tipo de reinicio deseado (por ejemplo, suave, mixto o duro). Este es exactamente el tipo de uso de Git intermedio a avanzado que a menudo parece más accesible en un cliente gráfico.</p>
 </section>
-<section id="merging-a-branch" class="level2" data-number="22.3">
-<h2 data-number="22.3" class="anchored" data-anchor-id="merging-a-branch"><span class="header-section-number">22.3</span> Merging a branch</h2>
-<p>Once you have done your work and committed it to the feature branch, you can switch back to <code>main</code> and merge the feature branch.</p>
+<section id="fusionar-una-rama" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="fusionar-una-rama"><span class="header-section-number">22.3</span> Fusionar una rama</h2>
+<p>Una vez que haya hecho su trabajo y lo haya confirmado en la rama de funciones, puede volver a “principal” y fusionar la rama de funciones.</p>
 <pre class="console"><code>git checkout main
 git merge issue-5</code></pre>
 </section>
-<section id="dealing-with-conflicts" class="level2" data-number="22.4">
-<h2 data-number="22.4" class="anchored" data-anchor-id="dealing-with-conflicts"><span class="header-section-number">22.4</span> Dealing with conflicts</h2>
-<p>Most of the time, the merge will go smoothly. However if both the branches you are merging changed the same part of the same file you will get a merge conflict.</p>
+<section id="lidiar-con-los-conflictos" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="lidiar-con-los-conflictos"><span class="header-section-number">22.4</span> Lidiar con los conflictos</h2>
+<p>La mayoría de las veces, la fusión se realizará sin problemas. Sin embargo, si ambas ramas que está fusionando cambiaron la misma parte del mismo archivo, obtendrá un conflicto de fusión.</p>
 <pre class="console"><code>git merge issue-5
 # Auto-merging index.html
 # CONFLICT (content): Merge conflict in index.html
 # Automatic merge failed; fix conflicts and then commit the result.</code></pre>
-<p>The first thing to do is <strong>NOT PANIC</strong>. Merge conflicts are not the end of the world and most are relatively small and straightforward to resolve.</p>
-<p>The first step to solving a merge conflict is determining which files are in conflict, which you can do with <code>git status</code>:</p>
+<p>Lo primero que debe hacer es <strong>NO ENTRAR EN PÁNICO</strong>. Los conflictos de fusión no son el fin del mundo y la mayoría son relativamente pequeños y fáciles de resolver.</p>
+<p>El primer paso para resolver un conflicto de fusión es determinar qué archivos están en conflicto, que puedes hacer con <code>git status</code>:</p>
 <pre class="shell"><code>git status
 # On branch main
 # You have unmerged paths.
@@ -669,7 +669,7 @@ git merge issue-5</code></pre>
 #     both modified:      index.html
 # 
 # no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<p>So this shows only <code>index.html</code> is unmerged and needs to be resolved. We can then open the file to see what lines are in conflict.</p>
+<p>Entonces esto muestra que solo <code>index.html</code> no está fusionado y debe resolverse. Luego podemos abrir el archivo para ver qué líneas están en conflicto.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD:index.html</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"footer"</span><span class="dt">&gt;</span>contact : email.support@github.com<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>=======</span>
@@ -677,16 +677,16 @@ git merge issue-5</code></pre>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a> please contact us at support@github.com</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt; issue-5:index.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In this conflict, the lines between <code>&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html</code> and <code>======</code> are the content from the branch you are currently on. The lines between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; issue-5:index.html</code> are from the feature branch we are merging.</p>
-<p>To resolve the conflict, edit this section until it reflects the state you want in the merged result. Pick one version or the other or create a hybrid. Also remove the conflict markers <code>&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
+<p>En este conflicto, las líneas entre <code>&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html</code> y <code>======</code> son el contenido de la rama en la que se encuentra actualmente. Las líneas entre <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; issues-5:index.html</code> son de la rama de funciones que estamos fusionando.</p>
+<p>Para resolver el conflicto, edite esta sección hasta que refleje el estado que desea en el resultado combinado. Elige una versión u otra o crea un híbrido. También elimine los marcadores de conflicto <code>&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"footer"</span><span class="dt">&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>please contact us at email.support@github.com</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now run <code>git add index.html</code> and <code>git commit</code> to finalize the merge. CONFLICTS RESOLVED.</p>
-<section id="bailing-out" class="level3" data-number="22.4.1">
-<h3 data-number="22.4.1" class="anchored" data-anchor-id="bailing-out"><span class="header-section-number">22.4.1</span> Bailing out</h3>
-<p>If, during the merge, you get confused about the state of things or make a mistake, use <code>git merge --abort</code> to abort the merge and go back to the state prior to running <code>git merge</code>. Then you can try to complete the merge again.</p>
-<p>Git Basic Branching and Merging:</p>
+<p>Ahora ejecute <code>git add index.html</code> y <code>git commit</code> para finalizar la fusión. CONFLICTOS RESUELTOS.</p>
+<section id="rescate" class="level3" data-number="22.4.1">
+<h3 data-number="22.4.1" class="anchored" data-anchor-id="rescate"><span class="header-section-number">22.4.1</span> Rescate</h3>
+<p>Si, durante la fusión, se confunde sobre el estado de las cosas o hace una error, use <code>git merge --abort</code> para cancelar la fusión y volver al estado antes de ejecutar <code>git merge</code>. Luego puedes intentar completar la fusión nuevamente.</p>
+<p>Bifurcación y fusión de Git Basic:</p>
 <p><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" class="uri">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
 
 
@@ -1185,13 +1185,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./git-commands.html" class="pagination-link" aria-label="Git commands">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></span>
+      <a href="./git-commands.html" class="pagination-link" aria-label="Comandos de git">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./git-remotes.html" class="pagination-link" aria-label="Remotes">
-        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./git-remotes.html" class="pagination-link" aria-label="Remotos">
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

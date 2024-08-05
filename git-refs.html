@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
 
-<title>24&nbsp; Refs – Git y GitHub con R</title>
+<title>24&nbsp; Referencias – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-refs.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Refs</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-refs.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Referencias</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -312,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Some Git basics</span></a>
+ <span class="menu-text">Algunos conceptos básicos de Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -324,25 +324,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Git commands</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comandos de git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-branches.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Ramas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-remotes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git-refs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Refs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Referencias</span></span></a>
   </div>
 </li>
       </ul>
@@ -556,17 +556,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#useful-refs" id="toc-useful-refs" class="nav-link active" data-scroll-target="#useful-refs"><span class="header-section-number">24.1</span> Useful refs</a></li>
-  <li><a href="#relative-refs" id="toc-relative-refs" class="nav-link" data-scroll-target="#relative-refs"><span class="header-section-number">24.2</span> Relative refs</a></li>
+  <li><a href="#referencias-útiles" id="toc-referencias-útiles" class="nav-link active" data-scroll-target="#referencias-útiles"><span class="header-section-number">24.1</span> Referencias útiles</a></li>
+  <li><a href="#referencias-relativos" id="toc-referencias-relativos" class="nav-link" data-scroll-target="#referencias-relativos"><span class="header-section-number">24.2</span> Referencias relativos</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-refs.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Refs</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git-intro.html">Fundamentos de Git</a></li><li class="breadcrumb-item"><a href="./git-refs.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Referencias</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-git-refs" class="quarto-section-identifier"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Refs</span></span></h1>
+<h1 class="title"><span id="sec-git-refs" class="quarto-section-identifier"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Referencias</span></span></h1>
 </div>
 
 
@@ -583,19 +583,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Many extremely useful Git workflows require you to identify a specific point in your repo’s history, i.e.&nbsp;a specific commit.</p>
-<p>We’ve explained elsewhere that every commit is associated with a so-called SHA, i.e.&nbsp;a SHA-1 checksum of the commit itself. These opaque strings of 40 letters and numbers are not particularly pleasant for humans to work with. The entry-level coping strategy is to work with an abbreviated form of the SHA. It’s typical to only use the first 7 characters, as this almost always uniquely identifies a commit.</p>
+<p>Muchos flujos de trabajo de Git extremadamente útiles requieren que identifiques un punto específico en el historial de tu repositorio, es decir, una confirmación específica.</p>
+<p>Hemos explicado en otra parte que cada confirmación está asociada con el llamado SHA, es decir, una suma de verificación SHA-1 de la confirmación misma. Estas cadenas opacas de 40 letras y números no son especialmente agradables para los humanos. La estrategia de afrontamiento básica es trabajar con una forma abreviada del SHA. Es típico utilizar solo los primeros 7 caracteres, ya que esto casi siempre identifica de forma única una confirmación.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/refs-only-shas.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-out-width="60%" alt="Git history annotated with SHAs."></p>
 </figure>
 </div>
-<p>Luckily, there are even more ways to talk about a specific commit, that are much easier for humans to wrap their head around. These are called Git “refs”, short for references and, if you’re familiar with the programming concept of a pointer, that’s exactly the right mental model.</p>
-<section id="useful-refs" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="useful-refs"><span class="header-section-number">24.1</span> Useful refs</h2>
-<p>Here are some of the most useful refs:</p>
+<p>Afortunadamente, hay aún más formas de hablar sobre un compromiso específico, que son mucho más fáciles de entender para los humanos. Estos se denominan “refs” de Git, abreviatura de referencias y, si está familiarizado con el concepto de programación de un puntero, ese es exactamente el modelo mental correcto.</p>
+<section id="referencias-útiles" class="level2" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="referencias-útiles"><span class="header-section-number">24.1</span> Referencias útiles</h2>
+<p>Estas son algunas de las referencias más útiles:</p>
 <ul>
-<li>A branch name. Example: <code>main</code>, <code>wild-experiment</code>. When you refer to the <code>main</code> branch, that resolves to the SHA of the tip of the <code>main</code> branch. Think of a branch ref as a sliding ref that evolves as the branch does.</li>
+<li>Un nombre de rama. Ejemplo: <code>main</code>, <code>wild-experiment</code>. Cuando te refieres a la rama <code>main</code>, eso se resuelve en el SHA de la punta de la rama <code>main</code>. Piense en una referencia de rama como una referencia deslizante que evoluciona a medida que lo hace la rama.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -603,7 +603,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <ul>
-<li><code>HEAD</code>. This (almost always) resolves to the tip of the branch that is currently checked out.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> You can think of <code>HEAD</code> as a ref that points to the tip of the current branch, which itself is a ref, that points to a specific SHA. There are two layers of indirection. This is also called a <em>symbolic ref</em>.</li>
+<li><code>HEAD</code>. Esto (casi siempre) se resuelve en la punta de la rama que está actualmente desprotegida.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Puedes pensar en <code>HEAD</code> como una referencia que apunta a la punta de la rama actual, que a su vez es una ref, que apunta a un SHA específico. Hay dos capas de dirección indirecta. Esto también se llama <em>referencia simbólica</em>.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -611,16 +611,16 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <ul>
-<li>A tag. Example: <code>v1.4.2</code>. Tags differ from branch refs and the <code>HEAD</code> ref in that they tend to be much more static. Tags aren’t sliding by nature, although it is possible to reposition a tag to point at a new SHA, if you make an explicit effort. The most common use of a tag is to provide a nice label for a specific SHA.</li>
+<li>Una etiqueta. Ejemplo: <code>v1.4.2</code>. Las etiquetas se diferencian de las referencias de rama y de la referencia <code>HEAD</code> en que tienden a ser mucho más estáticas. Las etiquetas no se deslizan por naturaleza, aunque es posible reposicionar una etiqueta para que apunte a un nuevo SHA, si se hace un esfuerzo explícito. El uso más común de una etiqueta es proporcionar una etiqueta agradable para un SHA específico.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/refs-tag.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-out-width="60%" alt="Git history annotated with a tag."></p>
 </figure>
 </div>
-<p>If you’d like to make all of this more concrete, you can use <code>git rev-parse</code> in the shell to witness how refs resolve to concrete SHAs. Here’s the general pattern:</p>
+<p>Si desea que todo esto sea más concreto, puede usar <code>git rev-parse</code> en el shell para observar cómo las referencias se resuelven en SHA concretos. Aquí está el patrón general:</p>
 <pre class="console"><code>git rev-parse YOUR_REF_GOES_HERE</code></pre>
-<p>Here are some examples executed in the Happy Git repo:</p>
+<p>Aquí hay algunos ejemplos ejecutados en el repositorio Happy Git:</p>
 <pre class="console"><code>~/rrr/happy-git-with-r % git rev-parse HEAD
 631fee855db49d87f6c2a2cab474e89c11322bf4
 
@@ -629,40 +629,40 @@ ul.task-list li input[type="checkbox"] {
 
 ~/rrr/happy-git-with-r % git rev-parse testing-something                       
 1eeb91d177b7cb5f9a0b29ebee3e6c0c8ff98f88</code></pre>
-<p>Notice that <code>HEAD</code> and <code>main</code> resolve to the same SHA, since the <code>main</code> branch was checked out at the time. <code>testing-something</code> is the name of a branch that happened to be lying around.</p>
-<p>These refs can be used in all sorts of Git operations, such as <code>git diff</code>, <code>git reset</code>, and <code>git checkout</code>:</p>
+<p>Observe que <code>HEAD</code> y <code>main</code> se resuelven en el mismo SHA, ya que la rama <code>main</code> estaba desprotegida en ese momento. <code>testing-something</code> es el nombre de una rama que estaba por ahí.</p>
+<p>Estas referencias se pueden usar en todo tipo de operaciones de Git, como <code>git diff</code>, <code>git reset</code> y <code>git checkout</code>:</p>
 <pre class="console"><code>git diff main testing-something
 
 git reset testing-something -- README.md
 
 git checkout -b my-new-branch main</code></pre>
 </section>
-<section id="relative-refs" class="level2" data-number="24.2">
-<h2 data-number="24.2" class="anchored" data-anchor-id="relative-refs"><span class="header-section-number">24.2</span> Relative refs</h2>
-<p>There are also modifiers that help you specify a commit relative to a ref, e.g.&nbsp;“the commit just before this one”.</p>
-<p><code>HEAD~1</code> refers to the commit just before <code>HEAD</code>. <code>HEAD^</code> is another way to say exactly the same thing.</p>
+<section id="referencias-relativos" class="level2" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="referencias-relativos"><span class="header-section-number">24.2</span> Referencias relativos</h2>
+<p>También hay modificadores que le ayudan a especificar una confirmación relativa a una referencia, p.&nbsp;“la confirmación justo antes de este”.</p>
+<p><code>HEAD~1</code> se refiere a la confirmación justo antes de <code>HEAD</code>. <code>HEAD^</code> es otra forma de decir exactamente lo mismo.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/refs-relative.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-out-width="60%" alt="Git history annotated with relative refs."></p>
 </figure>
 </div>
-<p>Here are some examples executed in the Happy Git repo:</p>
+<p>Aquí hay algunos ejemplos ejecutados en el repositorio Happy Git:</p>
 <pre class="console"><code>~/rrr/happy-git-with-r % git rev-parse HEAD~1
 5dacec4950a3746310bb30704417a792302b044a
 
 ~/rrr/happy-git-with-r % git rev-parse HEAD^
 5dacec4950a3746310bb30704417a792302b044a</code></pre>
-<p>Notice that <code>HEAD~1</code> and <code>HEAD^</code> resolve to the same SHA.</p>
-<p>Both of these patterns generalize. <code>HEAD~3</code> and <code>HEAD^^^</code> are valid and equivalent refs.</p>
-<p>I must admit that I am not a big fan of these relative ref shortcuts and especially not when reaching back more than one commit. I worry that I have some sort of off-by-one error in my understanding and I’ll end up targetting the wrong commit.</p>
-<p>Tools like GitKraken and GitHub make it extremely easy to copy specific SHAs to your clipboard. So when I need a ref that’s not a simple branch name or tag, I almost always lean on user-friendly tools like GitKraken or GitHub to allow me to state my intent using the actual SHA of interest. I suspect that the relative ref shortcuts are most popular with folks who are exclusively using command line Git and are operating under different constraints. There’s actually a rich set of ways to specify a target commit that goes well beyond the <code>^</code> and <code>~</code> syntax shown here. You can learn more in the <a href="https://git-scm.com/docs/gitrevisions">official Git documention about revision parameters</a>.</p>
-<p>In GitKraken, right or control click on the target commit to access a menu that includes “Copy commit sha”, among many other useful commands. If you’re using another Git client, there is probably a way to do this and it’s worth figuring that out.</p>
+<p>Observe que <code>HEAD~1</code> y <code>HEAD^</code> se resuelven en el mismo SHA.</p>
+<p>Ambos patrones se generalizan. <code>HEAD~3</code> y <code>HEAD^^^</code> son referencias válidas y equivalentes.</p>
+<p>Debo admitir que no soy un gran admirador de estos atajos de referencia relativa y especialmente cuando retrocedo más de una confirmación. Me preocupa tener algún tipo de error uno por uno según tengo entendido y terminaré apuntando a la confirmación incorrecta.</p>
+<p>Herramientas como GitKraken y GitHub hacen que sea extremadamente fácil copiar SHA específicos a su portapapeles. Entonces, cuando necesito una referencia que no sea un simple nombre de rama o etiqueta, casi siempre me apoyo en herramientas fáciles de usar como GitKraken o GitHub para permitirme expresar mi intención utilizando el SHA de interés real. Sospecho que los atajos de referencia relativos son más populares entre las personas que usan exclusivamente la línea de comandos Git y operan bajo diferentes restricciones. En realidad, existe un amplio conjunto de formas de especificar una confirmación de destino que va mucho más allá de la sintaxis <code>^</code> y <code>~</code> que se muestra aquí. Puede obtener más información en la <a href="https://git-scm.com/docs/gitrevisions">documentación oficial de Git sobre parámetros de revisión</a>.</p>
+<p>En GitKraken, haga clic con el botón derecho o control en la confirmación de destino para acceder a un menú que incluye “Copiar confirmación sha”, entre muchos otros comandos útiles. Si está utilizando otro cliente Git, probablemente haya una manera de hacerlo y vale la pena descubrirla.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/gitkraken-screenshot-copy-commit-sha.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-out-width="60%" alt="GitKraken screenshot showing how to copy a specific SHA."></p>
 </figure>
 </div>
-<p>GitHub also makes it extremely easy to copy a SHA in many contexts. This screenshot shows just one example. Once you start looking for this feature, you’ll find it in many places on GitHub.</p>
+<p>GitHub también hace que sea extremadamente fácil copiar un SHA en muchos contextos. Esta captura de pantalla muestra solo un ejemplo. Una vez que empiece a buscar esta función, la encontrará en muchos lugares de GitHub.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/github-screenshot-copy-the-full-sha.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-out-width="60%" alt="GitHub screenshot showing how to copy a specific SHA."></p>
@@ -674,7 +674,7 @@ git checkout -b my-new-branch main</code></pre>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>When does <code>HEAD</code> not resolve to the SHA at the tip of some branch? When you are a <em>detached HEAD</em> state. Detached HEAD! That sounds bad, but it’s not intrinsically good or bad. It IS bad, though, to be in a detached HEAD state if you didn’t mean to be and you don’t understand the deal. You get into a detached HEAD state when you directly checkout a specific commit, as opposed to checking out or switching to a <em>branch</em>. In experienced hands, this can be a legit thing to do. But in the meantime, I recommend that you always visit a specific state in the history by checking out a <em>branch</em>, even if that means you need to create a temporary branch like <code>holder</code> or <code>time-travel</code>. To get out of the detached <code>HEAD</code> state, checkout some existing branch, with <code>git checkout main</code> or similar. Otherwise, the StackOverflow thread <a href="https://stackoverflow.com/q/10228760">How do I fix a Git detached head?</a> addresses many vexing detached <code>HEAD</code> scenarios.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>¿Cuándo <code>HEAD</code> no se resuelve en el SHA en la punta de alguna rama? Cuando estás en un estado <em>detached HEAD</em>. ¡CABEZA separada! Eso suena mal, pero no es intrínsecamente bueno o malo. Sin embargo, ES malo estar en un estado de CABEZA separada si no era tu intención y no entiendes el trato. Entras en un estado CABEZA separada cuando verificas directamente una confirmación específica, en lugar de verificar o cambiar a una <em>rama</em>. En manos experimentadas, esto puede ser algo legítimo. Pero mientras tanto, te recomiendo que siempre visites un estado específico en el historial consultando una <em>rama</em>, incluso si eso significa que necesitas crear una rama temporal como <code>holder</code> o <code>time-travel</code>. Para salir del estado CABEZA separada, consulte alguna rama existente, con <code>git checkout main</code> o similar. De lo contrario, el hilo de StackOverflow <a href="https://stackoverflow.com/q/10228760">¿Cómo puedo arreglar un cabezal separado de Git?</a> aborda muchos escenarios desconcertantes de CABEZA separada.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1170,8 +1170,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./git-remotes.html" class="pagination-link" aria-label="Remotes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotes</span></span>
+      <a href="./git-remotes.html" class="pagination-link" aria-label="Remotos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Remotos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
