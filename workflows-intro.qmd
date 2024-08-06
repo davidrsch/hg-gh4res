@@ -1,23 +1,23 @@
-# Useful Git patterns for real life {#sec-workflows-intro .unnumbered}
+# Patrones de Git útiles para la vida real {#sec-workflows-intro .unnumbered}
 
-*Much of this originates as live workshop materials; the unlinked workflows are planned but not yet converted to prose here.*
+*Gran parte de esto se origina como materiales de talleres en vivo; Los flujos de trabajo no vinculados están planificados pero aún no convertidos a prosa aquí..*
 
-Git patterns that come up frequently in real work:
+Patrones de Git que aparecen con frecuencia en el trabajo real:
 
--   Commit early and often. Push less often. [The Repeated Amend](sec-repeated-amend).
--   [Help, my push was rejected!](sec-push-rejected)
--   [Integrating remote and local work](sec-pull-tricky). Probably so you can push again.
--   Burn it all down.
--   Time travel:
-    -   ["I just need to see the past".](sec-time-travel-see-past) Browse and search on GitHub.
-    -   "I need to visit the past". Create a checkout a branch.
-    -   "I want to return to the past". `git revert`, `git reset`
-    -   "I had a great cookie last October". `git cherry pick`, `git checkout REF -- path`
+-   Comprométete temprano y con frecuencia. Empuje con menos frecuencia. [Enmiendar repetidamente](#sec-repeated-amend).
+-   [¡Ayuda, mi push fue rechazado!](#sec-push-rejected)
+-   [Integrando el trabajo remoto y local](#sec-pull-tricky). Probablemente para que puedas enviar de nuevo.
+-   Quémalo todo.
+-   Viaje en el tiempo:
+    -   ["Solo necesito ver el pasado".](#sec-time-travel-see-past) Navega y busca en GitHub.
+    -   "Necesito visitar el pasado". Crea una caja en una sucursal.
+    -   "Quiero volver al pasado". `git revert`, `git reset`
+    -   "Comí una gran galleta en octubre pasado.". `git cherry pick`, `git checkout REF -- path`
 
-Play well with others:
+Juega bien con los demás:
 
--   [Fork and clone](sec-fork-and-clone).
--   [Get upstream changes for a fork](sec-upstream-changes).
--   Disposable fork.
--   [Make your repo rewarding to browse on GitHub](sec-workflows-browsability).
--   [Explore and extend a pull request](sec-pr-extend)
+-   [Bifurca y clona](#sec-fork-and-clone).
+-   [Obtener los cambios en upstream para una bifurcación](#sec-upstream-changes).
+-   Bifurcación desechable.
+-   [Haz que tu repositorio sea gratificante para navegar en GitHub](#sec-workflows-browsability).
+-   [Explorar y ampliar una solicitud de cambio](#sec-pr-extend)
