@@ -1,61 +1,61 @@
-# Pull, but you have local work {#sec-pull-tricky}
+# Importar, pero tienes trabajo local {#sec-pull-tricky}
 
-Problem: You want to pull changes from upstream, but you have done some new work locally since the last time you pulled. This often comes up because [what you actually want to do is *push*](#sec-push-rejected), but Git won't let you until you first incorporate the upstream changes.
+Problema: desea extraer cambios desde el upstream, pero ha realizado algunos trabajos nuevos localmente desde la última vez que los realizó. Esto suele surgir porque [lo que realmente quieres hacer es *enviar*](#sec-push-rejected), pero Git no te lo permitirá hasta que incorpores por primera vez los cambios anteriores.
 
-For the sake of simplicity, assume we're dealing with the `main` branch and the remote is called `origin`.
+En aras de la simplicidad, supongamos que estamos tratando con la rama `upstream` y la remota se llama `origin`.
 
-Recent commit history of `origin/main`:
+Historial reciente de confirmaciones de `origin/main`:
 
 ``` sh
 A--B--C
 ```
 
-Recent commit history of the local `main` branch:
+Historial de confirmaciones recientes de la rama `upstream` local:
 
 ``` sh
 A--B--D
 ```
 
-or maybe
+o tal vez
 
 ``` sh
-A--B--(uncommitted changes)
+A--B--(cambios no confirmados)
 ```
 
-Your goal: get commit `C` into your local branch, while retaining the work in commit `D` or your uncommitted changes.
+Su objetivo: obtener la confirmación `C` en su rama local, manteniendo al mismo tiempo el trabajo en la confirmación `D` o sus cambios no confirmados.
 
--   Local state is `A--B--(uncommitted changes)`: You could use `git stash`. Or you could just make a commit to simplify your life (see next bullet).
--   Local state is `A--B--D`: You can get to `A--B--C--D` or `A--B--(something that includes C and D)`.
--   Local state is `A--B--D--(uncommitted changes)`: You could just make a commit -- a new one or amend `D` -- to simplify your life (see previous bullet).
+-   El estado local es `A--B--(cambiosnoconfirmados)`: puede usar `git stash`. O simplemente podrías confirmar para simplificar tu vida (ver el siguiente punto).
+-   El estado local es `A--B--D`: puede llegar a `A--B--C--D` o `A--B--(algo que incluya C y D)`.
+-   El estado local es `A--B--D--(cambiosnoconfirmados)`: puede simplemente realizar una confirmación, una nueva o modificar `D`, para simplificar su vida (consulte el punto anterior).
 
-We prioritize simple approaches that are good for early Git use, but mention nicer long-term alternatives.
+Priorizamos enfoques simples que son buenos para el uso inicial de Git, pero mencionamos alternativas más agradables a largo plazo.
 
-## Local work is uncommitted
+## El trabajo local no está confirmado.
 
-Remote state is `A--B--C`.\
-Local state is `A--B--(uncommitted changes)`.
+El estado remoto es `A--B--C`.\
+El estado local es `A--B--(cambiosnoconfirmados)`.
 
-### Happy simple cases
+### Casos simples felices
 
-There are two happy scenarios, in which `git pull` will "just work":
+Hay dos escenarios felices en los que `git pull` "simplemente funcionará":
 
--   You've introduced completely new files that don't exist in the remote branch and, therefore, cannot possibly have conflicting changes. You're in luck! You can just `git pull`.
--   The files affected by your local work have ZERO overlap with the files affected by the changes you need to pull from the remote. You're also in luck! You can just `git pull`.
+-   Ha introducido archivos completamente nuevos que no existen en la rama remota y, por lo tanto, no es posible que tengan cambios conflictivos. ¡Estás de suerte! Puedes simplemente `git pull`.
+-   Los archivos afectados por su trabajo local tienen CERO superposición con los archivos afectados por los cambios que necesita extraer del control remoto. ¡Tú también estás de suerte! Puedes simplemente `git pull`.
 
-Summary of these happy `git pull` scenarios:
+Resumen de estos felices escenarios de `git pull`:
 
 ``` sh
                  Remote: A--B--C
 
-Local before 'git pull': A--B--(uncommitted changes)
- Local after 'git pull': A--B--C--(uncommitted changes)
+Local before 'git pull': A--B--(cambiosnoconfirmados)
+ Local after 'git pull': A--B--C--(cambiosnoconfirmados)
 ```
 
-What has actually happened here is that `git pull` resulted in a *fast-forward merge*, i.e. we placed commit `C` right on the end of your history. This would also be the case in the simpler situation where recent local history was just `A--B`, i.e. you had not added any local work since the last sync up with `origin/main`.
+Lo que realmente sucedió aquí es que `git pull` resultó en una *fusión rápida*, es decir, colocamos la confirmación `C` justo al final de su historial. Este también sería el caso en la situación más simple en la que el historial local reciente fuera simplemente `A--B`, es decir, no se hubiera agregado ningún trabajo local desde la última sincronización con `origin/main`.
 
-### `git stash` works, sometimes
+### `git stash` funciona, a veces
 
-If your changes affect a file (`foo.R` in the example below) that has also been changed in commit `C`, you cannot `git pull`. It doesn't hurt to try, but you will fail and it will look something like this:
+Si sus cambios afectan un archivo (`foo.R` en el ejemplo siguiente) que también se modificó en la confirmación `C`, no puede `git pull`. No está de más intentarlo, pero fallarás y se verá así:
 
 ``` sh
 jenny@2015-mbp ethel $ git pull
@@ -73,18 +73,18 @@ Please commit your changes or stash them before you merge.
 Aborting
 ```
 
-Now what? First, you must safeguard your local changes by either stashing or committing them. (I personally would choose to commit and execute a workflow described in @sec-git-pull-with-local-commits.)
+¿Ahora que? En primer lugar, debe salvaguardar los cambios locales guardándolos o confirmándolos. (Yo personalmente elegiría comprometer y ejecutar un flujo de trabajo descrito en @sec-git-pull-with-local-commits.)
 
-I am not a big fan of `git stash`; I think it's usually better to take every possible chance to solidify your skills around core concepts and operations, e.g., make a commit, possibly in a branch. But if you want to use `git stash`, this opportunity is as good as it gets.
+No soy un gran admirador de `git stash`; Creo que normalmente es mejor aprovechar todas las oportunidades posibles para solidificar sus habilidades en torno a conceptos y operaciones centrales, por ejemplo, confirmar, posiblemente en una rama. Pero si desea utilizar `git stash`, esta oportunidad es la mejor posible.
 
-`git stash` is a way to temporarily store some changes to get them out of the way. Now you can do something else, without a lot of fuss. In our case, "do something else" is to get the upstream changes with a nice, simple `git pull`. Then you reapply and delete the stash and pick up where you left off.
+`git stash` es una forma de almacenar temporalmente algunos cambios para eliminarlos. Ahora puedes hacer otra cosa, sin mucho problema. En nuestro caso, "hacer algo más" es obtener los cambios ascendentes con un simple y agradable `git pull`. Luego vuelves a aplicar, eliminas el stash y continúas donde lo dejaste.
 
-For more details about stashing, I recommend
+Para obtener más detalles sobre el almacenamiento, recomiendo
 
--   The stashing coverage in the "Filesystem interactions" chapter of Git in Practice ([book website](https://gitinpractice.com) or [read on GitHub](https://github.com/GitInPractice/GitInPractice#readme))
--   [7.3 Git Tools - Stashing and Cleaning](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning) in [Pro Git](https://git-scm.com/book/en/v2).
+-   La cobertura oculta en el capítulo "Interacciones del sistema de archivos" de Git en la práctica ([sitio web del libro](https://gitinpractice.com) o [leer en GitHub](https://github.com/GitInPractice/GitInPractice#readme))
+-   [7.3 Herramientas Git: almacenamiento y limpieza](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning) En [Git Pro](https://git-scm.com/book/en/v2).
 
-Here's the best case scenario for "stash, pull, unstash" in the example above:
+Este es el mejor escenario para "stash, pull, unstash" en el ejemplo anterior:
 
 ``` bash
 git stash save
@@ -92,7 +92,7 @@ git pull
 git stash pop
 ```
 
-And here's the output from our example:
+Y aquí está el resultado de nuestro ejemplo:
 
 ``` sh
 jenny@2015-mbp ethel $ git stash save
@@ -119,22 +119,22 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Dropped refs/stash@{0} (012c4dcd3a4c3af6757c4c3ca99a9eaeff1eb2a4)
 ```
 
-That is what success looks like. You've achieved this:
+Así es como se ve el éxito. Has logrado esto:
 
 ``` sh
       Remote: A--B--C
 
-Local before: A--B--(uncommitted changes)
- Local after: A--B--C--(uncommitted changes)
+Local before: A--B--(cambiosnoconfrimados)
+ Local after: A--B--C--(cambiosnoconfrimados)
 ```
 
-As above, we have just enjoyed a fast-forward merge, made possible by temporarily stashing then unstashing the uncommitted local changes.
+Como se indicó anteriormente, acabamos de disfrutar de una combinación de avance rápido, posible al ocultar temporalmente y luego desbloquear los cambios locales no confirmados.
 
-### `git stash` with conflicts
+### `git stash` con conflictos
 
-If your local changes have some overlap with changes you are pulling, you will, instead get a merge conflict from `git stash pop`. Now you have some remedial work to do. In this case, you have gained nothing by using `git stash` in the first place, which explains my general lack of enthusiasm for `git stash`.
+Si sus cambios locales se superponen con los cambios que está realizando, obtendrá un conflicto de fusión de `git stash pop`. Ahora tienes que hacer algunos trabajos de recuperación. En este caso, no has ganado nada al usar `git stash` en primer lugar, lo que explica mi falta general de entusiasmo por `git stash`.
 
-Here's how to execute the `git stash` workflow in our example, in the face of conflicts (based on [this Stack Overflow answer](https://stackoverflow.com/a/27382210/2825349)):
+Aquí se explica cómo ejecutar el flujo de trabajo `git stash` en nuestro ejemplo, frente a conflictos (basado en [esta respuesta de Stack Overflow](https://stackoverflow.com/a/27382210/2825349)):
 
 ``` sh
 jenny@2015-mbp ethel $ git stash save
@@ -151,9 +151,9 @@ Auto-merging foo.R
 CONFLICT (content): Merge conflict in foo.R
 ```
 
-At this point, you must resolve the merge conflict (*future link*). Literally, at each locus of conflict, pick one version or the other (upstream or stashed) or create a hybrid yourself. Remove the all the markers inserted to demarcate the conflicts. Save.
+En este punto, debes resolver el conflicto de fusión (*enlace futuro*). Literalmente, en cada lugar de conflicto, elija una versión u otra (anticipada o oculta) o cree un híbrido usted mismo. Retire todos los marcadores insertados para delimitar los conflictos. Guarde.
 
-Since `git stash pop` did not go smoothly, we need to manually reset (*future link*) and delete the stash to finish.
+Dado que `git stash pop` no funcionó correctamente, debemos restablecer manualmente (*enlace futuro*) y eliminar el stash para finalizar.
 
 ``` sh
 jenny@2015-mbp ethel $ git reset
@@ -164,41 +164,41 @@ jenny@2015-mbp ethel $ git stash drop
 Dropped refs/stash@{0} (7928db50288e9b4d934803b6b451a000fd7242ed)
 ```
 
-Phew, we are done. We've achieved this:
+Uf, hemos terminado. Hemos logrado esto:
 
 ``` sh
       Remote: A--B--C
 
-Local before: A--B--(uncommitted changes)
- Local after: A--B--C--(uncommitted changes*)
+Local before: A--B--(cambiosnoconfirmados)
+ Local after: A--B--C--(cambiosnoconfirmados*)
 ```
 
-The asterisk on `uncommitted changes*` indicates that your uncommitted changes might now reflect adjustments made when you resolved the conflicts.
+El asterisco en `cambiosnoconfirmados*` indica que sus cambios no confirmados ahora podrían reflejar los ajustes realizados cuando resolvió los conflictos.
 
-## Local work is committed {#sec-git-pull-with-local-commits}
+## El trabajo local está cnfirmado {#sec-git-pull-with-local-commits}
 
-Remote state is `A--B--C`.\
-Local state is `A--B--D`.
+El estado remoto es `A--B--C`.\
+El estado local es `A--B--D`.
 
-### Pull (fetch and merge)
+### Importar (buscar y fusionar)
 
-The simplest option is to fetch the commits from upstream and merge them, which is what `git pull` does. This is a good option if you're new to Git. It leads to a messier history, but when you are new, this is the least of your worries. Merge, be happy, and carry on.
+La opción más sencilla es recuperar las confirmaciones desde arriba y fusionarlas, que es lo que hace `git pull`. Esta es una buena opción si eres nuevo en Git. Esto lleva a una historia más complicada, pero cuando eres nuevo, esta es la menor de tus preocupaciones. Fúndete, sé feliz y continúa.
 
-Here is the best case, no-merge-conflicts version of `git pull`:
+Aquí está el mejor caso, la versión sin conflictos de fusión de `git pull`:
 
 ``` sh
 jenny@2015-mbp ethel $ git pull
 
-< YOU WILL PROBABLY BE KICKED INTO AN EDITOR HERE RE: MERGE COMMIT MESSAGE! >
+< PROBABLEMENTE SERÁS ENVIADO A UN EDITOR AQUÍ RE: ¡MENSAJE DE COMUNICACIÓN DE FUSIÓN! >
 
 Merge made by the 'recursive' strategy.
  README.md | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 ```
 
-Depending on your version of Git, your config, and your use of a GUI, you might be required to confirm/edit a commit message for the merge commit.
+Dependiendo de su versión de Git, su configuración y su uso de una GUI, es posible que deba confirmar/editar un mensaje de confirmación para la confirmación de fusión.
 
-Or what if things don't go this smoothly? If commit `C` (on the remote) and commit `D` (local) have changes to the same parts of one or more files, Git may not be able to automatically merge and you will get merge conflicts. It will look something like this:
+¿O qué pasa si las cosas no van tan bien? Si la confirmación `C` (en el control remoto) y la confirmación `D` (local) tienen cambios en las mismas partes de uno o más archivos, es posible que Git no pueda fusionarse automáticamente y obtendrá conflictos de fusión. Se verá algo como esto:
 
 ``` sh
 jenny@2015-mbp ethel $ git pull
@@ -207,9 +207,9 @@ CONFLICT (content): Merge conflict in foo.R
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-You must resolve these conflicts (*future link*). Literally, at each locus of conflict, pick one version or the other (upstream or local) or create a hybrid yourself. Remove the all the markers inserted to demarcate the conflicts. Save.
+Debes resolver estos conflictos (*enlace futuro*). Literalmente, en cada lugar de conflicto, elija una versión u otra (ascendente o local) o cree un híbrido usted mismo. Retire todos los marcadores insertados para delimitar los conflictos. Guarde.
 
-Mark the affected file `foo.R` as resolved via `git add` and make an explicit `git commit` to finalize this merge.
+Marque el archivo afectado `foo.R` como resuelto mediante `git add` y haga un `git commit` explícito para finalizar esta fusión.
 
 ``` sh
 jenny@2015-mbp ethel $ git add foo.R
@@ -217,23 +217,23 @@ jenny@2015-mbp ethel $ git commit
 [main 20b297b] Merge branch 'main' of github.com:jennybc/ethel
 ```
 
-Again, do not be surprised if, during `git commit`, you find yourself in an editor, confirming/editing the commit message for the merge commit.
+Nuevamente, no se sorprenda si, durante el `git commit`, se encuentra en un editor, confirmando/editando el mensaje de confirmación para la confirmación de fusión.
 
-We've achieved this:
+Hemos logrado esto:
 
 ``` sh
       Remote: A--B--C
 
 Local before: A--B--D
- Local after: A--B--D--(merge commit)
+ Local after: A--B--D--(confirmación de fusión)
                   \_C_/
 ```
 
-### Pull and rebase
+### Importar y rebase
 
-`git pull --rebase` creates a nicer history than `git pull` when integrating local and remote commits. It avoids a merge commit, so the history is less cluttered and is linear. It can make merge conflicts more onerous to resolve, which is why I still recommend `git pull` as the entry-level solution.
+`git pull --rebase` crea una historia mejor que `git pull` al integrar confirmaciones locales y remotas. Evita una confirmación de fusión, por lo que el historial está menos desordenado y es lineal. Puede hacer que los conflictos de fusión sean más difíciles de resolver, por lo que sigo recomendando `git pull` como solución básica.
 
-Here is the best case, no-merge-conflicts version of `git pull --rebase`:
+Aquí está el mejor caso, la versión sin conflictos de fusión de `git pull --rebase`:
 
 ```         
 jenny@2015-mbp ethel $ git pull --rebase
@@ -241,9 +241,9 @@ First, rewinding head to replay your work on top of it...
 Applying: Take max
 ```
 
-Notice that you were NOT kicked into an editor to fiddle with the commit message for the merge commit, because there is no merge commit! This is the beauty of rebasing.
+Tenga en cuenta que NO lo enviaron a un editor para manipular el mensaje de confirmación para la confirmación de fusión, ¡porque no hay confirmación de fusión! Ésta es la belleza del rebase.
 
-We've achieved this:
+Hemos logrado esto:
 
 ``` sh
       Remote: A--B--C
@@ -252,33 +252,33 @@ Local before: A--B--D
  Local after: A--B--C--D
 ```
 
-It is as if we pulled the upstream work in commit `C`, then did the local work embodied in commit `D`. We have no cluttery merge commits and a linear history. Nice!
+Es como si sacáramos el trabajo ascendente en la confirmación `C` y luego hiciéramos el trabajo local incorporado en la confirmación `D`. No tenemos confirmaciones de fusión desordenadas y un historial lineal. ¡Lindo!
 
-The bad news: As with plain vanilla `git pull`, it is still possible to get merge conflicts with `git pull --rebase`. If you have multiple local commits, you can even find yourself resolving conflicts over and over, as these commits are sequentially replayed. Hence this is a better fit for more experienced Git users and in situations where conflicts are unlikely (those tend to be correlated, actually).
+La mala noticia: al igual que con `git pull` simple, todavía es posible tener conflictos de fusión con `git pull --rebase`. Si tiene varias confirmaciones locales, incluso puede encontrarse resolviendo conflictos una y otra vez, ya que estas confirmaciones se reproducen secuencialmente. Por lo tanto, esto es más adecuado para usuarios de Git más experimentados y en situaciones donde los conflictos son poco probables (en realidad, tienden a estar correlacionados).
 
-At this point, if you try to do `git pull --rebase` and get bogged down in merge conflicts, I recommend `git rebase --abort` to back out. For now, just pursue a more straightforward strategy.
+En este punto, si intentas hacer `git pull --rebase` y te atascas en conflictos de fusión, te recomiendo `git rebase --abort` para retroceder. Por ahora, simplemente siga una estrategia más sencilla.
 
-## Other approaches
+## Otros enfoques
 
-There are many more ways to handle this situation, which you can discover and explore as you gain experience and start to care more about the history. We sketch some ideas here.
+Hay muchas más formas de manejar esta situación, que puedes descubrir y explorar a medida que adquieres experiencia y empiezas a preocuparte más por la historia. Esbozamos aquí algunas ideas.
 
-### Use a temporary branch for local work
+### Utilice una rama temporal para el trabajo local
 
-Recall:\
-Remote state is `A--B--C`.\
-Local state is `A--B--(uncommitted changes)`.
+Recordar:\
+El estado remoto es `A--B--C`.\
+El estado local es `A--B--(cambiosnoconfirmados)`.
 
-This is an alternative to the stash workflow that has the advantage of giving you practice with Git techniques that are more generally useful. It also leads to a nice history.
+Esta es una alternativa al flujo de trabajo oculto que tiene la ventaja de brindarle práctica con técnicas de Git que son más útiles en general. También conduce a una bonita historia.
 
-Create a new, temporary branch and commit your uncommitted changes there. Checkout `main` and `git pull` to get changes from upstream. You now need to recover the work from the commit in the temporary branch. Options:
+Cree una nueva rama temporal y confirme allí los cambios no confirmados. Consulte `main` y `git pull` para obtener cambios desde arriba. Ahora necesitas recuperar el trabajo de la confirmación en la rama temporal. Opciones:
 
--   Merge the temporary branch into `main`.
--   Cherry pick the commit from the temporary branch into `main`.
+-   Fusiona la rama temporal en `main`.
+-   Cherry elige el compromiso de la rama temporal a `main`.
 
-In either case, it is still possible you will need to deal with merge conflicts.
+En cualquier caso, aún es posible que tengas que lidiar con conflictos de fusión.
 
-In either case, if you felt forced to commit before you were ready or to accept an ugly merge commit, you can either do a mixed reset to "uncommit" but keep the changes on `main` or keep amending until you are satisfied with the commit.
+En cualquier caso, si se sintió obligado a comprometerse antes de estar listo o a aceptar una confirmación de fusión fea, puede realizar un reinicio mixto para "desconfirmar" pero mantener los cambios en `main` o seguir modificando hasta que esté satisfecho con el comprometerse.
 
-## Some local work is committed, some is not
+## Algunos trabajos locales están confirmados, otros no.
 
-This is an awkward hybrid situation that can be handled with a combination of strategies seen above: make a pragmatic commit on `main` or a temporary branch. Integrate the upstream and local changes in `main`. If you aren't happy with the final pragmatic commit (which only exists locally), reset or amend until you are.
+Esta es una situación híbrida incómoda que se puede manejar con una combinación de estrategias vistas anteriormente: realizar una confirmación pragmática en `main` o una rama temporal. Integre los cambios locales y ascendentes en `main`. Si no está satisfecho con la confirmación pragmática final (que solo existe localmente), reiníciela o modifíquela hasta que lo esté.
