@@ -1,39 +1,39 @@
-# The Repeated Amend {#sec-repeated-amend}
+# Enmendar repetidamente {#sec-repeated-amend}
 
-One of the principal joys of version control is the freedom to experiment without fear. If you make a mess of things, you can always go back to a happier version of your project. We describe several methods of such time travel in *link to come*. But you must have a good commit to fall back to!
+Uno de los principales placeres del control de versiones es la libertad de experimentar sin miedo. Si arruinas las cosas, siempre puedes volver a una versión más feliz de tu proyecto. Describimos varios métodos de este tipo de viajes en el tiempo en *enlace por venir*. ¡Pero debes tener un buen commit al que recurrir!
 
-## Rock climbing analogy
+## Analogía de la escalada en roca
 
-> Using a Git commit is like using anchors and other protection when climbing. If you're crossing a dangerous rock face you want to make sure you've used protection to catch you if you fall. Commits play a similar role: if you make a mistake, you can't fall past the previous commit. Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high! Like rock climbing protection, you want to be judicious in your use of commits. Committing too frequently will slow your progress; use more commits when you're in uncertain or dangerous territory. Commits are also helpful to others, because they show your journey, not just the destination.
+> Usar una confirmación de Git es como usar anclajes y otras protecciones al escalar. Si estás cruzando una pared rocosa peligrosa, debes asegurarte de haber usado protección para atraparte si te caes. Las confirmaciones desempeñan un papel similar: si comete un error, no podrá superar la confirmación anterior. Codificar sin confirmaciones es como escalar libremente: puedes viajar mucho más rápido en el corto plazo, pero en el largo plazo las posibilidades de fallas catastróficas son altas. Al igual que la protección para la escalada en roca, debes ser prudente en el uso de confirmaciones. Realizar commits con demasiada frecuencia ralentizará su progreso; utilice más confirmaciones cuando se encuentre en territorio incierto o peligroso. Los cmmits también son útiles para los demás porque muestran su viaje, no sólo el destino.
 >
-> <a href="http://r-pkgs.had.co.nz/git.html#git-commit">R Packages, Hadley Wickham</a> (@r-pkgs-book)
+> <a href="http://r-pkgs.had.co.nz/git.html#git-commit">Paquetes R, Hadley Wickham</a> (@r-pkgs-book)
 
-Let's talk about this:
+Hablemos de esto:
 
-> use more commits when you're in uncertain or dangerous territory
+> usa más confirmaciones cuando estés en territorio incierto o peligroso
 
-When I'm doing something tricky, I often proceed towards my goal in small increments, checking that everything still works along the way. Yes it works? Make a commit. This is my new worst case scenario. Keep going.
+Cuando hago algo complicado, a menudo avanzo hacia mi objetivo en pequeños incrementos, comprobando que todo sigue funcionando en el camino. ¿Si, funciona? Haz un commit. Este es mi nuevo peor escenario. Sigue adelante.
 
-What's not to love?
+¿Qué no se podría amar?
 
-This can lead to an awful lot of tiny commits. This is absolutely fine and nothing to be ashamed of. But one day you may start to care about the utility and aesthetics of your Git history.
+Esto puede generar una gran cantidad de pequeños compromisos. Esto está absolutamente bien y no hay nada de qué avergonzarse. Pero algún día puede que empieces a preocuparte por la utilidad y la estética de tu historial de Git.
 
-The Repeated Amend is a pattern where, instead of cluttering your history with lots of tiny commits, you build up a "good" commit gradually, by amending.
+La modificación repetida es un patrón en el que, en lugar de saturar su historial con muchas confirmaciones pequeñas, construye una confirmación "buena" gradualmente, mediante modificaciones.
 
-*Yes, there are other ways to do this, e.g. via squashing and interactive rebase, but I think amending is the best way to get started.*
+*Sí, hay otras formas de hacer esto, p. mediante squashingo y rebase interactivo, pero creo que modificar es la mejor manera de comenzar.*
 
-## Workflow sketch
+## Bosquejo del flujo de trabajo
 
-### Initial condition
+### Condición inicial
 
-Start with your project in a functional state:
+Comience con su proyecto en un estado funcional:
 
--   R package? Run your tests or `R CMD check`.
--   Data analysis? Re-run your script or re-render your `.Rmd` with the new chunk.
--   Website or book? Make sure the project still compiles.
--   You get the idea.
+-   ¿Paquete R? Ejecute sus pruebas o `R CMD check`.
+-   ¿Análisis de los datos? Vuelva a ejecutar su secuencia de comandos o vuelva a representar su `.Rmd` con el nuevo fragmento.
+-   ¿Sitio web o libro? Asegúrese de que el proyecto aún se compile.
+-   Ya entiendes la idea.
 
-Make sure your "working tree is clean" and you are synced up with your GitHub remote. `git status` should show something like:
+Asegúrese de que su "árbol de trabajo esté limpio" y esté sincronizado con su control remoto de GitHub. `git status` debería mostrar algo como:
 
 ``` console
 ~/tmp/myrepo % git status                                                          
@@ -43,146 +43,146 @@ Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
-### Get to work
+### Ponte a trabajar
 
-Imagine we start at commit C, with previous commit B and, before that, A:
+Imaginemos que comenzamos en el compromiso C, con el compromiso anterior B y, antes de eso, A:
 
 ``` bash
 ... -- A -- B -- C
 ```
 
-Make a small step towards your goal. Re-check that your project "works".
+Da un pequeño paso hacia tu objetivo. Vuelva a comprobar que su proyecto "funciona".
 
-Stage those changes with and make a commit with the message "WIP", meaning "work in progress". Do this in RStudio or in the shell (@sec-shell):
+Realice esos cambios y realice una confirmación con el mensaje "WIP", que significa "trabajo en progreso". Haz esto en RStudio o en el shell. (@sec-shell):
 
 ``` console
-git add path/to/the/changed/file
+git add ruta/al/archivo/cambiado
 git commit -m "WIP"
 ```
 
-The message can be anything, but "WIP" is a common convention. If you use it, whenever you return to a project where the most recent commit message is "WIP", you'll know that you were probably in the middle of something. If you push a "WIP" commit, on purpose or by mistake, it signals to other people that more commits might be coming.
+El mensaje puede ser cualquier cosa, pero "WIP" es una convención común. Si lo usa, cada vez que regrese a un proyecto donde el mensaje de confirmación más reciente es "WIP", sabrá que probablemente estaba en medio de algo. Si presiona un commit "WIP", a propósito o por error, le indica a otras personas que es posible que se produzcan más commits.
 
-Your history now looks like this:
+Tu historial ahora se ve así:
 
 ``` bash
 A -- B -- C -- WIP*
 ```
 
-**Don't push!** The `*` above signifies a commit that exists only in your local repo, not (yet) on GitHub. If you called `git status`, you'd see something like "Your branch is ahead of 'origin/main' by 1 commit.", which is also displayed in RStudio's Git pane.
+**¡No envies!** El `*` anterior significa una confirmación que existe solo en tu repositorio local, no (todavía) en GitHub. Si llamaste a `git status`, verías algo como "Your branch is ahead of 'origin/main' by 1 commit.", que también se muestra en el panel Git de RStudio.
 
-Do a bit more work. Re-check that your project is still in a functional state. Stage and commit again, but this time **amend** your previous commit. RStudio offers a check box for "Amend previous commit" or in the shell:
+Trabaja un poco más. Vuelva a verificar que su proyecto aún esté en un estado funcional. Organiza y confirma nuevamente, pero esta vez **modifica** tu confirmación anterior. RStudio ofrece una casilla de verificación para "Amend previous commit" o en el shell:
 
 ``` console
 git commit --amend --no-edit
 ```
 
-The `--no-edit` part retains the current commit message of "WIP".
+La parte `--no-edit` conserva el mensaje de confirmación actual de "WIP".
 
-**Don't push!** Your history now looks like this:
+**¡No envies!** Tu historial ahora se ve así:
 
 ``` bash
 A -- B -- C -- WIP*
 ```
 
-but the changes associated with the `WIP*` commit now represent your last two commits, i.e. all the accumulated changes since state C.
+pero los cambios asociados con la confirmación `WIP*` ahora representan sus dos últimas confirmaciones, es decir, todos los cambios acumulados desde el estado C.
 
-Keep going like this.
+Sigue así.
 
-Let's say you've finally achieved your goal. One last time, check that your project is functional and in a state you're willing to share with others.
+Digamos que finalmente has logrado tu objetivo. Una última vez, verifique que su proyecto sea funcional y se encuentre en un estado que esté dispuesto a compartir con otros.
 
-Commit, amending again, but with a real commit message this time. Think of this as commit D. Push. Do this in RStudio or the shell:
+Confirme, enmendando nuevamente, pero esta vez con un mensaje de confirmación real. Piense en esto como un compromiso D. Envie. Haga esto en RStudio o el shell:
 
 ``` console
-git commit --amend -m "Implement awesome feature; closes #43"
+git commit --amend -m "Implementa una característica increíble; cierra #43"
 git push
 ```
 
-Your history -- and that on GitHub -- look like this:
+Tu historial, y el de GitHub, se ve así:
 
 ``` bash
 A -- B -- C -- D
 ```
 
-As far as the world knows, you implemented the feature in one fell swoop. But you got to work on the task incrementally, with the peace of mind that you could never truly break things.
+Hasta donde el mundo sabe, implementaste la función de una sola vez. Pero tenías que trabajar en la tarea de forma gradual, con la tranquilidad de que nunca podrías romper las cosas.
 
-## What if I need to fall back?
+## ¿Qué pasa si necesito retroceder?
 
-Imagine you're in the middle of a Repeated Amend workflow:
+Imagine que está en medio de un flujo de trabajo de Enmendar repetidamente:
 
 ``` console
 A -- B -- C -- WIP*
 ```
 
-and you make some changes that break your project, e.g. tests start failing. These bad changes are not yet committed, but they are saved. You want to fall back to the last good state, represented by `WIP*`.
+y realiza algunos cambios que rompen su proyecto, p. las pruebas empiezan a fallar. Estos malos cambios aún no se han confirmado, pero están guardados. Quiere volver al último buen estado, representado por `WIP*`.
 
-In Git lingo, you want to do a **hard reset** to the `WIP*` state. Your local files will be forcibly reset to their state as of the `WIP*` commit. With the command line:
+En la jerga de Git, desea realizar un **restablecimiento completo** al estado `WIP*`. Sus archivos locales se restablecerán a la fuerza a su estado a partir de la confirmación `WIP*`. Con la línea de comando:
 
 ``` console
 git reset --hard
 ```
 
-which is implicitly the same as
+que es implícitamente lo mismo que
 
 ``` console
 git reset --hard HEAD
 ```
 
-which says: "reset my files to their state at the most recent commit".
+que dice: "restablecer mis archivos a su estado en la confirmación más reciente".
 
-This is also possible in RStudio. In fact, the RStudio way makes it easier to selectively reset only specific files or only certain changes. Click on "Diff" or "Commit". Select a file with changes you do not want. Use "Discard All" to discard all changes in that file. Use "Discard chunk" to discard specific changes in a file. Repeat this procedure for each affected file until you are back to an acceptable state. Carry on.
+Esto también es posible en RStudio. De hecho, la forma RStudio hace que sea más fácil restablecer selectivamente sólo archivos específicos o sólo ciertos cambios. Haga clic en "Diff" o "Commit". Seleccione un archivo con cambios que no desee. Utilice "Discard All" para descartar todos los cambios en ese archivo. Utilice "Discard chunk" para descartar cambios específicos en un archivo. Repita este procedimiento para cada archivo afectado hasta que vuelva a un estado aceptable. Continuar.
 
-If you committed a bad state, go to *link to come* for more reset scenarios.
+Si cometió un mal estado, vaya a *enlace próximo* para ver más escenarios de reinicio.
 
-## Why don't we push intermediate progress?
+## ¿Por qué no enviamos el progreso intermedio?
 
-Amending a commit is an example of what's called "rewriting Git history".
+Modificar una confirmación es un ejemplo de lo que se llama "reescribir el historial de Git".
 
-Rewriting history that has already been pushed to GitHub -- and therefore potentially pulled by someone else -- is a controversial practice. Like most controversial practices, lots of people still indulge in it, as do I.
+Reescribir el historial que ya ha sido enviado a GitHub (y, por lo tanto, potencialmente retirado por otra persona) es una práctica controvertida. Como la mayoría de las prácticas controvertidas, mucha gente todavía se entrega a ellas, al igual que yo.
 
-But there is the very real possibility that you create headaches for yourself and others, so in Happy Git we must recommend that you abstain. Once you've pushed something, consider it written in stone and move on.
+Pero existe la posibilidad muy real de que crees dolores de cabeza a ti mismo y a los demás, por lo que en debemos recomendarte que te abstengas. Una vez que hayas enviado algo, considéralo escrito en piedra y sigue adelante.
 
-## Um, what if I did push?
+## Um, ¿y si lo envie?
 
-I told you not to!
+¡Te dije que no lo hicieras!
 
-But OK here we are.
+Pero bueno, aquí estamos.
 
-Let's imagine you pushed this state to GitHub by mistake:
+Imaginemos que enviaste este estado a GitHub por error:
 
 ``` console
 A -- B -- C -- WIP (85bf30a)
 ```
 
-and proceeded to `git commit --amend` again locally, leading to this state:
+y procedió a `git commit --amend` nuevamente localmente, lo que llevó a este estado:
 
 ``` console
 A -- B -- C -- WIP* (6e884e6)
 ```
 
-I'm deliberately showing two histories that sort of look the same, in terms of commit messages. But the last SHA reveals they are actually different.
+Estoy mostrando deliberadamente dos historiales que parecen iguales, en términos de mensajes de confirmación. Pero el último SHA revela que en realidad son diferentes.
 
-You are in a pickle now, as you can't do a simple push or pull. A push will be rejected and a pull will probably lead to a merge that you don't want.
+Estás en un aprieto ahora, ya que no puedes hacer un simple enviar o importar. Una inserción será rechazada y una extracción probablemente dará lugar a una fusión que no desea.
 
-You have two choices:
+Tienes dos opciones:
 
--   If you have collaborators who may have pulled the repo at commit `WIP (85bf30a)`, you have to regard that particular history as being written in stone now. If there is any very precious work that only exists locally, such as a specific file, save a copy of that to a new file path, temporarily. Hard reset your local repo to `C` (`git reset --hard HEAD^`) and pull from GitHub. GitHub and local history now show this:
+-   Si tiene colaboradores que pueden haber retirado el repositorio en la confirmación `WIP (85bf30a)`, debe considerar esa historia en particular como escrita en piedra ahora. Si hay algún trabajo muy valioso que solo existe localmente, como un archivo específico, guarde una copia de ese en una nueva ruta de archivo, temporalmente. Restablezca por completo su repositorio local a `C` (`git reset --hard HEAD^`) e importe de GitHub. GitHub y la historia local ahora muestran esto:
 
     ``` console
     A -- B -- C -- WIP (85bf30a)
     ```
 
-    If you saved some precious work to a temporary file path, bring it back into the repo now; save, stage, commit, and push. GitHub and local history now show this:
+    Si guardó algún trabajo valioso en una ruta de archivo temporal, importelo nuevamente al repositorio ahora; guardar, preparar, confirmar y enviar. GitHub y la historia local ahora muestran esto:
 
     ``` console
     A -- B -- C -- WIP (85bf30a) -- E
     ```
 
--   If you have no collaborators or you have reason to believe they have not pulled, you can rewrite history, even on GitHub. You might as well make sure your local commit has a real, non-"WIP" message at this point. Force push your history to GitHub (`git push --force`). GitHub and local history now show this:
+-   Si no tiene colaboradores o tiene motivos para creer que no se han importado, puede reescribir el historial, incluso en GitHub. También puedes asegurarte de que tu confirmación local tenga un mensaje real que no sea "WIP" en este momento. Fuerza el envío de tu historial a GitHub (`git push --force`). GitHub y la historia local ahora muestran esto:
 
     ``` console
     A -- B -- C -- D
     ```
 
-In both cases, you've made the changes you want and your local repo and the GitHub remote are synced up again. The history is nicer in the second case, but that's a secondary issue.
+En ambos casos, has realizado los cambios que deseas y tu repositorio local y el control remoto de GitHub están sincronizados nuevamente. La historia es mejor en el segundo caso, pero eso es una cuestión secundaria.
 
-*There are many different ways to rewrite history and rescue some of these situations, but we find the approaches described above to be very approachable.*
+*Hay muchas maneras diferentes de reescribir la historia y rescatar algunas de estas situaciones, pero consideramos que los enfoques descritos anteriormente son muy accesibles.*
