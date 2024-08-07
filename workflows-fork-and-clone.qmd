@@ -1,176 +1,176 @@
-# Fork and clone {#sec-fork-and-clone}
+# Bifurcar y clonar {#sec-fork-and-clone}
 
-Use **fork and clone** to get a copy of someone else's repo if there's any chance you will want to propose a change to the owner, i.e. send a pull request. If you are waffling between "just clone" and "fork and clone", go with "fork and clone".
+Utilice **bifurcar y clonar** para obtener una copia del repositorio de otra persona si existe alguna posibilidad de que desee proponer un cambio al propietario, es decir, enviar una solicitud de extracción. Si está dudando entre "simplemente clonar" y "bifurcar y clonar", opte por "bifurcar y clonar".
 
-We want to achieve this:
+Queremos lograr esto:
 
 ![](img/fork-and-clone.jpeg){fig-align="center" fig-alt="Fork and clone." width="60%"}
 
-Below we show a couple of methods for fork and clone and you should pick one:
+A continuación mostramos un par de métodos para bifurcar y clonar y debes elegir uno:
 
--   Use a combination of the browser, command line Git, and RStudio
--   Via `usethis::create_from_github()`
+-   Utilice una combinación del navegador, la línea de comandos Git y RStudio
+-   A través de `usethis::create_from_github()`
 
-Vocabulary: `OWNER/REPO` refers to what we call the **source** repo, owned by `OWNER`, who is not you. `YOU/REPO` refers to your fork, i.e. your remote copy of the source repo, on GitHub. This is the same vocabulary used elsewhere, such as the chapter on [common remote configurations](sec-common-remote-setups).
+Vocabulario: `DUEÑO/REPO` se refiere a lo que llamamos el repositorio **fuente**, propiedad de `DUEÑO`, que no eres tú. `TU/REPO` se refiere a su bifurcación, es decir, su copia remota del repositorio fuente, en GitHub. Este es el mismo vocabulario utilizado en otros lugares, como el capítulo sobre [configuraciones remotas comunes](#sec-common-remote-setups).
 
-This is a good time to navigate to the [GitHub](https://github.com) repo of interest, i.e. the source repo `OWNER/REPO`.
+Este es un buen momento para navegar hasta el repositorio [GitHub](https://github.com) de interés, es decir, el repositorio fuente. `DUEÑO/REPO`.
 
-## Fork and clone without usethis
+## Bifurcar y clonar sin usethis
 
-I assume you're already visiting the source repo in the browser. In the upper right hand corner, click **Fork**.
+Supongo que ya estás visitando el repositorio fuente en el navegador. En la esquina superior derecha, haz clic en **Bifurcación**.
 
-This creates a copy of `REPO` in your GitHub account and takes you there in the browser. Now we are looking at `YOU/REPO`.
+Esto crea una copia de `REPO` en su cuenta de GitHub y lo lleva allí en el navegador. Ahora estamos mirando `TU/REPO`.
 
-**Clone** `YOU/REPO`, which is your copy of the repo, a.k.a. your fork, to your local machine. Make sure to clone your repo, not the source repo. Elsewhere, we describe multiple methods for cloning a remote repo. Pick one:
+**Clonar** `TU/REPO`, que es tu copia del repositorio, también conocido como tu bifurcación, en tu máquina local. Asegúrese de clonar su repositorio, no el repositorio de origen. En otro lugar, describimos múltiples métodos para clonar un repositorio remoto. Elegir uno:
 
--   The [cloning instructions in Existing project, GitHub first](sec-git-clone-usethis-rstudio) cover usethis and RStudio.
--   The [cloning instructions in Connect to GitHub](sec-git-clone-command-line) show how to do this with command line Git.
+-   Las [instrucciones de clonación en Proyecto existente, GitHub primero](#sec-git-clone-usethis-rstudio) cubrir usethis y RStudio.
+-   Las [instrucciones de clonación en Conectarse a GitHub](#sec-git-clone-command-line) muestra cómo hacer esto con la línea de comando Git.
 
-Make a conscious decision about the local destination directory and HTTPS vs SSH URL.
+Tome una decisión consciente sobre el directorio de destino local y la URL HTTPS versus SSH.
 
-### Finish the fork and clone setup {#sec-fork-and-clone-finish}
+### Finaliza la configuración de bifurcación y clonación. {#sec-fork-and-clone-finish}
 
-If you stop at this point, you have what I regard as an incomplete setup, described elsewhere as ["fork (salvageable)"](sec-fork_upstream_is_not_origin_parent).
+Si se detiene en este punto, tendrá lo que considero una configuración incompleta, descrita en otro lugar como ["fork (salvable)"](#sec-fork_upstream_is_not_origin_parent).
 
 ![](img/fork-no-upstream-sad.jpeg){fig-alt="Sad fork where `upstream` is not configured." fig-align="center" width="60%"}
 
-This is sad, because there is no direct connection between your local copy of the repo and the source repo `OWNER/REPO`.
+Esto es triste, porque no existe una conexión directa entre su copia local del repositorio y el repositorio fuente `TU/REPO`.
 
-There are two more recommended pieces of setup:
+Hay dos piezas de configuración más recomendadas:
 
--   Configure the source repo as the `upstream` remote
--   Configure your local `main` branch (or whatever the default is) to track `upstream/main`, not `origin/main`
+-   Configure el repositorio de origen como `upstream` remoto
+-   Configure su rama `main` local (o cualquiera que sea la predeterminada) para rastrear `upstream/main`, no `origin/main`
 
-The nickname `upstream` can technically be whatever you want. There is a strong tradition of using `upstream` in this context and, even though I have better ideas, I believe it is best to conform. Every book, blog post, and Stack Overflow thread that you read will use `upstream` here. Save your psychic energy for other things.
+El apodo `upstream` técnicamente puede ser lo que quieras. Existe una fuerte tradición de utilizar `upstream` en este contexto y, aunque tengo mejores ideas, creo que es mejor conformarme. Cada libro, publicación de blog e hilo de Stack Overflow que lea utilizará `upstream` aquí. Guarda tu energía psíquica para otras cosas.
 
-These steps make it easier for you to stay current with developments in the source repo. We talk more below about why you should never commit to the default branch, e.g. `main`, when you're working in a fork (see @sec-fork-dont-touch-main).
+Estos pasos le facilitan mantenerse actualizado con los desarrollos en el repositorio de origen. Hablamos más a continuación sobre por qué nunca debes comprometerte con la rama predeterminada, p. `main`, cuando estás trabajando en una bifurcación (ver @sec-fork-dont-touch-main).
 
-### Configure the `upstream` remote {#sec-fork-configure-upstream}
+### Configurar el control remoto `upstream` {#sec-fork-configure-upstream}
 
-The first step is to get the URL of the **source** repo `OWNER/REPO`. Navigate to the source repo on GitHub. It is easy to get to from your fork, `YOU/REPO`, via the "forked from" link in the upper left.
+El primer paso es obtener la URL del repositorio **fuente** `DUEÑO/REPO`. Navegue hasta el repositorio de origen en GitHub. Es fácil llegar desde su bifurcación, `TU/REPO`, a través del enlace "forked from" en la parte superior izquierda.
 
-Use the big green "Code" button to get the URL for `OWNER/REPO` on your clipboard. Be intentional about whether you copy the HTTPS or SSH URL.
+Utilice el gran botón verde "Code" para obtener la URL de `DUEÑO/REPO` en su portapapeles. Sea intencional al copiar la URL HTTPS o SSH.
 
-You can configure the `upstream` remote with command line Git, usethis, or RStudio.
+Puede configurar el control remoto `upstream` con la línea de comando Git, usethis o RStudio.
 
-Here's how to use command line Git in a shell:
+A continuación se explica cómo utilizar la línea de comandos de Git en un shell:
 
 ``` bash
 git remote add upstream https://github.com/OWNER/REPO.git
 ```
 
-`usethis::use_git_remote()` allows you to configure a Git remote. Execute this in R:
+`usethis::use_git_remote()` le permite configurar un control remoto Git. Ejecute esto en R:
 
 ```{r, eval = FALSE}
 usethis::use_git_remote(
   name = "upstream",
-  url = "https://github.com/OWNER/REPO.git"
+  url = "https://github.com/DUEÑO/REPO.git"
 )
 ```
 
-Finally, you can do this in RStudio, although it feels a bit odd. Click on "New Branch" in the Git pane ("two purple boxes and a white square").
+Finalmente, puedes hacer esto en RStudio, aunque parece un poco extraño. Haga clic en "New Branch" en el panel de Git ("dos cuadros morados y un cuadrado blanco").
 
 ![](img/rstudio-new-branch.png){fig-align="center" fig.alt="RStudio's New Branch button." width="60%"}
 
-This will reveal a button to "Add Remote". Click it. Enter `upstream` as the remote name and paste the URL for `OWNER/REPO` that you got from GitHub. Click "Add". Decline the opportunity to add a new branch by clicking "Cancel".
+Esto revelará un botón para "Agregar control remoto". Pinchalo. Ingrese `upstream` como nombre remoto y pegue la URL de `DUEÑO/REPO` que obtuvo de GitHub. Haga clic en "Agregar". Rechace la oportunidad de agregar una nueva rama haciendo clic en "Cancelar".
 
-Regardless of how you configured `upstream`, do this in a shell:
-
-``` bash
-git fetch upstream
-```
-
-### Set upstream tracking branch for the default branch {#sec-fork-set-upstream-tracking-main}
-
-This is optional but highly recommended for most fork and clone situations. We're going to set `upstream/main` from the source repo as the upstream tracking branch of local `main`. (If your default branch has a different name, substitute accordingly.)
-
-This is desirable so that a simple `git pull` pulls **from the source repo**, not from your fork. It also means a simple `git push` will (attempt to) push to the source repo, which will almost always be rejected since you probably do not have permission. This failure will alert you to the fact that you're doing something questionable, while it's still easy to back out.
-
-First, fetch info for the `upstream` remote. This is especially important if you just configured `upstream` for the first time.
+Independientemente de cómo haya configurado `upstream`, haga esto en un shell:
 
 ``` bash
 git fetch upstream
 ```
 
-The two commands below do the same thing; the first is just shorthand for the second. Do this with command line Git in a shell:
+### Configurar la rama de seguimiento ascendente para la rama predeterminada {#sec-fork-set-upstream-tracking-main}
+
+Esto es opcional pero muy recomendable para la mayoría de situaciones de bifurcación y clonación. Vamos a configurar `upstream/main` desde el repositorio de origen como la rama de seguimiento ascendente del `main` local. (Si su sucursal predeterminada tiene un nombre diferente, sustitúyalo según corresponda.)
+
+Esto es deseable para que un simple `git pull` extraiga **del repositorio fuente**, no de su bifurcación. También significa que un simple `git push` (intentará) enviar al repositorio de origen, que casi siempre será rechazado ya que probablemente no tenga permiso. Esta falla le alertará del hecho de que está haciendo algo cuestionable, aunque aún será fácil echarse atrás.
+
+Primero, obtenga información para el control remoto `upstream`. Esto es especialmente importante si acaba de configurar `upstream` por primera vez.
+
+``` bash
+git fetch upstream
+```
+
+Los dos comandos siguientes hacen lo mismo; el primero es sólo una abreviatura del segundo. Haga esto con la línea de comando Git en un shell:
 
 ``` bash
 git branch -u upstream/main
 git branch --set-upstream-to upstream/main
 ```
 
-If you found this fork and clone workflow long and tedious, consider using `usethis::create_from_github()` next time!
+Si este flujo de trabajo de bifurcación y clonación le pareció largo y tedioso, ¡considere usar `usethis::create_from_github()` la próxima vez!
 
 ## `usethis::create_from_github("OWNER/REPO", fork = TRUE)` {#sec-fork-and-clone-create-from-github}
 
-The [usethis package](https://usethis.r-lib.org) has a convenience function, [`create_from_github()`](https://usethis.r-lib.org/reference/create_from_github.html), that can do "fork and clone" (as well as just clone). The `fork` argument controls whether the source repo is cloned or fork-and-cloned. Note that `create_from_github(fork = TRUE)` requires that you have [configured a GitHub personal access token](sec-https-pat).
+El [paquete usethis](https://usethis.r-lib.org) tiene una función conveniente, [`create_from_github()`](https://usethis.r-lib.org/reference/create_from_github.html), que puede hacer "bifurcación y clonación" (además de simplemente clonar). El argumento `fork` controla si el repositorio fuente está clonado o bifurcado y clonado. Tenga en cuenta que `create_from_github(fork = TRUE)` requiere que haya [configurado un token de acceso personal de GitHub](#sec-https-pat).
 
-I assume you're already visiting the source repo in the browser. Now click the big green button that says "\<\> Code". Copy a clone URL to your clipboard. If you're taking our default advice, copy the HTTPS URL. But if you're opting for SSH, then make sure to copy the SSH URL.
+Supongo que ya estás visitando el repositorio fuente en el navegador. Ahora haga clic en el gran botón verde que dice "\<\> Código". Copie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.
 
-You can execute this next command in any R session. If you use RStudio, then do this in the R console of any RStudio instance. In either case, after successful completion, you should find yourself in the new project that is the local repo connected to your fork.
+Puede ejecutar el siguiente comando en cualquier sesión de R. Si usa RStudio, hágalo en la consola R de cualquier instancia de RStudio. En cualquier caso, después de completarlo exitosamente, deberías encontrarte en el nuevo proyecto que es el repositorio local conectado a tu bifurcación.
 
 ```{r eval = FALSE}
 usethis::create_from_github(
-  "https://github.com/OWNER/REPO",
-  destdir = "~/path/to/where/you/want/the/local/repo/",
+  "https://github.com/DUEÑO/REPO",
+  destdir = "~/ruta/a/dónde/quieres/el/local/repositorio/",
   fork = TRUE
 )
 ```
 
-The first argument is `repo_spec` and it accepts the GitHub repo specification in various forms. In particular, you can use the URL we just copied for the source repo.
+El primer argumento es `repo_spec` y acepta la especificación del repositorio de GitHub en varias formas. En particular, puede utilizar la URL que acabamos de copiar para el repositorio fuente.
 
-The `destdir` argument specifies the parent directory where you want the new folder (and local Git repo) to live. If you don't specify `destdir`, usethis defaults to some very conspicuous place, like your desktop. If you like to keep Git repos in a certain folder on your computer, you can personalize this default by setting the `usethis.destdir` option in your `.Rprofile`.
+El argumento `destdir` especifica el directorio principal donde desea que resida la nueva carpeta (y el repositorio local de Git). Si no especifica `destdir`, use este valor predeterminado en algún lugar muy visible, como su escritorio. Si desea mantener los repositorios de Git en una determinada carpeta de su computadora, puede personalizar este valor predeterminado configurando la opción `usethis.destdir` en su `.Rprofile`.
 
-The `fork` argument specifies whether to clone (`fork = FALSE`) or fork and clone (`fork = TRUE`). You often don't need to specify `fork` and can just enjoy the default behaviour, which is governed by your permissions on the source repo. By default, `fork = FALSE` if you can push to the source repo and `fork = TRUE` if you cannot.
+El argumento `fork` especifica si se debe clonar (`fork = FALSE`) o bifurcar y clonar (`fork = TRUE`). A menudo no es necesario especificar "fork" y simplemente puedes disfrutar del comportamiento predeterminado, que se rige por tus permisos en el repositorio de origen. De forma predeterminada, `fork = FALSE` si puede enviar al repositorio de origen y `fork = TRUE` si no puede.
 
-Here is what that might look like (note that we're accepting the default behaviour for many arguments):
+Así es como podría verse (tenga en cuenta que aceptamos el comportamiento predeterminado para muchos argumentos):
 
 ```{r eval = FALSE}
-usethis::create_from_github("https://github.com/OWNER/REPO")
+usethis::create_from_github("https://github.com/DUEÑO/REPO")
 #> ℹ Defaulting to 'https' Git protocol
 #> ✔ Setting `fork = TRUE`
-#> ✔ Creating '/some/path/to/local/REPO/'
-#> ✔ Forking 'OWNER/REPO'
-#> ✔ Cloning repo from 'https://github.com/YOU/REPO.git' into '/some/path/to/local/REPO'
-#> ✔ Setting active project to '/some/path/to/local/REPO'
+#> ✔ Creating '/aluguna/rutal/al/local/REPO/'
+#> ✔ Forking 'DUEÑO/REPO'
+#> ✔ Cloning repo from 'https://github.com/TU/REPO.git' into '/alguna/ruta/al/local/REPO'
+#> ✔ Setting active project to '/alguna/ruta/al/local/REPO'
 #> ℹ Default branch is 'main'
-#> ✔ Adding 'upstream' remote: 'https://github.com/OWNER/REPO.git'
+#> ✔ Adding 'upstream' remote: 'https://github.com/DUEÑO/REPO.git'
 #> ✔ Pulling changes from 'upstream/main'.
 #> ✔ Setting remote tracking branch for local 'main' branch to 'upstream/main'
 #> ✔ Setting active project to '<no active project>'
 ```
 
-For an RStudio user, `create_from_github(fork = TRUE)` does all of this:
+Para un usuario de RStudio, `create_from_github(fork = TRUE)` hace todo esto:
 
--   Forks the source repo on GitHub.
--   Clones your fork to a new local repo (and RStudio Project). This configures your fork as the `origin` remote.
--   Configures the source repo as [the `upstream` remote](sec-upstream-changes).
--   Sets the upstream tracking branch for `main` (or whatever the default branch is) to `upstream/main`.
--   Opens a new RStudio instance in the new local repo (and RStudio Project).
+-   Bifurca el repositorio fuente en GitHub.
+- Clona tu bifurcación en un nuevo repositorio local (y en el Proyecto RStudio). Esto configura su bifurcación como el control remoto `origin`.
+-   Configura el repositorio de origen como [el repositorio remoto `upstream`](#sec-upstream-changes).
+-   Establece la rama de seguimiento ascendente para `main` (o cualquiera que sea la rama predeterminada) en `upstream/main`.
+-   Abre una nueva instancia de RStudio en el nuevo repositorio local (y RStudio Project).
 
-## Engage with the new repo
+## Interactúe con el nuevo repositorio
 
-If you used `usethis::create_from_github()` or did fork and clone via [Existing project, GitHub first](sec-existing-github-first), you are probably in an RStudio Project for this new repo.
+Si usaste `usethis::create_from_github()`o bifurcó y clonó a través de [Proyecto existente, GitHub primero](#sec-existing-github-first), probablemente esté en un proyecto RStudio para este nuevo repositorio.
 
-Regardless, get yourself into this project, whatever that means for you, using your usual method.
+De todos modos, únete a este proyecto, sea lo que sea que eso signifique para ti, utilizando tu método habitual.
 
-Explore the new repo in some suitable way. If it is a package, you could run the tests or check it. If it is a data analysis project, run a script or render an Rmd. Convince yourself that you have gotten the code.
+Explore el nuevo repositorio de alguna manera adecuada. Si es un paquete, puede ejecutar las pruebas o verificarlo. Si se trata de un proyecto de análisis de datos, ejecute un script o renderice un Rmd. Convéncete de que has recibido el código.
 
-You should now be in the perfect position to sync up with ongoing developments in the source repo and to propose new changes via a pull request from your fork.
+Ahora debería estar en la posición perfecta para sincronizarse con los desarrollos en curso en el repositorio de origen y proponer nuevos cambios a través de una solicitud de extracción desde su bifurcación.
 
 ![](img/fork-them-pull-request.jpeg){fig-align="center" fig-alt = "Fork and clone, ideal setup." width="60%"}
 
-You can use the commands below to review more of the nitty gritty Git details of your fork and clone setup:
+Puede utilizar los siguientes comandos para revisar más detalles esenciales de Git de su configuración de bifurcación y clonación:
 
--   Command line Git in a shell:
+-   Línea de comando Git en un shell:
     -   `git remote -v`
-    -   `git remote show origin` (or `upstream`)
+    -   `git remote show origin` (o `upstream`)
     -   `git branch -vv`
--   In R:
+-   En R:
     -   `usethis::git_remotes()`
     -   `usethis::git_sitrep()`
 
-In the shell, `git remote -v` should reveal that your remotes are configured like so:
+En el shell, `git remote -v` debería revelar que sus controles remotos están configurados así:
 
 ``` bash
 origin    https://github.com/YOU/REPO.git (fetch)
@@ -179,7 +179,7 @@ upstream  https://github.com/OWNER/REPO.git (fetch)
 upstream  https://github.com/OWNER/REPO.git (push)
 ```
 
-Comparable info is available In R with `usethis::git_remotes()`:
+Información comparable está disponible en R con `usethis::git_remotes()`:
 
 ```{r eval = FALSE}
 git_remotes()
@@ -190,23 +190,23 @@ git_remotes()
 #> [1] "https://github.com/OWNER/repo.git"
 ```
 
-In the shell, with the default branch checked out, `git branch -vv` should reveal that `upstream/main` is the upstream tracking branch:
+En el shell, con la rama predeterminada seleccionada, `git branch -vv` debería revelar que `upstream/main` es la rama de seguimiento ascendente:
 
 ``` bash
 ~/some/repo/ % git branch -vv                   
 * main 2739987 [upstream/main] Some commit message
 ```
 
-All of this info about remotes and branches is also included in the rich information reported with `usethis::git_sitrep()`.
+Toda esta información sobre controles remotos y sucursales también se incluye en la rica información reportada con `usethis::git_sitrep()`.
 
-## Don't mess with `main` {#sec-fork-dont-touch-main}
+## No te metas con `main` {#sec-fork-dont-touch-main}
 
-Here is some parting advice for how to work in a fork and clone and situation.
+Aquí hay algunos consejos finales sobre cómo trabajar en una situación de bifurcación y clonación.
 
-If you make any commits in your local repository, I **strongly recommend** that you work in [a new branch](sec-git-branches), not `main` (or whatever the default branch is called).
+Si realiza alguna confirmación en su repositorio local, **recomiendo encarecidamente** que trabaje en [una nueva rama](#sec-git-branches), no en `main` (o como se llame la rama predeterminada).
 
-I **strongly recommend** that you do not make commits to `main` of a repo you have forked. If you commit to `main` in a repo you don't own, it creates a divergence between that branch's history in the source repo and in your repo. Nothing but pain will come from this. (If you've already done this, we discuss how to fix the situation in [Um, what if I did touch `main`?](sec-touched-main).)
+Le recomiendo **enfáticamente** que no realice confirmaciones con el `main` de un repositorio que haya bifurcado. Si se confirma `main` en un repositorio que no es de su propiedad, se crea una divergencia entre el historial de esa rama en el repositorio de origen y en su repositorio. De esto no surgirá más que dolor. (Si ya ha hecho esto, discutiremos cómo solucionar la situación en [Um, ¿qué pasa si toco `main`?](#sec-touched-main).)
 
-When you treat `main` as read-only, it makes life much easier when you want to [pull upstream work](sec-upstream-changes) into your copy. The `OWNER` of `REPO` will also be happier to receive your pull request from a non-`main` branch.
+Cuando tratas `main` como de solo lectura, hace la vida mucho más fácil cuando quieres [extraer el trabajo ascendente](#sec-upstream-changes) en tu copia. El `DUEÑO` de `REPO` también estará más feliz de recibir su solicitud de extracción de una rama que no sea `main`.
 
-For more detail, this Q&A on Stack Overflow is helpful: [Why is it bad practice to commit to your fork's master branch?](https://stackoverflow.com/q/33749832).
+Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: [¿Por qué es una mala práctica comprometerse con la rama maestra de su bifurcación?](https://stackoverflow.com/q/33749832).
