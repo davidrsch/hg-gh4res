@@ -1,32 +1,32 @@
-# Explore and extend a pull request {#sec-pr-extend}
+# Explorar y ampliar una solicitud de cambio {#sec-pr-extend}
 
-Scenario: you maintain an R package on GitHub with pull requests (PRs) from external contributors e.g. Jane Doe, janedoe on GitHub. Sometimes you need to experiment with the PR in order to provide feedback or to decide whether or not to merge. Going further, sometimes you want to add a few commits and then merge. Or maybe there are just some merge conflicts that require your personal, local attention. Let's also assume that you want the original PR author to get credit for their commits, i.e. you want to preserve history and provenance, not just diffs.
+Escenario: mantiene un paquete R en GitHub con solicitudes de extracción (PR) de contribuyentes externos, p. Jane Doe, janedoe en GitHub. A veces es necesario experimentar con las relaciones públicas para poder brindar retroalimentación o decidir si fusionarse o no. Yendo más allá, a veces desea agregar algunas confirmaciones y luego fusionarlas. O tal vez simplemente haya algunos conflictos de fusión que requieran su atención local y personal. Supongamos también que desea que el autor de relaciones públicas original obtenga crédito por sus confirmaciones, es decir, desea preservar la historia y la procedencia, no solo las diferencias.
 
-How do you checkout and possibly extend an external PR?
+¿Cómo se paga y posiblemente se extiende un PR externo?
 
-## Update from the future
+## Actualización del futuro
 
-The lessons learned here eventually lead to the `pr_*()` family of functions in usethis. `pr_fetch()` and `pr_push()` are now my workhorses for exploring and extending PRs. You can read more about usethis's functions to help with pull requests in their very own article: [Pull request helpers](https://usethis.r-lib.org/articles/pr-functions.html).
+Las lecciones aprendidas aquí finalmente conducen a la familia de funciones `pr_*()` en uso. `pr_fetch()` y `pr_push()` son ahora mis caballos de batalla para explorar y ampliar las relaciones públicas. Puede leer más sobre las funciones de usethis para ayudar con las solicitudes de extracción en su propio artículo: [Ayudantes de solicitudes de cambios](https://usethis.r-lib.org/articles/pr-functions.html).
 
-## Terminology
+## Terminología
 
-Vocabulary I use throughout.
+Vocabulario que utilizo en todo momento.
 
-**fork branch** The name of the branch in the fork from which the PR was made. Best case scenario: informative name like `fix-fluffy-bunny`. Worst case scenario: PR is from `master`.
+**rama de bifurcación** El nombre de la rama en la bifurcación a partir de la cual se creó la solicitud. En el mejor de los casos: nombre informativo como `arreglar-conejo-peludo`. En el peor de los casos: PR es de `master`.
 
-**local PR branch** The name of the local branch you'll use to work with the PR. Best case scenario: can be same as fork branch. Worse case scenario: PR is from `master`, so you must make up a new name based on something about the PR, e.g. `pr-666` or `janedoe-master`.
+**rama local de solicitud de cambio** El nombre de la rama local que utilizará para trabajar con el cmbio. En el mejor de los casos: puede ser lo mismo que la rama de bifurcación. En el peor de los casos: los cambios proviene de `maester`, por lo que debe inventar un nuevo nombre basado en algo sobre la solicitudde  cambio, p. `pr-666` o `janedoe-master`.
 
-**PR parent** The SHA of the commit in the main repo that is the base for the PR.
+**padre de solicitud de cambio** El SHA del compromiso en el repositorio principal que es la base de la solicitud de cambio.
 
-**PR remote** The SSH or HTTPS URL for the fork from which the PR was made. Or the nickname of the remote, if you've bothered to set that up.
+**solicitud de cambio remota** La URL SSH o HTTPS para la bifurcación desde la cual se realizó la solicitud de cambio. O el apodo del control remoto, si te has molestado en configurarlo.
 
-## Official GitHub advice, Version 1
+## Consejo oficial de GitHub, versión 1
 
-Every PR on GitHub has a link to "command line instructions" on how to merge the PR locally via command line Git. On this journey, there is a point at which you can pause and explore the PR locally.
+Cada solicitud de cambio en GitHub tiene un enlace a "instrucciones de línea de comando" sobre cómo fusionar la solicitud de cambio localmente a través de la línea de comando Git. En este viaje, hay un punto en el que puedes hacer una pausa y explorar las relaciones públicas a nivel local.
 
-Here are their steps with my vocabulary and some example commands:
+Aquí están sus pasos con mi vocabulario y algunos comandos de ejemplo:
 
--   Create and check out the local PR branch, anticipating its relationship to the fork branch. Template of the Git command, plus an example of how it looks under both naming scenarios:
+-   Crear y verificar la rama de solicitud de cambio local, anticipando su relación con la sucursal bifurcación. Plantilla del comando Git, además de un ejemplo de cómo se ve en ambos escenarios de nombres:
 
     ```         
     # Template of the Git command
@@ -36,7 +36,7 @@ Here are their steps with my vocabulary and some example commands:
     git checkout -b janedoe-master master 
     ```
 
--   Pull from the fork branch of the PR remote:
+-   Importe de la bifurcación del control remoto la solicitud de cambio:
 
     ```         
     # Template of the Git command
@@ -46,15 +46,15 @@ Here are their steps with my vocabulary and some example commands:
     git pull https://github.com/janedoe/yourpackage.git master
     ```
 
--   Satisfy yourself that all is well and you want to merge.
+-   Confía en que todo está bien y quieres fusionarte.
 
--   Checkout `master`:
+-   Verificar `master`:
 
     ```         
     git checkout master
     ```
 
--   Merge the local PR branch into master with `--no-ff`, meaning "no fast forward merge". This ensures you get a true merge commit, with two parents.
+-   Fusione la rama de la solicitud de cambio local en la maestra con `--no-ff`, que significa "sin combinación de avance rápido". Esto garantiza que obtendrá una confirmación de fusión, con dos padres.
 
     ```         
     # Template of the Git command
@@ -64,72 +64,72 @@ Here are their steps with my vocabulary and some example commands:
     git merge --no-ff janedoe-master
     ```
 
--   Push `master` to GitHub.
+-   Envie `master` a GitHub.
 
     ```         
     git push origin master
     ```
 
-What's not to like? The parent commit of the local PR branch will almost certainly not be the parent commit of the fork PR branch, where the external contributor did their work. This often means you get merge conflicts in `git pull`, which you'll have to deal with ASAP. The older the PR, the more likely this is and the hairier the conflicts will be.
+¿Que es no le gusta? Es casi seguro que la confirmación principal de la rama de solicitud de cambio local no será la confirmación principal de la rama de solicitud de cambio bifurcada, donde el colaborador externo hizo su trabajo. Esto a menudo significa que tendrás conflictos de fusión en `git pull`, con los que tendrás que lidiar lo antes posible. Cuanto más antigua sea la solicitud, más probable será esto y más complicados serán los conflictos.
 
-I would prefer to deal with the merge conflicts only *after* I've vetted the PR and to resolve the conflicts locally, not on GitHub. So I don't use this exact workflow.
+Preferio ocuparme de los conflictos de fusión solo *después* de haber examinado la solicitud y resolver los conflictos localmente, no en GitHub. Así que no uso este flujo de trabajo exacto.
 
-## Official GitHub advice, Version 2
+## Consejo oficial de GitHub, versión 2
 
-GitHub has another set of instructions: [Checking out pull requests locally](https://help.github.com/articles/checking-out-pull-requests-locally/)
+GitHub tiene otro conjunto de instrucciones: [Consultar solicitudes de extracción localmente](https://help.github.com/articles/checking-out-pull-requests-locally/)
 
-It starts out by referring to the Version 1 instructions, but goes on to address an inactive pull request", defined as a PR "whose owner has either stopped responding, or, more likely, has deleted their fork".
+Comienza haciendo referencia a las instrucciones de la Versión 1, pero continúa abordando una solicitud de cambio inactiva", definida como un solicitud "cuyo propietario dejó de responder o, más probablemente, eliminó su bifurcación".
 
-This workflow may NOT give the original PR author credit (next time it's easy to test this, I'll update with a definitive answer). I've never used it verbatim because I've never had this exact problem re: deleted fork.
+Es posible que este flujo de trabajo NO otorgue crédito al autor de relaciones públicas original (la próxima vez que sea fácil probar esto, lo actualizaré con una respuesta definitiva). Nunca lo he usado palabra por palabra porque nunca he tenido este problema exacto con respecto a la bifurcación eliminada.
 
-## Official GitHub advice, Version 3
+## Consejo oficial de GitHub, versión 3
 
-GitHub has yet another set of instructions: [Committing changes to a pull request branch created from a fork](https://help.github.com/articles/committing-changes-to-a-pull-request-branch-created-from-a-fork/)
+GitHub tiene otro conjunto de instrucciones: [Confirmar cambios en una rama de solicitud de cambio creada a partir de una bifurcación](https://help.github.com/articles/committing-changes-to-a-pull-request-branch-created-from-a-fork/)
 
-The page linked above explains all the pre-conditions, but the short version is that a maintainer can probably push new commits to a PR, effectively pushing commits to a fork. Strange, but true!
+La página vinculada anteriormente explica todas las condiciones previas, pero la versión corta es que un mantenedor probablemente pueda enviar nuevas confirmaciones a una solicitud, lo que efectivamente llevará las confirmaciones a una bifurcación. ¡Extraño pero cierto!
 
-This set of instructions suggests that you clone the fork, checkout the branch from which the PR was made, make any commits you wish, and then push. Any new commits you make will appear in the PR. And then you could merge.
+Este conjunto de instrucciones sugiere que clones la bifurcación, revises la rama desde la cual se realizó la solictud, realices las confirmaciones que desees y luego envies. Cualquier confirmación nueva que realice aparecerá en la solictud. Y luego podrías fusionar.
 
-My main takeaway: maintainer can push to the branch of a fork associated with a PR.
+Mi principal conclusión: el mantenedor puede acceder a la rama de una bifurcación asociada con una solicitud.
 
-## A workflow I once used
+## Un flujo de trabajo que utilicé una vez
 
-*The lessons learned here eventually lead to the `pr_*()` family of functions in usethis. `pr_fetch()` and `pr_push()` are now my workhorses for exploring and extending PRs. You can read more about usethis's functions to help with pull requests in their very own article: [Pull request helpers](https://usethis.r-lib.org/articles/pr-functions.html).*
+*Las lecciones aprendidas aquí eventualmente conducen a la familia de funciones `pr_()`* en usethis. `pr_fetch()` y `pr_push()` son ahora mis caballos de batalla para explorar y ampliar las solicitude de cambio. Puede leer más sobre las funciones de usethis para ayudar con las solicitudes de cambios en su propio artículo: [Ayudantes de solicitudes de cambios](https://usethis.r-lib.org/articles/pr-functions.html).*
 
-This combines ideas from the three above approaches, but with a few tweaks. I am sketching this up in R code, with the hope of putting this into a function and package at some point. This is a revision of an earlier approach, based on feedback from Jim Hester.
+Esto combina ideas de los tres enfoques anteriores, pero con algunos ajustes. Estoy bosquejando esto en código R, con la esperanza de ponerlo en una función y paquete en algún momento. Esta es una revisión de un enfoque anterior, basada en los comentarios de Jim Hester.
 
-Example of a PR from the `master` branch (suboptimal but often happens) from fictional GitHub user `abcde` on usethis.
+Ejemplo de una solicitud de cambio de la rama `master` (subóptimo pero que sucede con frecuencia) del usuario ficticio de GitHub `abcde` en usethis.
 
 ```{r, eval = FALSE}
 library(git2r)
 
-## add the pull requester's fork as a named remote
+## agregue la bifurcación del solicitante de cambios como un control remoto con nombre
 remote_add(name = "abcde", url = "git@github.com:abcde/usethis.git")
 
-## fetch
+## importe
 fetch(name = "abcde")
 
-## list remote branches and isolate the one I want
+## enumerar ramas remotas y aislar la que quiero
 b <- branches(flags = "remote")
 b <- b[["abcde/master"]]
 
-## get the SHA of HEAD on this branch
+## obtenga el SHA de HEAD en esta rama
 sha <- branch_target(b)
 
-## create local branch
+## crear rama local
 branch_create(commit = lookup(sha = sha), name = "abcde-master")
 
-## check it out
+## échale un vistazot
 checkout(object = ".", branch = "abcde-master")
 
-## set upstream tracking branch
+## establecer rama de seguimiento upstream
 branch_set_upstream(repository_head(), name = "abcde/master")
 
-## confirm upstream tracking branch
+## confirmar la rama de seguimiento upstream
 branch_get_upstream(repository_head())
 
-## make one or more commits here
+## haga una o más confirmaciones aquí
 
-## push to the branch in the fork and, therefore, into the PR
+## envie hacia la rama en la bifurcación y, por tanto, hacia la solicitud de cambio
 push()
 ```
