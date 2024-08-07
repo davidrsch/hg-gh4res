@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.5.56">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
-<title>32&nbsp; Get upstream changes for a fork – Git y GitHub con R</title>
+<title>32&nbsp; Importar cambios de upstream en una bifurcación – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-upstream-changes-into-fork.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Get upstream changes for a fork</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-upstream-changes-into-fork.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Importar cambios de upstream en una bifurcación</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -408,49 +408,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Useful Git patterns for real life</span></a>
+ <span class="menu-text">Patrones de Git útiles para la vida real</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-repeated-amend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">The Repeated Amend</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Enmendar repetidamente</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-push-rejected.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dealing with push rejection</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del empujón</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-pull.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Pull, but you have local work</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Importar, pero tienes trabajo local</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-see-the-past.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Time travel: See the past</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Viaje en el tiempo: ver el pasado</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-fork-and-clone.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Fork and clone</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Bifurcar y clonar</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-upstream-changes-into-fork.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Get upstream changes for a fork</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Importar cambios de upstream en una bifurcación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-explore-extend-pull-request.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Explore and extend a pull request</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Explorar y ampliar una solicitud de cambio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -575,22 +575,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#verify-your-local-repos-configuration" id="toc-verify-your-local-repos-configuration" class="nav-link active" data-scroll-target="#verify-your-local-repos-configuration"><span class="header-section-number">32.1</span> Verify your local repo’s configuration</a>
+<a href="#verifique-la-configuraci%C3%B3n-de-su-repositorio-local" id="toc-verifique-la-configuración-de-su-repositorio-local" class="nav-link active" data-scroll-target="#verifique-la-configuraci%C3%B3n-de-su-repositorio-local"><span class="header-section-number">32.1</span> Verifique la configuración de su repositorio local</a>
   <ul class="collapse">
-<li><a href="#list-your-remotes" id="toc-list-your-remotes" class="nav-link" data-scroll-target="#list-your-remotes"><span class="header-section-number">32.1.1</span> List your remotes</a></li>
-  <li><a href="#view-the-upstream-tracking-branch" id="toc-view-the-upstream-tracking-branch" class="nav-link" data-scroll-target="#view-the-upstream-tracking-branch"><span class="header-section-number">32.1.2</span> View the upstream tracking branch</a></li>
-  <li><a href="#repair-or-complete-your-repos-configuration" id="toc-repair-or-complete-your-repos-configuration" class="nav-link" data-scroll-target="#repair-or-complete-your-repos-configuration"><span class="header-section-number">32.1.3</span> Repair or complete your repo’s configuration</a></li>
+<li><a href="#lista-tus-controles-remotos" id="toc-lista-tus-controles-remotos" class="nav-link" data-scroll-target="#lista-tus-controles-remotos"><span class="header-section-number">32.1.1</span> Lista tus controles remotos</a></li>
+  <li><a href="#ver-la-rama-de-seguimiento-ascendente" id="toc-ver-la-rama-de-seguimiento-ascendente" class="nav-link" data-scroll-target="#ver-la-rama-de-seguimiento-ascendente"><span class="header-section-number">32.1.2</span> Ver la rama de seguimiento ascendente</a></li>
+  <li><a href="#repara-o-completa-la-configuraci%C3%B3n-de-tu-repositorio" id="toc-repara-o-completa-la-configuración-de-tu-repositorio" class="nav-link" data-scroll-target="#repara-o-completa-la-configuraci%C3%B3n-de-tu-repositorio"><span class="header-section-number">32.1.3</span> Repara o completa la configuración de tu repositorio</a></li>
   </ul>
 </li>
-  <li><a href="#verify-that-your-working-tree-is-clean" id="toc-verify-that-your-working-tree-is-clean" class="nav-link" data-scroll-target="#verify-that-your-working-tree-is-clean"><span class="header-section-number">32.2</span> Verify that your “working tree is clean”</a></li>
-  <li><a href="#sync-option-1-pull-changes-from-upstream-then-push-to-origin" id="toc-sync-option-1-pull-changes-from-upstream-then-push-to-origin" class="nav-link" data-scroll-target="#sync-option-1-pull-changes-from-upstream-then-push-to-origin"><span class="header-section-number">32.3</span> Sync option 1: Pull changes from <code>upstream</code>, then push to <code>origin</code></a></li>
-  <li><a href="#sync-option-2-sync-your-fork-on-github-pull-changes-from-origin-to-local-repo" id="toc-sync-option-2-sync-your-fork-on-github-pull-changes-from-origin-to-local-repo" class="nav-link" data-scroll-target="#sync-option-2-sync-your-fork-on-github-pull-changes-from-origin-to-local-repo"><span class="header-section-number">32.4</span> Sync option 2: Sync your fork on GitHub, pull changes from <code>origin</code> to local repo</a></li>
-  <li><a href="#sec-touched-main" id="toc-sec-touched-main" class="nav-link" data-scroll-target="#sec-touched-main"><span class="header-section-number">32.5</span> Um, what if I did touch <code>main</code>?</a></li>
+  <li><a href="#verifica-que-tu-%C3%A1rbol-de-trabajo-est%C3%A9-limpio" id="toc-verifica-que-tu-árbol-de-trabajo-esté-limpio" class="nav-link" data-scroll-target="#verifica-que-tu-%C3%A1rbol-de-trabajo-est%C3%A9-limpio"><span class="header-section-number">32.2</span> Verifica que tu “árbol de trabajo esté limpio”</a></li>
+  <li><a href="#opci%C3%B3n-de-sincronizaci%C3%B3n-1-extraiga-los-cambios-desde-upstream-y-luego-env%C3%ADelos-a-origin" id="toc-opción-de-sincronización-1-extraiga-los-cambios-desde-upstream-y-luego-envíelos-a-origin" class="nav-link" data-scroll-target="#opci%C3%B3n-de-sincronizaci%C3%B3n-1-extraiga-los-cambios-desde-upstream-y-luego-env%C3%ADelos-a-origin"><span class="header-section-number">32.3</span> Opción de sincronización 1: extraiga los cambios desde <code>upstream</code> y luego envíelos a <code>origin</code></a></li>
+  <li><a href="#opci%C3%B3n-de-sincronizaci%C3%B3n-2-sincroniza-tu-bifurcaci%C3%B3n-en-github-extrae-los-cambios-del-origen-al-repositorio-local" id="toc-opción-de-sincronización-2-sincroniza-tu-bifurcación-en-github-extrae-los-cambios-del-origen-al-repositorio-local" class="nav-link" data-scroll-target="#opci%C3%B3n-de-sincronizaci%C3%B3n-2-sincroniza-tu-bifurcaci%C3%B3n-en-github-extrae-los-cambios-del-origen-al-repositorio-local"><span class="header-section-number">32.4</span> Opción de sincronización 2: sincroniza tu bifurcación en GitHub, extrae los cambios del <code>origen</code> al repositorio local</a></li>
+  <li><a href="#sec-touched-main" id="toc-sec-touched-main" class="nav-link" data-scroll-target="#sec-touched-main"><span class="header-section-number">32.5</span> Um, ¿qué pasa si toco <code>main</code>?</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-upstream-changes-into-fork.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Get upstream changes for a fork</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-upstream-changes" class="quarto-section-identifier"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Get upstream changes for a fork</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-upstream-changes-into-fork.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Importar cambios de upstream en una bifurcación</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-upstream-changes" class="quarto-section-identifier"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Importar cambios de upstream en una bifurcación</span></span></h1>
 </div>
 
 
@@ -604,27 +604,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>This workflow is relevant if you have done <a href="sec-fork-and-clone">fork and clone</a> and now you need to pull subsequent changes from the source repo into your copy. We are talking about both your fork (your remote copy of the repo, on GitHub) and your local copy.</p>
-<p>This is the ideal starting situation:</p>
+</header><p>Este flujo de trabajo es relevante si ha realizado <a href="workflows-fork-and-clone.html">bifurcación y clonación</a> y ahora necesita incorporar los cambios posteriores del repositorio de origen a su copia. Estamos hablando tanto de tu bifurcación (tu copia remota del repositorio, en GitHub) como de tu copia local.</p>
+<p>Esta es la situación inicial ideal:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/fork-them-pull-request.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Fork and clone, ideal setup."></p>
 </figure>
 </div>
-<p>First, we’re going to actively verify the above configuration. If your setup is sub-optimal, we’ll discuss how to address that.</p>
-<section id="verify-your-local-repos-configuration" class="level2" data-number="32.1"><h2 data-number="32.1" class="anchored" data-anchor-id="verify-your-local-repos-configuration">
-<span class="header-section-number">32.1</span> Verify your local repo’s configuration</h2>
-<p>Vocabulary: <code>OWNER/REPO</code> refers to what we call the <strong>source</strong> repo, owned by <code>OWNER</code>, who is not you. <code>YOU/REPO</code> refers to your fork, i.e.&nbsp;your remote copy of the source repo, on GitHub. This is the same vocabulary used elsewhere, such as the chapter on <a href="sec-common-remote-setups">common remote configurations</a>.</p>
-<section id="list-your-remotes" class="level3" data-number="32.1.1"><h3 data-number="32.1.1" class="anchored" data-anchor-id="list-your-remotes">
-<span class="header-section-number">32.1.1</span> List your remotes</h3>
-<p>Let’s inspect <a href="sec-git-remotes">the current remotes</a> for your local repo.</p>
-<p>You can check this with command line Git in the shell (Appendix <a href="shell.html" class="quarto-xref"><span>Appendix A</span></a>):</p>
+<p>Primero, verificaremos activamente la configuración anterior. Si su configuración no es óptima, discutiremos cómo solucionarlo.</p>
+<section id="verifique-la-configuración-de-su-repositorio-local" class="level2" data-number="32.1"><h2 data-number="32.1" class="anchored" data-anchor-id="verifique-la-configuración-de-su-repositorio-local">
+<span class="header-section-number">32.1</span> Verifique la configuración de su repositorio local</h2>
+<p>Vocabulario: <code>DUEÑO/REPO</code> se refiere a lo que llamamos el repositorio <strong>fuente</strong>, propiedad de <code>DUEÑO</code>, que no eres tú. <code>TU/REPO</code> se refiere a su bifurcación, es decir, su copia remota del repositorio fuente, en GitHub. Este es el mismo vocabulario utilizado en otros lugares, como el capítulo sobre <a href="remote-setups-common.html">configuraciones remotas comunes</a>.</p>
+<section id="lista-tus-controles-remotos" class="level3" data-number="32.1.1"><h3 data-number="32.1.1" class="anchored" data-anchor-id="lista-tus-controles-remotos">
+<span class="header-section-number">32.1.1</span> Lista tus controles remotos</h3>
+<p>Inspeccionemos <a href="git-remotes.html">los controles remotos actuales</a> para su repositorio local.</p>
+<p>Puedes comprobar esto con la línea de comando Git en el shell (<a href="shell.html" class="quarto-xref"><span>Appendix A</span></a>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We want to see something like this:</p>
+<p>Queremos ver algo como esto:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>    https://github.com/YOU/REPO.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>    https://github.com/YOU/REPO.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">upstream</span>  https://github.com/OWNER/REPO.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">upstream</span>  https://github.com/OWNER/REPO.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Comparable info is available in R with <code>usethis::git_remotes()</code>:</p>
+<p>Información comparable está disponible en R con <code>usethis::git_remotes()</code>:</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">git_remotes</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $origin</span></span>
@@ -633,111 +633,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co">#&gt; $upstream</span></span>
 <span><span class="co">#&gt; [1] "https://github.com/OWNER/repo.git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you only have one remote, probably <code>origin</code>, I highly recommend you modify the remote configuration. But first, we’ll check one other thing.</p>
-</section><section id="view-the-upstream-tracking-branch" class="level3" data-number="32.1.2"><h3 data-number="32.1.2" class="anchored" data-anchor-id="view-the-upstream-tracking-branch">
-<span class="header-section-number">32.1.2</span> View the upstream tracking branch</h3>
-<p>Ideally, your local <code>main</code> branch has <code>upstream/main</code> as its upstream tracking branch. Even you have a correctly configured <code>upstream</code> remote, this is worth checking. If your default branch has a branch other than <code>main</code>, substitute accordingly.</p>
-<p>In the shell, with the default branch checked out, <code>git branch -vv</code> should reveal that <code>upstream/main</code> is the upstream tracking branch:</p>
+<p>Si solo tiene un control remoto, probablemente <code>origin</code>, le recomiendo que modifique la configuración del control remoto. Pero primero comprobaremos otra cosa.</p>
+</section><section id="ver-la-rama-de-seguimiento-ascendente" class="level3" data-number="32.1.2"><h3 data-number="32.1.2" class="anchored" data-anchor-id="ver-la-rama-de-seguimiento-ascendente">
+<span class="header-section-number">32.1.2</span> Ver la rama de seguimiento ascendente</h3>
+<p>Idealmente, su rama <code>main</code> local tiene <code>upstream/main</code> como su rama de seguimiento ascendente. Incluso si tiene un control remoto <code>upstream</code> configurado correctamente, vale la pena comprobarlo. Si su rama predeterminada tiene una rama distinta a <code>main</code>, sustitúyala según corresponda.</p>
+<p>En el shell, con la rama predeterminada seleccionada, <code>git branch -vv</code> debería revelar que <code>upstream/main</code> es la rama de seguimiento ascendente:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/some/repo/</span> % git branch <span class="at">-vv</span>                   </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main 2739987 <span class="pp">[</span><span class="ss">upstream/main</span><span class="pp">]</span> Some commit message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If, instead, you see <code>origin/main</code>, I highly recommend you reconfigure the tracking branch.</p>
-<p>All of this info about remotes and branches is also included in the rich information reported with <code>usethis::git_sitrep()</code>.</p>
-</section><section id="repair-or-complete-your-repos-configuration" class="level3" data-number="32.1.3"><h3 data-number="32.1.3" class="anchored" data-anchor-id="repair-or-complete-your-repos-configuration">
-<span class="header-section-number">32.1.3</span> Repair or complete your repo’s configuration</h3>
-<p>Instructions for adding the <code>upstream</code> remote and setting upstream tracking for your default branch are given in <a href="sec-fork-and-clone-finish">Finish the fork and clone setup</a>.</p>
-</section></section><section id="verify-that-your-working-tree-is-clean" class="level2" data-number="32.2"><h2 data-number="32.2" class="anchored" data-anchor-id="verify-that-your-working-tree-is-clean">
-<span class="header-section-number">32.2</span> Verify that your “working tree is clean”</h2>
-<p>We assume your repo has this favorable configuration:</p>
+<p>Si, en cambio, ve <code>origin/main</code>, le recomiendo que reconfigure la rama de seguimiento.</p>
+<p>Toda esta información sobre controles remotos y sucursales también se incluye en la rica información reportada con <code>usethis::git_sitrep()</code>.</p>
+</section><section id="repara-o-completa-la-configuración-de-tu-repositorio" class="level3" data-number="32.1.3"><h3 data-number="32.1.3" class="anchored" data-anchor-id="repara-o-completa-la-configuración-de-tu-repositorio">
+<span class="header-section-number">32.1.3</span> Repara o completa la configuración de tu repositorio</h3>
+<p>Las instrucciones para agregar el control remoto <code>upstream</code> y configurar el seguimiento ascendente para su rama predeterminada se proporcionan en <a href="workflows-fork-and-clone.html#sec-fork-and-clone-finish">Finalizar la configuración de bifurcación y clonación</a>.</p>
+</section></section><section id="verifica-que-tu-árbol-de-trabajo-esté-limpio" class="level2" data-number="32.2"><h2 data-number="32.2" class="anchored" data-anchor-id="verifica-que-tu-árbol-de-trabajo-esté-limpio">
+<span class="header-section-number">32.2</span> Verifica que tu “árbol de trabajo esté limpio”</h2>
+<p>Asumimos que su repositorio tiene esta configuración favorable:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/fork-them.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'fork'"></p>
 </figure>
 </div>
-<p>Make sure you are on the default branch, e.g.&nbsp;<code>main</code>, and that your “working tree is clean”. First, let’s make sure our information on the <code>upstream</code> remote is current:</p>
+<p>Asegúrate de estar en la rama predeterminada, p.&nbsp;<code>main</code>, y que su “árbol de trabajo esté limpio”. Primero, asegurémonos de que nuestra información en el control remoto <code>upstream</code> esté actualizada:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch upstream</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>git status</code> should now show something like:</p>
+<p><code>git status</code> ahora debería mostrar algo como:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Your</span> branch is up to date with <span class="st">'origin/main'</span>.</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you have modified files, you should either discard those changes or create a new branch and commit the changes there for safekeeping.</p>
-<p>It’s also fine if you see something like this:</p>
+<p>Si ha modificado archivos, debe descartar esos cambios o crear una nueva rama y confirmar los cambios allí para guardarlos.</p>
+<p>También está bien si ves algo como esto:</p>
 <pre><code>Your branch is behind 'upstream/main' by 2 commits, and can be fast-forwarded.</code></pre>
-<p>However, if you see something like this:</p>
+<p>Sin embargo, si ve algo como esto:</p>
 <pre><code>Your branch is ahead of 'upstream/main' by 1 commit.</code></pre>
-<p>or this:</p>
+<p>o esto:</p>
 <pre><code>Your branch and 'upstream/main' have diverged,
 and have 1 and 1 different commits each, respectively.</code></pre>
-<p>this is a sign that you have made some regrettable choices.</p>
-<p>I recommend that you <a href="sec-fork-dont-touch-main">never make your own commits to the default branch of a fork</a> or to any branch that you don’t effectively (co-)own. However, if you have already done so, we explain how to fix the problem in <a href="sec-touched-main">Um, what if I did touch <code>main</code>?</a>.</p>
-</section><section id="sync-option-1-pull-changes-from-upstream-then-push-to-origin" class="level2" data-number="32.3"><h2 data-number="32.3" class="anchored" data-anchor-id="sync-option-1-pull-changes-from-upstream-then-push-to-origin">
-<span class="header-section-number">32.3</span> Sync option 1: Pull changes from <code>upstream</code>, then push to <code>origin</code>
+<p>Esta es una señal de que ha tomado algunas decisiones lamentables.</p>
+<p>Le recomiendo que <a href="workflows-fork-and-clone.html#sec-fork-dont-touch-main">nunca haga sus propios compromisos con la rama predeterminada de una bifurcación</a> o con cualquier rama de la que no sea (co)propietario efectivamente. Sin embargo, si ya lo ha hecho, le explicamos cómo solucionar el problema en <a href="#sec-touched-main">Um, ¿qué pasa si toco <code>main</code>?</a>.</p>
+</section><section id="opción-de-sincronización-1-extraiga-los-cambios-desde-upstream-y-luego-envíelos-a-origin" class="level2" data-number="32.3"><h2 data-number="32.3" class="anchored" data-anchor-id="opción-de-sincronización-1-extraiga-los-cambios-desde-upstream-y-luego-envíelos-a-origin">
+<span class="header-section-number">32.3</span> Opción de sincronización 1: extraiga los cambios desde <code>upstream</code> y luego envíelos a <code>origin</code>
 </h2>
-<p>Now we are ready to pull the changes that we don’t have from the source repo <code>OWNER/REPO</code> into our local copy.</p>
+<p>Ahora estamos listos para incorporar los cambios que no tenemos del repositorio fuente <code>DUEÑO/REPO</code> a nuestra copia local.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull upstream main <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This says: “pull the changes from the remote known as <code>upstream</code> into the <code>main</code> branch of my local repo”. I am being explicit about the remote (<code>upstream</code>) and the branch (<code>main</code>) in this case, both to make it more clear and to make this command robust to repo- and user-level Git configurations. But if you’ve followed our setup recommendations, you don’t actually need to be this explicit.</p>
-<p>I also <strong>highly recommend</strong> using the <code>--ff-only</code> flag in this case, so that you also say “if I have made my own commits to <code>main</code>, please force me to confront this problem NOW”. Here’s what it looks like if a fast-forward merge isn’t possible:</p>
+<p>Esto dice: “extraiga los cambios del control remoto conocido como <code>upstream</code> a la rama <code>main</code> de mi repositorio local”. Estoy siendo explícito sobre el control remoto (<code>upstream</code>) y la rama (<code>main</code>) en este caso, tanto para hacerlo más claro como para que este comando sea robusto para configuraciones de Git a nivel de repositorio y de usuario. Pero si ha seguido nuestras recomendaciones de configuración, no es necesario que sea tan explícito.</p>
+<p>También <strong>recomiendo encarecidamente</strong> usar el indicador <code>--ff-only</code> en este caso, para que también diga “si hice mis propios compromisos con <code>main</code>, por favor oblígueme a enfrentar este problema AHORA”. Así es como se ve si no es posible realizar una combinación de avance rápido:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git pull upstream main <span class="at">--ff-only</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">From</span> github.com:OWNER/REPO</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> branch              main     <span class="at">-</span><span class="op">&gt;</span> FETCH_HEAD</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> Not possible to fast-forward, aborting.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>See <a href="sec-touched-main">Um, what if I did touch <code>main</code>?</a> to get yourself back on the happy path.</p>
-<p>Assuming you’ve succeeded with <code>git pull</code>, this next step is optional and many people who are facile with Git do not bother.</p>
-<p>If you take my advice to <a href="sec-fork-dont-touch-main">never work in <code>main</code> of a fork</a>, then the state of the <code>main</code> branch in your fork <code>YOU/REPO</code> does not technically matter. You will never make a pull request from <code>main</code> and there are ways to set the correct base for the branches and pull requests that you do create.</p>
-<p>If, however, your grasp of all these Git concepts is tenuous at best, it can be helpful to try to keep things simple and orderly and synced up.</p>
-<p>Feel free to push the newly updated state of local <code>main</code> to your fork <code>YOU/REPO</code> and enjoy the satisfaction of being “caught up” with <code>OWNER/REPO</code>, in both your remote fork and in your local repo.</p>
-<p>In the shell:</p>
+<p>Ver <a href="#sec-touched-main">Um, ¿qué pasa si toco <code>main</code>?</a> para volver al camino feliz.</p>
+<p>Suponiendo que haya tenido éxito con <code>git pull</code>, el siguiente paso es opcional y muchas personas que tienen facilidad con Git no se molestan.</p>
+<p>Si sigues mi consejo de <a href="workflows-fork-and-clone.html#sec-fork-dont-touch-main">nunca trabajar en <code>main</code> de una bifurcación</a>, entonces el estado de la rama <code>main</code> en tu bifurcación <code>TU/REPO</code> técnicamente no importa . Nunca realizará una solicitud de cambio desde <code>main</code> y hay formas de establecer la base correcta para las ramas y solicitudes de cambio que cree.</p>
+<p>Sin embargo, si su comprensión de todos estos conceptos de Git es, en el mejor de los casos, escasa, puede resultar útil intentar mantener las cosas simples, ordenadas y sincronizadas.</p>
+<p>Siéntase libre de enviar el estado recientemente actualizado de <code>main</code> local a su bifurcación <code>TU/REPO</code> y disfrute de la satisfacción de estar “atrapado” con <code>DUEÑO/REPO</code>, tanto en su bifurcación remota como en su repositorio local.</p>
+<p>En el shell:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you’ve followed our configuration advice, you really do need to be this explicit in order to push to <code>origin</code> (not <code>upstream</code>).</p>
-</section><section id="sync-option-2-sync-your-fork-on-github-pull-changes-from-origin-to-local-repo" class="level2" data-number="32.4"><h2 data-number="32.4" class="anchored" data-anchor-id="sync-option-2-sync-your-fork-on-github-pull-changes-from-origin-to-local-repo">
-<span class="header-section-number">32.4</span> Sync option 2: Sync your fork on GitHub, pull changes from <code>origin</code> to local repo</h2>
-<p>For many years, this was not possible, though many GitHub users wished for this feature. Happily it is now possible to sync a fork with its source repo in the browser, i.e.&nbsp;to do the sync between the 2 GitHub repos. The official GitHub documentation for this is <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-web-ui">Syncing a fork branch from the web UI</a>.</p>
-<p>Navigate to the main page of your fork <code>YOU/REPO</code>, i.e.&nbsp;your primary repo which is configured as the <code>origin</code> remote.</p>
-<p>At the top you’ll see some information on how the state of <code>main</code> in your fork relates to <code>main</code> in the source repo, similar to what we see with <code>git status</code> in the alternative approach above. Ideally you will see something like:</p>
-<pre><code>This branch is 2 commits behind OWNER:main.</code></pre>
-<p>which indicates you can sync up in the ideal fast-forward sense.</p>
-<p>If you see something like this:</p>
-<pre><code>This branch is 1 commit ahead, 2 commits behind OWNER:main.</code></pre>
-<p>this is a sign that you have made some regrettable choices.</p>
-<p>I recommend that you <a href="sec-fork-dont-touch-main">never make your own commits to the default branch of a fork</a> or to any branch that you don’t effectively (co-)own. However, if you have already done so, we explain how to fix the problem in <a href="sec-touched-main">Um, what if I did touch <code>main</code>?</a>.</p>
-<p>Once you are ready to proceed, click “Sync fork” in the upper right corner. Upon success, the main page of <code>YOU/REPO</code> shows something like</p>
+<p>Si ha seguido nuestros consejos de configuración, realmente necesita ser así de explícito para poder enviar al <code>origin</code> (no al <code>upstream</code>).</p>
+</section><section id="opción-de-sincronización-2-sincroniza-tu-bifurcación-en-github-extrae-los-cambios-del-origen-al-repositorio-local" class="level2" data-number="32.4"><h2 data-number="32.4" class="anchored" data-anchor-id="opción-de-sincronización-2-sincroniza-tu-bifurcación-en-github-extrae-los-cambios-del-origen-al-repositorio-local">
+<span class="header-section-number">32.4</span> Opción de sincronización 2: sincroniza tu bifurcación en GitHub, extrae los cambios del <code>origen</code> al repositorio local</h2>
+<p>Durante muchos años, esto no fue posible, aunque muchos usuarios de GitHub deseaban esta característica. Afortunadamente, ahora es posible sincronizar una bifurcación con su repositorio de origen en el navegador, es decir, realizar la sincronización entre los 2 repositorios de GitHub. La documentación oficial de GitHub para esto es <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-web-ui">Sincronizar una rama bifurcada desde la interfaz de usuario web</a>.</p>
+<p>Navegue a la página principal de su bifurcación <code>TU/REPO</code>, es decir, su repositorio principal que está configurado como el control remoto <code>origin</code>.</p>
+<p>En la parte superior verá información sobre cómo se relaciona el estado de <code>main</code> en su bifurcación con <code>main</code> en el repositorio de origen, similar a lo que vemos con <code>git status</code> en el enfoque alternativo anterior. Lo ideal es que veas algo como:</p>
+<pre><code>This branch is 2 commits behind DUEÑO:main.</code></pre>
+<p>lo que indica que puedes sincronizar en el sentido de avance rápido ideal.</p>
+<p>Si ves algo como esto:</p>
+<pre><code>This branch is 1 commit ahead, 2 commits behind DUEÑO:main.</code></pre>
+<p>Esta es una señal de que ha tomado algunas decisiones lamentables.</p>
+<p>Te recomiendo que <a href="workflows-fork-and-clone.html#sec-fork-dont-touch-main">nunca hagas tus propias confirmaciones en la rama predeterminada de una bifurcación</a> o a cualquier sucursal de la que no sea (co)propietario efectivamente. Sin embargo, si ya lo ha hecho, le explicamos cómo solucionar el problema en <a href="#sec-touched-main">Um, ¿qué pasa si toco <code>main</code>?</a>.</p>
+<p>Una vez que esté listo para continuar, haga clic en “Sync fork” en la esquina superior derecha. Si tiene éxito, la página principal de <code>TU/REPO</code> muestra algo como</p>
 <blockquote class="blockquote">
-<p>This branch is up to date with <code>OWNER/REPO:main</code>.</p>
+<p>Esta sucursal está actualizada con <code>PROPIETARIO/REPO:main</code>.</p>
 </blockquote>
-<p>If you have made commits on the default branch of your fork, which we <a href="sec-fork-dont-touch-main">strongly advise against</a>, this can result in a merge commit (or even merge conflicts). If you are suffering due to commits you’ve made on <code>main</code> and it’s beyond the help we describe below, consider deleting your fork and local repo and making a fresh start with <a href="sec-fork-and-clone">Fork and clone</a>. Live and learn.</p>
-<p>Once you have successfully synced the default branch of <code>YOU/REPO</code> with the default branch of <code>OWNER/REPO</code>, you probably want to do the same for your local repo. Since they are synced, you can pull from either <code>upstream</code> or <code>origin</code>.</p>
-<p>In the shell, with the default branch checked out, execute one of these:</p>
+<p>Si ha realizado confirmaciones en la rama predeterminada de su bifurcación, lo cual <a href="workflows-fork-and-clone.html#sec-fork-dont-touch-main">desaconsejamos encarecidamente</a>, esto puede resultar en una confirmación de fusión (o incluso conflictos de fusión). Si está sufriendo debido a las confirmaciones que realizó en <code>main</code> y está más allá de la ayuda que describimos a continuación, considere eliminar su bifurcación y repositorio local y comenzar de nuevo con <a href="workflows-fork-and-clone.html">Bifurcar y clonar</a>. Vive y aprende.</p>
+<p>Una vez que haya sincronizado exitosamente la rama predeterminada de <code>TU/REPO</code> con la rama predeterminada de <code>PROPIETARIO/REPO</code>, probablemente desee hacer lo mismo con su repositorio local. Dado que están sincronizados, puede extraerlos desde <code>upstream</code> u <code>origin</code>.</p>
+<p>En el shell, con la rama predeterminada desprotegida, ejecute uno de estos:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull upstream main <span class="at">--ff-only</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you’ve followed our configuration advice, you don’t actually need to specify the remote and branch, because this branch is configured to pull from <code>upstream</code>. For the same reasons as before, it’s a good idea to include the <code>--ff-only</code> flag. If you have made local commits to <code>main</code>, this will surface that problem, which is solved in the next section.</p>
+<p>Si ha seguido nuestros consejos de configuración, en realidad no necesita especificar el control remoto y la rama, porque esta rama está configurada para extraer desde <code>upstream</code>. Por las mismas razones que antes, es una buena idea incluir la opción <code>--ff-only</code>. Si ha realizado confirmaciones locales con <code>main</code>, esto hará surgir el problema, que se resuelve en la siguiente sección.</p>
 </section><section id="sec-touched-main" class="level2" data-number="32.5"><h2 data-number="32.5" class="anchored" data-anchor-id="sec-touched-main">
-<span class="header-section-number">32.5</span> Um, what if I did touch <code>main</code>?</h2>
-<p>I told you not to!</p>
-<p>But OK here we are.</p>
-<p>Let’s imagine this is the state of <code>main</code> (or whatever the default branch is called) in the source repo <code>OWNER/REPO</code>:</p>
+<span class="header-section-number">32.5</span> Um, ¿qué pasa si toco <code>main</code>?</h2>
+<p>¡Te dije que no lo hicieras!</p>
+<p>Pero bueno, aquí estamos.</p>
+<p>Imaginemos que este es el estado de <code>main</code> (o como se llame la rama predeterminada) en el repositorio fuente <code>PROPIETARIO/REPO</code>:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span> <span class="at">--</span> A <span class="at">--</span> B <span class="at">--</span> C <span class="at">--</span> D <span class="at">--</span> E <span class="at">--</span> F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and and this is the state of the <code>main</code> branch in your local copy:</p>
+<p>y este es el estado de la rama <code>main</code> en su copia local:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span> <span class="at">--</span> A <span class="at">--</span> B <span class="at">--</span> C <span class="at">--</span> X <span class="at">--</span> Y <span class="at">--</span> Z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The two histories agree, up to commit or state <code>C</code>, then they diverge.</p>
-<p>If you want to preserve the work in commits <code>X</code>, <code>Y</code>, and <code>Z</code>, create a new branch right now, with tip at <code>Z</code>, like so, but substituting your preferred branch name:</p>
+<p>Las dos historias coinciden, hasta comprometerse o indicar <code>C</code>, luego divergen.</p>
+<p>Si desea conservar el trabajo en las confirmaciones <code>X</code>, <code>Y</code> y <code>Z</code>, cree una nueva rama ahora mismo, con la sugerencia en <code>Z</code>, así, pero sustituyendo el nombre de su rama preferida:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> my-great-innovations</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This safeguards your great innovations from commits <code>X</code>, <code>Y</code>, and <code>Z</code>. Now checkout <code>main</code> again:</p>
+<p>Esto protege sus grandes innovaciones de las confirmaciones <code>X</code>, <code>Y</code> y <code>Z</code>. Ahora revisa <code>main</code> nuevamente:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>I now assume you have either preserved the work in <code>X</code>, <code>Y</code>, and <code>Z</code> (with a branch) or have decided to let it go.</p>
-<p>Do a hard reset of the <code>main</code> branch to <code>C</code>.</p>
+<p>Ahora supongo que has conservado el trabajo en <code>X</code>, <code>Y</code> y <code>Z</code> (con una rama) o has decidido dejarlo ir.</p>
+<p>Haga un restablecimiento completo de la rama <code>main</code> para <code>C</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> C</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will have to figure out how to convey <code>C</code> in Git-speak. Specify it relative to <code>HEAD</code> or provide the SHA. See <em>future link about time travel</em> for more support.</p>
+<p>Tendrás que descubrir cómo transmitir <code>C</code> en Git-speak. Especifíquelo en relación con <code>HEAD</code> o proporcione el SHA. Consulte <em>enlace futuro sobre viajes en el tiempo</em> para obtener más ayuda.</p>
 <!-- TODO: come back when there is content about referring to previous states. -->
-<p>The history of your <code>main</code> branch is now compatible with its history in <code>OWNER/REPO</code>. The instructions above for pulling changes from <code>upstream</code> should now work. A fast-forward-only pull should succeed.</p>
+<p>El historial de su rama <code>main</code> ahora es compatible con su historial en <code>PROPIETARIO/REPO</code>. Las instrucciones anteriores para extraer cambios desde <code>upstream</code> ahora deberían funcionar. Un avance rápido debería tener éxito.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull upstream main <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>And now your local history for <code>main</code> should match that in the source repo:</p>
+<p>Y ahora su historial local para <code>main</code> debería coincidir con el del repositorio de origen:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span> <span class="at">--</span> A <span class="at">--</span> B <span class="at">--</span> C <span class="at">--</span> D <span class="at">--</span> E <span class="at">--</span> F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you chose to create a branch with your work, you will also have that locally:</p>
+<p>Si eliges crear una sucursal con tu trabajo, también la tendrás localmente:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span> <span class="at">--</span> A <span class="at">--</span> B <span class="at">--</span> C <span class="at">--</span> D <span class="at">--</span> E <span class="at">--</span> F <span class="er">(</span><span class="ex">main</span><span class="kw">)</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                   <span class="dt">\</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">--</span> X <span class="at">--</span> Y <span class="at">--</span> Z <span class="er">(</span><span class="ex">my-great-innovations</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you pushed your alternative history (with commits <code>X</code>, <code>Y</code>, and <code>Z</code>) to your fork <code>YOU/REPO</code> and you like keeping everything synced up, you will also need to force push <code>main</code> to the <code>origin</code> remote:</p>
+<p>Si envió su historial alternativo (con confirmaciones <code>X</code>, <code>Y</code> y <code>Z</code>) a su bifurcación <code>TU/REPO</code> y le gusta mantener todo sincronizado, también necesitará forzar el envío de <code>main</code> al control remoto <code>origin</code>:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--force</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We really, really don’t like discussing force pushes in Happy Git, though. We only do so here, because we are talking about a fork, which is fairly easy to replace if things go sideways.</p>
+<p>Sin embargo, realmente no nos gusta hablar de empujes forzados en Happy Git. Aquí solo lo hacemos porque estamos hablando de una bifurcación, que es bastante fácil de reemplazar si algo sale mal.</p>
 
 
 </section></main><!-- /main --><script>
@@ -1227,13 +1227,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./workflows-fork-and-clone.html" class="pagination-link" aria-label="Fork and clone">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Fork and clone</span></span>
+      <a href="./workflows-fork-and-clone.html" class="pagination-link" aria-label="Bifurcar y clonar">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Bifurcar y clonar</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workflows-explore-extend-pull-request.html" class="pagination-link" aria-label="Explore and extend a pull request">
-        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Explore and extend a pull request</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./workflows-explore-extend-pull-request.html" class="pagination-link" aria-label="Explorar y ampliar una solicitud de cambio">
+        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Explorar y ampliar una solicitud de cambio</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

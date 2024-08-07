@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.5.56">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
-<title>31&nbsp; Fork and clone – Git y GitHub con R</title>
+<title>31&nbsp; Bifurcar y clonar – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-fork-and-clone.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Fork and clone</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-fork-and-clone.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Bifurcar y clonar</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -408,49 +408,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Useful Git patterns for real life</span></a>
+ <span class="menu-text">Patrones de Git útiles para la vida real</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-repeated-amend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">The Repeated Amend</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Enmendar repetidamente</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-push-rejected.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dealing with push rejection</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del empujón</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-pull.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Pull, but you have local work</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Importar, pero tienes trabajo local</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-see-the-past.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Time travel: See the past</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Viaje en el tiempo: ver el pasado</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-fork-and-clone.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Fork and clone</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Bifurcar y clonar</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-upstream-changes-into-fork.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Get upstream changes for a fork</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Importar cambios de upstream en una bifurcación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-explore-extend-pull-request.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Explore and extend a pull request</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Explorar y ampliar una solicitud de cambio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -575,21 +575,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#fork-and-clone-without-usethis" id="toc-fork-and-clone-without-usethis" class="nav-link active" data-scroll-target="#fork-and-clone-without-usethis"><span class="header-section-number">31.1</span> Fork and clone without usethis</a>
+<a href="#bifurcar-y-clonar-sin-usethis" id="toc-bifurcar-y-clonar-sin-usethis" class="nav-link active" data-scroll-target="#bifurcar-y-clonar-sin-usethis"><span class="header-section-number">31.1</span> Bifurcar y clonar sin usethis</a>
   <ul class="collapse">
-<li><a href="#sec-fork-and-clone-finish" id="toc-sec-fork-and-clone-finish" class="nav-link" data-scroll-target="#sec-fork-and-clone-finish"><span class="header-section-number">31.1.1</span> Finish the fork and clone setup</a></li>
-  <li><a href="#sec-fork-configure-upstream" id="toc-sec-fork-configure-upstream" class="nav-link" data-scroll-target="#sec-fork-configure-upstream"><span class="header-section-number">31.1.2</span> Configure the <code>upstream</code> remote</a></li>
-  <li><a href="#sec-fork-set-upstream-tracking-main" id="toc-sec-fork-set-upstream-tracking-main" class="nav-link" data-scroll-target="#sec-fork-set-upstream-tracking-main"><span class="header-section-number">31.1.3</span> Set upstream tracking branch for the default branch</a></li>
+<li><a href="#sec-fork-and-clone-finish" id="toc-sec-fork-and-clone-finish" class="nav-link" data-scroll-target="#sec-fork-and-clone-finish"><span class="header-section-number">31.1.1</span> Finaliza la configuración de bifurcación y clonación.</a></li>
+  <li><a href="#sec-fork-configure-upstream" id="toc-sec-fork-configure-upstream" class="nav-link" data-scroll-target="#sec-fork-configure-upstream"><span class="header-section-number">31.1.2</span> Configurar el control remoto <code>upstream</code></a></li>
+  <li><a href="#sec-fork-set-upstream-tracking-main" id="toc-sec-fork-set-upstream-tracking-main" class="nav-link" data-scroll-target="#sec-fork-set-upstream-tracking-main"><span class="header-section-number">31.1.3</span> Configurar la rama de seguimiento ascendente para la rama predeterminada</a></li>
   </ul>
 </li>
   <li><a href="#sec-fork-and-clone-create-from-github" id="toc-sec-fork-and-clone-create-from-github" class="nav-link" data-scroll-target="#sec-fork-and-clone-create-from-github"><span class="header-section-number">31.2</span> <code>usethis::create_from_github("OWNER/REPO", fork = TRUE)</code></a></li>
-  <li><a href="#engage-with-the-new-repo" id="toc-engage-with-the-new-repo" class="nav-link" data-scroll-target="#engage-with-the-new-repo"><span class="header-section-number">31.3</span> Engage with the new repo</a></li>
-  <li><a href="#sec-fork-dont-touch-main" id="toc-sec-fork-dont-touch-main" class="nav-link" data-scroll-target="#sec-fork-dont-touch-main"><span class="header-section-number">31.4</span> Don’t mess with <code>main</code></a></li>
+  <li><a href="#interact%C3%BAe-con-el-nuevo-repositorio" id="toc-interactúe-con-el-nuevo-repositorio" class="nav-link" data-scroll-target="#interact%C3%BAe-con-el-nuevo-repositorio"><span class="header-section-number">31.3</span> Interactúe con el nuevo repositorio</a></li>
+  <li><a href="#sec-fork-dont-touch-main" id="toc-sec-fork-dont-touch-main" class="nav-link" data-scroll-target="#sec-fork-dont-touch-main"><span class="header-section-number">31.4</span> No te metas con <code>main</code></a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-fork-and-clone.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Fork and clone</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-fork-and-clone" class="quarto-section-identifier"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Fork and clone</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows-intro.html">Flujos de trabajo diarios</a></li><li class="breadcrumb-item"><a href="./workflows-fork-and-clone.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Bifurcar y clonar</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-fork-and-clone" class="quarto-section-identifier"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Bifurcar y clonar</span></span></h1>
 </div>
 
 
@@ -603,146 +603,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Use <strong>fork and clone</strong> to get a copy of someone else’s repo if there’s any chance you will want to propose a change to the owner, i.e.&nbsp;send a pull request. If you are waffling between “just clone” and “fork and clone”, go with “fork and clone”.</p>
-<p>We want to achieve this:</p>
+</header><p>Utilice <strong>bifurcar y clonar</strong> para obtener una copia del repositorio de otra persona si existe alguna posibilidad de que desee proponer un cambio al propietario, es decir, enviar una solicitud de extracción. Si está dudando entre “simplemente clonar” y “bifurcar y clonar”, opte por “bifurcar y clonar”.</p>
+<p>Queremos lograr esto:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/fork-and-clone.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Fork and clone."></p>
 </figure>
 </div>
-<p>Below we show a couple of methods for fork and clone and you should pick one:</p>
+<p>A continuación mostramos un par de métodos para bifurcar y clonar y debes elegir uno:</p>
 <ul>
-<li>Use a combination of the browser, command line Git, and RStudio</li>
-<li>Via <code>usethis::create_from_github()</code>
+<li>Utilice una combinación del navegador, la línea de comandos Git y RStudio</li>
+<li>A través de <code>usethis::create_from_github()</code>
 </li>
 </ul>
-<p>Vocabulary: <code>OWNER/REPO</code> refers to what we call the <strong>source</strong> repo, owned by <code>OWNER</code>, who is not you. <code>YOU/REPO</code> refers to your fork, i.e.&nbsp;your remote copy of the source repo, on GitHub. This is the same vocabulary used elsewhere, such as the chapter on <a href="sec-common-remote-setups">common remote configurations</a>.</p>
-<p>This is a good time to navigate to the <a href="https://github.com">GitHub</a> repo of interest, i.e.&nbsp;the source repo <code>OWNER/REPO</code>.</p>
-<section id="fork-and-clone-without-usethis" class="level2" data-number="31.1"><h2 data-number="31.1" class="anchored" data-anchor-id="fork-and-clone-without-usethis">
-<span class="header-section-number">31.1</span> Fork and clone without usethis</h2>
-<p>I assume you’re already visiting the source repo in the browser. In the upper right hand corner, click <strong>Fork</strong>.</p>
-<p>This creates a copy of <code>REPO</code> in your GitHub account and takes you there in the browser. Now we are looking at <code>YOU/REPO</code>.</p>
-<p><strong>Clone</strong> <code>YOU/REPO</code>, which is your copy of the repo, a.k.a. your fork, to your local machine. Make sure to clone your repo, not the source repo. Elsewhere, we describe multiple methods for cloning a remote repo. Pick one:</p>
+<p>Vocabulario: <code>DUEÑO/REPO</code> se refiere a lo que llamamos el repositorio <strong>fuente</strong>, propiedad de <code>DUEÑO</code>, que no eres tú. <code>TU/REPO</code> se refiere a su bifurcación, es decir, su copia remota del repositorio fuente, en GitHub. Este es el mismo vocabulario utilizado en otros lugares, como el capítulo sobre <a href="remote-setups-common.html">configuraciones remotas comunes</a>.</p>
+<p>Este es un buen momento para navegar hasta el repositorio <a href="https://github.com">GitHub</a> de interés, es decir, el repositorio fuente. <code>DUEÑO/REPO</code>.</p>
+<section id="bifurcar-y-clonar-sin-usethis" class="level2" data-number="31.1"><h2 data-number="31.1" class="anchored" data-anchor-id="bifurcar-y-clonar-sin-usethis">
+<span class="header-section-number">31.1</span> Bifurcar y clonar sin usethis</h2>
+<p>Supongo que ya estás visitando el repositorio fuente en el navegador. En la esquina superior derecha, haz clic en <strong>Bifurcación</strong>.</p>
+<p>Esto crea una copia de <code>REPO</code> en su cuenta de GitHub y lo lleva allí en el navegador. Ahora estamos mirando <code>TU/REPO</code>.</p>
+<p><strong>Clonar</strong> <code>TU/REPO</code>, que es tu copia del repositorio, también conocido como tu bifurcación, en tu máquina local. Asegúrese de clonar su repositorio, no el repositorio de origen. En otro lugar, describimos múltiples métodos para clonar un repositorio remoto. Elegir uno:</p>
 <ul>
-<li>The <a href="sec-git-clone-usethis-rstudio">cloning instructions in Existing project, GitHub first</a> cover usethis and RStudio.</li>
-<li>The <a href="sec-git-clone-command-line">cloning instructions in Connect to GitHub</a> show how to do this with command line Git.</li>
+<li>Las <a href="usage-existing-project-github-first.html#sec-git-clone-usethis-rstudio">instrucciones de clonación en Proyecto existente, GitHub primero</a> cubrir usethis y RStudio.</li>
+<li>Las <a href="connect-git-github.html#sec-git-clone-command-line">instrucciones de clonación en Conectarse a GitHub</a> muestra cómo hacer esto con la línea de comando Git.</li>
 </ul>
-<p>Make a conscious decision about the local destination directory and HTTPS vs SSH URL.</p>
+<p>Tome una decisión consciente sobre el directorio de destino local y la URL HTTPS versus SSH.</p>
 <section id="sec-fork-and-clone-finish" class="level3" data-number="31.1.1"><h3 data-number="31.1.1" class="anchored" data-anchor-id="sec-fork-and-clone-finish">
-<span class="header-section-number">31.1.1</span> Finish the fork and clone setup</h3>
-<p>If you stop at this point, you have what I regard as an incomplete setup, described elsewhere as <a href="sec-fork_upstream_is_not_origin_parent">“fork (salvageable)”</a>.</p>
+<span class="header-section-number">31.1.1</span> Finaliza la configuración de bifurcación y clonación.</h3>
+<p>Si se detiene en este punto, tendrá lo que considero una configuración incompleta, descrita en otro lugar como <a href="remote-setups-common.html#sec-fork_upstream_is_not_origin_parent">“fork (salvable)”</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/fork-no-upstream-sad.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Sad fork where `upstream` is not configured."></p>
 </figure>
 </div>
-<p>This is sad, because there is no direct connection between your local copy of the repo and the source repo <code>OWNER/REPO</code>.</p>
-<p>There are two more recommended pieces of setup:</p>
+<p>Esto es triste, porque no existe una conexión directa entre su copia local del repositorio y el repositorio fuente <code>TU/REPO</code>.</p>
+<p>Hay dos piezas de configuración más recomendadas:</p>
 <ul>
-<li>Configure the source repo as the <code>upstream</code> remote</li>
-<li>Configure your local <code>main</code> branch (or whatever the default is) to track <code>upstream/main</code>, not <code>origin/main</code>
+<li>Configure el repositorio de origen como <code>upstream</code> remoto</li>
+<li>Configure su rama <code>main</code> local (o cualquiera que sea la predeterminada) para rastrear <code>upstream/main</code>, no <code>origin/main</code>
 </li>
 </ul>
-<p>The nickname <code>upstream</code> can technically be whatever you want. There is a strong tradition of using <code>upstream</code> in this context and, even though I have better ideas, I believe it is best to conform. Every book, blog post, and Stack Overflow thread that you read will use <code>upstream</code> here. Save your psychic energy for other things.</p>
-<p>These steps make it easier for you to stay current with developments in the source repo. We talk more below about why you should never commit to the default branch, e.g.&nbsp;<code>main</code>, when you’re working in a fork (see <a href="#sec-fork-dont-touch-main" class="quarto-xref"><span>Section 31.4</span></a>).</p>
+<p>El apodo <code>upstream</code> técnicamente puede ser lo que quieras. Existe una fuerte tradición de utilizar <code>upstream</code> en este contexto y, aunque tengo mejores ideas, creo que es mejor conformarme. Cada libro, publicación de blog e hilo de Stack Overflow que lea utilizará <code>upstream</code> aquí. Guarda tu energía psíquica para otras cosas.</p>
+<p>Estos pasos le facilitan mantenerse actualizado con los desarrollos en el repositorio de origen. Hablamos más a continuación sobre por qué nunca debes comprometerte con la rama predeterminada, p.&nbsp;<code>main</code>, cuando estás trabajando en una bifurcación (ver <a href="#sec-fork-dont-touch-main" class="quarto-xref"><span>Section 31.4</span></a>).</p>
 </section><section id="sec-fork-configure-upstream" class="level3" data-number="31.1.2"><h3 data-number="31.1.2" class="anchored" data-anchor-id="sec-fork-configure-upstream">
-<span class="header-section-number">31.1.2</span> Configure the <code>upstream</code> remote</h3>
-<p>The first step is to get the URL of the <strong>source</strong> repo <code>OWNER/REPO</code>. Navigate to the source repo on GitHub. It is easy to get to from your fork, <code>YOU/REPO</code>, via the “forked from” link in the upper left.</p>
-<p>Use the big green “Code” button to get the URL for <code>OWNER/REPO</code> on your clipboard. Be intentional about whether you copy the HTTPS or SSH URL.</p>
-<p>You can configure the <code>upstream</code> remote with command line Git, usethis, or RStudio.</p>
-<p>Here’s how to use command line Git in a shell:</p>
+<span class="header-section-number">31.1.2</span> Configurar el control remoto <code>upstream</code>
+</h3>
+<p>El primer paso es obtener la URL del repositorio <strong>fuente</strong> <code>DUEÑO/REPO</code>. Navegue hasta el repositorio de origen en GitHub. Es fácil llegar desde su bifurcación, <code>TU/REPO</code>, a través del enlace “forked from” en la parte superior izquierda.</p>
+<p>Utilice el gran botón verde “Code” para obtener la URL de <code>DUEÑO/REPO</code> en su portapapeles. Sea intencional al copiar la URL HTTPS o SSH.</p>
+<p>Puede configurar el control remoto <code>upstream</code> con la línea de comando Git, usethis o RStudio.</p>
+<p>A continuación se explica cómo utilizar la línea de comandos de Git en un shell:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add upstream https://github.com/OWNER/REPO.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>usethis::use_git_remote()</code> allows you to configure a Git remote. Execute this in R:</p>
+<p><code>usethis::use_git_remote()</code> le permite configurar un control remoto Git. Ejecute esto en R:</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">use_git_remote</span><span class="op">(</span></span>
 <span>  name <span class="op">=</span> <span class="st">"upstream"</span>,</span>
-<span>  url <span class="op">=</span> <span class="st">"https://github.com/OWNER/REPO.git"</span></span>
+<span>  url <span class="op">=</span> <span class="st">"https://github.com/DUEÑO/REPO.git"</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Finally, you can do this in RStudio, although it feels a bit odd. Click on “New Branch” in the Git pane (“two purple boxes and a white square”).</p>
+<p>Finalmente, puedes hacer esto en RStudio, aunque parece un poco extraño. Haga clic en “New Branch” en el panel de Git (“dos cuadros morados y un cuadrado blanco”).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/rstudio-new-branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" data-fig.alt="RStudio's New Branch button."></p>
 </figure>
 </div>
-<p>This will reveal a button to “Add Remote”. Click it. Enter <code>upstream</code> as the remote name and paste the URL for <code>OWNER/REPO</code> that you got from GitHub. Click “Add”. Decline the opportunity to add a new branch by clicking “Cancel”.</p>
-<p>Regardless of how you configured <code>upstream</code>, do this in a shell:</p>
+<p>Esto revelará un botón para “Agregar control remoto”. Pinchalo. Ingrese <code>upstream</code> como nombre remoto y pegue la URL de <code>DUEÑO/REPO</code> que obtuvo de GitHub. Haga clic en “Agregar”. Rechace la oportunidad de agregar una nueva rama haciendo clic en “Cancelar”.</p>
+<p>Independientemente de cómo haya configurado <code>upstream</code>, haga esto en un shell:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch upstream</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="sec-fork-set-upstream-tracking-main" class="level3" data-number="31.1.3"><h3 data-number="31.1.3" class="anchored" data-anchor-id="sec-fork-set-upstream-tracking-main">
-<span class="header-section-number">31.1.3</span> Set upstream tracking branch for the default branch</h3>
-<p>This is optional but highly recommended for most fork and clone situations. We’re going to set <code>upstream/main</code> from the source repo as the upstream tracking branch of local <code>main</code>. (If your default branch has a different name, substitute accordingly.)</p>
-<p>This is desirable so that a simple <code>git pull</code> pulls <strong>from the source repo</strong>, not from your fork. It also means a simple <code>git push</code> will (attempt to) push to the source repo, which will almost always be rejected since you probably do not have permission. This failure will alert you to the fact that you’re doing something questionable, while it’s still easy to back out.</p>
-<p>First, fetch info for the <code>upstream</code> remote. This is especially important if you just configured <code>upstream</code> for the first time.</p>
+<span class="header-section-number">31.1.3</span> Configurar la rama de seguimiento ascendente para la rama predeterminada</h3>
+<p>Esto es opcional pero muy recomendable para la mayoría de situaciones de bifurcación y clonación. Vamos a configurar <code>upstream/main</code> desde el repositorio de origen como la rama de seguimiento ascendente del <code>main</code> local. (Si su sucursal predeterminada tiene un nombre diferente, sustitúyalo según corresponda.)</p>
+<p>Esto es deseable para que un simple <code>git pull</code> extraiga <strong>del repositorio fuente</strong>, no de su bifurcación. También significa que un simple <code>git push</code> (intentará) enviar al repositorio de origen, que casi siempre será rechazado ya que probablemente no tenga permiso. Esta falla le alertará del hecho de que está haciendo algo cuestionable, aunque aún será fácil echarse atrás.</p>
+<p>Primero, obtenga información para el control remoto <code>upstream</code>. Esto es especialmente importante si acaba de configurar <code>upstream</code> por primera vez.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch upstream</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The two commands below do the same thing; the first is just shorthand for the second. Do this with command line Git in a shell:</p>
+<p>Los dos comandos siguientes hacen lo mismo; el primero es sólo una abreviatura del segundo. Haga esto con la línea de comando Git en un shell:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-u</span> upstream/main</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">--set-upstream-to</span> upstream/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you found this fork and clone workflow long and tedious, consider using <code>usethis::create_from_github()</code> next time!</p>
+<p>Si este flujo de trabajo de bifurcación y clonación le pareció largo y tedioso, ¡considere usar <code>usethis::create_from_github()</code> la próxima vez!</p>
 </section></section><section id="sec-fork-and-clone-create-from-github" class="level2" data-number="31.2"><h2 data-number="31.2" class="anchored" data-anchor-id="sec-fork-and-clone-create-from-github">
 <span class="header-section-number">31.2</span> <code>usethis::create_from_github("OWNER/REPO", fork = TRUE)</code>
 </h2>
-<p>The <a href="https://usethis.r-lib.org">usethis package</a> has a convenience function, <a href="https://usethis.r-lib.org/reference/create_from_github.html"><code>create_from_github()</code></a>, that can do “fork and clone” (as well as just clone). The <code>fork</code> argument controls whether the source repo is cloned or fork-and-cloned. Note that <code>create_from_github(fork = TRUE)</code> requires that you have <a href="sec-https-pat">configured a GitHub personal access token</a>.</p>
-<p>I assume you’re already visiting the source repo in the browser. Now click the big green button that says “&lt;&gt; Code”. Copy a clone URL to your clipboard. If you’re taking our default advice, copy the HTTPS URL. But if you’re opting for SSH, then make sure to copy the SSH URL.</p>
-<p>You can execute this next command in any R session. If you use RStudio, then do this in the R console of any RStudio instance. In either case, after successful completion, you should find yourself in the new project that is the local repo connected to your fork.</p>
+<p>El <a href="https://usethis.r-lib.org">paquete usethis</a> tiene una función conveniente, <a href="https://usethis.r-lib.org/reference/create_from_github.html"><code>create_from_github()</code></a>, que puede hacer “bifurcación y clonación” (además de simplemente clonar). El argumento <code>fork</code> controla si el repositorio fuente está clonado o bifurcado y clonado. Tenga en cuenta que <code>create_from_github(fork = TRUE)</code> requiere que haya <a href="connect-https-pat.html">configurado un token de acceso personal de GitHub</a>.</p>
+<p>Supongo que ya estás visitando el repositorio fuente en el navegador. Ahora haga clic en el gran botón verde que dice “&lt;&gt; Código”. Copie una URL clonada a su portapapeles. Si sigue nuestro consejo predeterminado, copie la URL HTTPS. Pero si opta por SSH, asegúrese de copiar la URL de SSH.</p>
+<p>Puede ejecutar el siguiente comando en cualquier sesión de R. Si usa RStudio, hágalo en la consola R de cualquier instancia de RStudio. En cualquier caso, después de completarlo exitosamente, deberías encontrarte en el nuevo proyecto que es el repositorio local conectado a tu bifurcación.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">create_from_github</span><span class="op">(</span></span>
-<span>  <span class="st">"https://github.com/OWNER/REPO"</span>,</span>
-<span>  destdir <span class="op">=</span> <span class="st">"~/path/to/where/you/want/the/local/repo/"</span>,</span>
+<span>  <span class="st">"https://github.com/DUEÑO/REPO"</span>,</span>
+<span>  destdir <span class="op">=</span> <span class="st">"~/ruta/a/dónde/quieres/el/local/repositorio/"</span>,</span>
 <span>  fork <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The first argument is <code>repo_spec</code> and it accepts the GitHub repo specification in various forms. In particular, you can use the URL we just copied for the source repo.</p>
-<p>The <code>destdir</code> argument specifies the parent directory where you want the new folder (and local Git repo) to live. If you don’t specify <code>destdir</code>, usethis defaults to some very conspicuous place, like your desktop. If you like to keep Git repos in a certain folder on your computer, you can personalize this default by setting the <code>usethis.destdir</code> option in your <code>.Rprofile</code>.</p>
-<p>The <code>fork</code> argument specifies whether to clone (<code>fork = FALSE</code>) or fork and clone (<code>fork = TRUE</code>). You often don’t need to specify <code>fork</code> and can just enjoy the default behaviour, which is governed by your permissions on the source repo. By default, <code>fork = FALSE</code> if you can push to the source repo and <code>fork = TRUE</code> if you cannot.</p>
-<p>Here is what that might look like (note that we’re accepting the default behaviour for many arguments):</p>
+<p>El primer argumento es <code>repo_spec</code> y acepta la especificación del repositorio de GitHub en varias formas. En particular, puede utilizar la URL que acabamos de copiar para el repositorio fuente.</p>
+<p>El argumento <code>destdir</code> especifica el directorio principal donde desea que resida la nueva carpeta (y el repositorio local de Git). Si no especifica <code>destdir</code>, use este valor predeterminado en algún lugar muy visible, como su escritorio. Si desea mantener los repositorios de Git en una determinada carpeta de su computadora, puede personalizar este valor predeterminado configurando la opción <code>usethis.destdir</code> en su <code>.Rprofile</code>.</p>
+<p>El argumento <code>fork</code> especifica si se debe clonar (<code>fork = FALSE</code>) o bifurcar y clonar (<code>fork = TRUE</code>). A menudo no es necesario especificar “fork” y simplemente puedes disfrutar del comportamiento predeterminado, que se rige por tus permisos en el repositorio de origen. De forma predeterminada, <code>fork = FALSE</code> si puede enviar al repositorio de origen y <code>fork = TRUE</code> si no puede.</p>
+<p>Así es como podría verse (tenga en cuenta que aceptamos el comportamiento predeterminado para muchos argumentos):</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">create_from_github</span><span class="op">(</span><span class="st">"https://github.com/OWNER/REPO"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">create_from_github</span><span class="op">(</span><span class="st">"https://github.com/DUEÑO/REPO"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ℹ Defaulting to 'https' Git protocol</span></span>
 <span><span class="co">#&gt; ✔ Setting `fork = TRUE`</span></span>
-<span><span class="co">#&gt; ✔ Creating '/some/path/to/local/REPO/'</span></span>
-<span><span class="co">#&gt; ✔ Forking 'OWNER/REPO'</span></span>
-<span><span class="co">#&gt; ✔ Cloning repo from 'https://github.com/YOU/REPO.git' into '/some/path/to/local/REPO'</span></span>
-<span><span class="co">#&gt; ✔ Setting active project to '/some/path/to/local/REPO'</span></span>
+<span><span class="co">#&gt; ✔ Creating '/aluguna/rutal/al/local/REPO/'</span></span>
+<span><span class="co">#&gt; ✔ Forking 'DUEÑO/REPO'</span></span>
+<span><span class="co">#&gt; ✔ Cloning repo from 'https://github.com/TU/REPO.git' into '/alguna/ruta/al/local/REPO'</span></span>
+<span><span class="co">#&gt; ✔ Setting active project to '/alguna/ruta/al/local/REPO'</span></span>
 <span><span class="co">#&gt; ℹ Default branch is 'main'</span></span>
-<span><span class="co">#&gt; ✔ Adding 'upstream' remote: 'https://github.com/OWNER/REPO.git'</span></span>
+<span><span class="co">#&gt; ✔ Adding 'upstream' remote: 'https://github.com/DUEÑO/REPO.git'</span></span>
 <span><span class="co">#&gt; ✔ Pulling changes from 'upstream/main'.</span></span>
 <span><span class="co">#&gt; ✔ Setting remote tracking branch for local 'main' branch to 'upstream/main'</span></span>
 <span><span class="co">#&gt; ✔ Setting active project to '&lt;no active project&gt;'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>For an RStudio user, <code>create_from_github(fork = TRUE)</code> does all of this:</p>
+<p>Para un usuario de RStudio, <code>create_from_github(fork = TRUE)</code> hace todo esto:</p>
 <ul>
-<li>Forks the source repo on GitHub.</li>
-<li>Clones your fork to a new local repo (and RStudio Project). This configures your fork as the <code>origin</code> remote.</li>
-<li>Configures the source repo as <a href="sec-upstream-changes">the <code>upstream</code> remote</a>.</li>
-<li>Sets the upstream tracking branch for <code>main</code> (or whatever the default branch is) to <code>upstream/main</code>.</li>
-<li>Opens a new RStudio instance in the new local repo (and RStudio Project).</li>
-</ul></section><section id="engage-with-the-new-repo" class="level2" data-number="31.3"><h2 data-number="31.3" class="anchored" data-anchor-id="engage-with-the-new-repo">
-<span class="header-section-number">31.3</span> Engage with the new repo</h2>
-<p>If you used <code>usethis::create_from_github()</code> or did fork and clone via <a href="sec-existing-github-first">Existing project, GitHub first</a>, you are probably in an RStudio Project for this new repo.</p>
-<p>Regardless, get yourself into this project, whatever that means for you, using your usual method.</p>
-<p>Explore the new repo in some suitable way. If it is a package, you could run the tests or check it. If it is a data analysis project, run a script or render an Rmd. Convince yourself that you have gotten the code.</p>
-<p>You should now be in the perfect position to sync up with ongoing developments in the source repo and to propose new changes via a pull request from your fork.</p>
+<li>Bifurca el repositorio fuente en GitHub.</li>
+<li>Clona tu bifurcación en un nuevo repositorio local (y en el Proyecto RStudio). Esto configura su bifurcación como el control remoto <code>origin</code>.</li>
+<li>Configura el repositorio de origen como <a href="workflows-upstream-changes-into-fork.html">el repositorio remoto <code>upstream</code></a>.</li>
+<li>Establece la rama de seguimiento ascendente para <code>main</code> (o cualquiera que sea la rama predeterminada) en <code>upstream/main</code>.</li>
+<li>Abre una nueva instancia de RStudio en el nuevo repositorio local (y RStudio Project).</li>
+</ul></section><section id="interactúe-con-el-nuevo-repositorio" class="level2" data-number="31.3"><h2 data-number="31.3" class="anchored" data-anchor-id="interactúe-con-el-nuevo-repositorio">
+<span class="header-section-number">31.3</span> Interactúe con el nuevo repositorio</h2>
+<p>Si usaste <code>usethis::create_from_github()</code>o bifurcó y clonó a través de <a href="usage-existing-project-github-first.html">Proyecto existente, GitHub primero</a>, probablemente esté en un proyecto RStudio para este nuevo repositorio.</p>
+<p>De todos modos, únete a este proyecto, sea lo que sea que eso signifique para ti, utilizando tu método habitual.</p>
+<p>Explore el nuevo repositorio de alguna manera adecuada. Si es un paquete, puede ejecutar las pruebas o verificarlo. Si se trata de un proyecto de análisis de datos, ejecute un script o renderice un Rmd. Convéncete de que has recibido el código.</p>
+<p>Ahora debería estar en la posición perfecta para sincronizarse con los desarrollos en curso en el repositorio de origen y proponer nuevos cambios a través de una solicitud de extracción desde su bifurcación.</p>
 <p><img src="img/fork-them-pull-request.jpeg" class="img-fluid">{fig-align=“center” fig-alt = “Fork and clone, ideal setup.” width=“60%”}</p>
-<p>You can use the commands below to review more of the nitty gritty Git details of your fork and clone setup:</p>
+<p>Puede utilizar los siguientes comandos para revisar más detalles esenciales de Git de su configuración de bifurcación y clonación:</p>
 <ul>
-<li>Command line Git in a shell:
+<li>Línea de comando Git en un shell:
 <ul>
 <li><code>git remote -v</code></li>
 <li>
-<code>git remote show origin</code> (or <code>upstream</code>)</li>
+<code>git remote show origin</code> (o <code>upstream</code>)</li>
 <li><code>git branch -vv</code></li>
 </ul>
 </li>
-<li>In R:
+<li>En R:
 <ul>
 <li><code>usethis::git_remotes()</code></li>
 <li><code>usethis::git_sitrep()</code></li>
 </ul>
 </li>
 </ul>
-<p>In the shell, <code>git remote -v</code> should reveal that your remotes are configured like so:</p>
+<p>En el shell, <code>git remote -v</code> debería revelar que sus controles remotos están configurados así:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>    https://github.com/YOU/REPO.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>    https://github.com/YOU/REPO.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">upstream</span>  https://github.com/OWNER/REPO.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">upstream</span>  https://github.com/OWNER/REPO.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Comparable info is available In R with <code>usethis::git_remotes()</code>:</p>
+<p>Información comparable está disponible en R con <code>usethis::git_remotes()</code>:</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">git_remotes</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $origin</span></span>
@@ -751,18 +752,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co">#&gt; $upstream</span></span>
 <span><span class="co">#&gt; [1] "https://github.com/OWNER/repo.git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In the shell, with the default branch checked out, <code>git branch -vv</code> should reveal that <code>upstream/main</code> is the upstream tracking branch:</p>
+<p>En el shell, con la rama predeterminada seleccionada, <code>git branch -vv</code> debería revelar que <code>upstream/main</code> es la rama de seguimiento ascendente:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/some/repo/</span> % git branch <span class="at">-vv</span>                   </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main 2739987 <span class="pp">[</span><span class="ss">upstream/main</span><span class="pp">]</span> Some commit message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>All of this info about remotes and branches is also included in the rich information reported with <code>usethis::git_sitrep()</code>.</p>
+<p>Toda esta información sobre controles remotos y sucursales también se incluye en la rica información reportada con <code>usethis::git_sitrep()</code>.</p>
 </section><section id="sec-fork-dont-touch-main" class="level2" data-number="31.4"><h2 data-number="31.4" class="anchored" data-anchor-id="sec-fork-dont-touch-main">
-<span class="header-section-number">31.4</span> Don’t mess with <code>main</code>
+<span class="header-section-number">31.4</span> No te metas con <code>main</code>
 </h2>
-<p>Here is some parting advice for how to work in a fork and clone and situation.</p>
-<p>If you make any commits in your local repository, I <strong>strongly recommend</strong> that you work in <a href="sec-git-branches">a new branch</a>, not <code>main</code> (or whatever the default branch is called).</p>
-<p>I <strong>strongly recommend</strong> that you do not make commits to <code>main</code> of a repo you have forked. If you commit to <code>main</code> in a repo you don’t own, it creates a divergence between that branch’s history in the source repo and in your repo. Nothing but pain will come from this. (If you’ve already done this, we discuss how to fix the situation in <a href="sec-touched-main">Um, what if I did touch <code>main</code>?</a>.)</p>
-<p>When you treat <code>main</code> as read-only, it makes life much easier when you want to <a href="sec-upstream-changes">pull upstream work</a> into your copy. The <code>OWNER</code> of <code>REPO</code> will also be happier to receive your pull request from a non-<code>main</code> branch.</p>
-<p>For more detail, this Q&amp;A on Stack Overflow is helpful: <a href="https://stackoverflow.com/q/33749832">Why is it bad practice to commit to your fork’s master branch?</a>.</p>
+<p>Aquí hay algunos consejos finales sobre cómo trabajar en una situación de bifurcación y clonación.</p>
+<p>Si realiza alguna confirmación en su repositorio local, <strong>recomiendo encarecidamente</strong> que trabaje en <a href="git-branches.html">una nueva rama</a>, no en <code>main</code> (o como se llame la rama predeterminada).</p>
+<p>Le recomiendo <strong>enfáticamente</strong> que no realice confirmaciones con el <code>main</code> de un repositorio que haya bifurcado. Si se confirma <code>main</code> en un repositorio que no es de su propiedad, se crea una divergencia entre el historial de esa rama en el repositorio de origen y en su repositorio. De esto no surgirá más que dolor. (Si ya ha hecho esto, discutiremos cómo solucionar la situación en <a href="workflows-upstream-changes-into-fork.html#sec-touched-main">Um, ¿qué pasa si toco <code>main</code>?</a>.)</p>
+<p>Cuando tratas <code>main</code> como de solo lectura, hace la vida mucho más fácil cuando quieres <a href="workflows-upstream-changes-into-fork.html">extraer el trabajo ascendente</a> en tu copia. El <code>DUEÑO</code> de <code>REPO</code> también estará más feliz de recibir su solicitud de extracción de una rama que no sea <code>main</code>.</p>
+<p>Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: <a href="https://stackoverflow.com/q/33749832">¿Por qué es una mala práctica comprometerse con la rama maestra de su bifurcación?</a>.</p>
 
 
 </section></main><!-- /main --><script>
@@ -1252,13 +1253,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./workflows-see-the-past.html" class="pagination-link" aria-label="Time travel: See the past">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Time travel: See the past</span></span>
+      <a href="./workflows-see-the-past.html" class="pagination-link" aria-label="Viaje en el tiempo: ver el pasado">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Viaje en el tiempo: ver el pasado</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workflows-upstream-changes-into-fork.html" class="pagination-link" aria-label="Get upstream changes for a fork">
-        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Get upstream changes for a fork</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./workflows-upstream-changes-into-fork.html" class="pagination-link" aria-label="Importar cambios de upstream en una bifurcación">
+        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Importar cambios de upstream en una bifurcación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
