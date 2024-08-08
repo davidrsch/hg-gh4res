@@ -1127,8 +1127,8 @@
     ]
   },
   {
-    "objectID": "usage-rmd-and-github.html#formato-de-salida",
-    "href": "usage-rmd-and-github.html#formato-de-salida",
+    "objectID": "usage-rmd-and-github.html#sec-output-format",
+    "href": "usage-rmd-and-github.html#sec-output-format",
     "title": "18  Prueba de R Markdown",
     "section": "18.3 Formato de salida",
     "text": "18.3 Formato de salida\n¿Realmente quieres HTML? ¿Solo quieres HTML? ¿Estás absolutamente seguro? Si es así, ¡puedes saltarte este paso!\nEl proceso mágico que convierte tu R Markdown en HTML es el siguiente:\nfoo.Rmd --&gt; foo.md --&gt; foo.html\nTenga en cuenta el markdow, foo.md. De forma predeterminada, RStudio descarta esto, ¡pero es posible que desees conservar ese archivo markdow!\n¿Por qué? GitHub brinda un tratamiento muy especial a los archivos markdow. Se representan casi como HTML. Esto es genial porque conserva todos los encantos del texto plano, pero te ofrece una pseudopágina web gratuita cuando visitas el archivo en el navegador. Por el contrario, HTML se representa como texto sin formato en GitHub y tendrás que tomar medidas especiales para verlo como deseas.\nEn muchos casos, solo deseas el markdown. En ese caso, cambiamos el formato de salida a github_document. Esto significa que el renderizado se verá así:\nfoo.Rmd --&gt; foo.md\ndonde foo.md es un markdown con sabor a GitHub. Si aún desea el HTML pero también el markdown intermedia, también hay una manera de solicitarlo.\nEste punto que estamos señalando sobre la importancia de los archivos .md es la razón por la que tantos paquetes R tienen un archivo NEWS.md y README.md, a menudo generados a partir de README.Rmd.\nEl formato de salida es una de las muchas cosas que podemos controlar en la parte frontal YAML de los documentos .Rmd, es decir, el texto en la parte superior de su archivo entre las líneas iniciales y finales de ---.\nPuede realizar algunos cambios en YAML a través del IDE de RStudio: haga clic en el “engranaje” en la barra superior del editor de código fuente, cerca del botón “Knit HTML”. Seleccione “Opciones de salida”, vaya a la pestaña Avanzado y marque “Mantener archivo markdown”. Su YAML ahora debería parecerse más a esto:\n---\ntitle: \"Something fascinating\"\nauthor: \"Jenny Bryan\"\ndate: \"`r format(Sys.Date())`\"\noutput:\n  html_document:\n    keep_md: true\n---\nDeberías haber obtenido la línea keep_md: true. También puedes simplemente editar el archivo tú mismo para lograrlo. El IDE solo expone una pequeña fracción de lo que es posible configurar en YAML.\nDe hecho, es necesaria una edición manual si desea mantener solo el markdown y obtener un markdown con sabor a GitHub. En ese caso, haz que tu YAML se vea así:\n---\ntitle: \"Something fascinating\"\nauthor: \"Jenny Bryan\"\ndate: \"`r format(Sys.Date())`\"\noutput: github_document\n---\n¡Guardar!\nQuizás quieras realizar un commit en este punto.\nRenderizar mediante el botón “Knit HTML”.\nAhora vuelva a visitar el explorador de archivos. Además de foo.Rmd, ahora deberías ver foo.md. Si hay fragmentos de R que forman figuras, el uso de formatos de salida de rebajas también hará que esos archivos de figuras queden en un subdirectorio con un nombre sensato, como foo_files.\nSi confirma y presiona foo.md y todo lo que está dentro de foo_files, cualquiera que tenga permiso para ver su repositorio de GitHub podrá ver una versión decente de su informe.\nSi su formato de salida es html_document, aún debería ver foo.html. Si su formato de salida es github_document y ve foo.html, eso es un resto de experimentos anteriores. Borra eso. Sólo te confundirá más tarde.\nQuizás quieras realizar un commit aquí.",
@@ -1987,166 +1987,166 @@
   {
     "objectID": "workflows-make-github-repo-browsable.html",
     "href": "workflows-make-github-repo-browsable.html",
-    "title": "34  Make a GitHub repo browsable",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
     "section": "",
-    "text": "34.1 Be savvy about your files\nKeep files in the plainest, web-friendliest form that is compatible with your main goals. Plain text is the very best. GitHub offers special handling for certain types of files:",
+    "text": "34.1 Sea inteligente con sus archivos\nMantenga los archivos en el formato más sencillo y compatible con sus objetivos principales. El texto sin formato es lo mejor. GitHub ofrece un manejo especial para ciertos tipos de archivos:",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#be-savvy-about-your-files",
-    "href": "workflows-make-github-repo-browsable.html#be-savvy-about-your-files",
-    "title": "34  Make a GitHub repo browsable",
+    "objectID": "workflows-make-github-repo-browsable.html#sea-inteligente-con-sus-archivos",
+    "href": "workflows-make-github-repo-browsable.html#sea-inteligente-con-sus-archivos",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
     "section": "",
-    "text": "Markdown files, which may be destined for conversion into, e.g., HTML\nMarkdown files named README.md\n\nHTML files, often the result of compiling Markdown files\nSource code, such as .R files\nDelimited files, such as CSVs and TSVs\nPNG files",
+    "text": "Archivos Markdown, que pueden estar destinados a la conversión, por ejemplo, a HTML.\nArchivos Markdown denominados README.md\n\nArchivos HTML, a menudo el resultado de compilar archivos Markdown.\nCódigo fuente, como archivos .R\n\nArchivos delimitados, como CSV y TSV\nArchivos PNG",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#get-over-your-hang-ups-re-committing-derived-products",
-    "href": "workflows-make-github-repo-browsable.html#get-over-your-hang-ups-re-committing-derived-products",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.2 Get over your hang ups re: committing derived products",
-    "text": "34.2 Get over your hang ups re: committing derived products\nLet’s acknowledge the discomfort some people feel about putting derived products under version control. Specifically, if you’ve got an R Markdown document foo.Rmd, it can be knit() to produce the intermediate product foo.md, which can be converted to the ultimate output foo.html. Which of those files are you “allowed” to put under version control? Source-is-real hardliners will say only foo.Rmd but pragmatists know this can be a serious bummer in real life. Just because I can rebuild everything from scratch, it doesn’t mean I want to.\nThe taboo of keeping derived products under version control originates from compilation of binary executables from source. Software built on a Mac would not work on Windows and so it made sense to keep these binaries out of the holy source code repository. Also, you could assume the people with access to the repository have the full development stack and relish opportunities to use it. None of these arguments really apply to the foo.Rmd --&gt; foo.md --&gt; foo.html workflow. We don’t have to blindly follow traditions from the compilation domain!\nIn fact, looking at the diffs for foo.md or foo-figure-01.png can be extremely informative. This is also true in larger data analytic projects after a make clean; make all operation. By looking at the diffs in the downstream products, you often catch unexpected changes. This can tip you off to changes in the underlying data and/or the behavior of packages you depend on.\nThis chapter explores cool things GitHub can do with various file types, if they happen to end up in your repo. I won’t ask you how they got there.",
+    "objectID": "workflows-make-github-repo-browsable.html#supere-sus-complejos-con-respecto-a-comprometer-productos-derivados",
+    "href": "workflows-make-github-repo-browsable.html#supere-sus-complejos-con-respecto-a-comprometer-productos-derivados",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.2 Supere sus complejos con respecto a: comprometer productos derivados",
+    "text": "34.2 Supere sus complejos con respecto a: comprometer productos derivados\nReconozcamos la incomodidad que algunas personas sienten al poner productos derivados bajo control de versiones. Específicamente, si tiene un documento R Markdown foo.Rmd, puede ser knit() para producir el producto intermedio foo.md, que se puede convertir al resultado final foo.html. ¿Cuál de esos archivos tiene “permitido” poner bajo control de versiones? Los partidarios de la línea dura de Source-is-real sólo dirán foo.Rmd, pero los pragmáticos saben que esto puede ser un serio fastidio en la vida real. Sólo porque puedo reconstruir todo desde cero, no significa que quiera hacerlo.\nEl tabú de mantener los productos derivados bajo control de versiones se origina en la compilación de ejecutables binarios desde el código fuente. El software creado en una Mac no funcionaría en Windows, por lo que tenía sentido mantener estos binarios fuera del sagrado repositorio de código fuente. Además, se podría asumir que las personas con acceso al repositorio tienen la pila de desarrollo completa y disfrutan de las oportunidades de utilizarla. Ninguno de estos argumentos se aplica realmente al flujo de trabajo foo.Rmd --&gt; foo.md --&gt; foo.html. ¡No tenemos que seguir ciegamente las tradiciones del dominio de compilación!\nDe hecho, mirar las diferencias de foo.md o foo-figure-01.png puede resultar extremadamente informativo. Esto también es cierto en proyectos de análisis de datos más grandes después de una operación de limpieza; realizar todas las operaciones. Al observar las diferencias en los productos posteriores, a menudo se detectan cambios inesperados. Esto puede alertarle sobre cambios en los datos subyacentes y/o el comportamiento de los paquetes de los que depende.\nEste capítulo explora cosas interesantes que GitHub puede hacer con varios tipos de archivos, si terminan en su repositorio. No te preguntaré cómo llegaron allí.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
     "objectID": "workflows-make-github-repo-browsable.html#markdown",
     "href": "workflows-make-github-repo-browsable.html#markdown",
-    "title": "34  Make a GitHub repo browsable",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
     "section": "\n34.3 Markdown",
-    "text": "34.3 Markdown\nYou will quickly discover that GitHub renders Markdown files very nicely. By clicking on foo.md, you’ll get a decent preview of foo.html. Yay! You should read GitHub’s own guide on how to leverage automatic Markdown rendering.\nExploit this aggressively. Make Markdown your default format for narrative text files and use them liberally to embed notes to yourself and others in a repository hosted on Github. It’s an easy way to get pseudo-webpages inside a project “for free”. You may never even compile these files to HTML explicitly; in many cases, the HTML preview offered by GitHub is all you ever need.",
+    "text": "34.3 Markdown\nDescubrirá rápidamente que GitHub procesa muy bien los archivos Markdown. Al hacer clic en foo.md, obtendrá una vista previa decente de foo.html. ¡Hurra! Deberías leer la guía propia de GitHub sobre cómo aprovechar el renderizado automático de Markdown.\nExplota esto agresivamente. Haga de Markdown su formato predeterminado para archivos de texto narrativo y utilícelos libremente para insertar notas para usted y para otras personas en un repositorio alojado en Github. Es una manera fácil de obtener pseudopáginas web dentro de un proyecto “gratis”. Es posible que ni siquiera compiles estos archivos en HTML explícitamente; En muchos casos, la vista previa HTML que ofrece GitHub es todo lo que necesitas.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
     "objectID": "workflows-make-github-repo-browsable.html#r-markdown",
     "href": "workflows-make-github-repo-browsable.html#r-markdown",
-    "title": "34  Make a GitHub repo browsable",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
     "section": "\n34.4 R Markdown",
-    "text": "34.4 R Markdown\nWhat does this mean for R Markdown files? Keep intermediate Markdown. Or only render to Markdown. Commit both foo.Rmd and foo.md, even if you choose to .gitignore the final product, e.g. foo.html or foo.pdf or foo.docx. From September 2014, GitHub renders R Markdown files nicely, like Markdown, and with proper syntax highlighting, which is great. But, of course, the code blocks just sit there un-executed, so my advice about keeping Markdown still holds.\nIf your target output format is not Markdown, you want YAML frontmatter that looks something like this for .Rmd:\n---\ntitle: \"Something fascinating\"\nauthor: \"Jenny Bryan\"\ndate: \"`r format(Sys.Date())`\"\noutput:\n  html_document:\n    keep_md: TRUE\n---\nor like this for .R:\n#' ---\n#' title: \"Something fascinating\"\n#' author: \"Jenny Bryan\"\n#' date: \"`r format(Sys.Date())`\"\n#' output:\n#'   html_document:\n#'     keep_md: TRUE\n#' ---\nThe keep_md: TRUE part says to keep the intermediate Markdown. In RStudio, when editing .Rmd, click on the gear next to “Knit HTML” for YAML authoring help.\nSince 2016, rmarkdown offers a custom output format for GitHub-flavored markdown, github_document. Read about R Markdown workflows for explicit examples of how to use this. If Markdown is your target output format, your YAML can be even simpler and look like this for .Rmd:\n---\noutput: github_document\n---\nor like this for .R:\n#' ---\n#' output: github_document\n#' ---\nFor a quick, stand-alone document that doesn’t fit neatly into a repository or project (yet), make it a Gist. Example: Hadley Wickham’s advice on what you need to do to become a data scientist. Gists can contain multiple files, so you can still provide the R script or R Markdown source and the resulting Markdown, as I’ve done in this write-up of Twitter-sourced tips for cross-tabulation. I’ve collected YAML examples for all the above scenarios in a gist.",
+    "text": "34.4 R Markdown\n¿Qué significa esto para los archivos R Markdown? Mantener Markdown intermedio. O solo renderizar en Markdown. Confirme tanto foo.Rmd como foo.md, incluso si elige .gitignore el producto final, p.e. foo.html o foo.pdf o foo.docx. Desde septiembre de 2014, GitHub representa muy bien los archivos R Markdown, como Markdown, y con resaltado de sintaxis adecuado, lo cual es genial. Pero, por supuesto, los bloques de código simplemente permanecen ahí sin ejecutarse, por lo que mi consejo sobre mantener Markdown sigue siendo válido.\nSi su formato de salida de destino no es Markdown, desea YAML frontmatter eso se parece a esto para .Rmd:\n---\ntitle: \"Something fascinating\"\nauthor: \"Jenny Bryan\"\ndate: \"`r format(Sys.Date())`\"\noutput:\n  html_document:\n    keep_md: TRUE\n---\no así para .R:\n#' ---\n#' title: \"Something fascinating\"\n#' author: \"Jenny Bryan\"\n#' date: \"`r format(Sys.Date())`\"\n#' output:\n#'   html_document:\n#'     keep_md: TRUE\n#' ---\nLa parte keep_md: TRUE dice que se mantenga el Markdown intermedio. En RStudio, al editar .Rmd, haga clic en el engranaje junto a “Knit HTML” para obtener ayuda sobre la creación de YAML.\nDesde 2016, rmarkdown ofrece un formato de salida personalizado para Markdown con sabor a GitHub, github_document. Lea acerca de flujos de trabajo de R Markdown para ejemplos explícitos de cómo utilizar esto. Si Markdown es su formato de salida de destino, su YAML puede ser aún más simple y verse así por .Rmd:\n---\noutput: github_document\n---\no así para .R:\n#' ---\n#' output: github_document\n#' ---\nPara obtener un documento rápido e independiente que no encaje perfectamente en un repositorio o proyecto (todavía), conviértalo en Gist. Ejemplo: consejos de Hadley Wickham sobre lo que debe hacer para convertirse en científico de datos. Los gists pueden contener varios archivos, por lo que aún puedes proporcionar el script R o la fuente R Markdown y el Markdown resultante, como lo hice en este artículo de Consejos para tabulación cruzada obtenidos en Twitter. He recopilado ejemplos YAML para todos los escenarios anteriores en esencia.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
     "objectID": "workflows-make-github-repo-browsable.html#readme.md",
     "href": "workflows-make-github-repo-browsable.html#readme.md",
-    "title": "34  Make a GitHub repo browsable",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
     "section": "\n34.5 README.md\n",
-    "text": "34.5 README.md\n\nYou probably already know that GitHub renders README.md at the top-level of your repo as the de facto landing page. This is analogous to what happens when you point a web browser at a directory instead of a specific web page: if there is a file named index.html, that’s what the server will show you by default. On GitHub, files named README.md play exactly this role for directories in your repo.\nImplication: for any logical group of files or mini project-within-your-project, create a sub-directory in your repository. And then create a README.md file to annotate these files, collect relevant links, etc. Now when you navigate to the sub-directory on GitHub the nicely rendered README.md will simply appear. The GitHub repo that backs the gapminder data package has a README in the data-raw subdirectory that explains exactly how the package data is created. In fact, it is generated programmatically from README.Rmd.\nSome repositories consist solely of README.md. Examples: Jeff Leek’s write-ups on How to share data with a statistician or Developing R packages. I am becoming a bigger fan of README-only repos than gists because repo issues trigger notifications, whereas comments on gists do not.\nIf you’ve got a directory full of web-friendly figures, such as PNGs, you can use code like this to generate a README.md for a quick DIY gallery, as Karl Broman has done with his FruitSnacks. I did same for all the fantastic O RLY book covers made by The Practical Dev.\nI have also used this device to share Keynote slides on GitHub (mea culpa!). Export them as PNGs images and throw ’em into a README gallery: slides on file organization and some on file naming.",
+    "text": "34.5 README.md\n\nProbablemente ya sepas que GitHub muestra README.md en el nivel superior de tu repositorio como la página de inicio de facto. Esto es análogo a lo que sucede cuando apunta un navegador web a un directorio en lugar de a una página web específica: si hay un archivo llamado index.html, eso es lo que el servidor le mostrará de forma predeterminada. En GitHub, los archivos llamados README.md desempeñan exactamente esta función para los directorios de su repositorio.\nImplicación: para cualquier grupo lógico de archivos o mini proyecto dentro de su proyecto, cree un subdirectorio en su repositorio. Y luego cree un archivo README.md para anotar estos archivos, recopilar enlaces relevantes, etc. Ahora, cuando navegue al subdirectorio en GitHub, simplemente aparecerá el README.md muy bien renderizado. El repositorio de GitHub que respalda el gapminder data package has a README en el subdirectorio data-raw eso explica exactamente cómo se crean los datos del paquete. De hecho, se genera programáticamente a partir de README.Rmd.\nAlgunos repositorios constan únicamente de README.md. Ejemplos: artículos de Jeff Leek sobre Cómo compartir datos con un estadístico o Desarrollar paquetes de R. Me estoy volviendo cada vez más fanático de los repositorios solo README que de los gists porque los problemas con los repositorios activan notificaciones, mientras que los comentarios sobre gists no.\nSi tiene un directorio lleno de figuras compatibles con la web, como PNG, puede usar código como este generar un README.md para una rápida galería de bricolaje, como lo ha hecho Karl Broman con sus FruitSnacks. Hice lo mismo con todas las fantásticas portadas de libros de O RLY hecho por The Practical Dev.\nTambién he usado este dispositivo para compartir diapositivas de Keynote en GitHub (¡mea culpa!). Exportarlos como imágenes PNG y colocarlos en una galería README: diapositivas en organización de archivos and some en denominación de archivos.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#finding-stuff",
-    "href": "workflows-make-github-repo-browsable.html#finding-stuff",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.6 Finding stuff",
-    "text": "34.6 Finding stuff\nOK these are pure GitHub tips but if you’ve made it this far, you’re obviously a keener.\n\nPress t to activate the file finder whenever you’re in a repo’s file and directory view. AWESOME, especially when there are files tucked into lots of subdirectories.\nPress y to get a permanent link when you’re viewing a specific file. Watch what changes in the URL. This is important if you are about to link to a file or to specific lines. Otherwise your links will break easily in the future. If the file is deleted or renamed or if lines get inserted or deleted, your links will no longer point to what you intended. Use y to get links that include a specific commit in the URL.",
+    "objectID": "workflows-make-github-repo-browsable.html#encontrar-cosas",
+    "href": "workflows-make-github-repo-browsable.html#encontrar-cosas",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.6 Encontrar cosas",
+    "text": "34.6 Encontrar cosas\nVale, estos son consejos puros de GitHub, pero si has llegado hasta aquí, obviamente estás más interesado.\n\nPresione t para activar el buscador de archivos siempre que esté en la vista de archivos y directorios de un repositorio. IMPRESIONANTE, especialmente cuando hay archivos escondidos en muchos subdirectorios.\nPresione y para obtener un enlace permanente cuando estás viendo un archivo específico. Observe los cambios en la URL. Esto es importante si está a punto de vincular a un archivo o a líneas específicas. De lo contrario, tus enlaces se romperán fácilmente en el futuro. Si el archivo se elimina o se le cambia el nombre, o si se insertan o eliminan líneas, sus enlaces ya no apuntarán a lo que pretendía. Utilice y para obtener enlaces que incluyan una confirmación específica en la URL.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
     "objectID": "workflows-make-github-repo-browsable.html#html",
     "href": "workflows-make-github-repo-browsable.html#html",
-    "title": "34  Make a GitHub repo browsable",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
     "section": "\n34.7 HTML",
-    "text": "34.7 HTML\nIf you have an HTML file in a GitHub repository, simply visiting the file shows the raw HTML. Here’s a nice ugly example:\n\nhttps://github.com/STAT545-UBC/STAT545-UBC.github.io/blob/master/bit003_api-key-env-var.html\n\nNo one wants to look at that. You can provide this URL to rawgit.com to serve this HTML more properly and get a decent preview.\nYou can form two different types of URLs with rawgit.com:\n\n\nFor sharing low-traffic, temporary examples or demos with small numbers of people, do this:\n\nhttps://rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html\nBasically: replace https://github.com/ with https://rawgit.com/\n\n\n\nFor use on production websites with any amount of traffic, do this:\n\nhttps://cdn.rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html\nBasically: replace https://github.com/ with https://cdn.rawgit.com/\n\n\n\n2018-10-09 update: RawGit announced that it is in a sunset phase and will soon shut down. They recommended: jsDelivr, GitHub Pages, CodeSandbox, and unpkg as alternatives.\nThis sort of enhanced link might be one of the useful things to put in a README.md or other Markdown file in the repo.\nYou may also want to check out this Chrome extension or GitHub & BitBucket HTML Preview, though recently I’ve more success with rawgit.com. (Neither work with private GitHub repos, which is all the more reason to keep intermediate markdown files for HTML, as described above.)\nSometimes including HTML files will cause GitHub to think that your R repository is HTML. Besides being slightly annoying, this can make it difficult for people to find your work if they are searching specifically for R repos. You can exclude these files or directories from GitHub’s language statistics by adding a .gitattributes file that marks them as ‘documentation’ rather than code. See an example here.",
+    "text": "34.7 HTML\nSi tiene un archivo HTML en un repositorio de GitHub, simplemente visitar el archivo muestra el HTML sin formato. Aquí hay un bonito y feo ejemplo:\n\nhttps://github.com/STAT545-UBC/STAT545-UBC.github.io/blob/master/bit003_api-key-env-var.html\n\nNadie quiere mirar eso. Puede proporcionar esta URL a rawgit.com para publicar este HTML de forma más adecuada y obtener una vista previa decente..\nPuedes formar dos tipos diferentes de URL con rawgit.com:\n\n\nPara compartir ejemplos o demostraciones temporales de poco tráfico con un número reducido de personas, haga lo siguiente:\n\nhttps://rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html\nBásicamente: reemplace https://github.com/ con https://rawgit.com/\n\n\n\nPara usar en sitios web de producción con cualquier cantidad de tráfico, haga esto:\n\nhttps://cdn.rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html\nBásicamente: reemplace https://github.com/ con https://cdn.rawgit.com/\n\n\n\n2018-10-09 actualización: RawGit announced que se encuentra en una fase de puesta de sol y pronto cerrará. Ellos recomendaron: jsDelivr, GitHub Pages, CodeSandbox, y unpkg como alternativas.\nEste tipo de enlace mejorado podría ser una de las cosas útiles para incluir en un README.md u otro archivo Markdown en el repositorio.\nQuizás también quieras consultar esta extensión de Chrome o Vista previa HTML de GitHub y BitBucket, aunque recientemente he tenido más éxito con rawgit.com. (Ninguno de los dos funciona con repositorios privados de GitHub, lo cual es una razón más para conservar archivos de rebajas intermedios para HTML, como se describe anteriormente.)\nA veces, incluir archivos HTML hará que GitHub piense que su repositorio R es HTML. Además de ser un poco molesto, esto puede dificultar que las personas encuentren su trabajo si buscan específicamente repositorios de R. Puedes excluir estos archivos o directorios de las estadísticas de idioma de GitHub agregando un archivo .gitattributes eso los marca como “documentación” en lugar de código. Ver un ejemplo aquí.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#source-code",
-    "href": "workflows-make-github-repo-browsable.html#source-code",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.8 Source code",
-    "text": "34.8 Source code\nYou will notice that GitHub does automatic syntax highlighting for source code. For example, notice the coloring of this R script. The file’s extension is the primary determinant for if/how syntax highlighting will be applied. You can see information on recognized languages, the default extensions and more at github/linguist. You should be doing it anyway, but let this be another reason to follow convention in your use of file extensions.\nNote you can click on “Raw” in this context as well, to get just the plain text and nothing but the plain text.",
+    "objectID": "workflows-make-github-repo-browsable.html#código-fuente",
+    "href": "workflows-make-github-repo-browsable.html#código-fuente",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.8 Código fuente",
+    "text": "34.8 Código fuente\nNotarás que GitHub resalta automáticamente la sintaxis del código fuente. Por ejemplo, observe el color de este script R. La extensión del archivo es el principal determinante de si y cómo se aplicará el resaltado de sintaxis. Puede ver información sobre idiomas reconocidos, las extensiones predeterminadas y más en github/linguist. Debería hacerlo de todos modos, pero deje que esta sea otra razón para seguir las convenciones en el uso de extensiones de archivos.\nTenga en cuenta que también puede hacer clic en “Sin formato” en este contexto para obtener solo el texto sin formato y nada más que el texto sin formato.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#delimited-files",
-    "href": "workflows-make-github-repo-browsable.html#delimited-files",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.9 Delimited files",
-    "text": "34.9 Delimited files\nGitHub will nicely render tabular data in the form of .csv (comma-separated) and .tsv (tab-separated) files. You can read more in the blog post announcing this feature in August 2013 or in this GitHub help page.\nAdvice: take advantage of this! If something in your repo can be naturally stored as delimited data, by all means, do so. Make the comma or tab your default delimiter and use the file suffixes GitHub is expecting. I have noticed that GitHub is more easily confused than R about things like quoting, so always inspect the GitHub-rendered .csv or .tsv file in the browser. You may need to do light cleaning to get the automagic rendering to work properly. Think of it as yet another way to learn about imperfections in your data.\nHere’s an example of a tab delimited file on GitHub: lotr_clean.tsv, originally found here (nope, IBM shut down manyeyes July 2015).\nNote you can click on “Raw” in this context as well, to get just the plain text and nothing but the plain text.",
+    "objectID": "workflows-make-github-repo-browsable.html#archivos-delimitados",
+    "href": "workflows-make-github-repo-browsable.html#archivos-delimitados",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.9 Archivos delimitados",
+    "text": "34.9 Archivos delimitados\nGitHub representará muy bien datos tabulares en forma de archivos .csv (separados por comas) y .tsv (separados por tabulación). Puedes leer más en la publicación del blog anunciando esta característica en agosto de 2013 o en esta página de ayuda de GitHub.\nConsejo: ¡aprovecha esto! Si algo en su repositorio se puede almacenar de forma natural como datos delimitados, hágalo por todos los medios. Haga de la coma o la tabulación su delimitador predeterminado y use los sufijos de archivo que GitHub espera. He notado que GitHub se confunde más fácilmente que R en cosas como las citas, así que siempre inspeccione el archivo .csv o .tsv renderizado por GitHub en el navegador. Es posible que tengas que realizar una limpieza ligera para que el renderizado automático funcione correctamente. Piense en ello como otra forma más de conocer las imperfecciones de sus datos.\nAquí hay un ejemplo de un archivo delimitado por tabulaciones en GitHub: lotr_clean.tsv, encontrado originalmente aquí (no, IBM cerró manyeyes en julio de 2015).\nTenga en cuenta que también puede hacer clic en “Sin formato” en este contexto para obtener solo el texto sin formato y nada más que el texto sin formato.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
     "objectID": "workflows-make-github-repo-browsable.html#pngs",
     "href": "workflows-make-github-repo-browsable.html#pngs",
-    "title": "34  Make a GitHub repo browsable",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
     "section": "\n34.10 PNGs",
-    "text": "34.10 PNGs\nPNG is the “no brainer” format in which to store figures for the web. But many of us like a vector-based format, such as PDF, for general purpose figures. Bottom line: PNGs will drive you less crazy than PDFs on GitHub. To reduce the aggravation around viewing figures in the browser, make sure to have a PNG version in the repo.\nExamples:\n\n\nThis PNG figure just shows up in the browser\nA different figure stored as PDF produces the dreaded, annoying “View Raw” speed bump. You’ll have to click through and, on my OS + browser, wait for the PDF to appear in an external PDF viewer. 2015-06-19 update: since I first wrote this GitHub has elevated its treament of PDFs so YAY. It’s slow but it works.\n\n\nHopefully we are moving towards a world where you can have “web friendly” and “vector” at the same time, without undue headaches. As of October 2014, GitHub provides enhanced viewing and diffing of SVGs. So don’t read this advice as discouraging SVGs. Make them! But consider keeping a PNG around as emergency back up for now.",
+    "text": "34.10 PNGs\nPNG es el formato “obvio” para almacenar cifras para la web. Pero a muchos de nosotros nos gusta un formato basado en vectores, como PDF, para figuras de uso general. En pocas palabras: los archivos PNG te volverán menos loco que los archivos PDF en GitHub. Para reducir la molestia de ver figuras en el navegador, asegúrese de tener una versión PNG en el repositorio.\nEjemplos:\n\n\nEsta figura PNG simplemente aparece en el navegador\nUna cifra diferente almacenada como PDF produce el temido y molesto aumento de velocidad “Ver Raw”. Tendrás que hacer clic y, en mi navegador OS +, esperar a que el PDF aparezca en un visor de PDF externo. 2015-06-19 update: Desde que escribí esto por primera vez, GitHub ha [elevado su tratamiento de archivos PDF] (https://github.com/blog/1974-pdf-viewing), así que YAY. Es lento pero funciona.\n\n\nEsperemos que estemos avanzando hacia un mundo en el que se pueda tener “web amigable” y “vectorial” al mismo tiempo, sin dolores de cabeza innecesarios. A partir de octubre de 2014, GitHub proporciona visualización y diferenciación mejoradas de SVG. Así que no leas este consejo como algo que desalienta a los SVG. ¡Hazlos! Pero considere mantener un PNG como respaldo de emergencia por ahora.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#other-document-formats",
-    "href": "workflows-make-github-repo-browsable.html#other-document-formats",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.11 Other document formats",
-    "text": "34.11 Other document formats\nYou may also have a document you want others to be able to browse and interact with, but it is not in the markdown format. Fortunately, the open-source Pandoc program, written by John MacFarlane, allows you to convert a range of formats into markdown, including the widely used .docx format.\nWhen you click the Knit button in RStudio it is actually Pandoc which performs the final conversion to HTML or Microsoft Word (.docx) formats. If you are willing to use the command-line, you can perform the opposite conversion (eg .docx to .md), commonly retaining features such as headings, tables, equations and even figures.\nAs some boilerplate, running in Windows PowerShell pandoc --extract-media .\\media  -f docx .\\example.docx -t markdown_github -o example_image.md converts a word document called example.docx to markdown, and extracts the images into a directory which corresponds to a filepath in the newly created example.md document. A full list of supported formats and example code for conversions are available at https://pandoc.org/.\nYou can also perform simple conversions to GitHub-flavored markdown from different markdown flavours (Pandoc supports markdown_mmd, markdown_php_extra and markdown_strict) from within RStudio. To do so you need to rename the file by changing the extension (eg from foo.md to foo.Rmd), then open the renamed file in RStudio and add the following text to the top of the document.\n---\noutput: github_document\n---\nYou can then click on “Knit” then “Knit to github document” to perform the conversion. See Output format for more details of controlling output formats with the YAML frontmatter.",
+    "objectID": "workflows-make-github-repo-browsable.html#otros-formatos-de-documentos",
+    "href": "workflows-make-github-repo-browsable.html#otros-formatos-de-documentos",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.11 Otros formatos de documentos",
+    "text": "34.11 Otros formatos de documentos\nEs posible que también tenga un documento que desea que otros puedan explorar e interactuar, pero no está en formato Markdown. Afortunadamente, el programa Pandoc de código abierto, escrito por John MacFarlane, le permite convertir una variedad de formatos a Markdown, incluido el formato ampliamente utilizado .docx.\nCuando hace clic en el botón Knit en RStudio, en realidad es Pandoc el que realiza la conversión final a formatos HTML o Microsoft Word (.docx). Si está dispuesto a utilizar la línea de comandos, puede realizar la conversión opuesta (por ejemplo, .docx a .md), normalmente conservando características como encabezados, tablas, ecuaciones e incluso figuras.\nComo algunos repetitivos, ejecutándose en Windows PowerShell pandoc --extract-media .\\media  -f docx .\\example.docx -t markdown_github -o example_image.md convierte un documento de Word llamado example.docx para marcar y extrae las imágenes en un directorio que corresponde a una ruta de archivo en el documento example.md recién creado. Una lista completa de formatos admitidos y códigos de ejemplo para conversiones están disponibles en https://pandoc.org/.\nTambién puede realizar conversiones simples a rebajas con sabor a GitHub desde diferentes tipos de rebajas (Pandoc admite markdown_mmd, markdown_php_extra y markdown_strict) desde dentro de RStudio. Para hacerlo, debe cambiar el nombre del archivo cambiando la extensión (por ejemplo, de foo.md a foo.Rmd), luego abra el archivo renombrado en RStudio y agregue el siguiente texto en la parte superior del documento.\n---\noutput: github_document\n---\nLuego puede hacer clic en “Knit” y luego en “Knit to github document” para realizar la conversión. Consulte Formato de salida para obtener más detalles sobre cómo controlar los formatos de salida con el frontmatter YAML.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#linking-to-a-zip-archive-of-your-repo",
-    "href": "workflows-make-github-repo-browsable.html#linking-to-a-zip-archive-of-your-repo",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.12 Linking to a ZIP archive of your repo",
-    "text": "34.12 Linking to a ZIP archive of your repo\nThe browsability of GitHub makes your work accessible to people who care about your content but who don’t (yet) use Git themselves. What if such a person wants all the files? Yes, there is a clickable “Download ZIP” button offered by GitHub. But what if you want a link to include in an email or other document? If you add /archive/master.zip to the end of the URL for your repo, you construct a link that will download a ZIP archive of your repository. Click here to try this out on a very small repo:\nhttps://github.com/jennybc/lotr/archive/master.zip\nGo look in your downloads folder!",
+    "objectID": "workflows-make-github-repo-browsable.html#vincular-a-un-archivo-zip-de-su-repositorio",
+    "href": "workflows-make-github-repo-browsable.html#vincular-a-un-archivo-zip-de-su-repositorio",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.12 Vincular a un archivo ZIP de su repositorio",
+    "text": "34.12 Vincular a un archivo ZIP de su repositorio\nLa navegabilidad de GitHub hace que su trabajo sea accesible para las personas que se preocupan por su contenido pero que (todavía) no usan Git. ¿Qué pasa si esa persona quiere todos los archivos? Sí, GitHub ofrece un botón “Descargar ZIP” en el que se puede hacer clic. Pero, ¿qué sucede si desea incluir un enlace en un correo electrónico u otro documento? Si agrega /archive/master.zip al final de la URL de su repositorio, creará un enlace que descargará un archivo ZIP de su repositorio. Haga clic aquí para probar esto en un repositorio muy pequeño:\nhttps://github.com/jennybc/lotr/archive/master.zip\n¡Ve a buscar en tu carpeta de descargas!",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#links-and-embedded-figures",
-    "href": "workflows-make-github-repo-browsable.html#links-and-embedded-figures",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.13 Links and embedded figures",
-    "text": "34.13 Links and embedded figures\n\nTo link to another page in your repo, just use a relative link: [admin](courseAdmin/) will link to the courseAdmin/ directory inside the current directory. [admin](/courseAdmin/) will link to the top-level courseAdmin/ directory from any where in the repo\nThe same idea also works for images. ![](image.png) will include image.png located in the current directory",
+    "objectID": "workflows-make-github-repo-browsable.html#enlaces-y-figuras-incrustadas.",
+    "href": "workflows-make-github-repo-browsable.html#enlaces-y-figuras-incrustadas.",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.13 Enlaces y figuras incrustadas.",
+    "text": "34.13 Enlaces y figuras incrustadas.\n\nPara vincular a otra página en su repositorio, simplemente use un enlace relativo: [admin](courseAdmin/) se vinculará al directorio courseAdmin/ directorio dentro del directorio actual. [admin](/courseAdmin/) se vinculará al nivel superior courseAdmin/ directorio desde cualquier lugar del repositorio\nLa misma idea también funciona para las imágenes. ![](image.png) incluirá image.png ubicado en el directorio actual",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
-    "objectID": "workflows-make-github-repo-browsable.html#let-people-correct-you-on-the-internet",
-    "href": "workflows-make-github-repo-browsable.html#let-people-correct-you-on-the-internet",
-    "title": "34  Make a GitHub repo browsable",
-    "section": "\n34.14 Let people correct you on the internet",
-    "text": "34.14 Let people correct you on the internet\nThey love that!\nYou can create a link that takes people directly to an editing interface in the browser. Behind the scenes, assuming the click-er is signed into GitHub but is not you, this will create a fork in their account and send you a pull request. When I click the link below, I am able to actually commit directly to master for this repo.\nCLICK HERE to suggest an edit to this page!\nHere’s what that link looks like in the Markdown source:\n[CLICK HERE to suggest an edit to this page!](https://github.com/jennybc/happy-git-with-r/edit/master/workflows-make-github-repo-browsable.Rmd)\nand here it is with placeholders:\n[INVITATION TO EDIT](&lt;URL to your repo&gt;/edit/master/&lt;path to target source file&gt;)\nAFAIK, to do that in a slick automatic way across an entire repo/site, you need to be using Jekyll or some other automated system. But you could easily handcode such links on a small scale.",
+    "objectID": "workflows-make-github-repo-browsable.html#deja-que-la-gente-te-corrija-en-internet",
+    "href": "workflows-make-github-repo-browsable.html#deja-que-la-gente-te-corrija-en-internet",
+    "title": "34  Hacer que un repositorio de GitHub sea navegable",
+    "section": "\n34.14 Deja que la gente te corrija en Internet",
+    "text": "34.14 Deja que la gente te corrija en Internet\n¡Les encanta eso!\nPuede crear un enlace que lleve a las personas directamente a una interfaz de edición en el navegador. Detrás de escena, suponiendo que la persona que hizo clic haya iniciado sesión en GitHub pero no sea usted, esto creará una bifurcación en su cuenta y le enviará una solicitud de extracción. Cuando hago clic en el enlace a continuación, puedo enviarme directamente al master para este repositorio.\n¡HAGA CLIC AQUÍ para sugerir una edición de esta página!\nAsí es como se ve ese enlace en la fuente de Markdown:\n[¡HAGA CLIC AQUÍ para sugerir una edición de esta página!](https://github.com/jennybc/happy-git-with-r/edit/master/workflows-make-github-repo-browsable.Rmd)\ny aquí está con marcadores de posición:\n[INVITACIÓN A EDITAR](&lt;URL to your repo&gt;/edit/master/&lt;ruta al archivo fuente de destino&gt;)\nHasta donde se, para hacer eso de una manera hábil y automática en todo un repositorio/sitio, debe usar Jekyll o algún otro sistema automatizado. Pero podrías codificar fácilmente dichos enlaces a pequeña escala.",
     "crumbs": [
       "Flujos de trabajo diarios",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Make a GitHub repo browsable</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Hacer que un repositorio de GitHub sea navegable</span>"
     ]
   },
   {
