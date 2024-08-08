@@ -40,7 +40,7 @@ Ve a visitarlo en el navegador.
 -   Rmd es bastante legible. Pero el resultado obviamente no está ahí.
 -   HTML es feo.
 
-## Formato de salida
+## Formato de salida {#sec-output-format}
 
 ¿Realmente quieres HTML? ¿Solo quieres HTML? ¿Estás absolutamente seguro? Si es así, ¡puedes saltarte este paso!
 
