@@ -1,6 +1,6 @@
 # Enmendar repetidamente {#sec-repeated-amend}
 
-Uno de los principales placeres del control de versiones es la libertad de experimentar sin miedo. Si arruinas las cosas, siempre puedes volver a una versión más feliz de tu proyecto. Describimos varios métodos de este tipo de viajes en el tiempo en *enlace por venir*. ¡Pero debes tener un buen commit al que recurrir!
+Uno de los principales placeres del control de versiones es la libertad de experimentar sin miedo. Si arruinas las cosas, siempre puedes volver a una versión más feliz de tu proyecto. Describimos varios métodos de este tipo de viajes en el tiempo en @sec-time-travel-see-past. ¡Pero debes tener un buen commit al que recurrir!
 
 ## Analogía de la escalada en roca
 
@@ -105,7 +105,7 @@ A -- B -- C -- D
 
 Hasta donde el mundo sabe, implementaste la función de una sola vez. Pero tenías que trabajar en la tarea de forma gradual, con la tranquilidad de que nunca podrías romper las cosas.
 
-## ¿Qué pasa si necesito retroceder?
+## ¿Qué pasa si necesito retroceder? {#sec-manually-reset}
 
 Imagine que está en medio de un flujo de trabajo de Enmendar repetidamente:
 
@@ -131,7 +131,7 @@ que dice: "restablecer mis archivos a su estado en la confirmación más recient
 
 Esto también es posible en RStudio. De hecho, la forma RStudio hace que sea más fácil restablecer selectivamente sólo archivos específicos o sólo ciertos cambios. Haga clic en "Diff" o "Commit". Seleccione un archivo con cambios que no desee. Utilice "Discard All" para descartar todos los cambios en ese archivo. Utilice "Discard chunk" para descartar cambios específicos en un archivo. Repita este procedimiento para cada archivo afectado hasta que vuelva a un estado aceptable. Continuar.
 
-Si cometió un mal estado, vaya a *enlace próximo* para ver más escenarios de reinicio.
+Si confrimo una versión en mal estado, vaya a @sec-reset para ver más escenarios de reinicio.
 
 ## ¿Por qué no enviamos el progreso intermedio?
 

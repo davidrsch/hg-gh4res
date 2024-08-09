@@ -151,9 +151,9 @@ Auto-merging foo.R
 CONFLICT (content): Merge conflict in foo.R
 ```
 
-En este punto, debes resolver el conflicto de fusión (*enlace futuro*). Literalmente, en cada lugar de conflicto, elija una versión u otra (anticipada o oculta) o cree un híbrido usted mismo. Retire todos los marcadores insertados para delimitar los conflictos. Guarde.
+En este punto, debes resolver el conflicto de fusión @sec-fusion-conflicts. Literalmente, en cada lugar de conflicto, elija una versión u otra (anticipada o oculta) o cree un híbrido usted mismo. Retire todos los marcadores insertados para delimitar los conflictos. Guarde.
 
-Dado que `git stash pop` no funcionó correctamente, debemos restablecer manualmente (*enlace futuro*) y eliminar el stash para finalizar.
+Dado que `git stash pop` no funcionó correctamente, debemos restablecer manualmente @sec-manually-reset y eliminar el stash para finalizar.
 
 ``` sh
 jenny@2015-mbp ethel $ git reset
@@ -207,7 +207,7 @@ CONFLICT (content): Merge conflict in foo.R
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Debes resolver estos conflictos (*enlace futuro*). Literalmente, en cada lugar de conflicto, elija una versión u otra (ascendente o local) o cree un híbrido usted mismo. Retire todos los marcadores insertados para delimitar los conflictos. Guarde.
+Debes resolver estos conflictos @sec-fusion-conflicts. Literalmente, en cada lugar de conflicto, elija una versión u otra (ascendente o local) o cree un híbrido usted mismo. Retire todos los marcadores insertados para delimitar los conflictos. Guarde.
 
 Marque el archivo afectado `foo.R` como resuelto mediante `git add` y haga un `git commit` explícito para finalizar esta fusión.
 

@@ -62,7 +62,7 @@ git checkout main
 git merge issue-5
 ```
 
-## Lidiar con los conflictos
+## Lidiar con los conflictos {#sec-fusion-conflicts}
 
 La mayoría de las veces, la fusión se realizará sin problemas.
 Sin embargo, si ambas ramas que está fusionando cambiaron la misma parte del mismo archivo, obtendrá un conflicto de fusión.
@@ -124,7 +124,7 @@ please contact us at email.support@github.com
 Ahora ejecute `git add index.html` y `git commit` para finalizar la fusión.
 CONFLICTOS RESUELTOS.
 
-### Rescate
+### Abortar
 
 Si, durante la fusión, se confunde sobre el estado de las cosas o hace una
 error, use `git merge --abort` para cancelar la fusión y volver al estado

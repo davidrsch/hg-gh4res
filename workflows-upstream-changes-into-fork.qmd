@@ -42,7 +42,7 @@ git_remotes()
 #> [1] "https://github.com/OWNER/repo.git"
 ```
 
-Si solo tiene un control remoto, probablemente  `origin`, le recomiendo que modifique la configuración del control remoto. Pero primero comprobaremos otra cosa.
+Si solo tiene un control remoto, probablemente `origin`, le recomiendo que modifique la configuración del control remoto. Pero primero comprobaremos otra cosa.
 
 ### Ver la rama de seguimiento ascendente
 
@@ -227,7 +227,7 @@ Haga un restablecimiento completo de la rama `main` para `C`.
 git reset --hard C
 ```
 
-Tendrás que descubrir cómo transmitir `C` en Git-speak. Especifíquelo en relación con `HEAD` o proporcione el SHA. Consulte *enlace futuro sobre viajes en el tiempo* para obtener más ayuda.
+Tendrás que descubrir cómo transmitir `C` en Git-speak. Especifíquelo en relación con `HEAD` o proporcione el SHA. Consulte @sec-time-travel-see-past para obtener más ayuda.
 
 <!-- TODO: come back when there is content about referring to previous states. -->
 

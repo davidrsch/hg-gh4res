@@ -1,4 +1,4 @@
-# Lidiar con el rechazo del empujón {#sec-push-rejected}
+# Lidiar con el rechazo del envio {#sec-push-rejected}
 
 Problema: desea enviar cambios a GitHub, pero lo rechazan así:
 
