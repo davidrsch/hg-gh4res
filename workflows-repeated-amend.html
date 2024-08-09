@@ -454,7 +454,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-push-rejected.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del empujón</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del envio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -616,7 +616,7 @@ div.csl-indent {
   <li><a href="#condición-inicial" id="toc-condición-inicial" class="nav-link" data-scroll-target="#condición-inicial"><span class="header-section-number">27.2.1</span> Condición inicial</a></li>
   <li><a href="#ponte-a-trabajar" id="toc-ponte-a-trabajar" class="nav-link" data-scroll-target="#ponte-a-trabajar"><span class="header-section-number">27.2.2</span> Ponte a trabajar</a></li>
   </ul></li>
-  <li><a href="#qué-pasa-si-necesito-retroceder" id="toc-qué-pasa-si-necesito-retroceder" class="nav-link" data-scroll-target="#qué-pasa-si-necesito-retroceder"><span class="header-section-number">27.3</span> ¿Qué pasa si necesito retroceder?</a></li>
+  <li><a href="#sec-manually-reset" id="toc-sec-manually-reset" class="nav-link" data-scroll-target="#sec-manually-reset"><span class="header-section-number">27.3</span> ¿Qué pasa si necesito retroceder?</a></li>
   <li><a href="#por-qué-no-enviamos-el-progreso-intermedio" id="toc-por-qué-no-enviamos-el-progreso-intermedio" class="nav-link" data-scroll-target="#por-qué-no-enviamos-el-progreso-intermedio"><span class="header-section-number">27.4</span> ¿Por qué no enviamos el progreso intermedio?</a></li>
   <li><a href="#um-y-si-lo-envie" id="toc-um-y-si-lo-envie" class="nav-link" data-scroll-target="#um-y-si-lo-envie"><span class="header-section-number">27.5</span> Um, ¿y si lo envie?</a></li>
   </ul>
@@ -644,7 +644,7 @@ div.csl-indent {
 </header>
 
 
-<p>Uno de los principales placeres del control de versiones es la libertad de experimentar sin miedo. Si arruinas las cosas, siempre puedes volver a una versión más feliz de tu proyecto. Describimos varios métodos de este tipo de viajes en el tiempo en <em>enlace por venir</em>. ¡Pero debes tener un buen commit al que recurrir!</p>
+<p>Uno de los principales placeres del control de versiones es la libertad de experimentar sin miedo. Si arruinas las cosas, siempre puedes volver a una versión más feliz de tu proyecto. Describimos varios métodos de este tipo de viajes en el tiempo en <a href="workflows-see-the-past.html" class="quarto-xref"><span>Chapter 30</span></a>. ¡Pero debes tener un buen commit al que recurrir!</p>
 <section id="analogía-de-la-escalada-en-roca" class="level2" data-number="27.1">
 <h2 data-number="27.1" class="anchored" data-anchor-id="analogía-de-la-escalada-en-roca"><span class="header-section-number">27.1</span> Analogía de la escalada en roca</h2>
 <blockquote class="blockquote">
@@ -707,8 +707,8 @@ git push</code></pre>
 <p>Hasta donde el mundo sabe, implementaste la función de una sola vez. Pero tenías que trabajar en la tarea de forma gradual, con la tranquilidad de que nunca podrías romper las cosas.</p>
 </section>
 </section>
-<section id="qué-pasa-si-necesito-retroceder" class="level2" data-number="27.3">
-<h2 data-number="27.3" class="anchored" data-anchor-id="qué-pasa-si-necesito-retroceder"><span class="header-section-number">27.3</span> ¿Qué pasa si necesito retroceder?</h2>
+<section id="sec-manually-reset" class="level2" data-number="27.3">
+<h2 data-number="27.3" class="anchored" data-anchor-id="sec-manually-reset"><span class="header-section-number">27.3</span> ¿Qué pasa si necesito retroceder?</h2>
 <p>Imagine que está en medio de un flujo de trabajo de Enmendar repetidamente:</p>
 <pre class="console"><code>A -- B -- C -- WIP*</code></pre>
 <p>y realiza algunos cambios que rompen su proyecto, p.&nbsp;las pruebas empiezan a fallar. Estos malos cambios aún no se han confirmado, pero están guardados. Quiere volver al último buen estado, representado por <code>WIP*</code>.</p>
@@ -718,7 +718,7 @@ git push</code></pre>
 <pre class="console"><code>git reset --hard HEAD</code></pre>
 <p>que dice: “restablecer mis archivos a su estado en la confirmación más reciente”.</p>
 <p>Esto también es posible en RStudio. De hecho, la forma RStudio hace que sea más fácil restablecer selectivamente sólo archivos específicos o sólo ciertos cambios. Haga clic en “Diff” o “Commit”. Seleccione un archivo con cambios que no desee. Utilice “Discard All” para descartar todos los cambios en ese archivo. Utilice “Discard chunk” para descartar cambios específicos en un archivo. Repita este procedimiento para cada archivo afectado hasta que vuelva a un estado aceptable. Continuar.</p>
-<p>Si cometió un mal estado, vaya a <em>enlace próximo</em> para ver más escenarios de reinicio.</p>
+<p>Si confrimo una versión en mal estado, vaya a <a href="prompt-practice-resets.html" class="quarto-xref"><span>Chapter 38</span></a> para ver más escenarios de reinicio.</p>
 </section>
 <section id="por-qué-no-enviamos-el-progreso-intermedio" class="level2" data-number="27.4">
 <h2 data-number="27.4" class="anchored" data-anchor-id="por-qué-no-enviamos-el-progreso-intermedio"><span class="header-section-number">27.4</span> ¿Por qué no enviamos el progreso intermedio?</h2>
@@ -1253,8 +1253,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workflows-push-rejected.html" class="pagination-link" aria-label="Lidiar con el rechazo del empujón">
-        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del empujón</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./workflows-push-rejected.html" class="pagination-link" aria-label="Lidiar con el rechazo del envio">
+        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del envio</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

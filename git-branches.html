@@ -434,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-push-rejected.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del empujón</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del envio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -593,9 +593,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#crear-una-nueva-rama" id="toc-crear-una-nueva-rama" class="nav-link active" data-scroll-target="#crear-una-nueva-rama"><span class="header-section-number">22.1</span> Crear una nueva rama</a></li>
   <li><a href="#cambiar-de-rama" id="toc-cambiar-de-rama" class="nav-link" data-scroll-target="#cambiar-de-rama"><span class="header-section-number">22.2</span> Cambiar de rama</a></li>
   <li><a href="#fusionar-una-rama" id="toc-fusionar-una-rama" class="nav-link" data-scroll-target="#fusionar-una-rama"><span class="header-section-number">22.3</span> Fusionar una rama</a></li>
-  <li><a href="#lidiar-con-los-conflictos" id="toc-lidiar-con-los-conflictos" class="nav-link" data-scroll-target="#lidiar-con-los-conflictos"><span class="header-section-number">22.4</span> Lidiar con los conflictos</a>
+  <li><a href="#sec-fusion-conflicts" id="toc-sec-fusion-conflicts" class="nav-link" data-scroll-target="#sec-fusion-conflicts"><span class="header-section-number">22.4</span> Lidiar con los conflictos</a>
   <ul class="collapse">
-  <li><a href="#rescate" id="toc-rescate" class="nav-link" data-scroll-target="#rescate"><span class="header-section-number">22.4.1</span> Rescate</a></li>
+  <li><a href="#abortar" id="toc-abortar" class="nav-link" data-scroll-target="#abortar"><span class="header-section-number">22.4.1</span> Abortar</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -649,8 +649,8 @@ git reset HEAD^</code></pre>
 <pre class="console"><code>git checkout main
 git merge issue-5</code></pre>
 </section>
-<section id="lidiar-con-los-conflictos" class="level2" data-number="22.4">
-<h2 data-number="22.4" class="anchored" data-anchor-id="lidiar-con-los-conflictos"><span class="header-section-number">22.4</span> Lidiar con los conflictos</h2>
+<section id="sec-fusion-conflicts" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="sec-fusion-conflicts"><span class="header-section-number">22.4</span> Lidiar con los conflictos</h2>
 <p>La mayoría de las veces, la fusión se realizará sin problemas. Sin embargo, si ambas ramas que está fusionando cambiaron la misma parte del mismo archivo, obtendrá un conflicto de fusión.</p>
 <pre class="console"><code>git merge issue-5
 # Auto-merging index.html
@@ -683,8 +683,8 @@ git merge issue-5</code></pre>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>please contact us at email.support@github.com</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ahora ejecute <code>git add index.html</code> y <code>git commit</code> para finalizar la fusión. CONFLICTOS RESUELTOS.</p>
-<section id="rescate" class="level3" data-number="22.4.1">
-<h3 data-number="22.4.1" class="anchored" data-anchor-id="rescate"><span class="header-section-number">22.4.1</span> Rescate</h3>
+<section id="abortar" class="level3" data-number="22.4.1">
+<h3 data-number="22.4.1" class="anchored" data-anchor-id="abortar"><span class="header-section-number">22.4.1</span> Abortar</h3>
 <p>Si, durante la fusión, se confunde sobre el estado de las cosas o hace una error, use <code>git merge --abort</code> para cancelar la fusión y volver al estado antes de ejecutar <code>git merge</code>. Luego puedes intentar completar la fusión nuevamente.</p>
 <p>Bifurcación y fusión de Git Basic:</p>
 <p><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" class="uri">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>

@@ -420,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workflows-push-rejected.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del empujón</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lidiar con el rechazo del envio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -725,7 +725,7 @@ and have 1 and 1 different commits each, respectively.</code></pre>
 <p>Ahora supongo que has conservado el trabajo en <code>X</code>, <code>Y</code> y <code>Z</code> (con una rama) o has decidido dejarlo ir.</p>
 <p>Haga un restablecimiento completo de la rama <code>main</code> para <code>C</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> C</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Tendrás que descubrir cómo transmitir <code>C</code> en Git-speak. Especifíquelo en relación con <code>HEAD</code> o proporcione el SHA. Consulte <em>enlace futuro sobre viajes en el tiempo</em> para obtener más ayuda.</p>
+<p>Tendrás que descubrir cómo transmitir <code>C</code> en Git-speak. Especifíquelo en relación con <code>HEAD</code> o proporcione el SHA. Consulte <a href="workflows-see-the-past.html" class="quarto-xref"><span>Chapter 30</span></a> para obtener más ayuda.</p>
 <!-- TODO: come back when there is content about referring to previous states. -->
 <p>El historial de su rama <code>main</code> ahora es compatible con su historial en <code>PROPIETARIO/REPO</code>. Las instrucciones anteriores para extraer cambios desde <code>upstream</code> ahora deberían funcionar. Un avance rápido debería tener éxito.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull upstream main <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
