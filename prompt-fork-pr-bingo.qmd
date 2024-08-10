@@ -1,30 +1,30 @@
-# Create a bingo card {#sec-bingo}
+# Crear un cartón de bingo {#sec-bingo}
 
-Here's a specific suggestion for practicing "fork and pull".
+Aquí hay una sugerencia específica para practicar "bifurcar e importar".
 
-The general workflow is laid out in @sec-fork-and-clone.
+El flujo de trabajo general se establece en @sec-fork-and-clone.
 
-Jenny and Dean have a repository that makes bingo cards with R:
+Jenny y Dean tienen un repositorio que fabrica cartones de bingo con R:
 
 -   <https://github.com/jennybc/bingo>
--   Read the README to learn more about it!
+-   ¡Lea el archivo README para obtener más información al respecto!
 
-Your mission:
+Tu misión:
 
--   Maybe find a partner? Or a couple of partners?
--   Fork the `bingo` repo.
--   Clone it to someone's local machine.
--   Create a new bingo card by making a file of possible squares.
-    -   Follow the instructions in <https://github.com/jennybc/bingo/blob/master/CONTRIBUTING.md> to see how to contribute a new card.
-    -   Protip: It's easy to be very funny, but create a very difficult bingo card. Remember to include some easy stuff so people have a chance to bingo.
--   If you're feeling virtuous, run the tests and check the package. Ask us for help! Or live dangerously and skip this.
--   Commit!
--   Push your changes back to your copy of the repo on GitHub.
--   Make a pull request back to the main `bingo` repo.
--   If your card is appropriate, we'll merge your request and it will become part of the package and available via the [Shiny app](http://daattali.com/shiny/bingo/).
+-   ¿Quizás encontrar un socio? ¿O un par de socios?
+-   Bifurcar el repositorio `bingo`.
+-   Clonarlo en la máquina local de alguien.
+-   Crear un nuevo cartón de bingo haciendo un archivo de posibles casillas.
+    -   Siga las instrucciones en <https://github.com/jennybc/bingo/blob/master/CONTRIBUTING.md> para ver cómo contribuir con una nueva tarjeta.
+    -   Consejo profesional: es fácil ser muy divertido, pero crea un cartón de bingo muy difícil. Recuerde incluir algunas cosas fáciles para que la gente tenga la oportunidad de jugar al bingo.
+-   Si se siente virtuoso, ejecute las pruebas y revise el paquete. ¡Pídenos ayuda! O vivir peligrosamente y evitar esto.
+-   ¡Comprometerse!
+-   Vuelva a enviar sus cambios a su copia del repositorio en GitHub.
+-   Realizar una solicitud de extracción al repositorio principal de "bingo".
+-   Si su tarjeta es apropiada, fusionaremos su solicitud y pasará a formar parte del paquete y estará disponible a través de la [aplicación Shiny](http://daattali.com/shiny/bingo/).
 
-**Special inspiration for useR**:
+**Inspiración especial para su uso**:
 
--   Make useR-specific conference bingo.
--   See this issue thread for lots of square ideas!
+-   Haga bingo de conferencias específico para useR.
+-   ¡Consulte este hilo temático para conocer muchas ideas cuadradas!
     -   <https://github.com/jennybc/bingo/issues/4>
