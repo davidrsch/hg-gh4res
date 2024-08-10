@@ -1,23 +1,23 @@
-# Burn it all down {#sec-burn}
+# Quemalo todo {#sec-burn}
 
-This is a highly inelegant, but effective technique for disaster recovery.
+Esta es una técnica muy poco elegante pero eficaz para la recuperación ante desastres.
 
-It has been immortalized in an xkcd comic, so it must be ok:
+Ha sido inmortalizado en un cómic de xkcd, así que debe estar bien:
 
 -   <https://xkcd.com/1597/>
 -   <http://explainxkcd.com/wiki/index.php/1597:_Git>
 
-Basic idea:
+Idea básica:
 
--   Commit early and often.
--   Push to a remote, like GitHub, often.
--   The state of things on GitHub is your new "worst case scenario".
--   If you really screw things up locally, copy all the files (or the ones that have changed) to a safe place.
-    -   Usually your files are JUST FINE. But it is easy to goof up the Git infrastructure when you're new at this. And it can be hard to get that straightened out on your own.
--   Rename the existing local repo as a temporary measure, i.e. before you do something radical, like delete it.
--   Clone the repo from GitHub to your local machine. You are back to a happy state.
--   Copy all relevant files back over from your safe space. The ones whose updated state you need to commit.
--   Stage and commit. Push.
--   Carry on with your life.
+-   Confirme temprano y con frecuencia.
+-   Empuje a un control remoto, como GitHub, con frecuencia.
+-   El estado de las cosas en GitHub es su nuevo "peor de los casos".
+-   Si realmente arruinas las cosas localmente, copia todos los archivos (o los que hayan cambiado) a un lugar seguro.
+    -   Por lo general, sus archivos están BIEN. Pero es fácil estropear la infraestructura de Git cuando eres nuevo en esto. Y puede ser difícil solucionarlo por su cuenta.
+-   Cambie el nombre del repositorio local existente como medida temporal, es decir, antes de hacer algo radical, como eliminarlo.
+-   Clona el repositorio de GitHub a tu máquina local. Has vuelto a un estado feliz.
+-   Copie todos los archivos relevantes desde su espacio seguro. Aquellos cuyo estado actualizado necesita confirmar.
+-   Ponga en escena y comprométase. Empujar.
+-   Sigue con tu vida.
 
-Practice this before you need it, so you see how it works.
+Practica esto antes de que lo necesites, así verás cómo funciona.
