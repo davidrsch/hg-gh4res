@@ -2152,78 +2152,78 @@
   {
     "objectID": "prompt-clone.html",
     "href": "prompt-clone.html",
-    "title": "35  Clone a repo",
+    "title": "35  Clonar un repositorio",
     "section": "",
-    "text": "Clone someone else’s repository on GitHub where you just want a copy. But you also want to track its evolution. That is what differentiates a GitHub clone from, say, simply downloading the ZIP archive at a specific point in time.\nPick a GitHub repository that interests you. Inspiration:\n\nan R package you care about\na data analytic project you find interesting\n\nExample: The GitHub repo that underpins Polygraphing’s blog post analyzing 2,000 screenplays is here: https://github.com/brandles/scripts\nExample: FiveThirtyEight shared the data and code behind their Gun Deaths in America project on GitHub: https://github.com/fivethirtyeight/guns-data. Have a look around their other repos as well.\n\n\nCreate a new RStudio Project from this GitHub repo. Refresh your memory of how to do that by re-visiting our “GitHub first” workflow in Chapter 15.\nOnce you have the code locally, try to run some of it. Try to understand how it works.\nDo you want to make a change? Fine do that!\nDo you want to send changes back to the original author? Now you have firsthand knowledge of when you should fork instead of clone. See Chapter 31.",
+    "text": "Clona el repositorio de otra persona en GitHub donde solo quieres una copia. Pero también quieres seguir su evolución. Eso es lo que diferencia un clon de GitHub de, digamos, simplemente descargar el archivo ZIP en un momento específico.\nElija un repositorio de GitHub que le interese. Inspiración:\n\nun paquete R que te interesa\nun proyecto de análisis de datos que le parezca interesante\n\nEjemplo: el repositorio de GitHub que sustenta la publicación del blog de Polygraphing que analiza 2000 guiones está aquí: https://github.com/brandles/scripts\nEjemplo: FiveThirtyEight compartió los datos y el código detrás de su proyecto Gun Deaths in America en GitHub: https://github.com/fivethirtyeight/guns-data. Eche un vistazo también a sus otros repositorios.\n\n\nCree un nuevo proyecto RStudio desde este repositorio de GitHub. Refresque su memoria sobre cómo hacerlo volviendo a visitar nuestro flujo de trabajo “GitHub primero” en Chapter 15.\nUna vez que tenga el código localmente, intente ejecutar parte del mismo. Intenta entender cómo funciona.\n¿Quieres hacer un cambio? ¡Bien, haz eso!\n¿Quieres enviar los cambios al autor original? Ahora sabes de primera mano cuándo debes bifurcar en lugar de clonar. Ver Chapter 31.",
     "crumbs": [
       "Indicaciones de actividad",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Clone a repo</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Clonar un repositorio</span>"
     ]
   },
   {
     "objectID": "prompt-fork-pr-bingo.html",
     "href": "prompt-fork-pr-bingo.html",
-    "title": "36  Create a bingo card",
+    "title": "36  Crear un cartón de bingo",
     "section": "",
-    "text": "Here’s a specific suggestion for practicing “fork and pull”.\nThe general workflow is laid out in Chapter 31.\nJenny and Dean have a repository that makes bingo cards with R:\n\nhttps://github.com/jennybc/bingo\nRead the README to learn more about it!\n\nYour mission:\n\nMaybe find a partner? Or a couple of partners?\nFork the bingo repo.\nClone it to someone’s local machine.\nCreate a new bingo card by making a file of possible squares.\n\nFollow the instructions in https://github.com/jennybc/bingo/blob/master/CONTRIBUTING.md to see how to contribute a new card.\nProtip: It’s easy to be very funny, but create a very difficult bingo card. Remember to include some easy stuff so people have a chance to bingo.\n\nIf you’re feeling virtuous, run the tests and check the package. Ask us for help! Or live dangerously and skip this.\nCommit!\nPush your changes back to your copy of the repo on GitHub.\nMake a pull request back to the main bingo repo.\nIf your card is appropriate, we’ll merge your request and it will become part of the package and available via the Shiny app.\n\nSpecial inspiration for useR:\n\nMake useR-specific conference bingo.\nSee this issue thread for lots of square ideas!\n\nhttps://github.com/jennybc/bingo/issues/4",
+    "text": "Aquí hay una sugerencia específica para practicar “bifurcar e importar”.\nEl flujo de trabajo general se establece en Chapter 31.\nJenny y Dean tienen un repositorio que fabrica cartones de bingo con R:\n\nhttps://github.com/jennybc/bingo\n¡Lea el archivo README para obtener más información al respecto!\n\nTu misión:\n\n¿Quizás encontrar un socio? ¿O un par de socios?\nBifurcar el repositorio bingo.\nClonarlo en la máquina local de alguien.\nCrear un nuevo cartón de bingo haciendo un archivo de posibles casillas.\n\nSiga las instrucciones en https://github.com/jennybc/bingo/blob/master/CONTRIBUTING.md para ver cómo contribuir con una nueva tarjeta.\nConsejo profesional: es fácil ser muy divertido, pero crea un cartón de bingo muy difícil. Recuerde incluir algunas cosas fáciles para que la gente tenga la oportunidad de jugar al bingo.\n\nSi se siente virtuoso, ejecute las pruebas y revise el paquete. ¡Pídenos ayuda! O vivir peligrosamente y evitar esto.\n¡Comprometerse!\nVuelva a enviar sus cambios a su copia del repositorio en GitHub.\nRealizar una solicitud de extracción al repositorio principal de “bingo”.\nSi su tarjeta es apropiada, fusionaremos su solicitud y pasará a formar parte del paquete y estará disponible a través de la aplicación Shiny.\n\nInspiración especial para su uso:\n\nHaga bingo de conferencias específico para useR.\n¡Consulte este hilo temático para conocer muchas ideas cuadradas!\n\nhttps://github.com/jennybc/bingo/issues/4",
     "crumbs": [
       "Indicaciones de actividad",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Create a bingo card</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Crear un cartón de bingo</span>"
     ]
   },
   {
     "objectID": "prompt-burn-it-all-down.html",
     "href": "prompt-burn-it-all-down.html",
-    "title": "37  Burn it all down",
+    "title": "37  Quemalo todo",
     "section": "",
-    "text": "This is a highly inelegant, but effective technique for disaster recovery.\nIt has been immortalized in an xkcd comic, so it must be ok:\n\nhttps://xkcd.com/1597/\nhttp://explainxkcd.com/wiki/index.php/1597:_Git\n\nBasic idea:\n\nCommit early and often.\nPush to a remote, like GitHub, often.\nThe state of things on GitHub is your new “worst case scenario”.\nIf you really screw things up locally, copy all the files (or the ones that have changed) to a safe place.\n\nUsually your files are JUST FINE. But it is easy to goof up the Git infrastructure when you’re new at this. And it can be hard to get that straightened out on your own.\n\nRename the existing local repo as a temporary measure, i.e. before you do something radical, like delete it.\nClone the repo from GitHub to your local machine. You are back to a happy state.\nCopy all relevant files back over from your safe space. The ones whose updated state you need to commit.\nStage and commit. Push.\nCarry on with your life.\n\nPractice this before you need it, so you see how it works.",
+    "text": "Esta es una técnica muy poco elegante pero eficaz para la recuperación ante desastres.\nHa sido inmortalizado en un cómic de xkcd, así que debe estar bien:\n\nhttps://xkcd.com/1597/\nhttp://explainxkcd.com/wiki/index.php/1597:_Git\n\nIdea básica:\n\nConfirme temprano y con frecuencia.\nEmpuje a un control remoto, como GitHub, con frecuencia.\nEl estado de las cosas en GitHub es su nuevo “peor de los casos”.\nSi realmente arruinas las cosas localmente, copia todos los archivos (o los que hayan cambiado) a un lugar seguro.\n\nPor lo general, sus archivos están BIEN. Pero es fácil estropear la infraestructura de Git cuando eres nuevo en esto. Y puede ser difícil solucionarlo por su cuenta.\n\nCambie el nombre del repositorio local existente como medida temporal, es decir, antes de hacer algo radical, como eliminarlo.\nClona el repositorio de GitHub a tu máquina local. Has vuelto a un estado feliz.\nCopie todos los archivos relevantes desde su espacio seguro. Aquellos cuyo estado actualizado necesita confirmar.\nPonga en escena y comprométase. Empujar.\nSigue con tu vida.\n\nPractica esto antes de que lo necesites, así verás cómo funciona.",
     "crumbs": [
       "Indicaciones de actividad",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Burn it all down</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Quemalo todo</span>"
     ]
   },
   {
     "objectID": "prompt-practice-resets.html",
     "href": "prompt-practice-resets.html",
-    "title": "38  Resetting",
+    "title": "38  Restablecer",
     "section": "",
-    "text": "Practice recovering from mistakes.\nUse a repository you’ve created earlier in the tutorial for this. It only needs to be local, i.e. this does not involve GitHub.\nIf it’s not your most recent commit, seriously consider just letting that go. Just. Let. It. Go.\nSo you want to undo the last commit?\nIf “YES UNDO IT COMPLETELY”: git reset --hard HEAD^. You will lose any changes that were not reflected in the commit-before-last!\nIf “YES undo the commit, but leave the files in that state (but unstaged)”: git reset HEAD^. Your files will stay the same but the commit will be undone and nothing will be staged.\nIf “YES go right back to the moment before I committed”: git reset --soft HEAD^. Your files will stay the same but the commit will be undone. Even your staged changes will be restored.\nIf you just want to fiddle with the most recent commit or its message, you can amend it. You can do this from RStudio!\n\nMake the change you want and amend the commit.\nDo you only want to change the commit message?\n\nMake another small change. Surely you have a typo somewhere? Amend the commit, which gives you the chance to edit the message\n\n\nTo amend from the command line, using an editor to create the message:\ngit commit --amend\nTo amend from the command line, providing the new message:\ngit commit --amend -m \"New commit message\"\nGit Reset Demystified:\nhttps://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified",
+    "text": "Practica recuperarte de los errores.\nUtilice un repositorio que haya creado anteriormente en el tutorial para esto. Solo necesita ser local, es decir, esto no involucra a GitHub.\nSi no es su compromiso más reciente, considere seriamente dejarlo pasar. Justo. Dejar. Él. Ir.\n¿Entonces quieres deshacer la última confirmación?\nSi “SÍ, DESHAGALO COMPLETAMENTE”: git reset --hard HEAD^. ¡Perderá cualquier cambio que no se haya reflejado en la última confirmación!\nSi “SÍ, deshaga la confirmación, pero deje los archivos en ese estado (pero sin preparar)”: git reset HEAD^. Sus archivos seguirán siendo los mismos, pero la confirmación se deshará y no se preparará nada.\nSi “SÍ, regrese al momento anterior a mi compromiso”: git reset --soft HEAD^. Sus archivos permanecerán igual pero la confirmación se deshará. Incluso se restaurarán los cambios realizados.\nSi solo desea modificar la confirmación más reciente o su mensaje, puede modificarlo. ¡Puedes hacer esto desde RStudio!\n\nRealice el cambio que desee y modifique el compromiso.\n¿Quieres cambiar sólo el mensaje de confirmación?\n\nHaz otro pequeño cambio. ¿Seguramente tienes un error tipográfico en alguna parte? Modifique la confirmación, lo que le brinda la oportunidad de editar el mensaje.\n\n\nPara modificar desde la línea de comando, usando un editor para crear el mensaje:\ngit commit --amend\nPara modificar desde la línea de comando, proporcionando el nuevo mensaje:\ngit commit --amend -m \"New commit message\"\nRestablecimiento de Git desmitificado:\nhttps://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified",
     "crumbs": [
       "Indicaciones de actividad",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Resetting</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Restablecer</span>"
     ]
   },
   {
     "objectID": "prompt-search-github.html",
     "href": "prompt-search-github.html",
-    "title": "39  Search GitHub",
+    "title": "39  Buscar en GitHub",
     "section": "",
-    "text": "39.1 Basic resources\nGitHub searching\nRead-only mirror of R source by Winston Chang:\nRead-only mirror of all packages on CRAN by Gábor Csárdi:",
+    "text": "39.1 Recursos básicos\nBúsqueda en GitHub\nEspejo de solo lectura de la fuente R de Winston Chang:\nEspejo de solo lectura de todos los paquetes en CRAN por Gábor Csárdi:",
     "crumbs": [
       "Indicaciones de actividad",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Search GitHub</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Buscar en GitHub</span>"
     ]
   },
   {
-    "objectID": "prompt-search-github.html#basic-resources",
-    "href": "prompt-search-github.html#basic-resources",
-    "title": "39  Search GitHub",
+    "objectID": "prompt-search-github.html#recursos-básicos",
+    "href": "prompt-search-github.html#recursos-básicos",
+    "title": "39  Buscar en GitHub",
     "section": "",
     "text": "https://github.com/search/advanced\nhttps://help.github.com/articles/searching-code/\nhttps://help.github.com/articles/search-syntax/\n\n\n\nhttps://github.com/wch/r-source\n\n\n\nhttps://github.com/cran\nhttp://cran.github.io\nMETACRAN",
     "crumbs": [
       "Indicaciones de actividad",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Search GitHub</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Buscar en GitHub</span>"
     ]
   },
   {
-    "objectID": "prompt-search-github.html#use-case",
-    "href": "prompt-search-github.html#use-case",
-    "title": "39  Search GitHub",
-    "section": "39.2 Use case",
-    "text": "39.2 Use case\nWhat if a function in a package has no examples? Or is poorly exampled? Wouldn’t it be nice to find functioning instances of it “in the wild”?\nVia Twitter, Noam Ross taught me a clever way to do such searches on GitHub. Put this into the GitHub search box to see how packages on CRAN use the llply() function from plyr:\n\"llply\" user:cran language:R\nOr just click here.\nAnother example that recently came up on r-package-devel:\nHow to see lots of examples of roxygen templates?\nThis search finds &gt;1400 examples of roxygen templates in the wild:\nhttps://github.com/search?q=man-roxygen+in%3Apath&type=Code&ref=searchresults",
+    "objectID": "prompt-search-github.html#caso-de-uso",
+    "href": "prompt-search-github.html#caso-de-uso",
+    "title": "39  Buscar en GitHub",
+    "section": "39.2 Caso de uso",
+    "text": "39.2 Caso de uso\n¿Qué pasa si una función en un paquete no tiene ejemplos? ¿O está mal ejemplificado? ¿No sería bueno encontrar ejemplos funcionales de esto “en la naturaleza”?\nVia Twitter, Noam Ross me enseñó una forma inteligente de realizar este tipo de búsquedas en GitHub. Coloque esto en el cuadro de búsqueda de GitHub para ver cómo los paquetes en CRAN usan la función llply() de plyr:\n\"llply\" user:cran language:R\nO simplemente haga clic aquí.\nOtro ejemplo que apareció recientemente en r-package-devel:\n¿Cómo ver muchos ejemplos de plantillas de roxygen?\nEsta búsqueda encuentra &gt;1400 ejemplos de plantillas de roxygen en la naturaleza:\nhttps://github.com/search?q=man-roxygen+in%3Apath&type=Code&ref=searchresults",
     "crumbs": [
       "Indicaciones de actividad",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Search GitHub</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Buscar en GitHub</span>"
     ]
   },
   {
