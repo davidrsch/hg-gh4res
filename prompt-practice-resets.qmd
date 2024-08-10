@@ -1,37 +1,37 @@
-# Resetting {#sec-reset}
+# Restablecer {#sec-reset}
 
-Practice recovering from mistakes.
+Practica recuperarte de los errores.
 
-Use a repository you've created earlier in the tutorial for this. It only needs to be local, i.e. this does not involve GitHub.
+Utilice un repositorio que haya creado anteriormente en el tutorial para esto. Solo necesita ser local, es decir, esto no involucra a GitHub.
 
-If it's not your most recent commit, seriously consider just letting that go. Just. Let. It. Go.
+Si no es su compromiso más reciente, considere seriamente dejarlo pasar. Justo. Dejar. Él. Ir.
 
-So you want to undo the last commit?
+¿Entonces quieres deshacer la última confirmación?
 
-If "YES UNDO IT COMPLETELY": `git reset --hard HEAD^`. You will lose any changes that were not reflected in the commit-before-last!
+Si "SÍ, DESHAGALO COMPLETAMENTE": `git reset --hard HEAD^`. ¡Perderá cualquier cambio que no se haya reflejado en la última confirmación!
 
-If "YES undo the commit, but leave the files in that state (but unstaged)": `git reset HEAD^`. Your files will stay the same but the commit will be undone and nothing will be staged.
+Si "SÍ, deshaga la confirmación, pero deje los archivos en ese estado (pero sin preparar)": `git reset HEAD^`. Sus archivos seguirán siendo los mismos, pero la confirmación se deshará y no se preparará nada.
 
-If "YES go right back to the moment before I committed": `git reset --soft HEAD^`. Your files will stay the same but the commit will be undone. Even your staged changes will be restored.
+Si "SÍ, regrese al momento anterior a mi compromiso": `git reset --soft HEAD^`. Sus archivos permanecerán igual pero la confirmación se deshará. Incluso se restaurarán los cambios realizados.
 
-**If you just want to fiddle with the most recent commit or its message, you can amend it. You can do this from RStudio!**
+**Si solo desea modificar la confirmación más reciente o su mensaje, puede modificarlo. ¡Puedes hacer esto desde RStudio!**
 
--   Make the change you want and amend the commit.
--   Do you only want to change the commit message?
-    -   Make another small change. Surely you have a typo somewhere? Amend the commit, which gives you the chance to edit the message
+-   Realice el cambio que desee y modifique el compromiso.
+- ¿Quieres cambiar sólo el mensaje de confirmación?
+    -   Haz otro pequeño cambio. ¿Seguramente tienes un error tipográfico en alguna parte? Modifique la confirmación, lo que le brinda la oportunidad de editar el mensaje.
 
-To amend from the command line, using an editor to create the message:
+Para modificar desde la línea de comando, usando un editor para crear el mensaje:
 
 ``` bash
 git commit --amend
 ```
 
-To amend from the command line, providing the new message:
+Para modificar desde la línea de comando, proporcionando el nuevo mensaje:
 
 ``` bash
 git commit --amend -m "New commit message"
 ```
 
-Git Reset Demystified:
+Restablecimiento de Git desmitificado:
 
 <https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified>
