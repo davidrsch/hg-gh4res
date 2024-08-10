@@ -1,39 +1,39 @@
-# Search GitHub {#sec-search}
+# Buscar en GitHub {#sec-search}
 
-## Basic resources
+## Recursos básicos
 
-GitHub searching
+Búsqueda en GitHub
 
 -   <https://github.com/search/advanced>
 -   <https://help.github.com/articles/searching-code/>
 -   <https://help.github.com/articles/search-syntax/>
 
-Read-only mirror of R source by Winston Chang:
+Espejo de solo lectura de la fuente R de Winston Chang:
 
 -   <https://github.com/wch/r-source>
 
-Read-only mirror of all packages on CRAN by Gábor Csárdi:
+Espejo de solo lectura de todos los paquetes en CRAN por Gábor Csárdi:
 
 -   <https://github.com/cran>
 -   <http://cran.github.io>
 -   [METACRAN](http://www.r-pkg.org)
 
-## Use case
+## Caso de uso
 
-What if a function in a package has no examples? Or is poorly exampled? Wouldn't it be nice to find functioning instances of it "in the wild"?
+¿Qué pasa si una función en un paquete no tiene ejemplos? ¿O está mal ejemplificado? ¿No sería bueno encontrar ejemplos funcionales de esto "en la naturaleza"?
 
-[Via Twitter](https://twitter.com/noamross/status/563422536633839617), Noam Ross taught me a clever way to do such searches on GitHub. Put this into the GitHub search box to see how packages on CRAN use the `llply()` function from `plyr`:
+[Via Twitter](https://twitter.com/noamross/status/563422536633839617), Noam Ross me enseñó una forma inteligente de realizar este tipo de búsquedas en GitHub. Coloque esto en el cuadro de búsqueda de GitHub para ver cómo los paquetes en CRAN usan la función `llply()` de `plyr`:
 
 ``` bash
 "llply" user:cran language:R
 ```
 
-Or just [click here](https://github.com/search?l=r&q=%22llply%22+user%3Acran+language%3AR&ref=searchresults&type=Code).
+O simplemente [haga clic aquí](https://github.com/search?l=r&q=%22llply%22+user%3Acran+language%3AR&ref=searchresults&type=Code).
 
-Another example that recently came up on r-package-devel:
+Otro ejemplo que apareció recientemente en r-package-devel:
 
-How to see lots of examples of roxygen templates?
+¿Cómo ver muchos ejemplos de plantillas de roxygen?
 
-This search finds \>1400 examples of roxygen templates in the wild:
+Esta búsqueda encuentra \>1400 ejemplos de plantillas de roxygen en la naturaleza:
 
 <https://github.com/search?q=man-roxygen+in%3Apath&type=Code&ref=searchresults>
