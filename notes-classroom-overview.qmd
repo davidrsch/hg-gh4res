@@ -1,97 +1,97 @@
-# Run a course with GitHub {#sec-classroom-overview}
+# Realiza un curso con GitHub {#sec-classroom-overview}
 
-*This content is rather stale and unlikely to see further development.*
+*Este contenido es bastante obsoleto y es poco probable que se desarrolle más.*
 
-GitHub makes a wonderful platform on which to run a course. I've been doing this on [github.com](https://github.com) since 2014 in [STAT 545](http://stat545.com), an 80-student grad course in data analysis with R, and in a second large, code-intensive graduate course in statistical genomics. We're running all of the courses for UBC's [Master of Data Science program](https://ubc-mds.github.io) off a private instance of [GitHub Enterprise](https://enterprise.github.com/home) hosted in Canada.
+GitHub es una plataforma maravillosa para impartir un curso. He estado haciendo esto en [github.com](https://github.com) desde 2014 en [STAT 545](http://stat545.com), un curso de posgrado de 80 estudiantes en análisis de datos con R, y en un segundo gran curso de posgrado con uso intensivo de código en genómica estadística. Estamos ejecutando todos los cursos para el [programa de Maestría en Ciencia de Datos de la UBC](https://ubc-mds.github.io) desde una instancia privada de [GitHub Enterprise](https://enterprise.github.com/ casa) alojado en Canadá.
 
-## Benefits
+## Beneficios
 
-For the instructor
+Para el instructor
 
--   If you already use Git/GitHub, it's extremely efficient to use the same workflows to manage course materials, student work, and communication with students and TAs.
-    -   When I switched to Git/GitHub and R Markdown, abandoning my old "system" of accepting all manner of stuff as email attachments? It was the first time I actually ran the code in my students' final projects, because it was so easy to get it on my computer in an organized fashion. I even made some corrections as pull requests!
--   If you're still in your early days with Git/GitHub, the sheer volume of operations and regular small deadlines will increase your mastery very quickly. Practice makes perfect! However, I would not recommend running a course on GitHub as your *first* substantial version control project.
+-   Si ya usa Git/GitHub, es extremadamente eficiente usar los mismos flujos de trabajo para administrar los materiales del curso, el trabajo de los estudiantes y la comunicación con los estudiantes y los asistentes técnicos.
+    -   Cuando cambié a Git/GitHub y R Markdown, ¿abandoné mi antiguo "sistema" de aceptar todo tipo de cosas como archivos adjuntos de correo electrónico? Fue la primera vez que ejecuté el código en los proyectos finales de mis alumnos, porque fue muy fácil tenerlo en mi computadora de manera organizada. ¡Incluso hice algunas correcciones como solicitudes de extracción!
+-   Si todavía estás en tus inicios con Git/GitHub, el gran volumen de operaciones y los plazos pequeños y regulares aumentarán tu dominio muy rápidamente. ¡La práctica hace la perfección! Sin embargo, no recomendaría realizar un curso en GitHub como su *primer* proyecto sustancial de control de versiones.
 
-For the students
+Para los estudiantes
 
--   I have found that students adjust to Git/GitHub fairly quickly and genuinely like it. They find it gratifying to see their beautiful, figure-rich R Markdown reports up on the internet. Since it's easy to expose their work within the class, we do a lot of peer review. I find that expertise spreads around the class like a virus. That applies to the main course substance as well as workflow.
--   Many students are specifically interested in learning Git and GitHub, as a complement to the coding and analytical skills we teach in these courses. The fact that we use it for course mechanics kills two birds with one stone. Teaching the use of distributed version control is a valid pedagogical goal in and of itself.
+-   He descubierto que los estudiantes se adaptan a Git/GitHub con bastante rapidez y realmente les gusta. Les resulta gratificante ver sus hermosos y ricos informes R Markdown en Internet. Como es fácil exponer su trabajo dentro de la clase, hacemos mucha revisión por pares. Encuentro que la experiencia se propaga por la clase como un virus. Esto se aplica tanto al contenido del plato principal como al flujo de trabajo.
+-   Muchos estudiantes están específicamente interesados en aprender Git y GitHub, como complemento a las habilidades analíticas y de codificación que enseñamos en estos cursos. El hecho de que lo utilicemos para mecánica de curso mata dos pájaros de un tiro. Enseñar el uso del control de versiones distribuidas es un objetivo pedagógico válido en sí mismo.
 
-## The STAT 545 student setup
+## La configuración del estudiante STAT 545
 
-GitHub's Organizations/Teams and API have changed over the 3+ years we've been doing this, so my approach has evolved over time and is also shaped by hard experience.
+Las organizaciones/equipos y la API de GitHub han cambiado a lo largo de los más de 3 años que llevamos haciendo esto, por lo que mi enfoque ha evolucionado con el tiempo y también está moldeado por una dura experiencia.
 
-Major points:
+Puntos principales:
 
--   [Create an Organization](https://help.github.com/articles/creating-a-new-organization-account/) for the course.
-    -   Immediately request an [Education discount](https://education.github.com) for the Organization, so that you get unlimited private repos.
--   Have your students register for free, personal [GitHub accounts](https://github.com).
-    -   Encourage them to request an [Education discount](https://education.github.com) on their own behalf (aka "student developer pack"). But rest assured, nothing you need for your course machinery will depend on this.
--   Get the GitHub usernames from your students -- we use a [Shiny](http://deanattali.com/blog/shiny-persistent-data-storage/) [app](http://deanattali.com/2015/06/14/mimicking-google-form-shiny/)! -- plus some shred of information that allows you link them back to your official course list.
--   Create a students [Team](https://help.github.com/enterprise/2.7/admin/guides/user-management/organizations-and-teams/) and a TA Team. I make such teams for each run of the course, e.g. `2016_students` and `2016_ta`.
--   Invite students to join your course organization and the students team. Ditto for TAs and the TA team.
--   Create a canonical name for each student, based on the official course list, i.e. `lastname_firstname`.
--   Create a repository for each student, using the student's canonical name.
-    -   This is a private repository within the course Organization.
-    -   I turn wikis off and either let GitHub auto-initialize or immediately push files, including a README, into the repos.
-    -   Give the student team read or pull access to each student's repo. Yes, this allows them to see each others work. I discuss this elsewhere.
-    -   Give the TA team write or push access to each student's repo.
-    -   Add the student as collaborator with write or push access.
-    -   Unwatch these repos personally! Wow such notification.
+-   [Crear una organización](https://help.github.com/articles/creating-a-new-organization-account/) para el curso.
+    -   Solicite inmediatamente un [descuento educativo](https://education.github.com) para la Organización, de modo que pueda obtener repositorios privados ilimitados.
+-   Haga que sus estudiantes se registren de forma gratuita y personal [cuentas GitHub](https://github.com).
+    -   Anímelos a solicitar un [descuento educativo](https://education.github.com) en su propio nombre (también conocido como "paquete de desarrollador para estudiantes"). Pero tenga la seguridad de que nada de lo que necesita para la maquinaria de su curso dependerá de esto.
+-   Obtenga los nombres de usuario de GitHub de sus estudiantes: utilizamos una [aplicación](http://deanattali.com/2015/06 /14/imitando-la-forma-de-google-brillante/) [Shiny](http://deanattali.com/blog/shiny-persistent-data-storage/)! - además de algo de información que le permite vincularlos a su lista oficial de cursos.
+-   Cree un [equipo](https://help.github.com/enterprise/2.7/admin/guides/user-management/organizations-and-teams/) de estudiantes y un equipo de asistencia técnica. Hago estos equipos para cada ejecución del curso, p.e. `2016_estudiantes` y `2016_ap`.
+-   Invite a los estudiantes a unirse a la organización de su curso y al equipo de estudiantes. Lo mismo ocurre con los TA y el equipo de TA.
+-   Cree un nombre canónico para cada estudiante, basado en la lista oficial de cursos, es decir, `apellido_nombre`.
+-   Cree un repositorio para cada estudiante, utilizando el nombre canónico del estudiante.
+    -   Este es un repositorio privado dentro de la organización del curso.
+    -   Apago los wikis y dejo que GitHub se inicialice automáticamente o inserte inmediatamente archivos, incluido un archivo README, en los repositorios.
+    -   Dar al equipo de estudiantes acceso de lectura o extracción al repositorio de cada estudiante. Sí, esto les permite verse trabajar unos a otros. Hablo de esto en otro lugar.
+    -   Proporcionar al equipo de asistencia técnica acceso por escritura o inserción al repositorio de cada estudiante.
+    -   Agregar al alumno como colaborador con acceso de escritura o push.
+    -   ¡Deja de mirar estos repositorios personalmente! Vaya que notificación.
 
-That's the setup! I use the [gh](https://github.com/gaborcsardi/gh) and [purrr](https://github.com/hadley/purrr) packages to script all of this [GitHub API](https://developer.github.com/v3/) work. *In a second wave, I'll post code snippets for the above operations.*
+¡Esa es la configuración! Utilizo los paquetes [gh](https://github.com/gaborcsardi/gh) y [purrr](https://github.com/hadley/purrr) para programar todo esto [API de GitHub](https:/ /developer.github.com/v3/) funciona. *En una segunda ola, publicaré fragmentos de código para las operaciones anteriores.*
 
-What you should NOT do (voice of experience, here):
+Lo que NO debes hacer (voz de la experiencia, aquí):
 
-Do NOT allow students to create their own repositories.
+NO permita que los estudiantes creen sus propios repositorios.
 
--   You will have a naming convention and they will never, ever, ever follow it.
--   You need to have admin rights over their course repo, so you can manipulate it at will via the GitHub API. You will ask them to add you and the TAs as collaborators, but they will not all manage to execute this task.
--   You will want to do various bulk operations on the repos and your API work will be simpler if the repos belong to the same Organization vs looping over randomly named repos owned by random people, subject to their whims.
+-   Tendrás una convención de nomenclatura y ellos nunca, jamás, la seguirán.
+-   Debes tener derechos de administrador sobre el repositorio de cursos, para poder manipularlo a voluntad a través de la API de GitHub. Les pedirás que te agreguen a ti y a los TA como colaboradores, pero no todos lograrán ejecutar esta tarea.
+-   Querrá realizar varias operaciones masivas en los repositorios y su trabajo de API será más simple si los repositorios pertenecen a la misma organización en lugar de recorrer repositorios con nombres aleatorios propiedad de personas aleatorias, sujeto a sus caprichos.
 
-## The homework-flow
+## El flujo de tareas
 
-In class, the students [take possession of their repos](http://stat545.com/git08_claim-stat545-repo.html), from RStudio via *File \> New Project*. They do the bulk of their coursework here: it is a directory on their computer, a Git repo associated with GitHub remote, and an RStudio project.
+En clase, los estudiantes [toman posesión de sus repositorios](http://stat545.com/git08_claim-stat545-repo.html), desde RStudio vía *File \> New Project*. Hacen la mayor parte de su trabajo de curso aquí: es un directorio en su computadora, un repositorio de Git asociado con el control remoto de GitHub y un proyecto RStudio.
 
-Typically homework is done in R Markdown, using the [`github_document`](http://rmarkdown.rstudio.com/github_document_format.html) output format. They commit and push `.Rmd`, `.md`, and any necessary files, such a figures.
+Normalmente, la tarea se realiza en R Markdown, utilizando el formato de salida [`github_document`](http://rmarkdown.rstudio.com/github_document_format.html). Confirman y envían `.Rmd`, `.md` y cualquier archivo necesario, como cifras.
 
-Homework is submitted by opening an issue:
+La tarea se envía abriendo una edición:
 
--   Issue name is "Mark homework x of lastname_firstname". OK not really, but I can dream.
--   Body should contain SHA of their latest commit, tag(s) for the marking TA or the TA team, and, ideally, links to the file(s) to be marked.
+-   El nombre del problema es "Marcar tarea x de apellido_primer nombre". Bueno, en realidad no, pero puedo soñar.
+-   El cuerpo debe contener el SHA de su última confirmación, etiquetas para el TA de marcado o el equipo de TA y, idealmente, enlaces a los archivos que se van a marcar.
 
-TAs leave feedback here. Actual marks are stored elsewhere and distributed via email. As the TAs mark, they close the issues.
+Los asistentes técnicos dejan comentarios aquí. Las marcas reales se almacenan en otro lugar y se distribuyen por correo electrónico. Como marcan las AT, cierran los temas.
 
-After homework submission, we randomly assign each student to review the work of two peers. Each peer review assignment takes the form of an issue, assigned to the reviewer. Students leave feedback for each other here. As the TAs mark, they read and assess these peer reviews (also marked!) and close the issues.
+Después de enviar la tarea, asignamos aleatoriamente a cada estudiante para que revise el trabajo de dos compañeros. Cada tarea de revisión por pares toma la forma de un problema, asignado al revisor. Los estudiantes dejan comentarios unos a otros aquí. Como marcan los AT, leen y evalúan estas revisiones por pares (¡también puntuadas!) y cierran los temas.
 
-## GitHub as course management system
+## GitHub como sistema de gestión de cursos
 
-*2017-05-29 This section was excised from an article I am writing. It is partially redundant with the above and the the two will be merged.*
+*2017-05-29 Esta sección fue eliminada de un artículo que estoy escribiendo. Es parcialmente redundante con lo anterior y los dos se fusionarán.*
 
-[STAT 545](http://stat545.com) is a data wrangling and analysis course at the University of British Columbia. I was the instructor in charge for several years, which coincided with my own adoption of Git/GitHub. GitHub is used to manage the development of course material, to serve the course website, to create a discussion forum, and to host all student-submitted work.
+[STAT 545](http://stat545.com) es un curso de análisis y discusión de datos en la Universidad de Columbia Británica. Fui el instructor a cargo durante varios años, lo que coincidió con mi propia adopción de Git/GitHub. GitHub se utiliza para gestionar el desarrollo del material del curso, servir al sitio web del curso, crear un foro de discusión y alojar todo el trabajo enviado por los estudiantes.
 
-Given that students must submit their work and provide peer review of others' work via GitHub, the use of hosted version control is an explicit, though modest, part of the course. The website [Happy Git and GitHub for the useR](http://happygitwithr.com) holds our battle-tested instructions for setup and early usage. The students achieve basic competence quite quickly and find it gratifying to see their formatted, figure-rich R Markdown reports up on the internet. Since it’s easy to expose their work within the class, we conduct peer review, which helps expertise to spread quickly through the group.
+Dado que los estudiantes deben enviar su trabajo y proporcionar una revisión por pares del trabajo de otros a través de GitHub, el uso del control de versiones alojado es una parte explícita, aunque modesta, del curso. El sitio web [Happy Git y GitHub para el usuario](http://happygitwithr.com) contiene nuestras instrucciones probadas en batalla para la configuración y el uso inicial. Los estudiantes alcanzan las competencias básicas con bastante rapidez y les resulta gratificante ver sus informes R Markdown formateados y ricos en cifras en Internet. Dado que es fácil exponer su trabajo dentro de la clase, llevamos a cabo una revisión por pares, lo que ayuda a que la experiencia se difunda rápidamente en todo el grupo.
 
-### Use a GitHub Organization
+### Utilice una organización GitHub
 
-[GitHub Organizations](https://help.github.com/articles/differences-between-user-and-organization-accounts/) are "shared accounts where groups of people can collaborate across many projects at once". This is the most appropriate structure for stewarding course resources, since I can grant TAs and students different levels of access to various repositories. Access can be controlled at the individual user level or, more conveniently, for entire [Teams](https://help.github.com/articles/setting-up-teams/). The TA Team shares write access with me on a private repository for internal matters. I provide each student with their own private repository for coursework and grant other members of the Students Team read access, in order to facilitate peer review. There is a public repository that underpins the course website (see below). We have one other public repository that exists solely so the [Issues](https://github.com/STAT545-UBC/Discussion/issues) can be used as a discussion forum.
+[Organizaciones de GitHub](https://help.github.com/articles/differences-between-user-and-organization-accounts/) son "cuentas compartidas donde grupos de personas pueden colaborar en muchos proyectos a la vez". Esta es la estructura más adecuada para administrar los recursos del curso, ya que puedo otorgar a los asistentes técnicos y a los estudiantes diferentes niveles de acceso a varios repositorios. El acceso se puede controlar a nivel de usuario individual o, más convenientemente, para [equipos](https://help.github.com/articles/setting-up-teams/) completos. El equipo de asistencia técnica comparte conmigo acceso de escritura en un repositorio privado para asuntos internos. Proporciono a cada estudiante su propio repositorio privado para el trabajo del curso y otorgo acceso de lectura a otros miembros del equipo de estudiantes, para facilitar la revisión por pares. Existe un repositorio público que sustenta el sitio web del curso (ver más abajo). Tenemos otro repositorio público que existe únicamente para que los [Problemas](https://github.com/STAT545-UBC/Discussion/issues) puedan usarse como foro de discusión.
 
-GitHub actively encourages the use of its platform in teaching. As an instructor you can request a [free Organization account](https://help.github.com/articles/discounted-organization-accounts/) that provides features normally available only on paid plans, such as private repositories. In fact, GitHub provides tooling for specific teaching workflows via [GitHub Classroom](https://classroom.github.com/), although I do not use it. That is not an intentional knock on their tools. I started teaching with GitHub several years before this existed and developed a different way of using the platform. I also find the [GitHub Education](https://education.github.com) resources to be geared more towards computer science than data science.
+GitHub fomenta activamente el uso de su plataforma en la enseñanza. Como instructor, puede solicitar una [cuenta de organización gratuita](https://help.github.com/articles/discounted-organization-accounts/) que proporciona funciones que normalmente solo están disponibles en planes pagos, como repositorios privados. De hecho, GitHub proporciona herramientas para flujos de trabajo de enseñanza específicos a través de [GitHub Classroom](https://classroom.github.com/), aunque yo no las uso. Esto no es un golpe intencional a sus herramientas. Comencé a enseñar con GitHub varios años antes de que esto existiera y desarrollé una forma diferente de usar la plataforma. También encuentro que los recursos de [GitHub Education](https://education.github.com) están más orientados a la informática que a la ciencia de datos.
 
-### GitHub Pages for course website
+### Páginas de GitHub para el sitio web del curso
 
-All course content is provided on the [STAT 545 website](http://stat545.com). Each page is generated from an R Markdown document that is rendered to HTML locally using the rmarkdown package, retaining the intermediate Markdown. These pages are a mix of prose and rendered R code, reflecting the live coding done in class. All of these files and their history can be explored in the [source repository](https://github.com/STAT545-UBC/STAT545-UBC.github.io). The TA team has permission to write to this repo, meaning they can (and do!) help me maintain the website. I rejoice that I am no longer the webmaster. We also get typo corrections and other input from the world at large, since this is entirely public.
+Todo el contenido del curso se proporciona en el [sitio web de STAT 545](http://stat545.com). Cada página se genera a partir de un documento R Markdown que se representa en HTML localmente utilizando el paquete rmarkdown, conservando el Markdown intermedio. Estas páginas son una mezcla de prosa y código R renderizado, lo que refleja la codificación en vivo realizada en clase. Todos estos archivos y su historial se pueden explorar en el [repositorio de origen](https://github.com/STAT545-UBC/STAT545-UBC.github.io). El equipo de asistencia técnica tiene permiso para escribir en este repositorio, lo que significa que pueden (¡y lo hacen!) ayudarme a mantener el sitio web. Me alegro de no ser más el webmaster. También recibimos correcciones de errores tipográficos y otras aportaciones del mundo en general, ya que esto es completamente público.
 
-If I were starting from scratch today, I would continue to use R Markdown, RStudio, and GitHub Pages (see below), but would upgrade to a more modern, automated approach to rendering the pages. I now recommend [R Markdown websites](http://rmarkdown.rstudio.com/rmarkdown_websites.html), [bookdown](https://bookdown.org), or [blogdown](https://bookdown.org/yihui/blogdown/) to manage the process of creating a static website from a large and inter-related set of `.Rmd` files.
+Si hoy comenzara desde cero, continuaría usando R Markdown, RStudio y GitHub Pages (ver más abajo), pero actualizaría a un enfoque más moderno y automatizado para representar las páginas. Ahora recomiendo [sitios web de R Markdown](http://rmarkdown.rstudio.com/rmarkdown_websites.html), [bookdown](https://bookdown.org) o [blogdown](https://bookdown.org/ yihui/blogdown/) para gestionar el proceso de creación de un sitio web estático a partir de un conjunto grande e interrelacionado de archivos `.Rmd`.
 
-GitHub offers several ways to host a website directly from a repository, collectively known as [GitHub Pages](https://help.github.com/categories/github-pages-basics/). The STAT 545 website is a very simple [Organization Page](https://help.github.com/articles/user-organization-and-project-pages/) that uses a [custom domain](https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/), `stat545.com`, instead of the default `orgname.github.io`.
+GitHub ofrece varias formas de alojar un sitio web directamente desde un repositorio, conocido colectivamente como [Páginas de GitHub](https://help.github.com/categories/github-pages-basics/). El sitio web STAT 545 es una [Página de organización](https://help.github.com/articles/user-organization-and-project-pages/) muy simple que utiliza un [dominio personalizado](https://help. github.com/articles/custom-domain-redirects-for-github-pages-sites/), `stat545.com`, en lugar del valor predeterminado `orgname.github.io`.
 
-This system for managing course content is a great example of integrating the doing of work and the sharing of it. We analyze data live in class, using R, based on the scripts on the website. I re-render the associated `.R` or `.Rmd`, commit the changed files, push, and see it reflected right away on http://stat545.com. There is no separation between having an idea, implementing it, and posting on the website.
+Este sistema para gestionar el contenido del curso es un gran ejemplo de cómo integrar la realización del trabajo y su intercambio. Analizamos datos en vivo en clase, usando R, basándonos en los scripts del sitio web. Vuelvo a renderizar el `.R` o `.Rmd` asociado, confirmo los archivos modificados, los envío y lo veo reflejado de inmediato en http://stat545.com. No existe separación entre tener una idea, implementarla y publicarla en el sitio web.
 
-### Student-specific private repos
+### Repositorios privados específicos para estudiantes
 
-Early in the course I elicit GitHub usernames for registered students, via a [Shiny app](https://shiny.rstudio.com), and invite them to join the course Organization. I then create one private repository per student, in the STAT 545 Organization. The targeted student has write access and the other students have read access. This is somewhat controversial, due to the possibility of cheating, but I have seen more pros than cons for this setup, in the STAT 545 context. In other settings, I have also used one repo per student *per homework assignment*, which allows you to keep the repos completely private until homework submission, then increase their visibility during marking and peer review. Some courses will work better with one model or the other.
+Al principio del curso, obtengo nombres de usuario de GitHub para los estudiantes registrados, a través de una [aplicación Shiny](https://shiny.rstudio.com), y los invito a unirse a la organización del curso. Luego creo un repositorio privado por estudiante, en la Organización STAT 545. El estudiante objetivo tiene acceso de escritura y los demás estudiantes tienen acceso de lectura. Esto es algo controvertido, debido a la posibilidad de hacer trampa, pero he visto más ventajas que desventajas en esta configuración, en el contexto de STAT 545. En otras configuraciones, también he usado un repositorio por estudiante *por tarea*, lo que le permite mantener los repositorios completamente privados hasta la entrega de la tarea y luego aumentar su visibilidad durante la calificación y la revisión por pares. Algunos cursos funcionarán mejor con un modelo u otro.
 
-Each student does their work in this repo, submitting a major assignment approximately once a week. The first assignment is simply to claim the repository and create a README, which proves they have all the relevant software setup and they can write a little Markdown. Each week we tackle some new data analysis or wrangling task, with increasing latitude for independence. Homework is implemented in R Markdown documents, rendered to Markdown, and pushed to GitHub. Students submit their work by opening an issue in their repo, naming the assignment in the title, providing the SHA of the associated final commit, and linking to the main `.md` file. We leave feedback as comments in the issue thread or, occasionally, propose changes to code via "pull requests". Two peers are selected at random to review each assignment, a process that we also implement via GitHub Issues.
+Cada estudiante hace su trabajo en este repositorio y envía una tarea importante aproximadamente una vez por semana. La primera tarea es simplemente reclamar el repositorio y crear un archivo README, lo que demuestra que tienen toda la configuración de software relevante y que pueden escribir un poco de Markdown. Cada semana abordamos algún nuevo análisis de datos o una tarea de discusión, con un margen cada vez mayor para la independencia. La tarea se implementa en documentos de R Markdown, se representa en Markdown y se envía a GitHub. Los estudiantes envían su trabajo abriendo una incidencia en su repositorio, nombrando la tarea en el título, proporcionando el SHA de la confirmación final asociada y vinculándolo al archivo principal `.md`. Dejamos comentarios en el hilo del problema o, ocasionalmente, proponemos cambios en el código mediante "solicitudes de extracción". Se seleccionan dos pares al azar para revisar cada tarea, un proceso que también implementamos a través de GitHub Issues.
 
-At the end of term, the student (and their instructor!) can visit the repo to find an organized, navigable sequence of \~10 assignments. Each student leaves with self-written documentation of everything they've done, ready to consult in future projects. The last assignments require writing an R package or Shiny app, which they generally do in public repositories under their own accounts. They finish STAT 545 with several months of Git/GitHub experience and the start of a data science portfolio.
+Al final del trimestre, el estudiante (¡y su instructor!) pueden visitar el repositorio para encontrar una secuencia organizada y navegable de ~10 tareas. Cada estudiante se marcha con documentación escrita por él mismo de todo lo que ha hecho, lista para consultar en futuros proyectos. Las últimas asignaciones requieren escribir un paquete R o una aplicación Shiny, lo que generalmente hacen en repositorios públicos bajo sus propias cuentas. Terminan STAT 545 con varios meses de experiencia en Git/GitHub y el inicio de una cartera de ciencia de datos.

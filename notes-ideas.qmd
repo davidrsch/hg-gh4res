@@ -1,98 +1,100 @@
-# Ideas for content
+# Ideas para contenido
 
-## Common workflow questions
+## Preguntas comunes sobre el flujo de trabajo
 
-### Common predicaments and how to recover/avoid
+### Situaciones comunes y cómo recuperarlas/evitarlas
 
 https://twitter.com/JennyBryan/status/743457387730735104
 
-### Keep something out of Git
+### Mantener algo fuera de Git
 
-List it in `.gitignore.`
+Listarlo en `.gitignore.`
 
-### I didn't mean to commit that
+### No quise cometer eso
 
-Committing things you didn't mean to (too big, secret). How to undo.
+Cometer cosas que no era tu intención (demasiado grandes, secretas). Cómo deshacer.
 
 ## git stuff
 
-Git explainers, heavy on the diagrams
+Git explicadores, pesados en los diagramas
 
 https://twitter.com/JennyBryan/status/743548245645791232
 
-A Visual Git Reference\
+Una referencia visual de Git\
 http://marklodato.github.io/visual-git-guide/index-en.html
 
-A successful Git branching model\
+Un modelo de ramificación de Git exitoso\
 http://nvie.com/posts/a-successful-git-branching-model/
 
-A successful Git branching model considered harmful\
+Un modelo exitoso de ramificación de Git se considera dañino\
 https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/
 
-Git Tutorials from Atlassian https://www.atlassian.com/git/tutorials/
+Tutoriales de Git de Atlassian https://www.atlassian.com/git/tutorials/
 
-Software Carpentry Git Novice Lesson\
+Lección para principiantes de software de carpintería Git\
 http://swcarpentry.github.io/git-novice/
 
-Michael Freeman slides on Git collaboration\
+Michael Freeman se desliza sobre la colaboración con Git\
 http://slides.com/michaelfreeman/git-collaboration#/
 
-GitHub Training materials\
+Materiales de formación de GitHub\
 https://services.github.com/kit/
 
-Git for Ages 4 and Up\
+Git para mayores de 4 años\
 <https://www.youtube.com/watch?v=3m7BgIvC-uQ>
 
-Learn Git Branching\
+Aprenda la ramificación de Git\
 http://learngitbranching.js.org
 
-A Git Workflow Walkthrough Series http://vallandingham.me/git-workflow.html
+Una serie de tutoriales sobre el flujo de trabajo de Git http://vallandingham.me/git-workflow.html
 
--   Part 1: Feature Branches
--   Part 2: Reviewing Pull Requests
--   Part 3: Reviewing Pull Requests Locally
--   Part 4: Merging Pull Requests
+-   Parte 1: Ramas de funciones
+-   Parte 2: Revisión de solicitudes de extracción
+-   Parte 3: Revisión de solicitudes de extracción localmente
+-   Parte 4: Fusionar solicitudes de extracción
 
-Git from the inside out\
+Git desde adentro hacia afuera\
 https://codewords.recurse.com/issues/two/git-from-the-inside-out
 
-## Disaster recovery
+## Recuperación ante desastres
 
 <http://stackoverflow.com/questions?sort=votes>
 
-Break it down:
+Desglosarlo:
 
--   Is something wrong with my filesystem/files?
--   Is my git repo messed up?
--   How can I keep this from happening again?
+-   ¿Hay algún problema con mi sistema de archivos/archivos?
+-   ¿Mi repositorio de git está en mal estado?
+-   ¿Cómo puedo evitar que esto vuelva a suceder?
 
-Rebase avoidance techniques.
+Técnicas para evitar rebases.
 
-Headless state. Rebase hell.
+Estado sin cabeza. Infierno rebase.
 
-What to do when you can't, e.g., switch branches. Stashing and WIP commits.
+Qué hacer cuando no puedes, por ejemplo, cambiar de rama. Compromisos de ocultación y WIP.
 
 ## Engage with R source on GitHub
 
-Browsing
+Interactúe con la fuente R en GitHub
 
-Searching
+Hojeada
 
--   My gist, re: the cran user: <https://gist.github.com/jennybc/4a1bf4e9e1bb3a0a9b56>
+Búsqueda
 
-Being a useful useR
+-   Mi esencia, re: el usuario de cran: <https://gist.github.com/jennybc/4a1bf4e9e1bb3a0a9b56>
 
--   stay informed re: development
--   use issues for bug reports, feature requests
--   make pull requests
+Ser un usuario útil
 
-## Workflow and psychology
+-   manténgase informado sobre: desarrollo
+-   use problemas para informes de errores, solicitudes de funciones
+-   hacer solicitudes de extracción
 
-Stress of working in the open
+## Flujo de trabajo y psicología
 
-Workflows for group of 1, 2, 5, 10
+Estrés de trabajar al aire libre
 
--   Fork and Pull vs Shared Repository
+Flujos de trabajo para grupo de 1, 2, 5, 10
+
+-   Bifurcación y extracción frente a repositorio compartido
 
     -   <https://help.github.com/articles/about-collaborative-development-models/>
     -   <https://help.github.com/articles/using-pull-requests/>
