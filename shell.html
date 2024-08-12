@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jenny Bryan, profesores asistentes de STAT 545 y Jim Hester">
 
-<title>Appendix A — The shell – Git y GitHub con R</title>
+<title>Apéndice A — El shell – Git y GitHub con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,17 +90,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -113,13 +113,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shell.html">Appendices</a></li><li class="breadcrumb-item"><a href="./shell.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The shell</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shell.html">Apéndices</a></li><li class="breadcrumb-item"><a href="./shell.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">El shell</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -148,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </li>
       </ul>
     </div>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
@@ -158,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Instalación</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -238,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Conectar Git, GitHub, RStudio</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Primeras victorias en GitHub</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -338,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Fundamentos de Git</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -385,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Configuraciones de remotos</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -414,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Flujos de trabajo diarios</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -479,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Indicaciones de actividad</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -520,7 +520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Notas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -548,8 +548,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -557,25 +557,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./shell.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The shell</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">El shell</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comic-relief.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Comic relief</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Alivio cómico</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Recursos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Referencias</span></span></a>
   </div>
 </li>
       </ul>
@@ -587,32 +587,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#what-is-the-shell" id="toc-what-is-the-shell" class="nav-link active" data-scroll-target="#what-is-the-shell"><span class="header-section-number">A.1</span> What is the shell?</a></li>
-  <li><a href="#starting-the-shell" id="toc-starting-the-shell" class="nav-link" data-scroll-target="#starting-the-shell"><span class="header-section-number">A.2</span> Starting the shell</a>
+  <li><a href="#qué-es-el-shell" id="toc-qué-es-el-shell" class="nav-link active" data-scroll-target="#qué-es-el-shell"><span class="header-section-number">A.1</span> ¿Qué es el shell?</a></li>
+  <li><a href="#comenzando-el-caparazón" id="toc-comenzando-el-caparazón" class="nav-link" data-scroll-target="#comenzando-el-caparazón"><span class="header-section-number">A.2</span> Comenzando el caparazón</a>
   <ul class="collapse">
-  <li><a href="#from-within-rstudio" id="toc-from-within-rstudio" class="nav-link" data-scroll-target="#from-within-rstudio"><span class="header-section-number">A.2.1</span> From within RStudio</a></li>
-  <li><a href="#outside-of-rstudio" id="toc-outside-of-rstudio" class="nav-link" data-scroll-target="#outside-of-rstudio"><span class="header-section-number">A.2.2</span> Outside of RStudio</a></li>
+  <li><a href="#desde-dentro-de-rstudio" id="toc-desde-dentro-de-rstudio" class="nav-link" data-scroll-target="#desde-dentro-de-rstudio"><span class="header-section-number">A.2.1</span> Desde dentro de RStudio</a></li>
+  <li><a href="#fuera-de-rstudio" id="toc-fuera-de-rstudio" class="nav-link" data-scroll-target="#fuera-de-rstudio"><span class="header-section-number">A.2.2</span> Fuera de RStudio</a></li>
   </ul></li>
-  <li><a href="#sec-windows-shell-hell" id="toc-sec-windows-shell-hell" class="nav-link" data-scroll-target="#sec-windows-shell-hell"><span class="header-section-number">A.3</span> Windows is special … and not in a good way</a>
+  <li><a href="#sec-windows-shell-hell" id="toc-sec-windows-shell-hell" class="nav-link" data-scroll-target="#sec-windows-shell-hell"><span class="header-section-number">A.3</span> Windows es especial… y no en el buen sentido</a>
   <ul class="collapse">
-  <li><a href="#git-bash" id="toc-git-bash" class="nav-link" data-scroll-target="#git-bash"><span class="header-section-number">A.3.1</span> Git Bash</a></li>
-  <li><a href="#command-prompt" id="toc-command-prompt" class="nav-link" data-scroll-target="#command-prompt"><span class="header-section-number">A.3.2</span> Command prompt</a></li>
+  <li><a href="#git-bash" id="toc-git-bash" class="nav-link" data-scroll-target="#git-bash"><span class="header-section-number">A.3.1</span> Git bash</a></li>
+  <li><a href="#consola-de-comandos-del-sistema" id="toc-consola-de-comandos-del-sistema" class="nav-link" data-scroll-target="#consola-de-comandos-del-sistema"><span class="header-section-number">A.3.2</span> Consola de comandos del sistema</a></li>
   <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell"><span class="header-section-number">A.3.3</span> PowerShell</a></li>
-  <li><a href="#bash-via-windows-services-for-linux" id="toc-bash-via-windows-services-for-linux" class="nav-link" data-scroll-target="#bash-via-windows-services-for-linux"><span class="header-section-number">A.3.4</span> Bash via Windows Services for Linux</a></li>
+  <li><a href="#bash-a-través-de-servicios-de-windows-para-linux" id="toc-bash-a-través-de-servicios-de-windows-para-linux" class="nav-link" data-scroll-target="#bash-a-través-de-servicios-de-windows-para-linux"><span class="header-section-number">A.3.4</span> Bash a través de servicios de Windows para Linux</a></li>
   </ul></li>
-  <li><a href="#basic-shell-commands" id="toc-basic-shell-commands" class="nav-link" data-scroll-target="#basic-shell-commands"><span class="header-section-number">A.4</span> Basic shell commands</a></li>
+  <li><a href="#comandos-básicos-de-shell" id="toc-comandos-básicos-de-shell" class="nav-link" data-scroll-target="#comandos-básicos-de-shell"><span class="header-section-number">A.4</span> Comandos básicos de shell</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shell.html">Appendices</a></li><li class="breadcrumb-item"><a href="./shell.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The shell</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shell.html">Apéndices</a></li><li class="breadcrumb-item"><a href="./shell.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">El shell</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-shell" class="quarto-section-identifier">Appendix A — The shell</span></h1>
+<h1 class="title"><span id="sec-shell" class="quarto-section-identifier">Apéndice A — El shell</span></h1>
 </div>
 
 
@@ -629,142 +629,142 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Even if you do most of your Git operations via a client, such as RStudio or GitKraken, you must sometimes work in the shell. As you get more comfortable with Git, you might prefer to do more and more via the command line. You might also need to use Git or file system operations on a server that lacks your usual Git client. For all these reasons, it is a good idea to learn your way around the shell.</p>
-<p>Here’s a typical look for a shell. You’ll see a simple blinking cursor, waiting for input:</p>
+<p>Incluso si realiza la mayoría de sus operaciones de Git a través de un cliente, como RStudio o GitKraken, a veces debe trabajar en el shell. A medida que te sientas más cómodo con Git, es posible que prefieras hacer más y más a través de la línea de comandos. Es posible que también necesites utilizar Git o operaciones del sistema de archivos en un servidor que carece de tu cliente Git habitual. Por todas estas razones, es una buena idea aprender a manejar el caparazón.</p>
+<p>Este es un aspecto típico de un caparazón. Verá un cursor parpadeante simple, esperando entrada:</p>
 <!-- why can bookdown not find this?!?
 ![](http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bash_screenshot.png/440px-Bash_screenshot.png)
 -->
 <p><img src="img/440px-Bash_screenshot.png" class="img-fluid"></p>
-<section id="what-is-the-shell" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="what-is-the-shell"><span class="header-section-number">A.1</span> What is the shell?</h2>
-<p>The shell is a program on your computer whose job is to run other programs. Pseudo-synonyms are “terminal”, “command line”, and “console”. There’s a whole StackExchange thread on the differences (<a href="https://askubuntu.com/questions/506510/what-is-the-difference-between-terminal-console-shell-and-command-line">What is the difference between Terminal, Console, Shell, and Command Line?</a>), but I don’t find it to be terribly enlightening. Your mileage may vary.</p>
-<p>Many programmers spend lots of time in a shell, as opposed to in GUIs, because it is very fast, concise, and ubiquitous in their relevant computing environments. This is how all work was done before we got the mouse and GUIs.</p>
-<p>The most common shell is <code>bash</code> and it gets thrown around as a proxy for “shell” sometimes, just like “Coke” and “Kleenex” are proxies for cola and tissues.</p>
-<p>In Happy Git, sometimes we demo the use of a shell for certain tasks, like navigating the file system and doing Git operations, when we don’t want to or can’t use RStudio. Providing shell commands is also less ambiguous and less perishable than describing human interactions with a GUI.</p>
+<section id="qué-es-el-shell" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="qué-es-el-shell"><span class="header-section-number">A.1</span> ¿Qué es el shell?</h2>
+<p>El shell es un programa de su computadora cuyo trabajo es ejecutar otros programas. Los pseudosinónimos son “terminal”, “línea de comando” y “consola”. Hay un hilo completo de StackExchange sobre las diferencias (<a href="https://askubuntu.com/questions/506510/what-is-the-difference-between-terminal%20-console-shell-and-command-line">¿Cuál es la diferencia entre Terminal, Consola, Shell y Línea de comandos?</a>), pero no lo encuentro muy esclarecedor. Su kilometraje puede variar.</p>
+<p>Muchos programadores pasan mucho tiempo en un shell, a diferencia de las GUI, porque es muy rápido, conciso y ubicuo en sus entornos informáticos relevantes. Así es como se hacía todo el trabajo antes de que tuviéramos el mouse y las GUI.</p>
+<p>El shell más común es <code>bash</code> y a veces se utiliza como sustituto de “shell”, al igual que “Coke” y “Kleenex” son sustitutos de cola y pañuelos de papel.</p>
+<p>En Happy Git, a veces hacemos una demostración del uso de un shell para ciertas tareas, como navegar por el sistema de archivos y realizar operaciones de Git, cuando no queremos o no podemos usar RStudio. Proporcionar comandos de shell también es menos ambiguo y menos perecedero que describir las interacciones humanas con una GUI.</p>
 </section>
-<section id="starting-the-shell" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="starting-the-shell"><span class="header-section-number">A.2</span> Starting the shell</h2>
-<section id="from-within-rstudio" class="level3" data-number="A.2.1">
-<h3 data-number="A.2.1" class="anchored" data-anchor-id="from-within-rstudio"><span class="header-section-number">A.2.1</span> From within RStudio</h3>
-<p>You can launch a shell from RStudio. This is often handy, because RStudio makes every effort to put you in a sane working directory, i.e.&nbsp;in the current project.</p>
-<p>There are two ways:</p>
+<section id="comenzando-el-caparazón" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="comenzando-el-caparazón"><span class="header-section-number">A.2</span> Comenzando el caparazón</h2>
+<section id="desde-dentro-de-rstudio" class="level3" data-number="A.2.1">
+<h3 data-number="A.2.1" class="anchored" data-anchor-id="desde-dentro-de-rstudio"><span class="header-section-number">A.2.1</span> Desde dentro de RStudio</h3>
+<p>Puede iniciar un shell desde RStudio. Esto suele ser útil, porque RStudio hace todo lo posible para ubicarlo en un directorio de trabajo sano, es decir, en el proyecto actual.</p>
+<p>Hay dos maneras:</p>
 <ul>
-<li><em>Tools &gt; Terminal</em> launches a shell within RStudio, graphically and process-wise. I believe this is usually what you want.</li>
-<li><em>Tools &gt; Shell …</em> launches a shell external to RStudio.</li>
+<li><em>Tools &gt; Terminal</em> lanza un shell dentro de RStudio, gráficamente y en términos de proceso. Creo que esto suele ser lo que quieres.</li>
+<li><em>Tools &gt; Shell …</em> lanza un shell externo a RStudio.</li>
 </ul>
 </section>
-<section id="outside-of-rstudio" class="level3" data-number="A.2.2">
-<h3 data-number="A.2.2" class="anchored" data-anchor-id="outside-of-rstudio"><span class="header-section-number">A.2.2</span> Outside of RStudio</h3>
+<section id="fuera-de-rstudio" class="level3" data-number="A.2.2">
+<h3 data-number="A.2.2" class="anchored" data-anchor-id="fuera-de-rstudio"><span class="header-section-number">A.2.2</span> Fuera de RStudio</h3>
 <section id="macos" class="level4" data-number="A.2.2.1">
 <h4 data-number="A.2.2.1" class="anchored" data-anchor-id="macos"><span class="header-section-number">A.2.2.1</span> macOS</h4>
-<p>The shell is often called the “terminal” on macOS, by which people mean Terminal.app. One way to launch is via Spotlight Search. Type Command + space and start typing “terminal”. This process will something like so:</p>
+<p>El shell a menudo se denomina “terminal” en macOS, con lo que la gente se refiere a Terminal.app. Una forma de iniciarlo es a través de Spotlight Search. Escribe Comando + espacio y comienza a escribir “terminal”. Este proceso será algo así:</p>
 <p><img src="img/terminal_mac_search.png" class="img-fluid"></p>
-<p>Terminal.app is typically located at <em>/Applications/Utilities/Terminal.app</em>.</p>
-<p>Opening Terminal.app brings you to a bash shell opened to your home directory <code>~/</code>, which is shorthand for <code>/Users/YOURUSERNAME</code>. You should see something like this:</p>
+<p>Terminal.app normalmente se encuentra en <em>/Applications/Utilities/Terminal.app</em>.</p>
+<p>Al abrir Terminal.app, accederá a un shell bash abierto en su directorio de inicio <code>~/</code>, que es una abreviatura de <code>/Users/SUNOMBREDEUSUARIO</code>. Deberías ver algo como esto:</p>
 <p><img src="img/terminal_mac.png" class="img-fluid"></p>
-<p>If you have administrative rights on your computer, prefacing any command with <code>sudo</code> will allow you to run the command as an administrator. Expect to be challenged for your password. If you need to change administrative privileges or your password, see <a href="https://support.apple.com/en-us/HT204012">this article</a> from Apple.</p>
+<p>Si tiene derechos administrativos en su computadora, anteponer cualquier comando con <code>sudo</code> le permitirá ejecutar el comando como administrador. Espere que le cuestionen su contraseña. Si necesita cambiar los privilegios administrativos o su contraseña, consulte <a href="https://support.apple.com/en-us/HT204012">este artículo</a> de Apple.</p>
 </section>
 <section id="windows" class="level4" data-number="A.2.2.2">
 <h4 data-number="A.2.2.2" class="anchored" data-anchor-id="windows"><span class="header-section-number">A.2.2.2</span> Windows</h4>
-<p>We defer this until the next section, due to the more complex shell situation on Windows.</p>
+<p>Aplazamos esto hasta la siguiente sección, debido a la situación más compleja del shell en Windows.</p>
 </section>
 </section>
 </section>
 <section id="sec-windows-shell-hell" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="sec-windows-shell-hell"><span class="header-section-number">A.3</span> Windows is special … and not in a good way</h2>
-<p>Windows is not the ideal platform for scientific computing and software development. A lot of the functionality is going to feel janky and strapped on. Because it is.</p>
-<p>There are no fewer than 4 possible shells you can end up in. Unless you know better, you almost certainly want to be in a Git Bash shell, especially here in Happy Git.</p>
-<p>Windows users will want to understand the different types of shell, how to launch them, and how to tell which one you’re in.</p>
+<h2 data-number="A.3" class="anchored" data-anchor-id="sec-windows-shell-hell"><span class="header-section-number">A.3</span> Windows es especial… y no en el buen sentido</h2>
+<p>Windows no es la plataforma ideal para el desarrollo de software y computación científica. Gran parte de la funcionalidad se sentirá rara y limitada. Porque lo es.</p>
+<p>Hay no menos de 4 posibles shells en los que puedes terminar. A menos que lo sepas mejor, es casi seguro que querrás estar en un shell de Git Bash, especialmente aquí en Happy Git.</p>
+<p>Los usuarios de Windows querrán comprender los diferentes tipos de shell, cómo iniciarlos y cómo saber en cuál se encuentra.</p>
 <section id="git-bash" class="level3" data-number="A.3.1">
-<h3 data-number="A.3.1" class="anchored" data-anchor-id="git-bash"><span class="header-section-number">A.3.1</span> Git Bash</h3>
-<p><em>TL;DR how to tell if you’re in a Git Bash shell? Do this:</em></p>
+<h3 data-number="A.3.1" class="anchored" data-anchor-id="git-bash"><span class="header-section-number">A.3.1</span> Git bash</h3>
+<p><em>TL;DR ¿cómo saber si estás en un shell de Git Bash? Haz esto:</em></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="va">$SHELL</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Git Bash is a bash shell that ships with Git for Windows, which is <a href="#install-git-windows">the Happy Git way to install Git on Windows</a>. Therefore, you will not have Git Bash on your system until you install Git for Windows.</p>
-<p>Git Bash is always the Windows shell we are targeting in Happy Git instructions.</p>
-<p>RStudio should automatically detect the presence of Git Bash. You can inspect and influence this directly via <em>Tools &gt; Global Options &gt; Terminal</em>. Unless you have good reason to do otherwise, you want to see “Git Bash” in the “New terminals open with …” dropdown menu.</p>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/bash</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Git Bash es un shell bash que se incluye con Git para Windows, que es <a href="#install-git-windows">la forma Happy Git de instalar Git en Windows</a>. Por lo tanto, no tendrá Git Bash en su sistema hasta que instale Git para Windows.</p>
+<p>Git Bash es siempre el shell de Windows al que nos dirigimos en las instrucciones de Happy Git.</p>
+<p>RStudio debería detectar automáticamente la presencia de Git Bash. Puede inspeccionar e influir en esto directamente a través de <em>Tools &gt; Global Options &gt; Terminal</em>. A menos que tenga una buena razón para hacer lo contrario, querrá ver “Git Bash” en el menú desplegable “Nuevas terminales abiertas con…”.</p>
 <p><img src="img/git-bash-as-rstudio-terminal.png" class="img-fluid"></p>
-<p>Troubleshooting tips:</p>
+<p>Consejos para solucionar problemas:</p>
 <ul>
-<li>Restart RStudio. You need to restart all instances of RStudio after installing Git for Windows (+ Git Bash), in order for RStudio to auto-detect Git Bash.</li>
-<li>Update RStudio. The shell handling in RStudio has improved dramatically over time, so older versions might not behave as described here.</li>
+<li>Reinicie RStudio. Debe reiniciar todas las instancias de RStudio después de instalar Git para Windows (+ Git Bash), para que RStudio detecte automáticamente Git Bash.</li>
+<li>Actualizar RStudio. El manejo del shell en RStudio ha mejorado dramáticamente con el tiempo, por lo que es posible que las versiones anteriores no se comporten como se describe aquí.</li>
 </ul>
-<section id="accessing-git-bash-outside-of-rstudio" class="level4" data-number="A.3.1.1">
-<h4 data-number="A.3.1.1" class="anchored" data-anchor-id="accessing-git-bash-outside-of-rstudio"><span class="header-section-number">A.3.1.1</span> Accessing Git Bash outside of RStudio</h4>
-<p>Sometimes you want to run Git Bash outside of RStudio. Here’s the easiest way: click the “Git” menu in the Windows menu and select “Git Bash”.</p>
+<section id="accediendo-a-git-bash-fuera-de-rstudio" class="level4" data-number="A.3.1.1">
+<h4 data-number="A.3.1.1" class="anchored" data-anchor-id="accediendo-a-git-bash-fuera-de-rstudio"><span class="header-section-number">A.3.1.1</span> Accediendo a Git Bash fuera de RStudio</h4>
+<p>A veces quieres ejecutar Git Bash fuera de RStudio. Esta es la forma más sencilla: haga clic en el menú “Git” en el menú de Windows y seleccione “Git Bash”.</p>
 <p><img src="img/2019-01_git_bash_windows.png" class="img-fluid"></p>
-<p>A Git Bash shell running outside of RStudio looks something like this:</p>
+<p>Un shell de Git Bash que se ejecuta fuera de RStudio se parece a esto:</p>
 <p><img src="img/2018-01-15_git-bash.png" class="img-fluid"></p>
-<p>Notice <code>MSYS</code> in the title bar. You might also see <code>MINGW64</code>.</p>
-<p>Sometimes you need to run Git Bash as administrator, e.g.&nbsp;to run with higher privileges. Easiest way: click the “Git” menu in the Windows menu and <em>right-click</em> on “Git Bash”. This reveals a submenu. Select “more” and then “Run as administrator”.</p>
+<p>Observe “MSYS” en la barra de título. Es posible que también vea “MINGW64”.</p>
+<p>A veces es necesario ejecutar Git Bash como administrador, p.&nbsp;para ejecutar con mayores privilegios. La forma más fácil: haga clic en el menú “Git” en el menú de Windows y <em>haga clic derecho</em> en “Git Bash”. Esto revela un submenú. Seleccione “más” y luego “Ejecutar como administrador”.</p>
 <p><img src="img/2019-01-git-windows-administrator.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="command-prompt" class="level3" data-number="A.3.2">
-<h3 data-number="A.3.2" class="anchored" data-anchor-id="command-prompt"><span class="header-section-number">A.3.2</span> Command prompt</h3>
-<p><em>TL;DR how to tell if you’re in Command Prompt? Do this:</em></p>
+<section id="consola-de-comandos-del-sistema" class="level3" data-number="A.3.2">
+<h3 data-number="A.3.2" class="anchored" data-anchor-id="consola-de-comandos-del-sistema"><span class="header-section-number">A.3.2</span> Consola de comandos del sistema</h3>
+<p><em>TL;DR ¿cómo saber si estás en la consola de comandos del sistema? Haz esto:</em></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\Users\jenny</span><span class="op">&gt;</span>echo %COMSPEC%</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\WINDOWS\system32\cmd.exe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This is the native Windows command line interpreter. It’s rarely what you want, especially for the work described in Happy Git.</p>
-<p>A Command Prompt session running outside of RStudio looks something like this:</p>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\WINDOWS\system32\cmd.exe</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este es el intérprete de línea de comandos nativo de Windows. Rara vez es lo que desea, especialmente para el trabajo descrito en Happy Git.</p>
+<p>Una sesión de símbolo del sistema que se ejecuta fuera de RStudio se parece a esto:</p>
 <p><img src="img/2018-01-15_command-prompt.png" class="img-fluid"></p>
-<p>Notice the <code>cmd.exe</code> in the title bar, although it is not <em>always</em> present. You might also see “Command Prompt”.</p>
-<p>If you get an error message such as <code>'pwd' is not recognized as an internal or external command, operable program or batch file.</code> from a shell command, that suggests you have somehow launched into <code>cmd.exe</code> when you did not mean to.</p>
+<p>Observe el <code>cmd.exe</code> en la barra de título, aunque no <em>siempre</em> está presente. También es posible que vea “Símbolo del sistema”.</p>
+<p>Si recibe un mensaje de error como <code>'pwd' no se reconoce como un comando interno o externo, programa ejecutable o archivo por lotes.</code> de un comando de shell, eso sugiere que de alguna manera ha iniciado <code>cmd.exe</code> cuando no lo hizo quiero decir.</p>
 </section>
 <section id="powershell" class="level3" data-number="A.3.3">
 <h3 data-number="A.3.3" class="anchored" data-anchor-id="powershell"><span class="header-section-number">A.3.3</span> PowerShell</h3>
-<p><em>TL;DR how to tell if you’re in PowerShell? Do this:</em></p>
+<p><em>TL;DR ¿cómo saber si estás en PowerShell? Haz esto:</em></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">PS</span> C:<span class="dt">\U</span>sers<span class="dt">\j</span>enny<span class="op">&gt;</span> Get-ChildItem Env:ComSpec</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Name</span>                           Value</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">----</span>                           <span class="at">-----</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ComSpec</span>                        C:<span class="dt">\W</span>INDOWS<span class="dt">\s</span>ystem32<span class="dt">\c</span>md.exe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>PowerShell is yet another Windows shell, a more modern successor to Command Prompt. It’s also rarely what you want, especially for the work described in Happy Git.</p>
-<p>A PowerShell session running outside of RStudio looks something like this:</p>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ComSpec</span>                        C:<span class="dt">\W</span>INDOWS<span class="dt">\s</span>ystem32<span class="dt">\c</span>md.exe</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>PowerShell es otro shell de Windows, un sucesor más moderno del símbolo del sistema. Además, rara vez es lo que desea, especialmente para el trabajo descrito en Happy Git.</p>
+<p>Una sesión de PowerShell que se ejecuta fuera de RStudio se parece a esto:</p>
 <p><img src="img/2018-01-15_power-shell.png" class="img-fluid"></p>
-<p>Notice the <code>powershell.exe</code> in the title bar.</p>
+<p>Observe el <code>powershell.exe</code> en la barra de título.</p>
 </section>
-<section id="bash-via-windows-services-for-linux" class="level3" data-number="A.3.4">
-<h3 data-number="A.3.4" class="anchored" data-anchor-id="bash-via-windows-services-for-linux"><span class="header-section-number">A.3.4</span> Bash via Windows Services for Linux</h3>
-<p><em>TL;DR how to tell if you’re in Bash via WSL? Do this:</em></p>
+<section id="bash-a-través-de-servicios-de-windows-para-linux" class="level3" data-number="A.3.4">
+<h3 data-number="A.3.4" class="anchored" data-anchor-id="bash-a-través-de-servicios-de-windows-para-linux"><span class="header-section-number">A.3.4</span> Bash a través de servicios de Windows para Linux</h3>
+<p><em>TL;DR ¿cómo saber si estás en Bash a través de WSL? Haz esto:</em></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="va">$SHELL</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In 2016, Microsoft launched the Windows Subsystem for Linux (WSL), “a new Windows 10 feature that enables you to run native Linux command-line tools directly on Windows”. Overall, this is a fantastic development. However, at the time of writing (January 2019), you will only have this if you’re running Windows 10 64-bit and have chosen to <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">install the optional WSL system component</a>. Therefore, I expect only keeners to have this and, in that case, you probably don’t need this chapter.</p>
-<p>A WSL bash shell running outside of RStudio looks something like this:</p>
-<p><img src="img/2018-01-15_bash-windows-services-for-linux.png" class="img-fluid"></p>
-<p>FYI Microsoft also refers to WSL as Bash on Ubuntu on Windows.</p>
-<section id="windows-bottom-line" class="level4" data-number="A.3.4.1">
-<h4 data-number="A.3.4.1" class="anchored" data-anchor-id="windows-bottom-line"><span class="header-section-number">A.3.4.1</span> Windows bottom line</h4>
-<p>When in doubt, you probably want to be in a Git Bash shell.</p>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En 2016, Microsoft lanzó el Subsistema de Windows para Linux (WSL), “una nueva característica de Windows 10 que le permite ejecutar herramientas nativas de línea de comandos de Linux directamente en Windows”. En general, este es un desarrollo fantástico. Sin embargo, al momento de escribir este artículo (enero de 2019), solo tendrá esto si ejecuta Windows 10 de 64 bits y ha elegido <a href="https://docs.microsoft.com/%20es-us/windows/wsl/install-win10">instalar el componente del sistema WSL opcional</a>. Por lo tanto, espero que sólo los entusiastas tengan esto y, en ese caso, probablemente no necesites este capítulo.</p>
+<p>Un shell bash WSL que se ejecuta fuera de RStudio se parece a esto:</p>
+<p><img src="img/2018-01-15_bash-windows-services-para-linux.png" class="img-fluid"></p>
+<p>Para su información, Microsoft también se refiere a WSL como Bash en Ubuntu en Windows.</p>
+<section id="conclusión-de-windows" class="level4" data-number="A.3.4.1">
+<h4 data-number="A.3.4.1" class="anchored" data-anchor-id="conclusión-de-windows"><span class="header-section-number">A.3.4.1</span> Conclusión de Windows</h4>
+<p>En caso de duda, probablemente quieras estar en un shell de Git Bash.</p>
 </section>
 </section>
 </section>
-<section id="basic-shell-commands" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="basic-shell-commands"><span class="header-section-number">A.4</span> Basic shell commands</h2>
-<p>The most basic commands are listed below:</p>
+<section id="comandos-básicos-de-shell" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="comandos-básicos-de-shell"><span class="header-section-number">A.4</span> Comandos básicos de shell</h2>
+<p>Los comandos más básicos se enumeran a continuación:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Pwd"><code>pwd</code></a> (<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory). Shows directory or “folder” you are currently operating in. This is not necessarily the same as the <code>R</code> working directory you get from <code>getwd()</code>.</li>
-<li><a href="https://en.wikipedia.org/wiki/Ls"><code>ls</code></a> (<strong>l</strong>i<strong>s</strong>t files). Shows the files in the current working directory. This is equivalent to looking at the files in your Finder/Explorer/File Manager. Use <code>ls -a</code> to also list hidden files, such as <code>.Rhistory</code> and <code>.git</code>.</li>
-<li><a href="https://en.wikipedia.org/wiki/Cd_(command)"><code>cd</code></a> (<strong>c</strong>hange <strong>d</strong>irectory). Allows you to navigate through your directories by changing the shell’s working directory. You can navigate like so:
+<li><a href="https://en.wikipedia.org/wiki/Pwd"><code>pwd</code></a> (<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory). Muestra el directorio o “carpeta” en el que está operando actualmente. Este no es necesariamente el mismo que el directorio de trabajo <code>R</code> que obtiene <code>getwd()</code>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Ls"><code>ls</code></a> (<strong>l</strong>i<strong>s</strong>t files). SCómo se muestran los archivos en el directorio de trabajo actual. Esto equivale a mirar los archivos en su Finder/Explorer/Administrador de archivos. Utilice <code>ls -a</code> para enumerar también archivos ocultos, como <code>.Rhistory</code> y <code>.git</code>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Cd_(command)"><code>cd</code></a> (<strong>c</strong>hange <strong>d</strong>irectory). Le permite navegar a través de sus directorios cambiando el directorio de trabajo del shell. Puedes navegar así.:
 <ul>
-<li>go to subdirectory <code>foo</code> of current working directory: <code>cd foo</code></li>
-<li>go to parent of current working directory: <code>cd ..</code></li>
-<li>go to your “home” directory: <a href="http://tilde.club/~ford/tildepoint.jpg"><code>cd ~</code></a> or simply <code>cd</code></li>
-<li>go to directory using absolute path, works regardless of your current working directory: <code>cd /home/my_username/Desktop</code>. Windows uses a slightly different syntax with the slashes between the folder names reversed, <code>\</code>, e.g.&nbsp;<code>cd C:\Users\MY_USERNAME\Desktop</code>.
+<li>go al subdirectorio <code>foo</code> del directorio de trabajo actual: <code>cd foo</code></li>
+<li>ir al directorio principal del directorio de trabajo actual: <code>cd ..</code></li>
+<li>vaya a su directorio “inicial”: <a href="http://tilde.club/~ford/tildepoint.jpg"><code>cd ~</code></a> o simplemente <code>cd</code></li>
+<li>vaya al directorio usando la ruta absoluta, funciona independientemente de su directorio de trabajo actual: <code>cd /home/my_username/Desktop</code>. Windows usa una sintaxis ligeramente diferente con las barras entre los nombres de las carpetas invertidas., <code>\</code>, por ejemplo <code>cd C:\Users\MY_USERNAME\Desktop</code>.
 <ul>
-<li>Pro tip 1: Dragging and dropping a file or folder into the terminal window will paste the absolute path into the window.</li>
-<li>Pro tip 2: Use the <code>tab</code> key to autocomplete unambiguous directory and file names. Hit <code>tab</code> twice to see all ambiguous options.</li>
+<li>Consejo profesional 1: arrastrar y soltar un archivo o carpeta en la ventana del terminal pegará la ruta absoluta en la ventana.</li>
+<li>Consejo profesional 2: utilice la tecla <code>tab</code> para autocompletar nombres de archivos y directorios inequívocos. Presione <code>tab</code> dos veces para ver todas las opciones ambiguas.</li>
 </ul></li>
 </ul></li>
-<li>Use arrow-up and arrow-down to repeat previous commands. Or search for previous commands with <code>CTRL</code> + <code>r</code>.</li>
+<li>Utilice las flechas hacia arriba y hacia abajo para repetir los comandos anteriores. O buscar comandos anteriores con <code>CTRL</code> + <code>r</code>.</li>
 </ul>
-<p>A few Git commands:</p>
+<p>Algunos comandos de Git:</p>
 <ul>
-<li><code>git status</code> is the most used git command and informs you of your current branch, any changes or untracked files, and whether you are in sync with your remotes.</li>
-<li><code>git remote -v</code> lists all remotes. Very useful for making sure <code>git</code> knows about your remote and that the remote address is correct.</li>
-<li><code>git remote add origin GITHUB_URL</code> adds the remote <code>GITHUB_URL</code> with nickname <code>origin</code>.</li>
-<li><code>git remote set-url origin GITHUB_URL</code> changes the remote url of <code>origin</code> to <code>GITHUB_URL</code>. This way you can fix typos in the remote url.</li>
-<li><em>Feel free to suggest other commands that deserve listing in a <a href="https://github.com/jennybc/happy-git-with-r/issues">GitHub issue</a>.</em></li>
+<li><code>git status</code> es el comando de git más utilizado y le informa sobre su rama actual, cualquier cambio o archivo sin seguimiento y si está sincronizado con sus controles remotos.</li>
+<li><code>git remote -v</code> enumera todos los controles remotos. Muy útil para asegurarse de que <code>git</code> conozca su control remoto y que la dirección remota sea correcta.</li>
+<li><code>git remote add origin GITHUB_URL</code> agrega el control remoto <code>GITHUB_URL</code> con apodo <code>origin</code>.</li>
+<li><code>git remote set-url origin GITHUB_URL</code> cambia la URL remota de “origen” a <code>GITHUB_URL</code>. De esta manera puedes corregir errores tipográficos en la URL remota.</li>
+<li><em>No dudes en sugerir otros comandos que merezcan incluirse en un <a href="https://github.com/jennybc/happy-git-with-r/issues">problema de GitHub</a>.</em></li>
 </ul>
 
 
@@ -883,12 +883,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -1267,8 +1267,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./comic-relief.html" class="pagination-link" aria-label="Comic relief">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Comic relief</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./comic-relief.html" class="pagination-link" aria-label="Alivio cómico">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Alivio cómico</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
