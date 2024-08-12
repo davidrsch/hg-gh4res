@@ -1,8 +1,8 @@
-# The shell {#sec-shell}
+# El shell {#sec-shell}
 
-Even if you do most of your Git operations via a client, such as RStudio or GitKraken, you must sometimes work in the shell. As you get more comfortable with Git, you might prefer to do more and more via the command line. You might also need to use Git or file system operations on a server that lacks your usual Git client. For all these reasons, it is a good idea to learn your way around the shell.
+Incluso si realiza la mayoría de sus operaciones de Git a través de un cliente, como RStudio o GitKraken, a veces debe trabajar en el shell. A medida que te sientas más cómodo con Git, es posible que prefieras hacer más y más a través de la línea de comandos. Es posible que también necesites utilizar Git o operaciones del sistema de archivos en un servidor que carece de tu cliente Git habitual. Por todas estas razones, es una buena idea aprender a manejar el caparazón.
 
-Here's a typical look for a shell. You'll see a simple blinking cursor, waiting for input:
+Este es un aspecto típico de un caparazón. Verá un cursor parpadeante simple, esperando entrada:
 
 ```{=html}
 <!-- why can bookdown not find this?!?
@@ -11,115 +11,115 @@ Here's a typical look for a shell. You'll see a simple blinking cursor, waiting 
 ```
 ![](img/440px-Bash_screenshot.png)
 
-## What is the shell?
+## ¿Qué es el shell?
 
-The shell is a program on your computer whose job is to run other programs. Pseudo-synonyms are "terminal", "command line", and "console". There's a whole StackExchange thread on the differences ([What is the difference between Terminal, Console, Shell, and Command Line?](https://askubuntu.com/questions/506510/what-is-the-difference-between-terminal-console-shell-and-command-line)), but I don't find it to be terribly enlightening. Your mileage may vary.
+El shell es un programa de su computadora cuyo trabajo es ejecutar otros programas. Los pseudosinónimos son "terminal", "línea de comando" y "consola". Hay un hilo completo de StackExchange sobre las diferencias ([¿Cuál es la diferencia entre Terminal, Consola, Shell y Línea de comandos?](https://askubuntu.com/questions/506510/what-is-the-difference-between-terminal -console-shell-and-command-line)), pero no lo encuentro muy esclarecedor. Su kilometraje puede variar.
 
-Many programmers spend lots of time in a shell, as opposed to in GUIs, because it is very fast, concise, and ubiquitous in their relevant computing environments. This is how all work was done before we got the mouse and GUIs.
+Muchos programadores pasan mucho tiempo en un shell, a diferencia de las GUI, porque es muy rápido, conciso y ubicuo en sus entornos informáticos relevantes. Así es como se hacía todo el trabajo antes de que tuviéramos el mouse y las GUI.
 
-The most common shell is `bash` and it gets thrown around as a proxy for "shell" sometimes, just like "Coke" and "Kleenex" are proxies for cola and tissues.
+El shell más común es `bash` y a veces se utiliza como sustituto de "shell", al igual que "Coke" y "Kleenex" son sustitutos de cola y pañuelos de papel.
 
-In Happy Git, sometimes we demo the use of a shell for certain tasks, like navigating the file system and doing Git operations, when we don't want to or can't use RStudio. Providing shell commands is also less ambiguous and less perishable than describing human interactions with a GUI.
+En Happy Git, a veces hacemos una demostración del uso de un shell para ciertas tareas, como navegar por el sistema de archivos y realizar operaciones de Git, cuando no queremos o no podemos usar RStudio. Proporcionar comandos de shell también es menos ambiguo y menos perecedero que describir las interacciones humanas con una GUI.
 
-## Starting the shell
+## Comenzando el caparazón
 
-### From within RStudio
+### Desde dentro de RStudio
 
-You can launch a shell from RStudio. This is often handy, because RStudio makes every effort to put you in a sane working directory, i.e. in the current project.
+Puede iniciar un shell desde RStudio. Esto suele ser útil, porque RStudio hace todo lo posible para ubicarlo en un directorio de trabajo sano, es decir, en el proyecto actual.
 
-There are two ways:
+Hay dos maneras:
 
--   *Tools \> Terminal* launches a shell within RStudio, graphically and process-wise. I believe this is usually what you want.
--   *Tools \> Shell ...* launches a shell external to RStudio.
+-   *Tools \> Terminal* lanza un shell dentro de RStudio, gráficamente y en términos de proceso. Creo que esto suele ser lo que quieres.
+-   *Tools \> Shell ...* lanza un shell externo a RStudio.
 
-### Outside of RStudio
+### Fuera de RStudio
 
 #### macOS
 
-The shell is often called the "terminal" on macOS, by which people mean Terminal.app. One way to launch is via Spotlight Search. Type Command + space and start typing "terminal". This process will something like so:
+El shell a menudo se denomina "terminal" en macOS, con lo que la gente se refiere a Terminal.app. Una forma de iniciarlo es a través de Spotlight Search. Escribe Comando + espacio y comienza a escribir "terminal". Este proceso será algo así:
 
 ![](img/terminal_mac_search.png)
 
-Terminal.app is typically located at */Applications/Utilities/Terminal.app*.
+Terminal.app normalmente se encuentra en */Applications/Utilities/Terminal.app*.
 
-Opening Terminal.app brings you to a bash shell opened to your home directory `~/`, which is shorthand for `/Users/YOURUSERNAME`. You should see something like this:
+Al abrir Terminal.app, accederá a un shell bash abierto en su directorio de inicio `~/`, que es una abreviatura de `/Users/SUNOMBREDEUSUARIO`. Deberías ver algo como esto:
 
 ![](img/terminal_mac.png)
 
-If you have administrative rights on your computer, prefacing any command with `sudo` will allow you to run the command as an administrator. Expect to be challenged for your password. If you need to change administrative privileges or your password, see [this article](https://support.apple.com/en-us/HT204012) from Apple.
+Si tiene derechos administrativos en su computadora, anteponer cualquier comando con `sudo` le permitirá ejecutar el comando como administrador. Espere que le cuestionen su contraseña. Si necesita cambiar los privilegios administrativos o su contraseña, consulte [este artículo](https://support.apple.com/en-us/HT204012) de Apple.
 
 #### Windows
 
-We defer this until the next section, due to the more complex shell situation on Windows.
+Aplazamos esto hasta la siguiente sección, debido a la situación más compleja del shell en Windows.
 
-## Windows is special ... and not in a good way {#sec-windows-shell-hell}
+## Windows es especial... y no en el buen sentido {#sec-windows-shell-hell}
 
-Windows is not the ideal platform for scientific computing and software development. A lot of the functionality is going to feel janky and strapped on. Because it is.
+Windows no es la plataforma ideal para el desarrollo de software y computación científica. Gran parte de la funcionalidad se sentirá rara y limitada. Porque lo es.
 
-There are no fewer than 4 possible shells you can end up in. Unless you know better, you almost certainly want to be in a Git Bash shell, especially here in Happy Git.
+Hay no menos de 4 posibles shells en los que puedes terminar. A menos que lo sepas mejor, es casi seguro que querrás estar en un shell de Git Bash, especialmente aquí en Happy Git.
 
-Windows users will want to understand the different types of shell, how to launch them, and how to tell which one you're in.
+Los usuarios de Windows querrán comprender los diferentes tipos de shell, cómo iniciarlos y cómo saber en cuál se encuentra.
 
-### Git Bash
+### Git bash
 
-*TL;DR how to tell if you're in a Git Bash shell? Do this:*
+*TL;DR ¿cómo saber si estás en un shell de Git Bash? Haz esto:*
 
 ``` bash
 $ echo $SHELL
 /usr/bin/bash
 ```
 
-Git Bash is a bash shell that ships with Git for Windows, which is [the Happy Git way to install Git on Windows](#install-git-windows). Therefore, you will not have Git Bash on your system until you install Git for Windows.
+Git Bash es un shell bash que se incluye con Git para Windows, que es [la forma Happy Git de instalar Git en Windows](#install-git-windows). Por lo tanto, no tendrá Git Bash en su sistema hasta que instale Git para Windows.
 
-Git Bash is always the Windows shell we are targeting in Happy Git instructions.
+Git Bash es siempre el shell de Windows al que nos dirigimos en las instrucciones de Happy Git.
 
-RStudio should automatically detect the presence of Git Bash. You can inspect and influence this directly via *Tools \> Global Options \> Terminal*. Unless you have good reason to do otherwise, you want to see "Git Bash" in the "New terminals open with ..." dropdown menu.
+RStudio debería detectar automáticamente la presencia de Git Bash. Puede inspeccionar e influir en esto directamente a través de *Tools \> Global Options \> Terminal*. A menos que tenga una buena razón para hacer lo contrario, querrá ver "Git Bash" en el menú desplegable "Nuevas terminales abiertas con...".
 
 ![](img/git-bash-as-rstudio-terminal.png)
 
-Troubleshooting tips:
+Consejos para solucionar problemas:
 
--   Restart RStudio. You need to restart all instances of RStudio after installing Git for Windows (+ Git Bash), in order for RStudio to auto-detect Git Bash.
--   Update RStudio. The shell handling in RStudio has improved dramatically over time, so older versions might not behave as described here.
+-   Reinicie RStudio. Debe reiniciar todas las instancias de RStudio después de instalar Git para Windows (+ Git Bash), para que RStudio detecte automáticamente Git Bash.
+-   Actualizar RStudio. El manejo del shell en RStudio ha mejorado dramáticamente con el tiempo, por lo que es posible que las versiones anteriores no se comporten como se describe aquí.
 
-#### Accessing Git Bash outside of RStudio
+#### Accediendo a Git Bash fuera de RStudio
 
-Sometimes you want to run Git Bash outside of RStudio. Here's the easiest way: click the "Git" menu in the Windows menu and select "Git Bash".
+A veces quieres ejecutar Git Bash fuera de RStudio. Esta es la forma más sencilla: haga clic en el menú "Git" en el menú de Windows y seleccione "Git Bash".
 
 ![](img/2019-01_git_bash_windows.png)
 
-A Git Bash shell running outside of RStudio looks something like this:
+Un shell de Git Bash que se ejecuta fuera de RStudio se parece a esto:
 
 ![](img/2018-01-15_git-bash.png)
 
-Notice `MSYS` in the title bar. You might also see `MINGW64`.
+Observe "MSYS" en la barra de título. Es posible que también vea "MINGW64".
 
-Sometimes you need to run Git Bash as administrator, e.g. to run with higher privileges. Easiest way: click the "Git" menu in the Windows menu and *right-click* on "Git Bash". This reveals a submenu. Select "more" and then "Run as administrator".
+A veces es necesario ejecutar Git Bash como administrador, p. para ejecutar con mayores privilegios. La forma más fácil: haga clic en el menú "Git" en el menú de Windows y *haga clic derecho* en "Git Bash". Esto revela un submenú. Seleccione "más" y luego "Ejecutar como administrador".
 
 ![](img/2019-01-git-windows-administrator.png)
 
-### Command prompt
+### Consola de comandos del sistema
 
-*TL;DR how to tell if you're in Command Prompt? Do this:*
+*TL;DR ¿cómo saber si estás en la consola de comandos del sistema? Haz esto:*
 
 ``` bash
 C:\Users\jenny>echo %COMSPEC%
 C:\WINDOWS\system32\cmd.exe
 ```
 
-This is the native Windows command line interpreter. It's rarely what you want, especially for the work described in Happy Git.
+Este es el intérprete de línea de comandos nativo de Windows. Rara vez es lo que desea, especialmente para el trabajo descrito en Happy Git.
 
-A Command Prompt session running outside of RStudio looks something like this:
+Una sesión de símbolo del sistema que se ejecuta fuera de RStudio se parece a esto:
 
 ![](img/2018-01-15_command-prompt.png)
 
-Notice the `cmd.exe` in the title bar, although it is not *always* present. You might also see "Command Prompt".
+Observe el `cmd.exe` en la barra de título, aunque no *siempre* está presente. También es posible que vea "Símbolo del sistema".
 
-If you get an error message such as `'pwd' is not recognized as an internal or external command, operable program or batch file.` from a shell command, that suggests you have somehow launched into `cmd.exe` when you did not mean to.
+Si recibe un mensaje de error como `'pwd' no se reconoce como un comando interno o externo, programa ejecutable o archivo por lotes.` de un comando de shell, eso sugiere que de alguna manera ha iniciado `cmd.exe` cuando no lo hizo quiero decir.
 
 ### PowerShell
 
-*TL;DR how to tell if you're in PowerShell? Do this:*
+*TL;DR ¿cómo saber si estás en PowerShell? Haz esto:*
 
 ``` bash
 PS C:\Users\jenny> Get-ChildItem Env:ComSpec
@@ -129,54 +129,54 @@ Name                           Value
 ComSpec                        C:\WINDOWS\system32\cmd.exe
 ```
 
-PowerShell is yet another Windows shell, a more modern successor to Command Prompt. It's also rarely what you want, especially for the work described in Happy Git.
+PowerShell es otro shell de Windows, un sucesor más moderno del símbolo del sistema. Además, rara vez es lo que desea, especialmente para el trabajo descrito en Happy Git.
 
-A PowerShell session running outside of RStudio looks something like this:
+Una sesión de PowerShell que se ejecuta fuera de RStudio se parece a esto:
 
 ![](img/2018-01-15_power-shell.png)
 
-Notice the `powershell.exe` in the title bar.
+Observe el `powershell.exe` en la barra de título.
 
-### Bash via Windows Services for Linux
+### Bash a través de servicios de Windows para Linux
 
-*TL;DR how to tell if you're in Bash via WSL? Do this:*
+*TL;DR ¿cómo saber si estás en Bash a través de WSL? Haz esto:*
 
 ``` bash
 $ echo $SHELL
 /bin/bash
 ```
 
-In 2016, Microsoft launched the Windows Subsystem for Linux (WSL), "a new Windows 10 feature that enables you to run native Linux command-line tools directly on Windows". Overall, this is a fantastic development. However, at the time of writing (January 2019), you will only have this if you're running Windows 10 64-bit and have chosen to [install the optional WSL system component](https://docs.microsoft.com/en-us/windows/wsl/install-win10). Therefore, I expect only keeners to have this and, in that case, you probably don't need this chapter.
+En 2016, Microsoft lanzó el Subsistema de Windows para Linux (WSL), "una nueva característica de Windows 10 que le permite ejecutar herramientas nativas de línea de comandos de Linux directamente en Windows". En general, este es un desarrollo fantástico. Sin embargo, al momento de escribir este artículo (enero de 2019), solo tendrá esto si ejecuta Windows 10 de 64 bits y ha elegido [instalar el componente del sistema WSL opcional](https://docs.microsoft.com/ es-us/windows/wsl/install-win10). Por lo tanto, espero que sólo los entusiastas tengan esto y, en ese caso, probablemente no necesites este capítulo.
 
-A WSL bash shell running outside of RStudio looks something like this:
+Un shell bash WSL que se ejecuta fuera de RStudio se parece a esto:
 
-![](img/2018-01-15_bash-windows-services-for-linux.png)
+![](img/2018-01-15_bash-windows-services-para-linux.png)
 
-FYI Microsoft also refers to WSL as Bash on Ubuntu on Windows.
+Para su información, Microsoft también se refiere a WSL como Bash en Ubuntu en Windows.
 
-#### Windows bottom line
+#### Conclusión de Windows
 
-When in doubt, you probably want to be in a Git Bash shell.
+En caso de duda, probablemente quieras estar en un shell de Git Bash.
 
-## Basic shell commands
+## Comandos básicos de shell
 
-The most basic commands are listed below:
+Los comandos más básicos se enumeran a continuación:
 
--   [`pwd`](https://en.wikipedia.org/wiki/Pwd) (**p**rint **w**orking **d**irectory). Shows directory or "folder" you are currently operating in. This is not necessarily the same as the `R` working directory you get from `getwd()`.
--   [`ls`](https://en.wikipedia.org/wiki/Ls) (**l**i**s**t files). Shows the files in the current working directory. This is equivalent to looking at the files in your Finder/Explorer/File Manager. Use `ls -a` to also list hidden files, such as `.Rhistory` and `.git`.
--   [`cd`](https://en.wikipedia.org/wiki/Cd_(command)) (**c**hange **d**irectory). Allows you to navigate through your directories by changing the shell's working directory. You can navigate like so:
-    -   go to subdirectory `foo` of current working directory: `cd foo`
-    -   go to parent of current working directory: `cd ..`
-    -   go to your "home" directory: [`cd ~`](http://tilde.club/~ford/tildepoint.jpg) or simply `cd`
-    -   go to directory using absolute path, works regardless of your current working directory: `cd /home/my_username/Desktop`. Windows uses a slightly different syntax with the slashes between the folder names reversed, `\`, e.g. `cd C:\Users\MY_USERNAME\Desktop`.
-        -   Pro tip 1: Dragging and dropping a file or folder into the terminal window will paste the absolute path into the window.
-        -   Pro tip 2: Use the `tab` key to autocomplete unambiguous directory and file names. Hit `tab` twice to see all ambiguous options.
--   Use arrow-up and arrow-down to repeat previous commands. Or search for previous commands with `CTRL` + `r`.
+-   [`pwd`](https://en.wikipedia.org/wiki/Pwd) (**p**rint **w**orking **d**irectory). Muestra el directorio o "carpeta" en el que está operando actualmente. Este no es necesariamente el mismo que el directorio de trabajo `R` que obtiene `getwd()`.
+-   [`ls`](https://en.wikipedia.org/wiki/Ls) (**l**i**s**t files). SCómo se muestran los archivos en el directorio de trabajo actual. Esto equivale a mirar los archivos en su Finder/Explorer/Administrador de archivos. Utilice `ls -a` para enumerar también archivos ocultos, como `.Rhistory` y `.git`.
+-   [`cd`](https://en.wikipedia.org/wiki/Cd_(command)) (**c**hange **d**irectory). Le permite navegar a través de sus directorios cambiando el directorio de trabajo del shell. Puedes navegar así.:
+    -   go al subdirectorio `foo` del directorio de trabajo actual: `cd foo`
+    -   ir al directorio principal del directorio de trabajo actual: `cd ..`
+    -   vaya a su directorio "inicial": [`cd ~`](http://tilde.club/~ford/tildepoint.jpg) o simplemente `cd`
+    -   vaya al directorio usando la ruta absoluta, funciona independientemente de su directorio de trabajo actual: `cd /home/my_username/Desktop`. Windows usa una sintaxis ligeramente diferente con las barras entre los nombres de las carpetas invertidas., `\`, por ejemplo `cd C:\Users\MY_USERNAME\Desktop`.
+        -   Consejo profesional 1: arrastrar y soltar un archivo o carpeta en la ventana del terminal pegará la ruta absoluta en la ventana.
+        -   Consejo profesional 2: utilice la tecla `tab` para autocompletar nombres de archivos y directorios inequívocos. Presione `tab` dos veces para ver todas las opciones ambiguas.
+-   Utilice las flechas hacia arriba y hacia abajo para repetir los comandos anteriores. O buscar comandos anteriores con `CTRL` + `r`.
 
-A few Git commands:
+Algunos comandos de Git:
 
--   `git status` is the most used git command and informs you of your current branch, any changes or untracked files, and whether you are in sync with your remotes.
--   `git remote -v` lists all remotes. Very useful for making sure `git` knows about your remote and that the remote address is correct.
--   `git remote add origin GITHUB_URL` adds the remote `GITHUB_URL` with nickname `origin`.
--   `git remote set-url origin GITHUB_URL` changes the remote url of `origin` to `GITHUB_URL`. This way you can fix typos in the remote url.
--   *Feel free to suggest other commands that deserve listing in a [GitHub issue](https://github.com/jennybc/happy-git-with-r/issues).*
+-   `git status` es el comando de git más utilizado y le informa sobre su rama actual, cualquier cambio o archivo sin seguimiento y si está sincronizado con sus controles remotos.
+-   `git remote -v` enumera todos los controles remotos. Muy útil para asegurarse de que `git` conozca su control remoto y que la dirección remota sea correcta.
+-   `git remote add origin GITHUB_URL` agrega el control remoto `GITHUB_URL` con apodo `origin`.
+-   `git remote set-url origin GITHUB_URL` cambia la URL remota de "origen" a `GITHUB_URL`. De esta manera puedes corregir errores tipográficos en la URL remota.
+-   *No dudes en sugerir otros comandos que merezcan incluirse en un [problema de GitHub](https://github.com/jennybc/happy-git-with-r/issues).*
