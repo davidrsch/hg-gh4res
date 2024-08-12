@@ -1,20 +1,20 @@
-# Comic relief {#sec-comic-relief}
+# Alivio cómico {#sec-comic-relief}
 
-It's not you, it's Git!
+¡No eres tú, es Git!
 
-If you're not crying already, these fictional-but-realistic Git man pages should do the trick:
+Si aún no estás llorando, estas páginas de manual de Git ficticias pero realistas deberían ser la solución:
 
 -   [git-man-page-generator](http://git-man-page-generator.lokaltog.net)
--   And, of course, the underlying source is also available on GitHub:
+-   Y, por supuesto, la fuente subyacente también está disponible en GitHub:
     -   <https://github.com/Lokaltog/git-man-page-generator>
 
-If you can tolerate adult and often offensive language, you might enjoy:
+Si puedes tolerar el lenguaje adulto y a menudo ofensivo, es posible que disfrutes de:
 
 -   <http://www.commitlogsfromlastnight.com>
 -   <http://ohshitgit.com/>
 
-Your commits will look more glorious scrolling by Star Wars style:
+Tus confirmaciones se verán más gloriosas al desplazarte al estilo de Star Wars:
 
 -   <http://starlogs.net>
 -   <http://starlogs.net/#jennybc/googlesheets>
--   Do this for any repo: `http://starlogs.net/#USER/REPO`
+-   Haga esto para cualquier repositorio: `http://starlogs.net/#USER/REPO`
