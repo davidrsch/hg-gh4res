@@ -1,23 +1,23 @@
-# Resources {#sec-resources}
+# Recursos {#sec-resources}
 
-We practice what we preach! This site is created with Git and R markdown, using the [`bookdown`](https://github.com/rstudio/bookdown/) package. Go ahead and [peek behind the scenes](https://github.com/jennybc/happy-git-with-r).
+¡Practicamos lo que predicamos! Este sitio está creado con Git y R Markdown, utilizando el paquete [`bookdown`](https://github.com/rstudio/bookdown/). Continúe y [eche un vistazo detrás de escena](https://github.com/jennybc/happy-git-with-r).
 
-Long-term, you should understand more about what you are doing. Rote clicking in RStudio may be a short-term survival method but won't work for long.
+A largo plazo, debería comprender más lo que está haciendo. Hacer clic de memoria en RStudio puede ser un método de supervivencia a corto plazo, pero no funcionará por mucho tiempo.
 
--   [Git for Humans](https://speakerdeck.com/alicebartlett/git-for-humans) is a great set of slides by [Alice Bartlett](https://alicebartlett.co.uk), originally delivered in 2016 at UX Brighton.
+-   [Git for Humans](https://speakerdeck.com/alicebartlett/git-for-humans) es un gran conjunto de diapositivas de [Alice Bartlett](https://alicebartlett.co.uk), presentadas originalmente en 2016 en UX Brighton.
 
--   [Git in Practice](https://www.manning.com/books/git-in-practice) by Mike McQuaid is an more approachable book, probably better than Pro Git (below) for most people starting out. Ancillary materials [on GitHub](https://github.com/MikeMcQuaid/GitInPractice).
+-   [Git in Practice](https://www.manning.com/books/git-in-practice) de Mike McQuaid es un libro más accesible, probablemente mejor que Pro Git (a continuación) para la mayoría de las personas que comienzan. Materiales auxiliares [en GitHub](https://github.com/MikeMcQuaid/GitInPractice).
 
--   The book [Pro Git](http://git-scm.com/book) is fantastic and comprehensive.
+-   El libro [Pro Git](http://git-scm.com/book) es fantástico y completo.
 
--   [Oh My Git!](https://ohmygit.org/) is a free and open source interactive game for learning Git. It's very beginner friendly, using a graph to visualise the worktree. Lessons can be completed using a playing card interface in addition to the built-in command line, which is there for when users become more comfortable.
+-   [Oh My Git!](https://ohmygit.org/) es un juego interactivo gratuito y de código abierto para aprender Git. Es muy amigable para principiantes y utiliza un gráfico para visualizar el árbol de trabajo. Las lecciones se pueden completar usando una interfaz de naipes además de la línea de comando incorporada, que está ahí para cuando los usuarios se sientan más cómodos..
 
--   [GitHub's own training materials](https://training.github.com) may be helpful. They also point to [many other resources](https://help.github.com/articles/what-are-other-good-resources-for-learning-git-and-github)
+-   [Los propios materiales de capacitación de GitHub](https://training.github.com) pueden resultar útiles. También señalan [muchos otros recursos](https://help.github.com/articles/what-are-other-good-resources-for-learning-git-and-github)
 
--   Find a powerful Git client (@sec-git-client) if you'd like to minimize your usage of Git from the command line.
+-   Busque un cliente Git potente (@sec-git-client) si desea minimizar el uso de Git desde la línea de comandos.
 
--   Ten Simple Rules for Taking Advantage of Git and GitHub <http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004947>
+-   Diez reglas simples para aprovechar Git y GitHub <http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004947>
 
--   RStudio's guide [Version Control with Git and SVN](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+-   Guía de RStudio [Control de versiones con Git y SVN](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
--   The book [*Team Geek*](http://shop.oreilly.com/product/0636920018025.do) has insightful advice for the human and collaborative aspects of version control. It proposes Git strategies suited to different characteristics of teams.
+-   El libro [*Team Geek*](http://shop.oreilly.com/product/0636920018025.do) tiene consejos interesantes para los aspectos humanos y colaborativos del control de versiones. Propone estrategias de Git adaptadas a diferentes características de los equipos.
