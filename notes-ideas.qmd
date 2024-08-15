@@ -70,9 +70,9 @@ Técnicas para evitar rebases.
 
 Estado sin cabeza. Infierno rebase.
 
-Qué hacer cuando no puedes, por ejemplo, cambiar de rama. Compromisos de ocultación y WIP.
+Qué hacer cuando no puedes, por ejemplo, cambiar de rama. Confirmaciones de Trabajo en Proceso.
 
-## Engage with R source on GitHub
+## Interactúe con el código fuente de R en GitHub
 
 Interactúe con la fuente R en GitHub
 

@@ -106,7 +106,7 @@ Si su formato de salida es `html_document`, aún debería ver `foo.html`. Si su 
 
 Quizás quieras realizar un commit aquí.
 
-## Empujar a GitHub
+## Enviar a GitHub
 
 Envíe el estado actual a GitHub.
 

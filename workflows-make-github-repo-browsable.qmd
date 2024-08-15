@@ -13,7 +13,7 @@ Mantenga los archivos en el formato más sencillo y compatible con sus objetivos
 -   Archivos delimitados, como CSV y TSV
 -   Archivos PNG
 
-## Supere sus complejos con respecto a: comprometer productos derivados
+## Supere sus complejos con respecto a: confirme productos derivados
 
 Reconozcamos la incomodidad que algunas personas sienten al poner productos derivados bajo control de versiones. Específicamente, si tiene un documento R Markdown `foo.Rmd`, puede ser `knit()` para producir el producto intermedio `foo.md`, que se puede convertir al resultado final `foo.html`. ¿Cuál de esos archivos tiene "permitido" poner bajo control de versiones? Los partidarios de la línea dura de Source-is-real sólo dirán `foo.Rmd`, pero los pragmáticos saben que esto puede ser un serio fastidio en la vida real. Sólo porque *puedo* reconstruir todo desde cero, no significa que *quiera* hacerlo.
 

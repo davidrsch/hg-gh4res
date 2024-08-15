@@ -16,7 +16,7 @@ Vocabulario que utilizo en todo momento.
 
 **rama local de solicitud de cambio** El nombre de la rama local que utilizará para trabajar con el cmbio. En el mejor de los casos: puede ser lo mismo que la rama de bifurcación. En el peor de los casos: los cambios proviene de `maester`, por lo que debe inventar un nuevo nombre basado en algo sobre la solicitudde  cambio, p. `pr-666` o `janedoe-master`.
 
-**padre de solicitud de cambio** El SHA del compromiso en el repositorio principal que es la base de la solicitud de cambio.
+**padre de solicitud de cambio** El SHA de la confirmación en el repositorio principal que es la base de la solicitud de cambio.
 
 **solicitud de cambio remota** La URL SSH o HTTPS para la bifurcación desde la cual se realizó la solicitud de cambio. O el apodo del control remoto, si te has molestado en configurarlo.
 

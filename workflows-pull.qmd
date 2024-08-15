@@ -73,7 +73,7 @@ Please commit your changes or stash them before you merge.
 Aborting
 ```
 
-¿Ahora que? En primer lugar, debe salvaguardar los cambios locales guardándolos o confirmándolos. (Yo personalmente elegiría comprometer y ejecutar un flujo de trabajo descrito en @sec-git-pull-with-local-commits.)
+¿Ahora que? En primer lugar, debe salvaguardar los cambios locales guardándolos o confirmándolos. (Yo personalmente elegiría confirmar y ejecutar un flujo de trabajo descrito en @sec-git-pull-with-local-commits.)
 
 No soy un gran admirador de `git stash`; Creo que normalmente es mejor aprovechar todas las oportunidades posibles para solidificar sus habilidades en torno a conceptos y operaciones centrales, por ejemplo, confirmar, posiblemente en una rama. Pero si desea utilizar `git stash`, esta oportunidad es la mejor posible.
 
@@ -273,11 +273,11 @@ Esta es una alternativa al flujo de trabajo oculto que tiene la ventaja de brind
 Cree una nueva rama temporal y confirme allí los cambios no confirmados. Consulte `main` y `git pull` para obtener cambios desde arriba. Ahora necesitas recuperar el trabajo de la confirmación en la rama temporal. Opciones:
 
 -   Fusiona la rama temporal en `main`.
--   Cherry elige el compromiso de la rama temporal a `main`.
+-   Cherry elige la confirmación de la rama temporal a `main`.
 
 En cualquier caso, aún es posible que tengas que lidiar con conflictos de fusión.
 
-En cualquier caso, si se sintió obligado a comprometerse antes de estar listo o a aceptar una confirmación de fusión fea, puede realizar un reinicio mixto para "desconfirmar" pero mantener los cambios en `main` o seguir modificando hasta que esté satisfecho con el comprometerse.
+En cualquier caso, si se sintió obligado a confirmar antes de estar listo o a aceptar una confirmación de fusión fea, puede realizar un reinicio mixto para "desconfirmar" pero mantener los cambios en `main` o seguir modificando hasta que esté satisfecho con la confirmación.
 
 ## Algunos trabajos locales están confirmados, otros no.
 

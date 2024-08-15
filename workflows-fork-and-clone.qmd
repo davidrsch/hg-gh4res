@@ -43,7 +43,7 @@ Hay dos piezas de configuración más recomendadas:
 
 El apodo `upstream` técnicamente puede ser lo que quieras. Existe una fuerte tradición de utilizar `upstream` en este contexto y, aunque tengo mejores ideas, creo que es mejor conformarme. Cada libro, publicación de blog e hilo de Stack Overflow que lea utilizará `upstream` aquí. Guarda tu energía psíquica para otras cosas.
 
-Estos pasos le facilitan mantenerse actualizado con los desarrollos en el repositorio de origen. Hablamos más a continuación sobre por qué nunca debes comprometerte con la rama predeterminada, p. `main`, cuando estás trabajando en una bifurcación (ver @sec-fork-dont-touch-main).
+Estos pasos le facilitan mantenerse actualizado con los desarrollos en el repositorio de origen. Hablamos más a continuación sobre por qué nunca debes confirmar con la rama predeterminada, p. `main`, cuando estás trabajando en una bifurcación (ver @sec-fork-dont-touch-main).
 
 ### Configurar el control remoto `upstream` {#sec-fork-configure-upstream}
 
@@ -209,4 +209,4 @@ Le recomiendo **enfáticamente** que no realice confirmaciones con el `main` de 
 
 Cuando tratas `main` como de solo lectura, hace la vida mucho más fácil cuando quieres [extraer el trabajo ascendente](#sec-upstream-changes) en tu copia. El `DUEÑO` de `REPO` también estará más feliz de recibir su solicitud de extracción de una rama que no sea `main`.
 
-Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: [¿Por qué es una mala práctica comprometerse con la rama maestra de su bifurcación?](https://stackoverflow.com/q/33749832).
+Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: [¿Por qué es una mala práctica confirmar en la rama maestra de su bifurcación?](https://stackoverflow.com/q/33749832).

@@ -65,7 +65,7 @@ cat(res, sep = '\n')
 
 Independientemente de si usó usethis o RStudio, ahora debería estar trabajando en el nuevo repositorio de Git. El `git clone` implícito debería descargar el archivo `README.md` que creamos en GitHub en el paso anterior. Busque en el panel del explorador de archivos de RStudio el archivo `README.md`.
 
-Hay una gran ventaja en el flujo de trabajo "GitHub primero, luego RStudio": el repositorio remoto de GitHub está configurado como el remoto `origin` para su repositorio local y su rama `main` local ahora está rastreando el `main` en GitHub. Este es un punto técnico pero importante sobre Git. La implicación práctica es que ahora está preparado para empujar y tirar. No es necesario perder el tiempo configurando controles remotos de Git y rastreando ramas en la línea de comando.
+Hay una gran ventaja en el flujo de trabajo "GitHub primero, luego RStudio": el repositorio remoto de GitHub está configurado como el remoto `origin` para su repositorio local y su rama `main` local ahora está rastreando el `main` en GitHub. Este es un punto técnico pero importante sobre Git. La implicación práctica es que ahora está preparado para enviar e imporar. No es necesario perder el tiempo configurando controles remotos de Git y rastreando ramas en la línea de comando.
 
 Estamos a punto de confirmar que estamos preparados para realizar push and pulls.
 
@@ -125,7 +125,7 @@ Confirme estos cambios en su repositorio local. ¿Cómo?
 
 ## Envía tus cambios locales a GitHub
 
-**Haga esto varias veces al día, pero posiblemente con menos frecuencia de lo que se compromete.**
+**Haga esto varias veces al día, pero posiblemente con menos frecuencia de lo que se confirme.**
 
 Tiene un nuevo trabajo en su repositorio Git local, pero los cambios aún no están en línea.
 

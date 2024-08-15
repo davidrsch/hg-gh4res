@@ -35,9 +35,9 @@ Si no, tienes varias opciones:
 
 Si usó usethis o RStudio para inicializar el repositorio de Git, el proyecto debería reiniciarse en RStudio. Hágalo usted mismo si hizo `git init`. RStudio ahora debería tener un panel Git.
 
-## Escenificar y comprometerse
+## Preparar y confirmar
 
-Si su proyecto local ya era un repositorio de Git y estaba actualizado, continúe. De lo contrario, probablemente necesites preparar y comprometerte.
+Si su proyecto local ya era un repositorio de Git y estaba actualizado, continúe. De lo contrario, probablemente necesites preparar y confirmar.
 
 -   Haga clic en la pestaña "Git" en el panel superior derecho
 -   Marque la casilla "Staged" para todos los archivos que desee confirmar.

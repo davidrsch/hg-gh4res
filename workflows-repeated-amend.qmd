@@ -16,7 +16,7 @@ Cuando hago algo complicado, a menudo avanzo hacia mi objetivo en pequeños incr
 
 ¿Qué no se podría amar?
 
-Esto puede generar una gran cantidad de pequeños compromisos. Esto está absolutamente bien y no hay nada de qué avergonzarse. Pero algún día puede que empieces a preocuparte por la utilidad y la estética de tu historial de Git.
+Esto puede generar una gran cantidad de pequeñas confirmaciones. Esto está absolutamente bien y no hay nada de qué avergonzarse. Pero algún día puede que empieces a preocuparte por la utilidad y la estética de tu historial de Git.
 
 La modificación repetida es un patrón en el que, en lugar de saturar su historial con muchas confirmaciones pequeñas, construye una confirmación "buena" gradualmente, mediante modificaciones.
 
@@ -45,7 +45,7 @@ nothing to commit, working tree clean
 
 ### Ponte a trabajar
 
-Imaginemos que comenzamos en el compromiso C, con el compromiso anterior B y, antes de eso, A:
+Imaginemos que comenzamos en la confirmación C, la confirmación anterior es B y, antes de eso, A:
 
 ``` bash
 ... -- A -- B -- C
@@ -90,7 +90,7 @@ Sigue así.
 
 Digamos que finalmente has logrado tu objetivo. Una última vez, verifique que su proyecto sea funcional y se encuentre en un estado que esté dispuesto a compartir con otros.
 
-Confirme, enmendando nuevamente, pero esta vez con un mensaje de confirmación real. Piense en esto como un compromiso D. Envie. Haga esto en RStudio o el shell:
+Confirme, enmendando nuevamente, pero esta vez con un mensaje de confirmación real. Piense en esto como una confirmación D. Envie. Haga esto en RStudio o el shell:
 
 ``` console
 git commit --amend -m "Implementa una característica increíble; cierra #43"

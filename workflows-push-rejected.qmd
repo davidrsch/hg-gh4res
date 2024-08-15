@@ -38,7 +38,7 @@ Esto está cubierto en el flujo de trabajo [Extraer, pero tienes trabajo local](
 
 Pero antes de que contemplen todo el horror de esto, este es un buen momento para reflexionar sobre lo que podemos aprender de esta situación.
 
-## ¡La que empuja primero gana!
+## ¡El que envia primero gana!
 
 Es posible que hayas notado que tú, el autor de `D`, estás jugando con Git más que la persona que confirmo y envió `C`, es decir, tu colaborador.
 

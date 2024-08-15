@@ -10,14 +10,14 @@ Ha sido inmortalizado en un cómic de xkcd, así que debe estar bien:
 Idea básica:
 
 -   Confirme temprano y con frecuencia.
--   Empuje a un control remoto, como GitHub, con frecuencia.
+-   Envie a un control remoto, como GitHub, con frecuencia.
 -   El estado de las cosas en GitHub es su nuevo "peor de los casos".
 -   Si realmente arruinas las cosas localmente, copia todos los archivos (o los que hayan cambiado) a un lugar seguro.
     -   Por lo general, sus archivos están BIEN. Pero es fácil estropear la infraestructura de Git cuando eres nuevo en esto. Y puede ser difícil solucionarlo por su cuenta.
 -   Cambie el nombre del repositorio local existente como medida temporal, es decir, antes de hacer algo radical, como eliminarlo.
 -   Clona el repositorio de GitHub a tu máquina local. Has vuelto a un estado feliz.
 -   Copie todos los archivos relevantes desde su espacio seguro. Aquellos cuyo estado actualizado necesita confirmar.
--   Ponga en escena y comprométase. Empujar.
+-   Prepare cambios y confirme. Enviar.
 -   Sigue con tu vida.
 
 Practica esto antes de que lo necesites, así verás cómo funciona.

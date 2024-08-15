@@ -18,7 +18,7 @@ Tu misión:
     -   Siga las instrucciones en <https://github.com/jennybc/bingo/blob/master/CONTRIBUTING.md> para ver cómo contribuir con una nueva tarjeta.
     -   Consejo profesional: es fácil ser muy divertido, pero crea un cartón de bingo muy difícil. Recuerde incluir algunas cosas fáciles para que la gente tenga la oportunidad de jugar al bingo.
 -   Si se siente virtuoso, ejecute las pruebas y revise el paquete. ¡Pídenos ayuda! O vivir peligrosamente y evitar esto.
--   ¡Comprometerse!
+-   ¡Confirme!
 -   Vuelva a enviar sus cambios a su copia del repositorio en GitHub.
 -   Realizar una solicitud de extracción al repositorio principal de "bingo".
 -   Si su tarjeta es apropiada, fusionaremos su solicitud y pasará a formar parte del paquete y estará disponible a través de la [aplicación Shiny](http://daattali.com/shiny/bingo/).

@@ -4,7 +4,7 @@
 
 Patrones de Git que aparecen con frecuencia en el trabajo real:
 
--   Comprométete temprano y con frecuencia. Empuje con menos frecuencia. [Enmendar repetidamente](#sec-repeated-amend).
+-   Confirme temprano y con frecuencia. Empuje con menos frecuencia. [Enmendar repetidamente](#sec-repeated-amend).
 -   [¡Ayuda, mi push fue rechazado!](#sec-push-rejected)
 -   [Integrando el trabajo remoto y local](#sec-pull-tricky). Probablemente para que puedas enviar de nuevo.
 -   Quémalo todo.

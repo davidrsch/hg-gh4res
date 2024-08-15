@@ -6,7 +6,7 @@ Hemos explicado en otra parte que cada confirmación está asociada con el llama
 
 ![](img/refs-only-shas.jpeg){fig-alt="Git history annotated with SHAs." fig-align="center" out-width="60%"}
 
-Afortunadamente, hay aún más formas de hablar sobre un compromiso específico, que son mucho más fáciles de entender para los humanos. Estos se denominan "refs" de Git, abreviatura de referencias y, si está familiarizado con el concepto de programación de un puntero, ese es exactamente el modelo mental correcto.
+Afortunadamente, hay aún más formas de hablar sobre una confirmación específico, que son mucho más fáciles de entender para los humanos. Estos se denominan "refs" de Git, abreviatura de referencias y, si está familiarizado con el concepto de programación de un puntero, ese es exactamente el modelo mental correcto.
 
 ## Referencias útiles
 

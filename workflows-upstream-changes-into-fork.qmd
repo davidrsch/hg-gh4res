@@ -107,7 +107,7 @@ and have 1 and 1 different commits each, respectively.
 
 Esta es una señal de que ha tomado algunas decisiones lamentables.
 
-Le recomiendo que [nunca haga sus propios compromisos con la rama predeterminada de una bifurcación](#sec-fork-dont-touch-main) o con cualquier rama de la que no sea (co)propietario efectivamente. Sin embargo, si ya lo ha hecho, le explicamos cómo solucionar el problema en [Um, ¿qué pasa si toco `main`?](#sec-touched-main).
+Le recomiendo que [nunca haga sus propias confirmaciones con la rama predeterminada de una bifurcación](#sec-fork-dont-touch-main) o con cualquier rama de la que no sea (co)propietario efectivamente. Sin embargo, si ya lo ha hecho, le explicamos cómo solucionar el problema en [Um, ¿qué pasa si toco `main`?](#sec-touched-main).
 
 ## Opción de sincronización 1: extraiga los cambios desde `upstream` y luego envíelos a `origin`
 
@@ -119,7 +119,7 @@ git pull upstream main --ff-only
 
 Esto dice: "extraiga los cambios del control remoto conocido como `upstream` a la rama `main` de mi repositorio local". Estoy siendo explícito sobre el control remoto (`upstream`) y la rama (`main`) en este caso, tanto para hacerlo más claro como para que este comando sea robusto para configuraciones de Git a nivel de repositorio y de usuario. Pero si ha seguido nuestras recomendaciones de configuración, no es necesario que sea tan explícito.
 
-También **recomiendo encarecidamente** usar el indicador `--ff-only` en este caso, para que también diga "si hice mis propios compromisos con `main`, por favor oblígueme a enfrentar este problema AHORA". Así es como se ve si no es posible realizar una combinación de avance rápido:
+También **recomiendo encarecidamente** usar el indicador `--ff-only` en este caso, para que también diga "si hice mis propias confirmaciones con `main`, por favor oblígueme a enfrentar este problema AHORA". Así es como se ve si no es posible realizar una combinación de avance rápido:
 
 ``` bash
 $ git pull upstream main --ff-only
@@ -205,7 +205,7 @@ y este es el estado de la rama `main` en su copia local:
 ... -- A -- B -- C -- X -- Y -- Z
 ```
 
-Las dos historias coinciden, hasta comprometerse o indicar `C`, luego divergen.
+Las dos historias coinciden, hasta confirmar o indicar `C`, luego divergen.
 
 Si desea conservar el trabajo en las confirmaciones `X`, `Y` y `Z`, cree una nueva rama ahora mismo, con la sugerencia en `Z`, así, pero sustituyendo el nombre de su rama preferida:
 

@@ -21,7 +21,7 @@ git checkout issue-5
 
 También puedes usar el atajo `git checkout -b issues-5` para crear y verificar la rama de una vez.
 
-Una vez que haya cambiado a una rama, puede comprometerse con ella como de costumbre.
+Una vez que haya cambiado a una rama, puede confirmar cambios en ella como de costumbre.
 
 ## Cambiar de rama
 

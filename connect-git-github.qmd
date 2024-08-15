@@ -85,7 +85,7 @@ checking stuff for Happy Git
     main pushes to main (up to date)
 ```
 
-## Haga un cambio local, comprométase y presione
+## Haga un cambio local, confirme y envie
 
 Agregue una línea a README y verifique que Git note el cambio:
 
