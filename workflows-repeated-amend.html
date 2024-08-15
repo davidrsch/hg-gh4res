@@ -657,7 +657,7 @@ div.csl-indent {
 </blockquote>
 <p>Cuando hago algo complicado, a menudo avanzo hacia mi objetivo en pequeños incrementos, comprobando que todo sigue funcionando en el camino. ¿Si, funciona? Haz un commit. Este es mi nuevo peor escenario. Sigue adelante.</p>
 <p>¿Qué no se podría amar?</p>
-<p>Esto puede generar una gran cantidad de pequeños compromisos. Esto está absolutamente bien y no hay nada de qué avergonzarse. Pero algún día puede que empieces a preocuparte por la utilidad y la estética de tu historial de Git.</p>
+<p>Esto puede generar una gran cantidad de pequeñas confirmaciones. Esto está absolutamente bien y no hay nada de qué avergonzarse. Pero algún día puede que empieces a preocuparte por la utilidad y la estética de tu historial de Git.</p>
 <p>La modificación repetida es un patrón en el que, en lugar de saturar su historial con muchas confirmaciones pequeñas, construye una confirmación “buena” gradualmente, mediante modificaciones.</p>
 <p><em>Sí, hay otras formas de hacer esto, p.&nbsp;mediante squashingo y rebase interactivo, pero creo que modificar es la mejor manera de comenzar.</em></p>
 </section>
@@ -681,7 +681,7 @@ nothing to commit, working tree clean</code></pre>
 </section>
 <section id="ponte-a-trabajar" class="level3" data-number="27.2.2">
 <h3 data-number="27.2.2" class="anchored" data-anchor-id="ponte-a-trabajar"><span class="header-section-number">27.2.2</span> Ponte a trabajar</h3>
-<p>Imaginemos que comenzamos en el compromiso C, con el compromiso anterior B y, antes de eso, A:</p>
+<p>Imaginemos que comenzamos en la confirmación C, la confirmación anterior es B y, antes de eso, A:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span> <span class="at">--</span> A <span class="at">--</span> B <span class="at">--</span> C</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Da un pequeño paso hacia tu objetivo. Vuelva a comprobar que su proyecto “funciona”.</p>
 <p>Realice esos cambios y realice una confirmación con el mensaje “WIP”, que significa “trabajo en progreso”. Haz esto en RStudio o en el shell. (<a href="shell.html" class="quarto-xref"><span>Apéndice A</span></a>):</p>
@@ -699,7 +699,7 @@ git commit -m "WIP"</code></pre>
 <p>pero los cambios asociados con la confirmación <code>WIP*</code> ahora representan sus dos últimas confirmaciones, es decir, todos los cambios acumulados desde el estado C.</p>
 <p>Sigue así.</p>
 <p>Digamos que finalmente has logrado tu objetivo. Una última vez, verifique que su proyecto sea funcional y se encuentre en un estado que esté dispuesto a compartir con otros.</p>
-<p>Confirme, enmendando nuevamente, pero esta vez con un mensaje de confirmación real. Piense en esto como un compromiso D. Envie. Haga esto en RStudio o el shell:</p>
+<p>Confirme, enmendando nuevamente, pero esta vez con un mensaje de confirmación real. Piense en esto como una confirmación D. Envie. Haga esto en RStudio o el shell:</p>
 <pre class="console"><code>git commit --amend -m "Implementa una característica increíble; cierra #43"
 git push</code></pre>
 <p>Tu historial, y el de GitHub, se ve así:</p>

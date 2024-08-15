@@ -642,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 </ul>
 <p>El apodo <code>upstream</code> técnicamente puede ser lo que quieras. Existe una fuerte tradición de utilizar <code>upstream</code> en este contexto y, aunque tengo mejores ideas, creo que es mejor conformarme. Cada libro, publicación de blog e hilo de Stack Overflow que lea utilizará <code>upstream</code> aquí. Guarda tu energía psíquica para otras cosas.</p>
-<p>Estos pasos le facilitan mantenerse actualizado con los desarrollos en el repositorio de origen. Hablamos más a continuación sobre por qué nunca debes comprometerte con la rama predeterminada, p.&nbsp;<code>main</code>, cuando estás trabajando en una bifurcación (ver <a href="#sec-fork-dont-touch-main" class="quarto-xref"><span>Sección 31.4</span></a>).</p>
+<p>Estos pasos le facilitan mantenerse actualizado con los desarrollos en el repositorio de origen. Hablamos más a continuación sobre por qué nunca debes confirmar con la rama predeterminada, p.&nbsp;<code>main</code>, cuando estás trabajando en una bifurcación (ver <a href="#sec-fork-dont-touch-main" class="quarto-xref"><span>Sección 31.4</span></a>).</p>
 </section><section id="sec-fork-configure-upstream" class="level3" data-number="31.1.2"><h3 data-number="31.1.2" class="anchored" data-anchor-id="sec-fork-configure-upstream">
 <span class="header-section-number">31.1.2</span> Configurar el control remoto <code>upstream</code>
 </h3>
@@ -763,7 +763,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Si realiza alguna confirmación en su repositorio local, <strong>recomiendo encarecidamente</strong> que trabaje en <a href="git-branches.html">una nueva rama</a>, no en <code>main</code> (o como se llame la rama predeterminada).</p>
 <p>Le recomiendo <strong>enfáticamente</strong> que no realice confirmaciones con el <code>main</code> de un repositorio que haya bifurcado. Si se confirma <code>main</code> en un repositorio que no es de su propiedad, se crea una divergencia entre el historial de esa rama en el repositorio de origen y en su repositorio. De esto no surgirá más que dolor. (Si ya ha hecho esto, discutiremos cómo solucionar la situación en <a href="workflows-upstream-changes-into-fork.html#sec-touched-main">Um, ¿qué pasa si toco <code>main</code>?</a>.)</p>
 <p>Cuando tratas <code>main</code> como de solo lectura, hace la vida mucho más fácil cuando quieres <a href="workflows-upstream-changes-into-fork.html">extraer el trabajo ascendente</a> en tu copia. El <code>DUEÑO</code> de <code>REPO</code> también estará más feliz de recibir su solicitud de extracción de una rama que no sea <code>main</code>.</p>
-<p>Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: <a href="https://stackoverflow.com/q/33749832">¿Por qué es una mala práctica comprometerse con la rama maestra de su bifurcación?</a>.</p>
+<p>Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: <a href="https://stackoverflow.com/q/33749832">¿Por qué es una mala práctica confirmar en la rama maestra de su bifurcación?</a>.</p>
 
 
 </section></main><!-- /main --><script>

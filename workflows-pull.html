@@ -680,7 +680,7 @@ El estado local es <code>A--B--(cambiosnoconfirmados)</code>.</p>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="ex">foo.R</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> commit your changes or stash them before you merge.</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Aborting</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>¿Ahora que? En primer lugar, debe salvaguardar los cambios locales guardándolos o confirmándolos. (Yo personalmente elegiría comprometer y ejecutar un flujo de trabajo descrito en <a href="#sec-git-pull-with-local-commits" class="quarto-xref"><span>Sección 29.2</span></a>.)</p>
+<p>¿Ahora que? En primer lugar, debe salvaguardar los cambios locales guardándolos o confirmándolos. (Yo personalmente elegiría confirmar y ejecutar un flujo de trabajo descrito en <a href="#sec-git-pull-with-local-commits" class="quarto-xref"><span>Sección 29.2</span></a>.)</p>
 <p>No soy un gran admirador de <code>git stash</code>; Creo que normalmente es mejor aprovechar todas las oportunidades posibles para solidificar sus habilidades en torno a conceptos y operaciones centrales, por ejemplo, confirmar, posiblemente en una rama. Pero si desea utilizar <code>git stash</code>, esta oportunidad es la mejor posible.</p>
 <p><code>git stash</code> es una forma de almacenar temporalmente algunos cambios para eliminarlos. Ahora puedes hacer otra cosa, sin mucho problema. En nuestro caso, “hacer algo más” es obtener los cambios ascendentes con un simple y agradable <code>git pull</code>. Luego vuelves a aplicar, eliminas el stash y continúas donde lo dejaste.</p>
 <p>Para obtener más detalles sobre el almacenamiento, recomiendo</p>
@@ -818,10 +818,10 @@ El estado local es <code>A--B--(cambiosnoconfirmados)</code>.</p>
 <p>Cree una nueva rama temporal y confirme allí los cambios no confirmados. Consulte <code>main</code> y <code>git pull</code> para obtener cambios desde arriba. Ahora necesitas recuperar el trabajo de la confirmación en la rama temporal. Opciones:</p>
 <ul>
 <li>Fusiona la rama temporal en <code>main</code>.</li>
-<li>Cherry elige el compromiso de la rama temporal a <code>main</code>.</li>
+<li>Cherry elige la confirmación de la rama temporal a <code>main</code>.</li>
 </ul>
 <p>En cualquier caso, aún es posible que tengas que lidiar con conflictos de fusión.</p>
-<p>En cualquier caso, si se sintió obligado a comprometerse antes de estar listo o a aceptar una confirmación de fusión fea, puede realizar un reinicio mixto para “desconfirmar” pero mantener los cambios en <code>main</code> o seguir modificando hasta que esté satisfecho con el comprometerse.</p>
+<p>En cualquier caso, si se sintió obligado a confirmar antes de estar listo o a aceptar una confirmación de fusión fea, puede realizar un reinicio mixto para “desconfirmar” pero mantener los cambios en <code>main</code> o seguir modificando hasta que esté satisfecho con la confirmación.</p>
 </section>
 </section>
 <section id="algunos-trabajos-locales-están-confirmados-otros-no." class="level2" data-number="29.4">
