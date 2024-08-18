@@ -1,6 +1,6 @@
 # Nuevo proyecto, GitHub primero {#sec-new-github-first}
 
-Creamos un nuevo Proyecto, con la secuencia preferida "Primero GitHub, luego RStudio". ¿Por qué preferimos esto? Porque este método de copiar el proyecto desde GitHub a su computadora también configura el repositorio local de Git para su extracción y envío inmediato. Debajo del capó, estamos haciendo "git clone".
+Creamos un nuevo Proyecto, con la secuencia preferida "Primero GitHub, luego RStudio". ¿Por qué preferimos esto? Porque este método de copiar el proyecto desde GitHub a su computadora también configura el repositorio local de Git para su importación y envío inmediato. Debajo del capó, estamos haciendo "git clone".
 
 De hecho, ya hiciste esto antes durante la configuración (@sec-rstudio-git-github). Lo volvemos a hacer, *con sentimiento*.
 
@@ -189,7 +189,7 @@ Haga clic en el botón azul "Confirmar". Aparecerá una ventana emergente. Edite
 
 Haga clic en el botón azul "Confirmar".
 
-## Extraer de GitHub
+## Importar de GitHub
 
 De vuelta en RStudio localmente...
 

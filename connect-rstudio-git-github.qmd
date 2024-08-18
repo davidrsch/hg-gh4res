@@ -1,6 +1,6 @@
 # Conectar RStudio a Git y GitHub {#sec-rstudio-git-github}
 
-Aquí verificamos que RStudio puede emitir comandos Git en su nombre. Suponiendo que haya conseguido que Git local se comunique con GitHub, esto significa que también podrá extraer y enviar a GitHub desde RStudio.
+Aquí verificamos que RStudio puede emitir comandos Git en su nombre. Suponiendo que haya conseguido que Git local se comunique con GitHub, esto significa que también podrá importar y enviar a GitHub desde RStudio.
 
 En capítulos posteriores y en talleres en vivo, revisamos estas operaciones con mucha más explicación.
 
@@ -14,7 +14,7 @@ Suponemos lo siguiente:
 -   Has instalado/actualizado R y RStudio (@sec-install-r-rstudio).
 -   Has instalado Git (@sec-install-git).
 -   Te has presentado a Git (@sec-hello-git).
--   Has confirmado que puedes enviar/extraer desde GitHub desde la línea de comando (@sec-push-pull-github).
+-   Has confirmado que puedes enviar/importar desde GitHub desde la línea de comando (@sec-push-pull-github).
 
 También necesitarás un repositorio de prueba en GitHub. Si no tiene un repositorio de prueba adecuado en GitHub, siga las instrucciones de la siguiente sección.
 

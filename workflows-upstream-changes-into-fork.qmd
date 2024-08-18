@@ -109,7 +109,7 @@ Esta es una señal de que ha tomado algunas decisiones lamentables.
 
 Le recomiendo que [nunca haga sus propias confirmaciones con la rama predeterminada de una bifurcación](#sec-fork-dont-touch-main) o con cualquier rama de la que no sea (co)propietario efectivamente. Sin embargo, si ya lo ha hecho, le explicamos cómo solucionar el problema en [Um, ¿qué pasa si toco `main`?](#sec-touched-main).
 
-## Opción de sincronización 1: extraiga los cambios desde `upstream` y luego envíelos a `origin`
+## Opción de sincronización 1: importe los cambios desde `upstream` y luego envíelos a `origin`
 
 Ahora estamos listos para incorporar los cambios que no tenemos del repositorio fuente `DUEÑO/REPO` a nuestra copia local.
 
@@ -117,7 +117,7 @@ Ahora estamos listos para incorporar los cambios que no tenemos del repositorio 
 git pull upstream main --ff-only
 ```
 
-Esto dice: "extraiga los cambios del control remoto conocido como `upstream` a la rama `main` de mi repositorio local". Estoy siendo explícito sobre el control remoto (`upstream`) y la rama (`main`) en este caso, tanto para hacerlo más claro como para que este comando sea robusto para configuraciones de Git a nivel de repositorio y de usuario. Pero si ha seguido nuestras recomendaciones de configuración, no es necesario que sea tan explícito.
+Esto dice: "importe los cambios del control remoto conocido como `upstream` a la rama `main` de mi repositorio local". Estoy siendo explícito sobre el control remoto (`upstream`) y la rama (`main`) en este caso, tanto para hacerlo más claro como para que este comando sea robusto para configuraciones de Git a nivel de repositorio y de usuario. Pero si ha seguido nuestras recomendaciones de configuración, no es necesario que sea tan explícito.
 
 También **recomiendo encarecidamente** usar el indicador `--ff-only` en este caso, para que también diga "si hice mis propias confirmaciones con `main`, por favor oblígueme a enfrentar este problema AHORA". Así es como se ve si no es posible realizar una combinación de avance rápido:
 
@@ -146,7 +146,7 @@ git push origin main
 
 Si ha seguido nuestros consejos de configuración, realmente necesita ser así de explícito para poder enviar al `origin` (no al `upstream`).
 
-## Opción de sincronización 2: sincroniza tu bifurcación en GitHub, extrae los cambios del `origen` al repositorio local
+## Opción de sincronización 2: sincroniza tu bifurcación en GitHub, importe los cambios del `origen` al repositorio local
 
 Durante muchos años, esto no fue posible, aunque muchos usuarios de GitHub deseaban esta característica. Afortunadamente, ahora es posible sincronizar una bifurcación con su repositorio de origen en el navegador, es decir, realizar la sincronización entre los 2 repositorios de GitHub. La documentación oficial de GitHub para esto es [Sincronizar una rama bifurcada desde la interfaz de usuario web](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-web-ui).
 
@@ -176,7 +176,7 @@ Una vez que esté listo para continuar, haga clic en "Sync fork" en la esquina s
 
 Si ha realizado confirmaciones en la rama predeterminada de su bifurcación, lo cual [desaconsejamos encarecidamente](#sec-fork-dont-touch-main), esto puede resultar en una confirmación de fusión (o incluso conflictos de fusión). Si está sufriendo debido a las confirmaciones que realizó en `main` y está más allá de la ayuda que describimos a continuación, considere eliminar su bifurcación y repositorio local y comenzar de nuevo con [Bifurcar y clonar](#sec-fork-and-clone). Vive y aprende.
 
-Una vez que haya sincronizado exitosamente la rama predeterminada de `TU/REPO` con la rama predeterminada de `PROPIETARIO/REPO`, probablemente desee hacer lo mismo con su repositorio local. Dado que están sincronizados, puede extraerlos desde `upstream` u `origin`.
+Una vez que haya sincronizado exitosamente la rama predeterminada de `TU/REPO` con la rama predeterminada de `PROPIETARIO/REPO`, probablemente desee hacer lo mismo con su repositorio local. Dado que están sincronizados, puede importarlos desde `upstream` u `origin`.
 
 En el shell, con la rama predeterminada desprotegida, ejecute uno de estos:
 
@@ -185,7 +185,7 @@ git pull upstream main --ff-only
 git pull origin main --ff-only
 ```
 
-Si ha seguido nuestros consejos de configuración, en realidad no necesita especificar el control remoto y la rama, porque esta rama está configurada para extraer desde `upstream`. Por las mismas razones que antes, es una buena idea incluir la opción `--ff-only`. Si ha realizado confirmaciones locales con `main`, esto hará surgir el problema, que se resuelve en la siguiente sección.
+Si ha seguido nuestros consejos de configuración, en realidad no necesita especificar el control remoto y la rama, porque esta rama está configurada para importar desde `upstream`. Por las mismas razones que antes, es una buena idea incluir la opción `--ff-only`. Si ha realizado confirmaciones locales con `main`, esto hará surgir el problema, que se resuelve en la siguiente sección.
 
 ## Um, ¿qué pasa si toco `main`? {#sec-touched-main}
 
@@ -231,7 +231,7 @@ Tendrás que descubrir cómo transmitir `C` en Git-speak. Especifíquelo en rela
 
 <!-- TODO: come back when there is content about referring to previous states. -->
 
-El historial de su rama `main` ahora es compatible con su historial en `PROPIETARIO/REPO`. Las instrucciones anteriores para extraer cambios desde `upstream` ahora deberían funcionar. Un avance rápido debería tener éxito.
+El historial de su rama `main` ahora es compatible con su historial en `PROPIETARIO/REPO`. Las instrucciones anteriores para importar cambios desde `upstream` ahora deberían funcionar. Un avance rápido debería tener éxito.
 
 ``` bash
 git pull upstream main --ff-only

@@ -1,6 +1,6 @@
 # Remotos {#sec-git-remotes}
 
-Los repositorios remotos son versiones de su proyecto que están alojadas en Internet o en otra red. Un solo proyecto puede tener 1, 2 o incluso cientos de controles remotos. Usted extrae los cambios de otros desde los controles remotos y envía sus cambios a los controles remotos.
+Los repositorios remotos son versiones de su proyecto que están alojadas en Internet o en otra red. Un solo proyecto puede tener 1, 2 o incluso cientos de controles remotos. Usted importa los cambios de otros desde los controles remotos y envía sus cambios a los controles remotos.
 
 ```{r setup, include = FALSE}
 has_bash <- Sys.which('bash') != '' && .Platform$OS.type != 'windows'
@@ -32,7 +32,7 @@ git fetch happygit
 
 Barra lateral sobre apodos: existe una fuerte convención para usar `origin` como apodo de su control remoto principal. En este punto, es común que el control remoto principal de un repositorio esté alojado en GitHub (o GitLab o Bitbucket). Es tentador utilizar un apodo más descriptivo (como `github`), pero es posible que valga la pena seguir la convención. Hace que su configuración sea más fácil de entender para otros y para que usted transfiera información que lee en la documentación, en Stack Overflow o en blogs.
 
-Una razón común para agregar un segundo control remoto es cuando ha realizado una "bifurcación y clonación" de un repositorio y su copia personal (su bifurcación) está configurada como el control remoto `origin`. Con el tiempo, querrás extraer los cambios del repositorio original. Es común utilizar `upstream` como apodo para este control remoto.
+Una razón común para agregar un segundo control remoto es cuando ha realizado una "bifurcación y clonación" de un repositorio y su copia personal (su bifurcación) está configurada como el control remoto `origin`. Con el tiempo, querrás importar los cambios del repositorio original. Es común utilizar `upstream` como apodo para este control remoto.
 
 ``` console
 git remote add upstream https://github.com/TRUE_OWNER/REPO.git

@@ -1,6 +1,6 @@
 # Importar, pero tienes trabajo local {#sec-pull-tricky}
 
-Problema: desea extraer cambios desde el upstream, pero ha realizado algunos trabajos nuevos localmente desde la última vez que los realizó. Esto suele surgir porque [lo que realmente quieres hacer es *enviar*](#sec-push-rejected), pero Git no te lo permitirá hasta que incorpores por primera vez los cambios anteriores.
+Problema: desea importar cambios desde el upstream, pero ha realizado algunos trabajos nuevos localmente desde la última vez que los realizó. Esto suele surgir porque [lo que realmente quieres hacer es *enviar*](#sec-push-rejected), pero Git no te lo permitirá hasta que incorpores por primera vez los cambios anteriores.
 
 En aras de la simplicidad, supongamos que estamos tratando con la rama `upstream` y la remota se llama `origin`.
 
@@ -40,7 +40,7 @@ El estado local es `A--B--(cambiosnoconfirmados)`.
 Hay dos escenarios felices en los que `git pull` "simplemente funcionará":
 
 -   Ha introducido archivos completamente nuevos que no existen en la rama remota y, por lo tanto, no es posible que tengan cambios conflictivos. ¡Estás de suerte! Puedes simplemente `git pull`.
--   Los archivos afectados por su trabajo local tienen CERO superposición con los archivos afectados por los cambios que necesita extraer del control remoto. ¡Tú también estás de suerte! Puedes simplemente `git pull`.
+-   Los archivos afectados por su trabajo local tienen CERO superposición con los archivos afectados por los cambios que necesita importar del control remoto. ¡Tú también estás de suerte! Puedes simplemente `git pull`.
 
 Resumen de estos felices escenarios de `git pull`:
 

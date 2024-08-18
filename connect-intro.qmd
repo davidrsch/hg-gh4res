@@ -6,7 +6,7 @@ Esto se superpone mucho con algunos flujos de trabajo básicos que revisaremos m
 
 Desafortunadamente, tenemos que adelantar una tarea bastante complicada, que es decidir si comunicarnos con GitHub a través de HTTPS o SSH y configurar algunas credenciales en consecuencia. En [Token de acceso personal para HTTPS](#sec-https-pat) analizamos cómo elegir entre HTTPS y SSH y luego explicamos cómo obtener un token de acceso personal, que se usa con HTTPS. O, alternativamente, te ayudaremos a [Configurar claves para SSH](#sec-ssh-keys).
 
-Una vez que tenemos nuestras credenciales ordenadas, en [Conectar a GitHub](#sec-push-pull-github), usamos Git en el shell para asegurarnos de que pueda clonar un repositorio desde GitHub y establecer comunicaciones bidireccionales, es decir, extraer y enviar.
+Una vez que tenemos nuestras credenciales ordenadas, en [Conectar a GitHub](#sec-push-pull-github), usamos Git en el shell para asegurarnos de que pueda clonar un repositorio desde GitHub y establecer comunicaciones bidireccionales, es decir, importar y enviar.
 
 En [Conectar RStudio a Git y GitHub](#sec-rstudio-git-github) confirmamos que RStudio puede trabajar con su instalación de Git para realizar operaciones locales y comunicarse con GitHub.
 
