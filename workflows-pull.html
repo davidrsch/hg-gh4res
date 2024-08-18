@@ -631,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Problema: desea extraer cambios desde el upstream, pero ha realizado algunos trabajos nuevos localmente desde la última vez que los realizó. Esto suele surgir porque <a href="workflows-push-rejected.html">lo que realmente quieres hacer es <em>enviar</em></a>, pero Git no te lo permitirá hasta que incorpores por primera vez los cambios anteriores.</p>
+<p>Problema: desea importar cambios desde el upstream, pero ha realizado algunos trabajos nuevos localmente desde la última vez que los realizó. Esto suele surgir porque <a href="workflows-push-rejected.html">lo que realmente quieres hacer es <em>enviar</em></a>, pero Git no te lo permitirá hasta que incorpores por primera vez los cambios anteriores.</p>
 <p>En aras de la simplicidad, supongamos que estamos tratando con la rama <code>upstream</code> y la remota se llama <code>origin</code>.</p>
 <p>Historial reciente de confirmaciones de <code>origin/main</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">A--B--C</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -655,7 +655,7 @@ El estado local es <code>A--B--(cambiosnoconfirmados)</code>.</p>
 <p>Hay dos escenarios felices en los que <code>git pull</code> “simplemente funcionará”:</p>
 <ul>
 <li>Ha introducido archivos completamente nuevos que no existen en la rama remota y, por lo tanto, no es posible que tengan cambios conflictivos. ¡Estás de suerte! Puedes simplemente <code>git pull</code>.</li>
-<li>Los archivos afectados por su trabajo local tienen CERO superposición con los archivos afectados por los cambios que necesita extraer del control remoto. ¡Tú también estás de suerte! Puedes simplemente <code>git pull</code>.</li>
+<li>Los archivos afectados por su trabajo local tienen CERO superposición con los archivos afectados por los cambios que necesita importar del control remoto. ¡Tú también estás de suerte! Puedes simplemente <code>git pull</code>.</li>
 </ul>
 <p>Resumen de estos felices escenarios de <code>git pull</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>                 <span class="ex">Remote:</span> A--B--C</span>

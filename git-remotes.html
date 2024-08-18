@@ -598,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Los repositorios remotos son versiones de su proyecto que están alojadas en Internet o en otra red. Un solo proyecto puede tener 1, 2 o incluso cientos de controles remotos. Usted extrae los cambios de otros desde los controles remotos y envía sus cambios a los controles remotos.</p>
+</header><p>Los repositorios remotos son versiones de su proyecto que están alojadas en Internet o en otra red. Un solo proyecto puede tener 1, 2 o incluso cientos de controles remotos. Usted importa los cambios de otros desde los controles remotos y envía sus cambios a los controles remotos.</p>
 <section id="listar-qué-controles-remotos-existen" class="level2" data-number="23.1"><h2 data-number="23.1" class="anchored" data-anchor-id="listar-qué-controles-remotos-existen">
 <span class="header-section-number">23.1</span> Listar qué controles remotos existen</h2>
 <p><code>git remote</code> enumera los nombres de los controles remotos disponibles, pero generalmente es más útil ver a qué URL corresponde cada nota (con <code>-v</code>).</p>
@@ -617,7 +617,7 @@ origin  https://github.com/davidrsch/hg-gh4res (push)</code></pre>
 <p>Nota: cuando agregas un control remoto, le asignas un apodo (aquí <code>happygit</code>), que puedes usar en los comandos de git en lugar de la URL completa.</p>
 <pre class="console"><code>git fetch happygit</code></pre>
 <p>Barra lateral sobre apodos: existe una fuerte convención para usar <code>origin</code> como apodo de su control remoto principal. En este punto, es común que el control remoto principal de un repositorio esté alojado en GitHub (o GitLab o Bitbucket). Es tentador utilizar un apodo más descriptivo (como <code>github</code>), pero es posible que valga la pena seguir la convención. Hace que su configuración sea más fácil de entender para otros y para que usted transfiera información que lee en la documentación, en Stack Overflow o en blogs.</p>
-<p>Una razón común para agregar un segundo control remoto es cuando ha realizado una “bifurcación y clonación” de un repositorio y su copia personal (su bifurcación) está configurada como el control remoto <code>origin</code>. Con el tiempo, querrás extraer los cambios del repositorio original. Es común utilizar <code>upstream</code> como apodo para este control remoto.</p>
+<p>Una razón común para agregar un segundo control remoto es cuando ha realizado una “bifurcación y clonación” de un repositorio y su copia personal (su bifurcación) está configurada como el control remoto <code>origin</code>. Con el tiempo, querrás importar los cambios del repositorio original. Es común utilizar <code>upstream</code> como apodo para este control remoto.</p>
 <pre class="console"><code>git remote add upstream https://github.com/TRUE_OWNER/REPO.git</code></pre>
 </section><section id="obteniendo-datos-de-controles-remotos" class="level2" data-number="23.3"><h2 data-number="23.3" class="anchored" data-anchor-id="obteniendo-datos-de-controles-remotos">
 <span class="header-section-number">23.3</span> Obteniendo datos de controles remotos</h2>
