@@ -49,9 +49,9 @@ http://learngitbranching.js.org
 Una serie de tutoriales sobre el flujo de trabajo de Git http://vallandingham.me/git-workflow.html
 
 -   Parte 1: Ramas de funciones
--   Parte 2: Revisión de solicitudes de extracción
--   Parte 3: Revisión de solicitudes de extracción localmente
--   Parte 4: Fusionar solicitudes de extracción
+-   Parte 2: Revisión de solicitudes de cambio
+-   Parte 3: Revisión de solicitudes de cambio localmente
+-   Parte 4: Fusionar solicitudes de cambio
 
 Git desde adentro hacia afuera\
 https://codewords.recurse.com/issues/two/git-from-the-inside-out
@@ -86,7 +86,7 @@ Ser un usuario útil
 
 -   manténgase informado sobre: desarrollo
 -   use problemas para informes de errores, solicitudes de funciones
--   hacer solicitudes de extracción
+-   hacer solicitudes de cambio
 
 ## Flujo de trabajo y psicología
 
@@ -94,7 +94,7 @@ Estrés de trabajar al aire libre
 
 Flujos de trabajo para grupo de 1, 2, 5, 10
 
--   Bifurcación y extracción frente a repositorio compartido
+-   Bifurcación e importar vs repositorio compartido
 
     -   <https://help.github.com/articles/about-collaborative-development-models/>
     -   <https://help.github.com/articles/using-pull-requests/>

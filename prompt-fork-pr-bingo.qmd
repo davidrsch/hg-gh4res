@@ -20,7 +20,7 @@ Tu misión:
 -   Si se siente virtuoso, ejecute las pruebas y revise el paquete. ¡Pídenos ayuda! O vivir peligrosamente y evitar esto.
 -   ¡Confirme!
 -   Vuelva a enviar sus cambios a su copia del repositorio en GitHub.
--   Realizar una solicitud de extracción al repositorio principal de "bingo".
+-   Realizar una solicitud de cambio al repositorio principal de "bingo".
 -   Si su tarjeta es apropiada, fusionaremos su solicitud y pasará a formar parte del paquete y estará disponible a través de la [aplicación Shiny](http://daattali.com/shiny/bingo/).
 
 **Inspiración especial para su uso**:

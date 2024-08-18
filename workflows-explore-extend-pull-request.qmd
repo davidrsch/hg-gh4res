@@ -1,12 +1,12 @@
 # Explorar y ampliar una solicitud de cambio {#sec-pr-extend}
 
-Escenario: mantiene un paquete R en GitHub con solicitudes de extracción (PR) de contribuyentes externos, p. Jane Doe, janedoe en GitHub. A veces es necesario experimentar con las relaciones públicas para poder brindar retroalimentación o decidir si fusionarse o no. Yendo más allá, a veces desea agregar algunas confirmaciones y luego fusionarlas. O tal vez simplemente haya algunos conflictos de fusión que requieran su atención local y personal. Supongamos también que desea que el autor de relaciones públicas original obtenga crédito por sus confirmaciones, es decir, desea preservar la historia y la procedencia, no solo las diferencias.
+Escenario: mantiene un paquete R en GitHub con solicitudes de cambio (PR) de contribuyentes externos, p. Jane Doe, janedoe en GitHub. A veces es necesario experimentar con las relaciones públicas para poder brindar retroalimentación o decidir si fusionarse o no. Yendo más allá, a veces desea agregar algunas confirmaciones y luego fusionarlas. O tal vez simplemente haya algunos conflictos de fusión que requieran su atención local y personal. Supongamos también que desea que el autor de relaciones públicas original obtenga crédito por sus confirmaciones, es decir, desea preservar la historia y la procedencia, no solo las diferencias.
 
 ¿Cómo se paga y posiblemente se extiende un PR externo?
 
 ## Actualización del futuro
 
-Las lecciones aprendidas aquí finalmente conducen a la familia de funciones `pr_*()` en uso. `pr_fetch()` y `pr_push()` son ahora mis caballos de batalla para explorar y ampliar las relaciones públicas. Puede leer más sobre las funciones de usethis para ayudar con las solicitudes de extracción en su propio artículo: [Ayudantes de solicitudes de cambios](https://usethis.r-lib.org/articles/pr-functions.html).
+Las lecciones aprendidas aquí finalmente conducen a la familia de funciones `pr_*()` en uso. `pr_fetch()` y `pr_push()` son ahora mis caballos de batalla para explorar y ampliar las relaciones públicas. Puede leer más sobre las funciones de usethis para ayudar con las solicitudes de cambio en su propio artículo: [Ayudantes de solicitudes de cambios](https://usethis.r-lib.org/articles/pr-functions.html).
 
 ## Terminología
 
@@ -76,7 +76,7 @@ Preferio ocuparme de los conflictos de fusión solo *después* de haber examinad
 
 ## Consejo oficial de GitHub, versión 2
 
-GitHub tiene otro conjunto de instrucciones: [Consultar solicitudes de extracción localmente](https://help.github.com/articles/checking-out-pull-requests-locally/)
+GitHub tiene otro conjunto de instrucciones: [Consultar solicitudes de cambio localmente](https://help.github.com/articles/checking-out-pull-requests-locally/)
 
 Comienza haciendo referencia a las instrucciones de la Versión 1, pero continúa abordando una solicitud de cambio inactiva", definida como un solicitud "cuyo propietario dejó de responder o, más probablemente, eliminó su bifurcación".
 

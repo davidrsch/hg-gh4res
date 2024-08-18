@@ -161,7 +161,7 @@ A -- B -- C -- WIP* (6e884e6)
 
 Estoy mostrando deliberadamente dos historiales que parecen iguales, en términos de mensajes de confirmación. Pero el último SHA revela que en realidad son diferentes.
 
-Estás en un aprieto ahora, ya que no puedes hacer un simple enviar o importar. Una inserción será rechazada y una extracción probablemente dará lugar a una fusión que no desea.
+Estás en un aprieto ahora, ya que no puedes hacer un simple enviar o importar. Una inserción será rechazada e importar probablemente dará lugar a una fusión que no desea.
 
 Tienes dos opciones:
 

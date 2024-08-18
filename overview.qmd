@@ -6,7 +6,7 @@
 
 ## ¿Por qué Git?
 
-[Git](http://git-scm.com) es **siste de control de versión**. Su propósito original era ayudar a grupos de desarrolladores a trabajar en colaboración en grandes proyectos de software. Git gestiona la evolución de un conjunto de archivos, llamado **repositorio**, de una manera sensata y altamente estructurada. Si no tiene idea de lo que estoy hablando, considérelo como las funciones de "Seguimiento de cambios" de Microsoft Word con esteroides.
+[Git](http://git-scm.com) es un **sistema de control de versión**. Su propósito original era ayudar a grupos de desarrolladores a trabajar en colaboración en grandes proyectos de software. Git gestiona la evolución de un conjunto de archivos, llamado **repositorio**, de una manera sensata y altamente estructurada. Si no tiene idea de lo que estoy hablando, considérelo como las funciones de "Seguimiento de cambios" de Microsoft Word con esteroides.
 
 Git ha sido reutilizado por la comunidad científica de datos. Además de usarlo para el código fuente, lo usamos para administrar la variada colección de archivos que componen los proyectos típicos de análisis de datos, que a menudo consisten en datos, cifras, informes y, sí, código fuente.
 
@@ -78,7 +78,7 @@ Además de una interfaz de usuario bien diseñada, GitHub ofrece dos caracterís
     -   Los problemas se pueden asignar a personas (por ejemplo, para hacer) y etiquetarlos ("error" o "informe de progreso").
     -   Los problemas están estrechamente integrados con las confirmaciones y, por lo tanto, le permiten registrar *que los cambios en esta confirmación resuelven el problema que se discutió en esa edición*.
     -   Como nuevo usuario de GitHub, una de las cosas más productivas que puede hacer es utilizar los problemas de GitHub para proporcionar un informe de error claro o una solicitud de función para un paquete que utiliza.
--   **Solicitudes de extracción (Pull request).** Git permite que un proyecto tenga múltiples ramas de desarrollo independientes, con la idea de que algunas eventualmente deberían fusionarse nuevamente en la rama de desarrollo principal. Estos son términos técnicos de Git, pero es de esperar que también tengan sentido por sí solos. Una solicitud de extracción es una propuesta formal que dice: "Aquí hay algunos cambios que me gustaría realizar". Podría estar vinculado a un problema específico: "Relacionado con el n.º 14". o "Soluciona n.º 56". GitHub facilita y preserva la discusión de la propuesta, de manera integral y línea por línea.
+-   **Solicitudes de cambio (Pull request).** Git permite que un proyecto tenga múltiples ramas de desarrollo independientes, con la idea de que algunas eventualmente deberían fusionarse nuevamente en la rama de desarrollo principal. Estos son términos técnicos de Git, pero es de esperar que también tengan sentido por sí solos. Una solicitud de cambio es una propuesta formal que dice: "Aquí hay algunos cambios que me gustaría realizar". Podría estar vinculado a un problema específico: "Relacionado con el n.º 14". o "Soluciona n.º 56". GitHub facilita y preserva la discusión de la propuesta, de manera integral y línea por línea.
 
 ## ¿Qué tiene de especial usar R con Git y GitHub?
 

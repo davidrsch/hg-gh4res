@@ -1,6 +1,6 @@
 # Bifurcar y clonar {#sec-fork-and-clone}
 
-Utilice **bifurcar y clonar** para obtener una copia del repositorio de otra persona si existe alguna posibilidad de que desee proponer un cambio al propietario, es decir, enviar una solicitud de extracción. Si está dudando entre "simplemente clonar" y "bifurcar y clonar", opte por "bifurcar y clonar".
+Utilice **bifurcar y clonar** para obtener una copia del repositorio de otra persona si existe alguna posibilidad de que desee proponer un cambio al propietario, es decir, enviar una solicitud de cambio. Si está dudando entre "simplemente clonar" y "bifurcar y clonar", opte por "bifurcar y clonar".
 
 Queremos lograr esto:
 
@@ -84,7 +84,7 @@ git fetch upstream
 
 Esto es opcional pero muy recomendable para la mayoría de situaciones de bifurcación y clonación. Vamos a configurar `upstream/main` desde el repositorio de origen como la rama de seguimiento ascendente del `main` local. (Si su sucursal predeterminada tiene un nombre diferente, sustitúyalo según corresponda.)
 
-Esto es deseable para que un simple `git pull` extraiga **del repositorio fuente**, no de su bifurcación. También significa que un simple `git push` (intentará) enviar al repositorio de origen, que casi siempre será rechazado ya que probablemente no tenga permiso. Esta falla le alertará del hecho de que está haciendo algo cuestionable, aunque aún será fácil echarse atrás.
+Esto es deseable para que un simple `git pull` importe cambios **del repositorio fuente**, no de su bifurcación. También significa que un simple `git push` (intentará) enviar al repositorio de origen, que casi siempre será rechazado ya que probablemente no tenga permiso. Esta falla le alertará del hecho de que está haciendo algo cuestionable, aunque aún será fácil echarse atrás.
 
 Primero, obtenga información para el control remoto `upstream`. Esto es especialmente importante si acaba de configurar `upstream` por primera vez.
 
@@ -156,7 +156,7 @@ De todos modos, únete a este proyecto, sea lo que sea que eso signifique para t
 
 Explore el nuevo repositorio de alguna manera adecuada. Si es un paquete, puede ejecutar las pruebas o verificarlo. Si se trata de un proyecto de análisis de datos, ejecute un script o renderice un Rmd. Convéncete de que has recibido el código.
 
-Ahora debería estar en la posición perfecta para sincronizarse con los desarrollos en curso en el repositorio de origen y proponer nuevos cambios a través de una solicitud de extracción desde su bifurcación.
+Ahora debería estar en la posición perfecta para sincronizarse con los desarrollos en curso en el repositorio de origen y proponer nuevos cambios a través de una solicitud de cambios desde su bifurcación.
 
 ![](img/fork-them-pull-request.jpeg){fig-align="center" fig-alt = "Fork and clone, ideal setup." width="60%"}
 
@@ -207,6 +207,6 @@ Si realiza alguna confirmación en su repositorio local, **recomiendo encarecida
 
 Le recomiendo **enfáticamente** que no realice confirmaciones con el `main` de un repositorio que haya bifurcado. Si se confirma `main` en un repositorio que no es de su propiedad, se crea una divergencia entre el historial de esa rama en el repositorio de origen y en su repositorio. De esto no surgirá más que dolor. (Si ya ha hecho esto, discutiremos cómo solucionar la situación en [Um, ¿qué pasa si toco `main`?](#sec-touched-main).)
 
-Cuando tratas `main` como de solo lectura, hace la vida mucho más fácil cuando quieres [extraer el trabajo ascendente](#sec-upstream-changes) en tu copia. El `DUEÑO` de `REPO` también estará más feliz de recibir su solicitud de extracción de una rama que no sea `main`.
+Cuando tratas `main` como de solo lectura, hace la vida mucho más fácil cuando quieres [importar upstream](#sec-upstream-changes) en tu copia. El `DUEÑO` de `REPO` también estará más feliz de recibir su solicitud de cambio de una rama que no sea `main`.
 
 Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: [¿Por qué es una mala práctica confirmar en la rama maestra de su bifurcación?](https://stackoverflow.com/q/33749832).

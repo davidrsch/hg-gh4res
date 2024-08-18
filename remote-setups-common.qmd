@@ -33,7 +33,7 @@ Un siguiente paso común es asociar un repositorio local con una copia en GitHub
 
 ![](img/ours-you.jpeg){fig-align="center" fig-alt="Setup described as 'ours'" width="60%"}
 
-Se configura un control remoto llamado `origin` y usted tiene permiso para enviar (y extraer) `origin`. (Es por eso que `origin` está coloreado en azul y hay flechas sólidas que van en ambas direcciones). El control remoto `origin` en GitHub es lo que llamaremos un repositorio **fuente**, lo que significa que no es una bifurcación (es decir, una copia). de cualquier otra cosa en GitHub. En este caso, `origin` es también lo que llamaremos su repositorio **principal**, lo que significa que es el control remoto principal con el que interactúa en GitHub (para este proyecto).
+Se configura un control remoto llamado `origin` y usted tiene permiso para enviar (e importar) `origin`. (Es por eso que `origin` está coloreado en azul y hay flechas sólidas que van en ambas direcciones). El control remoto `origin` en GitHub es lo que llamaremos un repositorio **fuente**, lo que significa que no es una bifurcación (es decir, una copia). de cualquier otra cosa en GitHub. En este caso, `origin` es también lo que llamaremos su repositorio **principal**, lo que significa que es el control remoto principal con el que interactúa en GitHub (para este proyecto).
 
 Cómo lograr si el repositorio local existe primero:
 
@@ -60,7 +60,7 @@ Aquí hay una variación sobre "ours" que es equivalente en la práctica.
 
 ![](img/ours-them.jpeg){fig-align="center" fig-alt="Setup described as 'ours'" width="60%"}
 
-Se configura un control remoto llamado `origin` y puede enviar (y extraer) `origin`. Como se indicó anteriormente, `origin` es un repositorio **fuente**, lo que significa que no es una bifurcación (o copia) de nada más en GitHub. Sin embargo, el control remoto `origin` no es de su propiedad. En cambio, es propiedad de otro usuario u organización de GitHub. `origin` también es su repositorio **principal** en esta configuración.
+Se configura un control remoto llamado `origin` y puede enviar (e importar) `origin`. Como se indicó anteriormente, `origin` es un repositorio **fuente**, lo que significa que no es una bifurcación (o copia) de nada más en GitHub. Sin embargo, el control remoto `origin` no es de su propiedad. En cambio, es propiedad de otro usuario u organización de GitHub. `origin` también es su repositorio **principal** en esta configuración.
 
 ¿Como sucedió esto?
 
@@ -96,7 +96,7 @@ Esta es una configuración ideal si desea realizar una solicitud de fusión y, e
 
 ![](img/fork-them.jpeg){fig-align="center" fig-alt="Setup described as 'fork'" width="60%"}
 
-Esto muestra un "fork-and-clone" exitoso. Su repositorio local puede extraer cambios del repositorio de origen, que está configurado como "upstream", al cual no puede enviar cambios (pero sí puede importarlos). Tienes un fork del repositorio fuente (una copia muy especial, en GitHub) y está configurado como `origin`. `origin` es su repositorio principal. Puede enviar e importar desde el `origin`. Puede realizar una solicitud de fusión al repositorio de origen a través de su bifurcación.
+Esto muestra un "fork-and-clone" exitoso. Su repositorio local puede importar cambios del repositorio de origen, que está configurado como "upstream", al cual no puede enviar cambios (pero sí puede importarlos). Tienes un fork del repositorio fuente (una copia muy especial, en GitHub) y está configurado como `origin`. `origin` es su repositorio principal. Puede enviar e importar desde el `origin`. Puede realizar una solicitud de fusión al repositorio de origen a través de su bifurcación.
 
 usethis describe esta configuración como "fork".
 
@@ -137,7 +137,7 @@ Esto es lo que sucede cuando haces bifurcación y clonación y *solo* haces bifu
 
 -   Clonar su propia bifurcación, ya sea mediante `git clone` en el shell o mediante un cliente Git, como RStudio. Y luego parando aquí.
 
-Si solo planea realizar una solicitud de extracción, esta configuración está bien. Cuando finalice el intercambio, elimine su repositorio local y su bifurcación y continúe con su vida. Siempre puedes volver a bifurcar en el futuro. Pero si su solicitud de extracción permanece abierta por un tiempo o si planea realizar contribuciones repetidas, deberá incorporar los desarrollos en curso en el repositorio fuente a su copia local.
+Si solo planea realizar una solicitud de cambios, esta configuración está bien. Cuando finalice el intercambio, elimine su repositorio local y su bifurcación y continúe con su vida. Siempre puedes volver a bifurcar en el futuro. Pero si su solicitud de cambios permanece abierta por un tiempo o si planea realizar contribuciones repetidas, deberá incorporar los desarrollos en curso en el repositorio fuente a su copia local.
 
 Puedes convertir esto en la [configuración de bifurcación](#sec-fork-them) ideal así:
 

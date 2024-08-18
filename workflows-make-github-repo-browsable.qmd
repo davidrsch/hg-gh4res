@@ -198,7 +198,7 @@ La navegabilidad de GitHub hace que su trabajo sea accesible para las personas q
 
 ¡Les encanta eso!
 
-Puede crear un enlace que lleve a las personas directamente a una interfaz de edición en el navegador. Detrás de escena, suponiendo que la persona que hizo clic haya iniciado sesión en GitHub pero no sea usted, esto creará una bifurcación en su cuenta y le enviará una solicitud de extracción. Cuando hago clic en el enlace a continuación, puedo enviarme directamente al `master` para este repositorio.
+Puede crear un enlace que lleve a las personas directamente a una interfaz de edición en el navegador. Detrás de escena, suponiendo que la persona que hizo clic haya iniciado sesión en GitHub pero no sea usted, esto creará una bifurcación en su cuenta y le enviará una solicitud de cambio. Cuando hago clic en el enlace a continuación, puedo enviarme directamente al `master` para este repositorio.
 
 [¡HAGA CLIC AQUÍ para sugerir una edición de esta página!](https://github.com/jennybc/happy-git-with-r/edit/master/workflows-make-github-repo-browsable.Rmd)
 
