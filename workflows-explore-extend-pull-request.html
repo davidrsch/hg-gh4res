@@ -598,11 +598,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Escenario: mantiene un paquete R en GitHub con solicitudes de extracción (PR) de contribuyentes externos, p.&nbsp;Jane Doe, janedoe en GitHub. A veces es necesario experimentar con las relaciones públicas para poder brindar retroalimentación o decidir si fusionarse o no. Yendo más allá, a veces desea agregar algunas confirmaciones y luego fusionarlas. O tal vez simplemente haya algunos conflictos de fusión que requieran su atención local y personal. Supongamos también que desea que el autor de relaciones públicas original obtenga crédito por sus confirmaciones, es decir, desea preservar la historia y la procedencia, no solo las diferencias.</p>
+</header><p>Escenario: mantiene un paquete R en GitHub con solicitudes de cambio (PR) de contribuyentes externos, p.&nbsp;Jane Doe, janedoe en GitHub. A veces es necesario experimentar con las relaciones públicas para poder brindar retroalimentación o decidir si fusionarse o no. Yendo más allá, a veces desea agregar algunas confirmaciones y luego fusionarlas. O tal vez simplemente haya algunos conflictos de fusión que requieran su atención local y personal. Supongamos también que desea que el autor de relaciones públicas original obtenga crédito por sus confirmaciones, es decir, desea preservar la historia y la procedencia, no solo las diferencias.</p>
 <p>¿Cómo se paga y posiblemente se extiende un PR externo?</p>
 <section id="actualización-del-futuro" class="level2" data-number="33.1"><h2 data-number="33.1" class="anchored" data-anchor-id="actualización-del-futuro">
 <span class="header-section-number">33.1</span> Actualización del futuro</h2>
-<p>Las lecciones aprendidas aquí finalmente conducen a la familia de funciones <code>pr_*()</code> en uso. <code>pr_fetch()</code> y <code>pr_push()</code> son ahora mis caballos de batalla para explorar y ampliar las relaciones públicas. Puede leer más sobre las funciones de usethis para ayudar con las solicitudes de extracción en su propio artículo: <a href="https://usethis.r-lib.org/articles/pr-functions.html">Ayudantes de solicitudes de cambios</a>.</p>
+<p>Las lecciones aprendidas aquí finalmente conducen a la familia de funciones <code>pr_*()</code> en uso. <code>pr_fetch()</code> y <code>pr_push()</code> son ahora mis caballos de batalla para explorar y ampliar las relaciones públicas. Puede leer más sobre las funciones de usethis para ayudar con las solicitudes de cambio en su propio artículo: <a href="https://usethis.r-lib.org/articles/pr-functions.html">Ayudantes de solicitudes de cambios</a>.</p>
 </section><section id="terminología" class="level2" data-number="33.2"><h2 data-number="33.2" class="anchored" data-anchor-id="terminología">
 <span class="header-section-number">33.2</span> Terminología</h2>
 <p>Vocabulario que utilizo en todo momento.</p>
@@ -653,7 +653,7 @@ git merge --no-ff janedoe-master</code></pre>
 <p>Preferio ocuparme de los conflictos de fusión solo <em>después</em> de haber examinado la solicitud y resolver los conflictos localmente, no en GitHub. Así que no uso este flujo de trabajo exacto.</p>
 </section><section id="consejo-oficial-de-github-versión-2" class="level2" data-number="33.4"><h2 data-number="33.4" class="anchored" data-anchor-id="consejo-oficial-de-github-versión-2">
 <span class="header-section-number">33.4</span> Consejo oficial de GitHub, versión 2</h2>
-<p>GitHub tiene otro conjunto de instrucciones: <a href="https://help.github.com/articles/checking-out-pull-requests-locally/">Consultar solicitudes de extracción localmente</a></p>
+<p>GitHub tiene otro conjunto de instrucciones: <a href="https://help.github.com/articles/checking-out-pull-requests-locally/">Consultar solicitudes de cambio localmente</a></p>
 <p>Comienza haciendo referencia a las instrucciones de la Versión 1, pero continúa abordando una solicitud de cambio inactiva”, definida como un solicitud “cuyo propietario dejó de responder o, más probablemente, eliminó su bifurcación”.</p>
 <p>Es posible que este flujo de trabajo NO otorgue crédito al autor de relaciones públicas original (la próxima vez que sea fácil probar esto, lo actualizaré con una respuesta definitiva). Nunca lo he usado palabra por palabra porque nunca he tenido este problema exacto con respecto a la bifurcación eliminada.</p>
 </section><section id="consejo-oficial-de-github-versión-3" class="level2" data-number="33.5"><h2 data-number="33.5" class="anchored" data-anchor-id="consejo-oficial-de-github-versión-3">

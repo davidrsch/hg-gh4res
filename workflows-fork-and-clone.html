@@ -603,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Utilice <strong>bifurcar y clonar</strong> para obtener una copia del repositorio de otra persona si existe alguna posibilidad de que desee proponer un cambio al propietario, es decir, enviar una solicitud de extracción. Si está dudando entre “simplemente clonar” y “bifurcar y clonar”, opte por “bifurcar y clonar”.</p>
+</header><p>Utilice <strong>bifurcar y clonar</strong> para obtener una copia del repositorio de otra persona si existe alguna posibilidad de que desee proponer un cambio al propietario, es decir, enviar una solicitud de cambio. Si está dudando entre “simplemente clonar” y “bifurcar y clonar”, opte por “bifurcar y clonar”.</p>
 <p>Queremos lograr esto:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/fork-and-clone.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Fork and clone."></p>
@@ -669,7 +669,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="sec-fork-set-upstream-tracking-main" class="level3" data-number="31.1.3"><h3 data-number="31.1.3" class="anchored" data-anchor-id="sec-fork-set-upstream-tracking-main">
 <span class="header-section-number">31.1.3</span> Configurar la rama de seguimiento ascendente para la rama predeterminada</h3>
 <p>Esto es opcional pero muy recomendable para la mayoría de situaciones de bifurcación y clonación. Vamos a configurar <code>upstream/main</code> desde el repositorio de origen como la rama de seguimiento ascendente del <code>main</code> local. (Si su sucursal predeterminada tiene un nombre diferente, sustitúyalo según corresponda.)</p>
-<p>Esto es deseable para que un simple <code>git pull</code> extraiga <strong>del repositorio fuente</strong>, no de su bifurcación. También significa que un simple <code>git push</code> (intentará) enviar al repositorio de origen, que casi siempre será rechazado ya que probablemente no tenga permiso. Esta falla le alertará del hecho de que está haciendo algo cuestionable, aunque aún será fácil echarse atrás.</p>
+<p>Esto es deseable para que un simple <code>git pull</code> importe cambios <strong>del repositorio fuente</strong>, no de su bifurcación. También significa que un simple <code>git push</code> (intentará) enviar al repositorio de origen, que casi siempre será rechazado ya que probablemente no tenga permiso. Esta falla le alertará del hecho de que está haciendo algo cuestionable, aunque aún será fácil echarse atrás.</p>
 <p>Primero, obtenga información para el control remoto <code>upstream</code>. Esto es especialmente importante si acaba de configurar <code>upstream</code> por primera vez.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch upstream</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Los dos comandos siguientes hacen lo mismo; el primero es sólo una abreviatura del segundo. Haga esto con la línea de comando Git en un shell:</p>
@@ -719,7 +719,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Si usaste <code>usethis::create_from_github()</code>o bifurcó y clonó a través de <a href="usage-existing-project-github-first.html">Proyecto existente, GitHub primero</a>, probablemente esté en un proyecto RStudio para este nuevo repositorio.</p>
 <p>De todos modos, únete a este proyecto, sea lo que sea que eso signifique para ti, utilizando tu método habitual.</p>
 <p>Explore el nuevo repositorio de alguna manera adecuada. Si es un paquete, puede ejecutar las pruebas o verificarlo. Si se trata de un proyecto de análisis de datos, ejecute un script o renderice un Rmd. Convéncete de que has recibido el código.</p>
-<p>Ahora debería estar en la posición perfecta para sincronizarse con los desarrollos en curso en el repositorio de origen y proponer nuevos cambios a través de una solicitud de extracción desde su bifurcación.</p>
+<p>Ahora debería estar en la posición perfecta para sincronizarse con los desarrollos en curso en el repositorio de origen y proponer nuevos cambios a través de una solicitud de cambios desde su bifurcación.</p>
 <p><img src="img/fork-them-pull-request.jpeg" class="img-fluid">{fig-align=“center” fig-alt = “Fork and clone, ideal setup.” width=“60%”}</p>
 <p>Puede utilizar los siguientes comandos para revisar más detalles esenciales de Git de su configuración de bifurcación y clonación:</p>
 <ul>
@@ -762,7 +762,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Aquí hay algunos consejos finales sobre cómo trabajar en una situación de bifurcación y clonación.</p>
 <p>Si realiza alguna confirmación en su repositorio local, <strong>recomiendo encarecidamente</strong> que trabaje en <a href="git-branches.html">una nueva rama</a>, no en <code>main</code> (o como se llame la rama predeterminada).</p>
 <p>Le recomiendo <strong>enfáticamente</strong> que no realice confirmaciones con el <code>main</code> de un repositorio que haya bifurcado. Si se confirma <code>main</code> en un repositorio que no es de su propiedad, se crea una divergencia entre el historial de esa rama en el repositorio de origen y en su repositorio. De esto no surgirá más que dolor. (Si ya ha hecho esto, discutiremos cómo solucionar la situación en <a href="workflows-upstream-changes-into-fork.html#sec-touched-main">Um, ¿qué pasa si toco <code>main</code>?</a>.)</p>
-<p>Cuando tratas <code>main</code> como de solo lectura, hace la vida mucho más fácil cuando quieres <a href="workflows-upstream-changes-into-fork.html">extraer el trabajo ascendente</a> en tu copia. El <code>DUEÑO</code> de <code>REPO</code> también estará más feliz de recibir su solicitud de extracción de una rama que no sea <code>main</code>.</p>
+<p>Cuando tratas <code>main</code> como de solo lectura, hace la vida mucho más fácil cuando quieres <a href="workflows-upstream-changes-into-fork.html">importar upstream</a> en tu copia. El <code>DUEÑO</code> de <code>REPO</code> también estará más feliz de recibir su solicitud de cambio de una rama que no sea <code>main</code>.</p>
 <p>Para obtener más detalles, estas preguntas y respuestas sobre Stack Overflow son útiles: <a href="https://stackoverflow.com/q/33749832">¿Por qué es una mala práctica confirmar en la rama maestra de su bifurcación?</a>.</p>
 
 

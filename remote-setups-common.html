@@ -624,7 +624,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="img/ours-you.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'ours'"></p>
 </figure>
 </div>
-<p>Se configura un control remoto llamado <code>origin</code> y usted tiene permiso para enviar (y extraer) <code>origin</code>. (Es por eso que <code>origin</code> está coloreado en azul y hay flechas sólidas que van en ambas direcciones). El control remoto <code>origin</code> en GitHub es lo que llamaremos un repositorio <strong>fuente</strong>, lo que significa que no es una bifurcación (es decir, una copia). de cualquier otra cosa en GitHub. En este caso, <code>origin</code> es también lo que llamaremos su repositorio <strong>principal</strong>, lo que significa que es el control remoto principal con el que interactúa en GitHub (para este proyecto).</p>
+<p>Se configura un control remoto llamado <code>origin</code> y usted tiene permiso para enviar (e importar) <code>origin</code>. (Es por eso que <code>origin</code> está coloreado en azul y hay flechas sólidas que van en ambas direcciones). El control remoto <code>origin</code> en GitHub es lo que llamaremos un repositorio <strong>fuente</strong>, lo que significa que no es una bifurcación (es decir, una copia). de cualquier otra cosa en GitHub. En este caso, <code>origin</code> es también lo que llamaremos su repositorio <strong>principal</strong>, lo que significa que es el control remoto principal con el que interactúa en GitHub (para este proyecto).</p>
 <p>Cómo lograr si el repositorio local existe primero:</p>
 <ul>
 <li>Las instrucciones detalladas se encuentran en <a href="usage-existing-project-github-last.html">Proyecto existente, GitHub último</a>.</li>
@@ -654,7 +654,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="img/ours-them.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'ours'"></p>
 </figure>
 </div>
-<p>Se configura un control remoto llamado <code>origin</code> y puede enviar (y extraer) <code>origin</code>. Como se indicó anteriormente, <code>origin</code> es un repositorio <strong>fuente</strong>, lo que significa que no es una bifurcación (o copia) de nada más en GitHub. Sin embargo, el control remoto <code>origin</code> no es de su propiedad. En cambio, es propiedad de otro usuario u organización de GitHub. <code>origin</code> también es su repositorio <strong>principal</strong> en esta configuración.</p>
+<p>Se configura un control remoto llamado <code>origin</code> y puede enviar (e importar) <code>origin</code>. Como se indicó anteriormente, <code>origin</code> es un repositorio <strong>fuente</strong>, lo que significa que no es una bifurcación (o copia) de nada más en GitHub. Sin embargo, el control remoto <code>origin</code> no es de su propiedad. En cambio, es propiedad de otro usuario u organización de GitHub. <code>origin</code> también es su repositorio <strong>principal</strong> en esta configuración.</p>
 <p>¿Como sucedió esto?</p>
 <ol type="1">
 <li>El repositorio de origen es propiedad de una organización y su función en esta organización le confiere poder suficiente para crear repositorios o enviarlos a este repositorio.</li>
@@ -689,7 +689,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="img/fork-them.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Setup described as 'fork'"></p>
 </figure>
 </div>
-<p>Esto muestra un “fork-and-clone” exitoso. Su repositorio local puede extraer cambios del repositorio de origen, que está configurado como “upstream”, al cual no puede enviar cambios (pero sí puede importarlos). Tienes un fork del repositorio fuente (una copia muy especial, en GitHub) y está configurado como <code>origin</code>. <code>origin</code> es su repositorio principal. Puede enviar e importar desde el <code>origin</code>. Puede realizar una solicitud de fusión al repositorio de origen a través de su bifurcación.</p>
+<p>Esto muestra un “fork-and-clone” exitoso. Su repositorio local puede importar cambios del repositorio de origen, que está configurado como “upstream”, al cual no puede enviar cambios (pero sí puede importarlos). Tienes un fork del repositorio fuente (una copia muy especial, en GitHub) y está configurado como <code>origin</code>. <code>origin</code> es su repositorio principal. Puede enviar e importar desde el <code>origin</code>. Puede realizar una solicitud de fusión al repositorio de origen a través de su bifurcación.</p>
 <p>usethis describe esta configuración como “fork”.</p>
 <p>Como alcanzar:</p>
 <ul>
@@ -729,7 +729,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Clonar su propia bifurcación, ya sea mediante <code>git clone</code> en el shell o mediante un cliente Git, como RStudio. Y luego parando aquí.</li>
 </ul>
-<p>Si solo planea realizar una solicitud de extracción, esta configuración está bien. Cuando finalice el intercambio, elimine su repositorio local y su bifurcación y continúe con su vida. Siempre puedes volver a bifurcar en el futuro. Pero si su solicitud de extracción permanece abierta por un tiempo o si planea realizar contribuciones repetidas, deberá incorporar los desarrollos en curso en el repositorio fuente a su copia local.</p>
+<p>Si solo planea realizar una solicitud de cambios, esta configuración está bien. Cuando finalice el intercambio, elimine su repositorio local y su bifurcación y continúe con su vida. Siempre puedes volver a bifurcar en el futuro. Pero si su solicitud de cambios permanece abierta por un tiempo o si planea realizar contribuciones repetidas, deberá incorporar los desarrollos en curso en el repositorio fuente a su copia local.</p>
 <p>Puedes convertir esto en la <a href="#sec-fork-them">configuración de bifurcación</a> ideal así:</p>
 <ul>
 <li>Las instrucciones detalladas se encuentran en <a href="workflows-fork-and-clone.html#sec-fork-and-clone-finish">Finalizar la configuración de bifurcación y clonación</a>.</li>

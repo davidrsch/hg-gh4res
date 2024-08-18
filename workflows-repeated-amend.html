@@ -735,7 +735,7 @@ git push</code></pre>
 <p>y procedió a <code>git commit --amend</code> nuevamente localmente, lo que llevó a este estado:</p>
 <pre class="console"><code>A -- B -- C -- WIP* (6e884e6)</code></pre>
 <p>Estoy mostrando deliberadamente dos historiales que parecen iguales, en términos de mensajes de confirmación. Pero el último SHA revela que en realidad son diferentes.</p>
-<p>Estás en un aprieto ahora, ya que no puedes hacer un simple enviar o importar. Una inserción será rechazada y una extracción probablemente dará lugar a una fusión que no desea.</p>
+<p>Estás en un aprieto ahora, ya que no puedes hacer un simple enviar o importar. Una inserción será rechazada e importar probablemente dará lugar a una fusión que no desea.</p>
 <p>Tienes dos opciones:</p>
 <ul>
 <li><p>Si tiene colaboradores que pueden haber retirado el repositorio en la confirmación <code>WIP (85bf30a)</code>, debe considerar esa historia en particular como escrita en piedra ahora. Si hay algún trabajo muy valioso que solo existe localmente, como un archivo específico, guarde una copia de ese en una nueva ruta de archivo, temporalmente. Restablezca por completo su repositorio local a <code>C</code> (<code>git reset --hard HEAD^</code>) e importe de GitHub. GitHub y la historia local ahora muestran esto:</p>
